@@ -11,7 +11,6 @@ module.exports = {
       screens: {
         "2xs": "375px",
         xs: "425px",
-        "3xl": "2600px",
       },
       colors: {
         kv: {
@@ -19,22 +18,16 @@ module.exports = {
           white: "#FFFAFA",
         },
         jobloop: {
-          /* Hovedfarge fra Figma */
+          /* Jobloop hovedfarger */
           primary: {
-            green: "#47A490" /* old: "#77C4B4"*/,
-            orange: "#EE7011" /* old: "#F4A366"*/,
+            green: "#77C4B4",
+            orange: "#F4A366",
             grey: "#575756",
           },
-          /* Nedtonet fra Figma */
+          /* V2 Kodehode nyanser */
           secondary: {
-            orange: "#f5b58a",
-            green: "#A5FBE9",
-            greentone: "#C8FFF3",
-          },
-          /* Sekundær fra Figma */
-          tertiary: {
-            purple: "#412F39",
-            green: "#1E555C",
+            orange: "#AF4831",
+            green: "#01624E",
           },
         },
       },
