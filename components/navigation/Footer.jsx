@@ -94,24 +94,24 @@ export default function Footer() {
           <h2 className="text-3xl">Sider</h2>
           <Link
             className="hover:underline"
-            href="/arbeidsgiver"
+            href="/nyhetsbrev"
             aria-label="Gå til underside for arbeidsgiver"
           >
-            Arbeidsgiver
+            Nyhetsbrev
           </Link>
           <Link
             className="hover:underline"
-            href="/deltaker"
+            href="/ansettelser"
             aria-label="Gå til underside for deltaker"
           >
-            Deltaker
+            Ledige stillinger
           </Link>
           <Link
             className="hover:underline"
-            href="/samarbeidspartner"
+            href="/om-oss"
             aria-label="Gå til underside for samarbeidspartner"
           >
-            Samarbeidspartner
+            Om Jobloop
           </Link>
         </div>
       </div>
@@ -183,24 +183,24 @@ export default function Footer() {
             <h2 className="text-3xl">Sider</h2>
             <Link
               className="hover:underline"
-              href="/arbeidsgiver"
+              href="/nyhetsbrev"
               aria-label="Gå til underside for arbeidsgiver"
             >
-              Arbeidsgiver
+              Nyhetsbrev
             </Link>
             <Link
               className="hover:underline"
-              href="/deltaker"
+              href="/ansettelser"
               aria-label="Gå til underside for deltaker"
             >
-              Deltaker
+              Ledige stillinger
             </Link>
             <Link
               className="hover:underline"
-              href="/samarbeidspartner"
+              href="/om-oss"
               aria-label="Gå til underside for samarbeidspartner"
             >
-              Samarbeids- partner
+              Om oss
             </Link>
           </div>
         </div>
