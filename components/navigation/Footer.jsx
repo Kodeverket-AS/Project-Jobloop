@@ -2,8 +2,8 @@
 
 import Link from "next/link";
 import Image from "next/image";
-import logoJobloopHvit from "../public/logoJobloopHvit.svg";
-import logoKodeverketHvit from "../public/logoKodeverketHvit.svg";
+import logoJobloopHvit from "../../public/logoJobloopHvit.svg";
+import logoKodeverketHvit from "../../public/logoKodeverketHvit.svg";
 
 // Contact information for the footer
 const contactInformation = [
