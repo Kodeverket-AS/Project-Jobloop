@@ -24,7 +24,7 @@ export default function Navigation() {
   if (pathname === landing) {
     navbar = <Navbar />;
   } else {
-    navbar = <NavbarAlt />;
+    navbar = <Navbar />;
   }
    
   return (
