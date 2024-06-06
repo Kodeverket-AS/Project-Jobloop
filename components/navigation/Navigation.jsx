@@ -22,9 +22,9 @@ export default function Navigation() {
   let navbar;
 
   if (pathname === landing) {
-    navbar = <Navbar />;
+    navbar = <NavbarAlt />;
   } else {
-    navbar = <Navbar />;
+    navbar = <NavbarAlt />;
   }
    
   return (
