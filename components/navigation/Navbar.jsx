@@ -4,8 +4,6 @@ import Image from "next/image";
 import HamburgerMenu from "./Hamburger";
 
 //Nye logoer importert her. De er nå svg filer, så de kan skaleres uten å miste kvalitet.
-import logoDesktopHvit from "../../public/logoDesktopHvit.svg";
-import logoDesktopFarge from "../../public/logoDesktopFarge.svg";
 import JobloopFarge from "../../public/JobloopFarge.svg";
 import logoJobloopHvit from "../../public/logoJobloopHvit.svg";
 
@@ -16,7 +14,7 @@ export default function Navbar() {
         <div className="p-4">
           <Link href="/" aria-label="Gå til landingssiden">
             <Image
-              className="w-60 lg:w-80"
+              className="w-28 lg:w-36"
               src={logoJobloopHvit}
               width={350}
               height={220}
@@ -71,7 +69,7 @@ export function NavbarAlt() {
         <div className="flex flex-row items-end p-4">
           <Link href="/" aria-label="Gå til landingssiden">
             <Image
-              className="w-60 lg:w-80"
+              className="w-28 lg:w-36"
               src={JobloopFarge}
               width={350}
               height={220}
