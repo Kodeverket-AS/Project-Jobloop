@@ -3,9 +3,6 @@
 import Link from "next/link";
 import { useState, useEffect } from "react";
 import { FaArrowUp } from "react-icons/fa";
-//import { FaqDeltager } from "./FAQcomp";
-//import { FaqBedrift } from "./FAQcomp";
-//import { FaqVirk } from "./FAQcomp";
 
 export function ScrollToTopButton() {
   const [isVisible, setIsVisible] = useState(false);
@@ -36,5 +33,17 @@ export function ScrollToTopButton() {
     >
       <FaArrowUp className="w-6 h-6 " strokeWidth={1.5} />
     </button>
+  );
+}
+
+export function LinkButton({ Path, Text }) {
+  return (
+    <Link
+      href={Path}
+      aria-label={`Lenke til underside ${Path}`}
+      className="px-8 py-2 transition-all border-2 border-solid bg-kv-white border-kv-black rounded-3xl hover:bg-jobloop-secondary-green hover:border-none hover:text-kv-white focus:bg-jobloop-secondary-green focus:text-kv-white"
+    >
+      {Text}
+    </Link>
   );
 }
