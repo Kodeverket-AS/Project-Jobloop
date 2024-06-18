@@ -9,16 +9,12 @@
 
   /* JOBLOOP COLORS */
   /* Hovedfarger */
-  --jobloop-primary-green: #47a490 /* old: #77c4b4*/;
-  --jobloop-primary-orange: #ee7011 /* old: #f4a366*/;
+  --jobloop-primary-green: #77C4B4;
+  --jobloop-primary-orange: #F4A366;
   --jobloop-primary-grey: #575756;
   /* Sekundærfarger */
-  --jobloop-secondary-green: #a5fbe9;
-  --jobloop-secondary-orange: #f5b58a;
-  --jobloop-secondary-greentone: #c8fff3;
-  /* Tertiærfarger */
-  --jobloop-tertiary-purple: #412f39;
-  --jobloop-tertiary-green: #1e555c;
+  --jobloop-secondary-green: #01624E;
+  --jobloop-secondary-orange: #AF4831;
 }
 
 body {
