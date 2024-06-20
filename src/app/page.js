@@ -9,10 +9,12 @@ export default function Home() {
   return (
     <main className="flex flex-col items-center justify-between min-h-screen p-0">
       <LandingHero />
-      <LandingIntro />
-      <WorkCourses />
-      <SchoolCourses />
-      <CooperationProjects />
+      <div className="flex flex-col items-center mt-[200px] md:mt-20">
+        <LandingIntro />
+        <WorkCourses />
+        <SchoolCourses />
+        <CooperationProjects />
+      </div>
     </main>
   );
 }
