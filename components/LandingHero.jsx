@@ -6,7 +6,7 @@ import LandingHeaderPhoto from "../public/LandingHeaderPhoto.png";
 import { LinkButton } from "./Buttons";
 //import { PortableText } from "@portabletext/react";
 
-export default function LandingHero({ content }) {
+export default function LandingHero() {
   return (
     <>
       <div className="absolute top-0 block w-full -z-10 md:hidden">
