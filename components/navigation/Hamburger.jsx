@@ -63,8 +63,8 @@ const HamburgerMenu = ({ hamFill }) => {
           <ul className="grid gap-8 mt-20">
             <Link
               href="/nyhetsbrev"
-              aria-label="gå til underside og les om vår visjon"
-              className="px-8 text-xl font-bold transition-all text-jobloop-primary-orange group w-fit"
+              aria-label="gå til underside og se vårt nyhetsbrev"
+              className="px-8 text-xl font-bold transition-all text-jobloop-secondary-green group w-fit"
               onClick={(event) => {
                 setIsOpen(false);
               }}
@@ -73,8 +73,8 @@ const HamburgerMenu = ({ hamFill }) => {
             </Link>
             <Link
               href="/ansettelser"
-              aria-label="gå til underside og få svar på typiske spørsmål"
-              className="px-8 text-xl font-bold transition-all text-jobloop-primary-orange group w-fit"
+              aria-label="gå til underside og se våre åpne stillinger"
+              className="px-8 text-xl font-bold transition-all text-jobloop-secondary-green group w-fit"
               onClick={(event) => {
                 setIsOpen(false);
               }}
@@ -84,7 +84,7 @@ const HamburgerMenu = ({ hamFill }) => {
             <Link
               href="/om-oss"
               aria-label="gå til underside og les mer om oss"
-              className="px-8 text-xl font-bold transition-all text-jobloop-primary-orange group w-fit"
+              className="px-8 text-xl font-bold transition-all text-jobloop-secondary-green group w-fit"
               onClick={(event) => {
                 setIsOpen(false);
               }}
@@ -93,8 +93,8 @@ const HamburgerMenu = ({ hamFill }) => {
             </Link>
             <Link
               href="/kontakt"
-              aria-label="gå til underside og les mer om kodespråkene våre"
-              className="px-8 text-xl font-bold transition-all text-jobloop-primary-orange group w-fit"
+              aria-label="gå til underside og ta kontakt med en av oss"
+              className="px-8 text-xl font-bold transition-all text-jobloop-secondary-green group w-fit"
               onClick={(event) => {
                 setIsOpen(false);
               }}
