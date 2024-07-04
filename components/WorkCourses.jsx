@@ -3,6 +3,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import JobbtilbudBilde from "../public/JobbtilbudBilde.png";
+import KodehodeImage from "../public/KodehodeImage.png";
 import { ExternalLinkButton } from "./Buttons";
 
 export default function WorkCourses() {
@@ -35,7 +36,7 @@ export default function WorkCourses() {
           <ExternalLinkButton Path="https://www.kodehode.no/" Text={"Les mer"} Aria={"Les mer om kodehode på kodehode.no"} />
         </div>
         <div className="w-full md:pb-8 md:px-8 md:w-1/2 md:pt-3">
-          <Image src={JobbtilbudBilde} width={500} height={500} />
+          <Image src={KodehodeImage} width={500} height={500} />
         </div>
       </div>
     </>
