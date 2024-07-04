@@ -35,7 +35,7 @@ export default function WorkCourses() {
           </p>
           <ExternalLinkButton Path="https://www.kodehode.no/" Text={"Les mer"} Aria={"Les mer om kodehode på kodehode.no"} />
         </div>
-        <div className="w-full md:pb-8 md:px-8 md:w-1/2 md:pt-3">
+        <div className="w-full md:pb-28 md:px-28 md:w-1/2 md:pt-3">
           <Image src={KodehodeImage} width={500} height={500} />
         </div>
       </div>
