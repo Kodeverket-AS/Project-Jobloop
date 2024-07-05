@@ -4,7 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import JobbtilbudBilde from "../public/JobbtilbudBilde.png";
 import KodehodeImage from "../public/KodehodeImage.png";
-import { ExternalLinkButton } from "./Buttons";
+import { ExternalLinkButton, LinkButton } from "./Buttons";
 
 export default function WorkCourses() {
   return (
@@ -33,10 +33,60 @@ export default function WorkCourses() {
             Kodehode er det største arbeidsrelaterte tilbudet Jobloop drifter,
             hvor vi utdanner nye frontend utviklere.
           </p>
-          <ExternalLinkButton Path="https://www.kodehode.no/" Text={"Les mer"} Aria={"Les mer om kodehode på kodehode.no"} />
+          <ExternalLinkButton
+            Path="https://www.kodehode.no/"
+            Text={"Les mer"}
+            Aria={"Les mer om kodehode på kodehode.no"}
+          />
         </div>
         <div className="w-full md:pb-28 md:px-28 md:w-1/2 md:pt-3">
           <Image src={KodehodeImage} width={500} height={500} />
+        </div>
+      </div>
+      <div className="flex flex-col">
+        <div className="flex flex-col md:flex-row">
+          <div className="flex flex-col w-full md:flex-row-reverse md:w-1/2">
+            <div className="w-full md:w-1/2">
+              <Image src={KodehodeImage} width={400} height={400} />
+            </div>
+            <div className="w-full md:w-1/2">
+              <h3>Grunnleggende IT</h3>
+              <p>Bli med i dagens digitale samfunn</p>
+              <LinkButton Path="/grunnleggende-IT" Text={"Les mer"} />
+            </div>
+          </div>
+          <div className="flex flex-col w-full md:flex-row-reverse md:w-1/2">
+            <div className="w-full md:w-1/2">
+              <Image src={KodehodeImage} width={400} height={400} />
+            </div>
+            <div className="w-full md:w-1/2">
+              <h3>Digitale Talenter</h3>
+              <p>Dyrk interessene dine og få fast jobb</p>
+              <LinkButton Path="/digitale-talenter" Text={"Les mer"} />
+            </div>
+          </div>
+        </div>
+        <div className="flex flex-col md:flex-row">
+          <div className="flex flex-col w-full md:flex-row-reverse md:w-1/2">
+            <div className="w-full md:w-1/2">
+              <Image src={KodehodeImage} width={400} height={400} />
+            </div>
+            <div className="w-full md:w-1/2">
+              <h3>Individuell AMO</h3>
+              <p>Få et skreddersydd opplegg gjennom Nav</p>
+              <LinkButton Path="/Individuell-AMO" Text={"Les mer"} />
+            </div>
+          </div>
+          <div className="flex flex-col w-full md:flex-row-reverse md:w-1/2">
+            <div className="w-full md:w-1/2">
+              <Image src={KodehodeImage} width={400} height={400} />
+            </div>
+            <div className="w-full md:w-1/2">
+              <h3>Loop</h3>
+              <p>Få relevant arbeidspraksis og erfaring</p>
+              <LinkButton Path="/loop" Text={"Les mer"} />
+            </div>
+          </div>
         </div>
       </div>
     </>
