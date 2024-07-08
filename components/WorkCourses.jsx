@@ -48,9 +48,9 @@ export default function WorkCourses() {
           />
         </div>
       </div>
-      <div className="flex flex-col">
-        <div className="flex flex-col md:flex-row">
-          <div className="flex flex-col w-full md:flex-row-reverse md:w-1/2">
+      <div className="flex flex-col gap-12 px-8">
+        <div className="flex flex-col gap-12 md:flex-row md:gap-0">
+          <div className="flex flex-col w-full gap-3 md:flex-row-reverse md:w-1/2">
             <div className="w-full md:w-1/2">
               <Image
                 src={KodehodeImage}
@@ -59,13 +59,13 @@ export default function WorkCourses() {
                 className="md:max-w-48"
               />
             </div>
-            <div className="w-full md:w-1/2">
+            <div className="flex flex-col w-full gap-3 md:w-1/2">
               <h3>Grunnleggende IT</h3>
               <p>Bli med i dagens digitale samfunn</p>
               <LinkButton Path="/grunnleggende-IT" Text={"Les mer"} />
             </div>
           </div>
-          <div className="flex flex-col w-full md:flex-row-reverse md:w-1/2">
+          <div className="flex flex-col w-full gap-3 md:flex-row-reverse md:w-1/2">
             <div className="w-full md:w-1/2">
               <Image
                 src={KodehodeImage}
@@ -74,15 +74,15 @@ export default function WorkCourses() {
                 className="md:max-w-48"
               />
             </div>
-            <div className="w-full md:w-1/2">
+            <div className="flex flex-col w-full gap-3 md:w-1/2">
               <h3>Digitale Talenter</h3>
               <p>Dyrk interessene dine og få fast jobb</p>
               <LinkButton Path="/digitale-talenter" Text={"Les mer"} />
             </div>
           </div>
         </div>
-        <div className="flex flex-col md:flex-row">
-          <div className="flex flex-col w-full md:flex-row-reverse md:w-1/2">
+        <div className="flex flex-col gap-12 md:flex-row md:gap-0">
+          <div className="flex flex-col w-full gap-3 md:flex-row-reverse md:w-1/2">
             <div className="w-full md:w-1/2">
               <Image
                 src={KodehodeImage}
@@ -91,13 +91,13 @@ export default function WorkCourses() {
                 className="md:max-w-48"
               />
             </div>
-            <div className="w-full md:w-1/2">
+            <div className="flex flex-col w-full gap-3 md:w-1/2">
               <h3>Individuell AMO</h3>
               <p>Få et skreddersydd opplegg gjennom Nav</p>
               <LinkButton Path="/Individuell-AMO" Text={"Les mer"} />
             </div>
           </div>
-          <div className="flex flex-col w-full md:flex-row-reverse md:w-1/2">
+          <div className="flex flex-col w-full gap-3 md:flex-row-reverse md:w-1/2">
             <div className="w-full md:w-1/2">
               <Image
                 src={KodehodeImage}
@@ -106,7 +106,7 @@ export default function WorkCourses() {
                 className="md:max-w-48"
               />
             </div>
-            <div className="w-full md:w-1/2">
+            <div className="flex flex-col w-full gap-3 md:w-1/2">
               <h3>Loop</h3>
               <p>Få relevant arbeidspraksis og erfaring</p>
               <LinkButton Path="/loop" Text={"Les mer"} />
