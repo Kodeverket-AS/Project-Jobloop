@@ -94,7 +94,7 @@ export default function WorkCourses() {
             <div className="flex flex-col w-full gap-3 md:w-1/2">
               <h3>Individuell AMO</h3>
               <p>Få et skreddersydd opplegg gjennom Nav</p>
-              <LinkButton Path="/Individuell-AMO" Text={"Les mer"} />
+              <LinkButton Path="/individuell-AMO" Text={"Les mer"} />
             </div>
           </div>
           <div className="flex flex-col w-full gap-3 md:flex-row-reverse md:w-1/2">
@@ -112,6 +112,21 @@ export default function WorkCourses() {
               <LinkButton Path="/loop" Text={"Les mer"} />
             </div>
           </div>
+        </div>
+      </div>
+      <div className="flex flex-col px-8 py-20 md:flex-row md:w-2/3">
+        <div className="w-full md:w-1/2">
+          <Image
+            src={JobbtilbudBilde}
+            width={400}
+            height={400}
+            className="rounded-full w-52"
+          />
+        </div>
+        <div className="flex flex-col w-full gap-3 md:w-1/2">
+          <h3>Joe Generic</h3>
+          <p>CEO XYZ bedrift</p>
+          <q>Tekst om hvor lett det var å jobbe med Jobloop og hvor lærerikt det var for praktikanter.</q>
         </div>
       </div>
     </>
