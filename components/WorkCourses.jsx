@@ -114,19 +114,19 @@ export default function WorkCourses() {
           </div>
         </div>
       </div>
-      <div className="flex flex-col px-8 py-20 md:flex-row md:w-2/3">
-        <div className="w-full md:w-1/2">
+      <div className="flex flex-col px-8 py-20 md:ml-0 md:flex-row md:w-2/3">
+        <div className="md:w-1/2 w-52 h-52">
           <Image
             src={JobbtilbudBilde}
             width={400}
             height={400}
-            className="rounded-full w-52"
+            className="object-cover w-full h-full rounded-full"
           />
         </div>
         <div className="flex flex-col w-full gap-3 md:w-1/2">
           <h3>Joe Generic</h3>
           <p>CEO XYZ bedrift</p>
-          <q>Tekst om hvor lett det var å jobbe med Jobloop og hvor lærerikt det var for praktikanter.</q>
+          <q className="italic">Tekst om hvor lett det var å jobbe med Jobloop og hvor lærerikt det var for praktikanter.</q>
         </div>
       </div>
     </>
