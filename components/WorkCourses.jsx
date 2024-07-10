@@ -9,8 +9,8 @@ import { ExternalLinkButton, LinkButton } from "./Buttons";
 export default function WorkCourses() {
   return (
     <>
-      <div className="flex flex-col-reverse gap-8 px-8 py-20 md:flex-row md:px-16 md:py-24 md:gap-0">
-        <div className="w-full md:w-1/2 pb-7 md:pb-0 md:pr-5 xl:pr-0">
+      <div className="flex flex-col-reverse gap-8 px-8 py-20 md:flex-row md:px-16 md:py-24 md:gap-5">
+        <div className="w-full md:w-1/2 pb-7 md:pb-0">
           <h2 className="pb-2 border-b-4 border-jobloop-primary-green w-fit">
             Arbeidstilbud
           </h2>
@@ -48,7 +48,7 @@ export default function WorkCourses() {
           />
         </div>
       </div>
-      <div className="flex flex-col gap-12 px-8">
+      <div className="flex flex-col gap-12 px-8 py-20 md:px-16 md:py-24">
         <div className="flex flex-col gap-12 md:flex-row md:gap-0">
           <div className="flex flex-col w-full gap-3 md:flex-row-reverse md:w-1/2">
             <div className="w-full md:w-1/2">
@@ -114,8 +114,8 @@ export default function WorkCourses() {
           </div>
         </div>
       </div>
-      <div className="flex flex-col px-8 py-20 md:ml-0 md:flex-row md:w-2/3">
-        <div className="md:w-1/2 w-52 h-52">
+      <div className="flex flex-col gap-8 px-8 py-20 md:flex-row md:w-2/3 md:px-16">
+        <div className="ml-0 w-52 h-52">
           <Image
             src={JobbtilbudBilde}
             width={400}
@@ -126,7 +126,10 @@ export default function WorkCourses() {
         <div className="flex flex-col w-full gap-3 md:w-1/2">
           <h3>Joe Generic</h3>
           <p>CEO XYZ bedrift</p>
-          <q className="italic">Tekst om hvor lett det var å jobbe med Jobloop og hvor lærerikt det var for praktikanter.</q>
+          <q className="italic">
+            Tekst om hvor lett det var å jobbe med Jobloop og hvor lærerikt det
+            var for praktikanter.
+          </q>
         </div>
       </div>
     </>
