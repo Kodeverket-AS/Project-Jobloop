@@ -26,7 +26,7 @@ export default function WorkCourses() {
           <Image src={JobbtilbudBilde} width={500} height={500} />
         </div>
       </div>
-      <div className="flex flex-col-reverse gap-8 px-8 py-20 md:flex-row-reverse md:px-16 md:py-24 md:gap-0">
+      <div className="flex flex-col-reverse gap-8 px-8 py-20 md:flex-row-reverse md:px-16 md:py-24 md:gap-0 md:w-full">
         <div className="w-full md:w-1/2 pb-7 md:pb-0 md:pr-5 xl:pr-0">
           <h3>Kodehode</h3>
           <p className="pt-5 pb-12 md:pr-0 lg:pr-16">
@@ -48,8 +48,8 @@ export default function WorkCourses() {
           />
         </div>
       </div>
-      <div className="flex flex-col gap-12 px-8 py-20 md:px-16 md:py-24">
-        <div className="flex flex-col gap-12 md:flex-row md:gap-0">
+      <div className="flex flex-col w-full gap-12 px-8 py-20 md:px-16 md:py-24">
+        <div className="flex flex-col gap-12 md:flex-row md:gap-0 md:justify-between">
           <div className="flex flex-col w-full gap-3 md:flex-row-reverse md:w-1/2">
             <div className="w-full md:w-1/2">
               <Image
@@ -81,7 +81,7 @@ export default function WorkCourses() {
             </div>
           </div>
         </div>
-        <div className="flex flex-col gap-12 md:flex-row md:gap-0">
+        <div className="flex flex-col gap-12 md:flex-row md:gap-0 md:justify-between">
           <div className="flex flex-col w-full gap-3 md:flex-row-reverse md:w-1/2">
             <div className="w-full md:w-1/2">
               <Image
@@ -114,7 +114,7 @@ export default function WorkCourses() {
           </div>
         </div>
       </div>
-      <div className="flex flex-col gap-8 px-8 py-20 md:flex-row md:w-2/3 md:px-16">
+      <div className="flex flex-col gap-8 px-8 py-20 md:flex-row md:w-2/3 md:px-16 md:justify-between md:ml-0 md:mr-auto">
         <div className="ml-0 w-52 h-52">
           <Image
             src={JobbtilbudBilde}
