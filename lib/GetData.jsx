@@ -1,4 +1,4 @@
-import { Client } from "../../lib/sanity";
+import { Client } from "./sanity";
 
 export async function getData() {
   return Client.fetch(`{
