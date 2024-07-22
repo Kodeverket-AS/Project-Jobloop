@@ -38,7 +38,7 @@ export default function SchoolCourses() {
             <div className="flex flex-col w-full gap-3 md:w-1/2">
               <h3>LearnWell</h3>
               <p>Alternativ læringsarena for elever i videregående</p>
-              <LinkButton Path="/learnwell" Text={"Les mer"} />
+              <LinkButton Path="/learnWell" Text={"Les mer"} />
             </div>
           </div>
           <div className="flex flex-col w-full gap-3 md:flex-row-reverse md:w-1/2">
