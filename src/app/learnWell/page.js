@@ -1,6 +1,6 @@
 import Image from "next/image";
 import { getData } from "../../../lib/GetData";
-import HeroSub from "../../../components/herosub";
+import HeroSub from "../../../components/Herosub";
 
 export default async function LearnWell() {
   const data = await getData();
