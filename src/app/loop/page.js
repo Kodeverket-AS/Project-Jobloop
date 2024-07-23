@@ -4,7 +4,7 @@ import HeroSub from "../../../components/herosub";
 
 export default async function Loop() {
   const data = await getData();
-  const loop = data[7];
+  const loop = data.tiltak[7];
   return (
     <main className="flex flex-col items-center justify-between min-h-screen p-0">
       <HeroSub content={loop} />

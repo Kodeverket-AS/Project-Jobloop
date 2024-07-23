@@ -4,7 +4,7 @@ import HeroSub from "../../../components/herosub";
 
 export default async function Spillbasert() {
   const data = await getData();
-  const spillbasert = data[4];
+  const spillbasert = data.tiltak[4];
   return (
     <main className="flex flex-col items-center justify-between min-h-screen p-0">
       <HeroSub content={spillbasert} />

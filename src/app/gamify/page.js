@@ -4,7 +4,7 @@ import HeroSub from "../../../components/herosub";
 
 export default async function Gamify() {
   const data = await getData();
-  const gamify = data[1];
+  const gamify = data.tiltak[1];
   return (
     <main className="flex flex-col items-center justify-between min-h-screen p-0">
       <HeroSub content={gamify} />
