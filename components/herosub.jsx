@@ -26,7 +26,7 @@ export default function HeroSub({ content }) {
             width={500}
             height={500}
             className="mx-auto my-auto rounded w-[32rem]"
-            //alt={content.alt || ""}
+            alt={content.alt || ""}
           />
         </div>
       </div>
