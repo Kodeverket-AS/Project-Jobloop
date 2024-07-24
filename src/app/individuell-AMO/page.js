@@ -1,7 +1,7 @@
 import Image from "next/image";
 import { getData } from "../../../lib/GetData";
 import HeroSub from "../../../components/herosub";
-import CourseSummary from "../../../components/courseSummary";
+import CourseSummary from "../../../components/CourseSummary";
 
 export default async function IndividuellAMO() {
   const data = await getData();
