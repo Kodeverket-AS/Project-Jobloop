@@ -22,3 +22,4 @@ export default function CourseSummary({ content, course }) {
     </div>
   );
 }
+//here is a new line
