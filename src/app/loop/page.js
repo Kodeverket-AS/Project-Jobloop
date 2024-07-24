@@ -1,6 +1,6 @@
 import Image from "next/image";
 import { getData } from "../../../lib/GetData";
-import HeroSub from "../../../components/Herosub";
+import HeroSub from "../../../components/HeroSub";
 
 export default async function Loop() {
   const data = await getData();
