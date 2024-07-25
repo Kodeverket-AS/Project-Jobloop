@@ -6,7 +6,7 @@ import { PortableText } from "@portabletext/react";
 
 export default function CourseUsefullness({ content, course }) {
   return (
-    <div className="flex flex-row">
+    <div className="flex flex-row px-8 py-20">
       <div className="w-1/2">
         <p>Boxes go here</p>
       </div>
