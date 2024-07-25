@@ -3,6 +3,7 @@ import { getData } from "../../../lib/GetData";
 import HeroSub from "../../../components/herosub";
 import CourseSummary from "../../../components/CourseSummary";
 import Curriculum from "../../../components/Curriculum";
+import CourseUsefullness from "../../../components/CourseUsefulness";
 
 export default async function DigitaleTalenter() {
   const data = await getData();
@@ -12,6 +13,7 @@ export default async function DigitaleTalenter() {
       <HeroSub content={digTal} />
       <CourseSummary content={digTal} course={"Digitale Talenter"} />
       <Curriculum content={digTal} course={"Digitale Talenter"} />
+      <CourseUsefullness content={digTal} course={"Digitale Talenter"} />
     </main>
   );
 }
