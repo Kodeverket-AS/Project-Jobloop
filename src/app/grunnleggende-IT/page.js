@@ -4,6 +4,7 @@ import HeroSub from "../../../components/herosub";
 import CourseSummary from "../../../components/CourseSummary";
 import Curriculum from "../../../components/Curriculum";
 import CourseUsefullness from "../../../components/CourseUsefulness";
+import LeaderSection from "../../../components/LeaderSection";
 
 export default async function GrunnleggendeIT() {
   const data = await getData();
@@ -14,6 +15,7 @@ export default async function GrunnleggendeIT() {
       <CourseSummary content={gIT} course={"Grunnleggende IT"} />
       <Curriculum content={gIT} course={"Grunnleggende IT"} />
       <CourseUsefullness content={gIT} course={"Grunnleggende IT"} />
+      <LeaderSection content={gIT} leader={"Oda Kristin Abelseth"} position={"Kursleder"} />
     </main>
   );
 }

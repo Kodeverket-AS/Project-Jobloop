@@ -4,6 +4,7 @@ import HeroSub from "../../../components/herosub";
 import CourseSummary from "../../../components/CourseSummary";
 import Curriculum from "../../../components/Curriculum";
 import CourseUsefullness from "../../../components/CourseUsefulness";
+import LeaderSection from "../../../components/LeaderSection";
 
 export default async function Gamify() {
   const data = await getData();
@@ -14,6 +15,7 @@ export default async function Gamify() {
       <CourseSummary content={gamify} course={"Gamify"} />
       <Curriculum content={gamify} course={"Gamify"} />
       <CourseUsefullness content={gamify} course={"Gamify"} />
+      <LeaderSection content={gamify} leader={"Kim Brurok Stokkeland & Sjur Hovi"} position={"Kursleder"} />
     </main>
   );
 }

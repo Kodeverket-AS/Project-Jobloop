@@ -4,6 +4,7 @@ import HeroSub from "../../../components/herosub";
 import CourseSummary from "../../../components/CourseSummary";
 import Curriculum from "../../../components/Curriculum";
 import CourseUsefullness from "../../../components/CourseUsefulness";
+import LeaderSection from "../../../components/LeaderSection";
 
 export default async function Spillbasert() {
   const data = await getData();
@@ -14,6 +15,7 @@ export default async function Spillbasert() {
       <CourseSummary content={spillbasert} course={"Spillbasert"} />
       <Curriculum content={spillbasert} course={"Spillbasert"} />
       <CourseUsefullness content={spillbasert} course={"Spillbasert"} />
+      <LeaderSection content={spillbasert} leader={"Sjur Hovi"} position={"Kursleder"} />
     </main>
   );
 }

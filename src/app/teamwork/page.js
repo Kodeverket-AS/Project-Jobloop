@@ -4,6 +4,7 @@ import HeroSub from "../../../components/herosub";
 import CourseSummary from "../../../components/CourseSummary";
 import Curriculum from "../../../components/Curriculum";
 import CourseUsefullness from "../../../components/CourseUsefulness";
+import LeaderSection from "../../../components/LeaderSection";
 
 export default async function Teamwork() {
   const data = await getData();
@@ -15,6 +16,7 @@ export default async function Teamwork() {
       {/*<CourseSummary content={teamwork} course={"Teamwork"} />*/}
       {/*<Curriculum content={teamwork} course={"Teamwork"} />*/}
       {/*<CourseUsefullness content={teamwork} course={"Teamwork"} />*/}
+      {/*<LeaderSection content={teamwork} leader={"Karl Håkon Rødland"} position={"Leder"} />*/}
     </main>
   );
 }

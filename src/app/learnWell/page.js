@@ -4,6 +4,7 @@ import HeroSub from "../../../components/herosub";
 import CourseSummary from "../../../components/CourseSummary";
 import Curriculum from "../../../components/Curriculum";
 import CourseUsefullness from "../../../components/CourseUsefulness";
+import LeaderSection from "../../../components/LeaderSection";
 
 export default async function LearnWell() {
   const data = await getData();
@@ -14,6 +15,7 @@ export default async function LearnWell() {
       <CourseSummary content={learnWell} course={"LearnWell"} />
       {/*<Curriculum content={learnWell} course={"LearnWell"} />*/}
       <CourseUsefullness content={learnWell} course={"LearnWell"} />
+      <LeaderSection content={learnWell} leader={"Beate Johnsen & Tom Mæland"} position={"Kursleder"} />
     </main>
   );
 }
