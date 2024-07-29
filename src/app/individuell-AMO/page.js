@@ -5,6 +5,8 @@ import CourseSummary from "../../../components/CourseSummary";
 import Curriculum from "../../../components/Curriculum";
 import CourseUsefullness from "../../../components/CourseUsefulness";
 import LeaderSection from "../../../components/LeaderSection";
+import ForCompanies from "../../../components/ForCompanies";
+import ForSchool from "../../../components/ForSchool";
 
 export default async function IndividuellAMO() {
   const data = await getData();
@@ -16,6 +18,8 @@ export default async function IndividuellAMO() {
       {/*<Curriculum content={amo} course={"Individuell AMO"} />*/}
       {/*<CourseUsefullness content={amo} course={"Individuell AMO"} />*/}
       {/*<LeaderSection content={amo} leader={"TBC"} position={"TBC"} />*/}
+      {/*<ForCompanies content={amo} />*/}
+      {/*<ForSchool content={amo} situation={"samarbeidspartner"} />*/}
     </main>
   );
 }

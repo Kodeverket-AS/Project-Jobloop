@@ -5,6 +5,8 @@ import CourseSummary from "../../../components/CourseSummary";
 import Curriculum from "../../../components/Curriculum";
 import CourseUsefullness from "../../../components/CourseUsefulness";
 import LeaderSection from "../../../components/LeaderSection";
+import ForCompanies from "../../../components/ForCompanies";
+import ForSchool from "../../../components/ForSchool";
 
 export default async function Loop() {
   const data = await getData();
@@ -16,6 +18,8 @@ export default async function Loop() {
       {/*<Curriculum content={loop} course={"Loop"} />*/}
       {/*<CourseUsefullness content={loop} course={"Loop"} />*/}
       {/*<LeaderSection content={loop} leader={"TBC"} position={"TBC"} />*/}
+      {/*<ForCompanies content={loop} />*/}
+      {/*<ForSchool content={loop} situation={"samarbeidspartner"} />*/}
     </main>
   );
 }

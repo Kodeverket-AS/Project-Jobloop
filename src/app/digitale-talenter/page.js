@@ -5,6 +5,8 @@ import CourseSummary from "../../../components/CourseSummary";
 import Curriculum from "../../../components/Curriculum";
 import CourseUsefullness from "../../../components/CourseUsefulness";
 import LeaderSection from "../../../components/LeaderSection";
+import ForCompanies from "../../../components/ForCompanies";
+import ForSchool from "../../../components/ForSchool";
 
 export default async function DigitaleTalenter() {
   const data = await getData();
@@ -16,6 +18,8 @@ export default async function DigitaleTalenter() {
       <Curriculum content={digTal} course={"Digitale Talenter"} />
       <CourseUsefullness content={digTal} course={"Digitale Talenter"} />
       <LeaderSection content={digTal} leader={"Frode Moldestad Bøe"} position={"Kursleder"} />
+      {/*<ForCompanies content={digTal} />*/}
+      {/*<ForSchool content={digTal} situation={"samarbeidspartner"} />*/}
     </main>
   );
 }

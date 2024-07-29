@@ -5,6 +5,8 @@ import CourseSummary from "../../../components/CourseSummary";
 import Curriculum from "../../../components/Curriculum";
 import CourseUsefullness from "../../../components/CourseUsefulness";
 import LeaderSection from "../../../components/LeaderSection";
+import ForCompanies from "../../../components/ForCompanies";
+import ForSchool from "../../../components/ForSchool";
 
 export default async function LearnWell() {
   const data = await getData();
@@ -16,6 +18,8 @@ export default async function LearnWell() {
       {/*<Curriculum content={learnWell} course={"LearnWell"} />*/}
       <CourseUsefullness content={learnWell} course={"LearnWell"} />
       <LeaderSection content={learnWell} leader={"Beate Johnsen & Tom Mæland"} position={"Kursleder"} />
+      {/*<ForCompanies content={learnWell} />*/}
+      <ForSchool content={learnWell} situation={"Skole"} />
     </main>
   );
 }

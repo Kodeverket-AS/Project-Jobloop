@@ -5,6 +5,8 @@ import CourseSummary from "../../../components/CourseSummary";
 import Curriculum from "../../../components/Curriculum";
 import CourseUsefullness from "../../../components/CourseUsefulness";
 import LeaderSection from "../../../components/LeaderSection";
+import ForCompanies from "../../../components/ForCompanies";
+import ForSchool from "../../../components/ForSchool";
 
 export default async function GrunnleggendeIT() {
   const data = await getData();
@@ -16,6 +18,8 @@ export default async function GrunnleggendeIT() {
       <Curriculum content={gIT} course={"Grunnleggende IT"} />
       <CourseUsefullness content={gIT} course={"Grunnleggende IT"} />
       <LeaderSection content={gIT} leader={"Oda Kristin Abelseth"} position={"Kursleder"} />
+      {/*<ForCompanies content={gIT} />*/}
+      {/*<ForSchool content={gIT} situation={"samarbeidspartner"} />*/}
     </main>
   );
 }

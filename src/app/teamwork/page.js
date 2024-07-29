@@ -5,6 +5,8 @@ import CourseSummary from "../../../components/CourseSummary";
 import Curriculum from "../../../components/Curriculum";
 import CourseUsefullness from "../../../components/CourseUsefulness";
 import LeaderSection from "../../../components/LeaderSection";
+import ForCompanies from "../../../components/ForCompanies";
+import ForSchool from "../../../components/ForSchool";
 
 export default async function Teamwork() {
   const data = await getData();
@@ -17,6 +19,8 @@ export default async function Teamwork() {
       {/*<Curriculum content={teamwork} course={"Teamwork"} />*/}
       {/*<CourseUsefullness content={teamwork} course={"Teamwork"} />*/}
       {/*<LeaderSection content={teamwork} leader={"Karl Håkon Rødland"} position={"Leder"} />*/}
+      {/*<ForCompanies content={teamwork} />*/}
+      {/*<ForSchool content={teamwork} situation={"samarbeidspartner"} />*/}
     </main>
   );
 }

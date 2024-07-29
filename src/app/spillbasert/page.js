@@ -5,6 +5,8 @@ import CourseSummary from "../../../components/CourseSummary";
 import Curriculum from "../../../components/Curriculum";
 import CourseUsefullness from "../../../components/CourseUsefulness";
 import LeaderSection from "../../../components/LeaderSection";
+import ForCompanies from "../../../components/ForCompanies";
+import ForSchool from "../../../components/ForSchool";
 
 export default async function Spillbasert() {
   const data = await getData();
@@ -16,6 +18,8 @@ export default async function Spillbasert() {
       <Curriculum content={spillbasert} course={"Spillbasert"} />
       <CourseUsefullness content={spillbasert} course={"Spillbasert"} />
       <LeaderSection content={spillbasert} leader={"Sjur Hovi"} position={"Kursleder"} />
+      {/*<ForCompanies content={spillbasert} />*/}
+      {/*<ForSchool content={spillbasert} situation={"skole"} />*/}
     </main>
   );
 }
