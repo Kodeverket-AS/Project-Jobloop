@@ -9,7 +9,7 @@ export default function LeaderSection({ content, leader, position }) {
     <div className="flex flex-row px-8 py-20">
       <div className="w-full md:w-1/2 md:pt-3">
         <Image
-          src={content.image2}
+          src={content.image2 ? content.image2 : ""}
           width={500}
           height={500}
           alt={content.alt2 ? content.alt2 : ""}
