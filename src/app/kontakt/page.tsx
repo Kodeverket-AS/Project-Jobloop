@@ -1,7 +1,8 @@
 import { sanityFetch } from "../../../lib/fetchData";
 import { SanityDocument } from "next-sanity";
+import ContactCard from "../../../components/contacts/Card";
 
-interface ContactDetails extends SanityDocument {
+export interface ContactDetails extends SanityDocument {
   image: string,
   fname: string,
   lname: string,
@@ -18,9 +19,7 @@ export default async function Kontakt() {
   return (
     <main className="flex flex-col items-center justify-between p-0">
       {data.map(contact => (
-        <div key={contact._id}>
-          {contact.fname} {contact.lname}
-        </div>
+        <ContactCard key={contact._id} contact={contact}/>
       ))}
     </main>
   );
