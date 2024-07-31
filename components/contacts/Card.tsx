@@ -8,8 +8,8 @@ export default function ContactCard({ contact }) {
       <div className="flex flex-col justify-center">
         <h3>{fname} {lname}</h3>
         <p>{role}, {company}</p>
-        <p>{email}</p>
-        <p>{mobile}</p>
+        <a href={`mailto:${email}`}>{email}</a>
+        <a href={`tel:+47${mobile}`} >+47 {mobile}</a>
       </div>
     </div>
   );
