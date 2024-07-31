@@ -7,6 +7,7 @@ import CourseUsefullness from "../../../components/CourseUsefulness";
 import LeaderSection from "../../../components/LeaderSection";
 import ForCompanies from "../../../components/ForCompanies";
 import ForSchool from "../../../components/ForSchool";
+import Places from "../../../components/Places";
 
 export default async function DigitaleTalenter() {
   const data = await getData();
@@ -20,6 +21,7 @@ export default async function DigitaleTalenter() {
       <LeaderSection content={digTal} leader={"Frode Moldestad Bøe"} position={"Kursleder"} />
       {/*<ForCompanies content={digTal} />*/}
       {/*<ForSchool content={digTal} situation={"samarbeidspartner"} />*/}
+      <Places content={digTal} />
     </main>
   );
 }

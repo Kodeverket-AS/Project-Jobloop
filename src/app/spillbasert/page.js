@@ -7,6 +7,7 @@ import CourseUsefullness from "../../../components/CourseUsefulness";
 import LeaderSection from "../../../components/LeaderSection";
 import ForCompanies from "../../../components/ForCompanies";
 import ForSchool from "../../../components/ForSchool";
+import Places from "../../../components/Places";
 
 export default async function Spillbasert() {
   const data = await getData();
@@ -20,6 +21,7 @@ export default async function Spillbasert() {
       <LeaderSection content={spillbasert} leader={"Sjur Hovi"} position={"Kursleder"} />
       {/*<ForCompanies content={spillbasert} />*/}
       {/*<ForSchool content={spillbasert} situation={"skole"} />*/}
+      <Places content={spillbasert} />
     </main>
   );
 }

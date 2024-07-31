@@ -12,7 +12,6 @@ import Places from "../../../components/Places";
 export default async function LearnWell() {
   const data = await getData();
   const learnWell = data.tiltak[0];
-  console.log(learnWell.cities);
   return (
     <main className="flex flex-col items-center justify-between min-h-screen p-0">
       <HeroSub content={learnWell} />

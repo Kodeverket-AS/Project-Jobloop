@@ -7,6 +7,7 @@ import CourseUsefullness from "../../../components/CourseUsefulness";
 import LeaderSection from "../../../components/LeaderSection";
 import ForCompanies from "../../../components/ForCompanies";
 import ForSchool from "../../../components/ForSchool";
+import Places from "../../../components/Places";
 
 export default async function Gamify() {
   const data = await getData();
@@ -20,6 +21,7 @@ export default async function Gamify() {
       <LeaderSection content={gamify} leader={"Kim Brurok Stokkeland & Sjur Hovi"} position={"Kursleder"} />
       {/*<ForCompanies content={gamify} />*/}
       <ForSchool content={gamify} situation={"skole"} />
+      <Places content={gamify} />
     </main>
   );
 }

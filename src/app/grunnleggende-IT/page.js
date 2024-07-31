@@ -7,6 +7,7 @@ import CourseUsefullness from "../../../components/CourseUsefulness";
 import LeaderSection from "../../../components/LeaderSection";
 import ForCompanies from "../../../components/ForCompanies";
 import ForSchool from "../../../components/ForSchool";
+import Places from "../../../components/Places";
 
 export default async function GrunnleggendeIT() {
   const data = await getData();
@@ -20,6 +21,7 @@ export default async function GrunnleggendeIT() {
       <LeaderSection content={gIT} leader={"Oda Kristin Abelseth"} position={"Kursleder"} />
       {/*<ForCompanies content={gIT} />*/}
       {/*<ForSchool content={gIT} situation={"samarbeidspartner"} />*/}
+      <Places content={gIT} />
     </main>
   );
 }
