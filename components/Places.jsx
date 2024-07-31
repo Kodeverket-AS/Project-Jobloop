@@ -5,7 +5,7 @@ import Image from "next/image";
 import { PortableText } from "@portabletext/react";
 
 
-function placeElement({ city }) {
+function placeElement(city) {
   return (
     <div className="flex flex-row justify-between px-8 py-20">
       <div className="w-full md:w-72 md:pt-3 md:h-72">
@@ -26,7 +26,7 @@ function placeElement({ city }) {
   );
 }
 
-function generateCities({ array }) {
+function generateCities(array) {
   const cityElements = [];
   for (let city of array) {
     cityElements.push(placeElement(city));
