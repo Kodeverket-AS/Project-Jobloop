@@ -13,7 +13,7 @@ export interface ContactDetails extends SanityDocument {
 }
 
 export default async function Kontakt() {
-  const QUERY = `*[_type == "contacts"]{image, fname, lname, role, company, email, mobile}`
+  const QUERY = `*[_type == "contacts"]{"image": image.asset->url, fname, lname, role, company, email, mobile}`
   const data = await sanityFetch<ContactDetails[]>({query: QUERY});
 
   return (
