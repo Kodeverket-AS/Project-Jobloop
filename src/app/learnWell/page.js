@@ -7,10 +7,12 @@ import CourseUsefullness from "../../../components/CourseUsefulness";
 import LeaderSection from "../../../components/LeaderSection";
 import ForCompanies from "../../../components/ForCompanies";
 import ForSchool from "../../../components/ForSchool";
+import Places from "../../../components/Places";
 
 export default async function LearnWell() {
   const data = await getData();
   const learnWell = data.tiltak[0];
+  console.log(learnWell.cities);
   return (
     <main className="flex flex-col items-center justify-between min-h-screen p-0">
       <HeroSub content={learnWell} />
@@ -19,7 +21,8 @@ export default async function LearnWell() {
       <CourseUsefullness content={learnWell} course={"LearnWell"} />
       <LeaderSection content={learnWell} leader={"Beate Johnsen & Tom Mæland"} position={"Kursleder"} />
       {/*<ForCompanies content={learnWell} />*/}
-      <ForSchool content={learnWell} situation={"Skole"} />
+      {/*<ForSchool content={learnWell} situation={"Skole"} />*/}
+      <Places content={learnWell} />
     </main>
   );
 }
