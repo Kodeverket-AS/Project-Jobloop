@@ -7,8 +7,8 @@ import { PortableText } from "@portabletext/react";
 
 function placeElement(city) {
   return (
-    <div className="flex flex-row justify-between px-8 py-20">
-      <div className="w-full md:w-72 md:pt-3 md:h-72">
+    <div className="flex flex-row justify-center pt-10">
+      <div className="w-full md:w-60 md:pt-3 md:h-60">
         <Image
           src={""}
           width={500}
@@ -17,10 +17,10 @@ function placeElement(city) {
           className="object-cover w-full h-full"
         />
       </div>
-      <div className="flex flex-col w-1/2 gap-3 py-10 md:py-0">
-        <h2 className="pb-3 border-b-2 border-jobloop-primary-green">
+      <div className="flex flex-col gap-3 py-10 pl-0 w-60 md:py-0 md:pl-5">
+        <h3 className="pb-1 border-b-2 border-jobloop-primary-green w-fit">
           {city}
-        </h2>
+        </h3>
       </div>
     </div>
   );
@@ -36,11 +36,11 @@ function generateCities(array) {
 
 export default function Places({ content }) {
   return (
-    <div>
-      <h2>Våre lokaler</h2>
-      <div className="flex flex-col">
-        {generateCities(content.cities)}
-      </div>
+    <div className="w-full px-8 py-20">
+      <h2 className="pb-3 mx-auto border-b-2 border-jobloop-primary-green w-fit">
+        Våre lokaler
+      </h2>
+      <div className="flex flex-col">{generateCities(content.cities)}</div>
     </div>
   );
 }
