@@ -7,7 +7,7 @@ import { PortableText } from "@portabletext/react";
 
 function placeElement(city) {
   return (
-    <div className="flex flex-row justify-center pt-10">
+    <div className="flex flex-row items-center justify-center pt-10">
       <div className="w-full md:w-60 md:pt-3 md:h-60">
         <Image
           src={""}
