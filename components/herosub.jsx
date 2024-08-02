@@ -8,9 +8,9 @@ import { LinkButton } from "./Buttons";
 export default function HeroSub({ content }) {
   return (
     <>
-      <div className="flex flex-col md:flex-row lg:px-24 lg:pt-24 md:px-12 md:pt-10">
-        <div className="w-full md:w-1/2">
-          <h1 className="text-jobloop-primary-green md:mb-5">
+      <div className="flex flex-col-reverse px-0 md:flex-row lg:px-24 lg:pt-24 md:px-12 md:pt-10">
+        <div className="w-full px-5 pt-5 md:w-1/2 md:px-0 md:pt-0">
+          <h1 className="md:mb-5">
             {content.heading ? content.heading : "Tittel kommer her"}
           </h1>
           <div className="lg:pr-20">
@@ -25,7 +25,7 @@ export default function HeroSub({ content }) {
             src={content.image ? content.image : ""}
             width={500}
             height={500}
-            className="mx-auto my-auto rounded w-[32rem]"
+            className="mx-auto my-auto md:rounded md:w-[32rem] rounded-none"
             alt={content.alt || ""}
           />
         </div>
