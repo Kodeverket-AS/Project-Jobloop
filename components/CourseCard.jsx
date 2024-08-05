@@ -5,7 +5,7 @@ import Image from "next/image";
 
 export default function CourseCard({ content }) {
   return (
-    <div className="flex flex-col px-5 py-3 shadow-md md:py-5 bg-kv-white">
+    <div className="flex flex-col p-3 shadow-md md:p-5 bg-kv-white">
       <h3>Om kurset</h3>
       <p className="pb-3 border-b-4 border-kv-black md:pt-5">
         Innhold og rammer for kurset

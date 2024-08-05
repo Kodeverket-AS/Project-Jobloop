@@ -7,7 +7,7 @@ import CourseCard from "./CourseCard";
 
 export default function CourseSummary({ content, course }) {
   return (
-    <div className="flex flex-col px-8 pt-20 pb-0 md:pb-20 md:flex-row md:px-12 md:w-screen lg:px-24 2xl:max-w-[1600px]">
+    <div className="flex flex-col px-5 py-20 pb-0 md:py-24 md:flex-row md:px-12 md:w-screen lg:px-24 2xl:max-w-[1600px]">
       <div className="flex-col w-full md:w-1/2 md:flex">
         <h2 className=" md:leading-10">{"Hvem passer " + course + " for?"}</h2>
         <div className=" md:w-5/6 lg:pr-20">
@@ -22,4 +22,3 @@ export default function CourseSummary({ content, course }) {
     </div>
   );
 }
-//here is a new line
