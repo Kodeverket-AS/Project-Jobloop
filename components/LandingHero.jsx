@@ -45,14 +45,16 @@ export default function LandingHero() {
             className="object-cover w-full h-full"
           />
         </div>
-        <div className="flex flex-col gap-8 items-start max-w-md xl:max-w-xl 2xl:max-w-2xl px-4 md:px-8 py-32 lg:py-32 2xl:py-40">
-          <h1 className="text-4xl text-kv-white  md:text-kv-black lg:text-4xl xl:text-5xl 2xl:text-6xl">
-            Inkluderende arbeidspraksis og effektiv jobbmatching
-          </h1>
-          <p className="font-normal text-xl text-kv-white md:text-kv-black lg:text-2xl xl:text-2xl">
-            Få tilgang til inkluderende arbeidsmuligheter og skreddersydd
-            yrkesopplæring
-          </p>
+        <div className="flex flex-col gap-4 md:gap-6 items-start max-w-md xl:max-w-xl 2xl:max-w-2xl px-4 md:px-8 py-32 lg:py-32 2xl:py-40">
+          <div className="pb-4 text-left">
+            <h1 className="pb-4 text-3xl xs:text-4xl text-kv-white  md:text-kv-black lg:text-4xl xl:text-5xl 2xl:text-6xl">
+              Inkluderende arbeidspraksis og effektiv jobbmatching
+            </h1>
+            <p className="font-normal  text-base md:text-lg text-kv-white md:text-kv-black lg:text-xl xl:text-2xl">
+              Få tilgang til inkluderende arbeidsmuligheter og skreddersydd
+              yrkesopplæring
+            </p>
+          </div>
           <div className="w-full flex md:block">
             <LinkButtonRed
               Path={"/kontakt"}

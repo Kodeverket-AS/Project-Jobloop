@@ -11,7 +11,7 @@ export default function Home() {
   return (
     <main className="flex flex-col items-center justify-between min-h-screen p-0">
       <LandingHero />
-      <div className="flex flex-col items-center mt-32">
+      <div className="flex flex-col items-center mt-2 md:mt-24">
         <LandingIntro />
         <WorkCourses />
         <SchoolCourses />
