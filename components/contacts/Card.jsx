@@ -2,6 +2,7 @@ import Image from "next/image";
 
 export default function ContactCard({ contact }) {
   const { image, fname, lname, role, company, email, mobile } = contact
+
   return (
     <div className="flex gap-24 h-96">
       <Image className="object-cover object-top" src={image} width={300} height={500} sizes="xl:100vw xxl:100vw xxxl:100vw" alt={`A sexy picture of ${fname}`}/>
