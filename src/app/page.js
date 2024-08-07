@@ -9,9 +9,9 @@ import ContactComponent from "../../components/ContactComponent";
 
 export default function Home() {
   return (
-    <main className="flex flex-col items-center justify-between min-h-screen p-0">
+    <main className="flex flex-col items-center justify-between min-h-screen">
       <LandingHero />
-      <div className="flex flex-col items-center mt-2 md:mt-24">
+      <div className="container flex flex-col items-center ">
         <LandingIntro />
         <WorkCourses />
         <SchoolCourses />

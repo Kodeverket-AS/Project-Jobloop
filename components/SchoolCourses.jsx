@@ -1,27 +1,29 @@
 "use client";
 
 import Image from "next/image";
-import Link from "next/link";
 import JobbtilbudBilde from "../public/JobbtilbudBilde.png";
 import KodehodeImage from "../public/KodehodeImage.png";
-import { LinkButton } from "./Buttons";
+import { LinkButton, LinkButtonInternal } from "./Buttons";
+import { IntroSectionReverse } from "./IntroCardComponent";
 
 const UICard = ({ image, title, text, path }) => {
   return (
-    <div className="flex flex-col w-full gap-4 md:flex-row-reverse md:w-1/2">
-      <div className="w-full md:w-1/2">
+    <div className="group flex flex-col w-full gap-4 xl:flex-row-reverse md:w-1/2">
+      <a
+        href={path}
+        className="w-full xl:w-1/2 transition-all saturate-100 group-hover:saturate-150">
         <Image
           alt="KodehodeImage"
           src={image}
-          width={400}
-          height={400}
-          className="md:max-w-48"
+          width={1500}
+          height={500}
+          className="max-w-full object-cover"
         />
-      </div>
-      <div className="flex flex-col w-full gap-4 md:w-1/2">
-        <h3>{title}</h3>
-        <p>{text}</p>
-        <LinkButton
+      </a>
+      <div className="flex flex-col w-full gap-4 xl:w-1/2">
+        <h3 className="text-kv-black text-xl md:text-2xl">{title}</h3>
+        <p className="text-base md:text-xl text-gray-500">{text}</p>
+        <LinkButtonInternal
           Path={path}
           Text={"Les mer"}
         />
@@ -32,29 +34,18 @@ const UICard = ({ image, title, text, path }) => {
 
 export default function SchoolCourses() {
   return (
-    <>
-      <div className="flex flex-col-reverse gap-8 px-8 py-20 md:flex-row md:px-16 md:py-24 md:gap-5">
-        <div className="w-full md:w-1/2 pb-7 md:pb-0">
-          <h2 className="pb-2 border-b-4 border-jobloop-primary-green w-fit">
-            Læringstilbud
-          </h2>
-          <p className="pt-5 pb-12 md:pr-0 lg:pr-16">
-            Jobloop samarbeider med skoler over hele landet med å gi elever som
-            trenger en alternativ arena hvor de kan oppleve læring og motivasjon
-            gjennom alternative metoder blant annet gjennom gaming.
-          </p>
-        </div>
-        <div className="w-full md:w-1/2 md:pt-3">
-          <Image
-            alt="JobbtilbudBilde"
-            src={JobbtilbudBilde}
-            width={500}
-            height={500}
-          />
-        </div>
-      </div>
-      <div className="flex flex-col w-full gap-12 px-8 py-20 md:px-16 md:py-24">
-        <div className="flex flex-col gap-12 md:flex-row md:gap-0 md:justify-between">
+    <section>
+      <IntroSectionReverse
+        image={JobbtilbudBilde}
+        title={"Læringstilbud"}
+        text={
+          "Jobloop samarbeider med skoler over hele landet med å gi elever som trenger en alternativ arena hvor de kan oppleve læring og motivasjon gjennom alternative metoder blant annet gjennom gaming."
+        }
+        path={"/læringstilbud"}
+        isButton={false}
+      />
+      <div className="flex flex-col w-full gap-12 px-8 py-20 md:py-24">
+        <div className="flex flex-col gap-12 md:flex-row md:justify-between">
           <UICard
             image={KodehodeImage}
             title={"LearnWell"}
@@ -70,7 +61,7 @@ export default function SchoolCourses() {
           />
         </div>
 
-        <div className="flex flex-col gap-12 md:flex-row md:gap-0 md:justify-between">
+        <div className="flex flex-col gap-12 md:flex-row  md:justify-between">
           <UICard
             image={KodehodeImage}
             title={"Spillbasert"}
@@ -107,6 +98,6 @@ export default function SchoolCourses() {
           </q>
         </div>
       </div>
-    </>
+    </section>
   );
 }

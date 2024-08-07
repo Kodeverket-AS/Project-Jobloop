@@ -1,8 +1,5 @@
 "use client";
 
-import Link from "next/link";
-import Image from "next/image";
-
 export default function CourseCard({ content }) {
   return (
     <div className="flex flex-col p-3 shadow-md md:p-5 bg-kv-white">
