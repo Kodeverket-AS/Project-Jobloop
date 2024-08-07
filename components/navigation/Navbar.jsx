@@ -9,7 +9,7 @@ import logoJobloopHvit from "../../public/logoJobloopHvit.svg";
 
 export default function Navbar() {
   return (
-    <nav className="w-full absolute top-0">
+    <nav className="w-full absolute top-0 z-50">
       <div className="flex items-center justify-between">
         <div className="p-4">
           <Link
