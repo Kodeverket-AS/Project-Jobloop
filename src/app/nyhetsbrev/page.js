@@ -12,7 +12,9 @@ import { SocialMediaCard } from "../../../components/socialMediaCard";
 export default function Nyhetsbrev({text, link, icon}) {
   
   return (
-    <main className="w-full flex flex-col items-center justify-center min-h-screen p-0 pb-20">
+    <main className="w-full flex flex-col items-center justify-center min-h-screen p-0 pb-24">
+      
+      <h1 className="pb-12 text-jobloop-primary-grey">Sosiale medier</h1>
       <div className="w-4/6 flex flex-col gap-10">
         <div className="flex flex-col md:flex-row gap-10">
           

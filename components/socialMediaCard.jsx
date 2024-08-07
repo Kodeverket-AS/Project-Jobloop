@@ -1,21 +1,29 @@
-
+"use client"
 import Image from "next/image"
 
 
 export function SocialMediaCard({text, link, icon}){
-    return(
-       <div className="w-full flex flex-row p-12 gap-10 rounded-md shadow-lg items-center">
-        <div>
-        {icon}
-         {/* <Image src={icon} className="max-w-24"/> */}
-        </div>
-        <div className="flex flex-col">
-           <h3>{text}</h3>
-           <a href={link}>
-           <p>Se mer</p>
-           </a>
-        </div>
-       </div>
+  
 
+   const handleClick = () => {
+     window.location.href = link;}
+  
+
+
+    return(
+      <a href={link}className="w-full">
+       <div className="w-full flex flex-row p-12 gap-10 rounded-md shadow-lg items-center">
+         <div>
+         {icon}
+            {/* <Image src={icon} className="max-w-24"/> */}
+         </div>
+         <div className="flex flex-col">
+            <h3>{text}</h3>
+            
+            <p onClick={() => handleClick} className="hover:text-jobloop-secondary-green">Se mer</p>
+         </div>
+       </div>
+       </a>
+     
     )
 }
