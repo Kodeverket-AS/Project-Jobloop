@@ -1,5 +1,4 @@
 import Image from "next/image";
-// import { carousel } from "../../components/Omosscarousel";
 
 export default function OmOss() {
     return (
