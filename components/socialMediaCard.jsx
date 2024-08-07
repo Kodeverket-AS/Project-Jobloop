@@ -11,8 +11,8 @@ export function SocialMediaCard({text, link, icon}){
 
 
     return(
-      <a href={link}className="w-full">
-       <div className="w-full flex flex-row p-12 gap-10 rounded-md shadow-lg items-center">
+      <a href={link}className="w-full flex justify-center">
+       <div className="w-full  flex flex-row p-12 gap-10 rounded-md shadow-lg items-center ">
          <div>
          {icon}
             {/* <Image src={icon} className="max-w-24"/> */}
