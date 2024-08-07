@@ -35,7 +35,7 @@ export default function ContactContainer({ data }) {
 
   return (
     <div className="flex flex-col gap-24 pb-24 max-md:px-4">
-      <div className="grid grid-cols-2 gap-4 max-md:grid-cols-1">
+      <div className="grid grid-cols-2 gap-4 max-md:grid-cols-1 w-full">
         <span>
           <input className="w-full text-lg p-[10px] border focus:border-jobloop-primary-green focus:outline-none" type="text" placeholder="Søk etter ansatt ..." ref={nameInput} onChange={e => filterEmployee()} />
         </span>

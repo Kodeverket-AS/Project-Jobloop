@@ -7,7 +7,7 @@ export default function ContactCard({ contact }) {
 
   return (
     <div className="flex gap-24 max-md:w-full">
-      <Image className="object-cover object-top max-md:w-[40%] max-[500px]:hidden" src={image} width={300} height={500} alt={`A sexy picture of ${fname}`}/>
+      <Image className="object-cover object-top max-md:w-48 max-[500px]:hidden" src={image} width={300} height={500} alt={`A sexy picture of ${fname}`}/>
       <div className="flex flex-col justify-center gap-2">
         <h3>{fname} {lname}</h3>
         <p>{role}, {company}</p>
