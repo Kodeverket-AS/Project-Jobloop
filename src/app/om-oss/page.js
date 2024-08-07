@@ -1,4 +1,6 @@
 import Image from "next/image";
+// import { LocationCarousel } from "../../../components/LocationCarousel";
+import { LinkButton } from "../../../components/Buttons";
 
 export default function OmOss() {
     return (
@@ -30,9 +32,8 @@ export default function OmOss() {
                         som amo-tiltak i Vestland og Rogaland sammen med vår
                         gode samarbeidspartner Podium.
                     </p>
-                    <button className='px-6 py-3 bg-white text-jobloop-secondary-orange border-2 border-jobloop-secondary-orange rounded-full font-semibold  hover:bg-jobloop-secondary-orange hover:text-white'>
-                        Kontakt oss
-                    </button>
+
+                    <LinkButton Path={"/kontakt"} Text={"Kontakt Oss"} />
                 </div>
             </section>
             <section className='py-8'>
@@ -148,7 +149,7 @@ export default function OmOss() {
                             <a
                                 href='https://fontenehusetbergen.no'
                                 target='_blank'
-                                className='mt-6 px-4 py-2 bg-teal-500 text-white rounded-full hover:bg-teal-700'
+                                className='mt-4 px-6 py-3 bg-white text-jobloop-secondary-orange border-2 border-jobloop-secondary-orange rounded-full font-semibold  hover:bg-jobloop-secondary-orange hover:text-white'
                             >
                                 Se mer
                             </a>
@@ -175,7 +176,7 @@ export default function OmOss() {
                             <a
                                 href='https://glode.no'
                                 target='_blank'
-                                className='mt-6 px-4 py-2 bg-teal-500 text-white rounded-full hover:bg-teal-700'
+                                className=' mt-4 px-6 py-3 bg-white text-jobloop-secondary-orange border-2 border-jobloop-secondary-orange rounded-full font-semibold  hover:bg-jobloop-secondary-orange hover:text-white'
                             >
                                 Se mer
                             </a>
@@ -233,14 +234,73 @@ export default function OmOss() {
                         </p>
                         <a
                             href='mailto:karl@jobloop.no'
-                            className='px-6 py-3 border border-red-500 text-red-500 rounded-full hover:bg-red-500 hover:text-white'
+                            className='px-6 py-3 bg-white text-jobloop-secondary-orange border-2 border-jobloop-secondary-orange rounded-full font-semibold  hover:bg-jobloop-secondary-orange hover:text-white'
                         >
                             Kontakt oss
                         </a>
                     </div>
                 </div>
             </section>
-            <section></section>
+            {/* <section><LocationCarousel /></section> */}
+            <section className='py-16 bg-white'>
+                <div className='container mx-auto px-4'>
+                    <h2 className='text-3xl font-bold text-center mb-12'>
+                        Våre Lokaler
+                    </h2>
+                    <div className='flex flex-wrap justify-center gap-12'>
+                        <div className='flex flex-col items-center p-6 border rounded-lg shadow-lg'>
+                            <Image
+                                src='/Bergen.jpg'
+                                alt='Bergen'
+                                width={150}
+                                height={50}
+                                className='object-cover'
+                            />
+                            <p className='mt-6 text-center'>Bergen</p>
+                        </div>
+                        <div className='flex flex-col items-center p-6 border rounded-lg shadow-lg'>
+                            <Image
+                                src='/Stavanger.jpg'
+                                alt='Stavanger'
+                                width={150}
+                                height={50}
+                                className='object-cover'
+                            />
+                            <p className='mt-6 text-center'>Stavanger</p>
+                        </div>
+                        <div className='flex flex-col items-center p-6 border rounded-lg shadow-lg'>
+                            <Image
+                                src='/Haugesund.jpg'
+                                alt='Haugesund'
+                                width={150}
+                                height={50}
+                                className='object-cover'
+                            />
+                            <p className='mt-6 text-center'>Haugesund</p>
+                        </div>
+                        <div className='flex flex-col items-center p-6 border rounded-lg shadow-lg'>
+                            <Image
+                                src='/Tønsberg.jpg'
+                                alt='Tønsberg'
+                                width={150}
+                                height={50}
+                                className='object-cover'
+                            />
+                            <p className='mt-6 text-center'>Tønsberg</p>
+                        </div>
+                        <div className='flex flex-col items-center p-6 border rounded-lg shadow-lg'>
+                            <Image
+                                src='/Remote.jpg'
+                                alt='Remote'
+                                width={150}
+                                height={50}
+                                className='object-cover'
+                            />
+                            <p className='mt-6 text-center'>Digitalt</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
         </main>
     );
 }

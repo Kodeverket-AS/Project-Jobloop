@@ -61,11 +61,3 @@ h6 {
         font-size: 1.1rem;
     }
 }
-
-.carousel .legend {
-    background: rgba(0, 0, 0, 0.5);
-    color: white;
-    padding: 10px;
-    font-size: 1.25rem;
-    border-radius: 5px;
-}
