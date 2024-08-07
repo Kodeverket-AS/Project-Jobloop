@@ -20,7 +20,7 @@ export default function LandingHero() {
             className="object-cover object-bottom w-full h-full"
           />
         </div>
-        <div className=" h-full flex flex-col gap-4 md:gap-6 items-start max-w-md md:max-w-xl lg:max-w-2xl xl:max-w-3xl 2xl:max-w-4xl pl-4 pr-4 md:pr-0 md:pl-16 py-32 lg:py-32 2xl:py-40">
+        <div className=" h-full flex flex-col gap-4 md:gap-6 items-center max-w-md md:max-w-xl lg:max-w-2xl xl:max-w-3xl 2xl:max-w-4xl pl-4 pr-4 md:pr-0 md:pl-16 py-32 lg:py-48 2xl:py-56">
           <div className="pb-4 text-left">
             <h1 className="pb-4 text-3xl xs:text-4xl text-kv-white  lg:text-4xl xl:text-5xl 2xl:text-6xl">
               Inkluderende arbeidspraksis og effektiv jobbmatching

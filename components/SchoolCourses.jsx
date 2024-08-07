@@ -6,6 +6,30 @@ import JobbtilbudBilde from "../public/JobbtilbudBilde.png";
 import KodehodeImage from "../public/KodehodeImage.png";
 import { LinkButton } from "./Buttons";
 
+const UICard = ({ image, title, text, path }) => {
+  return (
+    <div className="flex flex-col w-full gap-4 md:flex-row-reverse md:w-1/2">
+      <div className="w-full md:w-1/2">
+        <Image
+          alt="KodehodeImage"
+          src={image}
+          width={400}
+          height={400}
+          className="md:max-w-48"
+        />
+      </div>
+      <div className="flex flex-col w-full gap-4 md:w-1/2">
+        <h3>{title}</h3>
+        <p>{text}</p>
+        <LinkButton
+          Path={path}
+          Text={"Les mer"}
+        />
+      </div>
+    </div>
+  );
+};
+
 export default function SchoolCourses() {
   return (
     <>
@@ -21,81 +45,53 @@ export default function SchoolCourses() {
           </p>
         </div>
         <div className="w-full md:w-1/2 md:pt-3">
-          <Image src={JobbtilbudBilde} width={500} height={500} />
+          <Image
+            alt="JobbtilbudBilde"
+            src={JobbtilbudBilde}
+            width={500}
+            height={500}
+          />
         </div>
       </div>
       <div className="flex flex-col w-full gap-12 px-8 py-20 md:px-16 md:py-24">
         <div className="flex flex-col gap-12 md:flex-row md:gap-0 md:justify-between">
-          <div className="flex flex-col w-full gap-3 md:flex-row-reverse md:w-1/2">
-            <div className="w-full md:w-1/2">
-              <Image
-                src={KodehodeImage}
-                width={400}
-                height={400}
-                className="md:max-w-48"
-              />
-            </div>
-            <div className="flex flex-col w-full gap-3 md:w-1/2">
-              <h3>LearnWell</h3>
-              <p>Alternativ læringsarena for elever i videregående</p>
-              <LinkButton Path="/learnWell" Text={"Les mer"} />
-            </div>
-          </div>
-          <div className="flex flex-col w-full gap-3 md:flex-row-reverse md:w-1/2">
-            <div className="w-full md:w-1/2">
-              <Image
-                src={KodehodeImage}
-                width={400}
-                height={400}
-                className="md:max-w-48"
-              />
-            </div>
-            <div className="flex flex-col w-full gap-3 md:w-1/2">
-              <h3>Gamify</h3>
-              <p>Motivasjon og læring gjennom gaming</p>
-              <LinkButton Path="/gamify" Text={"Les mer"} />
-            </div>
-          </div>
+          <UICard
+            image={KodehodeImage}
+            title={"LearnWell"}
+            text={"Alternativ læringsarena for elever i videregående"}
+            path="/learnWell"
+          />
+
+          <UICard
+            image={KodehodeImage}
+            title={"Gamify"}
+            text={"Motivasjon og læring gjennom gaming"}
+            path="/gamify"
+          />
         </div>
+
         <div className="flex flex-col gap-12 md:flex-row md:gap-0 md:justify-between">
-          <div className="flex flex-col w-full gap-3 md:flex-row-reverse md:w-1/2">
-            <div className="w-full md:w-1/2">
-              <Image
-                src={KodehodeImage}
-                width={400}
-                height={400}
-                className="md:max-w-48"
-              />
-            </div>
-            <div className="flex flex-col w-full gap-3 md:w-1/2">
-              <h3>Spillbasert</h3>
-              <p>
-                Gaming og alternativ læring for deg som vil fullføre
-                videregående
-              </p>
-              <LinkButton Path="/spillbasert" Text={"Les mer"} />
-            </div>
-          </div>
-          <div className="flex flex-col w-full gap-3 md:flex-row-reverse md:w-1/2">
-            <div className="w-full md:w-1/2">
-              <Image
-                src={KodehodeImage}
-                width={400}
-                height={400}
-                className="md:max-w-48"
-              />
-            </div>
-            <div className="flex flex-col w-full gap-3 md:w-1/2">
-              <h3>Loop</h3>
-              <p>Få relevant arbeidspraksis og erfaring</p>
-              <LinkButton Path="/loop" Text={"Les mer"} />
-            </div>
-          </div>
+          <UICard
+            image={KodehodeImage}
+            title={"Spillbasert"}
+            text={
+              "Gaming og alternativ læring for deg som vil fullføre videregående"
+            }
+            path="/spillbasert"
+          />
+
+          <UICard
+            image={KodehodeImage}
+            title={"Loop"}
+            text={"Få relevant arbeidspraksis og erfaring"}
+            path="/loop"
+          />
         </div>
       </div>
       <div className="flex flex-col gap-8 px-8 py-20 md:flex-row md:w-2/3 md:px-16 md:justify-between md:ml-0 md:mr-auto">
         <div className="ml-0 w-52 h-52">
           <Image
+            alt="JobbtilbudBilde"
             src={JobbtilbudBilde}
             width={400}
             height={400}
