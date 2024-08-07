@@ -50,7 +50,7 @@ export default function Navbar() {
               aria-label="gå til denne undersiden for å ta kontakt med en av oss"
               className="px-4 font-bold md:portrait:px-2 lg:px-4 text-kv-white md:hover:underline"
             >
-              kontakt
+              Kontakt
             </Link>
           </div>
           <div className="px-4">
