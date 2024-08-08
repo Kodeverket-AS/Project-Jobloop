@@ -4,6 +4,8 @@ import LandingIntro from "../../components/LandingIntro";
 import WorkCourses from "../../components/WorkCourses";
 import SchoolCourses from "../../components/SchoolCourses";
 import CooperationProjects from "../../components/CooperationProjects";
+import JobloopSuccess from "../../components/JobloopSuccess";
+import ContactComponent from "../../components/ContactComponent";
 
 export default function Home() {
   return (
@@ -14,6 +16,8 @@ export default function Home() {
         <WorkCourses />
         <SchoolCourses />
         <CooperationProjects />
+        <JobloopSuccess />
+        <ContactComponent />
       </div>
     </main>
   );
