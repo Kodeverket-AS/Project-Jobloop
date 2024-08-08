@@ -54,7 +54,7 @@ export default function OmOss() {
                                 className='object-cover w-full h-full'
                             />
                         </div>
-                        <p className='mt-4'>Sina</p>
+                        <p className='mt-4 mb-2 font-bold text-xl'>Sina</p>
                         <p>Daglig Leder JobLoop</p>
                     </div>
 
@@ -68,7 +68,9 @@ export default function OmOss() {
                                 className='object-cover w-full h-full'
                             />
                         </div>
-                        <p className='mt-4'>Karl Haakon</p>
+                        <p className='mt-4 mb-2 font-bold text-xl'>
+                            Karl Haakon
+                        </p>
                         <p>Markedsutvikler</p>
                     </div>
 
@@ -82,7 +84,9 @@ export default function OmOss() {
                                 className='object-cover w-full h-full'
                             />
                         </div>
-                        <p className='mt-4'>Inger Johanne</p>
+                        <p className='mt-4 mb-2 font-bold text-xl'>
+                            Inger Johanne
+                        </p>
                         <p>Teamleder</p>
                     </div>
 
@@ -96,7 +100,7 @@ export default function OmOss() {
                                 className='object-cover w-full h-full'
                             />
                         </div>
-                        <p className='mt-4'>Beate</p>
+                        <p className='mt-4 mb-2 font-bold text-xl'>Beate</p>
                         <p>Kursleder</p>
                     </div>
 
@@ -110,7 +114,9 @@ export default function OmOss() {
                                 className='object-cover w-full h-full'
                             />
                         </div>
-                        <p className='mt-4'>Oda Kristin</p>
+                        <p className='mt-4 mb-2 font-bold text-xl'>
+                            Oda Kristin
+                        </p>
                         <p>Kursleder</p>
                     </div>
 
@@ -124,7 +130,7 @@ export default function OmOss() {
                                 className='object-cover w-full h-full'
                             />
                         </div>
-                        <p className='mt-4'>Kim</p>
+                        <p className='mt-4 mb-2 font-bold text-xl'>Kim</p>
                         <p>Kursleder</p>
                     </div>
                 </div>
@@ -143,7 +149,7 @@ export default function OmOss() {
                                 width={300}
                                 height={150}
                             />
-                            <p className='my-20 text-center'>
+                            <p className='mt-24 mb-16 '>
                                 Underveis i opplæringsløpet kobles deltakerne
                                 med relevante arbeidsgivere. I del II av
                                 tiltaket vil deltakerne praktisere sine
@@ -165,7 +171,7 @@ export default function OmOss() {
                                 width={200}
                                 height={100}
                             />
-                            <p className='mt-10 mb-12 text-center'>
+                            <p className='mt-10 mb-12 '>
                                 Undervisningen kombinerer tradisjonell
                                 undervisning med digitale læringsverktøy og
                                 prosjektarbeid og tilpasses også enkelte
@@ -230,7 +236,7 @@ export default function OmOss() {
                             innboksen sin på
                             <a
                                 href='mailto:karl@jobloop.no'
-                                className='text-teal-500'
+                                className='text-jobloop-secondary-green font-semibold hover:underline underline-offset-4 hover:text-jobloop-secondary-orange'
                             >
                                 {" "}
                                 karl@jobloop.no
