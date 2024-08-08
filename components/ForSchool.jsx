@@ -6,7 +6,7 @@ import { PortableText } from "@portabletext/react";
 
 export default function ForSchool({ content, situation }) {
   return (
-    <div className="flex flex-col justify-between w-screen px-5 py-20 md:flex-row">
+    <div className="flex flex-col justify-between w-screen px-5 py-20 md:flex-row md:px-12">
       <div className="w-full h-80 md:w-96 md:pt-3 md:h-96">
         <Image
           src={content.image4 ? content.image4 : ""}
@@ -16,7 +16,7 @@ export default function ForSchool({ content, situation }) {
           className="object-cover w-full h-full"
         />
       </div>
-      <div className="flex flex-col w-full gap-3 py-10 md:w-1/2 md:py-0">
+      <div className="flex flex-col w-full gap-3 py-10 md:w-1/2 md:py-0 md:pl-3">
         <h2 className="pb-3 border-b-2 border-jobloop-primary-green">
           {"For " + situation}
         </h2>
