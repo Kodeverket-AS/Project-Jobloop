@@ -6,7 +6,7 @@ import { ExternalLinkButton } from "../../../components/Buttons";
 export default function OmOss() {
     return (
         <main className='flex flex-col items-center justify-between min-h-screen p-8'>
-            <section className='flex flex-col md:flex-row items-center justify-between max-w-4xl mx-auto p-4'>
+            <section className='flex flex-col md:flex-row items-center justify-between max-w-4xl mx-auto p-4 '>
                 <div className='order-2 md:order-1 md:flex-shrink-0 md:mr-8 mb-4 md:mb-0'>
                     <Image
                         src='/JLomossbilde.png'
@@ -33,11 +33,16 @@ export default function OmOss() {
                         som amo-tiltak i Vestland og Rogaland sammen med vår
                         gode samarbeidspartner Podium.
                     </p>
-
-                    <LinkButton Path={"/kontakt"} Text={"Kontakt Oss"} />
+                    <div className='mt-8'>
+                        <LinkButton Path={"/kontakt"} Text={"Kontakt Oss"} />
+                    </div>
                 </div>
             </section>
-            <section className='py-8'>
+            <section className='py-20 '>
+                <h2 className='text-2xl font-bold mb-8 text-center'>
+                    Vårt team
+                    <span className='block w-60 h-1 bg-jobloop-primary-orange mt-2 mb-6 mx-auto'></span>
+                </h2>
                 <div className='grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3'>
                     <div className='flex flex-col items-center'>
                         <div className='w-60 h-60'>
@@ -126,19 +131,19 @@ export default function OmOss() {
             </section>
             <section className='py-16 bg-white'>
                 <div className='container mx-auto px-4'>
-                    <h2 className='text-3xl font-bold text-center mb-12'>
-                        Våre Samarbeidspartnere
+                    <h2 className='text-2xl font-bold mb-8 text-center'>
+                        Våre samarbeidspartnere
+                        <span className='block w-60 h-1 bg-jobloop-primary-orange mt-2 mb-6 mx-auto'></span>
                     </h2>
                     <div className='grid gap-12 md:grid-cols-2'>
-                        <div className='flex flex-col items-center p-6 border rounded-lg shadow-lg'>
+                        <div className='flex flex-col items-center p-6 '>
                             <Image
-                                src='/fontenehusetlogo.png'
+                                src='/fontenelogo 1.png'
                                 alt='Fontenehuset Bergen'
-                                width={150}
-                                height={50}
-                                className='object-cover'
+                                width={300}
+                                height={150}
                             />
-                            <p className='mt-6 text-center'>
+                            <p className='my-20 text-center'>
                                 Underveis i opplæringsløpet kobles deltakerne
                                 med relevante arbeidsgivere. I del II av
                                 tiltaket vil deltakerne praktisere sine
@@ -153,15 +158,14 @@ export default function OmOss() {
                                 Aria='Les mer'
                             />
                         </div>
-                        <div className='flex flex-col items-center p-6 border rounded-lg shadow-lg'>
+                        <div className='flex flex-col items-center p-6  '>
                             <Image
-                                src='/glødelogo.png'
+                                src='/glode-logo 1.png'
                                 alt='Gløde'
-                                width={150}
-                                height={50}
-                                className='object-cover'
+                                width={200}
+                                height={100}
                             />
-                            <p className='mt-6 text-center'>
+                            <p className='mt-10 mb-12 text-center'>
                                 Undervisningen kombinerer tradisjonell
                                 undervisning med digitale læringsverktøy og
                                 prosjektarbeid og tilpasses også enkelte
@@ -181,9 +185,10 @@ export default function OmOss() {
                     </div>
                 </div>
             </section>
+
             <section className='py-16 bg-white'>
                 <div className='container mx-auto px-4 flex flex-col lg:flex-row items-center lg:items-start'>
-                    <div className='relative w-64 h-64 mb-8 lg:mb-0 lg:mr-8'>
+                    <div className='relative w-64 h-64 mb-12 lg:mb-0 lg:mr-12'>
                         <div className='absolute top-0 left-0 transform -translate-x-4 -translate-y-4'>
                             <Image
                                 src='/Karl.png' // Path to your image
@@ -212,11 +217,14 @@ export default function OmOss() {
                             />
                         </div>
                     </div>
-                    <div className='flex flex-col items-center lg:items-start text-center lg:text-left max-w-lg'>
-                        <h2 className='text-3xl font-bold mb-4'>
-                            Ønsker du å samarbeide med oss?
-                        </h2>
-                        <p className='mb-4'>
+                    <div className='flex flex-col items-center lg:items-start text-center lg:text-left max-w-lg  px-12'>
+                        <div className='relative w-full lg:w-60 '>
+                            <h2 className='text-2xl font-bold mb-2'>
+                                Ønsker du å samarbeide med oss?
+                            </h2>
+                            <span className='block w-full h-1 bg-jobloop-primary-orange mt-2 mb-6'></span>
+                        </div>
+                        <p className='mb-8'>
                             Karl Haakon hos oss er ansvarlig for markedsteamet i
                             Kodehode. Han sitter klar med kaffen og refresher
                             innboksen sin på
@@ -233,14 +241,16 @@ export default function OmOss() {
                     </div>
                 </div>
             </section>
+
             {/* <section><LocationCarousel /></section> */}
             <section className='py-16 bg-white'>
                 <div className='container mx-auto px-4'>
-                    <h2 className='text-3xl font-bold text-center mb-12'>
-                        Våre Lokaler
+                    <h2 className='text-2xl font-bold mb-8 text-center'>
+                        Våre lokasjoner
+                        <span className='block w-60 h-1 bg-jobloop-primary-orange mt-2 mb-6 mx-auto'></span>
                     </h2>
                     <div className='flex flex-wrap justify-center gap-12'>
-                        <div className='flex flex-col items-center p-6 border rounded-lg shadow-lg'>
+                        <div className='flex flex-col items-center p-6 '>
                             <Image
                                 src='/Bergen.jpg'
                                 alt='Bergen'
@@ -250,7 +260,7 @@ export default function OmOss() {
                             />
                             <p className='mt-6 text-center'>Bergen</p>
                         </div>
-                        <div className='flex flex-col items-center p-6 border rounded-lg shadow-lg'>
+                        <div className='flex flex-col items-center p-6 '>
                             <Image
                                 src='/Stavanger.jpg'
                                 alt='Stavanger'
@@ -260,7 +270,7 @@ export default function OmOss() {
                             />
                             <p className='mt-6 text-center'>Stavanger</p>
                         </div>
-                        <div className='flex flex-col items-center p-6 border rounded-lg shadow-lg'>
+                        <div className='flex flex-col items-center p-6 '>
                             <Image
                                 src='/Haugesund.jpg'
                                 alt='Haugesund'
@@ -270,7 +280,7 @@ export default function OmOss() {
                             />
                             <p className='mt-6 text-center'>Haugesund</p>
                         </div>
-                        <div className='flex flex-col items-center p-6 border rounded-lg shadow-lg'>
+                        <div className='flex flex-col items-center p-6 '>
                             <Image
                                 src='/Tønsberg.jpg'
                                 alt='Tønsberg'
@@ -280,7 +290,7 @@ export default function OmOss() {
                             />
                             <p className='mt-6 text-center'>Tønsberg</p>
                         </div>
-                        <div className='flex flex-col items-center p-6 border rounded-lg shadow-lg'>
+                        <div className='flex flex-col items-center p-6 '>
                             <Image
                                 src='/Remote.jpg'
                                 alt='Remote'
