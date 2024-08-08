@@ -24,6 +24,7 @@ const PartnerData = [
     text: "Kodehode er det største arbeidsrelaterte tilbudet Jobloop drifter, hvor vi utdanner nye frontend utviklere.",
     path: "https://www.kodehode.no/",
     alt: "JobbtilbudBilde",
+    btnText: "Kodehode.no",
   },
 ];
 
@@ -45,7 +46,7 @@ const UICardData = [
   {
     image: KodehodeImage,
     title: "Individuell AMO",
-    text: "Få et skreddersydd opplegg gjennom Nav",
+    text: "Få et skreddersydd opplegg gjennom NAV",
     path: "/individuell-AMO",
     alt: "KodehodeImage",
   },
@@ -122,6 +123,7 @@ export default function WorkCourses() {
         path={PartnerData[0].path}
         isButton={true}
         btnVariant={"externalLink"}
+        btnText={PartnerData[0].btnText}
       />
       <div className="flex flex-col w-full gap-12 px-8 py-20 md:py-24">
         <div className="flex flex-col gap-8 lg:gap-12 md:flex-row md:justify-between">
@@ -159,8 +161,9 @@ export default function WorkCourses() {
         </div>
       </div>
 
-      <div className="bg-jobloop-primary-green/5 mx-2 2xl:mx-0 border-2 border-jobloop-primary-green/100 text-kv-black rounded-lg flex flex-col gap-8 lg:gap-12 lg:rounded-2xl pt-8 pb-12 my-24 px-8">
-        <h2 className="pb-2 border-b-4 border-jobloop-primary-green w-fit mx-auto  text-center">
+      <div className="relative overflow-hidden bg-jobloop-primary-orange/5 mx-2 2xl:mx-0 border-2 border-jobloop-primary-orange/100 text-kv-black rounded-lg flex flex-col gap-8 lg:gap-12 lg:rounded-2xl pt-8 pb-12 my-24 px-8">
+        {/* <div className="absolute bottom-0 left-0 w-full h-4 bg-jobloop-primary-orange/20"></div> */}
+        <h2 className="pb-2 border-b-4 border-jobloop-primary-orange w-fit mx-auto  text-center">
           Hva våre partnere sier om oss
         </h2>
         {/* <div className="ml-0 w-52 h-52">

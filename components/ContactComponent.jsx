@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { LinkButton } from "./Buttons";
+import { LinkButton, KontaktButton } from "./Buttons";
 
 export default function ContactComponent() {
   return (
@@ -14,7 +14,11 @@ export default function ContactComponent() {
         Trenger du hjelp eller ønsker å samarbeide med oss?
       </p>
       <div>
-        <LinkButton
+        {/* <LinkButton
+          Path={"/kontakt"}
+          Text={"Kontakt Oss"}
+        /> */}
+        <KontaktButton
           Path={"/kontakt"}
           Text={"Kontakt Oss"}
         />

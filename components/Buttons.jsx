@@ -5,6 +5,7 @@ import { useState, useEffect } from "react";
 import { FaArrowUp } from "react-icons/fa";
 import { BiLinkExternal } from "react-icons/bi";
 import { FaArrowRight } from "react-icons/fa";
+import { MdOutlineMail } from "react-icons/md";
 
 export function ScrollToTopButton() {
   const [isVisible, setIsVisible] = useState(false);
@@ -68,6 +69,18 @@ export function LinkButtonRed({ Path, Text }) {
       aria-label={`Lenke til underside ${Path}`}
       className="text-base lg:text-lg w-full tracking-wide sm:w-fit  text-center px-8 py-3 transition-all text-kv-white bg-jobloop-secondary-orange border-secondary-orange rounded-full hover:bg-jobloop-secondary-green focus:bg-jobloop-secondary-green">
       {Text}
+    </Link>
+  );
+}
+
+export function KontaktButton({ Path, Text }) {
+  return (
+    <Link
+      href={Path}
+      aria-label={`Lenke til underside ${Path}`}
+      className="group text-base w-full tracking-normal flex items-center justify-center gap-1 sm:w-fit text-center px-8 py-3 transition-all  text-kv-white bg-jobloop-secondary-green border-2 border-jobloop-secondary-green rounded-full hover:text-jobloop-secondary-green hover:bg-jobloop-secondary-green/5 focus:bg-jobloop-secondary-green/5">
+      {Text}
+      <MdOutlineMail className="inline-block lg:w-5 h-5" />
     </Link>
   );
 }

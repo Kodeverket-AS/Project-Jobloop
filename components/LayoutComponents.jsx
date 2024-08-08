@@ -43,6 +43,7 @@ export const IntroSection = ({
   path,
   isButton,
   btnVariant,
+  btnText,
 }) => {
   return (
     <div className="flex flex-col gap-6 px-8 py-20 lg:py-24 lg:flex-row lg:gap-12 ">
@@ -66,7 +67,7 @@ export const IntroSection = ({
           <ButtonCTA
             isButton={true}
             Path={path}
-            Text={"Les mer"}
+            Text={btnText ?? "Les mer"}
             btnVariant={btnVariant}
           />
         )}
@@ -84,6 +85,7 @@ export const IntroSectionReverse = ({
   path,
   isButton,
   btnVariant,
+  btnText,
 }) => {
   return (
     <div className="flex flex-col-reverse gap-6 px-8 py-20 lg:py-24 lg:flex-row lg:gap-12 ">
@@ -98,7 +100,7 @@ export const IntroSectionReverse = ({
           <ButtonCTA
             isButton={true}
             Path={path}
-            Text={"Les mer"}
+            Text={btnText ?? "Les mer"}
             btnVariant={btnVariant}
           />
         )}
@@ -124,6 +126,7 @@ export const PartnerProject = ({
   path,
   isButton,
   btnVariant,
+  btnText,
 }) => {
   return (
     <div className="flex flex-col gap-6 px-8 py-20 lg:py-24 lg:flex-row lg:gap-12 ">
@@ -145,7 +148,7 @@ export const PartnerProject = ({
           <ButtonCTA
             isButton={true}
             Path={path}
-            Text={"Les mer"}
+            Text={btnText ?? "Les mer"}
             btnVariant={btnVariant}
           />
         )}
@@ -162,6 +165,7 @@ export const PartnerProjectReverse = ({
   path,
   isButton,
   btnVariant,
+  btnText,
 }) => {
   return (
     <div className="flex flex-col-reverse gap-6 px-8 py-20 lg:py-24 lg:flex-row lg:gap-12 ">
@@ -174,7 +178,7 @@ export const PartnerProjectReverse = ({
           <ButtonCTA
             isButton={true}
             Path={path}
-            Text={"Les mer"}
+            Text={btnText ?? "Les mer"}
             btnVariant={btnVariant}
           />
         )}
