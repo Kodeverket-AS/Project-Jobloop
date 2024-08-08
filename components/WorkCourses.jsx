@@ -5,7 +5,7 @@ import Link from "next/link";
 import JobbtilbudBilde from "../public/JobbtilbudBilde.png";
 import KodehodeImage from "../public/KodehodeImage.png";
 import { ExternalLinkButton, LinkButton, LinkButtonInternal } from "./Buttons";
-import { IntroSectionReverse } from "./IntroCardComponent";
+import { IntroSectionReverse, PartnerProject } from "./LayoutComponents";
 
 const UICard = ({ image, title, text, path }) => {
   return (
@@ -49,7 +49,7 @@ export default function WorkCourses() {
         isButton={false}
       />
 
-      <div className="flex flex-col-reverse gap-4 px-8 py-20 md:flex-row-reverse md:gap-8 md:py-24 md:w-full">
+      {/* <div className="flex flex-col-reverse gap-4 px-8 py-20 md:flex-row-reverse md:gap-8 md:py-24 md:w-full">
         <div className="flex flex-col gap-4 w-full md:w-1/2">
           <h3 className="text-kv-black text-xl md:text-2xl lg:text-3xl">
             Kodehode
@@ -73,7 +73,18 @@ export default function WorkCourses() {
             className="md:max-w-full object-cover"
           />
         </div>
-      </div>
+      </div> */}
+      <PartnerProject
+        title={"Kodehode"}
+        text={
+          "Kodehode er det største arbeidsrelaterte tilbudet Jobloop drifter, hvor vi utdanner nye frontend utviklere."
+        }
+        image={KodehodeImage}
+        alt="KodehodeImage"
+        path="https://www.kodehode.no/"
+        isButton={true}
+        btnVariant={"externalLink"}
+      />
       <div className="flex flex-col w-full gap-12 px-8 py-20 md:py-24">
         <div className="flex flex-col gap-8 lg:gap-12 md:flex-row md:justify-between">
           <UICard

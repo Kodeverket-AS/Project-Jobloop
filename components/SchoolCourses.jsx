@@ -4,7 +4,7 @@ import Image from "next/image";
 import JobbtilbudBilde from "../public/JobbtilbudBilde.png";
 import KodehodeImage from "../public/KodehodeImage.png";
 import { LinkButton, LinkButtonInternal } from "./Buttons";
-import { IntroSectionReverse } from "./IntroCardComponent";
+import { IntroSectionReverse } from "./LayoutComponents";
 
 const UICard = ({ image, title, text, path }) => {
   return (
@@ -42,7 +42,9 @@ export default function SchoolCourses() {
           "Jobloop samarbeider med skoler over hele landet med å gi elever som trenger en alternativ arena hvor de kan oppleve læring og motivasjon gjennom alternative metoder blant annet gjennom gaming."
         }
         path={"/læringstilbud"}
-        isButton={false}
+        isButton={true}
+        alt={"JobbtilbudBilde"}
+        btnVariant={"internalLink"}
       />
       <div className="flex flex-col w-full gap-12 px-8 py-20 md:py-24">
         <div className="flex flex-col gap-12 md:flex-row md:justify-between">

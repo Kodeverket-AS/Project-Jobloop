@@ -1,7 +1,7 @@
 "use client";
 
 import JobloopPhoto from "../public/JobloopPhoto.png";
-import { IntroSection } from "./IntroCardComponent";
+import { IntroSection } from "./LayoutComponents";
 
 export default function LandingIntro() {
   return (
