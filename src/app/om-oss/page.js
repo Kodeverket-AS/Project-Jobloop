@@ -1,6 +1,7 @@
 import Image from "next/image";
 // import { LocationCarousel } from "../../../components/LocationCarousel";
 import { LinkButton } from "../../../components/Buttons";
+import { ExternalLinkButton } from "../../../components/Buttons";
 
 export default function OmOss() {
     return (
@@ -146,13 +147,11 @@ export default function OmOss() {
                                 med faglig støtte og spisset kompetanseheving
                                 gjennom hele tiltakperioden.
                             </p>
-                            <a
-                                href='https://fontenehusetbergen.no'
-                                target='_blank'
-                                className='mt-4 px-6 py-3 bg-white text-jobloop-secondary-orange border-2 border-jobloop-secondary-orange rounded-full font-semibold  hover:bg-jobloop-secondary-orange hover:text-white'
-                            >
-                                Se mer
-                            </a>
+                            <ExternalLinkButton
+                                Path='https://fontenehuset.no'
+                                Text='Les mer'
+                                Aria='Les mer'
+                            />
                         </div>
                         <div className='flex flex-col items-center p-6 border rounded-lg shadow-lg'>
                             <Image
@@ -173,13 +172,11 @@ export default function OmOss() {
                                 front-end, systemdrift, back-end, eller UX
                                 design.
                             </p>
-                            <a
-                                href='https://glode.no'
-                                target='_blank'
-                                className=' mt-4 px-6 py-3 bg-white text-jobloop-secondary-orange border-2 border-jobloop-secondary-orange rounded-full font-semibold  hover:bg-jobloop-secondary-orange hover:text-white'
-                            >
-                                Se mer
-                            </a>
+                            <ExternalLinkButton
+                                Path='https://gløde.no'
+                                Text='Les mer'
+                                Aria='Les mer'
+                            />
                         </div>
                     </div>
                 </div>
@@ -232,12 +229,7 @@ export default function OmOss() {
                             </a>{" "}
                             i påvente av en mail fra deg ;)
                         </p>
-                        <a
-                            href='mailto:karl@jobloop.no'
-                            className='px-6 py-3 bg-white text-jobloop-secondary-orange border-2 border-jobloop-secondary-orange rounded-full font-semibold  hover:bg-jobloop-secondary-orange hover:text-white'
-                        >
-                            Kontakt oss
-                        </a>
+                        <LinkButton Path={"/kontakt"} Text={"Kontakt Oss"} />
                     </div>
                 </div>
             </section>
