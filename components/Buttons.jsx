@@ -37,40 +37,27 @@ export function ScrollToTopButton() {
 }
 
 export function LinkButton({ Path, Text }) {
-<<<<<<< HEAD
     return (
         <Link
             href={Path}
             aria-label={`Lenke til underside ${Path}`}
-            className='px-8 py-2 transition-all border-2 border-solid bg-kv-white border-kv-black rounded-3xl hover:bg-jobloop-secondary-green hover:border-none hover:text-kv-white focus:bg-jobloop-secondary-green focus:text-kv-white'
+            className='px-8 py-2 transition-all border-2 border-solid bg-kv-white border-kv-black rounded-3xl hover:bg-jobloop-secondary-green hover:border-none hover:text-kv-white focus:bg-jobloop-secondary-green focus:text-kv-white w-fit'
         >
             {Text}
         </Link>
     );
 }
-=======
-  return (
-    <Link
-      href={Path}
-      aria-label={`Lenke til underside ${Path}`}
-      className="px-8 py-2 transition-all border-2 border-solid bg-kv-white border-kv-black rounded-3xl hover:bg-jobloop-secondary-green hover:border-none hover:text-kv-white focus:bg-jobloop-secondary-green focus:text-kv-white w-fit"
-    >
-      {Text}
-    </Link>
-  );
-}
 
 export function ExternalLinkButton({ Path, Text, Aria }) {
-  return (
-    <a
-      href={Path}
-      aria-label={Aria}
-      className="px-8 py-2 transition-all border-2 border-solid bg-kv-white border-kv-black rounded-3xl hover:bg-jobloop-secondary-green hover:border-none hover:text-kv-white focus:bg-jobloop-secondary-green focus:text-kv-white w-fit"
-      target="_blank"
-      rel="noopener noreferrer"
-    >
-      {Text}
-    </a>
-  );
+    return (
+        <a
+            href={Path}
+            aria-label={Aria}
+            className='px-8 py-2 transition-all border-2 border-solid bg-kv-white border-kv-black rounded-3xl hover:bg-jobloop-secondary-green hover:border-none hover:text-kv-white focus:bg-jobloop-secondary-green focus:text-kv-white w-fit'
+            target='_blank'
+            rel='noopener noreferrer'
+        >
+            {Text}
+        </a>
+    );
 }
->>>>>>> origin/development
