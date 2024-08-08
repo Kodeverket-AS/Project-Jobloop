@@ -13,6 +13,7 @@ export default function OmOss() {
                         alt='Om oss'
                         width={400}
                         height={900}
+                        className='mt-8'
                     />
                 </div>
                 <div className='order-1 md:order-2'>
