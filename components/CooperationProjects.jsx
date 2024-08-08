@@ -6,7 +6,7 @@ import { PartnerProject, PartnerProjectReverse } from "./LayoutComponents";
 const ProjectsData = [
   {
     title: "Kodeloftet",
-    text: "Fontenehus er frivillige arbeidsfellesskap for mennesker som har eller har hatt psykiske helseproblemer. I 2022 startet Kodehode etsamarbeid med Fontenehuset Bergen for å starte et kodekurs på huset, Kodeloftet, et 3 mnd kurs som kan regnes som et forkurs til Kodehode.",
+    text: "Fontenehus er frivillige arbeidsfellesskap for mennesker som har eller har hatt psykiske helseproblemer. I 2022 startet Kodehode et samarbeid med Fontenehuset Bergen for å starte et kodekurs på huset, Kodeloftet, et 3 mnd kurs som kan regnes som et forkurs til Kodehode.",
     path: "https://www.fontenehusetbergen.no/",
     image: { KodehodeImage },
   },
@@ -59,7 +59,7 @@ export default function CooperationProjects() {
         text={ProjectsData[2].text}
         path={ProjectsData[2].path}
         isButton={true}
-        btnVariant={"internalLink"}
+        // btnVariant={"internalLink"}
       />
     </>
   );

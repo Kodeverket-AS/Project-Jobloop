@@ -66,7 +66,7 @@ export function LinkButtonRed({ Path, Text }) {
     <Link
       href={Path}
       aria-label={`Lenke til underside ${Path}`}
-      className="text-base lg:text-lg w-full tracking-wide sm:w-fit font-bold text-center px-8 py-3 transition-all text-kv-white bg-jobloop-secondary-orange border-secondary-orange rounded-full hover:bg-jobloop-secondary-green focus:bg-jobloop-secondary-green">
+      className="text-base lg:text-lg w-full tracking-wide sm:w-fit  text-center px-8 py-3 transition-all text-kv-white bg-jobloop-secondary-orange border-secondary-orange rounded-full hover:bg-jobloop-secondary-green focus:bg-jobloop-secondary-green">
       {Text}
     </Link>
   );
@@ -77,11 +77,11 @@ export function ExternalLinkButton({ Path, Text, Aria }) {
     <a
       href={Path}
       aria-label={Aria}
-      className="lg:text-lg tracking-normal flex items-center justify-center gap-1 w-full sm:w-fit text-center px-8 py-2 transition-all border-2 border-solid bg-kv-white border-kv-black rounded-full hover:bg-jobloop-secondary-green hover:border-jobloop-secondary-green hover:text-kv-white focus:bg-jobloop-secondary-green focus:text-kv-white "
+      className="text-base tracking-normal flex items-center justify-center gap-1 w-full sm:w-fit text-center px-8 py-2 transition-all border-2 border-solid bg-kv-white border-kv-black rounded-full hover:bg-jobloop-secondary-green hover:border-jobloop-secondary-green hover:text-kv-white focus:bg-jobloop-secondary-green focus:text-kv-white "
       target="_blank"
       rel="noopener noreferrer">
       {Text}
-      <BiLinkExternal className="inline-block lg:w-6 h-6" />
+      <BiLinkExternal className="inline-block lg:w-5 h-5" />
     </a>
   );
 }

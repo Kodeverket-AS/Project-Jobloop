@@ -4,17 +4,86 @@ import Image from "next/image";
 import Link from "next/link";
 import JobbtilbudBilde from "../public/JobbtilbudBilde.png";
 import KodehodeImage from "../public/KodehodeImage.png";
-import { ExternalLinkButton, LinkButton, LinkButtonInternal } from "./Buttons";
+import { LinkButtonInternal } from "./Buttons";
 import { IntroSectionReverse, PartnerProject } from "./LayoutComponents";
 
-const UICard = ({ image, title, text, path }) => {
+const IntroData = [
+  {
+    image: JobbtilbudBilde,
+    title: "Arbeidstilbud",
+    text: "Jobloop drifter flere tilbud over hele landet som hjelper folk som av ulike grunner står utenfor arbeidslivet med å komme seg inn i fast jobb. Vi har blant annet utviklerkurs for de som er interessert i programmering, og vi har kurs hvor vi måte folk ut i jobb basert på interesser og talenter.",
+    path: "/tilbud",
+    alt: "JobbtilbudBilde",
+  },
+];
+
+const PartnerData = [
+  {
+    image: KodehodeImage,
+    title: "Kodehode",
+    text: "Kodehode er det største arbeidsrelaterte tilbudet Jobloop drifter, hvor vi utdanner nye frontend utviklere.",
+    path: "https://www.kodehode.no/",
+    alt: "JobbtilbudBilde",
+  },
+];
+
+const UICardData = [
+  {
+    image: KodehodeImage,
+    title: "Grunnleggende IT",
+    text: "Bli med i dagens digitale samfunn",
+    path: "/grunnleggende-it",
+    alt: "KodehodeImage",
+  },
+  {
+    image: KodehodeImage,
+    title: "Digitale Talenter",
+    text: "Dyrk interessene dine og må fast jobb",
+    path: "/digitale-talenter",
+    alt: "KodehodeImage",
+  },
+  {
+    image: KodehodeImage,
+    title: "Individuell AMO",
+    text: "Få et skreddersydd opplegg gjennom Nav",
+    path: "/individuell-AMO",
+    alt: "KodehodeImage",
+  },
+  {
+    image: KodehodeImage,
+    title: "Loop",
+    text: "Få relevant arbeidspraksis og erfaring",
+    path: "/loop",
+    alt: "KodehodeImage",
+  },
+];
+
+const QuoteData = [
+  {
+    name: "John Helge Olsen",
+    company: "DNB",
+    text: "Kodehode har levert oss gode kandidater som er godt forberedt både faglig og sosialt, og de har gått rett inn på utviklingsteam som frontend utviklere hos oss. Her har de jobbet på DNB sin bedriftsportal for pensjonskunder.",
+  },
+  {
+    name: "Hilde Indresøvde",
+    company: "VIS",
+    text: "Samarbeidet med Jobloop gir VIS muligheten til å jobbe aktivt og konkret med inkludering. Her får vi tilgang til kompetente kandidater i et tillitsbasert og koordinert opplegg med oppfølging og jevnlig dialog. Sammen skaper vi nye muligheter i arbeidslivet og nye rekrutteringsmåter.",
+  },
+  {
+    name: "Eirik Sandal",
+    company: "Elfly Gruppen AS",
+    text: "Elfly Gruppen har hatt to utviklere under opplæring i 6 måneder. Kodehode har vært flinke til å tilrettelegge for en god onboarding og brukt sin organisasjon til å fylle på med spisskompetanse og veiledning underveis. Dette har gjort oss i stand til å bygge en IT-løsning som bidrar positivt inn mot det grønne skiftet innen elektrisk luftfart.",
+  },
+];
+
+const UICard = ({ image, title, text, path, alt }) => {
   return (
     <div className="group flex flex-col w-full gap-4 xl:flex-row-reverse md:w-1/2">
       <a
         href={path}
         className="w-full xl:w-1/2 transition-all saturate-100 group-hover:saturate-150">
         <Image
-          alt="KodehodeImage"
+          alt={alt}
           src={image}
           width={1500}
           height={500}
@@ -37,87 +106,64 @@ export default function WorkCourses() {
   return (
     <>
       <IntroSectionReverse
-        title="Arbeidstilbud"
-        text="Jobloop drifter flere tilbud over hele landet som hjelper folk som
-            av ulike grunner står utenfor arbeidslivet med å komme seg inn i
-            fast jobb. Vi har blant annet utviklerkurs for de som er interessert
-            i programmering, og vi har kurs hvor vi måte folk ut i jobb basert på
-            interesser og talenter."
-        image={JobbtilbudBilde}
-        alt="JobbtilbudBilde"
-        path="/tilbud"
+        title={IntroData[0].title}
+        text={IntroData[0].text}
+        image={IntroData[0].image}
+        alt={IntroData[0].alt}
+        path={IntroData[0].path}
         isButton={false}
       />
 
-      {/* <div className="flex flex-col-reverse gap-4 px-8 py-20 md:flex-row-reverse md:gap-8 md:py-24 md:w-full">
-        <div className="flex flex-col gap-4 w-full md:w-1/2">
-          <h3 className="text-kv-black text-xl md:text-2xl lg:text-3xl">
-            Kodehode
-          </h3>
-          <p className="text-base lg:text-xl text-gray-600">
-            Kodehode er det største arbeidsrelaterte tilbudet Jobloop drifter,
-            hvor vi utdanner nye frontend utviklere.
-          </p>
-          <ExternalLinkButton
-            Path="https://www.kodehode.no/"
-            Text={"Les mer"}
-            Aria={"Les mer om kodehode på kodehode.no"}
-          />
-        </div>
-        <div className="w-full md:w-1/2 ">
-          <Image
-            alt="KodehodeImage"
-            src={KodehodeImage}
-            width={1500}
-            height={500}
-            className="md:max-w-full object-cover"
-          />
-        </div>
-      </div> */}
       <PartnerProject
-        title={"Kodehode"}
-        text={
-          "Kodehode er det største arbeidsrelaterte tilbudet Jobloop drifter, hvor vi utdanner nye frontend utviklere."
-        }
-        image={KodehodeImage}
-        alt="KodehodeImage"
-        path="https://www.kodehode.no/"
+        title={PartnerData[0].title}
+        text={PartnerData[0].text}
+        image={PartnerData[0].image}
+        alt={PartnerData[0].alt}
+        path={PartnerData[0].path}
         isButton={true}
         btnVariant={"externalLink"}
       />
       <div className="flex flex-col w-full gap-12 px-8 py-20 md:py-24">
         <div className="flex flex-col gap-8 lg:gap-12 md:flex-row md:justify-between">
           <UICard
-            image={KodehodeImage}
-            title="Grunnleggende IT"
-            text="Bli med i dagens digitale samfunn"
-            path="/grunnleggende-IT"
+            image={UICardData[0].image}
+            title={UICardData[0].title}
+            text={UICardData[0].text}
+            path={UICardData[0].path}
+            alt={UICardData[0].alt}
           />
 
           <UICard
-            image={KodehodeImage}
-            title="Digitale Talenter"
-            text="Dyrk interessene dine og må fast jobb"
-            path="/digitale-talenter"
+            image={UICardData[1].image}
+            title={UICardData[1].title}
+            text={UICardData[1].text}
+            path={UICardData[1].path}
+            alt={UICardData[1].alt}
           />
         </div>
         <div className="flex flex-col gap-12 md:flex-row md:justify-between">
           <UICard
-            image={KodehodeImage}
-            title="Individuell AMO"
-            text="Få et skreddersydd opplegg gjennom Nav"
-            path="/individuell-AMO"
+            image={UICardData[2].image}
+            title={UICardData[2].title}
+            text={UICardData[2].text}
+            path={UICardData[2].path}
+            alt={UICardData[2].alt}
           />
           <UICard
-            image={KodehodeImage}
-            title="Loop"
-            text="Få relevant arbeidspraksis og erfaring"
-            path="/loop"
+            image={UICardData[3].image}
+            title={UICardData[3].title}
+            text={UICardData[3].text}
+            path={UICardData[3].path}
+            alt={UICardData[3].alt}
           />
         </div>
       </div>
-      <div className="flex flex-col gap-8 px-8 py-20 md:flex-row md:w-2/3 md:px-16 md:justify-between md:ml-0 md:mr-auto">
-        <div className="ml-0 w-52 h-52">
+
+      <div className="bg-jobloop-primary-green/5 mx-2 2xl:mx-0 border-2 border-jobloop-primary-green/100 text-kv-black rounded-lg flex flex-col gap-8 lg:gap-12 lg:rounded-2xl pt-8 pb-12 my-24 px-8">
+        <h2 className="pb-2 border-b-4 border-jobloop-primary-green w-fit mx-auto  text-center">
+          Hva våre partnere sier om oss
+        </h2>
+        {/* <div className="ml-0 w-52 h-52">
           <Image
             alt="JobbtilbudBilde"
             src={JobbtilbudBilde}
@@ -125,14 +171,23 @@ export default function WorkCourses() {
             height={400}
             className="object-cover w-full h-full rounded-full"
           />
-        </div>
-        <div className="flex flex-col w-full gap-3 md:w-1/2">
-          <h3>Joe Generic</h3>
-          <p>CEO XYZ bedrift</p>
-          <q className="italic">
-            Tekst om hvor lett det var å jobbe med Jobloop og hvor lærerikt det
-            var for praktikanter.
-          </q>
+        </div> */}
+        <div className="flex flex-col gap-8 md:flex-row">
+          <div className="flex flex-col w-full gap-1 md:w-1/3 ">
+            <h4 className="text-kv-black text-xl">{QuoteData[0].name}</h4>
+            <p className="text-kv-black text-xs">{QuoteData[0].company}</p>
+            <q className="italic">{QuoteData[0].text}</q>
+          </div>
+          <div className="flex flex-col w-full gap-1 md:w-1/3 ">
+            <h4 className="text-kv-black text-xl">{QuoteData[1].name}</h4>
+            <p className="text-kv-black text-xs">{QuoteData[1].company}</p>
+            <q className="italic">{QuoteData[1].text}</q>
+          </div>
+          <div className="flex flex-col w-full gap-1 md:w-1/3 ">
+            <h4 className="text-kv-black text-xl">{QuoteData[2].name}</h4>
+            <p className="text-kv-black text-xs">{QuoteData[2].company}</p>
+            <q className="italic">{QuoteData[2].text}</q>
+          </div>
         </div>
       </div>
     </>
