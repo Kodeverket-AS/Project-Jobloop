@@ -142,7 +142,7 @@ export default function OmOss() {
                         <span className='block w-60 h-1 bg-jobloop-primary-orange mt-2 mb-6 mx-auto'></span>
                     </h2>
                     <div className='grid gap-12 md:grid-cols-2'>
-                        <div className='flex flex-col items-center p-6 '>
+                        <div className='flex flex-col  p-6 '>
                             <Image
                                 src='/fontenelogo 1.png'
                                 alt='Fontenehuset Bergen'
@@ -164,7 +164,7 @@ export default function OmOss() {
                                 Aria='Les mer'
                             />
                         </div>
-                        <div className='flex flex-col items-center p-6  '>
+                        <div className='flex flex-col  p-6  '>
                             <Image
                                 src='/glode-logo 1.png'
                                 alt='Gløde'
