@@ -1,9 +1,13 @@
-import Image from "next/image";
+import { sanityFetch } from "../../../lib/fetchData";
+import ContactContainer from "../../../components/contacts/Container";
 
-export default function Kontakt() {
+export default async function Kontakt() {
+  const QUERY = `*[_type == "contacts"]{"image": image.asset->url, fname, lname, role, company, email, mobile} | order(lname asc)`
+  const data = await sanityFetch({query: QUERY});
+
   return (
     <main className="flex flex-col items-center justify-between min-h-screen p-0">
-      Her kommer kontaktsiden, denne siden er under konstruksjon.
+      <ContactContainer data={data} />
     </main>
   );
 }

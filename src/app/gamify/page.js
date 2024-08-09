@@ -17,11 +17,11 @@ export default async function Gamify() {
       <HeroSub content={gamify} />
       <CourseSummary content={gamify} course={"Gamify"} />
       <Curriculum content={gamify} course={"Gamify"} />
-      <CourseUsefullness content={gamify} course={"Gamify"} />
+      {/*<CourseUsefullness content={gamify} course={"Gamify"} />*/}
       <LeaderSection content={gamify} leader={"Kim Brurok Stokkeland & Sjur Hovi"} position={"Kursleder"} />
       {/*<ForCompanies content={gamify} />*/}
       <ForSchool content={gamify} situation={"skole"} />
-      <Places content={gamify} />
+      {/*<Places content={gamify} />*/}
     </main>
   );
 }

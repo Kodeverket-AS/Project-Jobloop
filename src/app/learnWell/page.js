@@ -17,11 +17,11 @@ export default async function LearnWell() {
       <HeroSub content={learnWell} />
       <CourseSummary content={learnWell} course={"LearnWell"} />
       {/*<Curriculum content={learnWell} course={"LearnWell"} />*/}
-      <CourseUsefullness content={learnWell} course={"LearnWell"} />
+      {/*<CourseUsefullness content={learnWell} course={"LearnWell"} />*/}
       <LeaderSection content={learnWell} leader={"Beate Johnsen & Tom Mæland"} position={"Kursleder"} />
       {/*<ForCompanies content={learnWell} />*/}
       {/*<ForSchool content={learnWell} situation={"Skole"} />*/}
-      <Places content={learnWell} />
+      {/*<Places content={learnWell} />*/}
     </main>
   );
 }

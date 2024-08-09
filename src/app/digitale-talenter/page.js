@@ -17,11 +17,11 @@ export default async function DigitaleTalenter() {
       <HeroSub content={digTal} />
       <CourseSummary content={digTal} course={"Digitale Talenter"} />
       <Curriculum content={digTal} course={"Digitale Talenter"} />
-      <CourseUsefullness content={digTal} course={"Digitale Talenter"} />
+      {/*<CourseUsefullness content={digTal} course={"Digitale Talenter"} />*/}
       <LeaderSection content={digTal} leader={"Frode Moldestad Bøe"} position={"Kursleder"} />
       {/*<ForCompanies content={digTal} />*/}
       {/*<ForSchool content={digTal} situation={"samarbeidspartner"} />*/}
-      <Places content={digTal} />
+      {/*<Places content={digTal} />*/}
     </main>
   );
 }
