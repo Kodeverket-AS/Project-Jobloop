@@ -32,12 +32,12 @@ export default function Navbar() {
               className="px-4 font-bold md:portrait:pl-4 md:portrait:pr-2 lg:px-4 text-kv-white md:hover:underline">
               Nyhetsbrev
             </Link>
-            <Link
+            {/*<Link
               href="/ansettelser"
               aria-label="gå til denne undersiden for å se våre åpne stillinger"
               className="px-4 font-bold md:portrait:px-2 lg:px-4 text-kv-white md:hover:underline">
               Vi ansetter!
-            </Link>
+            </Link>*/}
             <Link
               href="/om-oss"
               aria-label="gå til denne undersiden for å lese mer om oss"
