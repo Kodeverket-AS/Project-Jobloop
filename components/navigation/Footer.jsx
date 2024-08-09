@@ -29,7 +29,7 @@ const contactInformation = [
 
 export default function Footer() {
     return (
-        <footer className='pb-8 text-kv-white bg-jobloop-secondary-green'>
+        <footer className='pb-8 text-kv-white bg-gray-900'>
             <div className='flex-row flex-wrap items-start justify-around hidden px-12 pt-8 pb-24 md:flex gap-y-20 gap-x-8 md:px-12 2xl:max-w-[1600px] 2xl:mx-auto'>
                 <div className='flex flex-col order-2 gap-8 md:order-1'>
                     <h2 className='text-3xl'>Kontakt</h2>
