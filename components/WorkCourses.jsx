@@ -38,28 +38,28 @@ const UICardData = [
     title: "Grunnleggende IT",
     text: "Bli med i dagens digitale samfunn",
     path: "/grunnleggende-it",
-    alt: "KodehodeImage",
+    alt: "3 hyggelige ansatte",
   },
   {
     image: DigitaleTalenter,
     title: "Digitale Talenter",
     text: "Dyrk interessene dine og få fast jobb",
     path: "/digitale-talenter",
-    alt: "KodehodeImage",
+    alt: "Smilende person som er digital talent",
   },
   {
     image: IndividuellAmo,
     title: "Individuell AMO",
     text: "Få et skreddersydd opplegg gjennom NAV",
     path: "/individuell-AMO",
-    alt: "KodehodeImage",
+    alt: "Person ser inn i kamera",
   },
   {
     image: Loop,
     title: "Loop",
     text: "Få relevant arbeidspraksis og erfaring",
     path: "/loop",
-    alt: "KodehodeImage",
+    alt: "Arbeidsbord",
   },
 ];
 
