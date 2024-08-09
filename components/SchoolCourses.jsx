@@ -1,14 +1,17 @@
 "use client";
 
 import Image from "next/image";
-import JobbtilbudBilde from "../public/JobbtilbudBilde.png";
-import KodehodeImage from "../public/KodehodeImage.png";
+import Læringstilbud from "../public/læringstilbud.webp";
+import Learnwell from "../public/learnwell.webp";
+import Gamify from "../public/gamify2.webp";
+import Spillbasert from "../public/spillbasert.webp";
+import Loop from "../public/loop.webp";
 import { LinkButtonInternal } from "./Buttons";
 import { IntroSectionReverse } from "./LayoutComponents";
 
 const IntroData = [
   {
-    image: JobbtilbudBilde,
+    image: Læringstilbud,
     title: "Læringstilbud",
     text: "Jobloop samarbeider med skoler over hele landet med å gi elever som trenger en alternativ arena hvor de kan oppleve læring og motivasjon gjennom alternative metoder blant annet gjennom gaming.",
     path: "/læringstilbud",
@@ -18,29 +21,29 @@ const IntroData = [
 
 const UICardData = [
   {
-    image: KodehodeImage,
-    alt: "KodehodeImage",
+    image: Learnwell,
+    alt: "Pc-skjerm med headset",
     title: "LearnWell",
     text: "Alternativ læringsarena for elever i videregående",
     path: "/learnWell",
   },
   {
-    image: KodehodeImage,
-    alt: "KodehodeImage",
+    image: Gamify,
+    alt: "2 jenter i Gamify",
     title: "Gamify",
     text: "Motivasjon og læring gjennom gaming",
     path: "/gamify",
   },
   {
-    image: KodehodeImage,
-    alt: "KodehodeImage",
+    image: Spillbasert,
+    alt: "3 personer involverte i prosjektet",
     title: "Spillbasert",
     text: "Gaming og alternativ læring for deg som vil fullføre videregående",
     path: "/spillbasert",
   },
   {
-    image: KodehodeImage,
-    alt: "KodehodeImage",
+    image: Loop,
+    alt: "Tech arbeidsbord",
     title: "Loop",
     text: "Få relevant arbeidspraksis og erfaring",
     path: "/loop",
@@ -52,13 +55,13 @@ const UICard = ({ image, title, text, path, alt }) => {
     <div className="group flex flex-col w-full gap-4 xl:flex-row-reverse md:w-1/2">
       <a
         href={path}
-        className="w-full xl:w-1/2 transition-all saturate-100 group-hover:saturate-150">
+        className="w-full h-72 xl:w-1/2 transition-all">
         <Image
           alt={alt}
           src={image}
-          width={1500}
+          width={500}
           height={500}
-          className="max-w-full object-cover"
+          className="max-w-full h-full object-cover"
         />
       </a>
       <div className="flex flex-col w-full gap-4 xl:w-1/2">

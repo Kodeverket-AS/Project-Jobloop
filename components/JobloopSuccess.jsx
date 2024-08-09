@@ -1,14 +1,14 @@
 "use client";
 
 import Image from "next/image";
-import KodehodeImage from "../public/KodehodeImage.png";
+import JobloopFafo from "../public/jobbloop-fafo.webp";
 import { ExternalLinkButton } from "./Buttons";
 
 const TextData = [
   {
+    image: JobloopFafo,
     title: "Vår suksessrate og FAFOs forskning om effektiviteten siden 2014",
     text: "JobLoop har oppnådd en imponerende suksessrate siden 2014, som er bekreftet av FAFOs forskning. Vi er stolte av å kunne tilby en plattform som hjelper diverse grupper med å finne arbeid og tilbyr skreddersydd yrkesopplæring.",
-    image: KodehodeImage,
     alt: "KodehodeImage",
     path: "https://www.fafo.no/zoo-publikasjoner/fafo-rapporter/sysselsetting-av-unge-med-nedsatt-funksjonsevne-3",
   },

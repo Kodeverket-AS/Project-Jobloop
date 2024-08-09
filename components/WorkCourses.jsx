@@ -1,9 +1,13 @@
 "use client";
 
 import Image from "next/image";
-import Link from "next/link";
 import JobbtilbudBilde from "../public/JobbtilbudBilde.png";
 import KodehodeImage from "../public/KodehodeImage.png";
+import GrunnleggendeIt from "../public/grunnleggende-IT.webp";
+import DigitaleTalenter from "../public/digitale-talenter.webp";
+import IndividuellAmo from "../public/individuell-amo.webp";
+import Loop from "../public/loop.webp";
+
 import { LinkButtonInternal } from "./Buttons";
 import { IntroSectionReverse, PartnerProject } from "./LayoutComponents";
 
@@ -30,28 +34,28 @@ const PartnerData = [
 
 const UICardData = [
   {
-    image: KodehodeImage,
+    image: GrunnleggendeIt,
     title: "Grunnleggende IT",
     text: "Bli med i dagens digitale samfunn",
     path: "/grunnleggende-it",
     alt: "KodehodeImage",
   },
   {
-    image: KodehodeImage,
+    image: DigitaleTalenter,
     title: "Digitale Talenter",
     text: "Dyrk interessene dine og må fast jobb",
     path: "/digitale-talenter",
     alt: "KodehodeImage",
   },
   {
-    image: KodehodeImage,
+    image: IndividuellAmo,
     title: "Individuell AMO",
     text: "Få et skreddersydd opplegg gjennom NAV",
     path: "/individuell-AMO",
     alt: "KodehodeImage",
   },
   {
-    image: KodehodeImage,
+    image: Loop,
     title: "Loop",
     text: "Få relevant arbeidspraksis og erfaring",
     path: "/loop",
@@ -82,13 +86,13 @@ const UICard = ({ image, title, text, path, alt }) => {
     <div className="group flex flex-col w-full gap-4 xl:flex-row-reverse md:w-1/2">
       <a
         href={path}
-        className="w-full xl:w-1/2 transition-all saturate-100 group-hover:saturate-150">
+        className="w-full h-72 xl:w-1/2 transition-all">
         <Image
           alt={alt}
           src={image}
-          width={1500}
+          width={500}
           height={500}
-          className="max-w-full object-cover"
+          className="max-w-full h-full object-cover"
         />
       </a>
       <div className="flex flex-col w-full gap-4 xl:w-1/2">
