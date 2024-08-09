@@ -28,7 +28,7 @@ const ProjectsData = [
 
 export default function CooperationProjects() {
   return (
-    <>
+    <section>
       <div className="mx-auto">
         <h2 className="pb-2 border-b-4 border-jobloop-primary-green w-fit">
           Samarbeidsprosjekter
@@ -63,9 +63,8 @@ export default function CooperationProjects() {
         text={ProjectsData[2].text}
         path={ProjectsData[2].path}
         isButton={true}
-        // btnVariant={"internalLink"}
         btnText={ProjectsData[2].btnText}
       />
-    </>
+    </section>
   );
 }

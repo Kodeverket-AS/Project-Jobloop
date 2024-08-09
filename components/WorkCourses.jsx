@@ -103,9 +103,19 @@ const UICard = ({ image, title, text, path, alt }) => {
   );
 };
 
+const QuoteCard = ({ name, company, text }) => {
+  return (
+    <div className="flex flex-col w-full gap-1 md:w-1/3 ">
+      <h4 className="text-kv-black text-xl">{name}</h4>
+      <p className="text-kv-black text-xs">{company}</p>
+      <q className="italic">{text}</q>
+    </div>
+  );
+};
+
 export default function WorkCourses() {
   return (
-    <>
+    <section>
       <IntroSectionReverse
         title={IntroData[0].title}
         text={IntroData[0].text}
@@ -161,38 +171,29 @@ export default function WorkCourses() {
         </div>
       </div>
 
+      {/* Temporary Quotes Solution */}
       <div className="relative overflow-hidden bg-jobloop-primary-orange/5 mx-2 2xl:mx-0 border-2 border-jobloop-primary-orange/100 text-kv-black rounded-lg flex flex-col gap-8 lg:gap-12 lg:rounded-2xl pt-8 pb-12 my-24 px-8">
-        {/* <div className="absolute bottom-0 left-0 w-full h-4 bg-jobloop-primary-orange/20"></div> */}
         <h2 className="pb-2 border-b-4 border-jobloop-primary-orange w-fit mx-auto  text-center">
           Hva våre partnere sier om oss
         </h2>
-        {/* <div className="ml-0 w-52 h-52">
-          <Image
-            alt="JobbtilbudBilde"
-            src={JobbtilbudBilde}
-            width={400}
-            height={400}
-            className="object-cover w-full h-full rounded-full"
-          />
-        </div> */}
         <div className="flex flex-col gap-8 md:flex-row">
-          <div className="flex flex-col w-full gap-1 md:w-1/3 ">
-            <h4 className="text-kv-black text-xl">{QuoteData[0].name}</h4>
-            <p className="text-kv-black text-xs">{QuoteData[0].company}</p>
-            <q className="italic">{QuoteData[0].text}</q>
-          </div>
-          <div className="flex flex-col w-full gap-1 md:w-1/3 ">
-            <h4 className="text-kv-black text-xl">{QuoteData[1].name}</h4>
-            <p className="text-kv-black text-xs">{QuoteData[1].company}</p>
-            <q className="italic">{QuoteData[1].text}</q>
-          </div>
-          <div className="flex flex-col w-full gap-1 md:w-1/3 ">
-            <h4 className="text-kv-black text-xl">{QuoteData[2].name}</h4>
-            <p className="text-kv-black text-xs">{QuoteData[2].company}</p>
-            <q className="italic">{QuoteData[2].text}</q>
-          </div>
+          <QuoteCard
+            name={QuoteData[0].name}
+            company={QuoteData[0].company}
+            text={QuoteData[0].text}
+          />
+          <QuoteCard
+            name={QuoteData[1].name}
+            company={QuoteData[1].company}
+            text={QuoteData[1].text}
+          />
+          <QuoteCard
+            name={QuoteData[2].name}
+            company={QuoteData[2].company}
+            text={QuoteData[2].text}
+          />
         </div>
       </div>
-    </>
+    </section>
   );
 }

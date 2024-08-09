@@ -1,7 +1,6 @@
 "use client";
 
 import Image from "next/image";
-import Link from "next/link";
 import KodehodeImage from "../public/KodehodeImage.png";
 import { ExternalLinkButton } from "./Buttons";
 
@@ -33,7 +32,7 @@ export default function JobloopSuccess() {
         </p>
         <ExternalLinkButton
           Path={TextData[0].path}
-          Text={"Gå til FAFOs Rapport"}
+          Text={"FAFOs Rapport"}
         />
       </div>
     </div>
