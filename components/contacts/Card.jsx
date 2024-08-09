@@ -11,8 +11,8 @@ export default function ContactCard({ contact }) {
       <div className="flex flex-col justify-center gap-2">
         <h3>{fname} {lname}</h3>
         <p>{role}, {company}</p>
-        <a className="flex gap-2 items-center text-jobloop-primary-green hover:text-jobloop-secondary-green" href={`mailto:${email}`}><TfiEmail />{email}</a>
-        <a className="flex gap-2 items-center text-jobloop-primary-green hover:text-jobloop-secondary-green" href={`tel:+47${mobile}`} ><SlCallOut  />+47 {mobile}</a>
+        <a className="flex items-center gap-2 text-jobloop-secondary-green hover:text-jobloop-primary-grey hover:underline" href={`mailto:${email}`}><TfiEmail />{email}</a>
+        <a className="flex items-center gap-2 text-jobloop-secondary-green hover:text-jobloop-primary-grey hover:underline" href={`tel:+47${mobile}`} ><SlCallOut  />+47 {mobile}</a>
       </div>
     </div>
   );
