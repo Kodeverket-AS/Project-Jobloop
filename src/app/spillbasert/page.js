@@ -17,11 +17,11 @@ export default async function Spillbasert() {
       <HeroSub content={spillbasert} />
       <CourseSummary content={spillbasert} course={"Spillbasert"} />
       <Curriculum content={spillbasert} course={"Spillbasert"} />
-      <CourseUsefullness content={spillbasert} course={"Spillbasert"} />
+      {/*<CourseUsefullness content={spillbasert} course={"Spillbasert"} />*/}
       <LeaderSection content={spillbasert} leader={"Sjur Hovi"} position={"Kursleder"} />
       {/*<ForCompanies content={spillbasert} />*/}
       {/*<ForSchool content={spillbasert} situation={"skole"} />*/}
-      <Places content={spillbasert} />
+      {/*<Places content={spillbasert} />*/}
     </main>
   );
 }

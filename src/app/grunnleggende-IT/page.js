@@ -17,11 +17,11 @@ export default async function GrunnleggendeIT() {
       <HeroSub content={gIT} />
       <CourseSummary content={gIT} course={"Grunnleggende IT"} />
       <Curriculum content={gIT} course={"Grunnleggende IT"} />
-      <CourseUsefullness content={gIT} course={"Grunnleggende IT"} />
+      {/*<CourseUsefullness content={gIT} course={"Grunnleggende IT"} />*/}
       <LeaderSection content={gIT} leader={"Oda Kristin Abelseth"} position={"Kursleder"} />
       {/*<ForCompanies content={gIT} />*/}
       {/*<ForSchool content={gIT} situation={"samarbeidspartner"} />*/}
-      <Places content={gIT} />
+      {/*<Places content={gIT} />*/}
     </main>
   );
 }

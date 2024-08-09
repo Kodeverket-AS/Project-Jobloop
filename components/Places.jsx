@@ -17,7 +17,7 @@ function placeElement(city) {
           className="object-cover w-full h-full"
         />
       </div>
-      <div className="flex flex-col gap-3 py-10 pl-0 w-60 md:py-0 md:pl-5">
+      <div className="flex flex-col gap-3 py-10 pl-3 w-60 md:py-0 md:pl-5">
         <h3 className="pb-1 border-b-2 border-jobloop-primary-green w-fit">
           {city}
         </h3>
@@ -36,7 +36,7 @@ function generateCities(array) {
 
 export default function Places({ content }) {
   return (
-    <div className="w-full px-8 py-20">
+    <div className="w-full px-5 py-20">
       <h2 className="pb-3 mx-auto border-b-2 border-jobloop-primary-green w-fit">
         Våre lokaler
       </h2>
