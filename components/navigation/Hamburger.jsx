@@ -36,7 +36,7 @@ const HamburgerMenu = ({ hamFill }) => {
       >
         <GiHamburgerMenu
           className={`w-20 h-20 ${
-            hamFill == "white" ? "fill-kv-white" : "fill-jobloop-primary-green"
+            hamFill == "white" ? "fill-kv-white" : "fill-jobloop-secondary-green"
           }`}
         />
       </button>
@@ -71,7 +71,7 @@ const HamburgerMenu = ({ hamFill }) => {
             >
               Nyhetsbrev
             </Link>
-            <Link
+            {/*<Link
               href="/ansettelser"
               aria-label="gå til underside og se våre åpne stillinger"
               className="px-8 text-xl font-bold transition-all text-jobloop-secondary-green group w-fit"
@@ -80,7 +80,7 @@ const HamburgerMenu = ({ hamFill }) => {
               }}
             >
               Vi ansetter!
-            </Link>
+            </Link>*/}
             <Link
               href="/om-oss"
               aria-label="gå til underside og les mer om oss"
