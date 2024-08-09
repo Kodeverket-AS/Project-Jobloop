@@ -46,7 +46,7 @@ export function LinkButton({ Path, Text }) {
     <Link
       href={Path}
       aria-label={`Lenke til underside ${Path}`}
-      className="w-full px-8 py-2 tracking-normal text-center transition-all bg-white border-2 border-solid rounded-full sm:w-fit border-kv-black hover:bg-jobloop-secondary-green hover:border-jobloop-secondary-green hover:text-kv-white focus:bg-jobloop-secondary-green focus:text-kv-white">
+      className="w-full px-8 py-2 tracking-normal text-center transition-all bg-kv-white border-2 border-solid rounded-full sm:w-fit border-kv-black hover:bg-jobloop-secondary-green hover:border-jobloop-secondary-green hover:text-kv-white focus:bg-jobloop-secondary-green focus:text-kv-white">
       {Text}
     </Link>
   );
