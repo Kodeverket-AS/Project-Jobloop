@@ -6,7 +6,7 @@ import { PortableText } from "@portabletext/react";
 
 export default function ForSchool({ content, situation }) {
   return (
-    <div className="flex flex-col justify-between w-screen px-5 py-20 md:flex-row md:px-12 lg:px-24">
+    <div className="flex flex-col justify-between w-screen px-5 py-20 md:flex-row md:px-12 lg:px-24 2xl:max-w-[1600px]">
       <div className="w-full h-80 md:w-96 md:pt-3 md:h-96">
         <Image
           src={content.image4 ? content.image4 : ""}

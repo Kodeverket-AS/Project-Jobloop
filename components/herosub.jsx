@@ -7,7 +7,7 @@ import { LinkButton } from "./Buttons";
 
 export default function HeroSub({ content }) {
   return (
-    <div className="flex flex-col-reverse px-0 md:flex-row lg:px-24 lg:pt-24 md:px-12 md:pt-10 md:w-screen">
+    <div className="flex flex-col-reverse px-0 md:flex-row lg:px-24 lg:pt-24 md:px-12 md:pt-10 md:w-screen 2xl:max-w-[1600px]">
       <div className="w-full px-5 pt-5 md:w-1/2 md:px-0 md:pt-0">
         <h1 className="mb-3 md:mb-5">
           {content.heading ? content.heading : "Tittel kommer her"}
