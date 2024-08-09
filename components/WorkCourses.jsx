@@ -37,7 +37,7 @@ const UICardData = [
     image: GrunnleggendeIt,
     title: "Grunnleggende IT",
     text: "Bli med i dagens digitale samfunn",
-    path: "/grunnleggende-it",
+    path: "/grunnleggende-IT",
     alt: "3 hyggelige ansatte",
   },
   {
@@ -83,21 +83,21 @@ const QuoteData = [
 
 const UICard = ({ image, title, text, path, alt }) => {
   return (
-    <div className="group flex flex-col w-full gap-4 xl:flex-row-reverse md:w-1/2">
+    <div className="flex flex-col w-full gap-4 group xl:flex-row-reverse md:w-1/2">
       <a
         href={path}
-        className="w-full h-72 xl:w-1/2 transition-all">
+        className="w-full transition-all h-72 xl:w-1/2">
         <Image
           alt={alt}
           src={image}
           width={500}
           height={500}
-          className="max-w-full h-full object-cover"
+          className="object-cover h-full max-w-full"
         />
       </a>
       <div className="flex flex-col w-full gap-4 xl:w-1/2">
-        <h3 className="text-kv-black text-xl md:text-2xl">{title}</h3>
-        <p className="text-base md:text-xl text-gray-500">{text}</p>
+        <h3 className="text-xl text-kv-black md:text-2xl">{title}</h3>
+        <p className="text-base text-gray-500 md:text-xl">{text}</p>
         <LinkButtonInternal
           Path={path}
           Text={"Les mer"}
@@ -110,8 +110,8 @@ const UICard = ({ image, title, text, path, alt }) => {
 const QuoteCard = ({ name, company, text }) => {
   return (
     <div className="flex flex-col w-full gap-1 md:w-1/3 ">
-      <h4 className="text-kv-black text-xl">{name}</h4>
-      <p className="text-kv-black text-xs">{company}</p>
+      <h4 className="text-xl text-kv-black">{name}</h4>
+      <p className="text-xs text-kv-black">{company}</p>
       <q className="italic">{text}</q>
     </div>
   );
@@ -176,8 +176,8 @@ export default function WorkCourses() {
       </div>
 
       {/* Temporary Quotes Solution */}
-      <div className="relative overflow-hidden bg-jobloop-primary-orange/5 mx-2 2xl:mx-0 border-2 border-jobloop-primary-orange/100 text-kv-black rounded-lg flex flex-col gap-8 lg:gap-12 lg:rounded-2xl pt-8 pb-12 my-24 px-8">
-        <h2 className="pb-2 border-b-4 border-jobloop-primary-orange w-fit mx-auto  text-center">
+      <div className="relative flex flex-col gap-8 px-8 pt-8 pb-12 mx-2 my-24 overflow-hidden border-2 rounded-lg bg-jobloop-primary-orange/5 2xl:mx-0 border-jobloop-primary-orange/100 text-kv-black lg:gap-12 lg:rounded-2xl">
+        <h2 className="pb-2 mx-auto text-center border-b-4 border-jobloop-primary-orange w-fit">
           Hva våre partnere sier om oss
         </h2>
         <div className="flex flex-col gap-8 md:flex-row">
