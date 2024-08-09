@@ -10,7 +10,7 @@ export default function ContactComponent() {
       <h2 className="pb-2 border-b-4 border-jobloop-primary-green w-fit">
         Kontakt oss
       </h2>
-      <p className="pt-5 pb-12 w-fit">
+      <p className="pb-4 w-fit">
         Trenger du hjelp eller ønsker å samarbeide med oss?
       </p>
       <div>
