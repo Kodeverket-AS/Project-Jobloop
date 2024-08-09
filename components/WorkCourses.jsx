@@ -43,7 +43,7 @@ const UICardData = [
   {
     image: DigitaleTalenter,
     title: "Digitale Talenter",
-    text: "Dyrk interessene dine og må fast jobb",
+    text: "Dyrk interessene dine og få fast jobb",
     path: "/digitale-talenter",
     alt: "KodehodeImage",
   },
