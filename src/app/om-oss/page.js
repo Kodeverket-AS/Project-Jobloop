@@ -39,7 +39,7 @@ export default function OmOss() {
                     </div>
                 </div>
             </section>
-            <section className='py-20 '>
+            <section className='py-20'>
                 <h2 className='text-2xl font-bold mb-8 text-center'>
                     Vårt team
                     <span className='block w-60 h-1 bg-jobloop-primary-orange mt-2 mb-6 mx-auto'></span>
@@ -134,6 +134,12 @@ export default function OmOss() {
                         <p className='mt-4 mb-2 font-bold text-xl'>Kim</p>
                         <p>Kursleder</p>
                     </div>
+                </div>
+                <div className='flex justify-center mt-8'>
+                    <LinkButton
+                        Path={"/kontakt"}
+                        Text={"Bli kjent med hele organisasjonen!"}
+                    />
                 </div>
             </section>
             <section className='py-16 '>

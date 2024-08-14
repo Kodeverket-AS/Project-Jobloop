@@ -24,13 +24,13 @@ export default function Navbar() {
                 </div>
                 <div>
                     <div className='hidden h-auto p-4 md:block'>
-                        <Link
+                        {/* <Link
                             href='/nyhetsbrev'
                             aria-label='gå til denne undersiden for å se Jobloops nyhetsbrev'
                             className='px-4 font-bold md:portrait:pl-4 md:portrait:pr-2 lg:px-4 text-kv-white md:hover:underline'
                         >
                             Nyhetsbrev
-                        </Link>
+                        </Link> */}
                         {/*<Link
               href="/ansettelser"
               aria-label="gå til denne undersiden for å se våre åpne stillinger"
@@ -78,13 +78,13 @@ export function NavbarAlt() {
                 </div>
                 <div>
                     <div className='hidden h-auto p-4 md:block'>
-                        <Link
+                        {/* <Link
                             href='/nyhetsbrev'
                             aria-label='gå til denne undersiden for å se jobloops nyhetsbrev'
                             className='px-4 font-bold md:portrait:pl-4 md:portrait:pr-2 lg:px-4 text-jobloop-secondary-green md:hover:underline'
                         >
                             Nyhetsbrev
-                        </Link>
+                        </Link> */}
                         {/*<Link
               href="/ansettelser"
               aria-label="gå til denne undersiden for å se våre åpne stillinger"
