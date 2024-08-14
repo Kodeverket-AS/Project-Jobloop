@@ -8,22 +8,20 @@ import { FaFacebook, FaInstagram, FaLinkedinIn } from "react-icons/fa";
 // Contact information for the footer
 const contactInformation = [
     {
-        name: "Sina",
-        email: "sina@jobloop.no",
-        phoneDisplay: "+47 41 08 68 27",
-        phoneLink: "+4741086827",
+        name: "Deltaker",
+        email: "team@jobloop.no ",
     },
     {
-        name: "Karl",
-        email: "karl@jobloop.no",
-        phoneDisplay: "+47 95 90 40 52",
-        phoneLink: "+4795904052",
+        name: "Bedrifter",
+        email: "christer@jobloop.no",
+        phoneDisplay: "+47 92 88 28 04",
+        phoneLink: "+4792882804",
     },
     {
-        name: "Emil",
-        email: "emil@jobloop.no",
-        phoneDisplay: "+47 45 20 52 50",
-        phoneLink: "+4745205250",
+        name: "Oppdragsgiver",
+        email: "inger-johanne@jobloop.no ",
+        phoneDisplay: "+47 48 35 87 03",
+        phoneLink: "+4748358703",
     },
 ];
 
