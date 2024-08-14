@@ -30,7 +30,12 @@ export default function ContactContainer({ data }) {
       .filter(person => (person.company.join().toLowerCase().includes(departmentSelect.current.value.toLowerCase())))
       .filter(person => (person.fname + person.lname).toLowerCase().includes(nameInput.current.value.toLowerCase()))
 
-    setIsFiltered(true)
+    if (nameInput.current.value.length + departmentSelect.current.value.length === 0) {
+      setIsFiltered(false)
+    } else {
+      setIsFiltered(true)
+    }
+
     filterData(result)
   }
 
