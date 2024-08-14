@@ -76,13 +76,13 @@ export default function Footer() {
                 </div>
                 <div className='flex flex-col order-3 gap-8'>
                     <h2 className='text-3xl'>Sider</h2>
-                    <Link
+                    {/* <Link
                         className='hover:underline'
                         href='/nyhetsbrev'
                         aria-label='Gå til underside for arbeidsgiver'
                     >
                         Nyhetsbrev
-                    </Link>
+                    </Link> */}
                     <Link
                         className='hover:underline'
                         href='/ansettelser'
@@ -176,13 +176,13 @@ export default function Footer() {
                     </div>
                     <div className='flex flex-col order-3 w-32 gap-8'>
                         <h2 className='text-3xl'>Sider</h2>
-                        <Link
+                        {/* <Link
                             className='hover:underline'
                             href='/nyhetsbrev'
                             aria-label='Gå til underside for arbeidsgiver'
                         >
                             Nyhetsbrev
-                        </Link>
+                        </Link> */}
                         <Link
                             className='hover:underline'
                             href='/ansettelser'
