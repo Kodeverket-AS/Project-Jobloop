@@ -6,13 +6,10 @@ export default function ContactCard({ contact }) {
   const { image, fname, lname, role, company, location, email, mobile } = contact
 
   const arrayLocaleNo = (arr) => {
-    // Verify that arr is an array
     if (!Array.isArray(arr)) return
 
-    // Split array, join with "," and change last join with "og"
     if (arr.length > 1) return arr.slice(0, -1).join(', ') + ' og ' + arr.slice(-1)
 
-    // Array contains one item, return item
     return arr
   }
 
@@ -22,8 +19,15 @@ export default function ContactCard({ contact }) {
       <div className="flex flex-col justify-center gap-2">
         <h3>{fname} {lname}</h3>
         <p>{arrayLocaleNo(role)}</p>
-        <p>{arrayLocaleNo(company)}</p>
-        {location && <p>{location}</p>}
+        {
+          company.length > 1 ?
+            <>
+              <p>{arrayLocaleNo(company)}</p>
+              {location && <p>{location}</p>}
+            </>
+          :
+            <p>{company}{location && `, ${location}`}</p>
+        }
         <a className="flex items-center gap-2 text-jobloop-secondary-green hover:text-jobloop-primary-grey hover:underline" href={`mailto:${email}`}><TfiEmail />{email}</a>
         <a className="flex items-center gap-2 text-jobloop-secondary-green hover:text-jobloop-primary-grey hover:underline" href={`tel:+47${mobile}`} ><SlCallOut  />+47 {mobile}</a>
       </div>
