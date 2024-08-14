@@ -3,21 +3,15 @@ import { SlCallOut } from "react-icons/sl";
 import { TfiEmail } from "react-icons/tfi";
 
 export default function ContactCard({ contact }) {
-  const { image, fname, lname, role, company, location, email, mobile, priority } = contact
+  const { image, fname, lname, role, company, location, email, mobile } = contact
 
   const arrayLocaleNo = (arr) => {
-    // Verify that arr is an array
     if (!Array.isArray(arr)) return
 
-    // Split array, join with "," and change last join with "og"
     if (arr.length > 1) return arr.slice(0, -1).join(', ') + ' og ' + arr.slice(-1)
 
-    // Array contains one item, return item
     return arr
   }
-
-
-  console.log(fname, priority)
 
   return (
     <div className="flex gap-24 max-md:w-full">
