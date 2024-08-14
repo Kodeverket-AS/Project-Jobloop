@@ -14,7 +14,7 @@ export default function ContactContainer({ data }) {
   // Filters employees based on two inputs, name search and select department.
   const filterEmployee = () => {
     const result = data
-      .filter(person => person.company.toLowerCase().includes(departmentSelect.current.value.toLowerCase()))
+      .filter(person => (person.company.join().toLowerCase().includes(departmentSelect.current.value.toLowerCase())))
       .filter(person => (person.fname + person.lname).toLowerCase().includes(nameInput.current.value.toLowerCase()))
 
     setIsFiltered(true)
