@@ -10,7 +10,7 @@ export default function ContactCard({ contact }) {
     if (!Array.isArray(arr)) return
 
     // Split array, join with "," and change last join with "og"
-    if (arr.length > 1) return arr.slice(0, -1).join(',')+' og '+arr.slice(-1)
+    if (arr.length > 1) return arr.slice(0, -1).join(', ') + ' og ' + arr.slice(-1)
 
     // Array contains one item, return item
     return arr
