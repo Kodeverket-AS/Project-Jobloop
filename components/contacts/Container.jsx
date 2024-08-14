@@ -37,8 +37,6 @@ export default function ContactContainer({ data }) {
     }
   }, [data])
 
-  Math.random()
-
   // Attaches eventlistener for above function, removes when unmounted (e.g changing page)
   useEffect(() => {
     document.addEventListener("keydown", resetFilters, false)
