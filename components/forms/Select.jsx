@@ -2,7 +2,7 @@
 
 import { useRef, useState } from "react";
 
-export default function Select({}) {
+export default function FormSelect({}) {
   const [ isOpen, setIsOpen ] = useState(false)
   const [ selected, setSelected ] = useState(false)
   const options = useRef([])
