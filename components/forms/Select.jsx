@@ -2,21 +2,25 @@
 
 import { useRef, useState } from "react";
 
-export default function FormSelect({}) {
+export default function FormSelect({ options, placeholder, searchable }) {
   const [ isOpen, setIsOpen ] = useState(false)
   const [ selected, setSelected ] = useState(false)
-  const options = useRef([])
+  const optionss = useRef([])
   const input = useRef()
   const type = useRef("text")
 
+
   return (
-    <div>
-      <input type={type} ref={input} />
-      <ul>
-        {options.current.map((option, index) =>
-          <li key={index}>{option}</li>
-        )}
-      </ul>
+    <div className="relative">
+      <input type={type} ref={input} placeholder={placeholder} readOnly={!searchable} onClick={() => setIsOpen(!isOpen)}/>
+      {
+        isOpen &&
+        <ul className="absolute">
+          {options.map((option, index) =>
+            <li key={index}>{option}</li>
+          )}
+        </ul>
+      }
     </div>
   )
 }
