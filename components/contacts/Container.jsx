@@ -6,8 +6,6 @@ import ContactCard from "./Card";
 export default function ContactContainer({ data }) {
   const [ filtered, filterData ] = useState(data)
   const [ isFiltered, setIsFiltered ] = useState(false)
-  const [ department, setDepartment ] = useState()
-  const [ departmentList, setDepartmentList ] = useState()
   const nameInput = useRef()
   const departmentSelect = useRef()
 
@@ -45,13 +43,13 @@ export default function ContactContainer({ data }) {
   }, [resetFilters])
 
   return (
-    <div className="flex flex-col gap-24 pb-24 max-md:px-4">
+    <div className="flex flex-col gap-24 pb-24 max-md:px-4 max-md:w-full">
       <div className="grid grid-cols-2 gap-4 max-md:grid-cols-1 w-full">
         <span>
-          <input className="w-full text-lg p-[10px] border focus:border-jobloop-primary-green focus:outline-none" type="text" placeholder="Søk etter ansatt ..." ref={nameInput} onChange={e => filterEmployee()} />
+          <input className="w-full text-lg p-[10px] border focus:border-jobloop-primary-green focus:outline-none font-sans" type="text" placeholder="Søk etter ansatt ..." ref={nameInput} onChange={e => filterEmployee()} />
         </span>
         <span>
-          <select className="w-full text-lg p-[12px] border bg-white focus:border-jobloop-primary-green focus:outline-none" defaultValue="" ref={departmentSelect} onChange={e => filterEmployee()}>
+          <select className="w-full text-lg p-[13px] border bg-white focus:border-jobloop-primary-green focus:outline-none font-sans" defaultValue="" ref={departmentSelect} onChange={e => filterEmployee()}>
             <option value="">Alle avdelinger</option>
             <option value="gamify">Gamify</option>
             <option value="kodehode">Kodehode</option>
