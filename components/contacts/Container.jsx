@@ -2,6 +2,7 @@
 
 import { useEffect, useCallback, useRef, useState } from "react";
 import ContactCard from "./Card";
+import FormSelect from "../forms/Select";
 
 export default function ContactContainer({ data }) {
   const [ filtered, filterData ] = useState(data)
@@ -42,6 +43,9 @@ export default function ContactContainer({ data }) {
     return () => document.removeEventListener("keydown", resetFilters, false)
   }, [resetFilters])
 
+  // Test
+  const departments = ["Jobloop", "Kodehode", "Gamify"]
+
   return (
     <div className="flex flex-col gap-24 pb-24 max-md:px-4 max-md:w-full">
       <div className="grid grid-cols-2 gap-4 max-md:grid-cols-1 w-full">
@@ -49,12 +53,12 @@ export default function ContactContainer({ data }) {
           <input className="w-full text-lg p-[10px] border focus:border-jobloop-primary-green focus:outline-none font-sans" type="text" placeholder="Søk etter ansatt ..." ref={nameInput} onChange={e => filterEmployee()} />
         </span>
         <span>
-          <select className="w-full text-lg p-[13px] border bg-white focus:border-jobloop-primary-green focus:outline-none font-sans" defaultValue="" ref={departmentSelect} onChange={e => filterEmployee()}>
-            <option value="">Alle avdelinger</option>
-            <option value="gamify">Gamify</option>
-            <option value="kodehode">Kodehode</option>
-            <option value="jobloop">Jobloop</option>
-          </select>
+          <FormSelect
+            options={departments}
+            placeholder="Alle avdelinger"
+            searchable={false}
+            multiple={true}
+          />
         </span>
         {
           isFiltered &&
