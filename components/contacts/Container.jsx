@@ -54,6 +54,7 @@ export default function ContactContainer({ data }) {
         </span>
         <span>
           <FormSelect
+            classNames={{input: "p-2 m-2 bg-green-100", ul: "p-2 bg-red-100", li: "bg-blue-100"}}
             options={departments}
             placeholder="Alle avdelinger"
             searchable={false}
