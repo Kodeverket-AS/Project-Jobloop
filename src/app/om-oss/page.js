@@ -22,7 +22,7 @@ export default function OmOss() {
                         <span className='block w-full h-1 bg-jobloop-primary-green mt-2 mb-6'></span>
                     </h1>
                     <p className='text-lg leading-relaxed mb-6'>
-                        Sammen med oppstartsmiljøet tilknyttet Bergen.Works
+                        Sammene med oppstartsmiljøet tilknyttet Bergen.Works
                         coworkingspace har JobLoop de siste årene utviklet en
                         alternativ plattform for kvalifisering og rekruttering
                         av junior utviklere og innholdsprodusenter. Hensikten er
