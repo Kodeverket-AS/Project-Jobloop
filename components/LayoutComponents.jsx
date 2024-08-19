@@ -57,7 +57,7 @@ export const IntroSection = ({
           title="Klikk bilde for å lese mer om FERD prisen her"
           className="relative w-full lg:w-1/2 overflow-hidden group saturate-100 hover:saturate-150 ">
           <div className="absolute z-10 p-4 transition-all duration-500 bottom-0 lg:-bottom-20 lg:group-hover:-bottom-0 left-0 w-full h-20 bg-black/70">
-            <h3 className="text-kv-white">
+            <h3 className="text-kv-white hover:underline">
               Klikk bilde for å lese om da vi mottok FERD prisen 2024
             </h3>
           </div>
