@@ -30,7 +30,7 @@ export function ScrollToTopButton() {
     <button
       onClick={scrollToTop}
       aria-label="Scroll til toppen"
-      className={` z-50 p-4 fixed md:bottom-8 bottom-4 md:right-8 right-4 transition-all duration-200  bg-jobloop-secondary-green text-kv-white rounded-full hover:scale-[0.90] border shadow ${
+      className={` z-50 p-4 fixed md:bottom-8 bottom-4 md:right-8 right-4 transition-all duration-200  bg-kv-black text-jobloop-primary-green rounded-full hover:scale-[0.90] border shadow ${
         isVisible ? "opacity-100 " : "opacity-0 cursor-default"
       }`}>
       <FaArrowUp
@@ -46,7 +46,7 @@ export function LinkButton({ Path, Text }) {
     <Link
       href={Path}
       aria-label={`Lenke til underside ${Path}`}
-      className="w-full px-8 py-2 tracking-normal text-center transition-all bg-kv-white border-2 border-solid rounded-full sm:w-fit border-kv-black hover:bg-jobloop-secondary-green hover:border-jobloop-secondary-green hover:text-kv-white focus:bg-jobloop-secondary-green focus:text-kv-white">
+      className="w-full px-8 py-2 tracking-normal text-center scale-100 lg:hover:scale-105 text-kv-black transition-all bg-kv-white border-2 border-solid rounded-full sm:w-fit border-kv-black hover:bg-jobloop-primary-green hover:border-jobloop-primary-green focus:bg-jobloop-primary-green">
       {Text}
     </Link>
   );
@@ -56,19 +56,31 @@ export function LinkButtonInternal({ Path, Text }) {
     <Link
       href={Path}
       aria-label={`Lenke til underside ${Path}`}
-      className="flex items-center gap-1 py-2 font-bold tracking-normal underline transition-all text-jobloop-secondary-green w-fit decoration-jobloop-secondary-green/5 underline-offset-4 hover:underline-offset-2 hover:decoration-jobloop-secondary-green/100 hover:gap-2 ">
+      className=" flex items-center gap-1 py-2 font-bold tracking-normal underline transition-all text-jobloop-secondary-green w-fit decoration-jobloop-secondary-green/5 underline-offset-4 hover:underline-offset-2 hover:decoration-jobloop-secondary-green/100 hover:gap-2 ">
       {Text}
       <FaArrowRight className="inline-block h-4 lg:w-4" />
     </Link>
   );
 }
-export function LinkButtonRed({ Path, Text }) {
+export function LinkButtonModernWithIcon({ Path, Text }) {
   return (
     <Link
       href={Path}
       aria-label={`Lenke til underside ${Path}`}
-      className="w-full px-8 py-3 text-base tracking-wide text-center transition-all rounded-full lg:text-lg sm:w-fit text-kv-white bg-jobloop-secondary-orange border-secondary-orange hover:bg-jobloop-secondary-green focus:bg-jobloop-secondary-green">
+      className="flex items-center justify-center w-full gap-1 px-8 py-3 text-base font-medium text-center transition-all rounded-full sm:w-fit text-kv-white bg-jobloop-primary-green/20 scale-100 lg:hover:scale-105  shadow-md backdrop-blur-sm -webkit-backdrop-filter shadow-kv-white/30 border border-kv-white ">
       {Text}
+      <MdOutlineMail className="inline-block h-5 lg:w-5" />
+    </Link>
+  );
+}
+export function LinkButtonModern({ Path, Text }) {
+  return (
+    <Link
+      href={Path}
+      aria-label={`Lenke til underside ${Path}`}
+      className=" flex items-center justify-center w-full gap-1 px-8 py-3 text-base font-medium text-center transition-all rounded-full sm:w-fit text-kv-white bg-jobloop-primary-green/20 scale-100 lg:hover:scale-105 shadow-md backdrop-blur-sm -webkit-backdrop-filter shadow-kv-white/30 border border-kv-white ">
+      {Text}
+      {/* <MdOutlineMail className="inline-block h-5 lg:w-5" /> */}
     </Link>
   );
 }
@@ -78,7 +90,7 @@ export function KontaktButton({ Path, Text }) {
     <Link
       href={Path}
       aria-label={`Lenke til underside ${Path}`}
-      className="flex items-center justify-center w-full gap-1 px-8 py-3 text-base tracking-normal text-center transition-all border-2 rounded-full group sm:w-fit text-kv-white bg-jobloop-secondary-green border-jobloop-secondary-green hover:text-jobloop-secondary-green hover:bg-jobloop-secondary-green/5 focus:bg-jobloop-secondary-green/5">
+      className="flex items-center justify-center w-full gap-1 px-8 py-3 text-base tracking-normal text-center transition-all border-2 rounded-full scale-100 lg:hover:scale-105 group sm:w-fit text-kv-black bg-jobloop-primary-green hover:bg-kv-white border-jobloop-primary-green  focus:bg-kv-white">
       {Text}
       <MdOutlineMail className="inline-block h-5 lg:w-5" />
     </Link>
@@ -90,7 +102,7 @@ export function ExternalLinkButton({ Path, Text, Aria }) {
     <a
       href={Path}
       aria-label={Aria}
-      className="flex items-center justify-center w-full gap-1 px-8 py-2 text-base tracking-normal text-center transition-all border-2 border-solid rounded-full sm:w-fit bg-kv-white border-kv-black hover:bg-jobloop-secondary-green hover:border-jobloop-secondary-green hover:text-kv-white focus:bg-jobloop-secondary-green focus:text-kv-white "
+      className="flex items-center justify-center w-full gap-1 px-8 py-2 text-base scale-100 lg:hover:scale-105 text-kv-black tracking-normal text-center transition-all border-2 border-solid rounded-full sm:w-fit bg-kv-white border-kv-black hover:bg-jobloop-primary-green hover:border-jobloop-primary-green  focus:bg-jobloop-primary-green focus:text-kv-white "
       target="_blank"
       rel="noopener noreferrer">
       {Text}

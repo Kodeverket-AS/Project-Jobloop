@@ -13,8 +13,10 @@ export default function Home() {
       <LandingHero />
       <div className="container flex flex-col items-center ">
         <LandingIntro />
-        <WorkCourses />
-        <SchoolCourses />
+        <div id="courses">
+          <WorkCourses />
+          <SchoolCourses />
+        </div>
         <CooperationProjects />
         <JobloopSuccess />
         <ContactComponent />
