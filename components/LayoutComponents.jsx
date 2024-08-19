@@ -56,7 +56,7 @@ export const IntroSection = ({
           target="_blank"
           title="Klikk bilde for å lese mer om FERD prisen her"
           className="relative w-full lg:w-1/2 overflow-hidden group saturate-100 hover:saturate-150 ">
-          <div className="absolute p-4 transition-all duration-300 bottom-0 lg:-bottom-20 lg:group-hover:-bottom-0 left-0 w-full h-20 bg-black/70">
+          <div className="absolute z-10 p-4 transition-all duration-500 bottom-0 lg:-bottom-20 lg:group-hover:-bottom-0 left-0 w-full h-20 bg-black/70">
             <h3 className="text-kv-white">
               Klikk bilde for å lese om da vi mottok FERD prisen 2024
             </h3>
@@ -66,7 +66,7 @@ export const IntroSection = ({
             src={image}
             width={1500}
             height={500}
-            className="max-w-full object-cover"
+            className="max-w-full object-cover transition-all duration-[3000ms] scale-100 lg:group-hover:scale-105"
           />
         </a>
       ) : (
