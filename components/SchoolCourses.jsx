@@ -12,8 +12,8 @@ import { IntroSectionReverse } from "./LayoutComponents";
 const IntroData = [
   {
     image: Læringstilbud,
-    title: "Læringstilbud",
-    text: "Jobloop samarbeider med skoler over hele landet med å gi elever som trenger en alternativ arena hvor de kan oppleve læring og motivasjon gjennom alternative metoder blant annet gjennom gaming.",
+    title: "Tilbud mot frafall fra skole og utdanning",
+    text: "I våre alternative mestrings- og læringsarenaer jobber vi hver dag for at flere elever skal oppleve mestring, tilhørighet og meningsfulle dager. Vi jobber styrkebasert og sammen med elevene for at de skal få muligheten til å både utforske og dyrke sine interesser. Vi samarbeider alltid med den enkelte elevs skole/PPT for å bygge bro fra våre alternative alternative læringsarenaer til klasserommet og undervisningen på skolen.",
     path: "/læringstilbud",
     alt: "JobbtilbudBilde",
   },
@@ -24,14 +24,14 @@ const UICardData = [
     image: Learnwell,
     alt: "Pc-skjerm med headset",
     title: "LearnWell",
-    text: "Alternativ læringsarena for elever i videregående",
+    text: "Tilrettelagt praksis i kreative digitale fag. For elever i videregående skole alder.",
     path: "/learnWell",
   },
   {
     image: Gamify,
     alt: "2 jenter i Gamify",
     title: "Gamify",
-    text: "Motivasjon og læring gjennom gaming",
+    text: "Motivasjon og læring gjennom spill og gaming. For elever i grunnskolen.",
     path: "/gamify",
   },
   {

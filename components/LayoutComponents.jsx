@@ -85,7 +85,7 @@ export const IntroSection = ({
         <h2 className=" text-kv-black text-2xl lg:text-5xl border-b-2 md:border-b-4 pb-2 border-jobloop-primary-green w-fit">
           {title}
         </h2>
-        <p className="text-gray-600 text-base leading-relaxed lg:text-2xl">
+        <p className="text-gray-600 text-base xl:leading-relaxed lg:text-xl">
           {text}
         </p>
         {isButton && (
@@ -118,7 +118,7 @@ export const IntroSectionReverse = ({
         <h2 className=" text-kv-black text-2xl lg:text-4xl xl:text-5xl border-b-2 md:border-b-4 pb-2 border-jobloop-primary-green w-fit">
           {title}
         </h2>
-        <p className="text-gray-600 text-base leading-relaxed lg:text-xl xl:text-2xl ">
+        <p className="text-gray-600 text-base xl:leading-relaxed lg:text-xl">
           {text}
         </p>
         {isButton && (
@@ -168,7 +168,9 @@ export const PartnerProject = ({
         <h3 className="text-kv-black text-xl md:text-2xl lg:text-3xl border-b-2 md:border-b-4 pb-2 border-jobloop-primary-green w-fit">
           {title}
         </h3>
-        <p className="text-base lg:text-xl text-gray-600">{text}</p>
+        <p className="text-gray-600 text-base xl:leading-relaxed lg:text-lg">
+          {text}
+        </p>
         {isButton && (
           <ButtonCTA
             isButton={true}
@@ -198,7 +200,9 @@ export const PartnerProjectReverse = ({
         <h3 className="text-kv-black text-xl md:text-2xl lg:text-3xl border-b-2 md:border-b-4 pb-2 border-jobloop-primary-green w-fit">
           {title}
         </h3>
-        <p className="text-base lg:text-xl text-gray-600">{text}</p>
+        <p className="text-gray-600 text-base xl:leading-relaxed lg:text-lg">
+          {text}
+        </p>
         {isButton && (
           <ButtonCTA
             isButton={true}
