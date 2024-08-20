@@ -14,7 +14,7 @@ const IntroData = [
     image: Læringstilbud,
     title: "Tilbud mot frafall fra skole og utdanning",
     text: "I våre alternative mestrings- og læringsarenaer jobber vi hver dag for at flere elever skal oppleve mestring, tilhørighet og meningsfulle dager. Vi jobber styrkebasert og sammen med elevene for at de skal få muligheten til å både utforske og dyrke sine interesser. Vi samarbeider alltid med den enkelte elevs skole/PPT for å bygge bro fra våre alternative alternative læringsarenaer til klasserommet og undervisningen på skolen.",
-    path: "/læringstilbud",
+    path: "/laringstilbud",
     alt: "JobbtilbudBilde",
   },
 ];
@@ -84,7 +84,7 @@ export default function SchoolCourses() {
         title={IntroData[0].title}
         text={IntroData[0].text}
         path={IntroData[0].path}
-        isButton={true}
+        isButton={false}
         alt={IntroData[0].alt}
         // btnVariant={"internalLink"}
       />
