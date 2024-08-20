@@ -356,17 +356,15 @@ export default function OmOss() {
                             <span className='block w-full h-1 bg-jobloop-primary-orange mt-2 mb-6'></span>
                         </div>
                         <p className='mb-8'>
-                            Karl Haakon hos oss er ansvarlig for markedsteamet i
-                            Kodehode. Han sitter klar med kaffen og refresher
-                            innboksen sin på
-                            <a
-                                href='mailto:karl@jobloop.no'
-                                className='text-jobloop-secondary-green font-semibold hover:underline underline-offset-4 hover:text-jobloop-secondary-orange'
-                            >
-                                {" "}
-                                karl@jobloop.no
-                            </a>{" "}
-                            i påvente av en mail fra deg ;)
+                            Vi er er alltid klar for å finne de gode løsningene!
+                            Christer er ansvarlig for bedriftsmarkedet og kan
+                            sørge for at vi spisser et par kandidater etter din
+                            tech-stack og behov. Inger-Johanne kan alt om
+                            Kodehode og Kim om våre Spillbaserte tilnærminger.
+                            Karl-Håkon hjelper deg i gang med Medarbeiderskap.
+                            Du kan også se hvem som er ansvarlig kursleder i din
+                            by på siden for de ulike tiltakene eller under
+                            “kontakt oss”.
                         </p>
                         <LinkButton Path={"/kontakt"} Text={"Kontakt Oss"} />
                     </div>
@@ -420,6 +418,76 @@ export default function OmOss() {
                                 className='object-cover'
                             />
                             <p className='mt-6 text-center'>Tønsberg</p>
+                        </div>
+                        <div className='flex flex-col items-center p-6 '>
+                            <Image
+                                src='/Oslo.jpg'
+                                alt='Oslo'
+                                width={150}
+                                height={50}
+                                className='object-cover'
+                            />
+                            <p className='mt-6 text-center'>Oslo</p>
+                        </div>
+                        <div className='flex flex-col items-center p-6 '>
+                            <Image
+                                src='/Alta.jpg'
+                                alt='Alta'
+                                width={150}
+                                height={50}
+                                className='object-cover'
+                            />
+                            <p className='mt-6 text-center'>Alta</p>
+                        </div>
+                        <div className='flex flex-col items-center p-6 '>
+                            <Image
+                                src='/Placeholderby.png'
+                                alt='AI generert norsk by'
+                                width={150}
+                                height={50}
+                                className='object-cover'
+                            />
+                            <p className='mt-6 text-center'>Kirkenes</p>
+                        </div>
+                        <div className='flex flex-col items-center p-6 '>
+                            <Image
+                                src='/Ålesund.jpg'
+                                alt='Ålesund'
+                                width={150}
+                                height={50}
+                                className='object-cover'
+                            />
+                            <p className='mt-6 text-center'>Ålesund</p>
+                        </div>
+                        <div className='flex flex-col items-center p-6 '>
+                            <Image
+                                src='/Placeholderby.png'
+                                alt='AI generert norsk by'
+                                width={150}
+                                height={50}
+                                className='object-cover'
+                            />
+                            <p className='mt-6 text-center'>Ørsta/Volda</p>
+                        </div>
+                        <div className='flex flex-col items-center p-6 '>
+                            <Image
+                                src='/Molde.png'
+                                alt='Molde'
+                                width={150}
+                                height={50}
+                                className='object-cover'
+                            />
+                            <p className='mt-6 text-center'>Molde</p>
+                        </div>
+                        <div className='flex flex-col items-center p-6 '>
+                            <Image
+                                src='/Placeholderby.png'
+                                alt='AI generert norsk by'
+                                width={150}
+                                height={50}
+                                className='object-cover'
+                            />
+                            <p className='mt-6 text-center'>Kristiansund</p>
                         </div>
                         <div className='flex flex-col items-center p-6 '>
                             <Image
