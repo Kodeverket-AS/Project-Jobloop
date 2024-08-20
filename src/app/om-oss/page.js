@@ -7,35 +7,99 @@ export default function OmOss() {
     return (
         <main className='flex flex-col items-center justify-between min-h-screen p-8'>
             <section className='flex flex-col md:flex-row items-center justify-between max-w-4xl mx-auto p-4 '>
-                <div className='order-2 md:order-1 md:flex-shrink-0 md:mr-8 mb-4 md:mb-0'>
-                    <Image
-                        src='/JLomossbilde.png'
-                        alt='Om oss'
-                        width={400}
-                        height={900}
-                        className='mt-8'
-                    />
-                </div>
-                <div className='order-1 md:order-2'>
-                    <h1 className='text-4xl font-bold mb-4 relative'>
-                        Om oss
-                        <span className='block w-full h-1 bg-jobloop-primary-green mt-2 mb-6'></span>
-                    </h1>
-                    <p className='text-lg leading-relaxed mb-6'>
-                        Sammen med oppstartsmiljøet tilknyttet Bergen.Works
-                        coworkingspace har JobLoop de siste årene utviklet en
-                        alternativ plattform for kvalifisering og rekruttering
-                        av junior utviklere og innholdsprodusenter. Hensikten er
-                        å dekke det voksende kompetansegapet på IT-markedet og
-                        samtidig inkludere flere unge som har falt utenfor
-                        arbeid og utdanning. Samarbeidet ble i senere tid døpt
-                        “Kodehode” og videreutviklet med Arbeids- og
-                        Velferdsetaten NAV. I dag leveres versjoner av Kodehode
-                        som amo-tiltak i Vestland og Rogaland sammen med vår
-                        gode samarbeidspartner Podium.
-                    </p>
-                    <div className='mt-8'>
-                        <LinkButton Path={"/kontakt"} Text={"Kontakt Oss"} />
+                <div className='order-2 md:order-1 md:flex-shrink-0 md:mr-8 mb-4 md:mb-0'></div>
+                <div className='order-1'>
+                    {/* Bilde på toppen */}
+                    <div className='mb-8'>
+                        <Image
+                            src='/JLomossbilde.png'
+                            alt='3 personer i jobloop som sitter å snakker sammen rundt et bord ute'
+                            width={600}
+                            height={900}
+                            className='mt-8'
+                        />
+                    </div>
+
+                    {/* Tekstseksjon under bildet */}
+                    <div>
+                        <h1 className='text-4xl font-bold mb-4 relative'>
+                            Om oss
+                            <span className='block w-full h-1 bg-jobloop-primary-green mt-2 mb-6'></span>
+                        </h1>
+                        <p className='text-lg leading-relaxed mb-6'>
+                            JobLoop startet som et samarbeid mellom sosiale
+                            entreprenører, NAV, og en rekke arbeidsgivere. I
+                            2014 resulterte dette i en inkluderingsmodell som
+                            senere skulle bli anerkjent under navnet
+                            Loop-modellen. I perioden 2014-2018 ble modellen
+                            videreutviklet sammen med Hovedorganisasjonen Virke
+                            og etablert i en rekke norske fylker. FAFO´s rapport
+                            fra 2018 skrev at dette var inkluderingsarbeid som
+                            virket i praksis. I 2017 ble Jobloop etablert som et
+                            eget selskap for å videreføre og tilpasse
+                            inkluderingmodellen til nye bransjer og målgrupper.
+                            Et viktig samarbeid har vært med oppstart miljøet
+                            tilknyttet Bergen.Works coworkingspace hvor modellen
+                            blant annet ble tilpasset for “de nye jobbene” innen
+                            IT-utvikling og kreativ teknologi, samt gründer- og
+                            vekstselskapene.
+                        </p>
+                        <p className='text-lg leading-relaxed mb-6'>
+                            I dag er denne modellen mest kjent som “Kodehode” -
+                            et program som dyrker frem og trener opp dyktige
+                            junior-utviklere til jobber innen IT i tett
+                            samarbeid med bransjen selv. Driverne bak selskapet
+                            har alltid vært opptatt av å tilpasse modellene for
+                            de som ikke har lyktes helt i første sving, eller
+                            som står i fare for å falle fra sine utdanningsløp.
+                            Det har resultert i kontinuerlige tilpasninger til
+                            nye målgrupper, inkludert elever helt ned i
+                            barneskolealder. I dag jobber vi både med arbeids-
+                            og inkluderingsbedriftene, fontenehus, NAV,
+                            kommuner, fylkeskommuner, skoler, barnevern, PPT,
+                            OT, og helt ordinære arbeidsgivere. JobLoop er et
+                            raskt voksende selskap drevet av sosiale
+                            entreprenører. Vi har et viktig mål: å begrense
+                            utenforskap ved å hindre frafall i skolen,
+                            kvalifisere og formidle flere til arbeid! For å få
+                            til det samarbeider vi med offentlige aktører,
+                            utdanningsinstitusjoner, og lokalt arbeidsliv. I
+                            2024 mottok de FERD-prisen Årets Sosiale Entreprenør
+                            for sitt arbeid i kampen for å bekjempe ufrivillig
+                            skolefravær. Visste du at 20-30% av unge ikke
+                            fullfører videregående skole? eller at flere av
+                            disse faller fra allerede i grunnskolen? 10 år med
+                            innovative partnerskap og ildsjelsarbeid har
+                            resultert i at vi i dag er en stolt leverandør av en
+                            rekke tilbud til barn, unge og voksne som ønsker nye
+                            veier inn i arbeidslivet. JobLoop har spesielt
+                            lyktes med å skape innovative lærings- og
+                            mestringsarenaer som appellerer til unge voksne med
+                            interesser innen kreative digitale fagområder,
+                            gaming, og IT.
+                        </p>
+                        <p className='text-lg leading-relaxed mb-6'>
+                            Vi har programmer som retter seg mot barn i
+                            grunnskolen, videregående skole, og voksne
+                            arbeidssøkere. Samtidig er vi tett på
+                            arbeidsmarkedet og spisser programmene våre
+                            kontinuerlig etter trender og behov. Vi heier
+                            spesielt på norsk IT-bransje og mener inkludering og
+                            alternative kvalifiseringsmodeller vil være
+                            avgjørende for å lykkes med å dekke det voksende
+                            kompetansegapet. Visste du at dersom alle norske
+                            IT-selskap med 10 ansatte eller mer rekrutterte én
+                            kandidat fra en sosial entreprenør eller
+                            velferdsaktør ville vi ha bekjempet hele
+                            utenforskapsfloken? Eller at du helt uten
+                            forpliktelser kan prøve ut et samarbeid med oss?
+                        </p>
+                        <div className='mt-8'>
+                            <LinkButton
+                                Path={"/kontakt"}
+                                Text={"Kontakt Oss"}
+                            />
+                        </div>
                     </div>
                 </div>
             </section>
@@ -195,6 +259,60 @@ export default function OmOss() {
                                 Aria='Les mer'
                             />
                         </div>
+                        <div className='flex flex-col  p-6  '>
+                            <Image
+                                src='/podium.png'
+                                alt='Podium logo'
+                                width={200}
+                                height={100}
+                            />
+                            <p className='mt-10 mb-12 '>
+                                Podium er en tiltaksbedrift med hovedkontor i
+                                Oslo. Gründerne bak selskapet deler mange av de
+                                samme verdiene som driverne bak JobLoop og
+                                selskapene har drevet frem flere
+                                innovasjonsprosjekter sammen. Noen har resultert
+                                i offentlige rammeavtaler som JobLoop og Podium
+                                har levert sammen med mål om å hjelpe flere inn
+                                i et norsk arbeids- og samfunnsliv som stadig er
+                                i endring.
+                            </p>
+                            <ExternalLinkButton
+                                Path='https://www.podium.no/'
+                                Text='Les mer'
+                                Aria='Les mer'
+                            />
+                        </div>
+                        <div className='flex flex-col  p-6  '>
+                            <Image
+                                src='/playwell.png'
+                                alt='Playwell logo'
+                                width={100}
+                                height={50}
+                            />
+                            <p className='mt-5 mb-12 '>
+                                Playwell er et Gamingsenter som driver med
+                                e-sport og sosial gaming. Vi samlokaliserte oss
+                                i 2019 med mål om å utvikle mestringsarenaer for
+                                sårbare barn og unge som motiveres av gaming.
+                                Det har resultert i flere virksomme
+                                læringsarenaer hvor vi bruker spill og gaming
+                                som sosialpedagogisk arbeid med barn og unge og
+                                som et verktøy for læring. Sammen har vi i dag
+                                et ledende kompetansemiljø innen
+                                gamingpedagogikk. Dette bruker vi blant annet i
+                                tilbudene Spillbasert Kvalifisering, Gamify, og
+                                Learnwell, som alle er lærings- og
+                                mestringsarenaer med mål om å utvikle sosial
+                                kompetanse og arbeidslivserfaring eller å bestå
+                                ordinære skolefag.
+                            </p>
+                            <ExternalLinkButton
+                                Path='https://www.playwell.no/'
+                                Text='Les mer'
+                                Aria='Les mer'
+                            />
+                        </div>
                     </div>
                 </div>
             </section>
@@ -238,17 +356,15 @@ export default function OmOss() {
                             <span className='block w-full h-1 bg-jobloop-primary-orange mt-2 mb-6'></span>
                         </div>
                         <p className='mb-8'>
-                            Karl Haakon hos oss er ansvarlig for markedsteamet i
-                            Kodehode. Han sitter klar med kaffen og refresher
-                            innboksen sin på
-                            <a
-                                href='mailto:karl@jobloop.no'
-                                className='text-jobloop-secondary-green font-semibold hover:underline underline-offset-4 hover:text-jobloop-secondary-orange'
-                            >
-                                {" "}
-                                karl@jobloop.no
-                            </a>{" "}
-                            i påvente av en mail fra deg ;)
+                            Vi er er alltid klar for å finne de gode løsningene!
+                            Christer er ansvarlig for bedriftsmarkedet og kan
+                            sørge for at vi spisser et par kandidater etter din
+                            tech-stack og behov. Inger-Johanne kan alt om
+                            Kodehode og Kim om våre Spillbaserte tilnærminger.
+                            Karl-Håkon hjelper deg i gang med Medarbeiderskap.
+                            Du kan også se hvem som er ansvarlig kursleder i din
+                            by på siden for de ulike tiltakene eller under
+                            “kontakt oss”.
                         </p>
                         <LinkButton Path={"/kontakt"} Text={"Kontakt Oss"} />
                     </div>
@@ -302,6 +418,76 @@ export default function OmOss() {
                                 className='object-cover'
                             />
                             <p className='mt-6 text-center'>Tønsberg</p>
+                        </div>
+                        <div className='flex flex-col items-center p-6 '>
+                            <Image
+                                src='/Oslo.jpg'
+                                alt='Oslo'
+                                width={150}
+                                height={50}
+                                className='object-cover'
+                            />
+                            <p className='mt-6 text-center'>Oslo</p>
+                        </div>
+                        <div className='flex flex-col items-center p-6 '>
+                            <Image
+                                src='/Alta.jpg'
+                                alt='Alta'
+                                width={150}
+                                height={50}
+                                className='object-cover'
+                            />
+                            <p className='mt-6 text-center'>Alta</p>
+                        </div>
+                        <div className='flex flex-col items-center p-6 '>
+                            <Image
+                                src='/Placeholderby.png'
+                                alt='AI generert norsk by'
+                                width={150}
+                                height={50}
+                                className='object-cover'
+                            />
+                            <p className='mt-6 text-center'>Kirkenes</p>
+                        </div>
+                        <div className='flex flex-col items-center p-6 '>
+                            <Image
+                                src='/Ålesund.jpg'
+                                alt='Ålesund'
+                                width={150}
+                                height={50}
+                                className='object-cover'
+                            />
+                            <p className='mt-6 text-center'>Ålesund</p>
+                        </div>
+                        <div className='flex flex-col items-center p-6 '>
+                            <Image
+                                src='/Placeholderby.png'
+                                alt='AI generert norsk by'
+                                width={150}
+                                height={50}
+                                className='object-cover'
+                            />
+                            <p className='mt-6 text-center'>Ørsta/Volda</p>
+                        </div>
+                        <div className='flex flex-col items-center p-6 '>
+                            <Image
+                                src='/Molde.png'
+                                alt='Molde'
+                                width={150}
+                                height={50}
+                                className='object-cover'
+                            />
+                            <p className='mt-6 text-center'>Molde</p>
+                        </div>
+                        <div className='flex flex-col items-center p-6 '>
+                            <Image
+                                src='/Placeholderby.png'
+                                alt='AI generert norsk by'
+                                width={150}
+                                height={50}
+                                className='object-cover'
+                            />
+                            <p className='mt-6 text-center'>Kristiansund</p>
                         </div>
                         <div className='flex flex-col items-center p-6 '>
                             <Image
