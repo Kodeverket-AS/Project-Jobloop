@@ -66,7 +66,7 @@ export const IntroSection = ({
             src={image}
             width={1500}
             height={500}
-            className="max-w-full object-cover transition-all duration-[3000ms] scale-100 lg:group-hover:scale-105"
+            className="max-w-full object-cover transition-all duration-[5000ms] scale-100 lg:group-hover:scale-105"
           />
         </a>
       ) : (

@@ -46,7 +46,8 @@ export function LinkButton({ Path, Text }) {
     <Link
       href={Path}
       aria-label={`Lenke til underside ${Path}`}
-      className="w-full px-8 py-2 tracking-normal text-center scale-100 lg:hover:scale-105 text-kv-black transition-all bg-kv-white border-2 border-solid rounded-full sm:w-fit border-kv-black hover:bg-jobloop-primary-green hover:border-jobloop-primary-green focus:bg-jobloop-primary-green">
+      className="group relative overflow-hidden w-full px-8 py-2 tracking-normal text-center scale-100 lg:hover:scale-105 text-kv-black transition-all bg-kv-white border-2 border-solid rounded-full sm:w-fit border-kv-black hover:bg-jobloop-primary-green  hover:border-jobloop-primary-green focus:bg-jobloop-primary-green">
+      {/* <div className="hidden lg:block -skew-x-12 absolute inset-0 bg-jobloop-primary-green w-0 group-hover:w-full group-hover:skew-x-0 transition-all duration-300 -z-10"></div> */}
       {Text}
     </Link>
   );
@@ -62,23 +63,25 @@ export function LinkButtonInternal({ Path, Text }) {
     </Link>
   );
 }
-export function LinkButtonModernWithIcon({ Path, Text }) {
+export function LinkButtonAnimatedWithIcon({ Path, Text }) {
   return (
     <Link
       href={Path}
       aria-label={`Lenke til underside ${Path}`}
-      className="flex items-center justify-center w-full gap-1 px-8 py-3 text-base font-medium text-center transition-all rounded-full sm:w-fit text-kv-white bg-jobloop-primary-green/20 scale-100 lg:hover:scale-105  shadow-md backdrop-blur-sm -webkit-backdrop-filter shadow-kv-white/30 border border-kv-white ">
+      className="relative group overflow-hidden flex items-center justify-center w-full gap-1 px-8 py-3 text-base font-medium text-center transition-all rounded-full sm:w-fit text-kv-black bg-jobloop-primary-green scale-100 lg:hover:scale-105  shadow-lg shadow-kv-black/30 hover:shadow-jobloop-primary-orange/20 border border-kv-white">
+      <div className="hidden lg:block -skew-x-12 absolute inset-0 bg-jobloop-primary-orange w-0 group-hover:w-full group-hover:skew-x-0 transition-all duration-500 -z-10"></div>
       {Text}
       <MdOutlineMail className="inline-block h-5 lg:w-5" />
     </Link>
   );
 }
-export function LinkButtonModern({ Path, Text }) {
+export function LinkButtonAnimated({ Path, Text }) {
   return (
     <Link
       href={Path}
       aria-label={`Lenke til underside ${Path}`}
-      className=" flex items-center justify-center w-full gap-1 px-8 py-3 text-base font-medium text-center transition-all rounded-full sm:w-fit text-kv-white bg-jobloop-primary-green/20 scale-100 lg:hover:scale-105 shadow-md backdrop-blur-sm -webkit-backdrop-filter shadow-kv-white/30 border border-kv-white ">
+      className="relative group overflow-hidden flex items-center justify-center w-full gap-1 px-8 py-3 text-base font-medium text-center transition-all rounded-full sm:w-fit text-kv-black bg-jobloop-primary-green scale-100 lg:hover:scale-105  shadow-lg shadow-kv-black/30 hover:shadow-jobloop-primary-orange/20 border border-kv-white">
+      <div className="hidden lg:block -skew-x-12 absolute inset-0 bg-jobloop-primary-orange w-0 group-hover:w-full group-hover:skew-x-0 transition-all duration-500 -z-10"></div>
       {Text}
       {/* <MdOutlineMail className="inline-block h-5 lg:w-5" /> */}
     </Link>
