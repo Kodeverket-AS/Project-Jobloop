@@ -291,7 +291,7 @@ export default function OmOss() {
           <div className="relative w-64 h-64 mb-12 lg:mb-0 lg:mr-12">
             <div className="absolute top-0 left-0 transform -translate-x-4 -translate-y-4">
               <Image
-                src="/Karl.png" // Path to your image
+                src="/Karl.webp" // Path to your image
                 alt="Person 1"
                 width={150}
                 height={150}
