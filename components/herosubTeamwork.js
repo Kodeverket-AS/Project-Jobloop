@@ -4,6 +4,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { PortableText } from "@portabletext/react";
 import { LinkButton } from "./Buttons";
+import { ExternalLinkButton } from "./Buttons";
 
 export default function HeroSub({ content }) {
     return (
@@ -19,7 +20,12 @@ export default function HeroSub({ content }) {
                         <p>Her kommer en introtekst</p>
                     )}
                     <div className='mt-10'>
-                        <LinkButton Path='/kontakt' Text={"kontakt oss"} />
+                        {/* <LinkButton Path='/kontakt' Text={"kontakt oss"} /> */}
+                        <ExternalLinkButton
+                            Path='https://linktr.ee/teamwork.as'
+                            Text='Lær mer'
+                            Aria='Les mer'
+                        />
                     </div>
                 </div>
             </div>
