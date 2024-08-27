@@ -3,6 +3,61 @@
 import { useEffect, useCallback, useRef, useState } from "react";
 import ContactCard from "./Card";
 
+function ContactSortByPriority(prop) {
+  const { prop: arr = [] } = prop
+  const categorized = arr.reduce((acc, person) => {
+    const { priority = 4 } = person;
+    acc[priority] = acc[priority] ?? [];
+    acc[priority].push(person);
+    return acc;
+  }, {});
+
+  return (
+    <>
+      {
+        Object.keys(categorized).map((priority, index) => (
+          priority == 1 ?
+            <div key={index}>
+              <h1>Ledelese og administrasjon</h1>
+              {
+                categorized[priority].map((contact, i) =>
+                  <ContactCard key={i} contact={contact} />
+                )
+              }
+            </div>
+          : priority == 2 ?
+            <div key={index}>
+              <h1>Teamledere og tiltaksledere</h1>
+              {
+                categorized[priority].map((contact, i) =>
+                  <ContactCard key={i} contact={contact} />
+                )
+              }
+            </div>
+          : priority == 3 ?
+          <div key={index}>
+            <h1>Faglige veiledere og spillpedagoger</h1>
+            {
+              categorized[priority].map((contact, i) =>
+                <ContactCard key={i} contact={contact} />
+              )
+            }
+          </div>
+        :
+          <div key={index}>
+              <h1>Interns</h1>
+              {
+                categorized[priority].map((contact, i) =>
+                  <ContactCard key={i} contact={contact} />
+                )
+              }
+            </div>
+        ))
+      }
+    </>
+  )
+}
+
 export default function ContactContainer({ data }) {
   const [ filtered, filterData ] = useState(data)
   const [ isFiltered, setIsFiltered ] = useState(false)
@@ -88,11 +143,9 @@ export default function ContactContainer({ data }) {
       <div className="flex flex-col gap-12">
         {
           filtered.length > 0 ?
-          filtered.map((contact, index) => (
-            <ContactCard key={index} contact={contact} />
-          ))
+            <ContactSortByPriority prop={filtered} />
           :
-          <span className="text-center">Beklager, ditt søk ga ingen resultater</span>
+            <span className="text-center">Beklager, ditt søk ga ingen resultater</span>
         }
       </div>
     </div>
