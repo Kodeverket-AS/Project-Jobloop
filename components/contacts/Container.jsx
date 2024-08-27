@@ -17,8 +17,8 @@ function ContactSortByPriority(prop) {
       {
         Object.keys(categorized).map((priority, index) => (
           priority == 1 ?
-            <div key={index}>
-              <h1>Ledelese og administrasjon</h1>
+            <div key={index} className="flex flex-col gap-12">
+              <h1 className="text-center">Ledelese og administrasjon</h1>
               {
                 categorized[priority].map((contact, i) =>
                   <ContactCard key={i} contact={contact} />
@@ -26,31 +26,31 @@ function ContactSortByPriority(prop) {
               }
             </div>
           : priority == 2 ?
-            <div key={index}>
-              <h1>Teamledere og tiltaksledere</h1>
+            <div key={index} className="flex flex-col gap-12">
+              <h1 className="text-center">Teamledere og tiltaksledere</h1>
+                {
+                  categorized[priority].map((contact, i) =>
+                    <ContactCard key={i} contact={contact} />
+                  )
+                }
+              </div>
+          : priority == 3 ?
+            <div key={index} className="flex flex-col gap-12">
+              <h1 className="text-center">Faglige veiledere og spillpedagoger</h1>
               {
                 categorized[priority].map((contact, i) =>
                   <ContactCard key={i} contact={contact} />
                 )
               }
             </div>
-          : priority == 3 ?
-          <div key={index}>
-            <h1>Faglige veiledere og spillpedagoger</h1>
-            {
-              categorized[priority].map((contact, i) =>
-                <ContactCard key={i} contact={contact} />
-              )
-            }
-          </div>
-        :
-          <div key={index}>
-              <h1>Interns</h1>
-              {
-                categorized[priority].map((contact, i) =>
-                  <ContactCard key={i} contact={contact} />
-                )
-              }
+          :
+            <div key={index} className="flex flex-col gap-12">
+              <h1 className="text-center">Interns</h1>
+                {
+                  categorized[priority].map((contact, i) =>
+                    <ContactCard key={i} contact={contact} />
+                  )
+                }
             </div>
         ))
       }
@@ -140,7 +140,7 @@ export default function ContactContainer({ data }) {
           </span>
         }
       </div>
-      <div className="flex flex-col gap-12">
+      <div className="flex flex-col gap-36">
         {
           filtered.length > 0 ?
             <ContactSortByPriority prop={filtered} />
