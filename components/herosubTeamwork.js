@@ -19,7 +19,7 @@ export default function HeroSub({ content }) {
                     ) : (
                         <p>Her kommer en introtekst</p>
                     )}
-                    <div className='mt-10'>
+                    <div className='my-10 '>
                         {/* <LinkButton Path='/kontakt' Text={"kontakt oss"} /> */}
                         <ExternalLinkButton
                             Path='https://linktr.ee/teamwork.as'
