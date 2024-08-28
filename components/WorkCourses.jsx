@@ -14,8 +14,8 @@ import { IntroSectionReverse, PartnerProject } from "./LayoutComponents";
 const IntroData = [
     {
         image: JobbtilbudBilde,
-        title: "Arbeidstilbud",
-        text: "Jobloop drifter flere tilbud over hele landet som hjelper ungdom og unge voksne som faller utenfor det tradisjonelle skolesystemet og arbeidsliv. Vi tilbyr blant annet alternativ opplæring gjennom spillpedagogikk for barn og ungdom i skolen, og utviklerkurs for voksne som er interessert i programmering, for å finne jobber basert på deres interesser og talenter.",
+        title: "Arbeidsrettede tilbud",
+        text: "Våre arbeidsrettede tilbud sørger for at folk har rett kompetanse og er klar for arbeidslivet. Mange av disse tilbudene inkluderer praksis. Det betyr at du som arbeidsgiver kan bidra til et viktig løft og samtidig får muligheten til å bli kjent med våre flinke kandidater, helt uten forpliktelser. Du går glipp av mange talenter om du kun rekrutterer tradisjonelt.",
         path: "/tilbud",
         alt: "JobbtilbudBilde",
     },
@@ -25,7 +25,7 @@ const PartnerData = [
     {
         image: KodehodeImage,
         title: "Kodehode",
-        text: "Kodehode rekrutterer kandidater som har falt utenfor arbeidslivet og tilbyr opplæring i frontend, backend, og fullstack-utvikling. Samt IT-drift og service. Gjennom en kombinasjon av teori, case-arbeid, og praksis lærer deltakerne det viktigste for en karriere innen IT. Kodehode er det største arbeidsrelaterte tilbudet til Jobloop fokuserer på inkludering og å redusere utenforskap ved å skape verdi for både samfunn og næringsliv gjennom opplæring, rekruttering, og matchmaking innen IT-bransjen.",
+        text: "Kodehode rekrutterer kandidater som av ulike årsaker står utenfor arbeidslivet og tilbyr opplæring i frontend, backend, og fullstack-utvikling eller IT-drift og service. Gjennom en kombinasjon av teori, case-arbeid, og praksis lærer deltakerne det viktigste for en karriere innen IT. Kodehode er det største arbeidsrettede tilbudet i Jobloop og er i dag en ledende aktør for inkluderende rekruttering innen IT. Samarbeidet bidrar til å redusere utenforskap og tette kompetansegapet gjennom, spisset kvalifisering, internships, rekruttering og matchmaking med arbeidsgivere fra IT-bransjen.",
         path: "https://www.kodehode.no/",
         alt: "JobbtilbudBilde",
         btnText: "Kodehode.no",
@@ -173,7 +173,7 @@ export default function WorkCourses() {
             {/* Temporary Quotes Solution */}
             <div className='relative flex flex-col gap-8 px-8 pt-8 pb-12 mx-2 my-24 overflow-hidden border-2 rounded-lg bg-jobloop-primary-orange/5 2xl:mx-0 border-jobloop-primary-orange/100 text-kv-black lg:gap-12 lg:rounded-2xl'>
                 <h2 className='pb-2 mx-auto text-center border-b-4 border-jobloop-primary-orange w-fit'>
-                    Hva våre partnere sier om oss
+                    Hva sier bedriftslederne om oss?
                 </h2>
                 <div className='flex flex-col gap-8 md:flex-row'>
                     <QuoteCard

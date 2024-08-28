@@ -1,29 +1,34 @@
 "use client";
 
 import JobloopPhoto from "../public/JobloopPhoto.png";
+import FSEVinnerPhoto from "../public/FSE-Vinner2024-063.webp";
 import { IntroSection } from "./LayoutComponents";
 
 const IntroData = [
-    {
-        image: JobloopPhoto,
-        title: "Hvem er Jobloop?",
-        text: "Jobloop har oppnådd en imponerende suksessrate siden 2014, som er bekreftet av FAFOs forskning. Vi er stolte av å kunne tilby en plattform som hjelper diverse grupper med å finne arbeid og tilbyr skreddersydd yrkesopplæring.",
-        path: "/om-oss",
-        alt: "Jobloop photo",
-    },
+  {
+    image: FSEVinnerPhoto,
+    imageLinkPath:
+      "https://www.linkedin.com/posts/sina-erichsen-28403998_jobloop-finalist-activity-7148672163053580289-81Yo/?originalSubdomain=no",
+    title: "Hvem er Jobloop?",
+    text: "JobLoop er et raskt voksende selskap drevet av sosiale entreprenører. Vi har et viktig mål: å begrense utenforskap ved å hindre frafall i skolen, kvalifisere og formidle flere til arbeid! For å få til det samarbeider vi med offentlige aktører, utdanningsinstitusjoner, og lokalt arbeidsliv. I 2024 mottok vi FERD-prisen Årets Sosiale Entreprenør for vårt arbeid i kampen for å bekjempe skolefrafall. ",
+    path: "/om-oss",
+    alt: "Jobloop photo",
+  },
 ];
 
 export default function LandingIntro() {
-    return (
-        <section>
-            <IntroSection
-                title={IntroData[0].title}
-                text={IntroData[0].text}
-                image={IntroData[0].image}
-                alt={IntroData[0].alt}
-                path={IntroData[0].path}
-                isButton={true}
-            />
-        </section>
-    );
+  return (
+    <section>
+      <IntroSection
+        title={IntroData[0].title}
+        text={IntroData[0].text}
+        image={IntroData[0].image}
+        ifImageLink={true}
+        imageLinkPath={IntroData[0].imageLinkPath}
+        alt={IntroData[0].alt}
+        path={IntroData[0].path}
+        isButton={true}
+      />
+    </section>
+  );
 }

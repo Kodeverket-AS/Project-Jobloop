@@ -10,13 +10,31 @@ export default function ContactContainer({ data }) {
   const nameInput = useRef()
   const departmentSelect = useRef()
 
+  // Generate list of departments based on dataset
+  const generateDepartmentList = useCallback((event) => {
+    const arr = []
+
+    data.forEach(item => {
+      item.company.forEach(company => {
+        if (!arr.includes(company.trim())) arr.push(company.trim())
+      })
+    })
+
+    return arr
+  }, [data])
+
   // Filters employees based on two inputs, name search and select department.
   const filterEmployee = () => {
     const result = data
       .filter(person => (person.company.join().toLowerCase().includes(departmentSelect.current.value.toLowerCase())))
       .filter(person => (person.fname + person.lname).toLowerCase().includes(nameInput.current.value.toLowerCase()))
 
-    setIsFiltered(true)
+    if (nameInput.current.value.length + departmentSelect.current.value.length === 0) {
+      setIsFiltered(false)
+    } else {
+      setIsFiltered(true)
+    }
+
     filterData(result)
   }
 
@@ -40,11 +58,10 @@ export default function ContactContainer({ data }) {
   useEffect(() => {
     document.addEventListener("keydown", resetFilters, false)
 
+    setDepartmentList(generateDepartmentList())
+
     return () => document.removeEventListener("keydown", resetFilters, false)
   }, [resetFilters])
-
-  // Test
-  const departments = ["Jobloop", "Kodehode", "Gamify"]
 
   return (
     <div className="flex flex-col gap-24 pb-24 max-md:px-4 max-md:w-full">
@@ -53,13 +70,12 @@ export default function ContactContainer({ data }) {
           <input className="w-full text-lg p-[10px] border focus:border-jobloop-primary-green focus:outline-none font-sans" type="text" placeholder="Søk etter ansatt ..." ref={nameInput} onChange={e => filterEmployee()} />
         </span>
         <span>
-          <FormSelect
-            classNames={{input: "p-2 m-2 bg-green-100", ul: "p-2 bg-red-100", li: "bg-blue-100"}}
-            options={departments}
-            placeholder="Alle avdelinger"
-            searchable={false}
-            multiple={true}
-          />
+          <select className="w-full text-lg p-[12px] border bg-white focus:border-jobloop-primary-green focus:outline-none" defaultValue="" ref={departmentSelect} onChange={e => filterEmployee()}>
+            <option value="">Alle avdelinger</option>
+            <option value="gamify">Gamify</option>
+            <option value="kodehode">Kodehode</option>
+            <option value="jobloop">Jobloop</option>
+          </select>
         </span>
         {
           isFiltered &&

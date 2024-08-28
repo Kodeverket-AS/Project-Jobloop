@@ -15,7 +15,7 @@ module.exports = {
       colors: {
         kv: {
           black: "#0B1215",
-          white: "#FFFAFA",
+          white: "#FCFCFC",
         },
         jobloop: {
           /* Jobloop hovedfarger */
@@ -26,7 +26,8 @@ module.exports = {
           },
           /* V2 Kodehode nyanser */
           secondary: {
-            orange: "#AF4831",
+            // orange: "#AF4831",
+            orange: "#F97E22",
             green: "#01624E",
           },
         },
