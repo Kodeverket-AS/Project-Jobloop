@@ -5,8 +5,8 @@ import { ExternalLinkButton } from "../../../components/Buttons";
 
 export default function OmOss() {
   return (
-    <main className="flex flex-col items-center justify-between min-h-screen p-8">
-      <section className="flex flex-col md:flex-row items-center justify-between max-w-4xl mx-auto p-4 ">
+    <main className="flex flex-col items-center justify-between">
+      <section className="flex flex-col md:flex-row items-center justify-between mx-auto p-4 ">
         <div className="order-2 md:order-1 md:flex-shrink-0 md:mr-8 mb-4 md:mb-0"></div>
         <div className="order-1">
           {/* Bilde på toppen */}

@@ -13,7 +13,7 @@ export default async function IndividuellAMO() {
   const data = await getData();
   const amo = data.tiltak[5];
   return (
-    <main className="flex flex-col items-center justify-between min-h-screen p-0">
+    <main className="flex flex-col items-center justify-between">
       <HeroSub content={amo} />
       {/*<CourseSummary content={amo} course={"Individuell AMO"} />*/}
       {/*<Curriculum content={amo} course={"Individuell AMO"} />*/}

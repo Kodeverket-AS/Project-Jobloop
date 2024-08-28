@@ -13,7 +13,7 @@ export default async function Spillbasert() {
   const data = await getData();
   const spillbasert = data.tiltak[4];
   return (
-    <main className="flex flex-col items-center justify-between min-h-screen p-0">
+    <main className="flex flex-col items-center justify-between">
       <HeroSub content={spillbasert} />
       <CourseSummary content={spillbasert} course={"Spillbasert"} />
       <Curriculum content={spillbasert} course={"Spillbasert"} />
