@@ -22,6 +22,11 @@ body {
   background: var(--kv-white);
 }
 
+main {
+  flex: 1;
+  overflow-x: hidden;
+}
+
 h1 {
   font-size: 3rem;
 }
