@@ -3,6 +3,17 @@
 import { useEffect, useCallback, useRef, useState } from "react";
 import ContactCard from "./Card";
 
+/* 
+NOTE TO KUNKRISTOFFER
+Sitt opp sanity slik at: 
+- Arbeidsstilling er autocomplete fra eksisterende liste
+- Arbeidsstilling bestemmer prioritet, automatisk gruppering
+- Prioritet feltet bestemmer nå rekkefølge innad i gruppering
+
+I sanity gjør om priority feltet til en liste av alle andre i samme gruppe
+Dette bør bli gjort om til et felt hvor du kan drag'n'drop for å bestemme rekkefølge.
+*/
+
 function ContactSortByPriority(prop) {
   const { prop: arr = [] } = prop
   const categorized = arr.reduce((acc, person) => {
