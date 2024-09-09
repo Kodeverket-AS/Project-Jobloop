@@ -13,7 +13,7 @@ export default async function GrunnleggendeIT() {
   const data = await getData();
   const gIT = data.tiltak[3];
   return (
-    <main className="flex flex-col items-center justify-between min-h-screen p-0">
+    <main className="flex flex-col items-center justify-between">
       <HeroSub content={gIT} />
       <CourseSummary content={gIT} course={"Grunnleggende IT"} />
       <Curriculum content={gIT} course={"Grunnleggende IT"} />

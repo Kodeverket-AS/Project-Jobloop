@@ -18,8 +18,18 @@
 }
 
 body {
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+  width: 100%;
+  min-height: 100svh;
   color: var(--kv-black);
   background: var(--kv-white);
+}
+
+main {
+  flex: 1;
+  max-width: 1536px;
 }
 
 h1 {

@@ -3,8 +3,8 @@ import { ExternalLinkButton } from "../../../components/Buttons";
 
 export default function Ansettelser() {
     return (
-        <main className='flex flex-col items-center min-h-screen p-8 bg-gray-100'>
-            <div className='relative w-full max-w-3xl bg-white p-8 rounded-lg shadow-md'>
+        <main className='flex flex-col items-center bg-gray-100'>
+            <div className='relative bg-white p-8 rounded-lg shadow-md'>
                 <div className='flex justify-center mb-6'>
                     <Image
                         src='/hiring.jpg' // Path to your image

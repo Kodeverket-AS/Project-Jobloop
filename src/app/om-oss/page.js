@@ -5,23 +5,17 @@ import { ExternalLinkButton } from "../../../components/Buttons";
 
 export default function OmOss() {
   return (
-    <main className="flex flex-col items-center justify-between min-h-screen p-8">
-      <section className="flex flex-col md:flex-row items-center justify-between max-w-4xl mx-auto p-4 ">
-        <div className="order-2 md:order-1 md:flex-shrink-0 md:mr-8 mb-4 md:mb-0"></div>
-        <div className="order-1">
-          {/* Bilde på toppen */}
-          <div className="mb-8">
-            <Image
-              src="/JLomossbilde.webp"
-              alt="3 personer i jobloop som sitter å snakker sammen rundt et bord ute"
-              width={600}
-              height={600}
-              className="mt-8 w-full"
-            />
-          </div>
-
-          {/* Tekstseksjon under bildet */}
-          <div>
+    <main className="flex flex-col items-center justify-between">
+      <section className="flex flex-col md:flex-row items-center justify-between mx-auto">
+        <div className="p-8">
+          <Image
+            src="/JLomossbilde.webp"
+            alt="3 personer i jobloop som sitter å snakker sammen rundt et bord ute"
+            width={600}
+            height={600}
+            className="mt-8 w-full"
+          />
+          <div className="pt-8">
             <h1 className="text-4xl font-bold mb-4 relative">
               Om oss
               <span className="block w-full h-1 bg-jobloop-primary-green mt-2 mb-6"></span>

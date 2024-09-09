@@ -6,7 +6,7 @@ export default async function Kontakt() {
   const data = await sanityFetch({query: QUERY});
 
   return (
-    <main className="flex flex-col items-center justify-between min-h-screen p-0">
+    <main className="flex flex-col items-center justify-between">
       <ContactContainer data={data} />
     </main>
   );

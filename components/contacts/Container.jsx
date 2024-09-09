@@ -3,6 +3,72 @@
 import { useEffect, useCallback, useRef, useState } from "react";
 import ContactCard from "./Card";
 
+/* 
+NOTE TO KUNKRISTOFFER
+Sitt opp sanity slik at: 
+- Arbeidsstilling er autocomplete fra eksisterende liste
+- Arbeidsstilling bestemmer prioritet, automatisk gruppering
+- Prioritet feltet bestemmer nå rekkefølge innad i gruppering
+
+I sanity gjør om priority feltet til en liste av alle andre i samme gruppe
+Dette bør bli gjort om til et felt hvor du kan drag'n'drop for å bestemme rekkefølge.
+*/
+
+function ContactSortByPriority(prop) {
+  const { prop: arr = [] } = prop
+  const categorized = arr.reduce((acc, person) => {
+    const { priority = 4 } = person;
+    acc[priority] = acc[priority] ?? [];
+    acc[priority].push(person);
+    return acc;
+  }, {});
+
+  return (
+    <>
+      {
+        Object.keys(categorized).map((priority, index) => (
+          priority == 1 ?
+            <div key={index} className="flex flex-wrap justify-center gap-12">
+              <h1 className="text-center basis-full">Ledelese og administrasjon</h1>
+              {
+                categorized[priority].map((contact, i) =>
+                  <ContactCard key={i} contact={contact} />
+                )
+              }
+            </div>
+          : priority == 2 ?
+            <div key={index} className="flex flex-wrap justify-center gap-12">
+              <h1 className="text-center basis-full">Teamledere og tiltaksledere</h1>
+                {
+                  categorized[priority].map((contact, i) =>
+                    <ContactCard key={i} contact={contact} />
+                  )
+                }
+              </div>
+          : priority == 3 ?
+            <div key={index} className="flex flex-wrap justify-center gap-12">
+              <h1 className="text-center basis-full">Faglige veiledere og spillpedagoger</h1>
+              {
+                categorized[priority].map((contact, i) =>
+                  <ContactCard key={i} contact={contact} />
+                )
+              }
+            </div>
+          :
+            <div key={index} className="flex flex-wrap justify-center gap-12">
+              <h1 className="text-center basis-full">Interns</h1>
+                {
+                  categorized[priority].map((contact, i) =>
+                    <ContactCard key={i} contact={contact} />
+                  )
+                }
+            </div>
+        ))
+      }
+    </>
+  )
+}
+
 export default function ContactContainer({ data }) {
   const [ filtered, filterData ] = useState(data)
   const [ isFiltered, setIsFiltered ] = useState(false)
@@ -65,7 +131,7 @@ export default function ContactContainer({ data }) {
   }, [resetFilters, generateDepartmentList])
 
   return (
-    <div className="flex flex-col gap-24 pb-24 max-md:px-4">
+    <div className="flex flex-col gap-24 p-8 pb-24 w-full max-md:px-4">
       <div className="grid grid-cols-2 gap-4 max-md:grid-cols-1 w-full">
         <span>
           <input className="w-full text-lg p-[10px] border focus:border-jobloop-primary-green focus:outline-none" type="text" placeholder="Søk etter ansatt ..." ref={nameInput} onChange={e => filterEmployee()} />
@@ -85,14 +151,12 @@ export default function ContactContainer({ data }) {
           </span>
         }
       </div>
-      <div className="flex flex-col gap-12">
+      <div className="flex flex-col gap-36">
         {
           filtered.length > 0 ?
-          filtered.map((contact, index) => (
-            <ContactCard key={index} contact={contact} />
-          ))
+            <ContactSortByPriority prop={filtered} />
           :
-          <span className="text-center">Beklager, ditt søk ga ingen resultater</span>
+            <span className="text-center">Beklager, ditt søk ga ingen resultater</span>
         }
       </div>
     </div>
