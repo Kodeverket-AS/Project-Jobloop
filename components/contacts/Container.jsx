@@ -3,23 +3,14 @@
 import { useEffect, useCallback, useRef, useState } from "react";
 import ContactCard from "./Card";
 
-/* 
-NOTE TO KUNKRISTOFFER
-Sitt opp sanity slik at: 
-- Arbeidsstilling er autocomplete fra eksisterende liste
-- Arbeidsstilling bestemmer prioritet, automatisk gruppering
-- Prioritet feltet bestemmer nå rekkefølge innad i gruppering
-
-I sanity gjør om priority feltet til en liste av alle andre i samme gruppe
-Dette bør bli gjort om til et felt hvor du kan drag'n'drop for å bestemme rekkefølge.
-*/
-
 function ContactSortByPriority(prop) {
   const { prop: arr = [] } = prop
   const categorized = arr.reduce((acc, person) => {
-    const { priority = 4 } = person;
-    acc[priority] = acc[priority] ?? [];
-    acc[priority].push(person);
+    const { group = 5, priority = -1 } = person;
+    acc[group] = acc[group] ?? [];
+    acc[group].push(person);
+    // acc[group].splice(priority, 0, person);
+    if (priority) acc[group].sort((a, b) => a.priority - b.priority);
     return acc;
   }, {});
 
@@ -54,9 +45,18 @@ function ContactSortByPriority(prop) {
                 )
               }
             </div>
-          :
+          : priority == 4 ?
             <div key={index} className="flex flex-wrap justify-center gap-12">
               <h1 className="text-center basis-full">Interns</h1>
+                {
+                  categorized[priority].map((contact, i) =>
+                    <ContactCard key={i} contact={contact} />
+                  )
+                }
+            </div>
+          :
+            <div key={index} className="flex flex-wrap justify-center gap-12">
+              <h1 className="text-center basis-full">Noobs</h1>
                 {
                   categorized[priority].map((contact, i) =>
                     <ContactCard key={i} contact={contact} />
