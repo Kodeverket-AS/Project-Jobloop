@@ -6,7 +6,7 @@ import ContactCard from "./Card";
 function ContactSortByPriority(prop) {
   const { prop: arr = [] } = prop
   const categorized = arr.reduce((acc, person) => {
-    const { group = 4, priority = -1 } = person;
+    const { group = 5, priority = -1 } = person;
     acc[group] = acc[group] ?? [];
     acc[group].push(person);
     // acc[group].splice(priority, 0, person);
