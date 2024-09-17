@@ -18,6 +18,7 @@ export default function ContactCard({ contact }) {
       <Image
         className="object-cover object-top max-md:w-48 aspect-[2/3] max-[500px]:hidden"
         src={image ? image : "/contact_placeholder.jpg"}
+        style={{filter: "grayscale(1)"}}
         width={300}
         height={500}
         alt={`A picture of ${fname}`}
