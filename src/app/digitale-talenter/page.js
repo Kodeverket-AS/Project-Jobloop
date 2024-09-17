@@ -13,7 +13,7 @@ export default async function DigitaleTalenter() {
   const data = await getData();
   const digTal = data.tiltak[2];
   return (
-    <main className="flex flex-col items-center justify-between min-h-screen p-0">
+    <main className="flex flex-col items-center justify-between">
       <HeroSub content={digTal} />
       <CourseSummary content={digTal} course={"Digitale Talenter"} />
       <Curriculum content={digTal} course={"Digitale Talenter"} />

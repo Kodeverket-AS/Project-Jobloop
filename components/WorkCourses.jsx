@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import JobbtilbudBilde from "../public/JobbtilbudBilde.png";
+import JobbtilbudBilde from "../public/kodehode_gruppe.webp";
 import KodehodeImage from "../public/KodehodeImage.png";
 import GrunnleggendeIt from "../public/grunnleggende-it.webp";
 import DigitaleTalenter from "../public/digitale-talenter.webp";
@@ -15,7 +15,7 @@ const IntroData = [
     {
         image: JobbtilbudBilde,
         title: "Arbeidsrettede tilbud",
-        text: "Våre arbeidsrettede tilbud sørger for at folk har rett kompetanse og er klar for arbeidslivet. Mange av disse tilbudene inkluderer praksis. Det betyr at du som arbeidsgiver kan bidra til et viktig løft og samtidig får muligheten til å bli kjent med våre flinke kandidater, helt uten forpliktelser. Du går glipp av mange talenter om du kun rekrutterer tradisjonelt.",
+        text: "Våre arbeidsrettede tilbud sikrer at folk får riktig kompetanse og er godt forberedt på arbeidslivet. Mange av disse tilbudene inkluderer praksis, noe som gir deg som arbeidsgiver en unik mulighet til å bidra til et viktig samfunnsansvar, samtidig som du blir kjent med dyktige kandidater – uten forpliktelser. Ved kun å rekruttere tradisjonelt, risikerer du å gå glipp av mange talentfulle ressurser.",
         path: "/tilbud",
         alt: "JobbtilbudBilde",
     },

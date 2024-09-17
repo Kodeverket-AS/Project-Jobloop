@@ -14,9 +14,16 @@ export default function ContactCard({ contact }) {
   }
 
   return (
-    <div className="flex gap-24 max-md:w-full">
-      <Image className="object-cover object-top max-md:w-48 aspect-[2/3] max-[500px]:hidden" src={image ? image : "/contact_placeholder.jpg"} width={300} height={500} alt={`A sexy picture of ${fname}`}/>
-      <div className="flex flex-col justify-center gap-2">
+    <div className="flex gap-24 max-lg:w-full lg:flex-col lg:gap-12">
+      <Image
+        className="object-cover object-top max-md:w-48 aspect-[2/3] max-[500px]:hidden"
+        src={image ? image : "/contact_placeholder.jpg"}
+        style={{filter: "grayscale(1)"}}
+        width={300}
+        height={500}
+        alt={`A picture of ${fname}`}
+      />
+      <div className="flex flex-col justify-center gap-2 w-fit">
         <h3>{fname} {lname}</h3>
         <p>{arrayLocaleNo(role)}</p>
         {

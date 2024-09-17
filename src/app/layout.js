@@ -23,7 +23,7 @@ export default function RootLayout({ children }) {
     <html lang="no-nb" className={roboto.className}>
       <body>
         <Navigation />
-        <div className="flex-1 overflow-x-hidden">{children}</div>
+        {children}
         <ScrollToTopButton />
         <Footer />
       </body>
