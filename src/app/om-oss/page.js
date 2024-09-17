@@ -199,12 +199,12 @@ export default function OmOss() {
             />
           ))}
         </div>
-        <div className="flex justify-center">
+        {/* <div className="flex justify-center">
           <LinkButton
             Path={"/kontakt"}
             Text={"Bli kjent med hele organisasjonen!"}
           />
-        </div>
+        </div> */}
       </section>
       <section className="py-16 ">
         <div className="container mx-auto px-4">
@@ -310,11 +310,11 @@ export default function OmOss() {
 
       <section className="py-16 ">
         <div className="container mx-auto px-4 flex flex-col lg:flex-row items-center lg:items-start">
-          <div className="relative w-64 h-64 mb-12 lg:mb-0 lg:mr-12">
+          <div className="relative w-full md:w-64 h-64 mb-12 lg:mb-0 lg:mr-12">
             <div className="absolute top-0 left-0 transform -translate-x-4 -translate-y-4">
               <Image
                 src="/Karl.webp" // Path to your image
-                alt="Person 1"
+                alt="Karl Håkon"
                 width={150}
                 height={150}
                 className="rounded-full"
@@ -323,7 +323,7 @@ export default function OmOss() {
             <div className="absolute top-0 right-0 transform translate-x-4 -translate-y-4">
               <Image
                 src="/Inger.jpg" // Path to your image
-                alt="Person 2"
+                alt="Inger Johanne"
                 width={150}
                 height={150}
                 className="rounded-full"
@@ -332,21 +332,21 @@ export default function OmOss() {
             <div className="absolute bottom-0 left-1/2 transform -translate-x-1/2 translate-y-4">
               <Image
                 src="/Sina.jpg" // Path to your image
-                alt="Person 3"
+                alt="Sina"
                 width={150}
                 height={150}
                 className="rounded-full"
               />
             </div>
           </div>
-          <div className="flex flex-col items-center lg:items-start text-center lg:text-left max-w-lg  px-12">
-            <div className="relative w-full lg:w-60 ">
-              <h2 className="text-2xl font-bold mb-2">
+          <div className="flex flex-col items-start text-left max-w-lg">
+            <div className="relative w-fit mx-auto md:mx-0 ">
+              <h2 className="text-xl text-center md:text-left md:text-2xl font-bold mb-2">
                 Ønsker du å samarbeide med oss?
               </h2>
               <span className="block w-full h-1 bg-jobloop-primary-orange mt-2 mb-6"></span>
             </div>
-            <p className="mb-8">
+            <p className="text-lg leading-relaxed mb-8">
               Vi er er alltid klar for å finne de gode løsningene! Christer er
               ansvarlig for bedriftsmarkedet og kan sørge for at vi spisser et
               par kandidater etter din tech-stack og behov. Inger-Johanne kan
@@ -355,7 +355,7 @@ export default function OmOss() {
               hvem som er ansvarlig kursleder i din by på siden for de ulike
               tiltakene eller under “kontakt oss”.
             </p>
-            <LinkButton
+            <KontaktButton
               Path={"/kontakt"}
               Text={"Kontakt Oss"}
             />
