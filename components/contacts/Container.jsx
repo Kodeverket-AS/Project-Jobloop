@@ -3,69 +3,37 @@
 import { useEffect, useCallback, useRef, useState } from "react";
 import ContactCard from "./Card";
 
+function ContactSortCard(prop) {
+  const { contacts, title } = prop
+  return (
+    <div className="flex flex-wrap justify-center gap-12">
+      <h1 className="text-center basis-full">{title}</h1>
+      {contacts.map((item) =>
+        <ContactCard key={item._id} contact={item} />
+      )}
+    </div>
+  )
+}
+
+
 function ContactSortByPriority(prop) {
   const { prop: arr = [] } = prop
+  const titles = ["Ledelese og administrasjon", "Teamledere og tiltaksledere", "Faglige veiledere og spillpedagoger", "Interns", "Noobs"]
   const categorized = arr.reduce((acc, person) => {
     const { group = 5, priority = -1 } = person;
     acc[group] = acc[group] ?? [];
-    acc[group].push(person);
     // acc[group].splice(priority, 0, person);
+    acc[group].push(person);
     if (priority) acc[group].sort((a, b) => a.priority - b.priority);
     return acc;
   }, {});
 
   return (
-    <>
-      {
-        Object.keys(categorized).map((priority, index) => (
-          priority == 1 ?
-            <div key={index} className="flex flex-wrap justify-center gap-12">
-              <h1 className="text-center basis-full">Ledelese og administrasjon</h1>
-              {
-                categorized[priority].map((contact, i) =>
-                  <ContactCard key={i} contact={contact} />
-                )
-              }
-            </div>
-          : priority == 2 ?
-            <div key={index} className="flex flex-wrap justify-center gap-12">
-              <h1 className="text-center basis-full">Teamledere og tiltaksledere</h1>
-                {
-                  categorized[priority].map((contact, i) =>
-                    <ContactCard key={i} contact={contact} />
-                  )
-                }
-              </div>
-          : priority == 3 ?
-            <div key={index} className="flex flex-wrap justify-center gap-12">
-              <h1 className="text-center basis-full">Faglige veiledere og spillpedagoger</h1>
-              {
-                categorized[priority].map((contact, i) =>
-                  <ContactCard key={i} contact={contact} />
-                )
-              }
-            </div>
-          : priority == 4 ?
-            <div key={index} className="flex flex-wrap justify-center gap-12">
-              <h1 className="text-center basis-full">Interns</h1>
-                {
-                  categorized[priority].map((contact, i) =>
-                    <ContactCard key={i} contact={contact} />
-                  )
-                }
-            </div>
-          :
-            <div key={index} className="flex flex-wrap justify-center gap-12">
-              <h1 className="text-center basis-full">Noobs</h1>
-                {
-                  categorized[priority].map((contact, i) =>
-                    <ContactCard key={i} contact={contact} />
-                  )
-                }
-            </div>
-        ))
-      }
-    </>
+    <div className="flex flex-col gap-36">
+      {Object.keys(categorized).map((priority) => (
+        <ContactSortCard key={priority} title={titles[priority-1]} contacts={categorized[priority]}/>
+      ))}
+    </div>
   )
 }
 
@@ -80,7 +48,6 @@ export default function ContactContainer({ data }) {
   // Generate list of departments based on dataset
   const generateDepartmentList = useCallback((event) => {
     const arr = []
-
     data.forEach(item => {
       item.company.forEach(company => {
         if (!arr.includes(company.trim())) arr.push(company.trim())
@@ -124,9 +91,7 @@ export default function ContactContainer({ data }) {
   // Attaches eventlistener for above function, removes when unmounted (e.g changing page)
   useEffect(() => {
     document.addEventListener("keydown", resetFilters, false)
-
     setDepartmentList(generateDepartmentList())
-
     return () => document.removeEventListener("keydown", resetFilters, false)
   }, [resetFilters, generateDepartmentList])
 
@@ -151,14 +116,12 @@ export default function ContactContainer({ data }) {
           </span>
         }
       </div>
-      <div className="flex flex-col gap-36">
-        {
-          filtered.length > 0 ?
-            <ContactSortByPriority prop={filtered} />
-          :
-            <span className="text-center">Beklager, ditt søk ga ingen resultater</span>
-        }
-      </div>
+      {
+        filtered.length > 0 ?
+          <ContactSortByPriority prop={filtered} />
+        :
+          <span className="text-center">Beklager, ditt søk ga ingen resultater</span>
+      }
     </div>
   );
 }
