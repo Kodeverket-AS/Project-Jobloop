@@ -15,12 +15,15 @@ Dette bør bli gjort om til et felt hvor du kan drag'n'drop for å bestemme rekk
 */
 
 function ContactSortByPriority(prop) {
+  console.clear()
   // Unpack props and default to array if empty.
   const { prop: arr = [] } = prop
   const categorized = arr.reduce((acc, person) => {
     const { group = 4, priority = -1 } = person;
     acc[group] = acc[group] ?? [];
-    acc[group].splice(priority, 0, person);
+    acc[group].push(person);
+    // acc[group].splice(priority, 0, person);
+    if (priority) acc[group].sort((a, b) => a.priority - b.priority);
     return acc;
   }, {});
 
