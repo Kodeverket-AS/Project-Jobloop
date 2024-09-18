@@ -29,7 +29,7 @@ export default function HeroSub({ content }) {
                     </div>
                 </div>
             </div>
-            <div className='w-screen pt-6 pl-0 md:w-1/2 md:pl-6'>
+            <div className='w-screen py-6 pl-0 md:w-1/2 md:pl-6'>
                 <Image
                     src={content.image ? content.image : ""}
                     width={500}
