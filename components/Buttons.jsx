@@ -5,7 +5,8 @@ import { useState, useEffect } from "react";
 import { FaArrowUp } from "react-icons/fa";
 import { BiLinkExternal } from "react-icons/bi";
 import { FaArrowRight } from "react-icons/fa";
-import { MdOutlineMail } from "react-icons/md";
+import { LuMail, LuMailOpen } from "react-icons/lu";
+// import { LuMailOpen } from "react-icons/lu";
 
 export function ScrollToTopButton() {
   const [isVisible, setIsVisible] = useState(false);
@@ -46,8 +47,7 @@ export function LinkButton({ Path, Text }) {
     <Link
       href={Path}
       aria-label={`Lenke til underside ${Path}`}
-      className="group relative overflow-hidden w-full px-8 py-2 tracking-normal text-center scale-100 lg:hover:scale-105 text-kv-black transition-all bg-kv-white border-2 border-solid rounded-full sm:w-fit border-kv-black hover:bg-jobloop-primary-green  hover:border-jobloop-primary-green focus:bg-jobloop-primary-green">
-      {/* <div className="hidden lg:block -skew-x-12 absolute inset-0 bg-jobloop-primary-green w-0 group-hover:w-full group-hover:skew-x-0 transition-all duration-300 -z-10"></div> */}
+      className="w-full px-8 py-3 tracking-normal text-center scale-100 lg:hover:scale-105 text-kv-black transition-all bg-kv-white border-2 border-solid rounded-full sm:w-fit border-kv-black hover:bg-jobloop-primary-green  hover:border-jobloop-primary-green focus:bg-jobloop-primary-green">
       {Text}
     </Link>
   );
@@ -57,7 +57,7 @@ export function LinkButtonInternal({ Path, Text }) {
     <Link
       href={Path}
       aria-label={`Lenke til underside ${Path}`}
-      className=" flex items-center gap-1 py-2 font-bold tracking-normal underline transition-all text-jobloop-secondary-green w-fit decoration-jobloop-secondary-green/5 underline-offset-4 hover:underline-offset-2 hover:decoration-jobloop-secondary-green/100 hover:gap-2 ">
+      className=" flex items-center gap-1 py-3 font-bold tracking-normal underline transition-all text-jobloop-secondary-green w-fit decoration-jobloop-secondary-green/5 underline-offset-4 hover:underline-offset-2 hover:decoration-jobloop-secondary-green/100 hover:gap-2 ">
       {Text}
       <FaArrowRight className="inline-block h-4 lg:w-4" />
     </Link>
@@ -71,7 +71,10 @@ export function LinkButtonAnimatedWithIcon({ Path, Text }) {
       className="relative group overflow-hidden flex items-center justify-center w-full gap-1 px-8 py-3 text-base font-medium text-center transition-all rounded-full sm:w-fit text-kv-black bg-jobloop-primary-green scale-100 lg:hover:scale-105  shadow-lg shadow-kv-black/30 hover:shadow-jobloop-primary-orange/20 border border-kv-white">
       <div className="hidden lg:block -skew-x-12 absolute inset-0 bg-jobloop-primary-orange w-0 group-hover:w-full group-hover:skew-x-0 transition-all duration-500 -z-10"></div>
       {Text}
-      <MdOutlineMail className="inline-block h-5 lg:w-5" />
+      <div>
+        <LuMail className="inline-block h-5 lg:w-5" />
+        <LuMailOpen className="inline-block h-5 lg:w-5" />
+      </div>
     </Link>
   );
 }
@@ -93,9 +96,9 @@ export function KontaktButton({ Path, Text }) {
     <Link
       href={Path}
       aria-label={`Lenke til underside ${Path}`}
-      className="flex items-center justify-center w-full gap-1 px-8 py-3 text-base tracking-normal text-center transition-all border-2 rounded-full scale-100 lg:hover:scale-105 group sm:w-fit text-kv-black bg-jobloop-primary-green hover:bg-kv-white border-jobloop-primary-green  focus:bg-kv-white">
+      className="group flex items-center justify-center w-full gap-1 px-8 py-3 text-base tracking-normal text-center transition-all border-2 rounded-full scale-100 lg:hover:scale-105 group sm:w-fit text-kv-black bg-jobloop-primary-green hover:bg-jobloop-primary-green/0 border-jobloop-primary-green underline underline-offset-2 decoration-kv-black/0 hover:decoration-kv-black/100">
       {Text}
-      <MdOutlineMail className="inline-block h-5 lg:w-5" />
+      <LuMail className="inline-block h-5 lg:w-5 transition-all group-hover:translate-x-1 group-hover:animate-pulse" />
     </Link>
   );
 }
@@ -105,7 +108,7 @@ export function ExternalLinkButton({ Path, Text, Aria }) {
     <a
       href={Path}
       aria-label={Aria}
-      className="flex items-center justify-center w-full gap-1 px-8 py-2 text-base scale-100 lg:hover:scale-105 text-kv-black tracking-normal text-center transition-all border-2 border-solid rounded-full sm:w-fit bg-kv-white border-kv-black hover:bg-jobloop-primary-green hover:border-jobloop-primary-green  focus:bg-jobloop-primary-green focus:text-kv-white "
+      className="flex items-center justify-center w-full gap-1 px-8 py-3 text-base scale-100 lg:hover:scale-105 text-kv-black tracking-normal text-center transition-all border-2 border-solid rounded-full sm:w-fit bg-kv-white border-kv-black hover:bg-jobloop-primary-green hover:border-jobloop-primary-green  focus:bg-jobloop-primary-green focus:text-kv-white "
       target="_blank"
       rel="noopener noreferrer">
       {Text}
