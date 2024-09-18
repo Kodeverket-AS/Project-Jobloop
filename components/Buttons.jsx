@@ -5,7 +5,8 @@ import { useState, useEffect } from "react";
 import { FaArrowUp } from "react-icons/fa";
 import { BiLinkExternal } from "react-icons/bi";
 import { FaArrowRight } from "react-icons/fa";
-import { MdOutlineMail } from "react-icons/md";
+import { LuMail, LuMailOpen } from "react-icons/lu";
+// import { LuMailOpen } from "react-icons/lu";
 
 export function ScrollToTopButton() {
   const [isVisible, setIsVisible] = useState(false);
@@ -70,7 +71,10 @@ export function LinkButtonAnimatedWithIcon({ Path, Text }) {
       className="relative group overflow-hidden flex items-center justify-center w-full gap-1 px-8 py-3 text-base font-medium text-center transition-all rounded-full sm:w-fit text-kv-black bg-jobloop-primary-green scale-100 lg:hover:scale-105  shadow-lg shadow-kv-black/30 hover:shadow-jobloop-primary-orange/20 border border-kv-white">
       <div className="hidden lg:block -skew-x-12 absolute inset-0 bg-jobloop-primary-orange w-0 group-hover:w-full group-hover:skew-x-0 transition-all duration-500 -z-10"></div>
       {Text}
-      <MdOutlineMail className="inline-block h-5 lg:w-5" />
+      <div>
+        <LuMail className="inline-block h-5 lg:w-5" />
+        <LuMailOpen className="inline-block h-5 lg:w-5" />
+      </div>
     </Link>
   );
 }
@@ -92,9 +96,9 @@ export function KontaktButton({ Path, Text }) {
     <Link
       href={Path}
       aria-label={`Lenke til underside ${Path}`}
-      className="flex items-center justify-center w-full gap-1 px-8 py-3 text-base tracking-normal text-center transition-all border-2 rounded-full scale-100 lg:hover:scale-105 group sm:w-fit text-kv-black bg-jobloop-primary-green hover:bg-jobloop-primary-green/0 border-jobloop-primary-green  focus:bg-kv-white">
+      className="group flex items-center justify-center w-full gap-1 px-8 py-3 text-base tracking-normal text-center transition-all border-2 rounded-full scale-100 lg:hover:scale-105 group sm:w-fit text-kv-black bg-jobloop-primary-green hover:bg-jobloop-primary-green/0 border-jobloop-primary-green underline underline-offset-2 decoration-kv-black/0 hover:decoration-kv-black/100">
       {Text}
-      <MdOutlineMail className="inline-block h-5 lg:w-5" />
+      <LuMail className="inline-block h-5 lg:w-5 transition-all group-hover:translate-x-1 group-hover:animate-pulse" />
     </Link>
   );
 }
