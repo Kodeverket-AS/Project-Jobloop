@@ -9,6 +9,7 @@ function ContactSortByPriority(prop) {
     const { group = 5, priority = -1 } = person;
     acc[group] = acc[group] ?? [];
     acc[group].push(person);
+    // acc[group].splice(priority, 0, person);
     if (priority) acc[group].sort((a, b) => a.priority - b.priority);
     return acc;
   }, {});
