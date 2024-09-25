@@ -12,6 +12,7 @@ export default function HeroSub({ content }) {
                 <h1 className='mb-3 md:mb-5'>
                     {content.heading ? content.heading : "Tittel kommer her"}
                 </h1>
+                <p>Tekst her</p>
                 <div className='lg:pr-20'>
                     {content.introtext ? (
                         <PortableText value={content.introtext} />
