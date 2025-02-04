@@ -144,7 +144,7 @@ export default function OmOss() {
                 <div className='flex flex-col xl:flex-row gap-6 text-pretty pb-8 '>
                     {/* <div className="order-2 md:order-1 md:flex-shrink-0 md:mr-8 mb-4 md:mb-0"></div> */}
                     <div className='w-full flex flex-col gap-8 '>
-                        <div className='w-1/2 overflow-hidden rounded-none sm:rounded-2xl '>
+                        <div className='w-1/2 mt-10 overflow-hidden rounded-none sm:rounded-2xl '>
                             <Image
                                 src='/JLomossbilde.webp'
                                 alt='3 personer i jobloop som sitter å snakker sammen rundt et bord ute'
