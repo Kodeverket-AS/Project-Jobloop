@@ -9,7 +9,7 @@ import { FaFacebook, FaInstagram, FaLinkedinIn } from "react-icons/fa";
 const contactInformation = [
     {
         name: "Deltaker",
-        email: "team@jobloop.no ",
+        email: "bruker@jobloop.no ",
     },
     {
         name: "Bedrifter",
@@ -27,7 +27,7 @@ const contactInformation = [
 
 export default function Footer() {
     return (
-        <footer className='w-full pb-4 text-kv-white bg-gray-900'>
+        <footer className='w-full pb-4 text-kv-white bg-pink-500'>
             <div className='flex-row flex-wrap items-start justify-around hidden px-12 pt-8 md:flex gap-y-16 gap-x-8 md:px-12 2xl:max-w-[1600px] 2xl:mx-auto '>
                 {/* <div className='flex flex-col order-2 gap-8 md:order-1'>
                     <h2 className='text-3xl'>Kontakt</h2>
