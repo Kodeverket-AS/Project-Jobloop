@@ -150,7 +150,7 @@ export default function Footer() {
                             href='/ansettelser'
                             aria-label='Gå til underside for deltaker'
                         >
-                            Ledige stillinger
+                            Ledige stillinger som vi har tilgjengelig akkurat nå
                         </Link>
                         <Link
                             className='hover:underline'
