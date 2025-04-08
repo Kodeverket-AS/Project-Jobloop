@@ -3,6 +3,7 @@
 // import Link from "next/link";
 import Image from "next/image";
 import { PortableText } from "@portabletext/react";
+import { urlFor } from "../lib/Sanity";
 
 export default function LeaderSection({ content, leader, position }) {
     // Check if more leaders are present in the content
@@ -13,7 +14,6 @@ export default function LeaderSection({ content, leader, position }) {
         return (
             <div className='flex flex-col px-5 py-20 gap-16 md:px-12 lg:px-24 2xl:max-w-[1600px]'>
                 <h2 className='text-xl font-bold'>Kursledere</h2>
-
                 {content.courseLeaders.map((courseLeader, index) => (
                     <div
                         key={index}
@@ -22,7 +22,7 @@ export default function LeaderSection({ content, leader, position }) {
                         <div className='w-full h-80 md:w-96 md:pt-3 md:h-96'>
                             <Image
                                 src={
-                                    courseLeader.image ? courseLeader.image : ""
+                                    courseLeader.image ? urlFor(courseLeader.image).width(500).url() : ""
                                 }
                                 width={500}
                                 height={500}
