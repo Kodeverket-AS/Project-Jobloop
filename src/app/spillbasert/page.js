@@ -10,18 +10,18 @@ import ForSchool from "../../../components/ForSchool";
 import Places from "../../../components/Places";
 
 export default async function Spillbasert() {
-  const data = await getData();
-  const spillbasert = data.tiltak[4];
-  return (
-    <main className="flex flex-col items-center justify-between">
-      <HeroSub content={spillbasert} />
-      <CourseSummary content={spillbasert} course={"Spillbasert"} />
-      <Curriculum content={spillbasert} course={"Spillbasert"} />
-      {/*<CourseUsefullness content={spillbasert} course={"Spillbasert"} />*/}
-      <LeaderSection content={spillbasert} leader={"Sjur Hovi"} position={"Kursleder"} />
-      {/*<ForCompanies content={spillbasert} />*/}
-      {/*<ForSchool content={spillbasert} situation={"skole"} />*/}
-      {/*<Places content={spillbasert} />*/}
-    </main>
-  );
+    const data = await getData();
+    const spillbasert = data.tiltak[4];
+    return (
+        <main className='flex flex-col items-center justify-between'>
+            <HeroSub content={spillbasert} />
+            <CourseSummary content={spillbasert} course={"Spillbasert"} />
+            <Curriculum content={spillbasert} course={"Spillbasert"} />
+            {/*<CourseUsefullness content={spillbasert} course={"Spillbasert"} />*/}
+            <LeaderSection content={spillbasert} />
+            {/*<ForCompanies content={spillbasert} />*/}
+            {/*<ForSchool content={spillbasert} situation={"skole"} />*/}
+            {/*<Places content={spillbasert} />*/}
+        </main>
+    );
 }
