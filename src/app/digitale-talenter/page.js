@@ -24,6 +24,7 @@ export default async function DigitaleTalenter() {
                         muted
                         loop
                         playsInline
+                        controls
                         className='w-full h-full object-cover'
                     >
                         <source
