@@ -1,164 +1,179 @@
-"use client"
+"use client";
 
-import { useEffect, useCallback, useRef, useState } from "react";
+import { useEffect, useCallback, useRef, useState, useMemo } from "react";
 import ContactCard from "./Card";
 
-function ContactSortByPriority(prop) {
-  const { prop: arr = [] } = prop
-  const categorized = arr.reduce((acc, person) => {
-    const { group = 5, priority = -1 } = person;
-    acc[group] = acc[group] ?? [];
-    acc[group].push(person);
-    // acc[group].splice(priority, 0, person);
-    if (priority) acc[group].sort((a, b) => a.priority - b.priority);
-    return acc;
-  }, {});
+function Section({ title, people = [] }) {
+    if (!people.length) return null;
 
-  return (
-    <>
-      {
-        Object.keys(categorized).map((priority, index) => (
-          priority == 1 ?
-            <div key={index} className="flex flex-wrap justify-center gap-12">
-              <h1 className="text-center basis-full">Ledelese og administrasjon</h1>
-              {
-                categorized[priority].map((contact, i) =>
-                  <ContactCard key={i} contact={contact} />
-                )
-              }
+    const maxWidth =
+        people.length <= 2
+            ? "max-w-2xl"
+            : people.length <= 3
+              ? "max-w-5xl"
+              : "max-w-7xl";
+
+    return (
+        <section className={`space-y-6 mx-auto ${maxWidth}`}>
+            <h2 className='text-xl sm:text-2xl font-semibold tracking-tight text-slate-800 text-center'>
+                {title}
+            </h2>
+
+            <div
+                className={[
+                    "grid gap-6 justify-center justify-items-center",
+                    "[grid-template-columns:repeat(auto-fit,minmax(220px,1fr))]",
+                ].join(" ")}
+            >
+                {people.map((contact, i) => (
+                    <ContactCard
+                        key={`${contact._id ?? i}`}
+                        contact={contact}
+                    />
+                ))}
             </div>
-          : priority == 2 ?
-            <div key={index} className="flex flex-wrap justify-center gap-12">
-              <h1 className="text-center basis-full">Teamledere og tiltaksledere</h1>
-                {
-                  categorized[priority].map((contact, i) =>
-                    <ContactCard key={i} contact={contact} />
-                  )
-                }
-              </div>
-          : priority == 3 ?
-            <div key={index} className="flex flex-wrap justify-center gap-12">
-              <h1 className="text-center basis-full">Faglige veiledere og spillpedagoger</h1>
-              {
-                categorized[priority].map((contact, i) =>
-                  <ContactCard key={i} contact={contact} />
-                )
-              }
-            </div>
-          : priority == 4 ?
-            <div key={index} className="flex flex-wrap justify-center gap-12">
-              <h1 className="text-center basis-full">Interns</h1>
-                {
-                  categorized[priority].map((contact, i) =>
-                    <ContactCard key={i} contact={contact} />
-                  )
-                }
-            </div>
-          :
-            <div key={index} className="flex flex-wrap justify-center gap-12">
-              <h1 className="text-center basis-full">Noobs</h1>
-                {
-                  categorized[priority].map((contact, i) =>
-                    <ContactCard key={i} contact={contact} />
-                  )
-                }
-            </div>
-        ))
-      }
-    </>
-  )
+        </section>
+    );
 }
 
-export default function ContactContainer({ data }) {
-  const [ filtered, filterData ] = useState(data)
-  const [ isFiltered, setIsFiltered ] = useState(false)
-  const [ department, setDepartment ] = useState()
-  const [ departmentList, setDepartmentList ] = useState([])
-  const nameInput = useRef()
-  const departmentSelect = useRef()
-
-  // Generate list of departments based on dataset
-  const generateDepartmentList = useCallback((event) => {
-    const arr = []
-
-    data.forEach(item => {
-      item.company.forEach(company => {
-        if (!arr.includes(company.trim())) arr.push(company.trim())
-      })
-    })
-
-    return arr
-  }, [data])
-
-  // Filters employees based on two inputs, name search and select department.
-  const filterEmployee = () => {
-    const result = data
-      .filter(person => (person.company.join().toLowerCase().includes(departmentSelect.current.value.toLowerCase())))
-      .filter(person => (person.fname + person.lname).toLowerCase().includes(nameInput.current.value.toLowerCase()))
-
-    if (nameInput.current.value.length + departmentSelect.current.value.length === 0) {
-      setIsFiltered(false)
-    } else {
-      setIsFiltered(true)
+function groupLabel(group) {
+    switch (Number(group)) {
+        case 1:
+            return "Ledelse og administrasjon";
+        case 2:
+            return "Teamledere og tiltaksledere";
+        case 3:
+            return "Faglige veiledere og spillpedagoger";
+        case 4:
+            return "Interns";
+        default:
+            return "Noobs";
     }
+}
 
-    filterData(result)
-  }
+function groupBy(arr, key) {
+    return arr.reduce((acc, item) => {
+        const k = item?.[key] ?? 5;
+        if (!acc[k]) acc[k] = [];
+        acc[k].push(item);
+        return acc;
+    }, {});
+}
 
-  // Reset button function, clears inputs and resets data
-  const resetButton = () => {
-    nameInput.current.value = ""
-    departmentSelect.current.value = ""
-    setIsFiltered(false)
-    filterData(data)
-  }
+export default function ContactContainer({ data = [] }) {
+    const [filtered, setFiltered] = useState(data);
+    const [isFiltered, setIsFiltered] = useState(false);
+    const nameInput = useRef(null);
+    const departmentSelect = useRef(null);
 
-  // Capture "esc" keypress and reset any filters used in displaying employees
-  const resetFilters = useCallback((event) => {
-    if (event.key === "Escape") {
-      setIsFiltered(false)
-      filterData(data)
-    }
-  }, [data])
+    const departmentList = useMemo(() => {
+        const set = new Set();
+        data.forEach((item) =>
+            (item?.company ?? []).forEach((c) => c?.trim() && set.add(c.trim()))
+        );
+        return Array.from(set).sort((a, b) => a.localeCompare(b, "no"));
+    }, [data]);
 
-  // Attaches eventlistener for above function, removes when unmounted (e.g changing page)
-  useEffect(() => {
-    document.addEventListener("keydown", resetFilters, false)
+    const doFilter = useCallback(() => {
+        const deptVal = (departmentSelect.current?.value ?? "").toLowerCase();
+        const nameVal = (nameInput.current?.value ?? "").toLowerCase();
 
-    setDepartmentList(generateDepartmentList())
+        const result = data.filter((p) => {
+            const matchesDept = deptVal
+                ? (p.company ?? []).some(
+                      (c) => (c ?? "").toLowerCase() === deptVal
+                  )
+                : true;
+            const fullName = `${p.fname ?? ""} ${p.lname ?? ""}`
+                .trim()
+                .toLowerCase();
+            const matchesName = nameVal ? fullName.includes(nameVal) : true;
+            return matchesDept && matchesName;
+        });
 
-    return () => document.removeEventListener("keydown", resetFilters, false)
-  }, [resetFilters, generateDepartmentList])
+        setIsFiltered(Boolean(deptVal || nameVal));
+        setFiltered(result);
+    }, [data]);
 
-  return (
-    <div className="flex flex-col gap-24 p-8 pb-24 w-full max-md:px-4">
-      <div className="grid grid-cols-2 gap-4 max-md:grid-cols-1 w-full">
-        <span>
-          <input className="w-full text-lg p-[10px] border focus:border-jobloop-primary-green focus:outline-none" type="text" placeholder="Søk etter ansatt ..." ref={nameInput} onChange={e => filterEmployee()} />
-        </span>
-        <span>
-          <select className="w-full text-lg p-[12px] border bg-white focus:border-jobloop-primary-green focus:outline-none" defaultValue="" ref={departmentSelect} onChange={e => filterEmployee()}>
-            <option value="">Alle avdelinger</option>
-            {departmentList.map(option => (
-              <option key={option}>{option}</option>
-            ))}
-          </select>
-        </span>
-        {
-          isFiltered &&
-          <span className="md:col-span-2 xl:hidden">
-            <button className="w-full text-lg p-[10px] border bg-white active:border-jobloop-primary-green active:bg-slate-50" type="button" onClick={() => resetButton()}>Tilbakestill søk</button>
-          </span>
-        }
-      </div>
-      <div className="flex flex-col gap-36">
-        {
-          filtered.length > 0 ?
-            <ContactSortByPriority prop={filtered} />
-          :
-            <span className="text-center">Beklager, ditt søk ga ingen resultater</span>
-        }
-      </div>
-    </div>
-  );
+    const onEsc = useCallback(
+        (ev) => {
+            if (ev.key === "Escape") {
+                if (nameInput.current) nameInput.current.value = "";
+                if (departmentSelect.current)
+                    departmentSelect.current.value = "";
+                setIsFiltered(false);
+                setFiltered(data);
+            }
+        },
+        [data]
+    );
+
+    useEffect(() => {
+        document.addEventListener("keydown", onEsc);
+        return () => document.removeEventListener("keydown", onEsc);
+    }, [onEsc]);
+
+    return (
+        <div className='space-y-10'>
+            <div className='grid grid-cols-1 sm:grid-cols-3 gap-3'>
+                <input
+                    ref={nameInput}
+                    onChange={doFilter}
+                    type='text'
+                    placeholder='Søk etter ansatt …'
+                    className='w-full rounded-xl border border-slate-300 bg-white px-4 py-2.5 text-base focus:outline-none focus:ring-2 focus:ring-jobloop-primary-green/60'
+                />
+
+                <select
+                    ref={departmentSelect}
+                    onChange={doFilter}
+                    defaultValue=''
+                    className='w-full rounded-xl border border-slate-300 bg-white px-4 py-2.5 text-base focus:outline-none focus:ring-2 focus:ring-jobloop-primary-green/60'
+                >
+                    <option value=''>Alle avdelinger</option>
+                    {departmentList.map((opt) => (
+                        <option key={opt} value={opt}>
+                            {opt}
+                        </option>
+                    ))}
+                </select>
+
+                <button
+                    type='button'
+                    onClick={() => {
+                        if (nameInput.current) nameInput.current.value = "";
+                        if (departmentSelect.current)
+                            departmentSelect.current.value = "";
+                        setIsFiltered(false);
+                        setFiltered(data);
+                    }}
+                    className='w-full rounded-xl border border-slate-300 bg-white px-4 py-2.5 text-base hover:bg-slate-50 active:bg-slate-100'
+                >
+                    Tilbakestill søk
+                </button>
+            </div>
+
+            <div className='space-y-14'>
+                {(() => {
+                    const grouped = groupBy(filtered, "group");
+                    return Object.keys(grouped)
+                        .map(Number)
+                        .sort((a, b) => a - b)
+                        .map((g) => (
+                            <Section
+                                key={g}
+                                title={groupLabel(g)}
+                                people={grouped[g]}
+                            />
+                        ));
+                })()}
+
+                {!filtered?.length && (
+                    <p className='text-center text-slate-600'>
+                        Beklager, ditt søk ga ingen resultater.
+                    </p>
+                )}
+            </div>
+        </div>
+    );
 }
