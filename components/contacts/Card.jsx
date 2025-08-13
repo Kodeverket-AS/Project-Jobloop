@@ -27,7 +27,7 @@ export default function ContactCard({ contact }) {
                         alt={fullName || "Ansattbilde"}
                         fill
                         sizes='(max-width: 640px) 8rem, (max-width: 768px) 9rem, (max-width: 1024px) 10rem, (max-width: 1280px) 11rem, 12rem'
-                        className='rounded-xl object-cover object-top'
+                        className='rounded-xl object-cover object-top grayscale'
                         priority={false}
                     />
                 </div>
