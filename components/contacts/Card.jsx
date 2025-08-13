@@ -1,61 +1,74 @@
 import Image from "next/image";
-import { SlCallOut } from "react-icons/sl";
-import { TfiEmail } from "react-icons/tfi";
+
+function formatTelHref(raw = "") {
+    return raw.replace(/[^\d+]/g, "");
+}
 
 export default function ContactCard({ contact }) {
-    const { image, fname, lname, role, company, location, email, mobile } =
-        contact;
+    const {
+        fname = "",
+        lname = "",
+        role = [],
+        email = "",
+        mobile = "",
+        image,
+        company = [],
+    } = contact ?? {};
 
-    const arrayLocaleNo = (arr) => {
-        if (!Array.isArray(arr)) return;
-
-        if (arr.length > 1)
-            return arr.slice(0, -1).join(", ") + " og " + arr.slice(-1);
-
-        return arr;
-    };
+    const fullName = `${fname} ${lname}`.trim();
+    const phone = mobile || "";
 
     return (
-        <div className='flex gap-24 max-lg:w-full lg:flex-col lg:gap-12'>
-            <Image
-                className='object-cover w-1/2 object-top max-md:w-48 aspect-[2/3] max-[500px]:hidden'
-                src={image ? image : "/contact_placeholder.jpg"}
-                style={{ filter: "grayscale(1)" }}
-                width={300}
-                height={500}
-                alt={`A picture of ${fname}`}
-            />
-            <div className='flex flex-col justify-center gap-2 w-fit'>
-                <h3>
-                    {fname} {lname}
+        <article className='group rounded-2xl border border-slate-200 bg-white shadow-sm hover:shadow-md transition-shadow p-4 max-w-80 w-full'>
+            <div className='flex flex-col items-center text-center'>
+                <div className='relative w-32 h-40 sm:w-36 sm:h-44 md:w-40 md:h-52 lg:w-44 lg:h-56 xl:w-48 xl:h-60'>
+                    <Image
+                        src={image || "/placeholder-avatar.png"}
+                        alt={fullName || "Ansattbilde"}
+                        fill
+                        sizes='(max-width: 640px) 8rem, (max-width: 768px) 9rem, (max-width: 1024px) 10rem, (max-width: 1280px) 11rem, 12rem'
+                        className='rounded-xl object-cover object-top grayscale'
+                        priority={false}
+                    />
+                </div>
+
+                <h3 className='mt-4 text-lg font-semibold leading-tight tracking-tight text-slate-900'>
+                    {fullName}
                 </h3>
-                <p>{arrayLocaleNo(role)}</p>
-                {company.length > 1 ? (
-                    <>
-                        <p>{arrayLocaleNo(company)}</p>
-                        {location && <p>{location}</p>}
-                    </>
-                ) : (
-                    <p>
-                        {company}
-                        {location && `, ${location}`}
+
+                {!!role?.length && (
+                    <p className='mt-1 text-sm text-slate-600'>
+                        {role.join(" · ")}
                     </p>
                 )}
-                <a
-                    className='flex items-center gap-2 text-jobloop-secondary-green hover:text-jobloop-primary-grey hover:underline'
-                    href={`mailto:${email}`}
-                >
-                    <TfiEmail />
-                    {email}
-                </a>
-                <a
-                    className='flex items-center gap-2 text-jobloop-secondary-green hover:text-jobloop-primary-grey hover:underline'
-                    href={`tel:+47${mobile}`}
-                >
-                    <SlCallOut />
-                    +47 {mobile}
-                </a>
+
+                {!!company?.length && (
+                    <p className='mt-1 text-xs text-slate-500'>
+                        {company.join(" · ")}
+                    </p>
+                )}
+
+                <div className='mt-4 w-full space-y-1 text-sm'>
+                    {email && (
+                        <a
+                            href={`mailto:${email}`}
+                            className='block truncate px-1 hover:underline'
+                            title={`Send e-post til ${fullName}`}
+                        >
+                            {email}
+                        </a>
+                    )}
+                    {phone && (
+                        <a
+                            href={`tel:${formatTelHref(phone)}`}
+                            className='block px-1 hover:underline'
+                            title={`Ring ${fullName}`}
+                        >
+                            {phone}
+                        </a>
+                    )}
+                </div>
             </div>
-        </div>
+        </article>
     );
 }
