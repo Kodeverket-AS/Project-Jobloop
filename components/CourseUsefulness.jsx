@@ -1,7 +1,5 @@
 "use client";
 
-import Link from "next/link";
-import Image from "next/image";
 import { PortableText } from "@portabletext/react";
 
 export default function CourseUsefullness({ content, course }) {

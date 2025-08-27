@@ -10,6 +10,7 @@ import Loop from "../public/loop.webp";
 
 import { LinkButtonInternal } from "./Buttons";
 import { IntroSectionReverse, PartnerProject } from "./LayoutComponents";
+import { LesMerButton } from "./Buttons";
 
 const IntroData = [
     {
@@ -36,28 +37,28 @@ const UICardData = [
     {
         image: GrunnleggendeIt,
         title: "Grunnleggende IT",
-        text: "Bli med i dagens digitale samfunn",
+        text: "Bli med i dagens digitale samfunn. Vi tilbyr grunnleggende IT-kompetanse som åpner dører til fremtidens arbeidsliv. Lær det viktigste innen digital teknologi og få en solid base for videre utvikling.",
         path: "/grunnleggende-IT",
         alt: "3 hyggelige ansatte",
     },
     {
         image: DigitaleTalenter,
         title: "Digitale Talenter",
-        text: "Dyrk interessene dine og få fast jobb",
+        text: "Dyrk interessene dine og få fast jobb. Vi hjelper deg å utvikle dine digitale talent og ferdigheter. Gjennom praksis og opplæring får du den kompetansen som arbeidslivet etterspør.",
         path: "/digitale-talenter",
         alt: "Smilende person som er digital talent",
     },
     {
         image: IndividuellAmo,
         title: "Individuell AMO",
-        text: "Få et skreddersydd opplegg gjennom NAV",
+        text: "Få et skreddersydd opplegg gjennom NAV. Vi tilpasser opplæringen til dine behov og mål. Sammen bygger vi en vei mot ny kompetanse og nye muligheter i arbeidslivet.",
         path: "/individuell-AMO",
         alt: "Person ser inn i kamera",
     },
     {
         image: Loop,
         title: "Loop",
-        text: "Få relevant arbeidspraksis og erfaring",
+        text: "Få relevant arbeidspraksis og erfaring. Vi kobler deg sammen med arbeidsgivere som kan gi deg verdifull praksis. Dette er din vei til å bygge CV og få foten inn i døren.",
         path: "/loop",
         alt: "Arbeidsbord",
     },
@@ -83,20 +84,22 @@ const QuoteData = [
 
 const UICard = ({ image, title, text, path, alt }) => {
     return (
-        <div className='flex flex-col w-full gap-4 group xl:flex-row-reverse md:w-1/2'>
-            <a href={path} className='w-full transition-all h-72 xl:w-1/2'>
+        <div className='group flex flex-col w-full gap-4 lg:gap-6 xl:flex-row-reverse bg-white rounded-xl shadow-sm hover:shadow-md border border-gray-50 p-6 transition-all duration-200 justify-between'>
+            <a href={path} className='w-full h-80 xl:w-1/2 relative overflow-hidden rounded-lg'>
                 <Image
                     alt={alt}
                     src={image}
-                    width={500}
-                    height={500}
+                    width={600}
+                    height={600}
                     className='object-cover h-full max-w-full'
                 />
             </a>
-            <div className='flex flex-col w-full gap-4 xl:w-1/2'>
-                <h3 className='text-xl text-kv-black md:text-2xl'>{title}</h3>
-                <p className='text-base text-gray-500 md:text-xl'>{text}</p>
-                <LinkButtonInternal Path={path} Text={"Les mer"} />
+            <div className='flex flex-col w-full gap-4 xl:w-1/2 justify-center'>
+                <h3 className='text-xl text-kv-black md:text-2xl font-semibold leading-tight'>{title}</h3>
+                <p className='text-base text-gray-600 md:text-lg leading-relaxed'>{text}</p>
+                <div className="pt-2">
+                    <LesMerButton Path={path} />
+                </div>
             </div>
         </div>
     );
@@ -134,40 +137,17 @@ export default function WorkCourses() {
                 btnVariant={"externalLink"}
                 btnText={PartnerData[0].btnText}
             />
-            <div className='flex flex-col w-full gap-12 px-8 py-20 md:py-24'>
-                <div className='flex flex-col gap-8 lg:gap-12 md:flex-row md:justify-between'>
+            <div className='grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-4 auto-rows-fr'>
+                {UICardData.map((card, index) => (
                     <UICard
-                        image={UICardData[0].image}
-                        title={UICardData[0].title}
-                        text={UICardData[0].text}
-                        path={UICardData[0].path}
-                        alt={UICardData[0].alt}
+                        key={index}
+                        image={card.image}
+                        title={card.title}
+                        text={card.text}
+                        path={card.path}
+                        alt={card.alt}
                     />
-
-                    <UICard
-                        image={UICardData[1].image}
-                        title={UICardData[1].title}
-                        text={UICardData[1].text}
-                        path={UICardData[1].path}
-                        alt={UICardData[1].alt}
-                    />
-                </div>
-                <div className='flex flex-col gap-12 md:flex-row md:justify-between'>
-                    <UICard
-                        image={UICardData[2].image}
-                        title={UICardData[2].title}
-                        text={UICardData[2].text}
-                        path={UICardData[2].path}
-                        alt={UICardData[2].alt}
-                    />
-                    <UICard
-                        image={UICardData[3].image}
-                        title={UICardData[3].title}
-                        text={UICardData[3].text}
-                        path={UICardData[3].path}
-                        alt={UICardData[3].alt}
-                    />
-                </div>
+                ))}
             </div>
 
             {/* Temporary Quotes Solution */}

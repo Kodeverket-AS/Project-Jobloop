@@ -1,7 +1,6 @@
 "use client";
 
-import Link from "next/link";
-import Image from "next/image";
+
 import { PortableText } from "@portabletext/react";
 import CourseCard from "./CourseCard";
 

@@ -1,8 +1,8 @@
 "use client";
 
 import Image from "next/image";
-import { LinkButton, ExternalLinkButton, LinkButtonInternal } from "./Buttons";
-import Link from "next/link";
+import { LesMerButton, ExternalLinkButton, LinkButtonInternal } from "./Buttons";
+
 
 /**
  *
@@ -29,7 +29,7 @@ const ButtonCTA = ({ isButton, btnVariant, ...props }) => {
       ButtonComponent = LinkButtonInternal;
       break;
     default:
-      ButtonComponent = LinkButton;
+      ButtonComponent = LesMerButton;
   }
 
   return <ButtonComponent {...props} />;
