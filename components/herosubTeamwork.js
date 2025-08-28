@@ -8,18 +8,18 @@ import { ExternalLinkButton } from "./Buttons";
 
 export default function HeroSub({ content }) {
     return (
-        <div className='flex flex-col-reverse px-0 md:flex-row lg:px-24 lg:pt-24 md:px-12 md:pt-10 md:w-screen 2xl:max-w-[1600px]'>
-            <div className='w-full px-5 pt-5 md:w-1/2 md:px-0 md:pt-0'>
-                <h1 className='mb-3 md:mb-5'>
+        <div className='flex flex-col-reverse gap-6 px-8 py-20 lg:py-24 lg:flex-row lg:gap-12'>
+            <div className='w-full lg:w-1/2'>
+                <h1 className='text-kv-black text-2xl lg:text-4xl xl:text-5xl border-b-2 md:border-b-4 pb-2 border-jobloop-primary-green w-fit'>
                     {content.heading ? content.heading : "Tittel kommer her"}
                 </h1>
-                <div className='lg:pr-20'>
+                <div className='flex flex-col gap-4'>
                     {content.introtext ? (
                         <PortableText value={content.introtext} />
                     ) : (
                         <p>Her kommer en introtekst</p>
                     )}
-                    <div className='my-10 '>
+                    <div>
                         {/* <LinkButton Path='/kontakt' Text={"kontakt oss"} /> */}
                         <ExternalLinkButton
                             Path='https://linktr.ee/teamwork.as'
@@ -29,12 +29,12 @@ export default function HeroSub({ content }) {
                     </div>
                 </div>
             </div>
-            <div className='w-screen py-6 pl-0 md:w-1/2 md:pl-6'>
+            <div className='w-full lg:w-1/2'>
                 <Image
                     src={content.image ? content.image : ""}
-                    width={500}
+                    width={1500}
                     height={500}
-                    className='mx-auto my-auto md:rounded md:w-[32rem] rounded-none'
+                    className='max-w-full h-96 object-cover rounded-2xl shadow-lg shadow-gray-300/50 hover:shadow-xl hover:shadow-gray-400/50 transition-all duration-500 hover:scale-[1.02]'
                     alt={content.alt || ""}
                 />
             </div>

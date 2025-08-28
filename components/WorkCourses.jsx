@@ -8,7 +8,6 @@ import DigitaleTalenter from "../public/digitale-talenter.webp";
 import IndividuellAmo from "../public/individuell-amo.webp";
 import Loop from "../public/loop.webp";
 
-import { LinkButtonInternal } from "./Buttons";
 import { IntroSectionReverse, PartnerProject } from "./LayoutComponents";
 import { LesMerButton } from "./Buttons";
 

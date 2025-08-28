@@ -49,15 +49,16 @@ export const IntroSection = ({
   imageLinkPath,
 }) => {
   return (
-    <div className="flex flex-col gap-6 px-8 py-20 lg:py-24 lg:flex-row lg:gap-12 ">
+    <div className="flex flex-col gap-6 px-8 py-20 lg:py-24 lg:flex-row lg:gap-12 rounded-2xl">
       {ifImageLink ? (
         <a
           href={imageLinkPath}
           target="_blank"
           title="Klikk bilde for å lese mer om FERD prisen her"
-          className="relative w-full lg:w-1/2 overflow-hidden group saturate-100 hover:saturate-150 ">
-          <div className="absolute z-10 p-4 transition-all duration-500 bottom-0 lg:-bottom-20 lg:group-hover:-bottom-0 left-0 w-full h-20 bg-black/70">
-            <h3 className="text-kv-white hover:underline">
+          className="relative w-full lg:w-1/2 overflow-hidden group saturate-100 hover:saturate-150"
+        >
+          <div className="absolute z-10 p-4 transition-all rounded-b-2xl duration-500 bottom-0 lg:-bottom-20 lg:group-hover:-bottom-0 left-0 w-full h-20 bg-black/70">
+            <h3 className="text-kv-white text-center ">
               Klikk bilde for å lese om da vi mottok FERD prisen 2024
             </h3>
           </div>
@@ -65,24 +66,24 @@ export const IntroSection = ({
             alt={alt}
             src={image}
             width={1500}
-            height={500}
-            className="max-w-full object-cover transition-all duration-[5000ms] scale-100 lg:group-hover:scale-105"
+            height={700}
+            className="max-w-full h-112 object-cover rounded-2xl shadow-lg shadow-gray-300/50 hover:shadow-xl hover:shadow-gray-400/50 transition-all duration-500 hover:scale-[1.02]"
           />
         </a>
       ) : (
-        <div className="w-full lg:w-1/2 ">
+        <div className="w-full lg:w-1/2">
           <Image
             alt={alt}
             src={image}
-            width={1500}
+            width={1000}
             height={500}
-            className="max-w-full object-cover"
+            className="max-w-full h-96 object-cover rounded-2xl shadow-lg shadow-gray-300/50 hover:shadow-xl hover:shadow-gray-400/50 transition-all duration-500 hover:scale-[1.02]"
           />
         </div>
       )}
 
-      <div className="flex flex-col gap-4 w-full lg:w-1/2">
-        <h2 className=" text-kv-black text-2xl lg:text-5xl border-b-2 md:border-b-4 pb-2 border-jobloop-primary-green w-fit">
+      <div className="flex flex-col gap-4 w-full lg:w-1/2 justify-center">
+        <h2 className="text-kv-black text-xl md:text-2xl lg:text-3xl border-b-2 md:border-b-4 pb-2 border-jobloop-primary-green w-fit">
           {title}
         </h2>
         <p className="text-gray-600 text-base xl:leading-relaxed lg:text-xl">
@@ -113,9 +114,9 @@ export const IntroSectionReverse = ({
   btnText,
 }) => {
   return (
-    <div className="flex flex-col-reverse gap-6 px-8 py-20 lg:py-24 lg:flex-row lg:gap-12 ">
-      <div className="flex flex-col gap-4 w-full lg:w-1/2">
-        <h2 className=" text-kv-black text-2xl lg:text-4xl xl:text-5xl border-b-2 md:border-b-4 pb-2 border-jobloop-primary-green w-fit">
+    <div className="flex flex-col-reverse gap-6 px-8 py-20 lg:py-24 lg:flex-row lg:gap-12">
+      <div className="flex flex-col gap-4 w-full lg:w-1/2 justify-center">
+        <h2 className="text-kv-black text-xl md:text-2xl lg:text-3xl border-b-2 md:border-b-4 pb-2 border-jobloop-primary-green w-fit">
           {title}
         </h2>
         <p className="text-gray-600 text-base xl:leading-relaxed lg:text-xl">
@@ -130,13 +131,13 @@ export const IntroSectionReverse = ({
           />
         )}
       </div>
-      <div className="w-full lg:w-1/2 ">
+      <div className="w-full lg:w-1/2">
         <Image
           alt={alt}
           src={image}
-          width={1500}
+          width={1000}
           height={500}
-          className="max-w-full object-cover"
+                      className="max-w-full h-96 object-cover rounded-2xl shadow-lg shadow-gray-300/50 hover:shadow-xl hover:shadow-gray-400/50 transition-all duration-500 hover:scale-[1.02]"
         />
       </div>
     </div>
@@ -155,19 +156,19 @@ export const PartnerProject = ({
 }) => {
   return (
     <div className="flex flex-col gap-6 px-8 py-20 lg:py-24 lg:flex-row lg:gap-12 ">
-      <div className="w-full lg:w-1/2 ">
+      <div className="w-full lg:w-1/2">
         <Image
           alt={alt}
           src={image}
-          width={1500}
+          width={1000}
           height={500}
-          className="max-w-full object-cover"
+          className="max-w-full h-96 object-cover rounded-2xl shadow-lg shadow-gray-300/50 hover:shadow-xl hover:shadow-gray-400/50 transition-all duration-500 hover:scale-[1.02]"
         />
       </div>
-      <div className="flex flex-col gap-4 w-full lg:w-1/2">
-        <h3 className="text-kv-black text-xl md:text-2xl lg:text-3xl border-b-2 md:border-b-4 pb-2 border-jobloop-primary-green w-fit">
+      <div className="flex flex-col gap-4 w-full lg:w-1/2 justify-center">
+        <h2 className="text-kv-black text-xl md:text-2xl lg:text-3xl border-b-2 md:border-b-4 pb-2 border-jobloop-primary-green w-fit">
           {title}
-        </h3>
+        </h2>
         <p className="text-gray-600 text-base xl:leading-relaxed lg:text-lg">
           {text}
         </p>
@@ -196,10 +197,10 @@ export const PartnerProjectReverse = ({
 }) => {
   return (
     <div className="flex flex-col-reverse gap-6 px-8 py-20 lg:py-24 lg:flex-row lg:gap-12 ">
-      <div className="flex flex-col gap-4 w-full lg:w-1/2">
-        <h3 className="text-kv-black text-xl md:text-2xl lg:text-3xl border-b-2 md:border-b-4 pb-2 border-jobloop-primary-green w-fit">
+      <div className="flex flex-col gap-4 w-full lg:w-1/2 justify-center">
+        <h2 className="text-kv-black text-xl md:text-2xl lg:text-3xl border-b-2 md:border-b-4 pb-2 border-jobloop-primary-green w-fit">
           {title}
-        </h3>
+        </h2>
         <p className="text-gray-600 text-base xl:leading-relaxed lg:text-lg">
           {text}
         </p>
@@ -212,13 +213,13 @@ export const PartnerProjectReverse = ({
           />
         )}
       </div>
-      <div className="w-full lg:w-1/2 ">
+      <div className="w-full lg:w-1/2">
         <Image
           alt={alt}
           src={image}
-          width={1500}
+          width={1000}
           height={500}
-          className="max-w-full object-cover"
+          className="max-w-full h-96 object-cover rounded-2xl shadow-lg shadow-gray-300/50 hover:shadow-xl hover:shadow-gray-400/50 transition-all duration-500 hover:scale-[1.02]"
         />
       </div>
     </div>
