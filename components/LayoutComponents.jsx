@@ -49,7 +49,7 @@ export const IntroSection = ({
   imageLinkPath,
 }) => {
   return (
-    <div className="flex flex-col gap-6 px-8 py-20 lg:py-24 lg:flex-row lg:gap-12 rounded-2xl">
+    <div className="flex flex-col gap-6 px-8 py-20 lg:py-24 lg:flex-row lg:gap-12 rounded-xl">
       {ifImageLink ? (
         <a
           href={imageLinkPath}
@@ -67,7 +67,7 @@ export const IntroSection = ({
             src={image}
             width={1500}
             height={700}
-            className="max-w-full h-112 object-cover rounded-2xl shadow-lg shadow-gray-300/50 hover:shadow-xl hover:shadow-gray-400/50 transition-all duration-500 hover:scale-[1.02]"
+            className="max-w-full h-112 object-cover rounded-xl shadow-lg shadow-gray-300/50 hover:shadow-xl hover:shadow-gray-400/50 transition-all duration-500 hover:scale-[1.02]"
           />
         </a>
       ) : (
@@ -77,7 +77,7 @@ export const IntroSection = ({
             src={image}
             width={1000}
             height={500}
-            className="max-w-full h-96 object-cover rounded-2xl shadow-lg shadow-gray-300/50 hover:shadow-xl hover:shadow-gray-400/50 transition-all duration-500 hover:scale-[1.02]"
+            className="max-w-full h-96 object-cover rounded-xl shadow-lg shadow-gray-300/50 hover:shadow-xl hover:shadow-gray-400/50 transition-all duration-500 hover:scale-[1.02]"
           />
         </div>
       )}
@@ -137,7 +137,7 @@ export const IntroSectionReverse = ({
           src={image}
           width={1000}
           height={500}
-                      className="max-w-full h-96 object-cover rounded-2xl shadow-lg shadow-gray-300/50 hover:shadow-xl hover:shadow-gray-400/50 transition-all duration-500 hover:scale-[1.02]"
+                      className="max-w-full h-96 object-cover rounded-xl shadow-lg shadow-gray-300/50 hover:shadow-xl hover:shadow-gray-400/50 transition-all duration-500 hover:scale-[1.02]"
         />
       </div>
     </div>
@@ -162,7 +162,7 @@ export const PartnerProject = ({
           src={image}
           width={1000}
           height={500}
-          className="max-w-full h-96 object-cover rounded-2xl shadow-lg shadow-gray-300/50 hover:shadow-xl hover:shadow-gray-400/50 transition-all duration-500 hover:scale-[1.02]"
+          className="max-w-full h-96 object-cover rounded-xl shadow-lg shadow-gray-300/50 hover:shadow-xl hover:shadow-gray-400/50 transition-all duration-500 hover:scale-[1.02]"
         />
       </div>
       <div className="flex flex-col gap-4 w-full lg:w-1/2 justify-center">
@@ -219,7 +219,7 @@ export const PartnerProjectReverse = ({
           src={image}
           width={1000}
           height={500}
-          className="max-w-full h-96 object-cover rounded-2xl shadow-lg shadow-gray-300/50 hover:shadow-xl hover:shadow-gray-400/50 transition-all duration-500 hover:scale-[1.02]"
+          className="max-w-full h-96 object-cover rounded-xl shadow-lg shadow-gray-300/50 hover:shadow-xl hover:shadow-gray-400/50 transition-all duration-500 hover:scale-[1.02]"
         />
       </div>
     </div>

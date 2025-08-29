@@ -150,7 +150,7 @@ export default function WorkCourses() {
             </div>
 
             {/* Temporary Quotes Solution */}
-            <div className='relative flex flex-col gap-8 px-8 pt-8 pb-12 mx-2 my-24 overflow-hidden border-2 rounded-lg bg-jobloop-primary-orange/5 2xl:mx-0 border-jobloop-primary-orange/100 text-kv-black lg:gap-12 lg:rounded-2xl'>
+            <div className='relative flex flex-col gap-8 px-8 pt-8 pb-12 mx-2 my-24 overflow-hidden border-2 rounded-lg bg-jobloop-primary-orange/5 2xl:mx-0 border-jobloop-primary-orange/100 text-kv-black lg:gap-12 lg:rounded-xl'>
                 <h2 className='pb-2 mx-auto text-center border-b-4 border-jobloop-primary-orange w-fit'>
                     Hva sier bedriftslederne om oss?
                 </h2>

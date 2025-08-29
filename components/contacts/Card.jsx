@@ -19,7 +19,7 @@ export default function ContactCard({ contact }) {
     const phone = mobile || "";
 
     return (
-        <article className='group rounded-2xl border border-slate-200 bg-white shadow-sm hover:shadow-md transition-shadow p-4 max-w-80 w-full flex flex-col'>
+        <article className='group rounded-xl border border-slate-200 bg-white shadow-sm hover:shadow-md transition-shadow p-4 max-w-80 w-full flex flex-col'>
             <div className='flex flex-col items-center text-center flex-grow'>
                 <div className='relative w-32 h-40 sm:w-36 sm:h-44 md:w-40 md:h-52 lg:w-44 lg:h-56 xl:w-48 xl:h-60'>
                     <Image

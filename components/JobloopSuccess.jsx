@@ -16,7 +16,7 @@ const TextData = [
 
 export default function JobloopSuccess() {
     return (
-        <div className=' bg-jobloop-primary-green/5 mx-2 2xl:mx-0 border-2 border-jobloop-primary-green/100 rounded-lg lg:rounded-2xl flex flex-col gap-8 px-8 py-8 my-20 md:my-24 md:flex-row '>
+        <div className=' bg-jobloop-primary-green/5 mx-2 2xl:mx-0 border-2 border-jobloop-primary-green/100 rounded-lg lg:rounded-xl flex flex-col gap-8 px-8 py-8 my-20 md:my-24 md:flex-row '>
             <div className='w-full md:w-1/2 '>
                 <Image
                     alt={TextData[0].alt}

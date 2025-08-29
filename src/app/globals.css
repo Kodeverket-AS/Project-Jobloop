@@ -40,7 +40,7 @@ h2 {
   font-size: 2rem;
 }
 
-button > h2 {
+button>h2 {
   font-size: 1.2rem;
   font-weight: 500;
 }

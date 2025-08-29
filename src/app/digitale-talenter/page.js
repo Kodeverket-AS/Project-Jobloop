@@ -18,7 +18,7 @@ export default async function DigitaleTalenter() {
 
             <CourseSummary content={digTal} course={"Digitale Talenter"} />
             <div className='w-full max-w-4xl px-4 mt-10 lg:mb-20'>
-                <div className='relative rounded-2xl overflow-hidden shadow-2xl bg-white/5 backdrop-blur-sm aspect-video animate-fade-in ring-1 ring-black/10'>
+                <div className='relative rounded-xl overflow-hidden shadow-2xl bg-white/5 backdrop-blur-sm aspect-video animate-fade-in ring-1 ring-black/10'>
                     <video
                         muted
                         loop
