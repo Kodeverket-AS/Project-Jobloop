@@ -71,3 +71,59 @@ h6 {
     font-size: 1.1rem;
   }
 }
+
+.team-photo {
+  opacity: 1;
+  will-change: transform, opacity;
+  transition: transform 1.2s ease-out, opacity 1s ease-out;
+}
+
+.slide-left {
+  transform: translateX(0);
+}
+
+.slide-right {
+  transform: translateX(0);
+}
+
+.slide-bottom {
+  transform: translateX(40px) translateY(80px);
+}
+
+@media (min-width: 768px) {
+  .team-photo {
+    opacity: 0;
+  }
+
+  .slide-left {
+    transform: translateX(-100px);
+  }
+
+  .slide-right {
+    transform: translateX(100px);
+  }
+
+  .slide-bottom {
+    transform: translateY(100px);
+  }
+
+  .slide-bottom.animate {
+    opacity: 1;
+    transform: translateX(0) translateY(80px);
+  }
+
+  .slide-left.animate {
+    opacity: 1;
+    transform: translateX(0);
+  }
+
+  .slide-right.animate {
+    opacity: 1;
+    transform: translateX(0);
+  }
+
+  .slide-bottom.animate {
+    opacity: 1;
+    transform: translateX(0) translateY(80px);
+  }
+}

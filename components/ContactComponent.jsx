@@ -1,8 +1,6 @@
 "use client";
 
-import Image from "next/image";
-import Link from "next/link";
-import { LinkButton, KontaktButton } from "./Buttons";
+import { LinkButton, LinkButtonAnimatedWithIcon } from "./Buttons";
 
 export default function ContactComponent() {
   return (
@@ -18,7 +16,7 @@ export default function ContactComponent() {
           Path={"/kontakt"}
           Text={"Kontakt Oss"}
         /> */}
-        <KontaktButton
+        <LinkButtonAnimatedWithIcon
           Path={"/kontakt"}
           Text={"Kontakt Oss"}
         />
