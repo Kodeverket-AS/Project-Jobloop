@@ -1,6 +1,6 @@
 "use client";
 
-import JobloopPhoto from "../public/JobloopPhoto.png";
+
 import FSEVinnerPhoto from "../public/FSE-Vinner2024-063.webp";
 import { IntroSection } from "./LayoutComponents";
 
@@ -18,17 +18,15 @@ const IntroData = [
 
 export default function LandingIntro() {
     return (
-        <section>
-            <IntroSection
-                title={IntroData[0].title}
-                text={IntroData[0].text}
-                image={IntroData[0].image}
-                ifImageLink={true}
-                imageLinkPath={IntroData[0].imageLinkPath}
-                alt={IntroData[0].alt}
-                path={IntroData[0].path}
-                isButton={true}
-            />
-        </section>
+        <IntroSection
+            title={IntroData[0].title}
+            text={IntroData[0].text}
+            image={IntroData[0].image}
+            ifImageLink={true}
+            imageLinkPath={IntroData[0].imageLinkPath}
+            alt={IntroData[0].alt}
+            path={IntroData[0].path}
+            isButton={true}
+        />
     );
 }

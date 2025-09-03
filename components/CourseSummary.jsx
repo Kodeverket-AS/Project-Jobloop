@@ -6,16 +6,14 @@ import CourseCard from "./CourseCard";
 
 export default function CourseSummary({ content, course }) {
   return (
-    <div className="flex flex-col px-5 py-20 pb-0 md:py-24 md:flex-row md:px-12 md:w-screen lg:px-24 2xl:max-w-[1600px]">
-      <div className="flex-col w-full md:w-1/2 md:flex">
-        <h2 className=" md:leading-10">{"Hvem passer " + course + " for?"}</h2>
-        <div className=" md:w-5/6 lg:pr-20">
-          <div className="py-5">
-            <PortableText value={content.targetGroup} />
-          </div>
+    <div className="flex flex-col md:flex-row ">
+      <div className="flex flex-col gap-4 w-full md:w-1/2 justify-center">
+        <h2 className="text-kv-black text-xl md:text-2xl lg:text-3xl border-b-2 md:border-b-4 pb-2 border-jobloop-primary-green w-fit">{"Hvem passer " + course + " for?"}</h2>
+        <div className="text-gray-600 text-base xl:leading-relaxed lg:text-xl md:w-5/6 lg:pr-20">
+          <PortableText value={content.targetGroup} />
         </div>
       </div>
-      <div className="w-full px-0 pt-5 md:pl-7 md:w-1/2 md:pt-0">
+      <div className="w-full px-0 md:pl-7 md:w-1/2">
         <CourseCard key={content._id} content={content} />
       </div>
     </div>

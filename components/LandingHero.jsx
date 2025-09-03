@@ -13,9 +13,9 @@ import {
 export default function LandingHero() {
   return (
     <>
-      <div className="w-screen h-[85vh] sm:h-[80vh] relative">
+      <div className="w-full h-[85vh] sm:h-[80vh] relative">
         <div className="absolute top-0 left-0 flex justify-center w-full h-full -z-50 ">
-          <div className="absolute bg-gradient-to-b from-[rgba(34,34,34,0.9)] to-[rgba(34,34,34,0.8)] z-50 h-full w-full" />
+          <div className="absolute bg-gradient-to-b from-[rgba(34,34,34,0.7)] to-[rgba(34,34,34,0.6)] z-50 h-full w-full" />
           <Image
             height={500}
             width={2000}

@@ -9,18 +9,15 @@ import ContactComponent from "../../components/ContactComponent";
 
 export default function Home() {
     return (
-        <main className='flex flex-col items-center justify-between'>
+        <main className='flex flex-col items-center gap-12 w-full max-w-[1536px] mx-auto '>
             <LandingHero />
-            <div className='container flex flex-col items-center '>
                 <LandingIntro />
-                <div id='courses'>
-                    <SchoolCourses />
-                    <WorkCourses />
-                </div>
+                <SchoolCourses />
+                <WorkCourses />
                 <CooperationProjects />
                 <JobloopSuccess />
                 <ContactComponent />
-            </div>
+           
         </main>
     );
 }

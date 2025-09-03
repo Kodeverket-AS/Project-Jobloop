@@ -49,7 +49,7 @@ export const IntroSection = ({
   imageLinkPath,
 }) => {
   return (
-    <div className="flex flex-col gap-6 px-8 py-20 lg:py-24 lg:flex-row lg:gap-12 rounded-xl">
+    <div className="flex flex-col gap-6   lg:flex-row lg:gap-12 rounded-xl">
       {ifImageLink ? (
         <a
           href={imageLinkPath}
@@ -114,7 +114,7 @@ export const IntroSectionReverse = ({
   btnText,
 }) => {
   return (
-    <div className="flex flex-col-reverse gap-6 px-8 py-20 lg:py-24 lg:flex-row lg:gap-12">
+    <div className="flex flex-col-reverse gap-6  lg:flex-row lg:gap-12">
       <div className="flex flex-col gap-4 w-full lg:w-1/2 justify-center">
         <h2 className="text-kv-black text-xl md:text-2xl lg:text-3xl border-b-2 md:border-b-4 pb-2 border-jobloop-primary-green w-fit">
           {title}
@@ -155,7 +155,7 @@ export const PartnerProject = ({
   btnText,
 }) => {
   return (
-    <div className="flex flex-col gap-6 px-8 py-20 lg:py-24 lg:flex-row lg:gap-12 ">
+    <div className="flex flex-col gap-6   lg:flex-row lg:gap-12 ">
       <div className="w-full lg:w-1/2">
         <Image
           alt={alt}
@@ -196,7 +196,7 @@ export const PartnerProjectReverse = ({
   btnText,
 }) => {
   return (
-    <div className="flex flex-col-reverse gap-6 px-8 py-20 lg:py-24 lg:flex-row lg:gap-12 ">
+    <div className="flex flex-col-reverse gap-6   lg:flex-row lg:gap-12 ">
       <div className="flex flex-col gap-4 w-full lg:w-1/2 justify-center">
         <h2 className="text-kv-black text-xl md:text-2xl lg:text-3xl border-b-2 md:border-b-4 pb-2 border-jobloop-primary-green w-fit">
           {title}

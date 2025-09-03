@@ -17,7 +17,7 @@ export default function ForCompanies({ content }) {
         />
       </div>
       <div className="flex flex-col w-full gap-3 py-10 md:w-1/2 md:py-0">
-        <h2 className="pb-3 border-b-2 border-jobloop-primary-green">For bedrifter</h2>
+        <h2 className="text-xl md:text-2xl lg:text-3xl pb-3 border-b-2 border-jobloop-primary-green">For bedrifter</h2>
         <PortableText value={content.employer} />
       </div>
     </div>
