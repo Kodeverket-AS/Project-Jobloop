@@ -9,7 +9,7 @@ import logoJobloopHvit from "../../public/logoJobloopHvit.svg";
 
 export default function Navbar() {
     return (
-        <nav className='absolute top-0 z-50 w-full px-5'>
+        <nav className='absolute top-0 z-50 max-w-[1536px] w-full  px-5'>
             <div className='flex items-center justify-between'>
                 <div className='p-4'>
                     <Link href='/' aria-label='Gå til landingssiden'>
@@ -40,14 +40,14 @@ export default function Navbar() {
                         <Link
                             href='/om-oss'
                             aria-label='gå til denne undersiden for å lese mer om oss'
-                            className='px-4 font-semibold text-lg md:portrait:px-2 lg:px-4 text-kv-white md:hover:underline'
+                            className='px-2 font-semibold text-xl md:px-4 text-kv-white md:hover:underline'
                         >
                             OM OSS
                         </Link>
                         <Link
                             href='/kontakt'
                             aria-label='gå til denne undersiden for å ta kontakt med en av oss'
-                            className='px-4 font-semibold text-lg md:portrait:px-2 lg:px-4 text-kv-white md:hover:underline'
+                            className='px-2 font-semibold text-xl md:px-4 text-kv-white md:hover:underline'
                         >
                             KONTAKT
                         </Link>
@@ -94,14 +94,14 @@ export function NavbarAlt() {
                         <Link
                             href='/om-oss'
                             aria-label='gå til denne undersiden for å lese mer om oss'
-                            className='px-4 font-semibold text-lg md:portrait:px-2 lg:px-4 text-jobloop-primary-grey md:hover:underline'
+                            className='px-4 font-semibold text-xl md:portrait:px-2 lg:px-4 text-jobloop-primary-grey md:hover:underline'
                         >
                             OM OSS
                         </Link>
                         <Link
                             href='/kontakt'
                             aria-label='gå til denne undersiden for å ta kontakt med en av oss'
-                            className='px-4 font-semibold text-lg md:portrait:px-2 lg:px-4 text-jobloop-primary-grey md:hover:underline'
+                            className='px-4 font-semibold text-xl md:portrait:px-2 lg:px-4 text-jobloop-primary-grey md:hover:underline'
                         >
                             KONTAKT
                         </Link>

@@ -13,15 +13,8 @@ export default async function IndividuellAMO() {
   const data = await getData();
   const amo = data.tiltak[5];
   return (
-    <main className="flex flex-col items-center justify-between">
+    <main className="flex flex-col items-center gap-12 w-full max-w-[1536px] mx-auto">
       <HeroSub content={amo} />
-      {/*<CourseSummary content={amo} course={"Individuell AMO"} />*/}
-      {/*<Curriculum content={amo} course={"Individuell AMO"} />*/}
-      {/*<CourseUsefullness content={amo} course={"Individuell AMO"} />*/}
-      {/*<LeaderSection content={amo} leader={"TBC"} position={"TBC"} />*/}
-      {/*<ForCompanies content={amo} />*/}
-      {/*<ForSchool content={amo} situation={"samarbeidspartner"} />*/}
-      {/*<Places content={amo} />*/}
     </main>
   );
 }

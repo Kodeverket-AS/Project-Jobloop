@@ -2,7 +2,7 @@
 
 
 import FSEVinnerPhoto from "../public/FSE-Vinner2024-063.webp";
-import { IntroSection } from "./LayoutComponents";
+import { IntroSection } from "./layout-components";
 
 const IntroData = [
     {

@@ -3,7 +3,7 @@
 import Kodeloftet from "../public/kodeloftet.webp";
 import Gløde from "../public/gløde.webp";
 import Teamwork from "../public/Orkla_1.webp";
-import { PartnerProject, PartnerProjectReverse } from "./LayoutComponents";
+import { PartnerProject, PartnerProjectReverse } from "./layout-components";
 
 const ProjectsData = [
     {

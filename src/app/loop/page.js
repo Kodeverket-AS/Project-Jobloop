@@ -13,15 +13,8 @@ export default async function Loop() {
   const data = await getData();
   const loop = data.tiltak[7];
   return (
-    <main className="flex flex-col items-center justify-between">
+    <main className="flex flex-col items-center gap-12 w-full max-w-[1536px] mx-auto">
       <HeroSub content={loop} />
-      {/*<CourseSummary content={loop} course={"Loop"} />*/}
-      {/*<Curriculum content={loop} course={"Loop"} />*/}
-      {/*<CourseUsefullness content={loop} course={"Loop"} />*/}
-      {/*<LeaderSection content={loop} leader={"TBC"} position={"TBC"} />*/}
-      {/*<ForCompanies content={loop} />*/}
-      {/*<ForSchool content={loop} situation={"samarbeidspartner"} />*/}
-      {/*<Places content={loop} />*/}
     </main>
   );
 }

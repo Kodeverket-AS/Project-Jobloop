@@ -7,7 +7,7 @@ import Gamify from "../public/gamify2.webp";
 import Spillbasert from "../public/spillbasert.webp";
 import Loop from "../public/loop.webp";
 
-import { IntroSectionReverse } from "./LayoutComponents";
+import { IntroSectionReverse } from "./layout-components";
 import { LesMerButton } from "./Buttons";
 
 const IntroData = [

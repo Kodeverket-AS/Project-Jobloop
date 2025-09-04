@@ -13,11 +13,10 @@ export default async function DigitaleTalenter() {
     const data = await getData();
     const digTal = data.tiltak[2];
     return (
-        <main className='flex flex-col items-center justify-between'>
+        <main className='flex flex-col items-center gap-12 w-full max-w-[1536px] mx-auto'>
             <HeroSub content={digTal} />
-
             <CourseSummary content={digTal} course={"Digitale Talenter"} />
-            <div className='w-full max-w-4xl px-4 mt-10 lg:mb-20'>
+            <div className='w-full max-w-4xl px-4'>
                 <div className='relative rounded-xl overflow-hidden shadow-2xl bg-white/5 backdrop-blur-sm aspect-video animate-fade-in ring-1 ring-black/10'>
                     <video
                         muted
@@ -35,15 +34,11 @@ export default async function DigitaleTalenter() {
                 </div>
             </div>
             <Curriculum content={digTal} course={"Digitale Talenter"} />
-            {/*<CourseUsefullness content={digTal} course={"Digitale Talenter"} />*/}
             <LeaderSection
                 content={digTal}
                 leader={"Frode Moldestad Bøe"}
                 position={"Kursleder"}
             />
-            {/*<ForCompanies content={digTal} />*/}
-            {/*<ForSchool content={digTal} situation={"samarbeidspartner"} />*/}
-            {/*<Places content={digTal} />*/}
         </main>
     );
 }

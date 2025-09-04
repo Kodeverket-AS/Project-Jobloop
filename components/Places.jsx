@@ -37,7 +37,7 @@ function generateCities(array) {
 export default function Places({ content }) {
   return (
     <div className="w-full   2xl:max-w-[1600px]">
-      <div className="text-center mb-16">
+      <div className="text-center">
         <h2 className="text-kv-black text-xl md:text-2xl lg:text-3xl border-b-2 md:border-b-4 pb-2 border-jobloop-primary-green w-fit mx-auto">
           Våre lokaler
         </h2>

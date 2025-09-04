@@ -13,15 +13,12 @@ export default async function Gamify() {
   const data = await getData();
   const gamify = data.tiltak[1];
   return (
-    <main className="flex flex-col items-center justify-between">
+    <main className="flex flex-col items-center gap-12 w-full max-w-[1536px] mx-auto">
       <HeroSub content={gamify} />
       <CourseSummary content={gamify} course={"Gamify"} />
       <Curriculum content={gamify} course={"Gamify"} />
-      {/*<CourseUsefullness content={gamify} course={"Gamify"} />*/}
       <LeaderSection content={gamify} leader={"Kim Brurok Stokkeland & Sjur Hovi"} position={"Kursleder"} />
-      {/*<ForCompanies content={gamify} />*/}
       <ForSchool content={gamify} situation={"skole"} />
-      {/*<Places content={gamify} />*/}
     </main>
   );
 }

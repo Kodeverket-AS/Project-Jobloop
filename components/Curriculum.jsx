@@ -6,7 +6,7 @@ import { PortableText } from "@portabletext/react";
 
 export default function Curriculum({ content, course }) {
   return (
-    <div className="flex flex-col gap-6   w-full 2xl:max-w-[1600px]">
+    <div className="flex flex-col gap-6 px-4 md:px-0 w-full 2xl:max-w-[1600px]">
       <div className="text-center">
         <h2 className="text-kv-black text-xl md:text-2xl lg:text-3xl border-b-2 md:border-b-4 pb-2 border-jobloop-primary-green w-fit mx-auto">
           {"Hva lærer du i " + course + "?"}

@@ -15,16 +15,8 @@ export default async function Teamwork() {
     const teamwork = data.tiltak[6];
     console.log(teamwork);
     return (
-        <main className='flex flex-col items-center justify-between'>
+        <main className='flex flex-col items-center gap-12 w-full max-w-[1536px] my-12 mx-auto'>
             <HeroSub content={teamwork} />
-
-            {/*<CourseSummary content={teamwork} course={"Teamwork"} />*/}
-            {/*<Curriculum content={teamwork} course={"Teamwork"} />*/}
-            {/*<CourseUsefullness content={teamwork} course={"Teamwork"} />*/}
-            {/*<LeaderSection content={teamwork} leader={"Karl Håkon Rødland"} position={"Leder"} />*/}
-            {/*<ForCompanies content={teamwork} />*/}
-            {/*<ForSchool content={teamwork} situation={"samarbeidspartner"} />*/}
-            {/*<Places content={teamwork} />*/}
         </main>
     );
 }

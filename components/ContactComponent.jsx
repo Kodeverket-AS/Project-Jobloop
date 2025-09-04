@@ -1,6 +1,6 @@
 "use client";
 
-import {  KontaktButton } from "./Buttons";
+import {  LinkButtonAnimatedWithIcon } from "./Buttons";
 
 export default function ContactComponent() {
   return (
@@ -12,8 +12,8 @@ export default function ContactComponent() {
         <p className="text-lg md:text-xl text-gray-600 mt-6 mb-8 leading-relaxed">
           Trenger du hjelp eller ønsker å samarbeide med oss?
         </p>
-        <div className="transform flex justify-center hover:scale-105 transition-transform duration-300">
-          <KontaktButton
+        <div className="flex justify-center">
+          <LinkButtonAnimatedWithIcon
             Path={"/kontakt"}
             Text={"Kontakt Oss"}
           />

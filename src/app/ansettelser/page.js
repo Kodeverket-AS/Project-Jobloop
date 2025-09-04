@@ -3,7 +3,7 @@ import { ExternalLinkButton } from "../../../components/Buttons";
 
 export default function Ansettelser() {
     return (
-        <main className='flex flex-col items-center bg-gray-100'>
+        <main className='flex flex-col items-center bg-gray-100 max-w-[1536px] mx-auto'>
             <div className='relative bg-white p-8 rounded-lg shadow-md'>
                 <div className='flex justify-center mb-6'>
                     <Image
