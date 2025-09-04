@@ -18,6 +18,7 @@ export default function ContactComponent() {
             Text={"Kontakt Oss"}
           />
         </div>
+
       </div>
     </div>
   );

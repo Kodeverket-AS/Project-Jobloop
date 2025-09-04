@@ -1,4 +1,7 @@
+"use client"
+
 import Image from "next/image";
+import { useEffect, useState } from "react";
 import { LesMerButton, LinkButtonAnimatedWithIcon } from "../../../components/Buttons";
 import Link from "next/link";
 
@@ -10,7 +13,7 @@ import Oda from "../../../public/Oda.jpg";
 import Kim from "../../../public/Kim.jpg";
 import { IoInformationCircle } from "react-icons/io5";
 
-// Team memebers data
+
 const teamData = [
     {
         name: "Sina",
@@ -44,14 +47,14 @@ const teamData = [
     },
 ];
 
-// Team member komponent
+
 const TeamMember = ({ name, role, image }) => (
     <Link
         href='/kontakt'
         title={`Gå til Kontakt siden og finn ${name}`}
         className='group flex flex-col gap-2 items-center cursor-pointer hover:scale-105 transition-all duration-300'
     >
-        <div className='w-60 h-60 overflow-hidden rounded-full border-2 border-jobloop-primary-orange shadow-jobloop-primary-orange/15 group-hover:border-4 shadow-2xl transition-all duration-300'>
+        <div className='w-40 h-40 md:w-60 md:h-60 overflow-hidden rounded-full border-2 border-jobloop-primary-orange shadow-jobloop-primary-orange/15 group-hover:border-4 shadow-2xl transition-all duration-300'>
             <Image
                 src={image}
                 alt={`Profilbilde av ${name}`}
@@ -69,7 +72,7 @@ const TeamMember = ({ name, role, image }) => (
     </Link>
 );
 
-// Lokasjoner data
+
 const lokasjonerData = [
     {
         name: "Bergen",
@@ -121,7 +124,7 @@ const lokasjonerData = [
     },
 ];
 
-// Lokasjoner komponent
+
 const Lokasjon = ({ name, image }) => (
     <div className='flex flex-col items-center gap-3'>
         <div className='w-32 h-32 md:w-40 md:h-40 overflow-hidden rounded-xl shadow-lg'>
@@ -138,8 +141,42 @@ const Lokasjon = ({ name, image }) => (
 );
 
 export default function OmOss() {
+    const [photosAnimated, setPhotosAnimated] = useState(false);
+
+    useEffect(() => {
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach((entry) => {
+                if (entry.isIntersecting && !photosAnimated) {
+                    setPhotosAnimated(true);
+                    
+                  
+                    const photos = entry.target.querySelectorAll('.team-photo');
+                    photos.forEach((photo, index) => {
+                        setTimeout(() => {
+                            photo.classList.add('animate');
+                        }, index * 200);
+                    });
+                }
+            });
+        }, { 
+            threshold: 0.1,
+            rootMargin: '0px 0px -20px 0px'
+        });
+
+        const teamSection = document.querySelector('.team-section');
+        const samarbeidSection = document.querySelector('.samarbeid-section');
+        
+        if (samarbeidSection) {
+            observer.observe(samarbeidSection);
+        } else if (teamSection) {
+            observer.observe(teamSection);
+        }
+
+        return () => observer.disconnect();
+    }, [photosAnimated]);
+
     return (
-        <main className='flex flex-col gap-4 items-center justify-between min-h-screen mt-10'>
+        <main className='flex flex-col items-center justify-between min-h-screen mt-10 space-y-16'>
             <section className='container flex flex-col gap-4 '>
                 <div className='flex flex-col  gap-6 text-pretty  '>
                     <div className='omoss w-full  text-kv-black  mx-auto'>
@@ -206,8 +243,8 @@ export default function OmOss() {
                             </p>
                             
                             <div className='w-full lg:w-2/5 flex flex-col justify-center float-left mr-8 mb-4'>
-                                <div className='relative shadow-lg shadow-jobloop-secondary-orange/15 flex flex-col gap-4 bg-jobloop-primary-orange/5 border border-jobloop-primary-orange p-6 rounded-xl'>
-                                    <IoInformationCircle className='absolute bottom-0 right-0 text-5xl text-jobloop-primary-orange/15' />
+                                <div className='relative shadow-lg shadow-jobloop-secondary-orange/15 flex flex-col gap-4 bg-jobloop-primary-orange/5 border border-jobloop-primary-orange p-6 rounded-xl mb-6'>
+                                    <IoInformationCircle className='absolute bottom-0 right-0 text-5xl text-jobloop-primary-orange/15 ' />
                                     <p className='text-base lg:text-xl md:leading-loose text-center text-pretty'>
                                         Vi har programmer som retter seg mot barn i
                                         grunnskolen, videregående skole, og voksne
@@ -244,7 +281,7 @@ export default function OmOss() {
                 </div>
             </section>
 
-            <section className='py-16'>
+            <section className=''>
                 <div className='container mx-auto px-4'>
                     <div className='container relative shadow-lg shadow-jobloop-secondary-green/15 flex flex-col justify-center items-center gap-4 md:gap-6 bg-jobloop-primary-green/5 border border-jobloop-primary-green p-3 sm:p4 md:p-6 rounded-xl md:rounded-xl'>
                         <IoInformationCircle className='absolute bottom-0 right-0 text-5xl text-jobloop-primary-green/15' />
@@ -261,14 +298,17 @@ export default function OmOss() {
                 </div>
             </section>
 
-            <section className='py-20 flex flex-col gap-8'>
+            <section className=' flex flex-col gap-8 team-section'>
                 <div className='w-fit mx-auto'>
                     <h2 className='text-2xl md:text-3xl font-bold text-center'>
                         Våre ansatte i Jobloop
                     </h2>
                     <div className='block w-full h-1 bg-jobloop-primary-orange mt-2 mb-6 mx-auto'></div>
                 </div>
-                <div className='container grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-6'>
+                
+
+                
+                <div className='container grid grid-cols-2 gap-8 md:grid-cols-3 lg:grid-cols-3 2xl:grid-cols-6'>
                     {teamData.map((person) => (
                         <TeamMember
                             key={person.name}
@@ -279,7 +319,7 @@ export default function OmOss() {
                     ))}
                 </div>
             </section>
-            <section className='py-16'>
+            <section className=''>
                 <div className='container mx-auto px-4'>
                     <div className='w-fit mx-auto mb-12'>
                         <h2 className='text-2xl md:text-3xl font-bold text-center'>
@@ -376,30 +416,30 @@ export default function OmOss() {
                 </div>
             </section>
 
-            <section className='py-16'>
+                        <section className=' samarbeid-section'>
                 <div className='container mx-auto px-4 flex flex-col lg:flex-row items-center lg:items-start'>
-                    <div className='relative w-full md:w-64 h-64 mb-12 lg:mb-0 lg:mr-12'>
-                        <div className='absolute top-0 left-0 transform -translate-x-4 -translate-y-4'>
+                    <div className='relative w-full md:w-64 h-64 mb-24 lg:mb-0 lg:mr-12'>
+                        <div className='absolute top-0 left-0 team-photo slide-left'>
                             <Image
-                                src='/Karl.webp' // Path to your image
+                                src='/Karl.webp'
                                 alt='Karl Håkon'
                                 width={150}
                                 height={150}
                                 className='rounded-full'
                             />
                         </div>
-                        <div className='absolute top-0 right-0 transform translate-x-4 -translate-y-4'>
+                        <div className='absolute top-0 right-0 team-photo slide-right'>
                             <Image
-                                src='/Inger.jpg' // Path to your image
+                                src='/Inger.jpg'
                                 alt='Inger Johanne'
                                 width={150}
                                 height={150}
                                 className='rounded-full'
                             />
                         </div>
-                        <div className='absolute bottom-0 left-1/2 transform -translate-x-1/2 translate-y-4'>
+                        <div className='absolute bottom-0 left-1/4 team-photo slide-bottom'>
                             <Image
-                                src='/Sina.jpg' // Path to your image
+                                src='/Sina.jpg'
                                 alt='Sina'
                                 width={150}
                                 height={150}
@@ -407,6 +447,7 @@ export default function OmOss() {
                             />
                         </div>
                     </div>
+ 
                     <div className='flex flex-col items-start text-left max-w-lg'>
                         <div className='relative w-fit mx-auto md:mx-0 '>
                             <h2 className='text-xl text-center md:text-left md:text-2xl font-bold mb-2'>
@@ -430,7 +471,7 @@ export default function OmOss() {
                 </div>
             </section>
 
-            <section className='py-16'>
+            <section className=''>
                 <div className='container mx-auto px-4'>
                     <h2 className='text-2xl font-bold mb-8 text-center'>
                         Våre lokasjoner
