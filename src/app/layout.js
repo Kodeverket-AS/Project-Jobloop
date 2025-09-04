@@ -21,7 +21,7 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="no-nb" className={roboto.className}>
-      <body>
+      <body className="flex flex-col max-w-[1536px] mx-auto px-1 md:px-0">
         <Navigation />
         {children}
         <ScrollToTopButton />

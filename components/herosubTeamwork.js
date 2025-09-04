@@ -8,7 +8,7 @@ import { ExternalLinkButton } from "./Buttons";
 
 export default function HeroSub({ content }) {
     return (
-        <div className='flex flex-col-reverse gap-6 px-8 py-20 lg:py-24 lg:flex-row lg:gap-12'>
+        <div className='flex flex-col-reverse gap-6   lg:flex-row lg:gap-12'>
             <div className='w-full lg:w-1/2'>
                 <h1 className='text-kv-black text-2xl lg:text-4xl xl:text-5xl border-b-2 md:border-b-4 pb-2 border-jobloop-primary-green w-fit'>
                     {content.heading ? content.heading : "Tittel kommer her"}

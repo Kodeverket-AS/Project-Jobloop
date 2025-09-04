@@ -13,15 +13,12 @@ export default async function LearnWell() {
   const data = await getData();
   const learnWell = data.tiltak[0];
   return (
-    <main className="flex flex-col items-center justify-between">
+    <main className="flex flex-col ">
       <HeroSub content={learnWell} />
       <CourseSummary content={learnWell} course={"LearnWell"} />
-      {/*<Curriculum content={learnWell} course={"LearnWell"} />*/}
-      {/*<CourseUsefullness content={learnWell} course={"LearnWell"} />*/}
+    
       <LeaderSection content={learnWell} leader={"Beate Johnsen & Tom Mæland"} position={"Kursleder"} />
-      {/*<ForCompanies content={learnWell} />*/}
-      {/*<ForSchool content={learnWell} situation={"Skole"} />*/}
-      {/*<Places content={learnWell} />*/}
+   
     </main>
   );
 }
