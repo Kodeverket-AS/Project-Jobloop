@@ -6,8 +6,7 @@ import { PortableText } from "@portabletext/react";
 import { urlFor } from "../lib/Sanity";
 
 export default function LeaderSection({ leaders, contactNames }) {
-    // If contactNames is provided, we'll need to fetch contact data
-    // For now, use leaders array - if empty, show nothing
+  
     if (!leaders || leaders.length === 0) {
         return null;
     }
