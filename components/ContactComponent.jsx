@@ -1,6 +1,6 @@
 "use client";
 
-import {  LinkButtonAnimatedWithIcon } from "./Buttons";
+import {  LinkButtonAnimatedWithIcon } from "./buttons";
 
 export default function ContactComponent() {
   return (

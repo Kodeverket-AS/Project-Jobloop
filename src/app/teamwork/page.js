@@ -9,7 +9,7 @@ import LeaderSection from "../../../components/LeaderSection";
 import ForCompanies from "../../../components/ForCompanies";
 import ForSchool from "../../../components/ForSchool";
 import Places from "../../../components/Places";
-import { ExternalLinkButton } from "../../../components/Buttons";
+import { ExternalLinkButton } from "../../../components/buttons";
 export default async function Teamwork() {
     const data = await getData();
     const teamwork = data.tiltak[6];

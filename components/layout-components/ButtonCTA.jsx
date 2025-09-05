@@ -1,6 +1,6 @@
 "use client";
 
-import { LesMerButton, ExternalLinkButton, LinkButtonInternal } from "../Buttons";
+import { LesMerButton, ExternalLinkButton, LinkButtonInternal } from "../buttons";
 
 const ButtonCTA = ({ isButton, btnVariant, ...props }) => {
   if (!isButton) {

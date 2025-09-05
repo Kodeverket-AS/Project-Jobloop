@@ -8,7 +8,7 @@ import {
   LinkButtonInternal,
   LinkButtonAnimatedWithIcon,
   LinkButtonAnimated,
-} from "./Buttons";
+} from "./buttons";
 
 export default function LandingHero() {
   return (

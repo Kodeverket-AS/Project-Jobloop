@@ -8,7 +8,7 @@ import Spillbasert from "../public/spillbasert.webp";
 import Loop from "../public/loop.webp";
 
 import { IntroSectionReverse } from "./layout-components";
-import { LesMerButton } from "./Buttons";
+import { LesMerButton } from "./buttons";
 
 const IntroData = [
     {

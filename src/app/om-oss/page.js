@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import { useEffect, useState } from "react";
-import { LesMerButton, LinkButtonAnimatedWithIcon } from "../../../components/Buttons";
+import { LesMerButton, LinkButtonAnimatedWithIcon } from "../../../components/buttons";
 import Link from "next/link";
 
 import Sina from "../../../public/Sina.jpg";
@@ -176,7 +176,7 @@ export default function OmOss() {
     }, [photosAnimated]);
 
     return (
-        <main className='flex flex-col items-center justify-between min-h-screen mt-10 space-y-16'>
+        <main className='flex flex-col items-center justify-between min-h-screen mt-10 space-y-16 mb-12'>
             <section className='container flex flex-col gap-4 '>
                 <div className='flex flex-col  gap-6 text-pretty  '>
                     <div className='omoss w-full  text-kv-black  mx-auto'>
@@ -471,7 +471,7 @@ export default function OmOss() {
                 </div>
             </section>
 
-            <section className=''>
+            <section className='locations'>
                 <div className='container mx-auto px-4'>
                     <h2 className='text-2xl font-bold mb-8 text-center'>
                         Våre lokasjoner

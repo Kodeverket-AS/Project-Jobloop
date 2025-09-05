@@ -3,7 +3,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import { PortableText } from "@portabletext/react";
-import { LinkButtonAnimatedWithIcon } from "./Buttons";
+import { LinkButtonAnimatedWithIcon } from "./buttons";
 
 export default function HeroSub({ content }) {
     return (

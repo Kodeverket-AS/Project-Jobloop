@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { ExternalLinkButton } from "../../../components/Buttons";
+import { ExternalLinkButton } from "../../../components/buttons";
 
 export default function Ansettelser() {
     return (

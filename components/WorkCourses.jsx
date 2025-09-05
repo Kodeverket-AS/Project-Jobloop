@@ -9,7 +9,7 @@ import IndividuellAmo from "../public/individuell-amo.webp";
 import Loop from "../public/loop.webp";
 
 import { IntroSectionReverse, PartnerProject } from "./layout-components";
-import { LesMerButton } from "./Buttons";
+import { LesMerButton } from "./buttons";
 
 const IntroData = [
     {
