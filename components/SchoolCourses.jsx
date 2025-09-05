@@ -53,7 +53,7 @@ const UICardData = [
 
 const UICard = ({ image, title, text, path, alt }) => {
     return (
-        <div className='group flex flex-col w-full gap-4 lg:gap-6 xl:flex-row-reverse bg-white rounded-xl shadow-sm hover:shadow-md border border-gray-50 p-6 transition-all duration-200 justify-between'>
+        <div className='  group flex flex-col w-full gap-4 lg:gap-6 xl:flex-row-reverse bg-white rounded-xl shadow-sm hover:shadow-md border border-gray-50 p-6 transition-all duration-200 justify-between'>
             <a href={path} className='w-full h-80 xl:w-1/2 relative overflow-hidden rounded-xl'>
                 <Image
                     alt={alt}
@@ -76,6 +76,10 @@ const UICard = ({ image, title, text, path, alt }) => {
 
 export default function SchoolCourses() {
     return (
+        <section id='courses' className=' courses w-full max-w-[1536px] mx-auto'>
+
+
+       
         <div className='space-y-16'>
             <IntroSectionReverse
                 image={IntroData[0].image}
@@ -99,5 +103,6 @@ export default function SchoolCourses() {
                 ))}
             </div>
         </div>
+         </section>
     );
 }

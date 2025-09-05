@@ -4,7 +4,7 @@ import {  LinkButtonAnimatedWithIcon } from "./buttons";
 
 export default function ContactComponent() {
   return (
-    <div className="flex flex-col items-center justify-center text-center gap-6 bg-gradient-to-b from-gray-50 to-white">
+    <div className="flex flex-col items-center justify-center text-center gap-6 ">
       <div className="max-w-2xl mx-auto">
         <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-kv-black pb-4 border-b-4 border-jobloop-primary-green w-fit mx-auto">
           Kontakt oss

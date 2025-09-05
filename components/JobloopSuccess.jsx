@@ -16,21 +16,28 @@ const TextData = [
 
 export default function JobloopSuccess() {
     return (
-        <div className=' bg-jobloop-primary-green/5 border-2 border-jobloop-primary-green/100 rounded-xl flex flex-col gap-8 px-8 py-8 md:flex-row '>
-            <div className='w-full md:w-1/2 '>
-                <Image
-                    alt={TextData[0].alt}
-                    src={TextData[0].image}
-                    width={1500}
-                    height={500}
-                />
+        <div className='bg-gradient-to-br from-jobloop-primary-green/10 via-white to-jobloop-primary-orange/10 border-2 border-jobloop-primary-green/20 rounded-2xl flex flex-col gap-12 px-8 py-12 md:flex-row md:items-center shadow-lg'>
+            <div className='w-full md:w-1/2 flex justify-center'>
+                <div className='relative overflow-hidden rounded-xl shadow-md'>
+                    <Image
+                        alt={TextData[0].alt}
+                        src={TextData[0].image}
+                        width={1500}
+                        height={500}
+                        className='object-cover'
+                    />
+                </div>
             </div>
-            <div className='w-full md:w-1/2 '>
-                <h2 className=' pb-2 w-fit'>{TextData[0].title}</h2>
-                <p className='pt-4 pb-8 lg:text-xl text-gray-700 '>
+            <div className='w-full md:w-1/2 space-y-6'>
+                <div>
+                    <h2 className='text-2xl md:text-3xl font-bold text-kv-black pb-3 border-b-2 border-jobloop-primary-orange w-fit'>
+                        {TextData[0].title}
+                    </h2>
+                </div>
+                <p className='text-lg leading-relaxed text-gray-700'>
                     {TextData[0].text}
                 </p>
-                <div className='flex flex-col gap-6'>
+                <div className='space-y-4 pt-4'>
                     <ExternalLinkButton
                         Path={TextData[0].path}
                         Text={"FAFOs Rapport"}

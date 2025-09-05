@@ -13,7 +13,7 @@ export default async function IndividuellAMO() {
   const data = await getData();
   const amo = data.tiltak[5];
   return (
-    <main className="flex flex-col items-center gap-12 w-full max-w-[1536px] mx-auto">
+    <main className="flex flex-col items-center gap-16 w-full max-w-[1536px] mx-auto my-16">
       <HeroSub content={amo} />
     </main>
   );

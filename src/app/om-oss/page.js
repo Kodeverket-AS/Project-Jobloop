@@ -3,6 +3,7 @@
 import Image from "next/image";
 import { useEffect, useState } from "react";
 import { LesMerButton, LinkButtonAnimatedWithIcon } from "../../../components/buttons";
+import LocationCarousel from "../../../components/LocationCarousel";
 import Link from "next/link";
 
 import Sina from "../../../public/Sina.jpg";
@@ -73,72 +74,6 @@ const TeamMember = ({ name, role, image }) => (
 );
 
 
-const lokasjonerData = [
-    {
-        name: "Bergen",
-        image: "/Bergen.webp",
-    },
-    {
-        name: "Stavanger",
-        image: "/Stavanger.webp",
-    },
-    {
-        name: "Haugesund",
-        image: "/Haugesund.webp",
-    },
-    {
-        name: "Tønsberg",
-        image: "/Tønsberg.webp",
-    },
-    {
-        name: "Oslo",
-        image: "/Oslo.webp",
-    },
-    {
-        name: "Alta",
-        image: "/Alta.webp",
-    },
-    {
-        name: "Kirkenes",
-        image: "/Placeholderby.png",
-    },
-    {
-        name: "Ålesund",
-        image: "/Ålesund.webp",
-    },
-    {
-        name: "Ørsta/Volda",
-        image: "/Placeholderby.png",
-    },
-    {
-        name: "Molde",
-        image: "/Molde.webp",
-    },
-    {
-        name: "Kristiansund",
-        image: "/Placeholderby.png",
-    },
-    {
-        name: "Digitalt",
-        image: "/Remote.webp",
-    },
-];
-
-
-const Lokasjon = ({ name, image }) => (
-    <div className='flex flex-col items-center gap-3'>
-        <div className='w-32 h-32 md:w-40 md:h-40 overflow-hidden rounded-xl shadow-lg'>
-            <Image
-                src={image}
-                alt={name}
-                width={200}
-                height={200}
-                className='object-cover w-full h-full'
-            />
-        </div>
-        <p className='text-center text-base md:text-lg font-medium text-gray-700'>{name}</p>
-    </div>
-);
 
 export default function OmOss() {
     const [photosAnimated, setPhotosAnimated] = useState(false);
@@ -213,14 +148,14 @@ export default function OmOss() {
                                 nye bransjer og målgrupper. Et viktig samarbeid
                                 har vært med oppstart miljøet tilknyttet
                                 Bergen.Works coworkingspace hvor modellen blant
-                                annet ble tilpasset for "de nye jobbene" innen
+                                annet ble tilpasset for &quot;de nye jobbene&quot; innen
                                 IT-utvikling og kreativ teknologi, samt gründer-
                                 og vekstselskapene.
                             </p>
                             
                             <p className='text-base md:text-xl md:leading-loose xl:leading-loose text-neutral-600 '>
                                 I dag er denne modellen mest kjent som
-                                "Kodehode" - et program som dyrker frem og
+                                &quot;Kodehode&quot; - et program som dyrker frem og
                                 trener opp dyktige junior-utviklere til jobber
                                 innen IT i tett samarbeid med bransjen selv.
                                 Driverne bak selskapet har alltid vært opptatt
@@ -419,7 +354,7 @@ export default function OmOss() {
                         <section className=' samarbeid-section'>
                 <div className='container mx-auto px-4 flex flex-col lg:flex-row items-center lg:items-start'>
                     <div className='relative w-full md:w-64 h-64 mb-24 lg:mb-0 lg:mr-12'>
-                        <div className='absolute top-0 left-0 team-photo slide-left'>
+                        <div className='absolute top-0 left-[-20px] team-photo slide-left'>
                             <Image
                                 src='/Karl.webp'
                                 alt='Karl Håkon'
@@ -428,7 +363,7 @@ export default function OmOss() {
                                 className='rounded-full'
                             />
                         </div>
-                        <div className='absolute top-0 right-0 team-photo slide-right'>
+                        <div className='absolute top-0 right-[-20px] team-photo slide-right'>
                             <Image
                                 src='/Inger.jpg'
                                 alt='Inger Johanne'
@@ -471,23 +406,7 @@ export default function OmOss() {
                 </div>
             </section>
 
-            <section className='locations'>
-                <div className='container mx-auto px-4'>
-                    <h2 className='text-2xl font-bold mb-8 text-center'>
-                        Våre lokasjoner
-                        <span className='block w-60 h-1 bg-jobloop-primary-orange mt-2 mb-6 mx-auto'></span>
-                    </h2>
-                    <div className='grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-6 gap-6 md:gap-8 max-w-7xl mx-auto'>
-                        {lokasjonerData.map((lokasjon) => (
-                            <Lokasjon
-                                key={lokasjon.name}
-                                name={lokasjon.name}
-                                image={lokasjon.image}
-                            />
-                        ))}
-                    </div>
-                </div>
-            </section>
+            <LocationCarousel />
         </main>
     );
 }

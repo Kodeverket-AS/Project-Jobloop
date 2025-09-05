@@ -13,11 +13,11 @@ export default async function Spillbasert() {
     const data = await getData();
     const spillbasert = data.tiltak[4];
     return (
-        <main className='flex flex-col items-center gap-12 w-full max-w-[1536px] mx-auto'>
+        <main className='flex flex-col my-16 items-center gap-16 w-full max-w-[1536px] mx-auto'>
             <HeroSub content={spillbasert} />
             <CourseSummary content={spillbasert} course={"Spillbasert"} />
             <Curriculum content={spillbasert} course={"Spillbasert"} />
-            <LeaderSection content={spillbasert} />
+            <LeaderSection leaders={[]} />
         </main>
     );
 }

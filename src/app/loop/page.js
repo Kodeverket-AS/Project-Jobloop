@@ -13,7 +13,7 @@ export default async function Loop() {
   const data = await getData();
   const loop = data.tiltak[7];
   return (
-    <main className="flex flex-col items-center gap-12 w-full max-w-[1536px] mx-auto">
+    <main className="flex flex-col items-center gap-16 w-full max-w-[1536px] mx-auto my-16">
       <HeroSub content={loop} />
     </main>
   );

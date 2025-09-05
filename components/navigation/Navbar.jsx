@@ -9,7 +9,7 @@ import logoJobloopHvit from "../../public/logoJobloopHvit.svg";
 
 export default function Navbar() {
     return (
-        <nav className='absolute top-0 z-50 max-w-[1536px] w-full  px-5'>
+        <nav className='absolute top-0 z-50 max-w-[1536px] w-full px-5 lg:px-7'>
             <div className='flex items-center justify-between'>
                 <div className='p-4'>
                     <Link href='/' aria-label='Gå til landingssiden'>

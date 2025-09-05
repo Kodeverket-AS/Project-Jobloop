@@ -9,7 +9,7 @@ import ContactComponent from "../../components/ContactComponent";
 
 export default function Home() {
     return (
-        <main className='flex flex-col items-center gap-12 w-full max-w-[1536px] mx-auto mb-12  '>
+        <main className='flex flex-col items-center gap-16 w-full max-w-[1536px] mx-auto mb-16'>
             <LandingHero />
                 <LandingIntro />
                 <SchoolCourses />

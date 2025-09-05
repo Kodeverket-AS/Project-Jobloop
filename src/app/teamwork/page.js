@@ -15,7 +15,7 @@ export default async function Teamwork() {
     const teamwork = data.tiltak[6];
     console.log(teamwork);
     return (
-        <main className='flex flex-col items-center gap-12 w-full max-w-[1536px] my-12 mx-auto'>
+        <main className='flex flex-col items-center gap-16 w-full max-w-[1536px] my-16 mx-auto'>
             <HeroSub content={teamwork} />
         </main>
     );

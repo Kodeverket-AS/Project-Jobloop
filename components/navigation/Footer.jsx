@@ -27,8 +27,8 @@ const contactInformation = [
 
 export default function Footer() {
     return (
-        <footer className='w-full text-kv-white bg-jobloop-primary-grey'>
-            <div className='max-w-[1536px] mx-auto px-4 md:px-8 lg:px-12'>
+        <footer className='w-full max-w-[1536px]  text-kv-white bg-jobloop-primary-grey'>
+            <div className='mx-auto px-4 md:px-8 lg:px-12'>
                 <div className='flex flex-col lg:flex-row lg:justify-around gap-8 py-12'>
 
 
