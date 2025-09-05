@@ -9,8 +9,8 @@ import logoJobloopHvit from "../../public/logoJobloopHvit.svg";
 
 export default function Navbar() {
     return (
-        <nav className='absolute top-0 z-50 max-w-[1536px] w-full px-5 lg:px-7'>
-            <div className='flex items-center justify-between'>
+        <nav className='absolute top-0 z-50 w-full px-5 lg:px-7'>
+            <div className='flex items-center justify-between max-w-[1536px] mx-auto'>
                 <div className='p-4'>
                     <Link href='/' aria-label='Gå til landingssiden'>
                         <Image
@@ -63,8 +63,8 @@ export default function Navbar() {
 
 export function NavbarAlt() {
     return (
-        <nav className=' max-w-[1536px] w-full px-5 '>
-            <div className='flex items-center justify-between 3xl:justify-around'>
+        <nav className='w-full px-5 '>
+            <div className='flex items-center justify-between 3xl:justify-around max-w-[1536px] mx-auto'>
                 <div className='flex flex-row items-end p-4'>
                     <Link href='/' aria-label='Gå til landingssiden'>
                         <Image
