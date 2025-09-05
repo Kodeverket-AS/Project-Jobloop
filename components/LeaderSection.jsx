@@ -25,7 +25,7 @@ export default function LeaderSection({ leaders, contactNames }) {
                         key={index}
                         className=' rounded-xl p-8 shadow-lg border border-3 border-jobloop-primary-green '
                     >
-                        <div className='flex flex-col lg:flex-row items-center gap-8'>
+                        <div className='flex flex-col md:flex-row items-center gap-8'>
                             <div className='w-full lg:w-1/3 flex justify-center'>
                                 <div className="relative overflow-hidden rounded-xl shadow-lg group bg-gradient-to-br from-jobloop-primary-green/20 to-jobloop-primary-orange/20">
                                     {courseLeader.image ? (
