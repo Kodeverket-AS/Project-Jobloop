@@ -6,8 +6,9 @@ import Learnwell from "../public/learnwell.webp";
 import Gamify from "../public/gamify2.webp";
 import Spillbasert from "../public/spillbasert.webp";
 import Loop from "../public/loop.webp";
-import { LinkButtonInternal } from "./Buttons";
-import { IntroSectionReverse } from "./LayoutComponents";
+
+import { IntroSectionReverse } from "./layout-components";
+import { LesMerButton } from "./buttons";
 
 const IntroData = [
     {
@@ -45,27 +46,29 @@ const UICardData = [
         image: Loop,
         alt: "Tech arbeidsbord",
         title: "Loop",
-        text: "Få relevant arbeidspraksis og erfaring",
+        text: "Få relevant arbeidspraksis og erfaring som gir deg flere jobbmuligheter.",
         path: "/loop",
     },
 ];
 
 const UICard = ({ image, title, text, path, alt }) => {
     return (
-        <div className='group flex flex-col w-full gap-4 xl:flex-row-reverse md:w-1/2'>
-            <a href={path} className='w-full h-72 xl:w-1/2 transition-all'>
+        <div className='  group flex flex-col w-full gap-4 lg:gap-6 xl:flex-row-reverse bg-white rounded-xl shadow-sm hover:shadow-md border border-gray-50 p-6 transition-all duration-200 justify-between'>
+            <a href={path} className='w-full h-80 xl:w-1/2 relative overflow-hidden rounded-xl'>
                 <Image
                     alt={alt}
                     src={image}
-                    width={500}
-                    height={500}
+                    width={600}
+                    height={600}
                     className='max-w-full h-full object-cover'
                 />
             </a>
-            <div className='flex flex-col w-full gap-4 xl:w-1/2'>
+            <div className='flex flex-col w-full gap-4 xl:w-1/2 justify-center'>
                 <h3 className='text-kv-black text-xl md:text-2xl'>{title}</h3>
-                <p className='text-base md:text-xl text-gray-500'>{text}</p>
-                <LinkButtonInternal Path={path} Text={"Les mer"} />
+                <p className='text-base md:text-lg text-gray-600 leading-relaxed'>{text}</p>
+                <div className="pt-2">
+                    <LesMerButton Path={path} />
+                </div>
             </div>
         </div>
     );
@@ -73,7 +76,11 @@ const UICard = ({ image, title, text, path, alt }) => {
 
 export default function SchoolCourses() {
     return (
-        <section className='pb-24'>
+        <section id='courses' className=' courses w-full max-w-[1536px] mx-auto'>
+
+
+       
+        <div className='space-y-16'>
             <IntroSectionReverse
                 image={IntroData[0].image}
                 title={IntroData[0].title}
@@ -83,43 +90,19 @@ export default function SchoolCourses() {
                 alt={IntroData[0].alt}
                 // btnVariant={"internalLink"}
             />
-            <div className='flex flex-col w-full gap-12 px-8 py-20 md:py-24'>
-                <div className='flex flex-col gap-12 md:flex-row md:justify-between'>
+            <div className='grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-4 auto-rows-fr'>
+                {UICardData.map((card, index) => (
                     <UICard
-                        image={UICardData[0].image}
-                        title={UICardData[0].title}
-                        text={UICardData[0].text}
-                        path={UICardData[0].path}
-                        alt={UICardData[0].alt}
+                        key={index}
+                        image={card.image}
+                        title={card.title}
+                        text={card.text}
+                        path={card.path}
+                        alt={card.alt}
                     />
-
-                    <UICard
-                        image={UICardData[1].image}
-                        title={UICardData[1].title}
-                        text={UICardData[1].text}
-                        path={UICardData[1].path}
-                        alt={UICardData[1].alt}
-                    />
-                </div>
-
-                <div className='flex flex-col gap-12 md:flex-row  md:justify-between'>
-                    <UICard
-                        image={UICardData[2].image}
-                        title={UICardData[2].title}
-                        text={UICardData[2].text}
-                        path={UICardData[2].path}
-                        alt={UICardData[2].alt}
-                    />
-
-                    <UICard
-                        image={UICardData[3].image}
-                        title={UICardData[3].title}
-                        text={UICardData[3].text}
-                        path={UICardData[3].path}
-                        alt={UICardData[3].alt}
-                    />
-                </div>
+                ))}
             </div>
-        </section>
+        </div>
+         </section>
     );
 }

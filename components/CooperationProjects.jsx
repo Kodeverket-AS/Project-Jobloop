@@ -3,7 +3,7 @@
 import Kodeloftet from "../public/kodeloftet.webp";
 import Gløde from "../public/gløde.webp";
 import Teamwork from "../public/Orkla_1.webp";
-import { PartnerProject, PartnerProjectReverse } from "./LayoutComponents";
+import { PartnerProject, PartnerProjectReverse } from "./layout-components";
 
 const ProjectsData = [
     {
@@ -31,11 +31,9 @@ const ProjectsData = [
 export default function CooperationProjects() {
     return (
         <>
-            <div>
-                <h2 className='pb-2 border-b-4 border-jobloop-primary-green w-fit'>
-                    Samarbeidsprosjekter
-                </h2>
-            </div>
+            <h2 className='pb-2 border-b-4 border-jobloop-primary-green w-fit'>
+                Samarbeidsprosjekter
+            </h2>
             {/* Kodeloftet */}
             <PartnerProjectReverse
                 image={ProjectsData[0].image}

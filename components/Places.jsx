@@ -7,18 +7,18 @@ import { PortableText } from "@portabletext/react";
 
 function placeElement(city) {
   return (
-    <div className="flex flex-row items-center justify-center pt-10">
-      <div className="w-full md:w-60 md:pt-3 md:h-60">
+    <div className="flex flex-col gap-6   lg:flex-row lg:gap-12">
+      <div className="w-full lg:w-1/2 flex items-center justify-center">
         <Image
           src={""}
-          width={500}
-          height={500}
+          width={400}
+          height={400}
           alt={""}
-          className="object-cover w-full h-full"
+          className="object-cover w-80 h-80 rounded-xl shadow-lg shadow-gray-300/50 hover:shadow-xl hover:shadow-gray-400/50 transition-all duration-500 hover:scale-[1.02]"
         />
       </div>
-      <div className="flex flex-col gap-3 py-10 pl-3 w-60 md:py-0 md:pl-5">
-        <h3 className="pb-1 border-b-2 border-jobloop-primary-green w-fit">
+      <div className="flex flex-col gap-4 w-full lg:w-1/2 justify-center">
+        <h3 className="text-kv-black text-xl md:text-2xl lg:text-3xl border-b-2 md:border-b-4 pb-2 border-jobloop-primary-green w-fit">
           {city}
         </h3>
       </div>
@@ -36,11 +36,13 @@ function generateCities(array) {
 
 export default function Places({ content }) {
   return (
-    <div className="w-full px-5 py-20">
-      <h2 className="pb-3 mx-auto border-b-2 border-jobloop-primary-green w-fit">
-        Våre lokaler
-      </h2>
-      <div className="flex flex-col">{generateCities(content.cities)}</div>
+    <div className="w-full   2xl:max-w-[1600px]">
+      <div className="text-center">
+        <h2 className="text-kv-black text-xl md:text-2xl lg:text-3xl border-b-2 md:border-b-4 pb-2 border-jobloop-primary-green w-fit mx-auto">
+          Våre lokaler
+        </h2>
+      </div>
+      <div className="flex flex-col gap-16">{generateCities(content.cities)}</div>
     </div>
   );
 }

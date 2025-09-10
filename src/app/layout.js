@@ -1,12 +1,12 @@
-//import { Inter } from "next/font/google";
+
 import { Roboto } from "next/font/google";
 import "./globals.css";
 import Footer from "../../components/navigation/Footer";
-import { ScrollToTopButton } from "../../components/Buttons";
+import { ScrollToTopButton } from "../../components/buttons";
 import Navigation from "../../components/navigation/Navigation";
 
 
-//const inter = Inter({ subsets: ["latin"] });
+
 
 const roboto = Roboto({
   weight: ["400", "700", "900"],
@@ -21,7 +21,7 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="no-nb" className={roboto.className}>
-      <body>
+      <body className="flex flex-col   mx-auto px-3 md:px-5 2xl:px-0 bg-kv-white">
         <Navigation />
         {children}
         <ScrollToTopButton />
