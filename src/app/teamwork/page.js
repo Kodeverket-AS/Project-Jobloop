@@ -9,22 +9,14 @@ import LeaderSection from "../../../components/LeaderSection";
 import ForCompanies from "../../../components/ForCompanies";
 import ForSchool from "../../../components/ForSchool";
 import Places from "../../../components/Places";
-import { ExternalLinkButton } from "../../../components/Buttons";
+import { ExternalLinkButton } from "../../../components/buttons";
 export default async function Teamwork() {
     const data = await getData();
     const teamwork = data.tiltak[6];
     console.log(teamwork);
     return (
-        <main className='flex flex-col items-center justify-between'>
+        <main className='flex flex-col items-center gap-16 w-full max-w-[1536px] my-16 mx-auto'>
             <HeroSub content={teamwork} />
-
-            {/*<CourseSummary content={teamwork} course={"Teamwork"} />*/}
-            {/*<Curriculum content={teamwork} course={"Teamwork"} />*/}
-            {/*<CourseUsefullness content={teamwork} course={"Teamwork"} />*/}
-            {/*<LeaderSection content={teamwork} leader={"Karl Håkon Rødland"} position={"Leder"} />*/}
-            {/*<ForCompanies content={teamwork} />*/}
-            {/*<ForSchool content={teamwork} situation={"samarbeidspartner"} />*/}
-            {/*<Places content={teamwork} />*/}
         </main>
     );
 }

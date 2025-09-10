@@ -30,7 +30,7 @@ const HamburgerMenu = ({ hamFill }) => {
     return (
         <div className='block md:hidden'>
             <button
-                className='flex items-center justify-center w-10 h-10 transition duration-500 rounded-md top-4 right-4'
+                className='  flex items-center justify-center w-10 h-10 transition duration-500 rounded-xl top-4 right-4'
                 onClick={handleMenuToggle}
                 aria-label='Åpne navigasjonsmeny'
             >
@@ -50,7 +50,7 @@ const HamburgerMenu = ({ hamFill }) => {
             >
                 <nav className='relative flex justify-center'>
                     <button
-                        className='absolute flex items-center justify-center w-10 h-10 transition rounded-md top-4 right-4 '
+                        className='absolute flex items-center justify-center w-10 h-10 transition rounded-xl top-4 right-4 '
                         onClick={handleMenuToggle}
                         aria-label='Lukke navigasjonsmeny'
                     >

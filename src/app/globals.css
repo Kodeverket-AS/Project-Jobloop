@@ -17,20 +17,9 @@
   --jobloop-secondary-orange: #af4831;
 }
 
-body {
-  display: flex;
-  flex-flow: column nowrap;
-  align-items: center;
-  width: 100%;
-  min-height: 100svh;
-  color: var(--kv-black);
-  background: var(--kv-white);
-}
 
-main {
-  flex: 1;
-  max-width: 1536px;
-}
+
+
 
 h1 {
   font-size: 3rem;
@@ -40,7 +29,7 @@ h2 {
   font-size: 2rem;
 }
 
-button > h2 {
+button>h2 {
   font-size: 1.2rem;
   font-weight: 500;
 }
@@ -69,5 +58,61 @@ h6 {
 
   h3 {
     font-size: 1.1rem;
+  }
+}
+
+.team-photo {
+  opacity: 1;
+  will-change: transform, opacity;
+  transition: transform 1.2s ease-out, opacity 1s ease-out;
+}
+
+.slide-left {
+  transform: translateX(0);
+}
+
+.slide-right {
+  transform: translateX(0);
+}
+
+.slide-bottom {
+  transform: translateX(40px) translateY(80px);
+}
+
+@media (min-width: 768px) {
+  .team-photo {
+    opacity: 0;
+  }
+
+  .slide-left {
+    transform: translateX(-100px);
+  }
+
+  .slide-right {
+    transform: translateX(100px);
+  }
+
+  .slide-bottom {
+    transform: translateY(100px);
+  }
+
+  .slide-bottom.animate {
+    opacity: 1;
+    transform: translateX(0) translateY(80px);
+  }
+
+  .slide-left.animate {
+    opacity: 1;
+    transform: translateX(0);
+  }
+
+  .slide-right.animate {
+    opacity: 1;
+    transform: translateX(0);
+  }
+
+  .slide-bottom.animate {
+    opacity: 1;
+    transform: translateX(0) translateY(80px);
   }
 }
