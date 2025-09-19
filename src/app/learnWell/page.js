@@ -30,6 +30,22 @@ export default async function LearnWell() {
                 ]
               }
             ]
+          },
+          {
+            name: "Stian Taule",
+            position: "Faglig Leder",
+            image: "/stian.webp",
+            description: [
+              {
+                _type: "block",
+                children: [
+                  {
+                    _type: "span",
+                    text: "Stian Taule\nstian.t@jobloop.no\n41686778"
+                  }
+                ]
+              }
+            ]
           }
         ]} 
       />
