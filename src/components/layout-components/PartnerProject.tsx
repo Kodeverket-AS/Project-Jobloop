@@ -1,7 +1,18 @@
 'use client';
 
-import Image from 'next/image';
+import Image, { type StaticImageData } from 'next/image';
 import ButtonCTA from './ButtonCTA';
+
+interface PartnerProject {
+  title: string;
+  text: string;
+  image: StaticImageData;
+  alt: string;
+  path: string;
+  isButton: boolean;
+  btnVariant?: string;
+  btnText?: string;
+}
 
 export const PartnerProject = ({
   title,
@@ -12,7 +23,7 @@ export const PartnerProject = ({
   isButton,
   btnVariant,
   btnText,
-}) => {
+}: PartnerProject) => {
   return (
     <div className='flex flex-col gap-6   lg:flex-row lg:gap-12 '>
       <div className='w-full lg:w-1/2'>
