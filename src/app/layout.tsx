@@ -1,8 +1,9 @@
 import './globals.css';
 import { Roboto } from 'next/font/google';
+import { ReactNode } from 'react';
+import { ScrollToTopButton } from '@/components/buttons';
 import Navigation from '@/components/navigation/Navigation';
 import Footer from '@/components/navigation/Footer';
-import { ScrollToTopButton } from '@/components/buttons';
 
 const roboto = Roboto({ weight: ['400', '700', '900'], subsets: ['latin'] });
 
@@ -10,7 +11,6 @@ export const metadata = {
   title: 'Jobloop: Inkluderende arbeidspraksis og effektiv jobbmatching',
   description:
     'Få tilgang til inkluderende arbeidsmuligheter, skreddersydd yrkesopplæring og en vei inn i arbeidslivet. Jobloop kobler kandidater og arbeidsgivere på en smartere måte.',
-
   keywords: [
     'jobbmatching',
     'inkludering',
@@ -25,7 +25,6 @@ export const metadata = {
   ],
   authors: [{ name: 'Jobloop' }],
   robots: 'index, follow',
-
   openGraph: {
     title: 'Jobloop – Inkluderende arbeidspraksis og effektiv jobbmatching',
     description:
@@ -43,7 +42,6 @@ export const metadata = {
     locale: 'no_NO',
     type: 'website',
   },
-
   twitter: {
     card: 'summary_large_image',
     title: 'Jobloop – Inkluderende arbeidspraksis og effektiv jobbmatching',
@@ -51,7 +49,6 @@ export const metadata = {
       'Få tilgang til inkluderende arbeidsmuligheter, praksisplasser og yrkesopplæring. Jobloop kobler arbeidsgivere og kandidater effektivt.',
     images: ['/FSE-Vinner2024-063.webp'],
   },
-
   icons: {
     icon: '/favicon.ico',
     shortcut: '/favicon.ico',
@@ -59,7 +56,7 @@ export const metadata = {
   },
 };
 
-export default function RootLayout({ children }) {
+export default function RootLayout({ children }: { children: ReactNode }) {
   return (
     <html lang='no' className={roboto.className}>
       <body>
