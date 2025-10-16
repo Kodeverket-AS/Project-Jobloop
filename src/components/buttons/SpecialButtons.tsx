@@ -4,8 +4,15 @@ import Link from 'next/link';
 import { FaArrowRight } from 'react-icons/fa';
 import { BiLinkExternal } from 'react-icons/bi';
 import { LuMail } from 'react-icons/lu';
+import { AriaAttributes } from 'react';
 
-export function KontaktButton({ Path, Text }) {
+interface ButtonProps {
+  Path: string;
+  Text: string;
+  Aria?: AriaAttributes['aria-label'];
+}
+
+export function KontaktButton({ Path, Text }: ButtonProps) {
   return (
     <Link
       href={Path}
@@ -18,7 +25,7 @@ export function KontaktButton({ Path, Text }) {
   );
 }
 
-export function ExternalLinkButton({ Path, Text, Aria }) {
+export function ExternalLinkButton({ Path, Text, Aria }: ButtonProps) {
   return (
     <a
       href={Path}
@@ -31,7 +38,7 @@ export function ExternalLinkButton({ Path, Text, Aria }) {
   );
 }
 
-export function LesMerButton({ Path, Text = 'Les mer' }) {
+export function LesMerButton({ Path, Text = 'Les mer' }: ButtonProps) {
   return (
     <a
       href={Path}
