@@ -15,7 +15,10 @@ export default function Places({ cities }: Pick<Tiltak, 'cities'>) {
       </div>
       <div className='flex flex-col gap-16'>
         {cities?.map((city, index) => (
-          <div className='flex flex-col gap-6   lg:flex-row lg:gap-12'>
+          <div
+            key={`${city}-${index}`}
+            className='flex flex-col gap-6 lg:flex-row lg:gap-12'
+          >
             <div className='w-full lg:w-1/2 flex items-center justify-center'>
               <Image
                 src={''}
