@@ -1,8 +1,9 @@
 'use client';
 
-import React from 'react';
 import { usePathname } from 'next/navigation';
 import Navbar, { NavbarAlt } from './Navbar';
+
+// todo JC skjer her
 
 // Definer URL endpoints.
 const landing = '/';
@@ -39,7 +40,7 @@ export default function Navigation() {
       4. navbar er en variabel som vi bruker til å rendere den riktige navbar-komponenten.
         */}
       {navbar}
-      {/* Les om dette komponentet i komponentfilen */}
+      {/* Les om dette komponentet i komponentfilen | note: denne filen eskisterer ikke... */}
       {/*<MyPathname />*/}
     </>
   );
