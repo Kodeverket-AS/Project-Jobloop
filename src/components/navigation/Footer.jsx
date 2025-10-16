@@ -2,7 +2,7 @@
 
 import Link from 'next/link';
 import Image from 'next/image';
-import logoJobloopHvit from '../../public/logoJobloopHvit.svg';
+import logoJobloopHvit from '../../../public/logoJobloopHvit.svg';
 import { FaFacebook, FaInstagram, FaLinkedinIn } from 'react-icons/fa';
 
 // Contact information for the footer

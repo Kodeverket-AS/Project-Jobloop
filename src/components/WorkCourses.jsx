@@ -1,12 +1,12 @@
 'use client';
 
 import Image from 'next/image';
-import JobbtilbudBilde from '../public/kodehode_gruppe.webp';
-import KodehodeImage from '../public/KodehodeImage.png';
-import GrunnleggendeIt from '../public/grunnleggende-it.webp';
-import DigitaleTalenter from '../public/digitale-talenter.webp';
-import IndividuellAmo from '../public/individuell-amo.webp';
-import Loop from '../public/loop.webp';
+import JobbtilbudBilde from '../../public/kodehode_gruppe.webp';
+import KodehodeImage from '../../public/KodehodeImage.png';
+import GrunnleggendeIt from '../../public/grunnleggende-it.webp';
+import DigitaleTalenter from '../../public/digitale-talenter.webp';
+import IndividuellAmo from '../../public/individuell-amo.webp';
+import Loop from '../../public/loop.webp';
 
 import { IntroSectionReverse, PartnerProject } from './layout-components';
 import { LesMerButton } from './buttons';

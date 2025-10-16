@@ -3,7 +3,7 @@
 // import Link from "next/link";
 import Image from 'next/image';
 import { PortableText } from '@portabletext/react';
-import { urlFor } from '../lib/Sanity';
+import { urlFor } from '../../lib/Sanity';
 
 export default function LeaderSection({ leaders, contactNames }) {
   if (!leaders || leaders.length === 0) {

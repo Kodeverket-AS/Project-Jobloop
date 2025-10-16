@@ -1,6 +1,6 @@
 'use client';
 
-import FSEVinnerPhoto from '../public/FSE-Vinner2024-063.webp';
+import FSEVinnerPhoto from '../../public/FSE-Vinner2024-063.webp';
 import { IntroSection } from './layout-components';
 
 const IntroData = [

@@ -1,7 +1,7 @@
 'use client';
 
 import Image from 'next/image';
-import JobloopFafo from '../public/jobbloop-fafo.webp';
+import JobloopFafo from '../../public/jobbloop-fafo.webp';
 import { ExternalLinkButton } from './buttons';
 
 const TextData = [

@@ -4,8 +4,8 @@ import Image from 'next/image';
 import HamburgerMenu from './Hamburger';
 
 //Nye logoer importert her. De er nå svg filer, så de kan skaleres uten å miste kvalitet.
-import JobloopFarge from '../../public/JobloopFarge.svg';
-import logoJobloopHvit from '../../public/logoJobloopHvit.svg';
+import JobloopFarge from '../../../public/JobloopFarge.svg';
+import logoJobloopHvit from '../../../public/logoJobloopHvit.svg';
 
 export default function Navbar() {
   return (

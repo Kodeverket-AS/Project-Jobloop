@@ -5,8 +5,8 @@ import { useEffect, useState } from 'react';
 import {
   LesMerButton,
   LinkButtonAnimatedWithIcon,
-} from '../../../components/buttons';
-import LocationCarousel from '../../../components/LocationCarousel';
+} from '@/components/buttons';
+import LocationCarousel from '@/components/LocationCarousel';
 import Link from 'next/link';
 
 import Sina from '../../../public/Sina.jpg';

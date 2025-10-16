@@ -2,7 +2,7 @@
 
 import Link from 'next/link';
 import Image from 'next/image';
-import LandingHeaderPhoto from '../public/LandingHeaderPhoto.png';
+import LandingHeaderPhoto from '../../public/LandingHeaderPhoto.png';
 import {
   KontaktButton,
   LinkButtonInternal,

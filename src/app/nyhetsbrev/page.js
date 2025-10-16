@@ -6,7 +6,7 @@ import { FaInstagram } from 'react-icons/fa';
 import LinkedIn from '../../../public/LinkedIn.png';
 import Facebook2 from '../../../public/Facebook2.svg';
 import Instagram from '../../../public/Instagram.svg';
-import { SocialMediaCard } from '../../../components/socialMediaCard';
+import { SocialMediaCard } from '@/components/socialMediaCard';
 
 export default function Nyhetsbrev({ text, link, icon }) {
   return (

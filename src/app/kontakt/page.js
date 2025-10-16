@@ -1,5 +1,5 @@
 import { sanityFetch } from '../../../lib/fetchData';
-import ContactContainer from '../../../components/contacts/Container';
+import ContactContainer from '@/components/contacts/Container';
 
 export const revalidate = 60;
 

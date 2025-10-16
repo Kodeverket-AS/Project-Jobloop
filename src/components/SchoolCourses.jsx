@@ -1,11 +1,11 @@
 'use client';
 
 import Image from 'next/image';
-import Læringstilbud from '../public/læringstilbud.webp';
-import Learnwell from '../public/learnwell.webp';
-import Gamify from '../public/gamify2.webp';
-import Spillbasert from '../public/spillbasert.webp';
-import Loop from '../public/loop.webp';
+import Læringstilbud from '../../public/læringstilbud.webp';
+import Learnwell from '../../public/learnwell.webp';
+import Gamify from '../../public/gamify2.webp';
+import Spillbasert from '../../public/spillbasert.webp';
+import Loop from '../../public/loop.webp';
 
 import { IntroSectionReverse } from './layout-components';
 import { LesMerButton } from './buttons';
