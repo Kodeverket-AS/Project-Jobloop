@@ -1,8 +1,17 @@
 'use client';
 
+import { Tiltak } from '@/types/sanity/sanity.types';
 import { PortableText } from '@portabletext/react';
 
-export default function CourseUsefullness({ content, course }) {
+// todo is this component used?
+
+export default function CourseUsefullness({
+  content,
+  course,
+}: {
+  course: string;
+  content: Tiltak;
+}) {
   return (
     <div className='flex flex-col px-5 py-20 md:flex-row md:px-12 lg:px-24 2xl:max-w-[1600px]'>
       <div className='w-full md:w-1/2'>
@@ -12,7 +21,7 @@ export default function CourseUsefullness({ content, course }) {
         <h2 className='text-xl md:text-2xl lg:text-3xl'>
           {'Hva kan du bruke ' + course + ' til?'}
         </h2>
-        <PortableText value={content.use} />
+        {content.use && <PortableText value={content.use} />}
       </div>
     </div>
   );
