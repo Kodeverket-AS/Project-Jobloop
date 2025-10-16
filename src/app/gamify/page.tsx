@@ -7,14 +7,18 @@ import ForSchool from '@/components/ForSchool';
 
 export default async function Gamify() {
   const data = await getData();
-  const gamify = data[1];
+  const gamify = data.tiltak.at(1);
+
+  // todo
+  if (!gamify) return null;
+
   return (
     <main className='flex flex-col items-center gap-16 w-full max-w-[1536px] mx-auto my-16'>
-      <HeroSub content={gamify} />
+      <HeroSub {...gamify} />
       <CourseSummary {...gamify} />
       <Curriculum title={gamify.title} curriculum={gamify.curriculum} />
       <LeaderSection leaders={gamify.courseLeaders} />
-      <ForSchool content={gamify} situation={'skole'} />
+      <ForSchool situation='skole' {...gamify} />
     </main>
   );
 }
