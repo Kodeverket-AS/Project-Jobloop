@@ -7,7 +7,7 @@ export default function Ansettelser() {
       <div className='relative bg-white p-8 rounded-lg shadow-md'>
         <div className='flex justify-center mb-6'>
           <Image
-            src='/hiring.jpg' // Path to your image
+            src='/hiring.jpg'
             alt='Colorfull image of the text Join Us written with scrabble letters, some candy and hearts'
             width={150}
             height={150}
