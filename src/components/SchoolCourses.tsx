@@ -51,7 +51,13 @@ const UICardData = [
   },
 ];
 
-const UICard = ({ image, title, text, path, alt }) => {
+const UICard = ({
+  image,
+  title,
+  text,
+  path,
+  alt,
+}: (typeof UICardData)[number]) => {
   return (
     <div className='  group flex flex-col w-full gap-4 lg:gap-6 xl:flex-row-reverse bg-white rounded-xl shadow-xs hover:shadow-md border border-gray-50 p-6 transition-all duration-200 justify-between'>
       <a
@@ -90,7 +96,6 @@ export default function SchoolCourses() {
           path={IntroData[0].path}
           isButton={false}
           alt={IntroData[0].alt}
-          // btnVariant={"internalLink"}
         />
         <div className='grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-4 auto-rows-fr'>
           {UICardData.map((card, index) => (
