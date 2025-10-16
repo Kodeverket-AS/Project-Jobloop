@@ -38,7 +38,11 @@ export default function JobloopSuccess() {
           {TextData[0].text}
         </p>
         <div className='space-y-4 pt-4'>
-          <ExternalLinkButton Path={TextData[0].path} Text={'FAFOs Rapport'} />
+          <ExternalLinkButton
+            Path={TextData[0].path}
+            Text='FAFOs Rapport'
+            Aria='FAFOs Rapport'
+          />
           <ExternalLinkButton
             Path='https://www.virke.no/contentassets/bb882874e5f5449bb72e58a6bb76c3f1/161023menon-publikasjon-nr.-113_2023-arbeids--og-inkluderingsvirksomhetenes-samfunnsverdi.pdf '
             Text='Menon Economics (2023) - PDF'
