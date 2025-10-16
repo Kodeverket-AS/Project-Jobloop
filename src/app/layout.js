@@ -1,13 +1,10 @@
-import { Roboto } from 'next/font/google';
 import './globals.css';
-import Footer from '../../components/navigation/Footer';
-import { ScrollToTopButton } from '../../components/buttons';
-import Navigation from '../../components/navigation/Navigation';
+import { Roboto } from 'next/font/google';
+import Navigation from '@/components/navigation/Navigation';
+import Footer from '@/components/navigation/Footer';
+import { ScrollToTopButton } from '@/components/buttons';
 
-const roboto = Roboto({
-  weight: ['400', '700', '900'],
-  subsets: ['latin'],
-});
+const roboto = Roboto({ weight: ['400', '700', '900'], subsets: ['latin'] });
 
 export const metadata = {
   title: 'Jobloop: Inkluderende arbeidspraksis og effektiv jobbmatching',
