@@ -1,21 +1,25 @@
 'use client';
 
-import React, { useEffect, useState, useRef } from 'react';
+import React, { useEffect, useState, useRef, EventHandler } from 'react';
 import { IoCloseSharp } from 'react-icons/io5';
 import { GiHamburgerMenu } from 'react-icons/gi';
 import Link from 'next/link';
 
-const HamburgerMenu = ({ hamFill }) => {
-  const [isOpen, setIsOpen] = useState(false);
-  const menuRef = useRef(null);
+const HamburgerMenu = ({ hamFill }: { hamFill: string }) => {
+  const [isOpen, setIsOpen] = useState<boolean>(false);
+  const menuRef = useRef<HTMLDivElement>(null);
 
   const handleMenuToggle = () => {
     setIsOpen(!isOpen);
   };
 
   useEffect(() => {
-    const handleClickOutside = (event) => {
-      if (menuRef.current && !menuRef.current.contains(event.target)) {
+    const handleClickOutside = (event: MouseEvent) => {
+      if (
+        menuRef.current &&
+        event.target instanceof Node &&
+        !menuRef.current.contains(event.target)
+      ) {
         setIsOpen(false);
       }
     };
