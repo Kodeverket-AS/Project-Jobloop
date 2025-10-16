@@ -26,7 +26,7 @@ export default function LeaderSection({ leaders, contactNames }) {
                     >
                         <div className='flex flex-col md:flex-row items-center gap-8'>
                             <div className='w-full lg:w-1/3 flex justify-center'>
-                                <div className="relative overflow-hidden rounded-xl shadow-lg group bg-gradient-to-br from-jobloop-primary-green/20 to-jobloop-primary-orange/20">
+                                <div className="relative overflow-hidden rounded-xl shadow-lg group bg-linear-to-br from-jobloop-primary-green/20 to-jobloop-primary-orange/20">
                                     {courseLeader.image ? (
                                         <Image
                                             src={typeof courseLeader.image === 'string' ? courseLeader.image : urlFor(courseLeader.image).width(400).url()}
@@ -47,7 +47,7 @@ export default function LeaderSection({ leaders, contactNames }) {
                                             </div>
                                         </div>
                                     )}
-                                    <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                                    <div className="absolute inset-0 bg-linear-to-t from-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                                 </div>
                             </div>
                             <div className='w-full lg:w-2/3 space-y-4'>

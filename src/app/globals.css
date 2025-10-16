@@ -1,6 +1,48 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import 'tailwindcss';
+
+@theme {
+  --breakpoint-2xs: 375px;
+  --breakpoint-xs: 425px;
+
+  --color-kv-black: #0b1215;
+  --color-kv-white: #fcfcfc;
+
+  --color-jobloop-primary-green: #77c4b4;
+  --color-jobloop-primary-orange: #f4a366;
+  --color-jobloop-primary-grey: #575756;
+
+  --color-jobloop-secondary-orange: #f97e22;
+  --color-jobloop-secondary-green: #01624e;
+
+  --animate-scroll: scroll 35s linear infinite;
+
+  @keyframes scroll {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(-100%);
+    }
+  }
+}
+
+/*
+  The default border color has changed to `currentcolor` in Tailwind CSS v4,
+  so we've added these compatibility styles to make sure everything still
+  looks the same as it did with Tailwind CSS v3.
+
+  If we ever want to remove these styles, we need to add an explicit border
+  color utility to any element that depends on these defaults.
+*/
+@layer base {
+  *,
+  ::after,
+  ::before,
+  ::backdrop,
+  ::file-selector-button {
+    border-color: var(--color-gray-200, currentcolor);
+  }
+}
 
 :root {
   /* KV standard black and white */

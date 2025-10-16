@@ -16,7 +16,7 @@ const TextData = [
 
 export default function JobloopSuccess() {
     return (
-        <div className='bg-gradient-to-br from-jobloop-primary-green/10 via-white to-jobloop-primary-orange/10 border-2 border-jobloop-primary-green/20 rounded-2xl flex flex-col gap-12 px-8 py-12 md:flex-row md:items-center shadow-lg'>
+        <div className='bg-linear-to-br from-jobloop-primary-green/10 via-white to-jobloop-primary-orange/10 border-2 border-jobloop-primary-green/20 rounded-2xl flex flex-col gap-12 px-8 py-12 md:flex-row md:items-center shadow-lg'>
             <div className='w-full md:w-1/2 flex justify-center'>
                 <div className='relative overflow-hidden rounded-xl shadow-md'>
                     <Image

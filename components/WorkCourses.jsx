@@ -83,7 +83,7 @@ const QuoteData = [
 
 const UICard = ({ image, title, text, path, alt }) => {
     return (
-        <div className='group flex flex-col w-full gap-4 lg:gap-6 xl:flex-row-reverse bg-white rounded-xl shadow-sm hover:shadow-md border border-gray-50 p-6 transition-all duration-200 justify-between'>
+        <div className='group flex flex-col w-full gap-4 lg:gap-6 xl:flex-row-reverse bg-white rounded-xl shadow-xs hover:shadow-md border border-gray-50 p-6 transition-all duration-200 justify-between'>
             <a href={path} className='w-full h-80 xl:w-1/2 relative overflow-hidden rounded-xl'>
                 <Image
                     alt={alt}
@@ -150,7 +150,7 @@ export default function WorkCourses() {
             </div>
 
             {/* Temporary Quotes Solution */}
-            <div className='relative flex flex-col gap-8 px-8 pt-8 pb-12 overflow-hidden border-2 rounded-xl bg-jobloop-primary-orange/5 border-jobloop-primary-orange/100 text-kv-black lg:gap-12'>
+            <div className='relative flex flex-col gap-8 px-8 pt-8 pb-12 overflow-hidden border-2 rounded-xl bg-jobloop-primary-orange/5 border-jobloop-primary-orange text-kv-black lg:gap-12'>
                 <h2 className='pb-2 mx-auto text-center border-b-4 border-jobloop-primary-orange w-fit'>
                     Hva sier bedriftslederne om oss?
                 </h2>

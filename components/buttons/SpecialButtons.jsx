@@ -10,7 +10,7 @@ export function KontaktButton({ Path, Text }) {
     <Link
       href={Path}
       aria-label={`Lenke til underside ${Path}`}
-      className="group flex items-center justify-center w-full gap-1 px-8 py-3 text-base tracking-normal text-center transition-all border-2 rounded-full scale-100 lg:hover:scale-105 group sm:w-fit text-kv-black bg-jobloop-primary-green hover:bg-jobloop-primary-green/0 border-jobloop-primary-green underline underline-offset-2 decoration-kv-black/0 hover:decoration-kv-black/100">
+      className="group flex items-center justify-center w-full gap-1 px-8 py-3 text-base tracking-normal text-center transition-all border-2 rounded-full scale-100 lg:hover:scale-105 group sm:w-fit text-kv-black bg-jobloop-primary-green hover:bg-jobloop-primary-green/0 border-jobloop-primary-green underline underline-offset-2 decoration-kv-black/0 hover:decoration-kv-black">
       {Text}
       <LuMail className="inline-block h-5 lg:w-5 transition-all group-hover:translate-x-1 group-hover:animate-pulse" />
     </Link>

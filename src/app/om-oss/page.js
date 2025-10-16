@@ -264,7 +264,7 @@ export default function OmOss() {
                     </div>
                     
                     <div className='grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-4 auto-rows-fr'>
-                        <div className='group flex flex-col w-full gap-4 lg:gap-6 xl:flex-row-reverse bg-white rounded-xl shadow-sm hover:shadow-md border border-gray-50 p-6 transition-all duration-200 justify-between'>
+                        <div className='group flex flex-col w-full gap-4 lg:gap-6 xl:flex-row-reverse bg-white rounded-xl shadow-xs hover:shadow-md border border-gray-50 p-6 transition-all duration-200 justify-between'>
                             <a href="https://fontenehuset.no" className='w-full h-48 xl:w-1/2 relative overflow-hidden rounded-lg flex items-center justify-center'>
                                 <Image
                                     src='/fontenelogo 1.png'
@@ -285,7 +285,7 @@ export default function OmOss() {
                             </div>
                         </div>
 
-                        <div className='group flex flex-col w-full gap-4 lg:gap-6 xl:flex-row-reverse bg-white rounded-xl shadow-sm hover:shadow-md border border-gray-50 p-6 transition-all duration-200 justify-between'>
+                        <div className='group flex flex-col w-full gap-4 lg:gap-6 xl:flex-row-reverse bg-white rounded-xl shadow-xs hover:shadow-md border border-gray-50 p-6 transition-all duration-200 justify-between'>
                             <a href="https://gløde.no" className='w-full h-48 xl:w-1/2 relative overflow-hidden rounded-lg flex items-center justify-center'>
                                 <Image
                                     src='/glode-logo 1.png'
@@ -306,7 +306,7 @@ export default function OmOss() {
                             </div>
                         </div>
 
-                        <div className='group flex flex-col w-full gap-4 lg:gap-6 xl:flex-row-reverse bg-white rounded-xl shadow-sm hover:shadow-md border border-gray-50 p-6 transition-all duration-200 justify-between'>
+                        <div className='group flex flex-col w-full gap-4 lg:gap-6 xl:flex-row-reverse bg-white rounded-xl shadow-xs hover:shadow-md border border-gray-50 p-6 transition-all duration-200 justify-between'>
                             <a href="https://www.podium.no/" className='w-full h-48 xl:w-1/2 relative overflow-hidden rounded-lg flex items-center justify-center'>
                                 <Image
                                     src='/podium.png'
@@ -327,7 +327,7 @@ export default function OmOss() {
                             </div>
                         </div>
 
-                        <div className='group flex flex-col w-full gap-4 lg:gap-6 xl:flex-row-reverse bg-white rounded-xl shadow-sm hover:shadow-md border border-gray-50 p-6 transition-all duration-200 justify-between'>
+                        <div className='group flex flex-col w-full gap-4 lg:gap-6 xl:flex-row-reverse bg-white rounded-xl shadow-xs hover:shadow-md border border-gray-50 p-6 transition-all duration-200 justify-between'>
                             <a href="https://www.playwell.no/" className='w-full h-48 xl:w-1/2 relative overflow-hidden rounded-lg flex items-center justify-center'>
                                 <Image
                                     src='/playwell.png'
