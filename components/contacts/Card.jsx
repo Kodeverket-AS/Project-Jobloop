@@ -19,8 +19,8 @@ export default function ContactCard({ contact }) {
     const phone = mobile || "";
 
     return (
-        <article className='group rounded-xl border border-slate-200 bg-white shadow-sm hover:shadow-md transition-all duration-300 p-4 max-w-80 w-full flex flex-col hover:scale-105'>
-            <div className='flex flex-col items-center text-center flex-grow'>
+        <article className='group rounded-xl border border-slate-200 bg-white shadow-xs hover:shadow-md transition-all duration-300 p-4 max-w-80 w-full flex flex-col hover:scale-105'>
+            <div className='flex flex-col items-center text-center grow'>
                 <div className='relative w-32 h-32 sm:w-36 sm:h-36 md:w-40 md:h-40 lg:w-44 lg:h-44 xl:w-48 xl:h-48 overflow-hidden rounded-full border-2 border-jobloop-primary-orange shadow-jobloop-primary-orange/15 group-hover:border-4 shadow-2xl transition-all duration-300'>
                     <Image
                         src={image || "/contact_placeholder.jpg"}
@@ -47,7 +47,7 @@ export default function ContactCard({ contact }) {
                     </p>
                 )}
 
-                <div className='flex-grow' />
+                <div className='grow' />
 
                 <div className='mt-4 w-full space-y-1 text-sm'>
                     {email && (

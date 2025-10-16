@@ -24,7 +24,7 @@ function Section({ title, people = [] }) {
             <div
                 className={[
                     "grid gap-8 justify-center justify-items-center",
-                    "[grid-template-columns:repeat(auto-fit,minmax(220px,1fr))]",
+                    "grid-cols-[repeat(auto-fit,minmax(220px,1fr))]",
                 ].join(" ")}
             >
                 {people.map((contact, i) => (
@@ -116,7 +116,7 @@ export default function ContactContainer({ data = [] }) {
     }, [onEsc]);
 
     return (
-        <div className='space-y-12 bg-gradient-to-br from-jobloop-primary-green/5 via-white to-jobloop-primary-orange/5 p-8 rounded-2xl border border-jobloop-primary-green/10'>
+        <div className='space-y-12 bg-linear-to-br from-jobloop-primary-green/5 via-white to-jobloop-primary-orange/5 p-8 rounded-2xl border border-jobloop-primary-green/10'>
             <div className='text-center mb-8'>
                 <h1 className='text-3xl md:text-4xl font-bold text-kv-black mb-4'>
                     Våre ansatte
@@ -126,7 +126,7 @@ export default function ContactContainer({ data = [] }) {
                 </p>
             </div>
 
-            <div className='bg-gradient-to-br from-white to-gray-50 p-6 rounded-xl shadow-lg border border-jobloop-primary-green/20'>
+            <div className='bg-linear-to-br from-white to-gray-50 p-6 rounded-xl shadow-lg border border-jobloop-primary-green/20'>
                 <div className='grid grid-cols-1 sm:grid-cols-3 gap-4 mb-6'>
                     <div className='relative'>
                         <input
@@ -134,7 +134,7 @@ export default function ContactContainer({ data = [] }) {
                             onChange={doFilter}
                             type='text'
                             placeholder='Søk etter ansatt …'
-                            className='w-full rounded-xl border-2 border-gray-200 bg-white px-4 py-3 text-base focus:outline-none focus:ring-2 focus:ring-jobloop-primary-green/60 focus:border-jobloop-primary-green transition-all duration-300 hover:border-jobloop-primary-green/50'
+                            className='w-full rounded-xl border-2 border-gray-200 bg-white px-4 py-3 text-base focus:outline-hidden focus:ring-2 focus:ring-jobloop-primary-green/60 focus:border-jobloop-primary-green transition-all duration-300 hover:border-jobloop-primary-green/50'
                         />
                         <div className='absolute inset-y-0 right-0 flex items-center pr-3 pointer-events-none'>
                             <svg className='w-5 h-5 text-gray-400' fill='none' stroke='currentColor' viewBox='0 0 24 24'>
@@ -148,7 +148,7 @@ export default function ContactContainer({ data = [] }) {
                             ref={departmentSelect}
                             onChange={doFilter}
                             defaultValue=''
-                            className='w-full rounded-xl border-2 border-gray-200 bg-white px-4 py-3 text-base focus:outline-none focus:ring-2 focus:ring-jobloop-primary-green/60 focus:border-jobloop-primary-green transition-all duration-300 hover:border-jobloop-primary-green/50 appearance-none cursor-pointer'
+                            className='w-full rounded-xl border-2 border-gray-200 bg-white px-4 py-3 text-base focus:outline-hidden focus:ring-2 focus:ring-jobloop-primary-green/60 focus:border-jobloop-primary-green transition-all duration-300 hover:border-jobloop-primary-green/50 appearance-none cursor-pointer'
                         >
                             <option value=''>Alle avdelinger</option>
                             {departmentList.map((opt) => (
@@ -173,7 +173,7 @@ export default function ContactContainer({ data = [] }) {
                             setIsFiltered(false);
                             setFiltered(data);
                         }}
-                        className='w-full rounded-xl border-2 border-jobloop-primary-orange bg-gradient-to-r from-jobloop-primary-orange to-jobloop-primary-orange/80 px-4 py-3 text-base text-white hover:from-jobloop-primary-green/90 hover:to-jobloop-primary-green active:scale-95 transition-all duration-300 font-medium shadow-md hover:shadow-lg'
+                        className='w-full rounded-xl border-2 border-jobloop-primary-orange bg-linear-to-r from-jobloop-primary-orange to-jobloop-primary-orange/80 px-4 py-3 text-base text-white hover:from-jobloop-primary-green/90 hover:to-jobloop-primary-green active:scale-95 transition-all duration-300 font-medium shadow-md hover:shadow-lg'
                     >
                         Tilbakestill søk
                     </button>

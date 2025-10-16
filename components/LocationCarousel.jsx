@@ -20,7 +20,7 @@ const cities = [
 
 export default function LocationCarousel() {
   return (
-    <section className=" w-full max-w-[1536px] mx-auto py-16 bg-gradient-to-br from-jobloop-primary-green/50 via-white to-jobloop-primary-orange/50 rounded-xl">
+    <section className=" w-full max-w-[1536px] mx-auto py-16 bg-linear-to-br from-jobloop-primary-green/50 via-white to-jobloop-primary-orange/50 rounded-xl">
       <div className="container mx-auto px-4 text-center">
         <h2 className="text-2xl md:text-3xl font-bold mb-4 text-kv-black">
           Våre lokasjoner
@@ -86,7 +86,7 @@ export default function LocationCarousel() {
                       height={200}
                       className="object-cover w-full h-full group-hover:scale-110 transition-transform duration-300"
                     />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                    <div className="absolute inset-0 bg-linear-to-t from-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                   </div>
                   <h3 className="text-lg font-semibold text-kv-black group-hover:text-jobloop-primary-green transition-colors duration-300">
                     {city.name}

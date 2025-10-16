@@ -19,7 +19,7 @@ export function LinkButtonInternal({ Path, Text }) {
     <Link
       href={Path}
       aria-label={`Lenke til underside ${Path}`}
-      className=" flex items-center gap-1 py-3 font-bold tracking-normal underline transition-all text-jobloop-secondary-green w-fit decoration-jobloop-secondary-green/5 underline-offset-4 hover:underline-offset-2 hover:decoration-jobloop-secondary-green/100 hover:gap-2 ">
+      className=" flex items-center gap-1 py-3 font-bold tracking-normal underline transition-all text-jobloop-secondary-green w-fit decoration-jobloop-secondary-green/5 underline-offset-4 hover:underline-offset-2 hover:decoration-jobloop-secondary-green hover:gap-2 ">
       {Text}
       <FaArrowRight className="inline-block h-4 lg:w-4" />
     </Link>
