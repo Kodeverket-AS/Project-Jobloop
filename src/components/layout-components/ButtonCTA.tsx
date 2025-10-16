@@ -27,7 +27,7 @@ const ButtonCTA = ({
   }
 
   let ButtonComponent;
-  let ButtonComponentProps = { Path, Text, Aria };
+  const ButtonComponentProps = { Path, Text, Aria };
 
   switch (btnVariant) {
     case 'externalLink':
