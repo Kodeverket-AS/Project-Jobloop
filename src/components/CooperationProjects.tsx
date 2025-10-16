@@ -12,6 +12,7 @@ const ProjectsData = [
     text: 'Fontenehus er frivillige arbeidsfellesskap for mennesker som har eller har hatt psykiske helseutfordringer. I 2022 startet Kodehode et samarbeid med Fontenehuset Bergen for å tilby et kodekurs på huset – Kodeloftet – et tre måneders kurs som kan regnes som et forkurs til Kodehode.',
     path: 'https://www.fontenehusetbergen.no/',
     btnText: 'Fontenehusetbergen.no',
+    alt: 'Bilde fra kodeloftet',
   },
   {
     image: Gløde,
@@ -19,12 +20,14 @@ const ProjectsData = [
     text: 'Gløde AS har som formål å fremme arbeidsinkludering, kompetanseformidling og tilhørende virksomhet. Målgruppen er personer som har behov for avklaring, arbeidstrening, opplæring og støtte for å komme ut i ordinært arbeid, eller som trenger varig tilrettelagt arbeid. I 2023 startet Gløde Data og Jobloop et samarbeid for deltakere i AFT. Grunnleggende programmering med JavaScript er et 12-ukers tilbud der deltakerne lærer å utvikle nettsider og apper ved bruk av JavaScript.',
     path: 'https://www.gløde.no/',
     btnText: 'Gløde.no',
+    alt: 'Logo til gløde',
   },
   {
     image: Teamwork,
     title: 'Medarbeiderskap',
     text: 'Medarbeiderskap er et nytt samarbeidsprosjekt mellom Jobloop og TeamWork OU AS, som jobber for å levere nye konsepter til bedrifter for å bedre miljøet blant ansatte og forhindre sykefravær og gjennomtrekk.',
     path: '/teamwork',
+    alt: 'Bilde av teamwork',
   },
 ];
 
@@ -40,6 +43,7 @@ export default function CooperationProjects() {
         title={ProjectsData[0].title}
         text={ProjectsData[0].text}
         path={ProjectsData[0].path}
+        alt={ProjectsData[0].alt}
         isButton={true}
         btnVariant={'externalLink'}
         btnText={ProjectsData[0].btnText}
@@ -51,6 +55,7 @@ export default function CooperationProjects() {
         title={ProjectsData[1].title}
         text={ProjectsData[1].text}
         path={ProjectsData[1].path}
+        alt={ProjectsData[1].alt}
         isButton={true}
         btnVariant={'externalLink'}
         btnText={ProjectsData[1].btnText}
@@ -62,6 +67,7 @@ export default function CooperationProjects() {
         title={ProjectsData[2].title}
         text={ProjectsData[2].text}
         path={ProjectsData[2].path}
+        alt={ProjectsData[2].alt}
         isButton={true}
         btnText={ProjectsData[2].btnText}
       />
