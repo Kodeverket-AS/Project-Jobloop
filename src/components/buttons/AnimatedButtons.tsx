@@ -3,7 +3,12 @@
 import Link from 'next/link';
 import { LuMail } from 'react-icons/lu';
 
-export function LinkButtonAnimatedWithIcon({ Path, Text }) {
+interface ButtonProps {
+  Path: string;
+  Text: string;
+}
+
+export function LinkButtonAnimatedWithIcon({ Path, Text }: ButtonProps) {
   return (
     <Link
       href={Path}
@@ -20,7 +25,7 @@ export function LinkButtonAnimatedWithIcon({ Path, Text }) {
   );
 }
 
-export function LinkButtonAnimated({ Path, Text }) {
+export function LinkButtonAnimated({ Path, Text }: ButtonProps) {
   return (
     <Link
       href={Path}
