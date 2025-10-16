@@ -1,24 +1,39 @@
 'use client';
 
-import {
-  useEffect,
-  useCallback,
-  useRef,
-  useState,
-  useMemo,
-  ChangeEvent,
-} from 'react';
+import { useEffect, useCallback, useRef, useState, useMemo } from 'react';
 import ContactCard from './Card';
 import { Contacts } from '@/types/sanity/sanity.types';
 
 function Section({
-  title,
+  groupID,
   people = [],
 }: {
-  title: string;
+  groupID: number;
   people: Contacts[];
 }) {
+
+  // Skip category if its empty
   if (!people.length) return null;
+
+  // Convert group id to readable string
+  let groupName = 'Ukategorisert';
+  switch (groupID) {
+    case 1:
+      groupName = 'Ledelse og administrasjon';
+      break;
+    case 2:
+      groupName = 'Teamledere og tiltaksledere';
+      break;
+    case 3:
+      groupName = 'Faglige veiledere og spillpedagoger';
+      break;
+    case 4:
+      groupName = 'Interns';
+      break;
+    default:
+      groupName = 'Ukategorisert';
+      break;
+  }
 
   const maxWidth =
     people.length <= 2
@@ -31,70 +46,37 @@ function Section({
     <section className={`space-y-8 mx-auto ${maxWidth}`}>
       <div className='text-center'>
         <h2 className='text-2xl md:text-3xl font-bold text-kv-black pb-2 border-b-2 md:border-b-4 border-jobloop-primary-green w-fit mx-auto'>
-          {title}
+          {groupName}
         </h2>
       </div>
 
-      <div
-        className={[
-          'grid gap-8 justify-center justify-items-center',
-          'grid-cols-[repeat(auto-fit,minmax(220px,1fr))]',
-        ].join(' ')}
-      >
-        {people.map((contact, i) => (
-          <ContactCard key={`${contact._id ?? i}`} contact={contact} />
+      <div className='grid gap-8 justify-center justify-items-center grid-cols-[repeat(auto-fit,minmax(220px,1fr))]'>
+        {people.map((contact) => (
+          <ContactCard key={contact._id} contact={contact} />
         ))}
       </div>
     </section>
   );
 }
 
-function groupLabel(group: number) {
-  switch (Number(group)) {
-    case 1:
-      return 'Ledelse og administrasjon';
-    case 2:
-      return 'Teamledere og tiltaksledere';
-    case 3:
-      return 'Faglige veiledere og spillpedagoger';
-    case 4:
-      return 'Interns';
-    default:
-      return 'Noobs';
-  }
-}
-
-// todo, this needs to be refactored. Just did some dirty types
-type KeyLike = string | number | symbol;
-export function groupBy<T, K extends keyof T>(
-  arr: T[],
-  key: K
-): T[K] extends number
-  ? Record<number, T[]>
-  : T[K] extends string
-    ? Record<string, T[]>
-    : Record<KeyLike, T[]> {
-  return arr.reduce((acc, item) => {
-    const v = item[key] as unknown;
-
-    const k =
-      typeof v === 'number'
-        ? (v as number)
-        : typeof v === 'string'
-          ? (v as string)
-          : (String(v) as string); // fallback to string bucket
-
-    (acc[k] ??= []).push(item);
-    return acc;
-  }, {} as any);
-}
-
 export default function ContactContainer({ data = [] }: { data: Contacts[] }) {
   const [filtered, setFiltered] = useState<Contacts[]>(data);
-  const [isFiltered, setIsFiltered] = useState<Boolean>(false);
+  const [isFiltered, setIsFiltered] = useState<boolean>(false);
   const nameInput = useRef<HTMLInputElement>(null);
   const departmentSelect = useRef<HTMLSelectElement>(null);
 
+  // Group contacts by their group number in an object, then iterate over key
+  const groupByRole = filtered.reduce(
+    (acc, current) => {
+      const groupKey = typeof current.group === 'number' ? current.group : 5;
+      acc[groupKey] ??= [];
+      acc[groupKey].push(current);
+      return acc;
+    },
+    {} as Record<number, Contacts[]>
+  );
+
+  // Create a unique set of all departments for select options
   const departmentList = useMemo(() => {
     const set = new Set<string>();
     data.forEach((item) =>
@@ -103,6 +85,7 @@ export default function ContactContainer({ data = [] }: { data: Contacts[] }) {
     return Array.from(set).sort((a, b) => a.localeCompare(b, 'no'));
   }, [data]);
 
+  // Apply filter
   const doFilter = useCallback(() => {
     const deptVal = (departmentSelect.current?.value ?? '').toLowerCase();
     const nameVal = (nameInput.current?.value ?? '').toLowerCase();
@@ -120,6 +103,7 @@ export default function ContactContainer({ data = [] }: { data: Contacts[] }) {
     setFiltered(result);
   }, [data]);
 
+  // Clear filter on escape keypress
   const onEsc = useCallback(
     (ev: KeyboardEvent) => {
       if (ev.key === 'Escape') {
@@ -230,17 +214,17 @@ export default function ContactContainer({ data = [] }: { data: Contacts[] }) {
       </div>
 
       <div className='space-y-16'>
-        {(() => {
-          const grouped = groupBy(filtered, 'group');
-          return Object.keys(grouped)
-            .map(Number)
-            .sort((a, b) => a - b)
-            .map((g) => (
-              <Section key={g} title={groupLabel(g)} people={grouped[g]} />
-            ));
-        })()}
-
-        {!filtered?.length && (
+        {Object.keys(groupByRole)
+          .map(Number)
+          .sort((a, b) => a - b)
+          .map((groupID) => (
+            <Section
+              key={groupID}
+              groupID={groupID}
+              people={groupByRole[groupID]}
+            />
+          ))}
+        {!filtered.length && (
           <div className='text-center py-12'>
             <p className='text-lg text-slate-600 mb-4'>
               Beklager, ditt søk ga ingen resultater.
