@@ -1,14 +1,12 @@
 import Image from 'next/image';
 import { FaLinkedin } from 'react-icons/fa';
 import { FaFacebook } from 'react-icons/fa';
-import { FaTwitter } from 'react-icons/fa';
-import { FaInstagram } from 'react-icons/fa';
-import LinkedIn from '../../../public/LinkedIn.png';
-import Facebook2 from '../../../public/Facebook2.svg';
-import Instagram from '../../../public/Instagram.svg';
 import { SocialMediaCard } from '@/components/socialMediaCard';
 
-export default function Nyhetsbrev({ text, link, icon }) {
+// todo convert to icon?
+import Instagram from '../../../public/Instagram.svg';
+
+export default function Nyhetsbrev() {
   return (
     <main className='w-full max-w-[1536px] flex flex-col items-center justify-center p-0 pb-24 pt-20 lg:pt-0'>
       <h1 className='pb-12 text-jobloop-primary-grey'>Sosiale medier</h1>
@@ -30,6 +28,7 @@ export default function Nyhetsbrev({ text, link, icon }) {
             <Image
               src={Instagram}
               className='min-w-16 min-h-16 max-w-16 max-h-16'
+              alt='Instagram logo'
             />
           }
         />
