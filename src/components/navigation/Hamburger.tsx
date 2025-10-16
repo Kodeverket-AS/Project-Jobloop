@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useEffect, useState, useRef, EventHandler } from 'react';
+import React, { useEffect, useState, useRef } from 'react';
 import { IoCloseSharp } from 'react-icons/io5';
 import { GiHamburgerMenu } from 'react-icons/gi';
 import Link from 'next/link';
@@ -91,7 +91,7 @@ const HamburgerMenu = ({ hamFill }: { hamFill: string }) => {
               href='/om-oss'
               aria-label='gå til underside og les mer om oss'
               className='px-8 text-xl font-bold transition-all text-jobloop-secondary-green group w-fit'
-              onClick={(event) => {
+              onClick={() => {
                 setIsOpen(false);
               }}
             >
@@ -101,7 +101,7 @@ const HamburgerMenu = ({ hamFill }: { hamFill: string }) => {
               href='/kontakt'
               aria-label='gå til underside og ta kontakt med en av oss'
               className='px-8 text-xl font-bold transition-all text-jobloop-secondary-green group w-fit'
-              onClick={(event) => {
+              onClick={() => {
                 setIsOpen(false);
               }}
             >
