@@ -1,8 +1,8 @@
-// import { Inter } from "next/font/google";
+
 import { Roboto } from "next/font/google";
 import "./globals.css";
 import Footer from "../../components/navigation/Footer";
-import { ScrollToTopButton } from "../../components/Buttons";
+import { ScrollToTopButton } from "../../components/buttons";
 import Navigation from "../../components/navigation/Navigation";
 
 const roboto = Roboto({

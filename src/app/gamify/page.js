@@ -13,15 +13,47 @@ export default async function Gamify() {
   const data = await getData();
   const gamify = data.tiltak[1];
   return (
-    <main className="flex flex-col items-center justify-between">
+    <main className="flex flex-col items-center gap-16 w-full max-w-[1536px] mx-auto my-16">
       <HeroSub content={gamify} />
       <CourseSummary content={gamify} course={"Gamify"} />
       <Curriculum content={gamify} course={"Gamify"} />
-      {/*<CourseUsefullness content={gamify} course={"Gamify"} />*/}
-      <LeaderSection content={gamify} leader={"Kim Brurok Stokkeland & Sjur Hovi"} position={"Kursleder"} />
-      {/*<ForCompanies content={gamify} />*/}
+      <LeaderSection 
+        leaders={[
+          {
+            name: "Kim Brurok Stokkeland",
+            position: "Teamleder og gamingpedagog, Gamify Bergen og Stavanger",
+            image: "/Kim.jpg",
+            description: [
+              {
+                _type: "block",
+                children: [
+                  {
+                    _type: "span",
+                    text: "Kim Brurok Stokkeland\nkim@jobloop.no\n+47 97 46 91 10"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            name: "Sjur Hovi", 
+            position: "Kursleder og spillpedagog, Gamify Oslo og Digitalt",
+            image: "/sjur.jpeg",
+            description: [
+              {
+                _type: "block",
+                children: [
+                  {
+                    _type: "span",
+                    text: "Sjur Hovi\nsjur@playwell.no\n+47 955 22 301"
+                  }
+                ]
+              }
+            ]
+          }
+        ]} 
+      />
       <ForSchool content={gamify} situation={"skole"} />
-      {/*<Places content={gamify} />*/}
     </main>
   );
 }

@@ -9,8 +9,8 @@ import logoJobloopHvit from "../../public/logoJobloopHvit.svg";
 
 export default function Navbar() {
     return (
-        <nav className='absolute top-0 z-50 w-full'>
-            <div className='flex items-center justify-between'>
+        <nav className='absolute top-0 z-50 w-full px-5 lg:px-7'>
+            <div className='flex items-center justify-between max-w-[1536px] mx-auto'>
                 <div className='p-4'>
                     <Link href='/' aria-label='Gå til landingssiden'>
                         <Image
@@ -27,29 +27,29 @@ export default function Navbar() {
                         {/* <Link
                             href='/nyhetsbrev'
                             aria-label='gå til denne undersiden for å se Jobloops nyhetsbrev'
-                            className='px-4 font-bold md:portrait:pl-4 md:portrait:pr-2 lg:px-4 text-kv-white md:hover:underline'
+                            className='px-4 font-semibold text-lg md:portrait:pl-4 md:portrait:pr-2 lg:px-4 text-kv-white md:hover:underline'
                         >
                             Nyhetsbrev
                         </Link> */}
                         {/*<Link
               href="/ansettelser"
               aria-label="gå til denne undersiden for å se våre åpne stillinger"
-              className="px-4 font-bold md:portrait:px-2 lg:px-4 text-kv-white md:hover:underline">
+              className="px-4 font-semibold text-lg md:portrait:px-2 lg:px-4 text-kv-white md:hover:underline">
               Vi ansetter!
             </Link>*/}
                         <Link
                             href='/om-oss'
                             aria-label='gå til denne undersiden for å lese mer om oss'
-                            className='px-4 font-bold md:portrait:px-2 lg:px-4 text-kv-white md:hover:underline'
+                            className='px-2 font-semibold text-xl md:px-4 text-kv-white md:hover:underline'
                         >
-                            Om Oss
+                            OM OSS
                         </Link>
                         <Link
                             href='/kontakt'
                             aria-label='gå til denne undersiden for å ta kontakt med en av oss'
-                            className='px-4 font-bold md:portrait:px-2 lg:px-4 text-kv-white md:hover:underline'
+                            className='px-2 font-semibold text-xl md:px-4 text-kv-white md:hover:underline'
                         >
-                            Kontakt
+                            KONTAKT
                         </Link>
                     </div>
                     <div className='px-4'>
@@ -63,8 +63,8 @@ export default function Navbar() {
 
 export function NavbarAlt() {
     return (
-        <nav className='w-full'>
-            <div className='flex items-center justify-between 3xl:justify-around'>
+        <nav className='w-full px-5 '>
+            <div className='flex items-center justify-between 3xl:justify-around max-w-[1536px] mx-auto'>
                 <div className='flex flex-row items-end p-4'>
                     <Link href='/' aria-label='Gå til landingssiden'>
                         <Image
@@ -81,29 +81,29 @@ export function NavbarAlt() {
                         {/* <Link
                             href='/nyhetsbrev'
                             aria-label='gå til denne undersiden for å se jobloops nyhetsbrev'
-                            className='px-4 font-bold md:portrait:pl-4 md:portrait:pr-2 lg:px-4 text-jobloop-secondary-green md:hover:underline'
+                            className='px-4 font-semibold text-lg md:portrait:pl-4 md:portrait:pr-2 lg:px-4 text-jobloop-secondary-green md:hover:underline'
                         >
                             Nyhetsbrev
                         </Link> */}
                         {/*<Link
               href="/ansettelser"
               aria-label="gå til denne undersiden for å se våre åpne stillinger"
-              className="px-4 font-bold md:portrait:px-2 lg:px-4 text-jobloop-secondary-green md:hover:underline">
+              className="px-4 font-semibold text-lg md:portrait:px-2 lg:px-4 text-jobloop-secondary-green md:hover:underline">
               Vi ansetter!
             </Link>*/}
                         <Link
                             href='/om-oss'
                             aria-label='gå til denne undersiden for å lese mer om oss'
-                            className='px-4 font-bold md:portrait:px-2 lg:px-4 text-jobloop-secondary-green md:hover:underline'
+                            className='px-4 font-semibold text-xl md:portrait:px-2 lg:px-4 text-jobloop-primary-grey md:hover:underline'
                         >
-                            Om Oss
+                            OM OSS
                         </Link>
                         <Link
                             href='/kontakt'
                             aria-label='gå til denne undersiden for å ta kontakt med en av oss'
-                            className='px-4 font-bold md:portrait:px-2 lg:px-4 text-jobloop-secondary-green md:hover:underline'
+                            className='px-4 font-semibold text-xl md:portrait:px-2 lg:px-4 text-jobloop-primary-grey md:hover:underline'
                         >
-                            Kontakt
+                            KONTAKT
                         </Link>
                     </div>
                     <div className='px-4'>

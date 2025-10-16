@@ -1,27 +1,38 @@
-import Image from "next/image";
+
 import { getData } from "../../../lib/GetData";
 import HeroSub from "../../../components/herosub";
 import CourseSummary from "../../../components/CourseSummary";
-import Curriculum from "../../../components/Curriculum";
-import CourseUsefullness from "../../../components/CourseUsefulness";
+
 import LeaderSection from "../../../components/LeaderSection";
-import ForCompanies from "../../../components/ForCompanies";
-import ForSchool from "../../../components/ForSchool";
-import Places from "../../../components/Places";
+
 
 export default async function LearnWell() {
   const data = await getData();
   const learnWell = data.tiltak[0];
   return (
-    <main className="flex flex-col items-center justify-between">
+    <main className="flex flex-col items-center gap-16 w-full max-w-[1536px] mx-auto my-16">
       <HeroSub content={learnWell} />
       <CourseSummary content={learnWell} course={"LearnWell"} />
-      {/*<Curriculum content={learnWell} course={"LearnWell"} />*/}
-      {/*<CourseUsefullness content={learnWell} course={"LearnWell"} />*/}
-      <LeaderSection content={learnWell} leader={"Beate Johnsen & Tom Mæland"} position={"Kursleder"} />
-      {/*<ForCompanies content={learnWell} />*/}
-      {/*<ForSchool content={learnWell} situation={"Skole"} />*/}
-      {/*<Places content={learnWell} />*/}
+      <LeaderSection 
+        leaders={[
+          {
+            name: "Beate Johnsen",
+            position: "Kursleder, LearnWell",
+            image: "/Beate.jpg",
+            description: [
+              {
+                _type: "block",
+                children: [
+                  {
+                    _type: "span",
+                    text: "Beate Johnsen\nbeate@jobloop.no\n+47 987 65 432"
+                  }
+                ]
+              }
+            ]
+          }
+        ]} 
+      />
     </main>
   );
 }
