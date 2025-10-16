@@ -59,10 +59,6 @@
   --jobloop-secondary-orange: #af4831;
 }
 
-
-
-
-
 h1 {
   font-size: 3rem;
 }
@@ -71,7 +67,7 @@ h2 {
   font-size: 2rem;
 }
 
-button>h2 {
+button > h2 {
   font-size: 1.2rem;
   font-weight: 500;
 }
@@ -106,7 +102,9 @@ h6 {
 .team-photo {
   opacity: 1;
   will-change: transform, opacity;
-  transition: transform 1.2s ease-out, opacity 1s ease-out;
+  transition:
+    transform 1.2s ease-out,
+    opacity 1s ease-out;
 }
 
 .slide-left {
