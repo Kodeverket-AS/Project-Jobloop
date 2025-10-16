@@ -1,17 +1,33 @@
 'use client';
 
+import { AriaAttributes } from 'react';
 import {
   LesMerButton,
   ExternalLinkButton,
   LinkButtonInternal,
 } from '../buttons';
 
-const ButtonCTA = ({ isButton, btnVariant, ...props }) => {
+interface ButtonCTAProps {
+  isButton: boolean;
+  btnVariant?: 'internalLink' | 'externalLink';
+  Path: string;
+  Text: string;
+  Aria?: AriaAttributes['aria-label'];
+}
+
+const ButtonCTA = ({
+  isButton,
+  btnVariant,
+  Path,
+  Text,
+  Aria,
+}: ButtonCTAProps) => {
   if (!isButton) {
     return null;
   }
 
   let ButtonComponent;
+  let ButtonComponentProps = { Path, Text, Aria };
 
   switch (btnVariant) {
     case 'externalLink':
@@ -24,7 +40,7 @@ const ButtonCTA = ({ isButton, btnVariant, ...props }) => {
       ButtonComponent = LesMerButton;
   }
 
-  return <ButtonComponent {...props} />;
+  return <ButtonComponent {...ButtonComponentProps} />;
 };
 
 export default ButtonCTA;
