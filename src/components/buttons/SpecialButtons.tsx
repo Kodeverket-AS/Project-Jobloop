@@ -38,7 +38,7 @@ export function ExternalLinkButton({ Path, Text, Aria }: ButtonProps) {
   );
 }
 
-export function LesMerButton({ Path, Text = 'Les mer' }: ButtonProps) {
+export function LesMerButton({ Path, Text = 'Les mer' }: Partial<ButtonProps>) {
   return (
     <a
       href={Path}
