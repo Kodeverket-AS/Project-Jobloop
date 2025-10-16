@@ -1,9 +1,23 @@
 'use client';
 
-import { useEffect, useCallback, useRef, useState, useMemo } from 'react';
+import {
+  useEffect,
+  useCallback,
+  useRef,
+  useState,
+  useMemo,
+  ChangeEvent,
+} from 'react';
 import ContactCard from './Card';
+import { Contacts } from '@/types/sanity/sanity.types';
 
-function Section({ title, people = [] }) {
+function Section({
+  title,
+  people = [],
+}: {
+  title: string;
+  people: Contacts[];
+}) {
   if (!people.length) return null;
 
   const maxWidth =
@@ -35,7 +49,7 @@ function Section({ title, people = [] }) {
   );
 }
 
-function groupLabel(group) {
+function groupLabel(group: number) {
   switch (Number(group)) {
     case 1:
       return 'Ledelse og administrasjon';
@@ -50,23 +64,39 @@ function groupLabel(group) {
   }
 }
 
-function groupBy(arr, key) {
+// todo, this needs to be refactored. Just did some dirty types
+type KeyLike = string | number | symbol;
+export function groupBy<T, K extends keyof T>(
+  arr: T[],
+  key: K
+): T[K] extends number
+  ? Record<number, T[]>
+  : T[K] extends string
+    ? Record<string, T[]>
+    : Record<KeyLike, T[]> {
   return arr.reduce((acc, item) => {
-    const k = item?.[key] ?? 5;
-    if (!acc[k]) acc[k] = [];
-    acc[k].push(item);
+    const v = item[key] as unknown;
+
+    const k =
+      typeof v === 'number'
+        ? (v as number)
+        : typeof v === 'string'
+          ? (v as string)
+          : (String(v) as string); // fallback to string bucket
+
+    (acc[k] ??= []).push(item);
     return acc;
-  }, {});
+  }, {} as any);
 }
 
-export default function ContactContainer({ data = [] }) {
-  const [filtered, setFiltered] = useState(data);
-  const [isFiltered, setIsFiltered] = useState(false);
-  const nameInput = useRef(null);
-  const departmentSelect = useRef(null);
+export default function ContactContainer({ data = [] }: { data: Contacts[] }) {
+  const [filtered, setFiltered] = useState<Contacts[]>(data);
+  const [isFiltered, setIsFiltered] = useState<Boolean>(false);
+  const nameInput = useRef<HTMLInputElement>(null);
+  const departmentSelect = useRef<HTMLSelectElement>(null);
 
   const departmentList = useMemo(() => {
-    const set = new Set();
+    const set = new Set<string>();
     data.forEach((item) =>
       (item?.company ?? []).forEach((c) => c?.trim() && set.add(c.trim()))
     );
@@ -91,7 +121,7 @@ export default function ContactContainer({ data = [] }) {
   }, [data]);
 
   const onEsc = useCallback(
-    (ev) => {
+    (ev: KeyboardEvent) => {
       if (ev.key === 'Escape') {
         if (nameInput.current) nameInput.current.value = '';
         if (departmentSelect.current) departmentSelect.current.value = '';
