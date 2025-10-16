@@ -7,7 +7,7 @@ import Navbar, { NavbarAlt } from './Navbar';
 
 // Definer URL endpoints.
 const landing = '/';
-const gamify = '/gamify';
+/* const gamify = '/gamify';
 const digitaleTalenter = '/digitale-talenter';
 const learnwell = '/learnwell';
 const loop = '/loop';
@@ -16,7 +16,7 @@ const spillbasert = '/spillbasert';
 const about = '/om-oss';
 const nyhetsbrev = '/nyhetsbrev';
 const ansettelser = '/ansettelser';
-const kontakt = '/kontakt';
+const kontakt = '/kontakt'; */
 
 export default function Navigation() {
   const pathname = usePathname();
