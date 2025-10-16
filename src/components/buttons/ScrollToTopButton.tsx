@@ -4,7 +4,7 @@ import { useState, useEffect } from 'react';
 import { FaArrowUp } from 'react-icons/fa';
 
 export function ScrollToTopButton() {
-  const [isVisible, setIsVisible] = useState(false);
+  const [isVisible, setIsVisible] = useState<boolean>(false);
 
   useEffect(() => {
     function handleScroll() {
@@ -16,10 +16,7 @@ export function ScrollToTopButton() {
   }, []);
 
   function scrollToTop() {
-    window.scrollTo({
-      top: 0,
-      behavior: 'smooth',
-    });
+    window.scrollTo({ top: 0, behavior: 'smooth' });
   }
 
   return (
