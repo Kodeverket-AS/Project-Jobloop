@@ -1,9 +1,9 @@
 'use client';
 
-import Image, { StaticImageData } from 'next/image';
+import Image, { type StaticImageData } from 'next/image';
 import ButtonCTA from './ButtonCTA';
 
-interface IntroSectionReverseProps {
+interface IntroSection {
   title: string;
   text: string;
   image: StaticImageData;
@@ -23,7 +23,7 @@ export const IntroSectionReverse = ({
   isButton,
   btnVariant,
   btnText,
-}: IntroSectionReverseProps) => {
+}: IntroSection) => {
   return (
     <div className='flex flex-col-reverse gap-6  lg:flex-row lg:gap-12'>
       <div className='flex flex-col gap-4 w-full lg:w-1/2 justify-center'>
