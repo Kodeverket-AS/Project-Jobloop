@@ -1,16 +1,18 @@
 'use client';
 
-// import Link from "next/link";
+import type { Tiltak } from '@/types/sanity/sanity.types';
 import Image from 'next/image';
 import { PortableText } from '@portabletext/react';
-import { urlFor } from '../../lib/Sanity';
+import { urlFor } from '@/lib/Sanity';
 
-export default function LeaderSection({ leaders, contactNames }) {
+export default function LeaderSection({
+  leaders,
+}: {
+  leaders: Tiltak['courseLeaders'];
+}) {
   if (!leaders || leaders.length === 0) {
     return null;
   }
-
-  const leadersToRender = leaders;
 
   return (
     <div className='w-full max-w-[1536px] mx-auto px-4 space-y-8'>
@@ -20,7 +22,7 @@ export default function LeaderSection({ leaders, contactNames }) {
         </h2>
         <div className='w-24 h-1 bg-jobloop-primary-green mx-auto'></div>
       </div>
-      {leadersToRender.map((courseLeader, index) => (
+      {leaders.map((courseLeader, index) => (
         <div
           key={index}
           className=' rounded-xl p-8 shadow-lg border-3 border-jobloop-primary-green '
@@ -48,9 +50,11 @@ export default function LeaderSection({ leaders, contactNames }) {
                       <div className='w-24 h-24 lg:w-32 lg:h-32 mx-auto mb-4 bg-jobloop-primary-green/30 rounded-full flex items-center justify-center'>
                         <span className='text-2xl lg:text-4xl font-bold text-jobloop-primary-green'>
                           {courseLeader.name
-                            .split(' ')
-                            .map((n) => n[0])
-                            .join('')}
+                            ? courseLeader.name
+                                .split(' ')
+                                .map((n) => n[0])
+                                .join('')
+                            : ''}
                         </span>
                       </div>
                       <p className='text-sm text-gray-600 font-medium'>
@@ -71,9 +75,11 @@ export default function LeaderSection({ leaders, contactNames }) {
               <p className='text-lg font-semibold text-jobloop-primary-green'>
                 {courseLeader.name}
               </p>
-              <div className='prose prose-lg max-w-none text-gray-700 leading-relaxed'>
-                <PortableText value={courseLeader.description} />
-              </div>
+              {courseLeader.description && (
+                <div className='prose prose-lg max-w-none text-gray-700 leading-relaxed'>
+                  <PortableText value={courseLeader.description} />
+                </div>
+              )}
             </div>
           </div>
         </div>
