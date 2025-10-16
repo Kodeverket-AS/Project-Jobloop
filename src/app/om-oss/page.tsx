@@ -2,10 +2,7 @@
 
 import Image from 'next/image';
 import { useEffect, useState } from 'react';
-import {
-  LesMerButton,
-  LinkButtonAnimatedWithIcon,
-} from '@/components/buttons';
+import { LesMerButton, LinkButtonAnimatedWithIcon } from '@/components/buttons';
 import LocationCarousel from '@/components/LocationCarousel';
 import Link from 'next/link';
 
@@ -17,40 +14,18 @@ import Oda from '../../../public/Oda.jpg';
 import Kim from '../../../public/Kim.jpg';
 import { IoInformationCircle } from 'react-icons/io5';
 
+// hvorfor ligger ikke dette i sanity?
 const teamData = [
-  {
-    name: 'Sina',
-    role: 'Daglig Leder',
-    image: Sina,
-  },
-  {
-    name: 'Karl Haakon',
-    role: 'Markedsutvikler',
-    image: Karl,
-  },
-  {
-    name: 'Inger Johanne',
-    role: 'Teamleder',
-    image: Inger,
-  },
-  {
-    name: 'Beate',
-    role: 'Kursleder',
-    image: Beate,
-  },
-  {
-    name: 'Oda Kristin',
-    role: 'Kursleder',
-    image: Oda,
-  },
-  {
-    name: 'Kim',
-    role: 'Kursleder',
-    image: Kim,
-  },
+  { name: 'Sina', role: 'Daglig Leder', image: Sina },
+  { name: 'Karl Haakon', role: 'Markedsutvikler', image: Karl },
+  { name: 'Inger Johanne', role: 'Teamleder', image: Inger },
+  { name: 'Beate', role: 'Kursleder', image: Beate },
+  { name: 'Oda Kristin', role: 'Kursleder', image: Oda },
+  { name: 'Kim', role: 'Kursleder', image: Kim },
 ];
 
-const TeamMember = ({ name, role, image }) => (
+// Dette burde være et komponent
+const TeamMember = ({ name, role, image }: (typeof teamData)[number]) => (
   <Link
     href='/kontakt'
     title={`Gå til Kontakt siden og finn ${name}`}
@@ -95,10 +70,7 @@ export default function OmOss() {
           }
         });
       },
-      {
-        threshold: 0.1,
-        rootMargin: '0px 0px -20px 0px',
-      }
+      { threshold: 0.1, rootMargin: '0px 0px -20px 0px' }
     );
 
     const teamSection = document.querySelector('.team-section');
