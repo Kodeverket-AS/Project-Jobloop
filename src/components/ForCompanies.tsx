@@ -1,18 +1,21 @@
 'use client';
 
-import Link from 'next/link';
+import type { Tiltak } from '@/types/sanity/sanity.types';
 import Image from 'next/image';
+import { urlFor } from '@/lib/Sanity';
 import { PortableText } from '@portabletext/react';
 
-export default function ForCompanies({ content }) {
+// todo is this used?
+
+export default function ForCompanies({ image3, employer }: Tiltak) {
   return (
     <div className='flex flex-col justify-between px-4 md:flex-row-reverse md:px-0'>
       <div className='w-full h-80 md:w-96 md:pt-3 md:h-96'>
         <Image
-          src={content.image3 ? content.image3 : ''}
+          src={image3 ? urlFor(image3).url() : ''}
           width={500}
           height={500}
-          alt={content.alt3 ? content.alt3 : ''}
+          alt={image3?.alt || ''}
           className='object-cover w-full h-full'
         />
       </div>
@@ -20,7 +23,7 @@ export default function ForCompanies({ content }) {
         <h2 className='text-xl md:text-2xl lg:text-3xl pb-3 border-b-2 border-jobloop-primary-green'>
           For bedrifter
         </h2>
-        <PortableText value={content.employer} />
+        {employer && <PortableText value={employer} />}
       </div>
     </div>
   );
