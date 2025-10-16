@@ -10,7 +10,7 @@ interface IntroSection {
   alt: string;
   path: string;
   isButton: boolean;
-  btnVariant?: string;
+  btnVariant?: 'internalLink' | 'externalLink';
   btnText?: string;
 }
 
