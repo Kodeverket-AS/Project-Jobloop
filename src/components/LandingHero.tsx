@@ -1,14 +1,8 @@
 'use client';
 
-import Link from 'next/link';
 import Image from 'next/image';
 import LandingHeaderPhoto from '../../public/LandingHeaderPhoto.png';
-import {
-  KontaktButton,
-  LinkButtonInternal,
-  LinkButtonAnimatedWithIcon,
-  LinkButtonAnimated,
-} from './buttons';
+import { LinkButtonAnimatedWithIcon, LinkButtonAnimated } from './buttons';
 
 export default function LandingHero() {
   return (
