@@ -3,7 +3,12 @@
 import Link from 'next/link';
 import { FaArrowRight } from 'react-icons/fa';
 
-export function LinkButton({ Path, Text }) {
+interface ButtonProps {
+  Path: string;
+  Text: string;
+}
+
+export function LinkButton({ Path, Text }: ButtonProps) {
   return (
     <Link
       href={Path}
@@ -15,7 +20,7 @@ export function LinkButton({ Path, Text }) {
   );
 }
 
-export function LinkButtonInternal({ Path, Text }) {
+export function LinkButtonInternal({ Path, Text }: ButtonProps) {
   return (
     <Link
       href={Path}
