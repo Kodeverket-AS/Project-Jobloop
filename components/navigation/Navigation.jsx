@@ -1,21 +1,21 @@
-"use client";
+'use client';
 
-import React from "react";
-import { usePathname } from "next/navigation";
-import Navbar, { NavbarAlt } from "./Navbar";
+import React from 'react';
+import { usePathname } from 'next/navigation';
+import Navbar, { NavbarAlt } from './Navbar';
 
 // Definer URL endpoints.
-const landing = "/";
-const gamify = "/gamify";
-const digitaleTalenter = "/digitale-talenter";
-const learnwell = "/learnwell";
-const loop = "/loop";
-const grunnleggendeIt = "/grunnleggende-IT";
-const spillbasert = "/spillbasert";
-const about = "/om-oss";
-const nyhetsbrev = "/nyhetsbrev";
-const ansettelser = "/ansettelser";
-const kontakt = "/kontakt";
+const landing = '/';
+const gamify = '/gamify';
+const digitaleTalenter = '/digitale-talenter';
+const learnwell = '/learnwell';
+const loop = '/loop';
+const grunnleggendeIt = '/grunnleggende-IT';
+const spillbasert = '/spillbasert';
+const about = '/om-oss';
+const nyhetsbrev = '/nyhetsbrev';
+const ansettelser = '/ansettelser';
+const kontakt = '/kontakt';
 
 export default function Navigation() {
   const pathname = usePathname();
