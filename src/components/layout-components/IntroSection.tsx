@@ -1,7 +1,20 @@
 'use client';
 
-import Image from 'next/image';
+import Image, { type StaticImageData } from 'next/image';
 import ButtonCTA from './ButtonCTA';
+
+interface IntroSection {
+  title: string;
+  text: string;
+  image: StaticImageData;
+  alt: string;
+  path: string;
+  isButton: boolean;
+  btnVariant?: string;
+  btnText?: string;
+  ifImageLink: boolean;
+  imageLinkPath: string;
+}
 
 export const IntroSection = ({
   title,
@@ -14,7 +27,7 @@ export const IntroSection = ({
   btnText,
   ifImageLink,
   imageLinkPath,
-}) => {
+}: IntroSection) => {
   return (
     <div className='flex flex-col gap-6   lg:flex-row lg:gap-12 rounded-xl'>
       {ifImageLink ? (
