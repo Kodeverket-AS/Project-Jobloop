@@ -81,7 +81,13 @@ const QuoteData = [
   },
 ];
 
-const UICard = ({ image, title, text, path, alt }) => {
+const UICard = ({
+  image,
+  title,
+  text,
+  path,
+  alt,
+}: (typeof UICardData)[number]) => {
   return (
     <div className='group flex flex-col w-full gap-4 lg:gap-6 xl:flex-row-reverse bg-white rounded-xl shadow-xs hover:shadow-md border border-gray-50 p-6 transition-all duration-200 justify-between'>
       <a
@@ -111,7 +117,7 @@ const UICard = ({ image, title, text, path, alt }) => {
   );
 };
 
-const QuoteCard = ({ name, company, text }) => {
+const QuoteCard = ({ name, company, text }: (typeof QuoteData)[number]) => {
   return (
     <div className='flex flex-col w-full gap-1 md:w-1/3 '>
       <h4 className='text-xl text-kv-black'>{name}</h4>
@@ -145,14 +151,7 @@ export default function WorkCourses() {
       />
       <div className='grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-4 auto-rows-fr'>
         {UICardData.map((card, index) => (
-          <UICard
-            key={index}
-            image={card.image}
-            title={card.title}
-            text={card.text}
-            path={card.path}
-            alt={card.alt}
-          />
+          <UICard key={index} {...card} />
         ))}
       </div>
 
@@ -162,21 +161,9 @@ export default function WorkCourses() {
           Hva sier bedriftslederne om oss?
         </h2>
         <div className='flex flex-col gap-8 md:flex-row'>
-          <QuoteCard
-            name={QuoteData[0].name}
-            company={QuoteData[0].company}
-            text={QuoteData[0].text}
-          />
-          <QuoteCard
-            name={QuoteData[1].name}
-            company={QuoteData[1].company}
-            text={QuoteData[1].text}
-          />
-          <QuoteCard
-            name={QuoteData[2].name}
-            company={QuoteData[2].company}
-            text={QuoteData[2].text}
-          />
+          {QuoteData.map((quote, index) => (
+            <QuoteCard key={`${quote.name}-${index}`} {...quote} />
+          ))}
         </div>
       </div>
     </div>
