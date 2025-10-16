@@ -23,7 +23,7 @@ export default function LeaderSection({ leaders, contactNames }) {
       {leadersToRender.map((courseLeader, index) => (
         <div
           key={index}
-          className=' rounded-xl p-8 shadow-lg border border-3 border-jobloop-primary-green '
+          className=' rounded-xl p-8 shadow-lg border-3 border-jobloop-primary-green '
         >
           <div className='flex flex-col md:flex-row items-center gap-8'>
             <div className='w-full lg:w-1/3 flex justify-center'>
