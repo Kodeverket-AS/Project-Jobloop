@@ -1,6 +1,13 @@
 'use client';
 
-export default function CourseCard({ content }) {
+import { Tiltak } from '@/types/sanity/sanity.types';
+
+export default function CourseCard({
+  targetGroupShort,
+  duration,
+  lectureType,
+  locations,
+}: Tiltak) {
   return (
     <div className='flex flex-col p-6 shadow-lg hover:shadow-xl transition-all duration-300 bg-kv-white rounded-xl border border-gray-100 hover:border-jobloop-primary-green/20'>
       <h3 className='text-xl md:text-2xl font-bold text-kv-black mb-4 border-b-2 border-jobloop-primary-green w-fit pb-2'>
@@ -14,25 +21,25 @@ export default function CourseCard({ content }) {
           <h4 className='text-lg font-semibold text-jobloop-primary-green mb-2'>
             Målgruppe
           </h4>
-          <p className='text-gray-700'>{content.targetGroupShort}</p>
+          <p className='text-gray-700'>{targetGroupShort}</p>
         </div>
         <div>
           <h4 className='text-lg font-semibold text-jobloop-primary-green mb-2'>
             Tidsplan
           </h4>
-          <p className='text-gray-700'>{content.duration}</p>
+          <p className='text-gray-700'>{duration}</p>
         </div>
         <div>
           <h4 className='text-lg font-semibold text-jobloop-primary-green mb-2'>
             Undervisningsform
           </h4>
-          <p className='text-gray-700'>{content.lectureType}</p>
+          <p className='text-gray-700'>{lectureType}</p>
         </div>
         <div>
           <h4 className='text-lg font-semibold text-jobloop-primary-green mb-2'>
             Sted
           </h4>
-          <p className='text-gray-700'>{content.locations}</p>
+          <p className='text-gray-700'>{locations}</p>
         </div>
       </div>
     </div>
