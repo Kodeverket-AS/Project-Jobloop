@@ -29,10 +29,10 @@ export default function Footer() {
     return (
         <footer className='w-full text-kv-white bg-jobloop-primary-grey'>
             <div className='mx-auto max-w-[1536px] px-4 md:px-8 lg:px-12'>
-                <div className='flex flex-col lg:flex-row lg:justify-around gap-8 py-12'>
+                <div className='flex flex-col gap-8 py-12 lg:flex-row lg:justify-around'>
 
 
-                    <div className='flex flex-col items-center lg:items-start lg:justify-center gap-6 lg:w-1/3'>
+                    <div className='flex flex-col items-center gap-6 lg:items-start lg:justify-center lg:w-1/3'>
                         <div className='w-48'>
                             <a
                                 href='https://jobloop.no/'
@@ -45,35 +45,35 @@ export default function Footer() {
                                     src={logoJobloopHvit}
                                     width={350}
                                     height={250}
-                                    className='hover:opacity-80 transition-opacity duration-300'
+                                    className='transition-opacity duration-300 hover:opacity-80'
                                 />
                             </a>
                         </div>
-                        <p className='text-gray-300 text-center lg:text-left leading-relaxed'>
+                        <p className='leading-relaxed text-center text-gray-300 lg:text-left'>
                             Vi hjelper deg med å finne din drømmejobb gjennom innovative kurs og personlig veiledning.
                         </p>
                     </div>
 
                     <div className='flex flex-row gap-8 lg:gap-12'>
-                        <div className='flex flex-col gap-6 w-2/3'>
+                        <div className='flex flex-col w-2/3 gap-6'>
                             <h3 className='text-2xl font-bold text-jobloop-primary-green'>Sider</h3>
                             <div className='flex flex-col gap-3'>
                                 <Link
-                                    className='text-gray-300 hover:text-jobloop-primary-green transition-colors duration-300 hover:translate-x-1 transform'
+                                    className='text-gray-300 transition-colors duration-300 hover:underline'
                                     href='/ansettelser'
                                     aria-label='Gå til underside for deltaker'
                                 >
                                     Ledige stillinger
                                 </Link>
                                 <Link
-                                    className='text-gray-300 hover:text-jobloop-primary-green transition-colors duration-300 hover:translate-x-1 transform'
+                                    className='text-gray-300 transition-colors duration-300 transform hover:underline'
                                     href='/om-oss'
                                     aria-label='Gå til underside for samarbeidspartner'
                                 >
                                     Om Jobloop
                                 </Link>
                                 <Link
-                                    className='text-gray-300 hover:text-jobloop-primary-green transition-colors duration-300 hover:translate-x-1 transform'
+                                    className='text-gray-300 transition-colors duration-300 transform hover:underline'
                                     href='/kontakt'
                                     aria-label='Gå til kontakt side'
                                 >
@@ -82,15 +82,15 @@ export default function Footer() {
                             </div>
                         </div>
 
-                        <div className='flex flex-col gap-6 w-1/2'>
+                        <div className='flex flex-col w-1/2 gap-6'>
                             <h3 className='text-2xl font-bold text-jobloop-primary-green'>Kontakt</h3>
                             <div className='space-y-4'>
                                 {contactInformation.map((person) => (
-                                    <div key={person.name} className='border-l-2 border-jobloop-primary-green/30 pl-4'>
-                                        <h4 className='font-semibold text-white mb-1'>{person.name}</h4>
+                                    <div key={person.name} className='pl-4 border-l-2 border-jobloop-primary-green/30'>
+                                        <h4 className='mb-1 font-semibold text-white'>{person.name}</h4>
                                         <a
                                             href={`mailto:${person.email}`}
-                                            className='text-gray-300 hover:text-jobloop-primary-green transition-colors duration-300 block'
+                                            className='block text-gray-300 transition-colors duration-300 hover:text-jobloop-primary-green'
                                             target='_blank'
                                             aria-label={`Åpner email for å opprette epost til ${person.name}`}
                                         >
@@ -99,7 +99,7 @@ export default function Footer() {
                                         {person.phoneDisplay && (
                                             <a
                                                 href={`tel:${person.phoneLink}`}
-                                                className='text-gray-300 hover:text-jobloop-primary-green transition-colors duration-300 block'
+                                                className='block text-gray-300 transition-colors duration-300 hover:text-jobloop-primary-green'
                                                 aria-label={`Åpner telefon for å ringe ${person.name}`}
                                             >
                                                 {person.phoneDisplay}
@@ -115,7 +115,7 @@ export default function Footer() {
                                     target='_blank'
                                     rel='noopener noreferrer'
                                     aria-label='Facebook'
-                                    className='p-2 bg-gray-700 hover:bg-jobloop-primary-green rounded-lg transition-all duration-300 hover:scale-110'
+                                    className='p-2 transition-all duration-300 bg-gray-700 rounded-lg hover:bg-jobloop-primary-green hover:scale-110'
                                 >
                                     <FaFacebook size={20} />
                                 </a>
@@ -124,7 +124,7 @@ export default function Footer() {
                                     target='_blank'
                                     rel='noopener noreferrer'
                                     aria-label='Instagram'
-                                    className='p-2 bg-gray-700 hover:bg-jobloop-primary-green rounded-lg transition-all duration-300 hover:scale-110'
+                                    className='p-2 transition-all duration-300 bg-gray-700 rounded-lg hover:bg-jobloop-primary-green hover:scale-110'
                                 >
                                     <FaInstagram size={20} />
                                 </a>
@@ -133,7 +133,7 @@ export default function Footer() {
                                     target='_blank'
                                     rel='noopener noreferrer'
                                     aria-label='LinkedIn'
-                                    className='p-2 bg-gray-700 hover:bg-jobloop-primary-green rounded-lg transition-all duration-300 hover:scale-110'
+                                    className='p-2 transition-all duration-300 bg-gray-700 rounded-lg hover:bg-jobloop-primary-green hover:scale-110'
                                 >
                                     <FaLinkedinIn size={20} />
                                 </a>
@@ -143,17 +143,17 @@ export default function Footer() {
                 </div>
             </div>
 
-            <div className='border-t border-gray-700 py-6'>
+            <div className='py-6 border-t border-gray-700'>
                 <div className='max-w-[1536px] mx-auto px-4 md:px-8 lg:px-12'>
-                    <div className='flex flex-col md:flex-row justify-between items-center gap-4'>
-                        <p className='text-gray-400 text-sm'>
+                    <div className='flex flex-col items-center justify-between gap-4 md:flex-row'>
+                        <p className='text-sm text-gray-400'>
                             &copy; {new Date().getFullYear()} JobLoop. Alle rettigheter forbeholdt.
                         </p>
                         <div className='flex gap-6 text-sm'>
-                            <Link href='/om-oss' className='text-gray-400 hover:text-jobloop-primary-green transition-colors duration-300'>
+                            <Link href='/om-oss' className='text-gray-400 transition-colors duration-300 hover:text-jobloop-primary-green'>
                                 Personvern
                             </Link>
-                            <Link href='/kontakt' className='text-gray-400 hover:text-jobloop-primary-green transition-colors duration-300'>
+                            <Link href='/kontakt' className='text-gray-400 transition-colors duration-300 hover:text-jobloop-primary-green'>
                                 Vilkår
                             </Link>
                         </div>
