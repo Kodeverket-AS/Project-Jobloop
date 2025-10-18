@@ -1,0 +1,5 @@
+{
+  "localeSwitcher": {
+    "locales": "{locale, select, nb {Norska} sv {Svenska} en {Engelska} other {Okänd}}"
+  }
+}
