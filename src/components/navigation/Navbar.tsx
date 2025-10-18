@@ -6,6 +6,7 @@ import HamburgerMenu from './Hamburger';
 //Nye logoer importert her. De er nå svg filer, så de kan skaleres uten å miste kvalitet.
 import JobloopFarge from '../../../public/JobloopFarge.svg';
 import logoJobloopHvit from '../../../public/logoJobloopHvit.svg';
+import LocaleMenu from '../ui/menu/LocaleMenu';
 
 export default function Navbar() {
   return (
@@ -51,6 +52,7 @@ export default function Navbar() {
             >
               KONTAKT
             </Link>
+            <LocaleMenu />
           </div>
           <div className='px-4'>
             <HamburgerMenu hamFill='white' />
@@ -105,6 +107,7 @@ export function NavbarAlt() {
             >
               KONTAKT
             </Link>
+            <LocaleMenu />
           </div>
           <div className='px-4'>
             <HamburgerMenu hamFill='colour' />
