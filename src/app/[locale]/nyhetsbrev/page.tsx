@@ -4,7 +4,7 @@ import { FaFacebook } from 'react-icons/fa';
 import { SocialMediaCard } from '@/components/socialMediaCard';
 
 // todo convert to icon?
-import Instagram from '../../../public/Instagram.svg';
+import Instagram from '@public/Instagram.svg';
 
 export default function Nyhetsbrev() {
   return (
