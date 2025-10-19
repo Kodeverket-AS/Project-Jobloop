@@ -6,6 +6,7 @@ import Learnwell from "../public/learnwell.webp";
 import Gamify from "../public/gamify2.webp";
 import Spillbasert from "../public/spillbasert.webp";
 import Loop from "../public/loop.webp";
+import KiKurs from "../public/ki.jpg";
 
 import { IntroSectionReverse } from "./layout-components";
 import { LesMerButton } from "./buttons";
@@ -48,6 +49,13 @@ const UICardData = [
         title: "Loop",
         text: "Få relevant arbeidspraksis og erfaring som gir deg flere jobbmuligheter.",
         path: "/loop",
+    },
+    {
+        image: KiKurs,
+        alt: "KI-Kurs leder",
+        title: "KI-Kurs",
+        text: "Lær om kunstig intelligens og hvordan den kan brukes i arbeidslivet.",
+        path: "/ki-kurs",
     },
 ];
 
