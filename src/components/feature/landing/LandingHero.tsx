@@ -1,13 +1,10 @@
 import Image from 'next/image';
 import LandingHeaderPhoto from '@public/LandingHeaderPhoto.png';
-import {
-  LinkButtonAnimatedWithIcon,
-  LinkButtonAnimated,
-} from '@/components/buttons';
+import { LinkButtonAnimatedWithIcon, LinkButtonAnimated } from '@/components/buttons';
 import { getTranslations } from 'next-intl/server';
 
 export default async function LandingHero() {
-  const t = await getTranslations('header');
+  const t = await getTranslations('base');
 
   return (
     <>
@@ -24,18 +21,15 @@ export default async function LandingHero() {
         <div className='w-full h-full bg-neutral-800/20 backdrop-blur-xs mx-auto justify-center flex flex-col gap-6 md:gap-8 lg:gap-10 items-center px-6 md:px-8 lg:px-12 py-16 md:py-24 lg:py-32 xl:py-40 relative z-10'>
           <div className='text-center max-w-4xl'>
             <h1 className='mb-6 md:mb-8 text-2xl xs:text-3xl  md:text-5xl lg:text-6xl xl:text-7xl text-kv-white leading-tight'>
-              {t('title')}
+              {t('landing.hero.title')}
             </h1>
             <p className='font-normal text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl text-kv-white leading-relaxed'>
-              {t('subtitle')}
+              {t('landing.hero.subtitle')}
             </p>
           </div>
           <div className='w-full flex flex-col gap-4 sm:flex-row justify-center'>
-            <LinkButtonAnimatedWithIcon
-              Path={'/kontakt'}
-              Text={t('cta.contactUs')}
-            />
-            <LinkButtonAnimated Path={'#courses'} Text={t('cta.courses')} />
+            <LinkButtonAnimatedWithIcon Path={'/kontakt'} Text={t('landing.hero.cta.contactUs')} />
+            <LinkButtonAnimated Path={'#courses'} Text={t('landing.hero.cta.courses')} />
           </div>
         </div>
       </div>

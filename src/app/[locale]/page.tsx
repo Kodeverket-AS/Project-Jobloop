@@ -1,10 +1,10 @@
-import LandingHero from '@/components/LandingHero';
-import LandingIntro from '@/components/LandingIntro';
 import WorkCourses from '@/components/WorkCourses';
-import SchoolCourses from '@/components/SchoolCourses';
 import CooperationProjects from '@/components/CooperationProjects';
 import JobloopSuccess from '@/components/JobloopSuccess';
 import ContactComponent from '@/components/ContactComponent';
+import LandingIntro from '@/components/feature/landing/LandingIntro';
+import LandingHero from '@/components/feature/landing/LandingHero';
+import SchoolCourses from '@/components/feature/landing/SchoolCourses';
 
 export default function Home() {
   return (
