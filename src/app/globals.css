@@ -20,7 +20,6 @@
     0% {
       transform: translateX(0);
     }
-
     100% {
       transform: translateX(-100%);
     }
@@ -36,7 +35,6 @@
   color utility to any element that depends on these defaults.
 */
 @layer base {
-
   *,
   ::after,
   ::before,
@@ -61,11 +59,6 @@
   --jobloop-secondary-orange: #af4831;
 }
 
-
-body {
-  user-select: none;
-}
-
 h1 {
   font-size: 3rem;
 }
@@ -74,7 +67,7 @@ h2 {
   font-size: 2rem;
 }
 
-button>h2 {
+button > h2 {
   font-size: 1.2rem;
   font-weight: 500;
 }
@@ -127,8 +120,6 @@ h6 {
 }
 
 @media (min-width: 768px) {
-
-  /* team-photos */
   .team-photo {
     opacity: 0;
   }
@@ -164,37 +155,4 @@ h6 {
     opacity: 1;
     transform: translateX(0) translateY(80px);
   }
-
-  /* ki-kurs */
-  .card-slide-in {
-    opacity: 0;
-    transform: translateX(-50px);
-    transition: all 0.6s ease-out;
-  }
-
-  .card-slide-in.animate {
-    opacity: 1;
-    transform: translateX(0);
-  }
-
-  .card-slide-in:nth-child(1) {
-    transition-delay: 0.1s;
-  }
-
-  .card-slide-in:nth-child(2) {
-    transition-delay: 0.2s;
-  }
-
-  .card-slide-in:nth-child(3) {
-    transition-delay: 0.3s;
-  }
-
-  .card-slide-in:nth-child(4) {
-    transition-delay: 0.4s;
-  }
-
-  .card-slide-in:nth-child(5) {
-    transition-delay: 0.5s;
-  }
-
 }
