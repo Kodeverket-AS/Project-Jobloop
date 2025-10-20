@@ -3,7 +3,7 @@ import PictureKi from "../picture-ki.png";
 
 export default function BottomImageSection() {
   return (
-    <div className="max-w-6xl mx-auto mt-16">
+    <div className="w-full mt-16">
       <div className="flex justify-center">
         <Image
           src={PictureKi}

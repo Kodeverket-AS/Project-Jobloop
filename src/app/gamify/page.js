@@ -13,7 +13,7 @@ export default async function Gamify() {
   const data = await getData();
   const gamify = data.tiltak[1];
   return (
-    <main className="flex flex-col items-center gap-16 w-full max-w-[1536px] mx-auto my-16">
+    <main className="flex flex-col items-center gap-16 w-full max-w-[1536px] mx-auto my-16 px-4">
       <HeroSub content={gamify} />
       <CourseSummary content={gamify} course={"Gamify"} />
       <Curriculum content={gamify} course={"Gamify"} />

@@ -10,7 +10,7 @@ export default async function LearnWell() {
   const data = await getData();
   const learnWell = data.tiltak[0];
   return (
-    <main className="flex flex-col items-center gap-16 w-full max-w-[1536px] mx-auto my-16">
+    <main className="flex flex-col items-center gap-16 w-full max-w-[1536px] mx-auto my-16 px-4">
       <HeroSub content={learnWell} />
       <CourseSummary content={learnWell} course={"LearnWell"} />
       <LeaderSection 
