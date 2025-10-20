@@ -29,10 +29,10 @@ export default function Footer() {
     return (
         <footer className='w-full text-kv-white bg-jobloop-primary-grey'>
             <div className='mx-auto max-w-[1536px] px-4 md:px-8 lg:px-12'>
-                <div className='flex flex-col lg:flex-row lg:justify-around gap-8 py-12'>
+                <div className='flex flex-col lg:flex-row lg:justify-between lg:pr-28 gap-8 py-12'>
 
 
-                    <div className='flex flex-col items-center lg:items-start lg:justify-center gap-6 lg:w-1/3'>
+                    <div className='flex flex-col items-leftlg:items-start lg:justify-center gap-6 lg:w-1/3'>
                         <div className='w-48'>
                             <a
                                 href='https://jobloop.no/'
@@ -49,7 +49,7 @@ export default function Footer() {
                                 />
                             </a>
                         </div>
-                        <p className='text-gray-300 text-center lg:text-left leading-relaxed'>
+                        <p className='text-gray-300  lg:text-left leading-relaxed'>
                             Vi hjelper deg med å finne din drømmejobb gjennom innovative kurs og personlig veiledning.
                         </p>
                     </div>
