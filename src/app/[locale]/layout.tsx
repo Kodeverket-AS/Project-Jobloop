@@ -1,69 +1,68 @@
-import './globals.css';
+// Styling
+import '../../assets/global.css';
 import { Roboto } from 'next/font/google';
-import { ReactNode } from 'react';
+
+// Globals
+import { type Metadata } from 'next';
+import { type ReactNode } from 'react';
+import { notFound } from 'next/navigation';
+import { routing } from '@/i18n/routing';
+import { hasLocale, NextIntlClientProvider } from 'next-intl';
+import { setRequestLocale } from 'next-intl/server';
+
+// Components
 import { ScrollToTopButton } from '@/components/buttons';
 import Navigation from '@/components/navigation/Navigation';
 import Footer from '@/components/navigation/Footer';
 
+/**
+ * This function is responsible for generating all localized routes at runtime ensuring that
+ * all languages are respected, but also limiting locales to those defined in i18n config
+ */
+export function generateStaticParams() {
+  return routing.locales.map((locale) => ({ locale }));
+}
+export const dynamicParams = false;
+
+/**
+ * This function is responsible for generating localized metadata
+ */
+export async function generateMetadata(props: Omit<LayoutProps<'/[locale]'>, 'children'>) {
+  const { locale } = await props.params;
+
+  // Load localized metadata based on locale
+  const localizedMetadata = (await import(`@/translations/${locale}/metadata.json`)) as Metadata;
+  return localizedMetadata;
+}
+
+// Configure Roboto font
 const roboto = Roboto({ weight: ['400', '700', '900'], subsets: ['latin'] });
 
-export const metadata = {
-  title: 'Jobloop: Inkluderende arbeidspraksis og effektiv jobbmatching',
-  description:
-    'Få tilgang til inkluderende arbeidsmuligheter, skreddersydd yrkesopplæring og en vei inn i arbeidslivet. Jobloop kobler kandidater og arbeidsgivere på en smartere måte.',
-  keywords: [
-    'jobbmatching',
-    'inkludering',
-    'yrkesopplæring',
-    'arbeidspraksis',
-    'Jobloop',
-    'frontend opplæring',
-    'backend kurs',
-    'fullstack utvikling',
-    'IT-jobb',
-    'arbeidsinkludering',
-  ],
-  authors: [{ name: 'Jobloop' }],
-  robots: 'index, follow',
-  openGraph: {
-    title: 'Jobloop – Inkluderende arbeidspraksis og effektiv jobbmatching',
-    description:
-      'Jobloop gir tilgang til inkluderende arbeidsmuligheter, praksisplasser og opplæring innen IT og teknologi.',
-    url: 'https://www.jobloop.no',
-    siteName: 'Jobloop',
-    images: [
-      {
-        url: '/FSE-Vinner2024-063.webp',
-        width: 1200,
-        height: 630,
-        alt: 'Jobloop – Inkluderende arbeidspraksis',
-      },
-    ],
-    locale: 'no_NO',
-    type: 'website',
-  },
-  twitter: {
-    card: 'summary_large_image',
-    title: 'Jobloop – Inkluderende arbeidspraksis og effektiv jobbmatching',
-    description:
-      'Få tilgang til inkluderende arbeidsmuligheter, praksisplasser og yrkesopplæring. Jobloop kobler arbeidsgivere og kandidater effektivt.',
-    images: ['/FSE-Vinner2024-063.webp'],
-  },
-  icons: {
-    icon: '/favicon.ico',
-    shortcut: '/favicon.ico',
-    apple: '/apple-touch-icon.png',
-  },
-};
+export default async function LocaleLayout({
+  children,
+  params,
+}: {
+  children: ReactNode;
+  params: { locale: string };
+}) {
+  // Ensure that the incoming `locale` is valid
+  const { locale } = await params;
+  if (!hasLocale(routing.locales, locale)) {
+    notFound();
+  }
 
-export default function RootLayout({ children }: { children: ReactNode }) {
+  // Enable static rendering
+  setRequestLocale(locale);
+
   return (
-    <html lang='no' className={roboto.className}>
+    <html lang={locale} className={roboto.className}>
       <body>
-        <Navigation />
-        {children}
-        <ScrollToTopButton />
-        <Footer />
+        <NextIntlClientProvider>
+          <Navigation />
+          {children}
+          <ScrollToTopButton />
+          <Footer />
+        </NextIntlClientProvider>
       </body>
     </html>
   );
