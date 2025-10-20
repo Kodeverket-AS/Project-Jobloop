@@ -1,9 +1,174 @@
 {
   "landing": {
+    "hero": {
+      "title": "New paths to development, education and employment!",
+      "subtitle": "We help you access inclusive job opportunities and alternative training. Together, we can create opportunities for more people!",
+      "cta": {
+        "contactUs": "Contact us",
+        "courses": "Our programs"
+      }
+    },
     "intro": {
-      "title": "",
-      "text": "",
-      "cta": ""
+      "title": "Who is Jobloop?",
+      "text": "Jobloop is a rapidly growing company driven by social entrepreneurs. We have an important mission: to reduce social exclusion by preventing school dropout, qualifying people, and connecting more individuals to work. To achieve this, we collaborate with public institutions, educational organizations, and the local business community. In 2024, we received the FERD Award 'Social Entrepreneur of the Year' for our work against school dropout.",
+      "cta": "Read more"
+    },
+    "school": {
+      "title": "Programs to prevent school dropout and support education",
+      "text": "In our alternative learning and mastery environments, we work every day to ensure that more students experience achievement, belonging, and meaningful days. We take a strengths-based approach and work closely with each student to help them explore and cultivate their interests. We always collaborate with the student’s school and the Educational and Psychological Counseling Service (PPT) to bridge the gap between our alternative learning environments and the classroom.",
+      "image": {
+        "alt": "Job opportunities image"
+      },
+      "courses": {
+        "learnWell": {
+          "title": "LearnWell",
+          "text": "Tailored practice in creative digital subjects. For upper secondary school students.",
+          "alt": "Computer screen with headset"
+        },
+        "gamify": {
+          "title": "Gamify",
+          "text": "Motivation and learning through games and gaming. For primary school students.",
+          "alt": "Two girls in Gamify"
+        },
+        "spillbasert": {
+          "title": "Game-Based",
+          "text": "Gaming and alternative learning for those who want to complete upper secondary school.",
+          "alt": "Three people involved in the project"
+        },
+        "loop": {
+          "title": "Loop",
+          "text": "Gain relevant work experience and build opportunities for future employment.",
+          "alt": "Tech workstation"
+        }
+      }
+    },
+    "work": {
+      "title": "Employment-oriented programs",
+      "text": "Our employment-focused programs ensure that people gain the right skills and are well prepared for working life. Many of our programs include internships, giving you as an employer a unique opportunity to take social responsibility and get to know talented candidates – completely without obligation. If you only recruit through traditional methods, you might miss out on many talented individuals.",
+      "image": {
+        "alt": "Job opportunities image"
+      },
+      "partner": {
+        "title": "Kodehode",
+        "text": "Kodehode recruits candidates who, for various reasons, are outside the labor market and offers training in frontend, backend, and full-stack development, as well as IT operations and support. Through a combination of theory, casework, and practice, participants learn the essentials for a career in IT. Kodehode is Jobloop’s largest employment-oriented program and a leading player in inclusive recruitment within the IT industry. The initiative helps reduce social exclusion and close the skills gap through focused qualification, internships, recruitment, and matchmaking with employers in the IT sector.",
+        "image": {
+          "alt": "Job opportunities image"
+        }
+      },
+      "courses": {
+        "grunnleggendeIT": {
+          "title": "Basic IT",
+          "text": "Join today’s digital society. We provide fundamental IT skills that open doors to the future of work. Learn the essentials of digital technology and build a solid foundation for further development.",
+          "alt": "Three friendly employees"
+        },
+        "digitaleTalenter": {
+          "title": "Digital Talents",
+          "text": "Develop your interests and secure a permanent job. We help you grow your digital talents and skills. Through training and practice, you’ll gain the competence that today’s employers are looking for.",
+          "alt": "Smiling person who is a digital talent"
+        },
+        "IndividuellAMO": {
+          "title": "Individual AMO",
+          "text": "Get a tailored program through NAV. We customize the training to your goals and needs. Together we build a path toward new skills and new opportunities in working life.",
+          "alt": "Person looking into the camera"
+        },
+        "loop": {
+          "title": "Loop",
+          "text": "Gain relevant work experience and connections. We match you with employers who can provide valuable practice. This is your way to build a CV and get your foot in the door.",
+          "alt": "Work desk"
+        }
+      },
+      "quotes": {
+        "one": {
+          "name": "John Helge Olsen",
+          "company": "DNB",
+          "text": "Kodehode has provided us with excellent candidates who are well prepared both professionally and socially. They’ve joined our development teams as frontend developers, working on DNB’s corporate portal for pension clients."
+        },
+        "two": {
+          "name": "Hilde Indresøvde",
+          "company": "VIS",
+          "text": "Our collaboration with Jobloop allows VIS to actively and concretely engage in inclusion. We gain access to skilled candidates through a coordinated, trust-based program with regular follow-up and dialogue. Together, we create new opportunities in working life and explore new recruitment approaches."
+        },
+        "three": {
+          "name": "Eirik Sandal",
+          "company": "Elfly Gruppen AS",
+          "text": "Elfly Gruppen has had two developers in training for six months. Kodehode has done an excellent job facilitating onboarding and providing specialized expertise and guidance throughout the process. This has enabled us to build an IT solution that contributes positively to the green transition in electric aviation."
+        }
+      }
+    },
+    "collaborations": {
+      "kodeloftet": {
+        "title": "Kodeloftet",
+        "text": "Fontenehus are voluntary work communities for people who have or have had mental health challenges. In 2022, Kodehode began a collaboration with Fontenehuset Bergen to offer a coding course at the house – Kodeloftet – a three-month course considered a preparatory program for Kodehode.",
+        "alt": "Photo from Kodeloftet"
+      },
+      "gloede": {
+        "title": "Gløde",
+        "text": "Gløde AS aims to promote work inclusion, competence development, and related services. The target group consists of individuals who need clarification, job training, education, and support to enter regular employment, or who require adapted long-term work. In 2023, Gløde Data and Jobloop began a collaboration for AFT participants. 'Basic Programming with JavaScript' is a 12-week program where participants learn to build websites and apps using JavaScript.",
+        "alt": "Gløde logo"
+      },
+      "teamwork": {
+        "title": "TeamWork",
+        "text": "TeamWork is a new collaboration project between Jobloop and TeamWork OU AS. It focuses on delivering new concepts to companies to improve the work environment, reduce sick leave, and lower staff turnover.",
+        "alt": "Photo of TeamWork"
+      }
+    },
+    "success": {
+      "title": "Inclusion work that delivers results!",
+      "text": "Every year we collaborate with researchers and industry associations to share insights and statistics with the research community. We engage with a wide range of target groups and are passionate about contributing to developing best practices in working with everyone. You can read a selection of what research says about us here:",
+      "image": {
+        "alt": "Kodehode image"
+      }
+    },
+    "contact": {
+      "title": "Contact us",
+      "text": "Need help or want to collaborate with us?",
+      "button": {
+        "label": "Contact us"
+      }
+    }
+  },
+  "about": {
+    "title": "About us",
+    "paragraph-1": "Jobloop started as a collaboration between social entrepreneurs, NAV, and several employers. In 2014, this resulted in an inclusion model that later became known as the Loop Model. Between 2014 and 2018, the model was further developed together with the employers’ organization Virke and implemented across several Norwegian counties. A 2018 FAFO report described it as inclusion work that truly works in practice. In 2017, Jobloop was established as its own company to continue and adapt the inclusion model to new industries and target groups. An important collaboration has been with the startup community connected to the Bergen.Works coworking space, where the model was adapted for “the new jobs” in IT development, creative technology, and growth companies.",
+    "paragraph-2": "Today, the model is best known as “Kodehode” – a program that nurtures and trains talented junior developers for IT jobs in close collaboration with the industry itself. The driving forces behind the company have always been passionate about tailoring models for those who didn’t quite succeed the first time or who risk dropping out of education. This has resulted in continuous adjustments to new target groups, including pupils as young as those in primary school. Today, we work with vocational rehabilitation companies, clubhouse organizations, NAV, municipalities, county councils, schools, child welfare services, educational counseling (PPT and OT), and ordinary employers. Jobloop is a rapidly growing company driven by social entrepreneurs. We have an important mission: to reduce social exclusion by preventing school dropout, qualifying people, and connecting more individuals to work! To achieve this, we collaborate with public institutions, educational organizations, and local businesses.",
+    "paragraph-3": "We offer programs targeting children in primary school, upper secondary students, and adult job seekers. At the same time, we stay close to the labor market and continuously fine-tune our programs based on trends and needs. We support the Norwegian IT industry and believe that inclusion and alternative qualification models will be essential to close the growing skills gap.",
+    "paragraph-4": "In 2024, we received the FERD Award 'Social Entrepreneur of the Year' for our work combating involuntary school absence. Did you know that 20–30% of young people in Norway do not complete upper secondary school, and that many drop out already during primary school? Ten years of innovative partnerships and dedicated work have resulted in us now being a proud provider of a range of opportunities for children, youth, and adults who want new paths into working life. Jobloop has been particularly successful in creating innovative learning and mastery environments that appeal to young people with interests in creative digital subjects, gaming, and IT.",
+    "cta-1": {
+      "text": "Did you know that if every Norwegian IT company with ten or more employees hired just one candidate from a social enterprise or welfare organization, we would solve the entire exclusion challenge?",
+      "label": "Contact us"
+    },
+    "employees": {
+      "title": "Our team at Jobloop"
+    },
+    "partners": {
+      "title": "Our partners",
+      "fontenehuset": {
+        "title": "Fontenehuset Bergen",
+        "text": "During the training process, participants are connected with relevant employers. Our supervisors continue to provide professional support and focused skills development throughout the entire program period."
+      },
+      "gloede": {
+        "title": "Gløde",
+        "text": "The training combines traditional teaching with digital learning tools and project work. Through this program, participants gain professional and social competence for work placements in IT."
+      },
+      "podium": {
+        "title": "Podium",
+        "text": "Podium is a vocational rehabilitation company headquartered in Oslo. The founders share many of the same values as Jobloop and have collaborated on several innovation projects together."
+      },
+      "playwell": {
+        "title": "Playwell",
+        "text": "Playwell is a gaming center focusing on e-sports and social gaming. We co-located in 2019 with the goal of developing mastery environments for vulnerable children and youth who are motivated by gaming."
+      },
+      "cta": {
+        "label": "Read more"
+      }
+    },
+    "contactUs": {
+      "title": "Would you like to collaborate with us?",
+      "text": "We are always ready to find great solutions! Christer is responsible for corporate partnerships and can match candidates based on your tech stack and needs. Inger-Johanne knows everything about Kodehode, and Kim manages our game-based programs. Karl-Håkon will help you get started with TeamWork. You can also see who the course leader in your city is on each program page or under 'Contact us'.",
+      "cta": "Contact us"
+    },
+    "locations": {
+      "title": "Our locations"
     }
   }
 }
