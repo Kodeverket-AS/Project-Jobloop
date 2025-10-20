@@ -7,11 +7,11 @@ import LocationCarousel from '@/components/LocationCarousel';
 import Link from 'next/link';
 
 import Sina from '@public/Sina.jpg';
-import Karl from '@public/public/Karl.webp';
-import Inger from '@public/public/Inger.jpg';
-import Beate from '@public/public/Beate.jpg';
-import Oda from '@public/public/Oda.jpg';
-import Kim from '@public/public/Kim.jpg';
+import Karl from '@public/Karl.webp';
+import Inger from '@public/Inger.jpg';
+import Beate from '@public/Beate.jpg';
+import Oda from '@public/Oda.jpg';
+import Kim from '@public/Kim.jpg';
 import { IoInformationCircle } from 'react-icons/io5';
 
 // hvorfor ligger ikke dette i sanity?
