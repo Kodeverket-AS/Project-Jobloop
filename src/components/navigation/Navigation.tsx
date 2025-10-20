@@ -6,17 +6,18 @@ import Navbar, { NavbarAlt } from './Navbar';
 // todo JC skjer her
 
 // Definer URL endpoints.
-const landing = '/';
-/* const gamify = '/gamify';
-const digitaleTalenter = '/digitale-talenter';
-const learnwell = '/learnwell';
-const loop = '/loop';
-const grunnleggendeIt = '/grunnleggende-IT';
-const spillbasert = '/spillbasert';
-const about = '/om-oss';
-const nyhetsbrev = '/nyhetsbrev';
-const ansettelser = '/ansettelser';
-const kontakt = '/kontakt'; */
+const landing = "/";
+const gamify = "/gamify";
+const digitaleTalenter = "/digitale-talenter";
+const learnwell = "/learnwell";
+const loop = "/loop";
+const grunnleggendeIt = "/grunnleggende-IT";
+const spillbasert = "/spillbasert";
+const kiKurs = "/ki-kurs";
+const about = "/om-oss";
+const nyhetsbrev = "/nyhetsbrev";
+const ansettelser = "/ansettelser";
+const kontakt = "/kontakt";
 
 export default function Navigation() {
   const pathname = usePathname();
@@ -24,6 +25,8 @@ export default function Navigation() {
 
   if (pathname === landing) {
     navbar = <Navbar />;
+  } else if (pathname === kiKurs) {
+    navbar = <NavbarAlt kiKursStyle={true} />;
   } else {
     navbar = <NavbarAlt />;
   }
