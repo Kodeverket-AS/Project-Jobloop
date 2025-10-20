@@ -94,6 +94,37 @@
           "text": "Elfly Gruppen har hatt to utviklere under opplæring i 6 måneder. Kodehode har vært flinke til å tilrettelegge for en god onboarding og brukt sin organisasjon til å fylle på med spisskompetanse og veiledning underveis. Dette har gjort oss i stand til å bygge en IT-løsning som bidrar positivt inn mot det grønne skiftet innen elektrisk luftfart."
         }
       }
+    },
+    "collaborations": {
+      "kodeloftet": {
+        "title": "Kodeloftet",
+        "text": "Fontenehus er frivillige arbeidsfellesskap for mennesker som har eller har hatt psykiske helseutfordringer. I 2022 startet Kodehode et samarbeid med Fontenehuset Bergen for å tilby et kodekurs på huset – Kodeloftet – et tre måneders kurs som kan regnes som et forkurs til Kodehode.",
+        "alt": "Bilde fra kodeloftet"
+      },
+      "gloede": {
+        "title": "Gløde",
+        "text": "Gløde AS har som formål å fremme arbeidsinkludering, kompetanseformidling og tilhørende virksomhet. Målgruppen er personer som har behov for avklaring, arbeidstrening, opplæring og støtte for å komme ut i ordinært arbeid, eller som trenger varig tilrettelagt arbeid. I 2023 startet Gløde Data og Jobloop et samarbeid for deltakere i AFT. Grunnleggende programmering med JavaScript er et 12-ukers tilbud der deltakerne lærer å utvikle nettsider og apper ved bruk av JavaScript.",
+        "alt": "Logo til gløde"
+      },
+      "teamwork": {
+        "title": "Medarbeiderskap",
+        "text": "Medarbeiderskap er et nytt samarbeidsprosjekt mellom Jobloop og TeamWork OU AS, som jobber for å levere nye konsepter til bedrifter for å bedre miljøet blant ansatte og forhindre sykefravær og gjennomtrekk.",
+        "alt": "Bilde av teamwork"
+      }
+    },
+    "success": {
+      "title": "Inkluderingsarbeid som fungerer i praksis!",
+      "text": "Hvert år samarbeider vi med ulike forskere og bransjeforeninger for å dele innsikt og statistikk med forskningsfeltet. Vi er i kontakt med varierte målgrupper og har et sterkt ønske om å kunne bidra til å utvikle beste praksis i møte med alle. Du kan lese et utvalg av hva forskningen sier om oss her:",
+      "image": {
+        "alt": "KodehodeImage"
+      }
+    },
+    "contact": {
+      "title": "Kontakt oss",
+      "text": "Trenger du hjelp eller ønsker å samarbeide med oss?",
+      "button": {
+        "label": "Kontakt Oss"
+      }
     }
   }
 }
