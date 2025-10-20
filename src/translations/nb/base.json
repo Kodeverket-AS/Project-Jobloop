@@ -12,6 +12,35 @@
       "title": "Hvem er Jobloop?",
       "text": "JobLoop er et raskt voksende selskap drevet av sosiale entreprenører. Vi har et viktig mål: å begrense utenforskap ved å forebygge frafall i skolen, kvalifisere og formidle flere til arbeid. For å få til det samarbeider vi med offentlige aktører, utdanningsinstitusjoner og lokalt arbeidsliv. I 2024 mottok vi FERD-prisen «Årets Sosiale Entreprenør» for vårt arbeid mot skolefrafall.",
       "cta": "Les mer"
+    },
+    "school": {
+      "title": "Tilbud mot frafall fra skole og utdanning",
+      "text": "I våre alternative mestrings- og læringsarenaer jobber vi hver dag for at flere elever skal oppleve mestring, tilhørighet og meningsfulle dager. Vi jobber styrkebasert og tett sammen med elevene for å gi dem muligheten til å utforske og dyrke sine interesser. Vi samarbeider alltid med den enkelte elevs skole og PPT for å bygge bro fra våre alternative læringsarenaer til klasserommet og undervisningen på skolen.",
+      "image": {
+        "alt": "JobbtilbudBilde"
+      },
+      "courses": {
+        "learnWell": {
+          "title": "LearnWell",
+          "text": "Tilrettelagt praksis i kreative digitale fag. For elever i videregående skole alder.",
+          "alt": "Pc-skjerm med headset"
+        },
+        "gamify": {
+          "title": "Gamify",
+          "text": "Motivasjon og læring gjennom spill og gaming. For elever i grunnskolen.",
+          "alt": "2 jenter i Gamify"
+        },
+        "spillbasert": {
+          "title": "Spillbasert",
+          "text": "Gaming og alternativ læring for deg som vil fullføre videregående",
+          "alt": "3 personer involverte i prosjektet"
+        },
+        "loop": {
+          "title": "Loop",
+          "text": "Få relevant arbeidspraksis og erfaring som gir deg flere jobbmuligheter.",
+          "alt": "Tech arbeidsbord"
+        }
+      }
     }
   }
 }
