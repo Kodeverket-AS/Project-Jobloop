@@ -1,0 +1,22 @@
+{
+  "page": {
+    "notFound": {
+      "title": "Page not found",
+      "body": "The page you’re looking for doesn’t exist, may have been moved, or the URL might be mistyped. You can go back, head to the homepage, or try a different language.",
+      "actions": {
+        "goBack": {
+          "text": "Return to the previous page.",
+          "label": "Go back"
+        },
+        "goHome": {
+          "text": "Visit the homepage to continue browsing.",
+          "label": "Go to homepage"
+        },
+        "changeLocale": {
+          "text": "Switch the site language to see if this content exists elsewhere.",
+          "label": "Change language"
+        }
+      }
+    }
+  }
+}
