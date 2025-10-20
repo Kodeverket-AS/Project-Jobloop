@@ -7,7 +7,7 @@ import { Pagination, Autoplay } from 'swiper/modules';
 import { useTranslations } from 'next-intl';
 import Image from 'next/image';
 
-export default function LocationCarousel() {
+export function LocationCarousel() {
   const t = useTranslations('base');
 
   const cities = [

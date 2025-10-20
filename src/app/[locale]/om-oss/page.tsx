@@ -1,6 +1,6 @@
 import Image from 'next/image';
 import { IoInformationCircle } from 'react-icons/io5';
-import LocationCarousel from '@/components/LocationCarousel';
+import { LocationCarousel } from '@/components/feature/about/LocationCarousel';
 import { CooperationSection } from '@/components/feature/about/CooperationSection';
 import { LesMerButton, LinkButtonAnimatedWithIcon } from '@/components/buttons';
 import { TeamMember } from '@/components/ui/cards/TeamMember';
