@@ -7,7 +7,7 @@ export default getRequestConfig(async ({ requestLocale }) => {
   const locale = hasLocale(routing.locales, requested) ? requested : routing.defaultLocale;
 
   // Import required localizations for routes, look into route specific for reducing build times
-  // const metadata = (await import(`../translations/${locale}/metadata.json`)).default;
+  const metadata = (await import(`../translations/${locale}/metadata.json`)).default;
   const base = (await import(`../translations/${locale}/header.json`)).default;
   const header = (await import(`../translations/${locale}/header.json`)).default;
   const cta = (await import(`../translations/${locale}/cta.json`)).default;
@@ -15,6 +15,6 @@ export default getRequestConfig(async ({ requestLocale }) => {
 
   return {
     locale,
-    messages: { base, header, cta, errors },
+    messages: { metadata, base, header, cta, errors },
   };
 });

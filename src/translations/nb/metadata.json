@@ -13,33 +13,16 @@
     "IT-jobb",
     "arbeidsinkludering"
   ],
-  "authors": [{ "name": "Jobloop" }],
-  "robots": "index, follow",
   "openGraph": {
     "title": "Jobloop - Inkluderende arbeidspraksis og effektiv jobbmatching",
     "description": "Jobloop gir tilgang til inkluderende arbeidsmuligheter, praksisplasser og opplæring innen IT og teknologi.",
     "url": "https://www.jobloop.no",
-    "siteName": "Jobloop",
-    "images": [
-      {
-        "url": "/FSE-Vinner2024-063.webp",
-        "width": 1200,
-        "height": 630,
-        "alt": "Jobloop - Inkluderende arbeidspraksis"
-      }
-    ],
-    "locale": "no_NB",
-    "type": "website"
+    "alt": "Jobloop - Inkluderende arbeidspraksis",
+    "locale": "no_NB"
   },
   "twitter": {
     "card": "summary_large_image",
     "title": "Jobloop - Inkluderende arbeidspraksis og effektiv jobbmatching",
-    "description": "Få tilgang til inkluderende arbeidsmuligheter, praksisplasser og yrkesopplæring. Jobloop kobler arbeidsgivere og kandidater effektivt.",
-    "images": ["/FSE-Vinner2024-063.webp"]
-  },
-  "icons": {
-    "icon": "/favicon.ico",
-    "shortcut": "/favicon.ico",
-    "apple": "/apple-touch-icon.png"
+    "description": "Få tilgang til inkluderende arbeidsmuligheter, praksisplasser og yrkesopplæring. Jobloop kobler arbeidsgivere og kandidater effektivt."
   }
 }

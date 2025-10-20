@@ -4,11 +4,10 @@ import { Roboto } from 'next/font/google';
 
 // Globals
 import { type Metadata } from 'next';
-import { type ReactNode } from 'react';
 import { notFound } from 'next/navigation';
 import { routing } from '@/i18n/routing';
-import { hasLocale, NextIntlClientProvider } from 'next-intl';
-import { setRequestLocale } from 'next-intl/server';
+import { hasLocale, Locale, NextIntlClientProvider } from 'next-intl';
+import { getMessages, getTranslations, setRequestLocale } from 'next-intl/server';
 
 // Components
 import { ScrollToTopButton } from '@/components/buttons';
@@ -27,23 +26,61 @@ export const dynamicParams = false;
 /**
  * This function is responsible for generating localized metadata
  */
-export async function generateMetadata(props: Omit<LayoutProps<'/[locale]'>, 'children'>) {
-  const { locale } = await props.params;
+export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }) {
+  const { locale } = await params;
+  const t = await getTranslations({ locale: locale as Locale, namespace: 'metadata' });
 
-  // Load localized metadata based on locale
-  const localizedMetadata = (await import(`@/translations/${locale}/metadata.json`)) as Metadata;
-  return localizedMetadata;
+  // Helper for getting keywords
+  const messages = await getMessages();
+
+  return {
+    title: t('title'),
+    description: t('description'),
+    keywords: messages.metadata.keywords ?? [],
+    authors: [
+      { name: 'Jobloop', url: 'https://www.jobloop.no' },
+      { name: 'Kodeverket', url: 'https://www.kodeverketbergen.no/' },
+    ],
+    robots: 'index, follow',
+    openGraph: {
+      title: t('openGraph.title'),
+      description: t('openGraph.description'),
+      url: t('openGraph.url'),
+      siteName: 'Jobloop',
+      images: [
+        {
+          url: '/FSE-Vinner2024-063.webp',
+          width: 1200,
+          height: 630,
+          alt: t('openGraph.alt'),
+        },
+      ],
+      locale: t('openGraph.locale'),
+      type: 'website',
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title: t('twitter.title'),
+      description: t('twitter.description'),
+      images: ['/FSE-Vinner2024-063.webp'],
+    },
+    icons: {
+      icon: '/favicon.ico',
+      shortcut: '/favicon.ico',
+      apple: '/apple-touch-icon.png',
+    },
+  } satisfies Metadata;
 }
 
 // Configure Roboto font
 const roboto = Roboto({ weight: ['400', '700', '900'], subsets: ['latin'] });
 
-export default async function LocaleLayout({
+export default async function Layout({
   children,
   params,
 }: {
-  children: ReactNode;
-  params: { locale: string };
+  children: React.ReactNode;
+  params: Promise<{ locale: string }>;
 }) {
   // Ensure that the incoming `locale` is valid
   const { locale } = await params;
@@ -53,7 +90,6 @@ export default async function LocaleLayout({
 
   // Enable static rendering
   setRequestLocale(locale);
-
   return (
     <html lang={locale} className={roboto.className}>
       <body>
