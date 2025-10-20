@@ -59,21 +59,21 @@ export default function Footer() {
                             <h3 className='text-2xl font-bold text-jobloop-primary-green'>Sider</h3>
                             <div className='flex flex-col gap-3'>
                                 <Link
-                                    className='text-gray-300 hover:text-jobloop-primary-green transition-colors duration-300 hover:translate-x-1 transform'
+                                    className='text-gray-300 hover:text-jobloop-primary-green transition-colors duration-300  transform'
                                     href='/ansettelser'
                                     aria-label='Gå til underside for deltaker'
                                 >
                                     Ledige stillinger
                                 </Link>
                                 <Link
-                                    className='text-gray-300 hover:text-jobloop-primary-green transition-colors duration-300 hover:translate-x-1 transform'
+                                    className='text-gray-300 hover:text-jobloop-primary-green transition-colors duration-300  transform'
                                     href='/om-oss'
                                     aria-label='Gå til underside for samarbeidspartner'
                                 >
                                     Om Jobloop
                                 </Link>
                                 <Link
-                                    className='text-gray-300 hover:text-jobloop-primary-green transition-colors duration-300 hover:translate-x-1 transform'
+                                    className='text-gray-300 hover:text-jobloop-primary-green transition-colors duration-300  transform'
                                     href='/kontakt'
                                     aria-label='Gå til kontakt side'
                                 >
