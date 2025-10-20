@@ -1,7 +1,7 @@
 import { getTranslations } from 'next-intl/server';
-import { IntroSectionReverse, PartnerProject } from './layout-components';
-import { CoursesCard } from './ui/cards/Courses';
-import { QuoteCard } from './ui/cards/Quotes';
+import { IntroSectionReverse, PartnerProject } from '@/components/layout-components';
+import { CoursesCard } from '@/components/ui/cards/Courses';
+import { QuoteCard } from '@/components/ui/cards/Quotes';
 
 // Images
 import JobbtilbudBilde from '@public/kodehode_gruppe.webp';
