@@ -103,7 +103,7 @@ export function NavbarAlt() {
             <Link
               href='/kontakt'
               aria-label='gå til denne undersiden for å ta kontakt med en av oss'
-              className='px-4 font-semibold text-xl md:portrait:px-2 lg:px-4 text-jobloop-primary-grey md:hover:underline'
+              className='px-4 font-semibold text-xl md:portrait:px-2 lg:px-4  md:hover:underline'
             >
               KONTAKT
             </Link>

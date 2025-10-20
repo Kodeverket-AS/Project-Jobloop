@@ -5,7 +5,18 @@ import { IoCloseSharp } from 'react-icons/io5';
 import { GiHamburgerMenu } from 'react-icons/gi';
 import Link from 'next/link';
 
-const HamburgerMenu = ({ hamFill }: { hamFill: string }) => {
+interface MenuItems {
+  href: string;
+  label: string;
+  aria?: string;
+}
+
+interface MenuProps {
+  links: MenuItems[];
+  hamFill: string;
+}
+
+const HamburgerMenu = ({ hamFill, links }: MenuProps) => {
   const [isOpen, setIsOpen] = useState<boolean>(false);
   const menuRef = useRef<HTMLDivElement>(null);
 
@@ -40,9 +51,7 @@ const HamburgerMenu = ({ hamFill }: { hamFill: string }) => {
       >
         <GiHamburgerMenu
           className={`w-20 h-20 ${
-            hamFill == 'white'
-              ? 'fill-kv-white'
-              : 'fill-jobloop-secondary-green'
+            hamFill == 'white' ? 'fill-kv-white' : 'fill-jobloop-secondary-green'
           }`}
         />
       </button>
@@ -65,48 +74,20 @@ const HamburgerMenu = ({ hamFill }: { hamFill: string }) => {
               } text-kv-black rounded-full transition duration-500 z-50 w-12 h-12`}
             />
           </button>
-
           <ul className='grid gap-8 mt-20'>
-            {/* <Link
-              href="/nyhetsbrev"
-              aria-label="gå til underside og se vårt nyhetsbrev"
-              className="px-8 text-xl font-bold transition-all text-jobloop-secondary-green group w-fit"
-              onClick={(event) => {
-                setIsOpen(false);
-              }}
-            >
-              Nyhetsbrev
-            </Link> */}
-            {/*<Link
-              href="/ansettelser"
-              aria-label="gå til underside og se våre åpne stillinger"
-              className="px-8 text-xl font-bold transition-all text-jobloop-secondary-green group w-fit"
-              onClick={(event) => {
-                setIsOpen(false);
-              }}
-            >
-              Vi ansetter!
-            </Link>*/}
-            <Link
-              href='/om-oss'
-              aria-label='gå til underside og les mer om oss'
-              className='px-8 text-xl font-bold transition-all text-jobloop-secondary-green group w-fit'
-              onClick={() => {
-                setIsOpen(false);
-              }}
-            >
-              Om Oss
-            </Link>
-            <Link
-              href='/kontakt'
-              aria-label='gå til underside og ta kontakt med en av oss'
-              className='px-8 text-xl font-bold transition-all text-jobloop-secondary-green group w-fit'
-              onClick={() => {
-                setIsOpen(false);
-              }}
-            >
-              Kontakt
-            </Link>
+            {links.map(({ label, href, aria }) => (
+              <Link
+                key={label}
+                href={href}
+                aria-label={aria}
+                className='px-8 text-xl font-bold transition-all text-jobloop-secondary-green group w-fit'
+                onClick={() => {
+                  setIsOpen(false);
+                }}
+              >
+                {label}
+              </Link>
+            ))}
           </ul>
         </nav>
       </div>
