@@ -1,5 +1,5 @@
 // Styling
-import '../../assets/global.css';
+import '@/assets/global.css';
 import { Roboto } from 'next/font/google';
 
 // Globals
