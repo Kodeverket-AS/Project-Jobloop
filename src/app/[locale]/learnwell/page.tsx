@@ -17,7 +17,7 @@ export default async function LearnWell({ params }: { params: Promise<{ locale: 
   if (!tiltak) return notFound();
 
   return (
-    <main className='flex flex-col items-center gap-16 w-full max-w-[1536px] mx-auto my-16'>
+    <main className='flex flex-col items-center gap-16 w-full max-w-[1536px] mx-auto my-16 px-4'>
       <HeroSub {...tiltak} />
       <CourseSummary {...tiltak} />
       <LeaderSection leaders={tiltak.courseLeaders} />

@@ -54,7 +54,7 @@ export default async function OmOss() {
   ];
 
   return (
-    <main className='flex flex-col items-center justify-between min-h-screen mt-10 space-y-16 mb-12'>
+    <main className='flex flex-col items-center justify-between min-h-screen mt-10 space-y-16 mb-12 px-4'>
       <section className='container flex flex-col gap-4 '>
         <div className='flex flex-col  gap-6 text-pretty  '>
           <div className='omoss w-full  text-kv-black  mx-auto'>

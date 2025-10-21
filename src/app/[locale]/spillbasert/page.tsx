@@ -18,7 +18,7 @@ export default async function Spillbasert({ params }: { params: Promise<{ locale
   if (!tiltak) return notFound();
 
   return (
-    <main className='flex flex-col my-16 items-center gap-16 w-full max-w-[1536px] mx-auto'>
+    <main className='flex flex-col my-16 items-center gap-16 w-full max-w-[1536px] mx-auto px-4'>
       <HeroSub {...tiltak} />
       <CourseSummary {...tiltak} />
       <Curriculum title={tiltak.title} curriculum={tiltak.curriculum} />

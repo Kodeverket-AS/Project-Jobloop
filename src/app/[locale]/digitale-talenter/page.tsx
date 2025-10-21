@@ -22,7 +22,7 @@ export default async function DigitaleTalenter({
   if (!tiltak) return notFound();
 
   return (
-    <main className='flex flex-col items-center gap-12 w-full max-w-[1536px] my-12 mx-auto'>
+    <main className='flex flex-col items-center gap-12 w-full max-w-[1536px] my-12 mx-auto px-4'>
       <HeroSub {...tiltak} />
       <CourseSummary {...tiltak} />
       <div className='w-full max-w-4xl px-4'>
