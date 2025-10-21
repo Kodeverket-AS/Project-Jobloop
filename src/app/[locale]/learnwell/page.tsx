@@ -3,7 +3,7 @@ import { AvailableLocales } from '@/i18n/routing';
 import { notFound } from 'next/navigation';
 import HeroSub from '@/components/herosub';
 import CourseSummary from '@/components/CourseSummary';
-import LeaderSection from '@/components/LeaderSection';
+import LeaderSection from '@/components/feature/LeaderSection';
 
 export async function generateStaticParams() {
   const result = await getTiltakById({ index: 0 });

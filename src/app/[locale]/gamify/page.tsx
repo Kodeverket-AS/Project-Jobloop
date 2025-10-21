@@ -4,7 +4,7 @@ import { notFound } from 'next/navigation';
 import HeroSub from '@/components/herosub';
 import CourseSummary from '@/components/CourseSummary';
 import Curriculum from '@/components/Curriculum';
-import LeaderSection from '@/components/LeaderSection';
+import LeaderSection from '@/components/feature/LeaderSection';
 import ForSchool from '@/components/ForSchool';
 
 export async function generateStaticParams() {
