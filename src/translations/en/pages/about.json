@@ -10,7 +10,13 @@
       "label": "Contact us"
     },
     "employees": {
-      "title": "Our team at Jobloop"
+      "title": "Our team at Jobloop",
+      "roles": {
+        "ceo": "Managing Director",
+        "course": "Course Instructor",
+        "team": "Team Leader",
+        "market": "Market Developer"
+      }
     },
     "partners": {
       "title": "Our partners",

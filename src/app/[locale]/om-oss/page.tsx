@@ -1,4 +1,5 @@
 import Image from 'next/image';
+import { getTranslations } from 'next-intl/server';
 import { IoInformationCircle } from 'react-icons/io5';
 import { LocationCarousel } from '@/components/feature/about/LocationCarousel';
 import { CooperationSection } from '@/components/feature/about/CooperationSection';
@@ -12,18 +13,17 @@ import Inger from '@public/Inger.jpg';
 import Beate from '@public/Beate.jpg';
 import Oda from '@public/Oda.jpg';
 import Kim from '@public/Kim.jpg';
-import { getTranslations } from 'next-intl/server';
 
 export default async function OmOss() {
   const t = await getTranslations('about');
 
   const teamData = [
-    { name: 'Sina', role: 'Daglig Leder', image: Sina },
-    { name: 'Karl Haakon', role: 'Markedsutvikler', image: Karl },
-    { name: 'Inger Johanne', role: 'Teamleder', image: Inger },
-    { name: 'Beate', role: 'Kursleder', image: Beate },
-    { name: 'Oda Kristin', role: 'Kursleder', image: Oda },
-    { name: 'Kim', role: 'Kursleder', image: Kim },
+    { name: 'Sina', role: t('about.employees.roles.ceo'), image: Sina },
+    { name: 'Karl Haakon', role: t('about.employees.roles.market'), image: Karl },
+    { name: 'Inger Johanne', role: t('about.employees.roles.team'), image: Inger },
+    { name: 'Beate', role: t('about.employees.roles.course'), image: Beate },
+    { name: 'Oda Kristin', role: t('about.employees.roles.course'), image: Oda },
+    { name: 'Kim', role: t('about.employees.roles.course'), image: Kim },
   ];
 
   const partners = [

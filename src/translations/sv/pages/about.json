@@ -10,7 +10,13 @@
       "label": "Kontakta oss"
     },
     "employees": {
-      "title": "Vårt team på Jobloop"
+      "title": "Vårt team på Jobloop",
+      "roles": {
+        "ceo": "Verkställande direktör",
+        "course": "Kursledare",
+        "team": "Teamledare",
+        "market": "Marknadsutvecklare"
+      }
     },
     "partners": {
       "title": "Våra samarbetspartners",

@@ -10,7 +10,13 @@
       "label": "Kontakt Oss"
     },
     "employees": {
-      "title": "Våre ansatte i Jobloop"
+      "title": "Våre ansatte i Jobloop",
+      "roles": {
+        "ceo": "Daglig Leder",
+        "course": "Kursleder",
+        "team": "Teamleder",
+        "market": "Markedsutvikler"
+      }
     },
     "partners": {
       "title": "Våre samarbeidspartnere",
