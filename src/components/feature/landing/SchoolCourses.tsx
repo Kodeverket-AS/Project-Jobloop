@@ -8,6 +8,7 @@ import Learnwell from '@public/learnwell.webp';
 import Gamify from '@public/gamify2.webp';
 import Spillbasert from '@public/spillbasert.webp';
 import Loop from '@public/loop.webp';
+import Ki from '@public/ki.jpg';
 
 export default async function SchoolCourses() {
   const t = await getTranslations('landing');
@@ -41,6 +42,14 @@ export default async function SchoolCourses() {
       alt: t('school.courses.loop.alt'),
       path: '/loop',
     },
+    {
+      title: t('school.courses.ki.title'),
+      text: t('school.courses.ki.text'),
+      image: Ki,
+      alt: t('school.courses.ki.alt'),
+      path: '/ki-kurs',
+      isNew: true,
+    },
   ];
 
   return (
@@ -63,6 +72,7 @@ export default async function SchoolCourses() {
               text={card.text}
               path={card.path}
               alt={card.alt}
+              isNew={card.isNew ?? false}
             />
           ))}
         </div>
