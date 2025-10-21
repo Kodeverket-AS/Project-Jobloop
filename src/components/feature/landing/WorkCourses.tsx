@@ -92,7 +92,7 @@ export default async function WorkCourses() {
       {/* Temporary Quotes Solution */}
       <div className='relative flex flex-col gap-8 px-8 pt-8 pb-12 overflow-hidden border-2 rounded-xl bg-jobloop-primary-orange/5 border-jobloop-primary-orange text-kv-black lg:gap-12'>
         <h2 className='pb-2 mx-auto text-center border-b-4 border-jobloop-primary-orange w-fit'>
-          Hva sier bedriftslederne om oss?
+          {t("landing.work.quotes.title")}
         </h2>
         <div className='flex flex-col gap-8 md:flex-row'>
           {quotes.map((quote, index) => (
