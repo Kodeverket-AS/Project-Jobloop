@@ -62,6 +62,9 @@
     },
     "courseLeaders": {
       "title": "Course leaders"
+    },
+    "curriculum": {
+      "title": "What will you learn in {subject}?"
     }
   }
 }

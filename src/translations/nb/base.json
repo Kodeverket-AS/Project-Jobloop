@@ -62,6 +62,9 @@
     },
     "courseLeaders": {
       "title": "Kursledere"
+    },
+    "curriculum": {
+      "title": "Hva lærer du i {subject}?"
     }
   }
 }
