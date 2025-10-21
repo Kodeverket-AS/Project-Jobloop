@@ -1,16 +1,22 @@
+import { getTiltakById, getTiltakByIdLocalized } from '@/lib/sanity/fetch';
+import { AvailableLocales } from '@/i18n/routing';
+import { notFound } from 'next/navigation';
 import HeroSub from '@/components/herosub';
-import { getData } from '@/lib/GetData';
 
-export default async function Teamwork() {
-  const data = await getData();
-  const teamwork = data.tiltak.at(6);
+export async function generateStaticParams() {
+  const result = await getTiltakById({ index: 6 });
+  return result.map((tiltak) => ({ locale: tiltak.language ?? '' }));
+}
 
-  // todo side mangler innhold?
-  if (!teamwork) return null;
+export default async function Teamwork({ params }: { params: Promise<{ locale: string }> }) {
+  // Check that page exists in Sanity with correct locale
+  const locale = (await params).locale;
+  const tiltak = await getTiltakByIdLocalized({ index: 6, locale: locale as AvailableLocales });
+  if (!tiltak) return notFound();
 
   return (
     <main className='flex flex-col items-center gap-16 w-full max-w-[1536px] my-16 mx-auto'>
-      <HeroSub {...teamwork} />
+      <HeroSub {...tiltak} />
     </main>
   );
 }
