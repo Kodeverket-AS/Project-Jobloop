@@ -11,7 +11,6 @@ import { getMessages, getTranslations, setRequestLocale } from 'next-intl/server
 
 // Components
 import { ScrollToTopButton } from '@/components/buttons';
-import Navigation from '@/components/navigation/Navigation';
 import Footer from '@/components/navigation/Footer';
 import { Header } from '@/components/navigation/Header';
 
