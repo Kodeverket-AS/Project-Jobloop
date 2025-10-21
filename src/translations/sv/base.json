@@ -65,6 +65,10 @@
     },
     "curriculum": {
       "title": "Hva lærer du i {subject}?"
+    },
+    "school": {
+      "title": "For { target }",
+      "school": "Skole"
     }
   }
 }

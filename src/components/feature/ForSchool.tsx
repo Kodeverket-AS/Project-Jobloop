@@ -1,20 +1,11 @@
-'use client';
-
 import Image from 'next/image';
 import { PortableText } from '@portabletext/react';
 import { Tiltak } from '@/types/sanity/sanity.types';
 import { urlFor } from '@/lib/Sanity';
+import { getTranslations } from 'next-intl/server';
 
-interface ForSchoolProps extends Pick<Tiltak, 'image4' | 'school'> {
-  /** Todo: trenger dette å være en prop? */
-  situation: string;
-}
-
-export default function ForSchool({
-  situation,
-  image4,
-  school,
-}: ForSchoolProps) {
+export default async function ForSchool({ image4, school }: Pick<Tiltak, 'image4' | 'school'>) {
+  const t = await getTranslations('base.components.school');
   return (
     <div className='w-full max-w-[1536px] mx-auto px-4'>
       <div className='flex flex-col lg:flex-row items-center gap-8 lg:gap-12 bg-linear-to-br from-jobloop-primary-green/20 via-white to-jobloop-primary-green/10 rounded-2xl p-8 shadow-lg border border-jobloop-primary-green/20'>
@@ -33,7 +24,7 @@ export default function ForSchool({
         <div className='w-full lg:w-1/2 space-y-6'>
           <div>
             <h2 className='text-2xl md:text-3xl font-bold text-kv-black pb-3 border-b-2 border-jobloop-primary-green w-fit'>
-              {'For ' + situation}
+              {t('title', { target: t('school') })}
             </h2>
           </div>
           <div className='prose prose-lg max-w-none text-gray-700 leading-relaxed'>

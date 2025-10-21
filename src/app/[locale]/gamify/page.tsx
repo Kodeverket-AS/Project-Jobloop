@@ -5,7 +5,8 @@ import HeroSub from '@/components/herosub';
 import CourseSummary from '@/components/CourseSummary';
 import Curriculum from '@/components/Curriculum';
 import LeaderSection from '@/components/feature/LeaderSection';
-import ForSchool from '@/components/ForSchool';
+import ForSchool from '@/components/feature/ForSchool';
+import { getTranslations } from 'next-intl/server';
 
 export async function generateStaticParams() {
   const result = await getTiltakById({ index: 1 });
@@ -18,13 +19,15 @@ export default async function Gamify({ params }: { params: Promise<{ locale: str
   const tiltak = await getTiltakByIdLocalized({ index: 1, locale: locale as AvailableLocales });
   if (!tiltak) return notFound();
 
+  const t = await getTranslations("dictionary")
+
   return (
     <main className='flex flex-col items-center gap-16 w-full max-w-[1536px] mx-auto my-16'>
       <HeroSub {...tiltak} />
       <CourseSummary {...tiltak} />
       <Curriculum title={tiltak.title} curriculum={tiltak.curriculum} />
       <LeaderSection leaders={tiltak.courseLeaders} />
-      <ForSchool situation='skole' {...tiltak} />
+      <ForSchool {...tiltak} />
     </main>
   );
 }
