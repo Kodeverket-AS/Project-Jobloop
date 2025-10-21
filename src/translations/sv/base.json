@@ -97,6 +97,7 @@
       }
     },
     "collaborations": {
+      "title": "Samarbetsprojekt",
       "kodeloftet": {
         "title": "Kodeloftet",
         "text": "Fontenehusen är frivilliga arbetsgemenskaper för personer som har eller har haft psykiska hälsoutmaningar. År 2022 inledde Kodehode ett samarbete med Fontenehuset Bergen för att erbjuda en kurs i programmering – Kodeloftet – en tre månaders kurs som fungerar som en förberedande utbildning till Kodehode.",

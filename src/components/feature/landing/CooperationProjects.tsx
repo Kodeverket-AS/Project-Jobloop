@@ -35,7 +35,9 @@ export default async function CooperationProjects() {
   ];
   return (
     <>
-      <h2 className='pb-2 border-b-4 border-jobloop-primary-green w-fit'>Samarbeidsprosjekter</h2>
+      <h2 className='pb-2 border-b-4 border-jobloop-primary-green w-fit'>
+        {t("landing.collaborations.title")}
+      </h2>
       {partners.map((partner, index) =>
         index % 2 === 0 ? (
           <PartnerProject
