@@ -14,31 +14,31 @@ export default async function SchoolCourses() {
 
   const courses = [
     {
-      title: t('landing.school.courses.learnWell.title'),
-      text: t('landing.school.courses.learnWell.text'),
+      title: t('school.courses.learnWell.title'),
+      text: t('school.courses.learnWell.text'),
       image: Learnwell,
-      alt: t('landing.school.courses.learnWell.alt'),
+      alt: t('school.courses.learnWell.alt'),
       path: '/learnwell',
     },
     {
-      title: t('landing.school.courses.gamify.title'),
-      text: t('landing.school.courses.gamify.text'),
+      title: t('school.courses.gamify.title'),
+      text: t('school.courses.gamify.text'),
       image: Gamify,
-      alt: t('landing.school.courses.gamify.alt'),
+      alt: t('school.courses.gamify.alt'),
       path: '/gamify',
     },
     {
-      title: t('landing.school.courses.spillbasert.title'),
-      text: t('landing.school.courses.spillbasert.text'),
+      title: t('school.courses.spillbasert.title'),
+      text: t('school.courses.spillbasert.text'),
       image: Spillbasert,
-      alt: t('landing.school.courses.spillbasert.alt'),
+      alt: t('school.courses.spillbasert.alt'),
       path: '/spillbasert',
     },
     {
-      title: t('landing.school.courses.loop.title'),
-      text: t('landing.school.courses.loop.text'),
+      title: t('school.courses.loop.title'),
+      text: t('school.courses.loop.text'),
       image: Loop,
-      alt: t('landing.school.courses.loop.alt'),
+      alt: t('school.courses.loop.alt'),
       path: '/loop',
     },
   ];
@@ -48,11 +48,11 @@ export default async function SchoolCourses() {
       <div className='space-y-16'>
         <IntroSectionReverse
           image={Læringstilbud}
-          title={t('landing.school.title')}
-          text={t('landing.school.text')}
+          title={t('school.title')}
+          text={t('school.text')}
           path='/laringstilbud'
           isButton={false}
-          alt={t('landing.school.image.alt')}
+          alt={t('school.image.alt')}
         />
         <div className='grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-4 auto-rows-fr'>
           {courses.map((card, index) => (

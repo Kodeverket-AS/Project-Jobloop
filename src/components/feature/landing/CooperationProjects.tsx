@@ -11,32 +11,32 @@ export default async function CooperationProjects() {
   const partners = [
     {
       image: Kodeloftet,
-      title: t('landing.collaborations.kodeloftet.title'),
-      text: t('landing.collaborations.kodeloftet.text'),
-      alt: t('landing.collaborations.kodeloftet.alt'),
+      title: t('collaborations.kodeloftet.title'),
+      text: t('collaborations.kodeloftet.text'),
+      alt: t('collaborations.kodeloftet.alt'),
       path: 'https://www.fontenehusetbergen.no/',
       btnText: 'Fontenehusetbergen.no',
     },
     {
       image: Gløde,
-      title: t('landing.collaborations.gloede.title'),
-      text: t('landing.collaborations.gloede.text'),
-      alt: t('landing.collaborations.gloede.alt'),
+      title: t('collaborations.gloede.title'),
+      text: t('collaborations.gloede.text'),
+      alt: t('collaborations.gloede.alt'),
       path: 'https://www.gløde.no/',
       btnText: 'Gløde.no',
     },
     {
       image: Teamwork,
-      title: t('landing.collaborations.teamwork.title'),
-      text: t('landing.collaborations.teamwork.text'),
-      alt: t('landing.collaborations.teamwork.alt'),
+      title: t('collaborations.teamwork.title'),
+      text: t('collaborations.teamwork.text'),
+      alt: t('collaborations.teamwork.alt'),
       path: '/teamwork',
     },
   ];
   return (
     <>
       <h2 className='pb-2 border-b-4 border-jobloop-primary-green w-fit'>
-        {t("landing.collaborations.title")}
+        {t("collaborations.title")}
       </h2>
       {partners.map((partner, index) =>
         index % 2 === 0 ? (

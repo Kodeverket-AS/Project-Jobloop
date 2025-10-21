@@ -17,17 +17,17 @@ export default async function JobloopSuccess() {
             width={1500}
             height={500}
             className='object-cover'
-            alt={t('landing.success.image.alt')}
+            alt={t('success.image.alt')}
           />
         </div>
       </div>
       <div className='w-full md:w-1/2 space-y-6'>
         <div>
           <h2 className='text-2xl md:text-3xl font-bold text-kv-black pb-3 border-b-2 border-jobloop-primary-orange w-fit'>
-            {t('landing.success.title')}
+            {t('success.title')}
           </h2>
         </div>
-        <p className='text-lg leading-relaxed text-gray-700'>{t('landing.success.text')}</p>
+        <p className='text-lg leading-relaxed text-gray-700'>{t('success.text')}</p>
         <div className='space-y-4 pt-4'>
           <ExternalLinkButton
             Path='https://www.fafo.no/zoo-publikasjoner/fafo-rapporter/sysselsetting-av-unge-med-nedsatt-funksjonsevne-3'

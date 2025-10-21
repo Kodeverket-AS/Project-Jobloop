@@ -13,8 +13,8 @@ export default async function LandingIntro() {
       imageLinkPath='https://www.linkedin.com/posts/sina-erichsen-28403998_jobloop-finalist-activity-7148672163053580289-81Yo/?originalSubdomain=no'
       isButton
       path='/om-oss'
-      title={t('landing.intro.title')}
-      text={t('landing.intro.text')}
+      title={t('intro.title')}
+      text={t('intro.text')}
     />
   );
 }
