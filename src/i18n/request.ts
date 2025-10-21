@@ -9,12 +9,11 @@ export default getRequestConfig(async ({ requestLocale }) => {
   // Import required localizations for routes, look into route specific for reducing build times
   const metadata = (await import(`../translations/${locale}/metadata.json`)).default;
   const base = (await import(`../translations/${locale}/base.json`)).default;
-  const header = (await import(`../translations/${locale}/header.json`)).default;
   const cta = (await import(`../translations/${locale}/cta.json`)).default;
   const errors = (await import(`../translations/${locale}/errors.json`)).default;
 
   return {
     locale,
-    messages: { metadata, base, header, cta, errors },
+    messages: { metadata, base, cta, errors },
   };
 });
