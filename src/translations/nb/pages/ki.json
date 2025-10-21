@@ -1,0 +1,43 @@
+{
+  "hero": {
+    "title": "Nytt kurstilbud fra",
+    "subtitle": "Digital selvtillit og<br></br>KI-Kompetanse for<br></br>deg som er over 50 !",
+    "questions": "Spørsmål eller påmelding"
+  },
+  "description": {
+    "image": {
+      "alt": "Kunstig intelligens og teknologi"
+    },
+    "paragraph1": "Mange dyktige, erfarne medarbeidere opplever at teknologien løper litt fortere enn komfortsonen. Samtidig sitter de på verdifull erfaring som virkelig kan skinne - hvis de får riktig digital verktøykasse.",
+    "paragraph2": "I stedet for enda en fruktkurv, gi seniorene på laget noe de faktisk vil takke deg for: trygghet i møte med KI, smart digitale verktøy og en følelse av å være med - ikke hengende etter."
+  },
+  "course": {
+    "title": "Vi tilbyr et praktisk og motiverende kursløp",
+    "duration": {
+      "title": "Varighet",
+      "text": "1 hel dag i uken, over 12 uker (oppstart uke 47 inkludert 2 uker juleferie = <span>60 timer med undervisning</span>)"
+    },
+    "content": {
+      "title": "Innhold",
+      "text": "Digital oppfriskning + praktisk bruk av KI i arbeidshverdagen (ingen tech-prat - bare «hvordan gjør jeg dette i praksis?»)"
+    },
+    "format": {
+      "title": "Format for bedrifter",
+      "text": "Eget kurs for opptil 8 deltakere - <span>45.000 kr</span>"
+    },
+    "signup": {
+      "title": "Åpen påmelding",
+      "text": "<span>8.500 kr</span>  per deltaker"
+    },
+    "location": {
+      "title": "Sted",
+      "text": "Hos dere, i våre lokaler, eller digitalt (med kaffe og tålmodighet inkludert)"
+    }
+  },
+  "cta": {
+    "title": "Har du spørsmål?",
+    "text": "Vi er her for å hjelpe deg med å finne det perfekte kurset for din bedrift eller deg selv.",
+    "email": "Send oss en e-post",
+    "contact": "Besøk vår kontakt side"
+  }
+}

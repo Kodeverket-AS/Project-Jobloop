@@ -1,0 +1,43 @@
+{
+  "hero": {
+    "title": "Nytt kursutbud från",
+    "subtitle": "Digital självsäkerhet och<br></br>AI-kompetens för<br></br>dig som är över 50!",
+    "questions": "Frågor eller anmälan"
+  },
+  "description": {
+    "image": {
+      "alt": "Artificiell intelligens och teknik"
+    },
+    "paragraph1": "Många skickliga och erfarna medarbetare upplever att tekniken går lite snabbare än deras bekvämlighetszon. Samtidigt sitter de på värdefull erfarenhet som verkligen kan glänsa – om de får rätt digitala verktygslåda.",
+    "paragraph2": "Istället för ännu en fruktkorg, ge seniorerna i teamet något de faktiskt kommer att tacka dig för: trygghet i mötet med AI, smarta digitala verktyg och en känsla av att vara med – inte hamna på efterkälken."
+  },
+  "course": {
+    "title": "Vi erbjuder ett praktiskt och motiverande kursupplägg",
+    "duration": {
+      "title": "Varaktighet",
+      "text": "1 heldag per vecka under 12 veckor (start vecka 47 inklusive 2 veckors julledighet = <span>60 timmars undervisning</span>)"
+    },
+    "content": {
+      "title": "Innehåll",
+      "text": "Digital uppfräschning + praktisk användning av AI i arbetsvardagen (ingen teknisk jargong – bara ”hur gör jag detta i praktiken?”)"
+    },
+    "format": {
+      "title": "Format för företag",
+      "text": "Eget kursupplägg för upp till 8 deltagare – <span>45 000 kr</span>"
+    },
+    "signup": {
+      "title": "Öppen anmälan",
+      "text": "<span>8 500 kr</span> per deltagare"
+    },
+    "location": {
+      "title": "Plats",
+      "text": "Hos er, i våra lokaler eller digitalt (kaffe och tålamod ingår)"
+    }
+  },
+  "cta": {
+    "title": "Har du frågor?",
+    "text": "Vi finns här för att hjälpa dig hitta det perfekta kursen för ditt företag eller för dig själv.",
+    "email": "Skicka oss ett mejl",
+    "contact": "Besök vår kontaktsida"
+  }
+}
