@@ -17,7 +17,7 @@ interface IntroSection {
   imageLinkPath: string;
 }
 
-export const IntroSection = ({
+export function IntroSection({
   title,
   text,
   image,
@@ -28,7 +28,7 @@ export const IntroSection = ({
   btnText,
   ifImageLink,
   imageLinkPath,
-}: IntroSection) => {
+}: IntroSection) {
   const t = useTranslations('dictionary');
   const t1 = useTranslations('landing');
 
@@ -80,4 +80,4 @@ export const IntroSection = ({
       </div>
     </div>
   );
-};
+}

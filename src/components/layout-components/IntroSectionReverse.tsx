@@ -2,6 +2,7 @@
 
 import Image, { type StaticImageData } from 'next/image';
 import ButtonCTA from './ButtonCTA';
+import { useTranslations } from 'next-intl';
 
 interface IntroSection {
   title: string;
@@ -14,7 +15,7 @@ interface IntroSection {
   btnText?: string;
 }
 
-export const IntroSectionReverse = ({
+export function IntroSectionReverse({
   title,
   text,
   image,
@@ -23,21 +24,20 @@ export const IntroSectionReverse = ({
   isButton,
   btnVariant,
   btnText,
-}: IntroSection) => {
+}: IntroSection) {
+  const t = useTranslations('dictionary');
   return (
     <div className='flex flex-col-reverse gap-6  lg:flex-row lg:gap-12'>
       <div className='flex flex-col gap-4 w-full lg:w-1/2 justify-center'>
         <h2 className='text-kv-black text-xl md:text-2xl lg:text-3xl border-b-2 md:border-b-4 pb-2 border-jobloop-primary-green w-fit'>
           {title}
         </h2>
-        <p className='text-gray-600 text-base xl:leading-relaxed lg:text-xl'>
-          {text}
-        </p>
+        <p className='text-gray-600 text-base xl:leading-relaxed lg:text-xl'>{text}</p>
         {isButton && (
           <ButtonCTA
             isButton={true}
             Path={path}
-            Text={btnText ?? 'Les mer'}
+            Text={btnText ?? t('readMore')}
             btnVariant={btnVariant}
           />
         )}
@@ -53,4 +53,4 @@ export const IntroSectionReverse = ({
       </div>
     </div>
   );
-};
+}
