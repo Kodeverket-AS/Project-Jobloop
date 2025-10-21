@@ -1,11 +1,11 @@
 'use client';
 
 import Link from 'next/link';
-import LocaleMenu from '../ui/menu/LocaleMenu';
-import HamburgerMenu from './Hamburger';
 import Image from 'next/image';
-import { usePathname } from 'next/navigation';
 import { useTranslations } from 'next-intl';
+import { usePathname } from '@/i18n/navigation';
+import HamburgerMenu from './Hamburger';
+import LocaleMenu from '../ui/menu/LocaleMenu';
 
 export function Header() {
   // Apply specific colors on homepage... /shrug
