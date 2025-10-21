@@ -1,15 +1,17 @@
 import Image from 'next/image';
+import { SocialMediaCard } from '@/components/ui/cards/socialMediaCard';
+
+// Icons
 import { FaLinkedin } from 'react-icons/fa';
 import { FaFacebook } from 'react-icons/fa';
-import { SocialMediaCard } from '@/components/socialMediaCard';
-
-// todo convert to icon?
 import Instagram from '@public/Instagram.svg';
+import { getTranslations } from 'next-intl/server';
 
-export default function Nyhetsbrev() {
+export default async function Nyhetsbrev() {
+  const t = await getTranslations('dictionary');
   return (
     <main className='w-full max-w-[1536px] flex flex-col items-center justify-center p-0 pb-24 pt-20 lg:pt-0'>
-      <h1 className='pb-12 text-jobloop-primary-grey'>Sosiale medier</h1>
+      <h1 className='pb-12 text-jobloop-primary-grey'>{t('socialMedia')}</h1>
       <div className='w-full flex flex-col lg:flex-row gap-10 p-16 justify-center'>
         <SocialMediaCard
           text='Facebook'
