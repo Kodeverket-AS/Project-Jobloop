@@ -39,6 +39,11 @@
         "title": "Loop",
         "text": "Få relevant arbetslivserfarenhet och bygg fler jobbmöjligheter.",
         "alt": "Teknisk arbetsstation"
+      },
+      "ki": {
+        "title": "AI-kurs",
+        "text": "Lär dig om artificiell intelligens och hur den kan användas i arbetslivet.",
+        "alt": "AI-kursledare"
       }
     }
   },

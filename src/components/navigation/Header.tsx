@@ -11,6 +11,7 @@ export function Header() {
   // Apply specific colors on homepage... /shrug
   const pathname = usePathname();
   const isLanding = pathname === '/';
+  const isKiKurs = pathname === '/ki-kurs';
 
   const t = useTranslations('base.header');
   const links = [
@@ -36,7 +37,9 @@ export function Header() {
     },
   ];
   return (
-    <header className={`${isLanding ? 'absolute top-0 z-50' : ''} w-full px-5 lg:px-7`}>
+    <header
+      className={`${isLanding ? 'absolute top-0 z-50' : ''} w-full px-5 lg:px-7 ${isKiKurs ? 'bg-jobloop-primary-green/20' : ''}`}
+    >
       <div className='flex items-center justify-between max-w-[1536px] mx-auto'>
         <div className='p-4'>
           <Link href='/' aria-label='Gå til landingssiden'>

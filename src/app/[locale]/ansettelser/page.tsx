@@ -4,7 +4,7 @@ import { ExternalLinkButton } from '@/components/buttons';
 // todo: Is this page in use?
 export default function Ansettelser() {
   return (
-    <main className='flex flex-col items-center gap-16 bg-gray-100 max-w-[1536px] mx-auto my-12'>
+    <main className='flex flex-col items-center gap-16 bg-gray-100 max-w-[1536px] mx-auto my-12 px-4'>
       <div className='relative bg-white p-8 rounded-lg shadow-md'>
         <div className='flex justify-center mb-6'>
           <Image

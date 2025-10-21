@@ -18,7 +18,7 @@ export default async function GrunnleggendeIT({ params }: { params: Promise<{ lo
   if (!tiltak) return notFound();
 
   return (
-    <main className='flex flex-col items-center gap-16 w-full max-w-[1536px] mx-auto my-16'>
+    <main className='flex flex-col items-center gap-16 w-full max-w-[1536px] mx-auto my-16 px-4'>
       <HeroSub {...tiltak} />
       <CourseSummary {...tiltak} />
       <Curriculum title={'Grunnleggende IT'} curriculum={tiltak.curriculum} />

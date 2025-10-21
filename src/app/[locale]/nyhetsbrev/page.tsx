@@ -10,7 +10,7 @@ import { getTranslations } from 'next-intl/server';
 export default async function Nyhetsbrev() {
   const t = await getTranslations('dictionary');
   return (
-    <main className='w-full max-w-[1536px] flex flex-col items-center justify-center p-0 pb-24 pt-20 lg:pt-0'>
+    <main className='w-full max-w-[1536px] flex flex-col items-center justify-center p-0 pb-24 pt-20 lg:pt-0  px-4'>
       <h1 className='pb-12 text-jobloop-primary-grey'>{t('socialMedia')}</h1>
       <div className='w-full flex flex-col lg:flex-row gap-10 p-16 justify-center'>
         <SocialMediaCard

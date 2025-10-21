@@ -15,7 +15,7 @@ export default async function Teamwork({ params }: { params: Promise<{ locale: s
   if (!tiltak) return notFound();
 
   return (
-    <main className='flex flex-col items-center gap-16 w-full max-w-[1536px] my-16 mx-auto'>
+    <main className='flex flex-col items-center gap-16 w-full max-w-[1536px] my-16 mx-auto px-4'>
       <HeroSub {...tiltak} />
     </main>
   );
