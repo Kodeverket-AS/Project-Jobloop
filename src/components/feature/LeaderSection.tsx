@@ -1,25 +1,20 @@
-'use client';
-
-import type { Tiltak } from '@/types/sanity/sanity.types';
+import { type Tiltak } from '@/types/sanity/sanity.types';
 import Image from 'next/image';
 import { PortableText } from '@portabletext/react';
 import { urlFor } from '@/lib/Sanity';
+import { getTranslations } from 'next-intl/server';
 
-export default function LeaderSection({
-  leaders,
-}: {
-  leaders: Tiltak['courseLeaders'];
-}) {
+export default async function LeaderSection({ leaders }: { leaders: Tiltak['courseLeaders'] }) {
   if (!leaders || leaders.length === 0) {
     return null;
   }
 
+  const t = await getTranslations('base.components.courseLeaders');
+
   return (
     <div className='w-full max-w-[1536px] mx-auto px-4 space-y-8'>
       <div className='text-center mb-12'>
-        <h2 className='text-kv-black text-2xl md:text-3xl font-bold mb-4'>
-          Kursledere
-        </h2>
+        <h2 className='text-kv-black text-2xl md:text-3xl font-bold mb-4'>{t('title')}</h2>
         <div className='w-24 h-1 bg-jobloop-primary-green mx-auto'></div>
       </div>
       {leaders.map((courseLeader, index) => (
@@ -39,9 +34,7 @@ export default function LeaderSection({
                     }
                     width={400}
                     height={400}
-                    alt={
-                      courseLeader.image?.alt || `Bilde av ${courseLeader.name}`
-                    }
+                    alt={courseLeader.image?.alt || `Bilde av ${courseLeader.name}`}
                     className='object-cover w-64 h-64 lg:w-80 lg:h-80 group-hover:scale-105 transition-transform duration-300'
                   />
                 ) : (
@@ -57,9 +50,7 @@ export default function LeaderSection({
                             : ''}
                         </span>
                       </div>
-                      <p className='text-sm text-gray-600 font-medium'>
-                        {courseLeader.name}
-                      </p>
+                      <p className='text-sm text-gray-600 font-medium'>{courseLeader.name}</p>
                     </div>
                   </div>
                 )}

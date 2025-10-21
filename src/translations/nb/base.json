@@ -59,6 +59,9 @@
       "duration": "Tidsplan",
       "format": "Undervisningsform",
       "location": "Sted"
+    },
+    "courseLeaders": {
+      "title": "Kursledere"
     }
   }
 }

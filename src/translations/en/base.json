@@ -59,6 +59,9 @@
       "duration": "Duration",
       "format": "Format",
       "location": "Location"
+    },
+    "courseLeaders": {
+      "title": "Course leaders"
     }
   }
 }
