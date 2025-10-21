@@ -1,13 +1,16 @@
 'use client';
 import Link from 'next/link';
 import Image from 'next/image';
-import HamburgerMenu from './Hamburger';
+// import HamburgerMenu from './Hamburger';
 
 //Nye logoer importert her. De er nå svg filer, så de kan skaleres uten å miste kvalitet.
 import JobloopFarge from '../../../public/JobloopFarge.svg';
 import logoJobloopHvit from '../../../public/logoJobloopHvit.svg';
 import LocaleMenu from '../ui/menu/LocaleMenu';
 
+/**
+ * @deprecated This function was used as our navbar, but is not used any more. See {@link ./Header.tsx}
+ */
 export default function Navbar() {
   return (
     <nav className='absolute top-0 z-50 w-full px-5 lg:px-7'>
@@ -54,15 +57,18 @@ export default function Navbar() {
             </Link>
             <LocaleMenu />
           </div>
-          <div className='px-4'>
+          {/* <div className='px-4'>
             <HamburgerMenu hamFill='white' />
-          </div>
+          </div> */}
         </div>
       </div>
     </nav>
   );
 }
 
+/**
+ * @deprecated This function was used as our navbar, but is not used any more. See {@link ./Header.tsx}
+ */
 export function NavbarAlt() {
   return (
     <nav className='w-full px-5 '>
@@ -109,9 +115,9 @@ export function NavbarAlt() {
             </Link>
             <LocaleMenu />
           </div>
-          <div className='px-4'>
+          {/* <div className='px-4'>
             <HamburgerMenu hamFill='colour' />
-          </div>
+          </div> */}
         </div>
       </div>
     </nav>
