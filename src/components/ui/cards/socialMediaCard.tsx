@@ -1,5 +1,6 @@
 'use client';
 
+import { useTranslations } from 'next-intl';
 import type { ReactNode } from 'react';
 
 interface SocialMediaCardProps {
@@ -9,6 +10,7 @@ interface SocialMediaCardProps {
 }
 
 export function SocialMediaCard({ text, link, icon }: SocialMediaCardProps) {
+  const t = useTranslations('dictionary');
   const handleClick = () => {
     window.location.href = link;
   };
@@ -19,11 +21,8 @@ export function SocialMediaCard({ text, link, icon }: SocialMediaCardProps) {
         <div>{icon}</div>
         <div className='flex flex-col'>
           <h3>{text}</h3>
-          <p
-            onClick={() => handleClick}
-            className='hover:text-jobloop-secondary-green'
-          >
-            Se mer
+          <p onClick={() => handleClick} className='hover:text-jobloop-secondary-green'>
+            {t('readMore')}
           </p>
         </div>
       </div>
