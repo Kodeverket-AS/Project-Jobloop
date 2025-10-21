@@ -1,16 +1,16 @@
-'use client';
-
 import type { Tiltak } from '@/types/sanity/sanity.types';
 import Image from 'next/image';
 import { urlFor } from '@/lib/Sanity';
 import { PortableText } from '@portabletext/react';
 import { LinkButtonAnimatedWithIcon } from '@/components/buttons';
+import { getTranslations } from 'next-intl/server';
 
-export default function HeroSub({
+export default async function HeroSub({
   heading,
   image,
   introtext,
 }: Pick<Tiltak, 'image' | 'introtext' | 'heading'>) {
+  const t = await getTranslations("dictionary")
   return (
     <div className='flex flex-col gap-6  lg:flex-row  rounded-xl'>
       <div className='w-full lg:w-1/2 flex items-center'>
@@ -34,7 +34,7 @@ export default function HeroSub({
           )}
         </div>
         <div>
-          <LinkButtonAnimatedWithIcon Path='/kontakt' Text={'Kontakt Oss'} />
+          <LinkButtonAnimatedWithIcon Path='/kontakt' Text={t("contactUs")} />
         </div>
       </div>
     </div>

@@ -49,5 +49,16 @@
       "clients": "Uppdragsgivare"
     },
     "copyright": "Jobloop. Alla rättigheter förbehållna."
+  },
+  "components": {
+    "course": {
+      "targetGroup": "Hvem passer { target } for?",
+      "title": "Course details",
+      "description": "Innhold og rammer for kurset",
+      "demographic": "Målgruppe",
+      "duration": "Tidsplan",
+      "format": "Undervisningsform",
+      "location": "Sted"
+    }
   }
 }

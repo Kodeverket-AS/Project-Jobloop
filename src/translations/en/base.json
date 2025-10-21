@@ -49,5 +49,16 @@
       "clients": "Clients"
     },
     "copyright": "Jobloop. All rights reserved."
+  },
+  "components": {
+    "course": {
+      "targetGroup": "Who is { target } for?",
+      "title": "Course details",
+      "description": "Innhold og rammer for kurset",
+      "demographic": "Demographic",
+      "duration": "Duration",
+      "format": "Format",
+      "location": "Location"
+    }
   }
 }
