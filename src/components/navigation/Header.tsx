@@ -12,7 +12,7 @@ export function Header() {
   const pathname = usePathname();
   const isLanding = pathname === '/';
 
-  const t = useTranslations('cta');
+  const t = useTranslations('base.header');
   const links = [
     /* {
       href: '/nyhetsbrev',

@@ -1,16 +1,3 @@
 {
-  "navigation": {
-    "index": "Home",
-    "about": {
-      "label": "About Us",
-      "aria": "gå til denne undersiden for å lese mer om oss"
-    },
-    "contact": {
-      "label": "Contact",
-      "aria": "gå til denne undersiden for å ta kontakt med en av oss"
-    }
-  },
-  "localeSwitcher": {
-    "locales": "{locale, select, nb {Norwegian} sv {Swedish} en {English} other {Unknown}}"
-  }
+ 
 }

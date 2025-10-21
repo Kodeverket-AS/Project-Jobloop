@@ -1,4 +1,20 @@
 {
+  "header": {
+    "navigation": {
+      "index": "Hjem",
+      "about": {
+        "label": "Om Oss",
+        "aria": "gå til denne undersiden for å lese mer om oss"
+      },
+      "contact": {
+        "label": "Kontakt",
+        "aria": "gå til denne undersiden for å ta kontakt med en av oss"
+      }
+    },
+    "localeSwitcher": {
+      "locales": "{locale, select, nb {Norska} sv {Svenska} en {Engelska} other {Okänd}}"
+    }
+  },
   "footer": {
     "branding": {
       "text": "Vi hjälper dig att hitta ditt drömjobb genom innovativa kurser och personlig vägledning."

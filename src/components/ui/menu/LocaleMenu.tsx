@@ -4,7 +4,7 @@ import { LocaleMenuSelect } from './LocaleMenuSelect';
 
 export default function LocaleMenu() {
   const locale = useLocale();
-  const t = useTranslations("cta.localeSwitcher");
+  const t = useTranslations("base.header.localeSwitcher");
 
   return (
     <LocaleMenuSelect defaultValue={locale}>
