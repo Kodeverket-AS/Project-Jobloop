@@ -8,7 +8,7 @@ import { useTranslations } from 'next-intl';
 import Image from 'next/image';
 
 export function LocationCarousel() {
-  const t = useTranslations('base');
+  const t = useTranslations('about');
 
   const cities = [
     { name: 'Bergen', src: '/Bergen.webp' },
@@ -25,7 +25,9 @@ export function LocationCarousel() {
   return (
     <section className=' w-full max-w-[1536px] mx-auto py-16 bg-linear-to-br from-jobloop-primary-green/50 via-white to-jobloop-primary-orange/50 rounded-xl'>
       <div className='container mx-auto px-4 text-center'>
-        <h2 className='text-2xl md:text-3xl font-bold mb-4 text-kv-black'>{t("about.locations.title")}</h2>
+        <h2 className='text-2xl md:text-3xl font-bold mb-4 text-kv-black'>
+          {t('about.locations.title')}
+        </h2>
         <span className='block w-60 h-1 bg-jobloop-primary-orange mt-2 mb-8 mx-auto'></span>
 
         <div className='relative max-w-7xl mx-auto'>

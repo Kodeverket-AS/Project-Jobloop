@@ -13,9 +13,10 @@ export default getRequestConfig(async ({ requestLocale }) => {
 
   // Import required localizations for routes, look into route specific for reducing build times
   const landing = (await import(`../translations/${locale}/pages/landing.json`)).default;
+  const about = (await import(`../translations/${locale}/pages/about.json`)).default;
 
   return {
     locale,
-    messages: { landing, metadata, base, cta, errors },
+    messages: { metadata, base, cta, errors, landing, about },
   };
 });

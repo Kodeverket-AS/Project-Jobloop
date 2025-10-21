@@ -8,7 +8,7 @@ import { useTranslations } from 'next-intl';
 export function CooperationSection() {
   const [photosAnimated, setPhotosAnimated] = useState(false);
 
-  const t = useTranslations('base');
+  const t = useTranslations('about');
 
   useEffect(() => {
     const observer = new IntersectionObserver(

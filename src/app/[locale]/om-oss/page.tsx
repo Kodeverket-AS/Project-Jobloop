@@ -15,7 +15,7 @@ import Kim from '@public/Kim.jpg';
 import { getTranslations } from 'next-intl/server';
 
 export default async function OmOss() {
-  const t = await getTranslations('base');
+  const t = await getTranslations('about');
 
   const teamData = [
     { name: 'Sina', role: 'Daglig Leder', image: Sina },

@@ -1,0 +1,46 @@
+{
+  "about": {
+    "title": "Om oss",
+    "paragraph-1": "JobLoop startet som et samarbeid mellom sosiale entreprenører, NAV, og en rekke arbeidsgivere. I 2014 resulterte dette i en inkluderingsmodell som senere skulle bli anerkjent under navnet Loop-modellen. I perioden 2014-2018 ble modellen videreutviklet sammen med Hovedorganisasjonen Virke og etablert i en rekke norske fylker. FAFO's rapport fra 2018 skrev at dette var inkluderingsarbeid som virket i praksis. I 2017 ble Jobloop etablert som et eget selskap for å videreføre og tilpasse inkluderingmodellen til nye bransjer og målgrupper. Et viktig samarbeid har vært med oppstart miljøet tilknyttet Bergen.Works coworkingspace hvor modellen blant annet ble tilpasset for ”de nye jobbene” innen IT-utvikling og kreativ teknologi, samt gründer- og vekstselskapene.",
+    "paragraph-2": "I dag er denne modellen mest kjent som ”Kodehode” - et program som dyrker frem og trener opp dyktige junior-utviklere til jobber innen IT i tett samarbeid med bransjen selv. Driverne bak selskapet har alltid vært opptatt av å tilpasse modellene for de som ikke har lyktes helt i første sving, eller som står i fare for å falle fra sine utdanningsløp. Det har resultert i kontinuerlige tilpasninger til nye målgrupper, inkludert elever helt ned i barneskolealder. I dag jobber vi både med arbeids- og inkluderingsbedriftene, fontenehus, NAV, kommuner, fylkeskommuner, skoler, barnevern, PPT, OT, og helt ordinære arbeidsgivere. JobLoop er et raskt voksende selskap drevet av sosiale entreprenører. Vi har et viktig mål: å begrense utenforskap ved å hindre frafall i skolen, kvalifisere og formidle flere til arbeid! For å få til det samarbeider vi med offentlige aktører, utdanningsinstitusjoner, og lokalt arbeidsliv.",
+    "paragraph-3": "Vi har programmer som retter seg mot barn i grunnskolen, videregående skole, og voksne arbeidssøkere. Samtidig er vi tett på arbeidsmarkedet og spisser programmene våre kontinuerlig etter trender og behov. Vi heier på norsk IT-bransje og mener inkludering og alternative kvalifiseringsmodeller vil være avgjørende for å lykkes med å dekke det voksende kompetansegapet.",
+    "paragraph-4": "I 2024 mottok de FERD-prisen Årets Sosiale Entreprenør for sitt arbeid i kampen for å bekjempe ufrivillig skolefravær. Visste du at 20-30% av unge ikke fullfører videregående skole? eller at flere av disse faller fra allerede i grunnskolen? 10 år med innovative partnerskap og ildsjelsarbeid har resultert i at vi i dag er en stolt leverandør av en rekke tilbud til barn, unge og voksne som ønsker nye veier inn i arbeidslivet. JobLoop har spesielt lyktes med å skape innovative lærings- og mestringsarenaer som appellerer til unge voksne med interesser innen kreative digitale fagområder, gaming, og IT.",
+    "cta-1": {
+      "text": "Visste du at dersom alle norske IT-selskap med 10 ansatte eller mer rekrutterte én kandidat fra en sosial entreprenør eller velferdsaktør ville vi ha bekjempet hele utenforskapsfloken?",
+      "label": "Kontakt Oss"
+    },
+    "employees": {
+      "title": "Våre ansatte i Jobloop"
+    },
+    "partners": {
+      "title": "Våre samarbeidspartnere",
+      "fontenehuset": {
+        "title": "Fontenehuset Bergen",
+        "text": "Underveis i opplæringsløpet kobles deltakerne med relevante arbeidsgivere. Våre veiledere fortsetter å bistå med faglig støtte og spisset kompetanseheving gjennom hele tiltaksperioden."
+      },
+      "gloede": {
+        "title": "Gløde",
+        "text": "Undervisningen kombinerer tradisjonell undervisning med digitale læringsverktøy og prosjektarbeid. Gjennom tiltaket tilegner deltakerne seg faglig og sosial kompetanse for praksisarbeid innen IT."
+      },
+      "podium": {
+        "title": "Podium",
+        "text": "Podium er en tiltaksbedrift med hovedkontor i Oslo. Gründerne bak selskapet deler mange av de samme verdiene som JobLoop og har drevet frem flere innovasjonsprosjekter sammen."
+      },
+      "playwell": {
+        "title": "Playwell",
+        "text": "Playwell er et Gamingsenter som driver med e-sport og sosial gaming. Vi samlokaliserte oss i 2019 med mål om å utvikle mestringsarenaer for sårbare barn og unge som motiveres av gaming."
+      },
+      "cta": {
+        "label": "Les mer"
+      }
+    },
+    "contactUs": {
+      "title": "Ønsker du å samarbeide med oss?",
+      "text": "Vi er er alltid klar for å finne de gode løsningene! Christer er ansvarlig for bedriftsmarkedet og kan sørge for at vi spisser et par kandidater etter din tech-stack og behov. Inger-Johanne kan alt om Kodehode og Kim om våre Spillbaserte tilnærminger. Karl-Håkon hjelper deg i gang med Medarbeiderskap. Du kan også se hvem som er ansvarlig kursleder i din by på siden for de ulike tiltakene eller under “kontakt oss”.",
+      "cta": "Kontakt Oss"
+    },
+    "locations": {
+      "title": "Våre lokasjoner"
+    }
+  }
+}

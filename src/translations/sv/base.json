@@ -1,48 +1,4 @@
 {
-  "about": {
-    "title": "Om oss",
-    "paragraph-1": "Jobloop startade som ett samarbete mellan sociala entreprenörer, NAV och flera arbetsgivare. År 2014 resulterade detta i en inkluderingsmodell som senare blev känd som Loop-modellen. Mellan 2014 och 2018 vidareutvecklades modellen tillsammans med arbetsgivarorganisationen Virke och etablerades i flera norska fylken. En rapport från FAFO 2018 beskrev detta som inkluderingsarbete som fungerar i praktiken. År 2017 etablerades Jobloop som ett eget företag för att vidareutveckla och anpassa inkluderingsmodellen till nya branscher och målgrupper. Ett viktigt samarbete har varit med startupmiljön kring coworkingplatsen Bergen.Works, där modellen anpassades för ”de nya jobben” inom IT-utveckling, kreativ teknologi samt entreprenörs- och tillväxtföretag.",
-    "paragraph-2": "Idag är modellen mest känd som ”Kodehode” – ett program som utvecklar och tränar skickliga juniorutvecklare för IT-jobb i nära samarbete med branschen själv. Drivkrafterna bakom företaget har alltid brunnit för att anpassa modeller för dem som inte lyckats första gången eller som riskerar att hoppa av sina utbildningar. Det har resulterat i kontinuerliga anpassningar till nya målgrupper, inklusive elever redan i grundskolan. Idag arbetar vi tillsammans med arbets- och inkluderingsföretag, fontänhus, NAV, kommuner, regioner, skolor, barnavården, PPT, OT och vanliga arbetsgivare. Jobloop är ett snabbt växande företag drivet av sociala entreprenörer. Vi har ett viktigt mål: att minska utanförskap genom att förebygga skolavhopp, kvalificera människor och förmedla fler till arbete! För att lyckas samarbetar vi med offentliga aktörer, utbildningsinstitutioner och det lokala arbetslivet.",
-    "paragraph-3": "Vi erbjuder program som riktar sig till barn i grundskolan, gymnasieelever och vuxna arbetssökande. Samtidigt har vi nära kontakt med arbetsmarknaden och anpassar våra program kontinuerligt efter trender och behov. Vi hejar på den svenska IT-branschen och menar att inkludering och alternativa kvalificeringsmodeller kommer att vara avgörande för att täppa till det växande kompetensgapet.",
-    "paragraph-4": "År 2024 fick vi FERD-priset ”Årets sociala entreprenör” för vårt arbete mot ofrivillig skolfrånvaro. Visste du att 20–30 % av unga inte fullföljer gymnasiet? Eller att många av dem hoppar av redan i grundskolan? Tio år av innovativa partnerskap och engagerat arbete har resulterat i att vi idag stolt erbjuder ett brett utbud av möjligheter för barn, unga och vuxna som söker nya vägar in i arbetslivet. Jobloop har särskilt lyckats skapa innovativa lär- och utvecklingsmiljöer som tilltalar unga vuxna med intressen inom kreativa digitala ämnen, gaming och IT.",
-    "cta-1": {
-      "text": "Visste du att om alla svenska IT-företag med tio eller fler anställda anställde en kandidat från en social entreprenör eller välfärdsaktör skulle vi kunna lösa hela utanförskapsproblematiken?",
-      "label": "Kontakta oss"
-    },
-    "employees": {
-      "title": "Vårt team på Jobloop"
-    },
-    "partners": {
-      "title": "Våra samarbetspartners",
-      "fontenehuset": {
-        "title": "Fontenehuset Bergen",
-        "text": "Under utbildningsprocessen kopplas deltagarna till relevanta arbetsgivare. Våra handledare fortsätter att ge professionellt stöd och riktad kompetensutveckling under hela programperioden."
-      },
-      "gloede": {
-        "title": "Gløde",
-        "text": "Undervisningen kombinerar traditionell undervisning med digitala lärverktyg och projektarbete. Genom programmet får deltagarna yrkesmässig och social kompetens för praktik inom IT."
-      },
-      "podium": {
-        "title": "Podium",
-        "text": "Podium är ett arbetsmarknadsföretag med huvudkontor i Oslo. Grundarna delar många av samma värderingar som Jobloop och har drivit flera innovationsprojekt tillsammans."
-      },
-      "playwell": {
-        "title": "Playwell",
-        "text": "Playwell är ett gamingcenter som fokuserar på e-sport och social gaming. Vi samlokaliserade oss 2019 med målet att utveckla miljöer för lärande och delaktighet för barn och unga som motiveras av gaming."
-      },
-      "cta": {
-        "label": "Läs mer"
-      }
-    },
-    "contactUs": {
-      "title": "Vill du samarbeta med oss?",
-      "text": "Vi är alltid redo att hitta bra lösningar! Christer ansvarar för företagsmarknaden och kan matcha kandidater efter ditt företags behov och tekniska stack. Inger-Johanne kan allt om Kodehode, och Kim ansvarar för våra spelbaserade program. Karl-Håkon hjälper dig att komma igång med TeamWork. Du kan också se vem som är kursledare i din stad på respektive programsida eller under ”Kontakta oss”.",
-      "cta": "Kontakta oss"
-    },
-    "locations": {
-      "title": "Våra lokaler"
-    }
-  },
   "footer": {
     "branding": {
       "text": "Vi hjälper dig att hitta ditt drömjobb genom innovativa kurser och personlig vägledning."
