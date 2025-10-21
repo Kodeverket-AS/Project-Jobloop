@@ -1,25 +1,28 @@
-import { getData } from '@/lib/GetData';
+import { getTiltakById, getTiltakByIdLocalized } from '@/lib/sanity/fetch';
+import { AvailableLocales } from '@/i18n/routing';
+import { notFound } from 'next/navigation';
 import HeroSub from '@/components/herosub';
 import CourseSummary from '@/components/CourseSummary';
 import Curriculum from '@/components/Curriculum';
 import LeaderSection from '@/components/LeaderSection';
 
-export default async function Spillbasert() {
-  const data = await getData();
-  const spillbasert = data.tiltak.at(4);
+export async function generateStaticParams() {
+  const result = await getTiltakById({ index: 4 });
+  return result.map((tiltak) => ({ locale: tiltak.language ?? '' }));
+}
 
-  // todo
-  if (!spillbasert) return null;
+export default async function Spillbasert({ params }: { params: Promise<{ locale: string }> }) {
+  // Check that page exists in Sanity with correct locale
+  const locale = (await params).locale;
+  const tiltak = await getTiltakByIdLocalized({ index: 4, locale: locale as AvailableLocales });
+  if (!tiltak) return notFound();
 
   return (
     <main className='flex flex-col my-16 items-center gap-16 w-full max-w-[1536px] mx-auto'>
-      <HeroSub {...spillbasert} />
-      <CourseSummary {...spillbasert} />
-      <Curriculum
-        title={spillbasert.title}
-        curriculum={spillbasert.curriculum}
-      />
-      <LeaderSection leaders={spillbasert.courseLeaders} />
+      <HeroSub {...tiltak} />
+      <CourseSummary {...tiltak} />
+      <Curriculum title={tiltak.title} curriculum={tiltak.curriculum} />
+      <LeaderSection leaders={tiltak.courseLeaders} />
     </main>
   );
 }
