@@ -4,7 +4,7 @@ import { LinkButtonAnimatedWithIcon, LinkButtonAnimated } from '@/components/but
 import { getTranslations } from 'next-intl/server';
 
 export default async function LandingHero() {
-  const t = await getTranslations('base');
+  const t = await getTranslations('landing');
 
   return (
     <>

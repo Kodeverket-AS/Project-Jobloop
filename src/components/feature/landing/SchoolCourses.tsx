@@ -10,7 +10,7 @@ import Spillbasert from '@public/spillbasert.webp';
 import Loop from '@public/loop.webp';
 
 export default async function SchoolCourses() {
-  const t = await getTranslations('base');
+  const t = await getTranslations('landing');
 
   const courses = [
     {

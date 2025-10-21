@@ -2,7 +2,7 @@ import { LinkButtonAnimatedWithIcon } from '@/components/buttons';
 import { getTranslations } from 'next-intl/server';
 
 export default async function ContactComponent() {
-  const t = await getTranslations('base');
+  const t = await getTranslations('landing');
 
   return (
     <div className='flex flex-col items-center justify-center text-center gap-6 '>

@@ -3,7 +3,7 @@ import { IntroSection } from '@/components/layout-components';
 import { getTranslations } from 'next-intl/server';
 
 export default async function LandingIntro() {
-  const t = await getTranslations('base');
+  const t = await getTranslations('landing');
 
   return (
     <IntroSection

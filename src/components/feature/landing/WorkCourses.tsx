@@ -12,7 +12,7 @@ import IndividuellAmo from '@public/individuell-amo.webp';
 import Loop from '@public/loop.webp';
 
 export default async function WorkCourses() {
-  const t = await getTranslations('base');
+  const t = await getTranslations('landing');
 
   const courses = [
     {

@@ -1,0 +1,132 @@
+{
+  "landing": {
+    "hero": {
+      "title": "Nya vägar till utveckling, utbildning och arbete!",
+      "subtitle": "Vi hjälper dig med inkluderande jobbmöjligheter och alternativ utbildning. Tillsammans kan vi skapa möjligheter för fler!",
+      "cta": {
+        "contactUs": "Kontakta oss",
+        "courses": "Våra program"
+      }
+    },
+    "intro": {
+      "title": "Vem är Jobloop?",
+      "text": "Jobloop är ett snabbt växande företag drivet av sociala entreprenörer. Vi har ett viktigt mål: att minska utanförskap genom att förebygga skolavhopp, kvalificera människor och förmedla fler till arbete. För att lyckas samarbetar vi med offentliga aktörer, utbildningsinstitutioner och det lokala näringslivet. År 2024 fick vi FERD-priset ”Årets sociala entreprenör” för vårt arbete mot skolavhopp.",
+      "cta": "Läs mer"
+    },
+    "school": {
+      "title": "Program för att förebygga skolavhopp och stödja utbildning",
+      "text": "I våra alternativa lär- och utvecklingsmiljöer arbetar vi varje dag för att fler elever ska uppleva framgång, tillhörighet och meningsfulla dagar. Vi arbetar styrkebaserat och nära eleverna för att hjälpa dem att utforska och utveckla sina intressen. Vi samarbetar alltid med den enskilda elevens skola och skolpsykologtjänst (PPT) för att bygga broar mellan våra alternativa lärmiljöer och klassrummet.",
+      "image": {
+        "alt": "Bild av jobbmöjligheter"
+      },
+      "courses": {
+        "learnWell": {
+          "title": "LearnWell",
+          "text": "Anpassad praktik inom kreativa digitala ämnen. För elever i gymnasieåldern.",
+          "alt": "Datorskärm med headset"
+        },
+        "gamify": {
+          "title": "Gamify",
+          "text": "Motivation och lärande genom spel och gaming. För elever i grundskolan.",
+          "alt": "Två flickor i Gamify"
+        },
+        "spillbasert": {
+          "title": "Spelbaserad",
+          "text": "Gaming och alternativt lärande för dig som vill slutföra gymnasiet.",
+          "alt": "Tre personer involverade i projektet"
+        },
+        "loop": {
+          "title": "Loop",
+          "text": "Få relevant arbetslivserfarenhet och bygg fler jobbmöjligheter.",
+          "alt": "Teknisk arbetsstation"
+        }
+      }
+    },
+    "work": {
+      "title": "Arbetsinriktade program",
+      "text": "Våra arbetsinriktade program ser till att människor får rätt kompetens och blir väl förberedda för arbetslivet. Många av programmen inkluderar praktik, vilket ger dig som arbetsgivare en unik möjlighet att ta socialt ansvar och lära känna kompetenta kandidater – helt utan förpliktelser. Om du endast rekryterar på traditionellt sätt kan du gå miste om många talangfulla resurser.",
+      "image": {
+        "alt": "Bild av jobbmöjligheter"
+      },
+      "partner": {
+        "title": "Kodehode",
+        "text": "Kodehode rekryterar kandidater som av olika skäl står utanför arbetsmarknaden och erbjuder utbildning inom frontend-, backend- och fullstack-utveckling samt IT-drift och support. Genom en kombination av teori, case-arbete och praktik lär sig deltagarna det viktigaste för en karriär inom IT. Kodehode är Jobloops största arbetsinriktade program och en ledande aktör inom inkluderande rekrytering i IT-branschen. Satsningen bidrar till att minska utanförskap och täppa till kompetensgapet genom riktad kvalificering, praktik, rekrytering och matchning med arbetsgivare i IT-sektorn.",
+        "image": {
+          "alt": "Bild av jobbmöjligheter"
+        }
+      },
+      "courses": {
+        "grunnleggendeIT": {
+          "title": "Grundläggande IT",
+          "text": "Delta i dagens digitala samhälle. Vi erbjuder grundläggande IT-kunskaper som öppnar dörrar till framtidens arbetsliv. Lär dig det viktigaste inom digital teknik och skapa en solid grund för vidare utveckling.",
+          "alt": "Tre trevliga anställda"
+        },
+        "digitaleTalenter": {
+          "title": "Digitala talanger",
+          "text": "Utveckla dina intressen och få fast anställning. Vi hjälper dig att utveckla dina digitala talanger och färdigheter. Genom praktik och utbildning får du den kompetens som arbetslivet efterfrågar.",
+          "alt": "Leende person som är en digital talang"
+        },
+        "IndividuellAMO": {
+          "title": "Individuell AMO",
+          "text": "Få ett skräddarsytt upplägg genom NAV. Vi anpassar utbildningen efter dina mål och behov. Tillsammans bygger vi en väg mot ny kompetens och nya möjligheter i arbetslivet.",
+          "alt": "Person som tittar in i kameran"
+        },
+        "loop": {
+          "title": "Loop",
+          "text": "Få relevant arbetslivserfarenhet och kontakter. Vi matchar dig med arbetsgivare som kan ge värdefull praktik. Det här är din väg till att bygga CV och få in en fot på arbetsmarknaden.",
+          "alt": "Arbetsbord"
+        }
+      },
+      "quotes": {
+        "title": "Vad säger företagsledarna om oss?",
+        "one": {
+          "name": "John Helge Olsen",
+          "company": "DNB",
+          "text": "Kodehode har levererat duktiga kandidater som är väl förberedda både professionellt och socialt. De har gått direkt in i utvecklingsteam som frontend-utvecklare hos oss och arbetat på DNB:s företagsportal för pensionskunder."
+        },
+        "two": {
+          "name": "Hilde Indresøvde",
+          "company": "VIS",
+          "text": "Samarbetet med Jobloop ger VIS möjlighet att arbeta aktivt och konkret med inkludering. Vi får tillgång till kompetenta kandidater i ett tillitsbaserat och samordnat upplägg med uppföljning och regelbunden dialog. Tillsammans skapar vi nya möjligheter i arbetslivet och nya sätt att rekrytera."
+        },
+        "three": {
+          "name": "Eirik Sandal",
+          "company": "Elfly Gruppen AS",
+          "text": "Elfly Gruppen har haft två utvecklare i utbildning i sex månader. Kodehode har varit duktiga på att ordna en bra onboarding och har använt sin organisation för att tillföra specialistkunskap och vägledning under hela processen. Detta har gjort det möjligt för oss att bygga en IT-lösning som bidrar positivt till den gröna omställningen inom elektrisk luftfart."
+        }
+      }
+    },
+    "collaborations": {
+      "title": "Samarbetsprojekt",
+      "kodeloftet": {
+        "title": "Kodeloftet",
+        "text": "Fontenehusen är frivilliga arbetsgemenskaper för personer som har eller har haft psykiska hälsoutmaningar. År 2022 inledde Kodehode ett samarbete med Fontenehuset Bergen för att erbjuda en kurs i programmering – Kodeloftet – en tre månaders kurs som fungerar som en förberedande utbildning till Kodehode.",
+        "alt": "Bild från Kodeloftet"
+      },
+      "gloede": {
+        "title": "Gløde",
+        "text": "Gløde AS har som mål att främja arbetsinkludering, kompetensförmedling och relaterad verksamhet. Målgruppen är personer som behöver kartläggning, arbetsträning, utbildning och stöd för att komma ut i ordinarie arbete, eller som behöver varaktigt anpassat arbete. År 2023 inledde Gløde Data och Jobloop ett samarbete för AFT-deltagare. 'Grundläggande programmering med JavaScript' är ett 12-veckors program där deltagarna lär sig att utveckla webbplatser och appar med JavaScript.",
+        "alt": "Glødes logotyp"
+      },
+      "teamwork": {
+        "title": "TeamWork",
+        "text": "TeamWork är ett nytt samarbetsprojekt mellan Jobloop och TeamWork OU AS, som arbetar för att leverera nya koncept till företag för att förbättra arbetsmiljön, minska sjukfrånvaron och reducera personalomsättningen.",
+        "alt": "Bild av TeamWork"
+      }
+    },
+    "success": {
+      "title": "Inkluderingsarbete som fungerar i praktiken!",
+      "text": "Varje år samarbetar vi med forskare och branschorganisationer för att dela insikter och statistik med forskningsfältet. Vi är i kontakt med olika målgrupper och vill bidra till att utveckla bästa praxis i mötet med alla. Här kan du läsa ett urval av vad forskningen säger om oss:",
+      "image": {
+        "alt": "Bild av Kodehode"
+      }
+    },
+    "contact": {
+      "title": "Kontakta oss",
+      "text": "Behöver du hjälp eller vill samarbeta med oss?",
+      "button": {
+        "label": "Kontakta oss"
+      }
+    }
+  }
+}

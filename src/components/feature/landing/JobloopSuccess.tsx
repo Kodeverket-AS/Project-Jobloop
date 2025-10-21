@@ -6,7 +6,7 @@ import Image from 'next/image';
 import JobloopFafo from '@public/jobbloop-fafo.webp';
 
 export default async function JobloopSuccess() {
-  const t = await getTranslations('base');
+  const t = await getTranslations('landing');
 
   return (
     <div className='bg-linear-to-br from-jobloop-primary-green/10 via-white to-jobloop-primary-orange/10 border-2 border-jobloop-primary-green/20 rounded-2xl flex flex-col gap-12 px-8 py-12 md:flex-row md:items-center shadow-lg'>

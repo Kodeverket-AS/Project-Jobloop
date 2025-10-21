@@ -7,7 +7,7 @@ import Gløde from '@public/gløde.webp';
 import Teamwork from '@public/Orkla_1.webp';
 
 export default async function CooperationProjects() {
-  const t = await getTranslations('base');
+  const t = await getTranslations('landing');
   const partners = [
     {
       image: Kodeloftet,
