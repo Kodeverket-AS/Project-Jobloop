@@ -172,5 +172,40 @@
     "locations": {
       "title": "Våra lokaler"
     }
+  },
+  "footer": {
+    "branding": {
+      "text": "Vi hjälper dig att hitta ditt drömjobb genom innovativa kurser och personlig vägledning."
+    },
+    "links": {
+      "title": "Sidor",
+      "hiring": {
+        "label": "Lediga tjänster",
+        "aria": "Gå till sidan för lediga tjänster"
+      },
+      "about": {
+        "label": "Om Jobloop",
+        "aria": "Gå till sidan med information om Jobloop"
+      },
+      "contact": {
+        "label": "Kontakta vårt team",
+        "aria": "Gå till kontaktsidan"
+      },
+      "privacy": {
+        "label": "Integritetspolicy",
+        "aria": "Gå till vår integritetspolicy"
+      },
+      "tos": {
+        "label": "Villkor",
+        "aria": "Gå till sidan med våra villkor"
+      }
+    },
+    "contacts": {
+      "title": "Kontakt",
+      "participants": "Deltagare",
+      "companies": "Företag",
+      "clients": "Uppdragsgivare"
+    },
+    "copyright": "Jobloop. Alla rättigheter förbehållna."
   }
 }

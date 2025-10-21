@@ -172,5 +172,40 @@
     "locations": {
       "title": "Our locations"
     }
+  },
+  "footer": {
+    "branding": {
+      "text": "We help you find your dream job through innovative courses and personalized guidance."
+    },
+    "links": {
+      "title": "Pages",
+      "hiring": {
+        "label": "Open positions",
+        "aria": "Go to the page for open positions"
+      },
+      "about": {
+        "label": "About Jobloop",
+        "aria": "Go to the page with information about Jobloop"
+      },
+      "contact": {
+        "label": "Contact our team",
+        "aria": "Go to the contact page"
+      },
+      "privacy": {
+        "label": "Privacy Policy",
+        "aria": "Go to our privacy policy page"
+      },
+      "tos": {
+        "label": "Terms & Conditions",
+        "aria": "Go to the page for our terms and conditions"
+      }
+    },
+    "contacts": {
+      "title": "Contact",
+      "participants": "Participant",
+      "companies": "Companies",
+      "clients": "Clients"
+    },
+    "copyright": "Jobloop. All rights reserved."
   }
 }

@@ -172,5 +172,40 @@
     "locations": {
       "title": "Våre lokasjoner"
     }
+  },
+  "footer": {
+    "branding": {
+      "text": "Vi hjelper deg med å finne din drømmejobb gjennom innovative kurs og personlig veiledning."
+    },
+    "links": {
+      "title": "Sider",
+      "hiring": {
+        "label": "Ledige stillinger",
+        "aria": "Gå til underside for ledige stillinger"
+      },
+      "about": {
+        "label": "Om Jobloop",
+        "aria": "Gå til underside for informasjon om Jobloop"
+      },
+      "contact": {
+        "label": "Kontakt vår team",
+        "aria": "Gå til kontakt side"
+      },
+      "privacy": {
+        "label": "Personvern",
+        "aria": "Gå til vår personvern deklarasjon"
+      },
+      "tos": {
+        "label": "Vilkår",
+        "aria": "Gå til side for våre vilkår"
+      }
+    },
+    "contacts": {
+      "title": "Kontakt",
+      "participants": "Deltaker",
+      "companies": "Bedrifter",
+      "clients": "Oppdragsgiver"
+    },
+    "copyright": "JobLoop. Alle rettigheter forbeholdt."
   }
 }
