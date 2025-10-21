@@ -2,6 +2,7 @@
 
 import Image, { type StaticImageData } from 'next/image';
 import ButtonCTA from './ButtonCTA';
+import { useTranslations } from 'next-intl';
 
 interface IntroSection {
   title: string;
@@ -16,7 +17,7 @@ interface IntroSection {
   imageLinkPath: string;
 }
 
-export const IntroSection = ({
+export function IntroSection({
   title,
   text,
   image,
@@ -27,7 +28,10 @@ export const IntroSection = ({
   btnText,
   ifImageLink,
   imageLinkPath,
-}: IntroSection) => {
+}: IntroSection) {
+  const t = useTranslations('dictionary');
+  const t1 = useTranslations('landing');
+
   return (
     <div className='flex flex-col gap-6   lg:flex-row lg:gap-12 rounded-xl'>
       {ifImageLink ? (
@@ -38,9 +42,7 @@ export const IntroSection = ({
           className='relative w-full lg:w-1/2 overflow-hidden group saturate-100 hover:saturate-150'
         >
           <div className='absolute z-10 p-4 transition-all rounded-b-2xl duration-500 bottom-0 lg:-bottom-20 lg:group-hover:-bottom-0 left-0 w-full h-20 bg-black/70'>
-            <h3 className='text-kv-white text-center '>
-              Klikk bilde for å lese om da vi mottok FERD prisen 2024
-            </h3>
+            <h3 className='text-kv-white text-center '>{t1('intro.award')}</h3>
           </div>
           <Image
             alt={alt}
@@ -66,18 +68,16 @@ export const IntroSection = ({
         <h2 className='text-kv-black text-xl md:text-2xl lg:text-3xl border-b-2 md:border-b-4 pb-2 border-jobloop-primary-green w-fit'>
           {title}
         </h2>
-        <p className='text-gray-600 text-base xl:leading-relaxed lg:text-xl'>
-          {text}
-        </p>
+        <p className='text-gray-600 text-base xl:leading-relaxed lg:text-xl'>{text}</p>
         {isButton && (
           <ButtonCTA
             isButton={true}
             Path={path}
-            Text={btnText ?? 'Les mer'}
+            Text={btnText ?? t('readMore')}
             btnVariant={btnVariant}
           />
         )}
       </div>
     </div>
   );
-};
+}

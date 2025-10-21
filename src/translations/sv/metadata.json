@@ -1,0 +1,28 @@
+{
+  "title": "Jobloop: Inkluderande arbetspraktik och effektiv jobbmatchning",
+  "description": "Få tillgång till inkluderande jobbmöjligheter, skräddarsydd yrkesutbildning och en väg in i arbetslivet. Jobloop kopplar samman kandidater och arbetsgivare på ett smartare sätt.",
+  "keywords": [
+    "jobbmatchning",
+    "inkludering",
+    "yrkesutbildning",
+    "arbetspraktik",
+    "Jobloop",
+    "frontend utbildning",
+    "backend kurs",
+    "fullstack utveckling",
+    "IT-jobb",
+    "arbetsinkludering"
+  ],
+  "openGraph": {
+    "title": "Jobloop - Inkluderande arbetspraktik och effektiv jobbmatchning",
+    "description": "Jobloop erbjuder inkluderande jobbmöjligheter, praktikplatser och utbildning inom IT och teknik.",
+    "url": "https://www.jobloop.no/sv",
+    "alt": "Jobloop - Inkluderande arbetspraktik",
+    "locale": "sv_SE"
+  },
+  "twitter": {
+    "card": "summary_large_image",
+    "title": "Jobloop - Inkluderande arbetspraktik och effektiv jobbmatchning",
+    "description": "Få tillgång till inkluderande jobbmöjligheter, praktikplatser och yrkesutbildning. Jobloop kopplar effektivt samman arbetsgivare och kandidater."
+  }
+}

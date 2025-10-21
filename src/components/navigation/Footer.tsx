@@ -1,31 +1,31 @@
-'use client';
-
 import Link from 'next/link';
 import Image from 'next/image';
-import logoJobloopHvit from '../../../public/logoJobloopHvit.svg';
+import { getTranslations } from 'next-intl/server';
 import { FaFacebook, FaInstagram, FaLinkedinIn } from 'react-icons/fa';
 
-// Contact information for the footer
-const contactInformation = [
-  {
-    name: 'Deltaker',
-    email: 'team@jobloop.no ',
-  },
-  {
-    name: 'Bedrifter',
-    email: 'christer@jobloop.no',
-    phoneDisplay: '+47 92 88 28 04',
-    phoneLink: '+4792882804',
-  },
-  {
-    name: 'Oppdragsgiver',
-    email: 'inger-johanne@jobloop.no ',
-    phoneDisplay: '+47 48 35 87 03',
-    phoneLink: '+4748358703',
-  },
-];
+export default async function Footer() {
+  const t = await getTranslations('base');
 
-export default function Footer() {
+  // Contact information for the footer
+  const contactInformation = [
+    {
+      name: t('footer.contacts.participants'),
+      email: 'team@jobloop.no ',
+    },
+    {
+      name: t('footer.contacts.companies'),
+      email: 'christer@jobloop.no',
+      phoneDisplay: '+47 92 88 28 04',
+      phoneLink: '+4792882804',
+    },
+    {
+      name: t('footer.contacts.clients'),
+      email: 'inger-johanne@jobloop.no ',
+      phoneDisplay: '+47 48 35 87 03',
+      phoneLink: '+4748358703',
+    },
+  ];
+
   return (
     <footer className='w-full text-kv-white bg-jobloop-primary-grey'>
       <div className='mx-auto max-w-[1536px] px-4 md:px-8 lg:px-12'>
@@ -40,7 +40,7 @@ export default function Footer() {
               >
                 <Image
                   alt='Jobloop logo'
-                  src={logoJobloopHvit}
+                  src={'/logoJobloopHvit.svg'}
                   width={350}
                   height={250}
                   className='hover:opacity-80 transition-opacity duration-300'
@@ -48,44 +48,41 @@ export default function Footer() {
               </a>
             </div>
             <p className='text-gray-300 text-center lg:text-left leading-relaxed'>
-              Vi hjelper deg med å finne din drømmejobb gjennom innovative kurs
-              og personlig veiledning.
+              {t('footer.branding.text')}
             </p>
           </div>
-
           <div className='flex flex-row gap-8 lg:gap-12'>
             <div className='flex flex-col gap-6 w-2/3'>
               <h3 className='text-2xl font-bold text-jobloop-primary-green'>
-                Sider
+                {t('footer.links.title')}
               </h3>
               <div className='flex flex-col gap-3'>
                 <Link
                   className='text-gray-300 hover:text-jobloop-primary-green transition-all duration-300 hover:translate-x-1 transform'
                   href='/ansettelser'
-                  aria-label='Gå til underside for deltaker'
+                  aria-label={t('footer.links.hiring.aria')}
                 >
-                  Ledige stillinger
+                  {t('footer.links.hiring.label')}
                 </Link>
                 <Link
                   className='text-gray-300 hover:text-jobloop-primary-green transition-all duration-300 hover:translate-x-1 transform'
                   href='/om-oss'
-                  aria-label='Gå til underside for samarbeidspartner'
+                  aria-label={t('footer.links.about.aria')}
                 >
-                  Om Jobloop
+                  {t('footer.links.about.label')}
                 </Link>
                 <Link
                   className='text-gray-300 hover:text-jobloop-primary-green transition-all duration-300 hover:translate-x-1 transform'
                   href='/kontakt'
-                  aria-label='Gå til kontakt side'
+                  aria-label={t('footer.links.contact.aria')}
                 >
-                  Kontakt vår team
+                  {t('footer.links.contact.label')}
                 </Link>
               </div>
             </div>
-
             <div className='flex flex-col gap-6 w-1/2'>
               <h3 className='text-2xl font-bold text-jobloop-primary-green'>
-                Kontakt
+                {t('footer.contacts.title')}
               </h3>
               <div className='space-y-4'>
                 {contactInformation.map((person) => (
@@ -93,9 +90,7 @@ export default function Footer() {
                     key={person.name}
                     className='border-l-2 border-jobloop-primary-green/30 pl-4'
                   >
-                    <h4 className='font-semibold text-white mb-1'>
-                      {person.name}
-                    </h4>
+                    <h4 className='font-semibold text-white mb-1'>{person.name}</h4>
                     <a
                       href={`mailto:${person.email}`}
                       className='text-gray-300 hover:text-jobloop-primary-green transition-colors duration-300 block'
@@ -116,7 +111,6 @@ export default function Footer() {
                   </div>
                 ))}
               </div>
-
               <div className='flex gap-4 pt-4'>
                 <a
                   href='https://www.facebook.com/JobLoop.Norge'
@@ -150,26 +144,24 @@ export default function Footer() {
           </div>
         </div>
       </div>
-
       <div className='border-t border-gray-700 py-6'>
         <div className='max-w-[1536px] mx-auto px-4 md:px-8 lg:px-12'>
           <div className='flex flex-col md:flex-row justify-between items-center gap-4'>
             <p className='text-gray-400 text-sm'>
-              &copy; {new Date().getFullYear()} JobLoop. Alle rettigheter
-              forbeholdt.
+              &copy; {new Date().getFullYear()} {t('footer.copyright')}
             </p>
             <div className='flex gap-6 text-sm'>
               <Link
                 href='/om-oss'
                 className='text-gray-400 hover:text-jobloop-primary-green transition-colors duration-300'
               >
-                Personvern
+                {t('footer.links.privacy.label')}
               </Link>
               <Link
                 href='/kontakt'
                 className='text-gray-400 hover:text-jobloop-primary-green transition-colors duration-300'
               >
-                Vilkår
+                {t('footer.links.tos.label')}
               </Link>
             </div>
           </div>

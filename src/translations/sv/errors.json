@@ -1,0 +1,22 @@
+{
+  "page": {
+    "notFound": {
+      "title": "Sidan hittades inte",
+      "body": "Sidan du söker finns inte, kan ha flyttats eller så är adressen felstavad. Du kan gå tillbaka, gå till startsidan eller prova ett annat språk.",
+      "actions": {
+        "goBack": {
+          "text": "Gå tillbaka till föregående sida.",
+          "label": "Gå tillbaka"
+        },
+        "goHome": {
+          "text": "Gå till startsidan för att fortsätta.",
+          "label": "Gå till startsidan"
+        },
+        "changeLocale": {
+          "text": "Byt språk för att se om innehållet finns på ett annat språk.",
+          "label": "Byt språk"
+        }
+      }
+    }
+  }
+}

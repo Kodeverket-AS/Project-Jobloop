@@ -1,0 +1,28 @@
+{
+  "title": "Jobloop: Inclusive work experience and effective job matching",
+  "description": "Gain access to inclusive job opportunities, tailored vocational training, and a pathway into the workforce. Jobloop connects candidates and employers in a smarter way.",
+  "keywords": [
+    "job matching",
+    "inclusion",
+    "vocational training",
+    "work experience",
+    "Jobloop",
+    "frontend training",
+    "backend course",
+    "full-stack development",
+    "IT jobs",
+    "workplace inclusion"
+  ],
+  "openGraph": {
+    "title": "Jobloop - Inclusive work experience and effective job matching",
+    "description": "Jobloop provides access to inclusive job opportunities, internships, and training within IT and technology.",
+    "url": "https://www.jobloop.no/en",
+    "alt": "Jobloop - Inclusive work experience",
+    "locale": "en_US"
+  },
+  "twitter": {
+    "card": "summary_large_image",
+    "title": "Jobloop - Inclusive work experience and effective job matching",
+    "description": "Access inclusive job opportunities, internships, and vocational training. Jobloop efficiently connects employers and candidates."
+  }
+}

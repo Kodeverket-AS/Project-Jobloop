@@ -1,0 +1,22 @@
+{
+  "page": {
+    "notFound": {
+      "title": "Fant ikke siden",
+      "body": "Siden du leter etter finnes ikke, kan ha blitt flyttet, eller adressen er kanskje feil. Du kan gå tilbake, gå til forsiden, eller prøve et annet språk.",
+      "actions": {
+        "goBack": {
+          "text": "Gå tilbake til forrige side.",
+          "label": "Gå tilbake"
+        },
+        "goHome": {
+          "text": "Gå til forsiden for å fortsette.",
+          "label": "Gå til forsiden"
+        },
+        "changeLocale": {
+          "text": "Bytt språk for å se om innholdet finnes på et annet språk.",
+          "label": "Bytt språk"
+        }
+      }
+    }
+  }
+}
