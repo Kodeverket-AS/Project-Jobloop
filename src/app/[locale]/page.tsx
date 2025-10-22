@@ -8,14 +8,16 @@ import ContactComponent from '@/components/feature/landing/ContactComponent';
 
 export default function Home() {
   return (
-    <main className='flex flex-col items-center gap-16 w-full max-w-[1536px] mx-auto mb-16 px-4'>
+    <>
       <LandingHero />
-      <LandingIntro />
-      <SchoolCourses />
-      <WorkCourses />
-      <CooperationProjects />
-      <JobloopSuccess />
-      <ContactComponent />
-    </main>
+      <main className='flex flex-col items-center gap-16 w-full max-w-[1536px] mx-auto mb-16 px-4'>
+        <LandingIntro />
+        <SchoolCourses />
+        <WorkCourses />
+        <CooperationProjects />
+        <JobloopSuccess />
+        <ContactComponent />
+      </main>
+    </>
   );
 }
