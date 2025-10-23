@@ -27,7 +27,7 @@ export function SchoolCoursesCard({
           className='absolute top-4 left-4  bg-jobloop-primary-orange text-white px-6 py-2 text-md font-bold transform  z-10 shadow-lg'
           style={{ transform: 'rotate(-20deg) translateX(-10px)' }}
         >
-          NYHET
+          {t('new')}
         </div>
       )}
       <a href={path} className='w-full h-80 xl:w-1/2 relative overflow-hidden rounded-xl'>
