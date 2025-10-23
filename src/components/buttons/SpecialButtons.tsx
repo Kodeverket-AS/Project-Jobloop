@@ -42,7 +42,7 @@ export function LesMerButton({ Path, Text = 'Les mer' }: Partial<ButtonProps>) {
   return (
     <a
       href={Path}
-      className='w-full md:w-auto md:max-w-[135px] inline-flex items-center justify-center gap-3 px-6 py-3 bg-jobloop-primary-green text-white rounded-full hover:bg-jobloop-primary-orange hover:shadow-lg transition-all duration-300 group/btn hover:scale-105'
+      className='w-full md:w-auto md:max-w-[155px] inline-flex items-center justify-center gap-3 px-6 py-3 bg-jobloop-primary-green text-white rounded-full hover:bg-jobloop-primary-orange hover:shadow-lg transition-all duration-300 group/btn hover:scale-105'
     >
       <span className='font-medium'>{Text}</span>
       <FaArrowRight className='transition-transform duration-300 group-hover/btn:translate-x-1 group-hover/btn:scale-110' />
