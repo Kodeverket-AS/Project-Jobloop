@@ -1,0 +1,136 @@
+{
+  "hero": {
+    "title": "Nye veier til utvikling, utdanning og jobb!",
+    "subtitle": "Vi hjelper deg med inkluderende arbeidsmuligheter og alternativ opplæring. Sammen kan vi skape muligheter for fler!",
+    "cta": {
+      "contactUs": "Kontakt Oss",
+      "courses": "Våre tilbud"
+    }
+  },
+  "intro": {
+    "title": "Hvem er Jobloop?",
+    "text": "JobLoop er et raskt voksende selskap drevet av sosiale entreprenører. Vi har et viktig mål: å begrense utenforskap ved å forebygge frafall i skolen, kvalifisere og formidle flere til arbeid. For å få til det samarbeider vi med offentlige aktører, utdanningsinstitusjoner og lokalt arbeidsliv. I 2024 mottok vi FERD-prisen «Årets Sosiale Entreprenør» for vårt arbeid mot skolefrafall.",
+    "cta": "Les mer",
+    "award": "Klikk bilde for å lese om da vi mottok FERD prisen 2024"
+  },
+  "school": {
+    "title": "Tilbud mot frafall fra skole og utdanning",
+    "text": "I våre alternative mestrings- og læringsarenaer jobber vi hver dag for at flere elever skal oppleve mestring, tilhørighet og meningsfulle dager. Vi jobber styrkebasert og tett sammen med elevene for å gi dem muligheten til å utforske og dyrke sine interesser. Vi samarbeider alltid med den enkelte elevs skole og PPT for å bygge bro fra våre alternative læringsarenaer til klasserommet og undervisningen på skolen.",
+    "image": {
+      "alt": "JobbtilbudBilde"
+    },
+    "courses": {
+      "learnWell": {
+        "title": "LearnWell",
+        "text": "Tilrettelagt praksis i kreative digitale fag. For elever i videregående skole alder.",
+        "alt": "Pc-skjerm med headset"
+      },
+      "gamify": {
+        "title": "Gamify",
+        "text": "Motivasjon og læring gjennom spill og gaming. For elever i grunnskolen.",
+        "alt": "2 jenter i Gamify"
+      },
+      "spillbasert": {
+        "title": "Spillbasert",
+        "text": "Gaming og alternativ læring for deg som vil fullføre videregående",
+        "alt": "3 personer involverte i prosjektet"
+      },
+      "loop": {
+        "title": "Loop",
+        "text": "Få relevant arbeidspraksis og erfaring som gir deg flere jobbmuligheter.",
+        "alt": "Tech arbeidsbord"
+      },
+      "ki": {
+        "title": "KI-Kurs",
+        "text": "Lær om kunstig intelligens og hvordan den kan brukes i arbeidslivet.",
+        "alt": "KI-Kurs leder"
+      }
+    }
+  },
+  "work": {
+    "title": "Arbeidsrettede tilbud",
+    "text": "Våre arbeidsrettede tilbud sikrer at folk får riktig kompetanse og blir godt forberedt på arbeidslivet. Mange av tilbudene inkluderer praksis, noe som gir deg som arbeidsgiver en unik mulighet til å ta samfunnsansvar og bli kjent med dyktige kandidater – helt uten forpliktelser. Rekrutterer du kun på tradisjonelt vis, kan du gå glipp av mange talentfulle ressurser.",
+    "image": {
+      "alt": "JobbtilbudBilde"
+    },
+    "partner": {
+      "title": "Kodehode",
+      "text": "Kodehode rekrutterer kandidater som av ulike årsaker står utenfor arbeidslivet og tilbyr opplæring i frontend-, backend- og fullstack-utvikling, samt IT-drift og service. Gjennom en kombinasjon av teori, casearbeid og praksis lærer deltakerne det viktigste for en karriere innen IT. Kodehode er det største arbeidsrettede tilbudet i Jobloop og en ledende aktør innen inkluderende rekruttering i IT-bransjen. Satsingen bidrar til å redusere utenforskap og tette kompetansegapet gjennom spisset kvalifisering, internships, rekruttering og matchmaking med arbeidsgivere i IT-sektoren.",
+      "image": {
+        "alt": "JobbtilbudBilde"
+      }
+    },
+    "courses": {
+      "grunnleggendeIT": {
+        "title": "Grunnleggende IT",
+        "text": "Bli med i dagens digitale samfunn. Vi tilbyr grunnleggende IT-kompetanse som åpner dører til fremtidens arbeidsliv. Lær det viktigste innen digital teknologi og få en solid base for videre utvikling.",
+        "alt": "3 hyggelige ansatte"
+      },
+      "digitaleTalenter": {
+        "title": "Digitale Talenter",
+        "text": "Dyrk interessene dine og få fast jobb. Vi hjelper deg å utvikle dine digitale talent og ferdigheter. Gjennom praksis og opplæring får du den kompetansen som arbeidslivet etterspør.",
+        "alt": "Smilende person som er digital talent"
+      },
+      "IndividuellAMO": {
+        "title": "Individuell AMO",
+        "text": "Få et skreddersydd opplegg gjennom NAV. Vi tilpasser opplæringen til dine behov og mål. Sammen bygger vi en vei mot ny kompetanse og nye muligheter i arbeidslivet.",
+        "alt": "Person ser inn i kamera"
+      },
+      "loop": {
+        "title": "Loop",
+        "text": "Få relevant arbeidspraksis og erfaring. Vi kobler deg sammen med arbeidsgivere som kan gi deg verdifull praksis. Dette er din vei til å bygge CV og få foten inn i døren.",
+        "alt": "Arbeidsbord"
+      }
+    },
+    "quotes": {
+      "title": "Hva sier bedriftslederne om oss?",
+      "one": {
+        "name": "John Helge Olsen",
+        "company": "DNB",
+        "text": "Kodehode har levert oss gode kandidater som er godt forberedt både faglig og sosialt, og de har gått rett inn på utviklingsteam som frontend utviklere hos oss. Her har de jobbet på DNB sin bedriftsportal for pensjonskunder."
+      },
+      "two": {
+        "name": "Hilde Indresøvde",
+        "company": "VIS",
+        "text": "Samarbeidet med Jobloop gir VIS muligheten til å jobbe aktivt og konkret med inkludering. Her får vi tilgang til kompetente kandidater i et tillitsbasert og koordinert opplegg med oppfølging og jevnlig dialog. Sammen skaper vi nye muligheter i arbeidslivet og nye rekrutteringsmåter."
+      },
+      "three": {
+        "name": "Eirik Sandal",
+        "company": "Elfly Gruppen AS",
+        "text": "Elfly Gruppen har hatt to utviklere under opplæring i 6 måneder. Kodehode har vært flinke til å tilrettelegge for en god onboarding og brukt sin organisasjon til å fylle på med spisskompetanse og veiledning underveis. Dette har gjort oss i stand til å bygge en IT-løsning som bidrar positivt inn mot det grønne skiftet innen elektrisk luftfart."
+      }
+    }
+  },
+  "collaborations": {
+    "title": "Samarbeidsprosjekter",
+    "kodeloftet": {
+      "title": "Kodeloftet",
+      "text": "Fontenehus er frivillige arbeidsfellesskap for mennesker som har eller har hatt psykiske helseutfordringer. I 2022 startet Kodehode et samarbeid med Fontenehuset Bergen for å tilby et kodekurs på huset – Kodeloftet – et tre måneders kurs som kan regnes som et forkurs til Kodehode.",
+      "alt": "Bilde fra kodeloftet"
+    },
+    "gloede": {
+      "title": "Gløde",
+      "text": "Gløde AS har som formål å fremme arbeidsinkludering, kompetanseformidling og tilhørende virksomhet. Målgruppen er personer som har behov for avklaring, arbeidstrening, opplæring og støtte for å komme ut i ordinært arbeid, eller som trenger varig tilrettelagt arbeid. I 2023 startet Gløde Data og Jobloop et samarbeid for deltakere i AFT. Grunnleggende programmering med JavaScript er et 12-ukers tilbud der deltakerne lærer å utvikle nettsider og apper ved bruk av JavaScript.",
+      "alt": "Logo til gløde"
+    },
+    "teamwork": {
+      "title": "Medarbeiderskap",
+      "text": "Medarbeiderskap er et nytt samarbeidsprosjekt mellom Jobloop og TeamWork OU AS, som jobber for å levere nye konsepter til bedrifter for å bedre miljøet blant ansatte og forhindre sykefravær og gjennomtrekk.",
+      "alt": "Bilde av teamwork"
+    }
+  },
+  "success": {
+    "title": "Inkluderingsarbeid som fungerer i praksis!",
+    "text": "Hvert år samarbeider vi med ulike forskere og bransjeforeninger for å dele innsikt og statistikk med forskningsfeltet. Vi er i kontakt med varierte målgrupper og har et sterkt ønske om å kunne bidra til å utvikle beste praksis i møte med alle. Du kan lese et utvalg av hva forskningen sier om oss her:",
+    "image": {
+      "alt": "KodehodeImage"
+    }
+  },
+  "contact": {
+    "title": "Kontakt oss",
+    "text": "Trenger du hjelp eller ønsker å samarbeide med oss?",
+    "button": {
+      "label": "Kontakt Oss"
+    }
+  }
+}

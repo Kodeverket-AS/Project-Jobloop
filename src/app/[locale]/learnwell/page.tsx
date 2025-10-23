@@ -1,0 +1,26 @@
+import { getTiltakById, getTiltakByIdLocalized } from '@/lib/sanity/fetch';
+import { AvailableLocales } from '@/i18n/routing';
+import { notFound } from 'next/navigation';
+import HeroSub from '@/components/herosub';
+import CourseSummary from '@/components/CourseSummary';
+import LeaderSection from '@/components/feature/LeaderSection';
+
+export async function generateStaticParams() {
+  const result = await getTiltakById({ index: 0 });
+  return result.map((tiltak) => ({ locale: tiltak.language ?? '' }));
+}
+
+export default async function LearnWell({ params }: { params: Promise<{ locale: string }> }) {
+  // Check that page exists in Sanity with correct locale
+  const locale = (await params).locale;
+  const tiltak = await getTiltakByIdLocalized({ index: 0, locale: locale as AvailableLocales });
+  if (!tiltak) return notFound();
+
+  return (
+    <main className='flex flex-col items-center gap-16 w-full max-w-[1536px] mx-auto my-16 px-4'>
+      <HeroSub {...tiltak} />
+      <CourseSummary {...tiltak} />
+      <LeaderSection leaders={tiltak.courseLeaders} />
+    </main>
+  );
+}

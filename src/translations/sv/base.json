@@ -1,0 +1,74 @@
+{
+  "header": {
+    "navigation": {
+      "index": "Hjem",
+      "about": {
+        "label": "Om Oss",
+        "aria": "gå til denne undersiden for å lese mer om oss"
+      },
+      "contact": {
+        "label": "Kontakt",
+        "aria": "gå til denne undersiden for å ta kontakt med en av oss"
+      }
+    },
+    "localeSwitcher": {
+      "locales": "{locale, select, nb {Norska} sv {Svenska} en {Engelska} other {Okänd}}"
+    }
+  },
+  "footer": {
+    "branding": {
+      "text": "Vi hjälper dig att hitta ditt drömjobb genom innovativa kurser och personlig vägledning."
+    },
+    "links": {
+      "title": "Sidor",
+      "hiring": {
+        "label": "Lediga tjänster",
+        "aria": "Gå till sidan för lediga tjänster"
+      },
+      "about": {
+        "label": "Om Jobloop",
+        "aria": "Gå till sidan med information om Jobloop"
+      },
+      "contact": {
+        "label": "Kontakta vårt team",
+        "aria": "Gå till kontaktsidan"
+      },
+      "privacy": {
+        "label": "Integritetspolicy",
+        "aria": "Gå till vår integritetspolicy"
+      },
+      "tos": {
+        "label": "Villkor",
+        "aria": "Gå till sidan med våra villkor"
+      }
+    },
+    "contacts": {
+      "title": "Kontakt",
+      "participants": "Deltagare",
+      "companies": "Företag",
+      "clients": "Uppdragsgivare"
+    },
+    "copyright": "Jobloop. Alla rättigheter förbehållna."
+  },
+  "components": {
+    "course": {
+      "targetGroup": "Hvem passer { target } for?",
+      "title": "Course details",
+      "description": "Innhold og rammer for kurset",
+      "demographic": "Målgruppe",
+      "duration": "Tidsplan",
+      "format": "Undervisningsform",
+      "location": "Sted"
+    },
+    "courseLeaders": {
+      "title": "Kursledere"
+    },
+    "curriculum": {
+      "title": "Hva lærer du i {subject}?"
+    },
+    "school": {
+      "title": "For { target }",
+      "school": "Skole"
+    }
+  }
+}

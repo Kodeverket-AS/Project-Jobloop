@@ -1,0 +1,28 @@
+{
+  "title": "Jobloop: Inkluderende arbeidspraksis og effektiv jobbmatching",
+  "description": "Få tilgang til inkluderende arbeidsmuligheter, skreddersydd yrkesopplæring og en vei inn i arbeidslivet. Jobloop kobler kandidater og arbeidsgivere på en smartere måte.",
+  "keywords": [
+    "jobbmatching",
+    "inkludering",
+    "yrkesopplæring",
+    "arbeidspraksis",
+    "Jobloop",
+    "frontend opplæring",
+    "backend kurs",
+    "fullstack utvikling",
+    "IT-jobb",
+    "arbeidsinkludering"
+  ],
+  "openGraph": {
+    "title": "Jobloop - Inkluderende arbeidspraksis og effektiv jobbmatching",
+    "description": "Jobloop gir tilgang til inkluderende arbeidsmuligheter, praksisplasser og opplæring innen IT og teknologi.",
+    "url": "https://www.jobloop.no",
+    "alt": "Jobloop - Inkluderende arbeidspraksis",
+    "locale": "no_NB"
+  },
+  "twitter": {
+    "card": "summary_large_image",
+    "title": "Jobloop - Inkluderende arbeidspraksis og effektiv jobbmatching",
+    "description": "Få tilgang til inkluderende arbeidsmuligheter, praksisplasser og yrkesopplæring. Jobloop kobler arbeidsgivere og kandidater effektivt."
+  }
+}
