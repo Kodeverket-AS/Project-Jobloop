@@ -55,7 +55,7 @@ export default function Navbar() {
             >
               KONTAKT
             </Link>
-            <LocaleMenu />
+            <LocaleMenu altColor={false} />
           </div>
           {/* <div className='px-4'>
             <HamburgerMenu hamFill='white' />
@@ -113,7 +113,7 @@ export function NavbarAlt() {
             >
               KONTAKT
             </Link>
-            <LocaleMenu />
+            <LocaleMenu altColor={false} />
           </div>
           {/* <div className='px-4'>
             <HamburgerMenu hamFill='colour' />
