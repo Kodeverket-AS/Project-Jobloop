@@ -53,7 +53,7 @@ export function Header() {
           </Link>
         </div>
         <div>
-          <nav className='hidden h-auto p-4 md:block'>
+          <nav className='hidden h-auto p-4 md:flex'>
             {links.map(({ href, label, aria }) => (
               <Link
                 key={label}
@@ -64,7 +64,7 @@ export function Header() {
                 {label}
               </Link>
             ))}
-            <LocaleMenu />
+            <LocaleMenu altColor={isLanding}/>
           </nav>
           <div className='px-4'>
             <HamburgerMenu hamFill='white' links={links} />
