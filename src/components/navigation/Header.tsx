@@ -5,7 +5,7 @@ import Image from 'next/image';
 import { useTranslations } from 'next-intl';
 import { usePathname } from '@/i18n/navigation';
 import HamburgerMenu from './Hamburger';
-// import LocaleMenu from '../ui/menu/LocaleMenu';
+import LocaleMenu from '../ui/menu/LocaleMenu';
 
 export function Header() {
   // Apply specific colors on homepage... /shrug
