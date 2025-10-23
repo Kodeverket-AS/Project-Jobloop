@@ -6,6 +6,7 @@ import Learnwell from "../public/learnwell.webp";
 import Gamify from "../public/gamify2.webp";
 import Spillbasert from "../public/spillbasert.webp";
 import Loop from "../public/loop.webp";
+import KiKurs from "../public/ki.jpg";
 
 import { IntroSectionReverse } from "./layout-components";
 import { LesMerButton } from "./buttons";
@@ -49,11 +50,24 @@ const UICardData = [
         text: "Få relevant arbeidspraksis og erfaring som gir deg flere jobbmuligheter.",
         path: "/loop",
     },
+    {
+        image: KiKurs,
+        alt: "KI-Kurs leder",
+        title: "KI-Kurs",
+        text: "Lær om kunstig intelligens og hvordan den kan brukes i arbeidslivet.",
+        path: "/ki-kurs",
+        isNew: true,
+    },
 ];
 
-const UICard = ({ image, title, text, path, alt }) => {
+const UICard = ({ image, title, text, path, alt, isNew = false }) => {
     return (
-        <div className='  group flex flex-col w-full gap-4 lg:gap-6 xl:flex-row-reverse bg-white rounded-xl shadow-sm hover:shadow-md border border-gray-50 p-6 transition-all duration-200 justify-between'>
+        <div className='  group flex flex-col w-full gap-4 lg:gap-6 xl:flex-row-reverse bg-white rounded-xl shadow-sm hover:shadow-md border border-gray-50 p-6 transition-all duration-200 justify-between relative'>
+            {isNew && (
+                <div className="absolute top-4 left-4  bg-jobloop-primary-orange text-white px-6 py-2 text-md font-bold transform  z-10 shadow-lg" style={{transform: 'rotate(-20deg) translateX(-10px)'}}>
+                    NYHET
+                </div>
+            )}
             <a href={path} className='w-full h-80 xl:w-1/2 relative overflow-hidden rounded-xl'>
                 <Image
                     alt={alt}
@@ -99,6 +113,7 @@ export default function SchoolCourses() {
                         text={card.text}
                         path={card.path}
                         alt={card.alt}
+                        isNew={card.isNew}
                     />
                 ))}
             </div>

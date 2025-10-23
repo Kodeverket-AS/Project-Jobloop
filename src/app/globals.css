@@ -19,7 +19,9 @@
 
 
 
-
+body {
+  user-select: none;
+}
 
 h1 {
   font-size: 3rem;
@@ -80,6 +82,8 @@ h6 {
 }
 
 @media (min-width: 768px) {
+
+  /* team-photos */
   .team-photo {
     opacity: 0;
   }
@@ -115,4 +119,37 @@ h6 {
     opacity: 1;
     transform: translateX(0) translateY(80px);
   }
+
+  /* ki-kurs */
+  .card-slide-in {
+    opacity: 0;
+    transform: translateX(-50px);
+    transition: all 0.6s ease-out;
+  }
+
+  .card-slide-in.animate {
+    opacity: 1;
+    transform: translateX(0);
+  }
+
+  .card-slide-in:nth-child(1) {
+    transition-delay: 0.1s;
+  }
+
+  .card-slide-in:nth-child(2) {
+    transition-delay: 0.2s;
+  }
+
+  .card-slide-in:nth-child(3) {
+    transition-delay: 0.3s;
+  }
+
+  .card-slide-in:nth-child(4) {
+    transition-delay: 0.4s;
+  }
+
+  .card-slide-in:nth-child(5) {
+    transition-delay: 0.5s;
+  }
+
 }

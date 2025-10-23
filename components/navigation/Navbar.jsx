@@ -61,9 +61,9 @@ export default function Navbar() {
     );
 }
 
-export function NavbarAlt() {
+export function NavbarAlt({ kiKursStyle = false }) {
     return (
-        <nav className='w-full px-5 '>
+        <nav className={`w-full px-5 ${kiKursStyle ? 'bg-jobloop-primary-green/20' : ''}`}>
             <div className='flex items-center justify-between 3xl:justify-around max-w-[1536px] mx-auto'>
                 <div className='flex flex-row items-end p-4'>
                     <Link href='/' aria-label='Gå til landingssiden'>

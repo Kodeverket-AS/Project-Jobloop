@@ -12,6 +12,7 @@ const learnwell = "/learnwell";
 const loop = "/loop";
 const grunnleggendeIt = "/grunnleggende-IT";
 const spillbasert = "/spillbasert";
+const kiKurs = "/ki-kurs";
 const about = "/om-oss";
 const nyhetsbrev = "/nyhetsbrev";
 const ansettelser = "/ansettelser";
@@ -23,6 +24,8 @@ export default function Navigation() {
 
   if (pathname === landing) {
     navbar = <Navbar />;
+  } else if (pathname === kiKurs) {
+    navbar = <NavbarAlt kiKursStyle={true} />;
   } else {
     navbar = <NavbarAlt />;
   }
