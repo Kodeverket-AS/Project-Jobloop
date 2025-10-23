@@ -29,8 +29,8 @@ export default async function Footer() {
   return (
     <footer className='w-full text-kv-white bg-jobloop-primary-grey'>
       <div className='mx-auto max-w-[1536px] px-4 md:px-8 lg:px-12'>
-        <div className='flex flex-col lg:flex-row lg:justify-around gap-8 py-12'>
-          <div className='flex flex-col items-center lg:items-start lg:justify-center gap-6 lg:w-1/3'>
+        <div className='flex flex-col lg:flex-row md:justify-around lg:justify-between gap-8 py-12 lg:mp-34'>
+          <div className='flex flex-col items-start justify-center gap-6 lg:w-1/3'>
             <div className='w-48'>
               <a
                 href='https://jobloop.no/'
@@ -47,7 +47,7 @@ export default async function Footer() {
                 />
               </a>
             </div>
-            <p className='text-gray-300 text-center lg:text-left leading-relaxed'>
+            <p className='text-gray-300 text-left leading-relaxed'>
               {t('footer.branding.text')}
             </p>
           </div>
@@ -58,21 +58,21 @@ export default async function Footer() {
               </h3>
               <div className='flex flex-col gap-3'>
                 <Link
-                  className='text-gray-300 hover:text-jobloop-primary-green transition-all duration-300 hover:translate-x-1 transform'
+                  className='text-gray-300 hover:text-jobloop-primary-green transition-all duration-300  transform'
                   href='/ansettelser'
                   aria-label={t('footer.links.hiring.aria')}
                 >
                   {t('footer.links.hiring.label')}
                 </Link>
                 <Link
-                  className='text-gray-300 hover:text-jobloop-primary-green transition-all duration-300 hover:translate-x-1 transform'
+                  className='text-gray-300 hover:text-jobloop-primary-green transition-all duration-300  transform'
                   href='/om-oss'
                   aria-label={t('footer.links.about.aria')}
                 >
                   {t('footer.links.about.label')}
                 </Link>
                 <Link
-                  className='text-gray-300 hover:text-jobloop-primary-green transition-all duration-300 hover:translate-x-1 transform'
+                  className='text-gray-300 hover:text-jobloop-primary-green transition-all duration-300  transform'
                   href='/kontakt'
                   aria-label={t('footer.links.contact.aria')}
                 >
