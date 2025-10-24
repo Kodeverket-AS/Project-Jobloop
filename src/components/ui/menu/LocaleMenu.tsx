@@ -55,7 +55,8 @@ export default function LocaleMenu({ altColor }: { altColor: boolean }) {
           <button
             key={locale}
             tabIndex={0}
-            onClick={() => !isPending && onSelectChange(locale)}
+            disabled={isPending}
+            onClick={() => onSelectChange(locale)}
             aria-label={`Click to select ${t('locales', { locale })} as your language`}
             className='group flex gap-2 p-1 cursor-pointer text-jobloop-primary-grey'
           >
