@@ -170,6 +170,10 @@ export default async function OmOss() {
             ))}
           </div>
         </div>
+        <div className='container mx-auto px-4 py-12'>
+          <h1>Dette er bare en placeholder for å teste ut layouten</h1>
+          <p>Her må vi huske å legge inn rette bilder og tekst for hvert prosjekt.</p>
+        </div>
       </section>
       <CooperationSection />
       <LocationCarousel />
