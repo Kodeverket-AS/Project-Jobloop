@@ -51,7 +51,12 @@ export default async function OmOss() {
       text: t('about.partners.playwell.text'),
       link: 'https://www.playwell.no/',
     },
-  ];
+    {
+      image: '/kvb.png',
+      title: "Kodeverket Bergen",
+      text: "Kodeverket Bergen er en kodeverk som driver med koding og utvikling. Vi samlokaliserte oss i 2019 med mål om å utvikle mestringsarenaer for sårbare barn og unge som motiveres av koding.",
+      link: 'https://www.kodeverketbergen.no/',
+    },]
 
   return (
     <main className='flex flex-col items-center justify-between min-h-screen mt-10 space-y-16 mb-12 px-4'>
