@@ -31,7 +31,7 @@ export default async function OmOss() {
       image: '/fontenelogo 1.png',
       title: t('about.partners.fontenehuset.title'),
       text: t('about.partners.fontenehuset.text'),
-      link: 'https://www.fontenehuset.no',
+      link: 'https://www.fontenehusetbergen.no/',
     },
     {
       image: '/glode-logo 1.png',
