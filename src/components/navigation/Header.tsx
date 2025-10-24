@@ -4,7 +4,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { useTranslations } from 'next-intl';
 import { usePathname } from '@/i18n/navigation';
-import HamburgerMenu from './Hamburger';
+import { HamburgerMenu } from './Hamburger';
 import LocaleMenu from '../ui/menu/LocaleMenu';
 
 export function Header() {
@@ -64,10 +64,10 @@ export function Header() {
                 {label}
               </Link>
             ))}
-            <LocaleMenu altColor={isLanding}/>
+            <LocaleMenu altColor={isLanding} />
           </nav>
           <div className='px-4'>
-            <HamburgerMenu hamFill='white' links={links} />
+            <HamburgerMenu links={links} altColor={isLanding} />
           </div>
         </div>
       </div>
