@@ -86,7 +86,7 @@ export const TextBlock: React.FC<TextBlockProps> = ({
   return (
     <article className={`flex flex-col gap-4 w-full ${textAlignment} my-auto`}>
       <h2
-        className={`text-kv-black xl:text-4xl underline underline-offset-8 pb-2 ${
+        className={`text-kv-black xl:text-4xl underline underline-offset-8  leading-relaxed pb-2 ${
           isOrange
             ? "decoration-jobloop-primary-orange"
             : "decoration-jobloop-primary-green"
