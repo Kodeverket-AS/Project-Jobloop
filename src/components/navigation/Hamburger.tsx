@@ -1,9 +1,10 @@
 'use client';
 
-import React, { useEffect, useState, useRef } from 'react';
+import { useState, useRef } from 'react';
 import { IoCloseSharp } from 'react-icons/io5';
 import { GiHamburgerMenu } from 'react-icons/gi';
 import Link from 'next/link';
+import { useClickOutside } from '@/hooks/useClickOutside';
 
 interface MenuItems {
   href: string;
@@ -13,46 +14,23 @@ interface MenuItems {
 
 interface MenuProps {
   links: MenuItems[];
-  hamFill: string;
+  altColor: boolean;
 }
 
-const HamburgerMenu = ({ hamFill, links }: MenuProps) => {
+export function HamburgerMenu({ links, altColor }: MenuProps) {
   const [isOpen, setIsOpen] = useState<boolean>(false);
   const menuRef = useRef<HTMLDivElement>(null);
-
-  const handleMenuToggle = () => {
-    setIsOpen(!isOpen);
-  };
-
-  useEffect(() => {
-    const handleClickOutside = (event: MouseEvent) => {
-      if (
-        menuRef.current &&
-        event.target instanceof Node &&
-        !menuRef.current.contains(event.target)
-      ) {
-        setIsOpen(false);
-      }
-    };
-
-    document.addEventListener('mousedown', handleClickOutside);
-
-    return () => {
-      document.removeEventListener('mousedown', handleClickOutside);
-    };
-  }, []);
+  useClickOutside(menuRef, () => setIsOpen(false));
 
   return (
     <div className='block md:hidden'>
       <button
-        className='  flex items-center justify-center w-10 h-10 transition duration-500 rounded-xl top-4 right-4'
-        onClick={handleMenuToggle}
-        aria-label='Åpne navigasjonsmeny'
+        className='flex items-center justify-center w-10 h-10 transition duration-500 rounded-xl top-4 right-4'
+        aria-label='Åpne mobil navigasjonsmeny'
+        onClick={() => setIsOpen(!isOpen)}
       >
         <GiHamburgerMenu
-          className={`w-20 h-20 ${
-            hamFill == 'white' ? 'fill-kv-white' : 'fill-jobloop-secondary-green'
-          }`}
+          className={`w-20 h-20 ${altColor ? 'fill-kv-white' : 'fill-jobloop-secondary-green'}`}
         />
       </button>
       <div
@@ -64,12 +42,11 @@ const HamburgerMenu = ({ hamFill, links }: MenuProps) => {
         <nav className='relative flex justify-center'>
           <button
             className='absolute flex items-center justify-center w-10 h-10 transition rounded-xl top-4 right-4 '
-            onClick={handleMenuToggle}
+            onClick={() => setIsOpen(!isOpen)}
             aria-label='Lukke navigasjonsmeny'
           >
-            {' '}
             <IoCloseSharp
-              className={` ${
+              className={`${
                 isOpen ? 'block' : 'hidden'
               } text-kv-black rounded-full transition duration-500 z-50 w-12 h-12`}
             />
@@ -93,6 +70,4 @@ const HamburgerMenu = ({ hamFill, links }: MenuProps) => {
       </div>
     </div>
   );
-};
-
-export default HamburgerMenu;
+}
