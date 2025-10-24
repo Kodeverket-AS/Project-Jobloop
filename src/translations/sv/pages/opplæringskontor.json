@@ -1,0 +1,35 @@
+{
+  "title": "Utbildningskontor",
+  "description": "Utbildningskontoret hjälper företag att hitta och utveckla kompetens genom målinriktade utbildningsprogram och kurser.",
+  "services": {
+    "title": "Våra tjänster",
+    "items": [
+      "Kompetenskartläggning och behovsanalys",
+      "Anpassade utbildningsprogram",
+      "Facklig uppföljning och vägledning",
+      "Kvalitetssäkring och utvärdering"
+    ]
+  },
+  "contact": {
+    "title": "Kontakta oss",
+    "phone": "Telefon",
+    "email": "E-post"
+  },
+  "process": {
+    "title": "Hur vi kan hjälpa ditt företag",
+    "steps": [
+      {
+        "title": "Analys",
+        "description": "Vi kartlägger kompetensbehoven i ditt företag"
+      },
+      {
+        "title": "Planering",
+        "description": "Vi utvecklar anpassade utbildningsprogram"
+      },
+      {
+        "title": "Uppföljning",
+        "description": "Vi säkerställer kvalitet och mäter resultat"
+      }
+    ]
+  }
+}

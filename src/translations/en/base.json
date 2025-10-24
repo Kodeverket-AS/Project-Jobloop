@@ -6,6 +6,10 @@
         "label": "About Us",
         "aria": "gå til denne undersiden for å lese mer om oss"
       },
+      "opplæringskontor": {
+        "label": "Training Office",
+        "aria": "gå til denne undersiden for å lese mer om opplæringskontoret"
+      },
       "contact": {
         "label": "Contact",
         "aria": "gå til denne undersiden for å ta kontakt med en av oss"

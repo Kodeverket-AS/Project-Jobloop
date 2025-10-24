@@ -1,0 +1,35 @@
+{
+  "title": "Training Office",
+  "description": "The training office helps companies find and develop competence through targeted training programs and courses.",
+  "services": {
+    "title": "Our services",
+    "items": [
+      "Competence mapping and needs analysis",
+      "Customized training programs",
+      "Professional follow-up and guidance",
+      "Quality assurance and evaluation"
+    ]
+  },
+  "contact": {
+    "title": "Contact us",
+    "phone": "Phone",
+    "email": "Email"
+  },
+  "process": {
+    "title": "How we can help your company",
+    "steps": [
+      {
+        "title": "Analysis",
+        "description": "We map the competence needs in your company"
+      },
+      {
+        "title": "Planning",
+        "description": "We develop customized training programs"
+      },
+      {
+        "title": "Follow-up",
+        "description": "We ensure quality and measure results"
+      }
+    ]
+  }
+}

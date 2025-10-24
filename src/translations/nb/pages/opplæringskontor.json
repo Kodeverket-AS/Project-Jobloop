@@ -1,0 +1,36 @@
+{
+  "title": "Opplæringskontor",
+  "description": "Vi er et opplæringskontor som hjelper bedrifter med å ta samfunnsansvar og inkludere flere i arbeidslivet.",
+  "services": {
+    "title": "Våre tjenester",
+    "items": [
+      "Rekruttering av lærlinger",
+      "Oppfølging av lærlinger",
+      "HR-støtte",
+      "Faglig utvikling",
+      "Administrasjon av lærekontrakter"
+    ]
+  },
+  "contact": {
+    "title": "Kontakt oss",
+    "phone": "Telefon",
+    "email": "E-post"
+  },
+  "process": {
+    "title": "Slik fungerer det",
+    "steps": [
+      {
+        "title": "Kartlegging",
+        "description": "Vi kartlegger bedriftens behov og ønsker."
+      },
+      {
+        "title": "Matching",
+        "description": "Vi finner den rette lærlingen for din bedrift."
+      },
+      {
+        "title": "Oppfølging",
+        "description": "Vi følger opp lærlingen og bedriften gjennom hele læretiden."
+      }
+    ]
+  }
+}
