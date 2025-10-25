@@ -8,6 +8,7 @@ import { usePathname, useRouter } from '@/i18n/navigation';
 import { useParams } from 'next/navigation';
 import { useClickOutside } from '@/hooks/useClickOutside';
 import { MdLanguage } from 'react-icons/md';
+import { LuLoader } from 'react-icons/lu';
 
 export default function LocaleMenu({ altColor }: { altColor: boolean }) {
   const curLocale = useLocale();
@@ -34,6 +35,7 @@ export default function LocaleMenu({ altColor }: { altColor: boolean }) {
         { pathname, params },
         { locale: nextLocale }
       );
+      router.refresh();
     });
   }
 
@@ -42,10 +44,10 @@ export default function LocaleMenu({ altColor }: { altColor: boolean }) {
       <button
         tabIndex={0}
         onClick={() => setIsOpen(!isOpen)}
-        className={`flex items-center gap-2 px-2 font-semibold text-xl ${altColor ? 'text-kv-white' : 'text-jobloop-primary-grey'}`}
+        className={`flex items-center gap-2 px-2 font-semibold text-xl ${altColor ? 'text-kv-white' : 'text-jobloop-primary-grey'} ${isPending ? 'animate-pulse' : ''}`}
         aria-label='Click button to open language switcher'
       >
-        <MdLanguage />
+        {isPending ? <LuLoader className='animate-spin' /> : <MdLanguage />}
         <span className='uppercase'>{curLocale}</span>
       </button>
       <div
