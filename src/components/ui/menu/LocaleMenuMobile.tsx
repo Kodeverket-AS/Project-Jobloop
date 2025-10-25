@@ -1,12 +1,11 @@
 'use client';
 
 import Image from 'next/image';
-import { useRef, useState, useTransition } from 'react';
+import { useRef, useTransition } from 'react';
 import { type Locale, useLocale, useTranslations } from 'next-intl';
 import { routing } from '@/i18n/routing';
 import { usePathname, useRouter } from '@/i18n/navigation';
 import { useParams } from 'next/navigation';
-import { useClickOutside } from '@/hooks/useClickOutside';
 
 export default function LocaleMenuMobile() {
   const curLocale = useLocale();
@@ -14,9 +13,7 @@ export default function LocaleMenuMobile() {
 
   // State
   const [isPending, startTransition] = useTransition();
-  const [isOpen, setIsOpen] = useState<boolean>(false);
   const container = useRef<HTMLDivElement>(null);
-  useClickOutside(container, () => setIsOpen(false));
 
   // Gather info
   const router = useRouter();
@@ -40,9 +37,9 @@ export default function LocaleMenuMobile() {
   return (
     <span
       ref={container}
-      className='flex flex-col pt-12 gap-4 border-t border-jobloop-primary-green'
+      className='flex flex-col pt-12 border-t border-jobloop-primary-green'
     >
-      <p className='text-center text-jobloop-secondary-green'>{t('changeLocale')}</p>
+      <p className='font-bold text-center text-jobloop-secondary-green'>{t('changeLocale')}</p>
       {routing.locales.map((locale) => (
         <button
           key={locale}
@@ -50,7 +47,11 @@ export default function LocaleMenuMobile() {
           disabled={isPending}
           onClick={() => onSelectChange(locale)}
           aria-label={`Click to select ${t('locales', { locale })} as your language`}
-          className='group flex gap-2 items-center cursor-pointer'
+          className={`
+            group flex gap-2 items-center py-2 px-4 rounded-md
+            ${curLocale === locale ? "bg-jobloop-primary-green/50" : ""}
+            cursor-pointer
+          `}
         >
           <Image
             src={`/images/flags/${locale}.svg`}
