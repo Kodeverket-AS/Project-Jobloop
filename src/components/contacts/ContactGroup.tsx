@@ -8,10 +8,10 @@ interface ContactGroupProps {
 }
 
 export function ContactGroup({ groupID, people = [] }: ContactGroupProps) {
+  const t = useTranslations('contact.titles');
+
   // Skip category if its empty
   if (!people.length) return null;
-
-  const t = useTranslations('contact.titles');
 
   // Convert group id to readable string
   let groupName: string;
