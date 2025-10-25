@@ -1,6 +1,6 @@
 import type { Contacts } from '@/types/sanity/sanity.types';
 import { sanityFetch } from '@/lib/fetchData';
-import ContactContainer from '@/components/contacts/Container';
+import ContactContainer from '@/components/feature/contact/Container';
 
 export const revalidate = 60;
 
