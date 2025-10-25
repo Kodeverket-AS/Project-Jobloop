@@ -5,6 +5,7 @@ import { IoCloseSharp } from 'react-icons/io5';
 import { GiHamburgerMenu } from 'react-icons/gi';
 import Link from 'next/link';
 import { useClickOutside } from '@/hooks/useClickOutside';
+import LocaleMenuMobile from '../ui/menu/LocaleMenuMobile';
 
 interface MenuItems {
   href: string;
@@ -34,14 +35,16 @@ export function HamburgerMenu({ links, altColor }: MenuProps) {
         />
       </button>
       <div
-        className={`fixed top-0 z-40 right-0 w-full bg-kv-white h-screen transition-transform duration-300 transform ${
-          isOpen ? 'translate-x-0' : 'translate-x-full'
-        }`}
+        className={`
+          z-40 fixed flex inset-0 bg-kv-white
+          transform transition-transform duration-300 
+          ${isOpen ? 'translate-x-0' : 'translate-x-full'}
+        `}
         ref={menuRef}
       >
-        <nav className='relative flex justify-center'>
+        <div className='relative flex-1 flex flex-col justify-center'>
           <button
-            className='absolute flex items-center justify-center w-10 h-10 transition rounded-xl top-4 right-4 '
+            className='absolute top-4 right-4 w-10 h-10'
             onClick={() => setIsOpen(!isOpen)}
             aria-label='Lukke navigasjonsmeny'
           >
@@ -51,13 +54,14 @@ export function HamburgerMenu({ links, altColor }: MenuProps) {
               } text-kv-black rounded-full transition duration-500 z-50 w-12 h-12`}
             />
           </button>
-          <ul className='grid gap-8 mt-20'>
+          <div className='flex flex-col items-center gap-12 py-12 overflow-scroll'>
+            <nav className='flex flex-col items-center gap-8'>
             {links.map(({ label, href, aria }) => (
               <Link
                 key={label}
                 href={href}
                 aria-label={aria}
-                className='px-8 text-xl font-bold transition-all text-jobloop-secondary-green group w-fit'
+                className='text-xl font-bold text-jobloop-secondary-green group w-fit'
                 onClick={() => {
                   setIsOpen(false);
                 }}
@@ -65,8 +69,11 @@ export function HamburgerMenu({ links, altColor }: MenuProps) {
                 {label}
               </Link>
             ))}
-          </ul>
-        </nav>
+          </nav>
+          <LocaleMenuMobile />
+          </div>
+          
+        </div>
       </div>
     </div>
   );
