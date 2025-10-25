@@ -1,0 +1,27 @@
+{
+  "title": "Our employees",
+  "text": "Find and contact the right people on our team",
+  "titles": {
+    "admin": "Management and administration",
+    "leaders": "Team leaders and program managers",
+    "teachers": "Instructors and game educators",
+    "interns": "Interns",
+    "undefined": "Uncategorized"
+  },
+  "search": {
+    "input": {
+      "placeholder": "Search for an employee …"
+    },
+    "departments": {
+      "all": "All departments"
+    },
+    "reset": {
+      "label": "Reset search"
+    },
+    "filter": "Showing {filtered} of {total} employees",
+    "empty": {
+      "text": "Sorry, your search returned no results.",
+      "label": "Try another search"
+    }
+  }
+}
