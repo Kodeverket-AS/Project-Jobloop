@@ -1,69 +1,18 @@
 'use client';
 
+import { type Contacts } from '@/types/sanity/sanity.types';
 import { useEffect, useCallback, useRef, useState, useMemo } from 'react';
-import ContactCard from './Card';
-import { Contacts } from '@/types/sanity/sanity.types';
-
-function Section({
-  groupID,
-  people = [],
-}: {
-  groupID: number;
-  people: Contacts[];
-}) {
-
-  // Skip category if its empty
-  if (!people.length) return null;
-
-  // Convert group id to readable string
-  let groupName = 'Ukategorisert';
-  switch (groupID) {
-    case 1:
-      groupName = 'Ledelse og administrasjon';
-      break;
-    case 2:
-      groupName = 'Teamledere og tiltaksledere';
-      break;
-    case 3:
-      groupName = 'Faglige veiledere og spillpedagoger';
-      break;
-    case 4:
-      groupName = 'Interns';
-      break;
-    default:
-      groupName = 'Ukategorisert';
-      break;
-  }
-
-  const maxWidth =
-    people.length <= 2
-      ? 'max-w-2xl'
-      : people.length <= 3
-        ? 'max-w-5xl'
-        : 'max-w-7xl';
-
-  return (
-    <section className={`space-y-8 mx-auto ${maxWidth}`}>
-      <div className='text-center'>
-        <h2 className='text-2xl md:text-3xl font-bold text-kv-black pb-2 border-b-2 md:border-b-4 border-jobloop-primary-green w-fit mx-auto'>
-          {groupName}
-        </h2>
-      </div>
-
-      <div className='grid gap-8 justify-center justify-items-center grid-cols-[repeat(auto-fit,minmax(220px,1fr))]'>
-        {people.map((contact) => (
-          <ContactCard key={contact._id} contact={contact} />
-        ))}
-      </div>
-    </section>
-  );
-}
+import { useTranslations } from 'next-intl';
+import { ContactGroup } from '@/components/contacts/ContactGroup';
 
 export default function ContactContainer({ data = [] }: { data: Contacts[] }) {
   const [filtered, setFiltered] = useState<Contacts[]>(data);
   const [isFiltered, setIsFiltered] = useState<boolean>(false);
   const nameInput = useRef<HTMLInputElement>(null);
   const departmentSelect = useRef<HTMLSelectElement>(null);
+
+  // Get translations
+  const t = useTranslations('contact');
 
   // Group contacts by their group number in an object, then iterate over key
   const groupByRole = filtered.reduce(
@@ -79,9 +28,7 @@ export default function ContactContainer({ data = [] }: { data: Contacts[] }) {
   // Create a unique set of all departments for select options
   const departmentList = useMemo(() => {
     const set = new Set<string>();
-    data.forEach((item) =>
-      (item?.company ?? []).forEach((c) => c?.trim() && set.add(c.trim()))
-    );
+    data.forEach((item) => (item?.company ?? []).forEach((c) => c?.trim() && set.add(c.trim())));
     return Array.from(set).sort((a, b) => a.localeCompare(b, 'no'));
   }, [data]);
 
@@ -124,12 +71,8 @@ export default function ContactContainer({ data = [] }: { data: Contacts[] }) {
   return (
     <div className='space-y-12 bg-linear-to-br from-jobloop-primary-green/5 via-white to-jobloop-primary-orange/5 p-8 rounded-2xl border border-jobloop-primary-green/10'>
       <div className='text-center mb-8'>
-        <h1 className='text-3xl md:text-4xl font-bold text-kv-black mb-4'>
-          Våre ansatte
-        </h1>
-        <p className='text-lg text-gray-600 max-w-2xl mx-auto'>
-          Finn og kontakt de riktige personene i vårt team
-        </p>
+        <h1 className='text-3xl md:text-4xl font-bold text-kv-black mb-4'>{t('title')}</h1>
+        <p className='text-lg text-gray-600 max-w-2xl mx-auto'>{t('text')}</p>
       </div>
 
       <div className='bg-linear-to-br from-white to-gray-50 p-6 rounded-xl shadow-lg border border-jobloop-primary-green/20'>
@@ -139,7 +82,7 @@ export default function ContactContainer({ data = [] }: { data: Contacts[] }) {
               ref={nameInput}
               onChange={doFilter}
               type='text'
-              placeholder='Søk etter ansatt …'
+              placeholder={t('search.input.placeholder')}
               className='w-full rounded-xl border-2 border-gray-200 bg-white px-4 py-3 text-base focus:outline-hidden focus:ring-2 focus:ring-jobloop-primary-green/60 focus:border-jobloop-primary-green transition-all duration-300 hover:border-jobloop-primary-green/50'
             />
             <div className='absolute inset-y-0 right-0 flex items-center pr-3 pointer-events-none'>
@@ -166,7 +109,7 @@ export default function ContactContainer({ data = [] }: { data: Contacts[] }) {
               defaultValue=''
               className='w-full rounded-xl border-2 border-gray-200 bg-white px-4 py-3 text-base focus:outline-hidden focus:ring-2 focus:ring-jobloop-primary-green/60 focus:border-jobloop-primary-green transition-all duration-300 hover:border-jobloop-primary-green/50 appearance-none cursor-pointer'
             >
-              <option value=''>Alle avdelinger</option>
+              <option value=''>{t('search.departments.all')}</option>
               {departmentList.map((opt) => (
                 <option key={opt} value={opt}>
                   {opt}
@@ -200,14 +143,17 @@ export default function ContactContainer({ data = [] }: { data: Contacts[] }) {
             }}
             className='w-full rounded-xl border-2 border-jobloop-primary-orange bg-linear-to-r from-jobloop-primary-orange to-jobloop-primary-orange/80 px-4 py-3 text-base text-white hover:from-jobloop-primary-green/90 hover:to-jobloop-primary-green active:scale-95 transition-all duration-300 font-medium shadow-md hover:shadow-lg'
           >
-            Tilbakestill søk
+            {t('search.reset.label')}
           </button>
         </div>
 
         {isFiltered && (
           <div className='text-center'>
             <span className='inline-block bg-jobloop-primary-green/10 text-jobloop-primary-green px-3 py-1 rounded-full text-sm font-medium'>
-              Viser {filtered.length} av {data.length} ansatte
+              {t('search.filter', {
+                filtered: filtered.length,
+                total: data.length,
+              })}
             </span>
           </div>
         )}
@@ -218,28 +164,21 @@ export default function ContactContainer({ data = [] }: { data: Contacts[] }) {
           .map(Number)
           .sort((a, b) => a - b)
           .map((groupID) => (
-            <Section
-              key={groupID}
-              groupID={groupID}
-              people={groupByRole[groupID]}
-            />
+            <ContactGroup key={groupID} groupID={groupID} people={groupByRole[groupID]} />
           ))}
         {!filtered.length && (
           <div className='text-center py-12'>
-            <p className='text-lg text-slate-600 mb-4'>
-              Beklager, ditt søk ga ingen resultater.
-            </p>
+            <p className='text-lg text-slate-600 mb-4'>{t('search.empty.text')}</p>
             <button
               onClick={() => {
                 if (nameInput.current) nameInput.current.value = '';
-                if (departmentSelect.current)
-                  departmentSelect.current.value = '';
+                if (departmentSelect.current) departmentSelect.current.value = '';
                 setIsFiltered(false);
                 setFiltered(data);
               }}
               className='text-jobloop-primary-green hover:underline font-medium'
             >
-              Prøv et annet søk
+              {t('search.empty.label')}
             </button>
           </div>
         )}
