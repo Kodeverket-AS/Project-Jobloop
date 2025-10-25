@@ -12,7 +12,8 @@
       }
     },
     "localeSwitcher": {
-      "locales": "{locale, select, nb {Norska} sv {Svenska} en {Engelska} other {Okänd}}"
+      "locales": "{locale, select, nb {Norska} sv {Svenska} en {Engelska} other {Okänd}}",
+      "changeLocale": "Byt språk"
     }
   },
   "footer": {
