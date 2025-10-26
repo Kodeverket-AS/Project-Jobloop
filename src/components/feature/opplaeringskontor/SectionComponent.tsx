@@ -6,10 +6,6 @@ import { PortableText } from "@portabletext/react";
 interface SectionComponentProps {
   leftContent?: ReactNode;
   rightContent?: ReactNode;
-  isBgColor?: boolean;
-  bgColorGreen?: boolean;
-  bgColorOrange?: boolean;
-  bgColorGrey?: boolean;
   reverseLayoutOrder?: boolean;
   centerVertically?: boolean;
 }
@@ -17,43 +13,30 @@ interface SectionComponentProps {
 export const SectionComponent: React.FC<SectionComponentProps> = ({
   leftContent,
   rightContent,
-  isBgColor = false,
-  bgColorGreen = false,
-  bgColorOrange = false,
-  bgColorGrey = false,
   reverseLayoutOrder = false,
   centerVertically = false,
 }) => {
-  let backgroundColor = "";
-  if (isBgColor) {
-    backgroundColor = bgColorGreen
-      ? "bg-jobloop-primary-green/10"
-      : bgColorOrange
-      ? "bg-jobloop-primary-orange/10"
-      : bgColorGrey
-      ? "bg-jobloop-primary-grey/5"
-      : "";
-  }
-
   return (
-    <section className={`w-screen ${backgroundColor} ${isBgColor ? "py-8" : ""}`}>
+    <div className="flex flex-col justify-between  md:flex-row-reverse md:px-0">
       <div className="max-w-screen-2xl mx-auto px-4">
         <div
-          className={`flex flex-col lg:flex-row gap-8 ${
-            reverseLayoutOrder ? "lg:flex-row-reverse" : ""
+          className={`flex flex-col md:flex-row gap-8 ${
+            reverseLayoutOrder ? "" : ""
           } ${centerVertically ? "items-center" : ""}`}
         >
-          <div className="flex-1 flex items-center justify-center lg:order-2">
-            <div className="w-full [&_img]:w-full [&_img]:h-auto [&_img]:object-cover [&_img]:rounded-xl">
+          <div className={`flex-1 flex items-center ${reverseLayoutOrder ? 'order-1 lg:order-1' : 'order-2 lg:order-1'}`}>
+            <div className="w-full [&_img]:w-full [&_img]:h-auto [&_img]:object-cover [&_img]:rounded-xl [&_img]:md:max-w-sm [&_img]:md:mx-auto [&_img]:lg:max-w-none">
+              {leftContent}
+            </div>
+          </div>
+          <div className={`flex-1 flex items-center justify-center ${reverseLayoutOrder ? 'order-2 lg:order-2' : 'order-1 lg:order-2'}`}>
+            <div className="w-full [&_img]:w-full [&_img]:h-auto [&_img]:object-cover [&_img]:rounded-xl [&_img]:md:max-w-sm [&_img]:md:mx-auto [&_img]:lg:max-w-none">
               {rightContent}
             </div>
           </div>
-          <div className="flex-1 flex items-center lg:order-1">
-            {leftContent}
-          </div>
         </div>
       </div>
-    </section>
+    </div>
   );
 };
 
@@ -86,7 +69,7 @@ export const TextBlock: React.FC<TextBlockProps> = ({
   return (
     <article className={`flex flex-col gap-4 w-full ${textAlignment} my-auto`}>
       <h2
-        className={`text-kv-black xl:text-4xl underline underline-offset-8  leading-relaxed pb-2 ${
+        className={`text-kv-black  md:!text-xl lg:!text-3xl xl:!text-4xl underline underline-offset-8  leading-relaxed pb-2 ${
           isOrange
             ? "decoration-jobloop-primary-orange"
             : "decoration-jobloop-primary-green"

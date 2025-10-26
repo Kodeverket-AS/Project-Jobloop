@@ -22,7 +22,7 @@ export default async function HeroSection() {
             className='w-200 h-200'
           />
         </div>
-        <div className='w-full bg-white-50 rounded-3xl p-6 text-center border-2 border-jobloop-primary-orange hover:shadow-lg transition-all duration-300'>
+        <div className='w-full bg-white-50 rounded-2xl p-6 text-center border-2 border-jobloop-primary-orange hover:shadow-lg transition-all duration-300'>
           <p className='text-lg  font-medium mb-2'>{t('questions')}:</p>
           <a
             href='mailto:oda.kristin@jobloop.no'
@@ -33,7 +33,7 @@ export default async function HeroSection() {
         </div>
       </div>
 
-      <div className='bg-jobloop-primary-green/50 border-8 border-white rounded-3xl p-8 text-center flex items-center justify-center hover:shadow-lg transition-all duration-300'>
+      <div className='bg-jobloop-primary-green/50 border-8 border-white rounded-2xl p-8 text-center flex items-center justify-center hover:shadow-lg transition-all duration-300'>
         <h1
           className={`text-4xl md:text-5xl lg:text-6xl font-bold  leading-[2.5] ${caveat.className}`}
         >

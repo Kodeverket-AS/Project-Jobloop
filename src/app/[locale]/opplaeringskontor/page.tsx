@@ -1,5 +1,9 @@
 import Image from 'next/image';
+import { getTranslations } from 'next-intl/server';
 import { SectionComponent, TextBlock } from '@/components/feature/opplaeringskontor/SectionComponent';
+import Fordeler from '@/components/feature/opplaeringskontor/Fordeler';
+import ReviewKH from '@/components/feature/opplaeringskontor/ReviewKH';
+import CTASection from '@/components/feature/ki/CTASection';
 
 export async function generateStaticParams() {
   return [
@@ -9,15 +13,17 @@ export async function generateStaticParams() {
   ];
 }
 
-export default function OpplæringskontorPage() {
+export default async function OpplæringskontorPage() {
+  const t = await getTranslations('opplæringskontor');
   return (
-    <main className="flex flex-col gap-16">
+       <main className='flex flex-col items-center justify-between min-h-screen mt-10 space-y-16 mb-12 px-4'>
+
 
       <SectionComponent
         leftContent={
           <TextBlock
-            title="Utenforskap handler sjelden om vilje – det handler om muligheter"
-            contentString="Vi legger til rette for at bedrifter kan bidra uten å bære hele byrden alene. Gjennom strukturert oppfølging, tydelige forventninger og tett samarbeid hjelper vi flere inn i arbeidslivet – trygt, effektivt og profesjonelt."
+            title={t('section1.title')}
+            contentString={t('section1.content')}
           />
         }
         rightContent={
@@ -29,7 +35,6 @@ export default function OpplæringskontorPage() {
             className="w-full h-auto object-cover rounded-xl"
           />
         }
-        bgColorGreen={true}
       />
 
       
@@ -45,20 +50,19 @@ export default function OpplæringskontorPage() {
         }
         rightContent={
           <TextBlock
-            title="Alle snakker om samfunnsansvar. Vi gjør det konkret."
-            contentString="Som lærebedrift gjennom JobLoop blir du en del av et system som fungerer – der faglig utvikling, HR-støtte og reell inkludering går hånd i hånd. Du får støtte, struktur og resultater. Vi fikser det – du gjør en forskjell."
+            title={t('section2.title')}
+            contentString={t('section2.content')}
           />
         }
         reverseLayoutOrder={true}
-        bgColorOrange={true}
       />
 
       
       <SectionComponent
         leftContent={
           <TextBlock
-            title="Vi møter mange bedrifter som vil bidra, men ikke vet hvor de skal starte."
-            contentString="Derfor har vi laget et lavterskel-løp der vi tar oss av alt det praktiske. Du får møte kandidatene, vurdere kompetansen og teste samarbeidet. Vi følger opp lærlingen – du fokuserer på driften."
+            title={t('section3.title')}
+            contentString={t('section3.content')}
           />
         }
         rightContent={
@@ -70,7 +74,6 @@ export default function OpplæringskontorPage() {
             className="w-full h-auto object-cover rounded-xl"
           />
         }
-        bgColorGrey={true}
       />
 
       
@@ -86,13 +89,24 @@ export default function OpplæringskontorPage() {
         }
         rightContent={
           <TextBlock
-            title="Enkelt. Trygt. Bærekraftig."
-            contentString="Vi har laget et system som fungerer for alle parter. Bedrifter får støtte og struktur, kandidater får muligheten til å vokse og utvikle seg, og samfunnet får flere mennesker i arbeid. Det er enkelt, trygt og bærekraftig for alle involverte."
+            title={t('section4.title')}
+            contentString={t('section4.content')}
           />
         }
         reverseLayoutOrder={true}
-        bgColorGreen={true}
       />
+
+      <Fordeler 
+        title={t('fordeler.title')}
+        items={t.raw('fordeler.items')}
+      />
+      <ReviewKH 
+        name={t('review.name')}
+        position={t('review.position')}
+        company={t('review.company')}
+        text={t('review.text')}
+      />
+      <CTASection />
     </main>
   );
 }

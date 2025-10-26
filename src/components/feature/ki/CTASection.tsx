@@ -5,7 +5,7 @@ export default async function CTASection() {
   const t = await getTranslations('ki.cta');
   return (
     <div className='w-full mx-auto text-center mb-16'>
-      <div className='bg-jobloop-primary-green/50 rounded-3xl p-8 '>
+      <div className='bg-jobloop-primary-green/50 rounded-2xl p-8 '>
         <h2 className='text-3xl font-bold mb-4'>{t('title')}</h2>
         <p className='text-xl mb-6 opacity-90'>{t('text')}</p>
         <div className='flex flex-col sm:flex-row gap-4 justify-center items-center'>

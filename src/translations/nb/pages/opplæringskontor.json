@@ -1,6 +1,57 @@
 {
   "title": "Opplæringskontor",
   "description": "Vi er et opplæringskontor som hjelper bedrifter med å ta samfunnsansvar og inkludere flere i arbeidslivet.",
+  "section1": {
+    "title": "Utenforskap handler sjelden om vilje – det handler om muligheter",
+    "content": "Vi legger til rette for at bedrifter kan bidra uten å bære hele byrden alene. Gjennom strukturert oppfølging, tydelige forventninger og tett samarbeid hjelper vi flere inn i arbeidslivet – trygt, effektivt og profesjonelt."
+  },
+  "section2": {
+    "title": "Alle snakker om samfunnsansvar. Vi gjør det konkret.",
+    "content": "Som lærebedrift gjennom JobLoop blir du en del av et system som fungerer – der faglig utvikling, HR-støtte og reell inkludering går hånd i hånd. Du får støtte, struktur og resultater. Vi fikser det – du gjør en forskjell."
+  },
+  "section3": {
+    "title": "Vi møter mange bedrifter som vil bidra, men ikke vet hvor de skal starte.",
+    "content": "Derfor har vi laget et lavterskel-løp der vi tar oss av alt det praktiske. Du får møte kandidatene, vurdere kompetansen og teste samarbeidet. Vi følger opp lærlingen – du fokuserer på driften."
+  },
+  "section4": {
+    "title": "Enkelt. Trygt. Bærekraftig.",
+    "content": "Vi har laget et system som fungerer for alle parter. Bedrifter får støtte og struktur, kandidater får muligheten til å vokse og utvikle seg, og samfunnet får flere mennesker i arbeid. Det er enkelt, trygt og bærekraftig for alle involverte."
+  },
+  "fordeler": {
+    "title": "Fordeler for bedrifter som samarbeider med vårt opplæringskontor",
+    "items": [
+      {
+        "title": "Støtte gjennom hele lærlingperioden",
+        "text": "Vi hjelper bedriften med alt fra rekruttering til oppfølging og veiledning av lærlingen."
+      },
+      {
+        "title": "Enklere administrasjon",
+        "text": "Vi tar oss av det meste av papirarbeidet, kontrakter og rapportering til fylkeskommunen."
+      },
+      {
+        "title": "Trygghet og kvalitetssikring",
+        "text": "Vi sørger for at opplæringen følger læreplanene og oppfyller kravene i fagopplæringen."
+      },
+      {
+        "title": "Råd og veiledning",
+        "text": "Bedriften får tilgang til faglig og pedagogisk støtte underveis."
+      },
+      {
+        "title": "Mulighet til å forme fremtidens fagarbeidere",
+        "text": "Ved å ta inn lærlinger bidrar bedriften til rekruttering og utvikling i bransjen."
+      },
+      {
+        "title": "Økonomiske fordeler",
+        "text": "Bedrifter som tar imot lærlinger kan få tilskudd og økonomisk støtte gjennom ordninger for fagopplæring."
+      }
+    ]
+  },
+  "review": {
+    "name": "Andreas Takvam",
+    "position": "Project Manager",
+    "company": "Kodeverket",
+    "text": "Som prosjektleder i et IT-selskap har jeg hatt gleden av å samarbeide med flere lærlinger fra JobLoop. De har vist imponerende engasjement, teknisk forståelse og evne til å lære raskt. For oss har dette samarbeidet vært en stor ressurs – lærlingene bidrar med ny energi og nye perspektiver, samtidig som de får verdifull erfaring i ekte prosjekter. Vi er svært fornøyde og ser frem til å ta imot flere lærlinger i fremtiden!"
+  },
   "services": {
     "title": "Våre tjenester",
     "items": [
