@@ -1,0 +1,27 @@
+{
+  "title": "Våre ansatte",
+  "text": "Finn og kontakt de riktige personene i vårt team",
+  "titles": {
+    "admin": "Ledelse og administrasjon",
+    "leaders": "Teamledere og tiltaksledere",
+    "teachers": "Faglige veiledere og spillpedagoger",
+    "interns": "Interns",
+    "undefined": "Ukategorisert"
+  },
+  "search": {
+    "input": {
+      "placeholder": "Søk etter ansatt …"
+    },
+    "departments": {
+      "all": "Alle avdelinger"
+    },
+    "reset": {
+      "label": "Tilbakestill søk"
+    },
+    "filter": "Viser {filtered} av {total} ansatte",
+    "empty": {
+      "text": "Beklager, ditt søk ga ingen resultater.",
+      "label": "røv et annet søk"
+    }
+  }
+}

@@ -1,0 +1,27 @@
+{
+  "title": "Våra anställda",
+  "text": "Hitta och kontakta rätt personer i vårt team",
+  "titles": {
+    "admin": "Ledning och administration",
+    "leaders": "Teamledare och projektledare",
+    "teachers": "Handledare och spelpedagoger",
+    "interns": "Praktikanter",
+    "undefined": "Okategoriserad"
+  },
+  "search": {
+    "input": {
+      "placeholder": "Sök efter anställd …"
+    },
+    "departments": {
+      "all": "Alla avdelningar"
+    },
+    "reset": {
+      "label": "Återställ sökning"
+    },
+    "filter": "Visar {filtered} av {total} anställda",
+    "empty": {
+      "text": "Tyvärr gav din sökning inga resultat.",
+      "label": "Försök med en annan sökning"
+    }
+  }
+}
