@@ -1,6 +1,5 @@
 "use client";
 import React, { ReactNode } from "react";
-import { PortableText } from "@portabletext/react";
 
 
 interface SectionComponentProps {
@@ -42,9 +41,6 @@ export const SectionComponent: React.FC<SectionComponentProps> = ({
 
 interface TextBlockProps {
   title: string;
-  content?: any;
-  content2?: any;
-  content3?: any;
   contentString?: string;
   isButton?: boolean;
   path?: string;
@@ -56,9 +52,6 @@ interface TextBlockProps {
 
 export const TextBlock: React.FC<TextBlockProps> = ({
   title,
-  content,
-  content2,
-  content3,
   contentString,
   isOrange = false,
   isCentered = false,
@@ -83,15 +76,7 @@ export const TextBlock: React.FC<TextBlockProps> = ({
           isCentered ? "max-w-4xl mx-auto" : "xl:max-w-[70ch]"
         }`}
       >
-        {content ? (
-          <>
-            <PortableText value={content} />
-            <PortableText value={content2} />
-            <PortableText value={content3} />
-          </>
-        ) : (
-          <p>{contentString}</p>
-        )}
+        <p>{contentString}</p>
       </div>
 
     </article>
