@@ -37,7 +37,7 @@ export async function getTiltakByIdLocalized({
   locale,
 }: GetTiltakByLocale): Promise<Tiltak | null> {
   const query = sanityGenerateTiltakLocalizedQuery(index, locale);
-  const tags = ['tiltak', `tiltak:${index}`, `tiltak:${index}:${locale}`];
+  const tags = ['sanity', 'tiltak', `tiltak:${index}:${locale}`];
 
   return await sanityFetch<Tiltak>({
     query,
@@ -54,7 +54,7 @@ export async function getTiltakByIdLocalized({
  */
 export async function getContacts(): Promise<Contacts[]> {
   const query = sanityGenerateContactsQuery();
-  const tags = ['contact'];
+  const tags = ['sanity', 'contacts'];
 
   return await sanityFetch<Contacts[]>({
     query,
