@@ -10,7 +10,7 @@ const caveat = Caveat({
 export default async function HeroSection() {
   const t = await getTranslations('ki.hero');
   return (
-    <div className='w-full grid md:grid-cols-2 gap-8 mb-16'>
+    <div className='w-full grid md:grid-cols-2 gap-8 '>
       <div className='space-y-6 flex flex-col items-center justify-center'>
         <p className={`text-4xl  font-medium ${caveat.className}`}>{t('title')}</p>
         <div className='flex items-center space-x-4'>
@@ -19,7 +19,7 @@ export default async function HeroSection() {
             alt='Jobloop Logo'
             width={180}
             height={180}
-            className='w-200 h-200'
+            
           />
         </div>
         <div className='w-full bg-white-50 rounded-2xl p-6 text-center border-2 border-jobloop-primary-orange hover:shadow-lg transition-all duration-300'>
@@ -35,7 +35,7 @@ export default async function HeroSection() {
 
       <div className='bg-jobloop-primary-green/50 border-8 border-white rounded-2xl p-8 text-center flex items-center justify-center hover:shadow-lg transition-all duration-300'>
         <h1
-          className={`text-4xl md:text-5xl lg:text-6xl font-bold  leading-[2.5] ${caveat.className}`}
+          className={`text-4xl md:text-5xl lg:text-6xl font-bold  leading-[1.5] ${caveat.className}`}
         >
           {t.rich('subtitle', {
             br: () => <br />

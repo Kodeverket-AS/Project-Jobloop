@@ -4,7 +4,7 @@ import Image from 'next/image';
 export default async function DescriptionSection() {
   const t = await getTranslations('ki.description');
   return (
-    <div className='w-full space-y-8 text-lg mb-12'>
+    <div className='w-full space-y-8 text-lg '>
       <div className='grid md:grid-cols-2 gap-8 items-center'>
         <div className='w-full'>
           <Image
