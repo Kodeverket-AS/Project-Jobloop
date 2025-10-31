@@ -5,14 +5,6 @@ import Fordeler from '@/components/feature/opplaeringskontor/Fordeler';
 import ReviewKH from '@/components/feature/opplaeringskontor/ReviewKH';
 import CTASection from '@/components/feature/ki/CTASection';
 
-export async function generateStaticParams() {
-  return [
-    { locale: 'nb' },
-    { locale: 'en' },
-    { locale: 'sv' },
-  ];
-}
-
 export default async function OpplæringskontorPage() {
   const t = await getTranslations('opplæringskontor');
   return (
