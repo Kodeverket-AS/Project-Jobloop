@@ -16,7 +16,8 @@
       }
     },
     "localeSwitcher": {
-      "locales": "{locale, select, nb {Norwegian} sv {Swedish} en {English} other {Unknown}}"
+      "locales": "{locale, select, nb {Norwegian} sv {Swedish} en {English} other {Unknown}}",
+      "changeLocale": "Change language"
     }
   },
   "footer": {

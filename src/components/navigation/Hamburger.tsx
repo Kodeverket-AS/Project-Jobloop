@@ -1,9 +1,11 @@
 'use client';
 
-import React, { useEffect, useState, useRef } from 'react';
+import { useState, useRef } from 'react';
 import { IoCloseSharp } from 'react-icons/io5';
 import { GiHamburgerMenu } from 'react-icons/gi';
 import Link from 'next/link';
+import { useClickOutside } from '@/hooks/useClickOutside';
+import LocaleMenuMobile from '../ui/menu/LocaleMenuMobile';
 
 interface MenuItems {
   href: string;
@@ -13,74 +15,53 @@ interface MenuItems {
 
 interface MenuProps {
   links: MenuItems[];
-  hamFill: string;
+  altColor: boolean;
 }
 
-const HamburgerMenu = ({ hamFill, links }: MenuProps) => {
+export function HamburgerMenu({ links, altColor }: MenuProps) {
   const [isOpen, setIsOpen] = useState<boolean>(false);
   const menuRef = useRef<HTMLDivElement>(null);
-
-  const handleMenuToggle = () => {
-    setIsOpen(!isOpen);
-  };
-
-  useEffect(() => {
-    const handleClickOutside = (event: MouseEvent) => {
-      if (
-        menuRef.current &&
-        event.target instanceof Node &&
-        !menuRef.current.contains(event.target)
-      ) {
-        setIsOpen(false);
-      }
-    };
-
-    document.addEventListener('mousedown', handleClickOutside);
-
-    return () => {
-      document.removeEventListener('mousedown', handleClickOutside);
-    };
-  }, []);
+  useClickOutside(menuRef, () => setIsOpen(false));
 
   return (
     <div className='block md:hidden'>
       <button
-        className='  flex items-center justify-center w-10 h-10 transition duration-500 rounded-xl top-4 right-4'
-        onClick={handleMenuToggle}
-        aria-label='Åpne navigasjonsmeny'
+        className='flex items-center justify-center w-10 h-10 transition duration-500 rounded-xl top-4 right-4'
+        aria-label='Åpne mobil navigasjonsmeny'
+        onClick={() => setIsOpen(!isOpen)}
       >
         <GiHamburgerMenu
-          className={`w-20 h-20 ${
-            hamFill == 'white' ? 'fill-kv-white' : 'fill-jobloop-secondary-green'
-          }`}
+          className={`w-20 h-20 ${altColor ? 'fill-kv-white' : 'fill-jobloop-secondary-green'}`}
         />
       </button>
       <div
-        className={`fixed top-0 z-40 right-0 w-full bg-kv-white h-screen transition-transform duration-300 transform ${
-          isOpen ? 'translate-x-0' : 'translate-x-full'
-        }`}
+        className={`
+          z-40 fixed flex inset-0 bg-kv-white
+          transform transition-transform duration-300 
+          ${isOpen ? 'translate-x-0' : 'translate-x-full'}
+        `}
         ref={menuRef}
       >
-        <nav className='relative flex justify-center'>
+        <div className='relative flex-1 flex flex-col justify-center'>
           <button
-            className='absolute flex items-center justify-center w-10 h-10 transition rounded-xl top-4 right-4 '
-            onClick={handleMenuToggle}
+            className='absolute top-4 right-4 w-10 h-10'
+            onClick={() => setIsOpen(!isOpen)}
             aria-label='Lukke navigasjonsmeny'
           >
-            {' '}
             <IoCloseSharp
-              className={` ${
+              className={`${
                 isOpen ? 'block' : 'hidden'
               } text-kv-black rounded-full transition duration-500 z-50 w-12 h-12`}
             />
           </button>
-          <ul className='grid gap-8 mt-20'>
+          <div className='flex flex-col items-center gap-12 py-12 overflow-scroll'>
+            <nav className='flex flex-col items-center gap-8'>
             {links.map(({ label, href, aria }) => (
               <Link
                 key={label}
                 href={href}
                 aria-label={aria}
-                className='px-8 text-xl font-bold transition-all text-jobloop-secondary-green group w-fit'
+                className='text-xl font-bold text-jobloop-secondary-green group w-fit'
                 onClick={() => {
                   setIsOpen(false);
                 }}
@@ -88,11 +69,12 @@ const HamburgerMenu = ({ hamFill, links }: MenuProps) => {
                 {label}
               </Link>
             ))}
-          </ul>
-        </nav>
+          </nav>
+          <LocaleMenuMobile />
+          </div>
+          
+        </div>
       </div>
     </div>
   );
-};
-
-export default HamburgerMenu;
+}

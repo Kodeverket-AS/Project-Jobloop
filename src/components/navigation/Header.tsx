@@ -4,8 +4,8 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { useTranslations } from 'next-intl';
 import { usePathname } from '@/i18n/navigation';
-import HamburgerMenu from './Hamburger';
-// import LocaleMenu from '../ui/menu/LocaleMenu';
+import { HamburgerMenu } from './Hamburger';
+import LocaleMenu from '../ui/menu/LocaleMenu';
 
 export function Header() {
   // Apply specific colors on homepage... /shrug
@@ -58,7 +58,7 @@ export function Header() {
           </Link>
         </div>
         <div>
-          <nav className='hidden h-auto p-4 md:block'>
+          <nav className='hidden h-auto p-4 md:flex'>
             {links.map(({ href, label, aria }) => (
               <Link
                 key={label}
@@ -69,10 +69,10 @@ export function Header() {
                 {label}
               </Link>
             ))}
-            {/* <LocaleMenu /> */}
+            <LocaleMenu altColor={isLanding} />
           </nav>
           <div className='px-4'>
-            <HamburgerMenu hamFill='white' links={links} />
+            <HamburgerMenu links={links} altColor={isLanding} />
           </div>
         </div>
       </div>

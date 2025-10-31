@@ -15,8 +15,8 @@ export default async function Footer() {
     {
       name: t('footer.contacts.companies'),
       email: 'christer@jobloop.no',
-      phoneDisplay: '+47 92 88 28 04',
-      phoneLink: '+4792882804',
+      phoneDisplay: '+47 41 39 23 35',
+      phoneLink: '+4741392335',
     },
     {
       name: t('footer.contacts.clients'),

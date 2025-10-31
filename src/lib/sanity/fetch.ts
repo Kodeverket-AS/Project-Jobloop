@@ -1,6 +1,10 @@
-import { type Tiltak } from '@/types/sanity/sanity.types';
+import { Contacts, type Tiltak } from '@/types/sanity/sanity.types';
 import { type GetTiltakById, type GetTiltakByLocale } from '@/types/sanity/client.types';
-import { sanityGenerateTiltakLocalizedQuery, sanityGenerateTiltakQuery } from './queries';
+import {
+  sanityGenerateContactsQuery,
+  sanityGenerateTiltakLocalizedQuery,
+  sanityGenerateTiltakQuery,
+} from './queries';
 import { sanityFetch } from './client';
 
 /**
@@ -12,8 +16,9 @@ import { sanityFetch } from './client';
  * const available = allLocales.map(doc => doc.language); // ['nb','sv',...]
  */
 export async function getTiltakById({ index }: GetTiltakById): Promise<Tiltak[]> {
+  const baseType = 'tiltak' satisfies Tiltak['_type'];
   const query = sanityGenerateTiltakQuery(index);
-  const tags = ['tiltak', `tiltak:${index}`];
+  const tags = ['sanity', baseType, `${baseType}:${index}`];
 
   return await sanityFetch<Tiltak[]>({
     query,
@@ -32,10 +37,29 @@ export async function getTiltakByIdLocalized({
   index,
   locale,
 }: GetTiltakByLocale): Promise<Tiltak | null> {
+  const baseType = 'tiltak' satisfies Tiltak['_type'];
   const query = sanityGenerateTiltakLocalizedQuery(index, locale);
-  const tags = ['tiltak', `tiltak:${index}`, `tiltak:${index}:${locale}`];
+  const tags = ['sanity', baseType, `${baseType}:${index}:${locale}`];
 
   return await sanityFetch<Tiltak>({
+    query,
+    tags,
+  });
+}
+
+/**
+ * Retrieves a all contacts from sanity and sorts them depending on roles and priority
+ * @example
+ * // SSR page load:
+ * const contacts = await getContacts();
+ * if (!contacts.length) notFound();
+ */
+export async function getContacts(): Promise<Contacts[]> {
+  const baseType = 'contacts' satisfies Contacts['_type'];
+  const query = sanityGenerateContactsQuery();
+  const tags = ['sanity', baseType];
+
+  return await sanityFetch<Contacts[]>({
     query,
     tags,
   });

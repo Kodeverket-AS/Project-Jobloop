@@ -21,5 +21,10 @@ export default getRequestConfig(async ({ requestLocale }) => {
   return {
     locale,
     messages: { metadata, base, errors, dictionary, landing, about, ki, opplæringskontor },
+  const contact = (await import(`../translations/${locale}/pages/contact.json`)).default;
+
+  return {
+    locale,
+    messages: { metadata, base, errors, dictionary, landing, about, ki, contact },
   };
 });
