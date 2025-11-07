@@ -35,7 +35,7 @@ export default function CourseInfoCards() {
       <h2 className='text-3xl font-bold text-center mb-12 text-jobloop-primary-green'>
         {t('title')}
       </h2>
-      <div className='bg-white rounded-3xl p-8 shadow-lg border-2 border-jobloop-primary-green/20 hover:shadow-xl transition-all duration-300'>
+      <div className='bg-white rounded-2xl p-8 shadow-lg border-2 border-jobloop-primary-green/20 hover:shadow-xl transition-all duration-300'>
         <div className='grid gap-6' ref={cardsRef}>
           <div className='card-slide-in bg-gray-50 rounded-2xl p-6 border-l-4 border-jobloop-primary-orange hover:shadow-lg hover:scale-105 transition-all duration-300'>
             <div>

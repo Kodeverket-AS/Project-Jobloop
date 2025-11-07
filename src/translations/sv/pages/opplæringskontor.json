@@ -1,0 +1,86 @@
+{
+  "title": "Utbildningskontor",
+  "description": "Utbildningskontoret hjälper företag att hitta och utveckla kompetens genom målinriktade utbildningsprogram och kurser.",
+  "section1": {
+    "title": "Utanförskap handlar sällan om vilja – det handlar om möjligheter",
+    "content": "Vi underlättar att företag kan bidra utan att bära hela bördan ensamma. Genom strukturerad uppföljning, tydliga förväntningar och nära samarbete hjälper vi fler in i arbetslivet – säkert, effektivt och professionellt."
+  },
+  "section2": {
+    "title": "Alla pratar om samhällsansvar. Vi gör det konkret.",
+    "content": "Som lärlingsföretag genom JobLoop blir du en del av ett system som fungerar – där facklig utveckling, HR-stöd och verklig inkludering går hand i hand. Du får stöd, struktur och resultat. Vi fixar det – du gör en skillnad."
+  },
+  "section3": {
+    "title": "Vi möter många företag som vill bidra, men inte vet var de ska börja.",
+    "content": "Därför har vi skapat ett lågtröskelprogram där vi tar hand om alla praktiska aspekter. Du får träffa kandidaterna, bedöma kompetensen och testa samarbetet. Vi följer upp lärlingen – du fokuserar på driften."
+  },
+  "section4": {
+    "title": "Enkelt. Säkert. Hållbart.",
+    "content": "Vi har skapat ett system som fungerar för alla parter. Företag får stöd och struktur, kandidater får möjligheten att växa och utvecklas, och samhället får fler människor i arbete. Det är enkelt, säkert och hållbart för alla involverade."
+  },
+  "fordeler": {
+    "title": "Fördelar för företag som samarbetar med vårt utbildningskontor",
+    "items": [
+      {
+        "title": "Stöd genom hela lärlingsperioden",
+        "text": "Vi hjälper företaget med allt från rekrytering till uppföljning och vägledning av lärlingen."
+      },
+      {
+        "title": "Enklare administration",
+        "text": "Vi tar hand om det mesta av pappersarbetet, kontrakt och rapportering till länsstyrelsen."
+      },
+      {
+        "title": "Trygghet och kvalitetssäkring",
+        "text": "Vi säkerställer att utbildningen följer läroplanerna och uppfyller kraven i yrkesutbildningen."
+      },
+      {
+        "title": "Råd och vägledning",
+        "text": "Företaget får tillgång till facklig och pedagogisk stöd på vägen."
+      },
+      {
+        "title": "Möjlighet att forma framtidens yrkesarbetare",
+        "text": "Genom att ta emot lärlingar bidrar företaget till rekrytering och utveckling i branschen."
+      },
+      {
+        "title": "Ekonomiska fördelar",
+        "text": "Företag som tar emot lärlingar kan få bidrag och ekonomiskt stöd genom yrkesutbildningsarrangemang."
+      }
+    ]
+  },
+  "review": {
+    "name": "Andreas Takvam",
+    "position": "Project Manager",
+    "company": "Kodeverket",
+    "text": "Som projektledare på ett IT-företag har jag haft nöjet att samarbeta med flera lärlingar från JobLoop. De har visat imponerande engagemang, teknisk förståelse och förmåga att lära sig snabbt. För oss har detta samarbete varit en stor resurs – lärlingarna bidrar med ny energi och nya perspektiv, samtidigt som de får värdefull erfarenhet i riktiga projekt. Vi är mycket nöjda och ser fram emot att ta emot fler lärlingar i framtiden!"
+  },
+  "services": {
+    "title": "Våra tjänster",
+    "items": [
+      "Kompetenskartläggning och behovsanalys",
+      "Anpassade utbildningsprogram",
+      "Facklig uppföljning och vägledning",
+      "Kvalitetssäkring och utvärdering"
+    ]
+  },
+  "contact": {
+    "title": "Kontakta oss",
+    "phone": "Telefon",
+    "email": "E-post"
+  },
+  "process": {
+    "title": "Hur vi kan hjälpa ditt företag",
+    "steps": [
+      {
+        "title": "Analys",
+        "description": "Vi kartlägger kompetensbehoven i ditt företag"
+      },
+      {
+        "title": "Planering",
+        "description": "Vi utvecklar anpassade utbildningsprogram"
+      },
+      {
+        "title": "Uppföljning",
+        "description": "Vi säkerställer kvalitet och mäter resultat"
+      }
+    ]
+  }
+}

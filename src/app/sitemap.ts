@@ -2,7 +2,7 @@ import type { MetadataRoute } from 'next';
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const BASE_URL = 'https://www.jobloop.no';
-  const ROUTES = ['om-oss', 'kontakt'];
+  const ROUTES = ['om-oss', 'kontakt', 'opplaeringskontor'];
 
   // todo: We should fetch lastModified from Sanity imo
   return ROUTES.map((route) => ({
