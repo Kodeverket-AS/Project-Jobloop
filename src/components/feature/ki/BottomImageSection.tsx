@@ -2,7 +2,7 @@ import Image from "next/image";
 
 export default function BottomImageSection() {
   return (
-    <div className="w-full mt-16">
+    <div className="w-full ">
       <div className="flex justify-center">
         <Image
           src="/picture-ki.png"

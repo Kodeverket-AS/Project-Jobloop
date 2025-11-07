@@ -1,0 +1,86 @@
+{
+  "title": "Training Office",
+  "description": "The training office helps companies find and develop competence through targeted training programs and courses.",
+  "section1": {
+    "title": "Social exclusion is rarely about will – it's about opportunities",
+    "content": "We facilitate that companies can contribute without bearing the entire burden alone. Through structured follow-up, clear expectations and close collaboration, we help more people into work life – safely, efficiently and professionally."
+  },
+  "section2": {
+    "title": "Everyone talks about social responsibility. We make it concrete.",
+    "content": "As a training company through JobLoop, you become part of a system that works – where professional development, HR support and real inclusion go hand in hand. You get support, structure and results. We fix it – you make a difference."
+  },
+  "section3": {
+    "title": "We meet many companies that want to contribute, but don't know where to start.",
+    "content": "Therefore, we have created a low-threshold program where we take care of all the practical aspects. You get to meet the candidates, assess their competence and test the collaboration. We follow up the apprentice – you focus on operations."
+  },
+  "section4": {
+    "title": "Simple. Safe. Sustainable.",
+    "content": "We have created a system that works for all parties. Companies get support and structure, candidates get the opportunity to grow and develop, and society gets more people in work. It's simple, safe and sustainable for everyone involved."
+  },
+  "fordeler": {
+    "title": "Benefits for companies that collaborate with our training office",
+    "items": [
+      {
+        "title": "Support throughout the entire apprenticeship period",
+        "text": "We help the company with everything from recruitment to follow-up and guidance of the apprentice."
+      },
+      {
+        "title": "Simpler administration",
+        "text": "We take care of most of the paperwork, contracts and reporting to the county municipality."
+      },
+      {
+        "title": "Security and quality assurance",
+        "text": "We ensure that the training follows the curricula and meets the requirements in vocational training."
+      },
+      {
+        "title": "Advice and guidance",
+        "text": "The company gets access to professional and pedagogical support along the way."
+      },
+      {
+        "title": "Opportunity to shape future skilled workers",
+        "text": "By taking in apprentices, the company contributes to recruitment and development in the industry."
+      },
+      {
+        "title": "Economic benefits",
+        "text": "Companies that take in apprentices can receive subsidies and financial support through vocational training arrangements."
+      }
+    ]
+  },
+  "review": {
+    "name": "Andreas Takvam",
+    "position": "Project Manager",
+    "company": "Kodeverket",
+    "text": "As a project manager at an IT company, I have had the pleasure of collaborating with several apprentices from JobLoop. They have shown impressive engagement, technical understanding and ability to learn quickly. For us, this collaboration has been a great resource – the apprentices contribute with new energy and new perspectives, while they get valuable experience in real projects. We are very satisfied and look forward to welcoming more apprentices in the future!"
+  },
+  "services": {
+    "title": "Our services",
+    "items": [
+      "Competence mapping and needs analysis",
+      "Customized training programs",
+      "Professional follow-up and guidance",
+      "Quality assurance and evaluation"
+    ]
+  },
+  "contact": {
+    "title": "Contact us",
+    "phone": "Phone",
+    "email": "Email"
+  },
+  "process": {
+    "title": "How we can help your company",
+    "steps": [
+      {
+        "title": "Analysis",
+        "description": "We map the competence needs in your company"
+      },
+      {
+        "title": "Planning",
+        "description": "We develop customized training programs"
+      },
+      {
+        "title": "Follow-up",
+        "description": "We ensure quality and measure results"
+      }
+    ]
+  }
+}

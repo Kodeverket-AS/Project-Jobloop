@@ -31,6 +31,11 @@ export function Header() {
       aria: t('navigation.about.aria'),
     },
     {
+      href: '/opplaeringskontor',
+      label: t('navigation.opplæringskontor.label'),
+      aria: t('navigation.opplæringskontor.aria'),
+    },
+    {
       href: '/kontakt',
       label: t('navigation.contact.label'),
       aria: t('navigation.contact.aria'),
