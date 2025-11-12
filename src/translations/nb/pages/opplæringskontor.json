@@ -2,55 +2,55 @@
   "title": "Opplæringskontor",
   "description": "Vi er et opplæringskontor som hjelper bedrifter med å ta samfunnsansvar og inkludere flere i arbeidslivet.",
   "section1": {
-    "title": "Utenforskap handler sjelden om vilje – det handler om muligheter",
-    "content": "Vi legger til rette for at bedrifter kan bidra uten å bære hele byrden alene. Gjennom strukturert oppfølging, tydelige forventninger og tett samarbeid hjelper vi flere inn i arbeidslivet – trygt, effektivt og profesjonelt."
+    "title": "Utenforskap handler sjelden om vilje – det handler ofte om rammer og muligheter.",
+    "content": "Mange bedrifter ønsker å bidra, men vet ikke helt hvor de skal begynne. Vi hjelper med struktur og oppfølging slik at bedriften kan gi noen en reell sjanse – uten å stå alene i prosessen."
   },
   "section2": {
-    "title": "Alle snakker om samfunnsansvar. Vi gjør det konkret.",
-    "content": "Som lærebedrift gjennom JobLoop blir du en del av et system som fungerer – der faglig utvikling, HR-støtte og reell inkludering går hånd i hånd. Du får støtte, struktur og resultater. Vi fikser det – du gjør en forskjell."
+    "title": "Mange snakker om samfunnsansvar – vi hjelper deg å omsette det i praksis.",
+    "content": "Som lærebedrift gjennom JobLoop blir du del av et samarbeid som faktisk fungerer i hverdagen. Du får veiledning og støtte underveis, slik at det blir enklere å ta imot og følge opp lærlinger på en god måte. Vi tar oss av strukturen – du får bidra med det du kan best."
   },
   "section3": {
-    "title": "Vi møter mange bedrifter som vil bidra, men ikke vet hvor de skal starte.",
-    "content": "Derfor har vi laget et lavterskel-løp der vi tar oss av alt det praktiske. Du får møte kandidatene, vurdere kompetansen og teste samarbeidet. Vi følger opp lærlingen – du fokuserer på driften."
+    "title": "Mange bedrifter ønsker å bidra, men er usikre på hvor de skal begynne.",
+    "content": "Derfor har vi gjort prosessen så enkel som mulig. Vi håndterer det praktiske rundt oppfølging og formalia, mens du får møte kandidatene og se om samarbeidet passer. På den måten får både bedriften og lærlingen en trygg start – uten unødvendig stress."
   },
   "section4": {
     "title": "Enkelt. Trygt. Bærekraftig.",
-    "content": "Vi har laget et system som fungerer for alle parter. Bedrifter får støtte og struktur, kandidater får muligheten til å vokse og utvikle seg, og samfunnet får flere mennesker i arbeid. Det er enkelt, trygt og bærekraftig for alle involverte."
+    "content": "Vi har utviklet en modell som gjør samarbeidet enklere for alle parter. Bedrifter får støtte og struktur, kandidater får mulighet til å vokse, og samfunnet får flere mennesker i arbeid. Det er en løsning som skaper trygghet og bærekraft – i praksis."
   },
   "fordeler": {
     "title": "Fordeler for bedrifter som samarbeider med vårt opplæringskontor",
     "items": [
       {
         "title": "Støtte gjennom hele lærlingperioden",
-        "text": "Vi hjelper bedriften med alt fra rekruttering til oppfølging og veiledning av lærlingen."
+        "text": "Vi følger opp både bedriften og lærlingen underveis. Fra rekruttering til veiledning – vi sørger for at prosessen går trygt og forutsigbart for alle parter."
       },
       {
         "title": "Enklere administrasjon",
-        "text": "Vi tar oss av det meste av papirarbeidet, kontrakter og rapportering til fylkeskommunen."
+        "text": "Vi hjelper til med papirarbeid, kontrakter og rapportering til fylkeskommunen, slik at du slipper å bruke unødvendig tid på formaliteter."
       },
       {
         "title": "Trygghet og kvalitetssikring",
-        "text": "Vi sørger for at opplæringen følger læreplanene og oppfyller kravene i fagopplæringen."
+        "text": "Vi passer på at opplæringen følger gjeldende læreplaner og krav i fagopplæringen, slik at både bedrift og lærling kan føle seg trygge på at alt går riktig for seg."
       },
       {
         "title": "Råd og veiledning",
-        "text": "Bedriften får tilgang til faglig og pedagogisk støtte underveis."
+        "text": "Vi tilbyr faglig og pedagogisk støtte underveis, slik at bedriften alltid har noen å sparre med når spørsmål eller utfordringer dukker opp."
       },
       {
         "title": "Mulighet til å forme fremtidens fagarbeidere",
-        "text": "Ved å ta inn lærlinger bidrar bedriften til rekruttering og utvikling i bransjen."
+        "text": "Når bedriften tar inn lærlinger, bidrar dere til å bygge kompetanse og sikre utvikling i egen bransje. Det handler om å gi videre kunnskap – og å skape rom for neste generasjon fagfolk."
       },
       {
         "title": "Økonomiske fordeler",
-        "text": "Bedrifter som tar imot lærlinger kan få tilskudd og økonomisk støtte gjennom ordninger for fagopplæring."
+        "text": "Bedrifter som tar inn lærlinger kan få tilskudd og økonomisk støtte gjennom ordninger for fagopplæring. Vi hjelper deg å finne ut hvilke støtteordninger som gjelder for din bedrift, og hvordan du søker dem."
       }
     ]
   },
   "review": {
     "name": "Andreas Takvam",
-    "position": "Project Manager",
-    "company": "Kodeverket",
-    "text": "Som prosjektleder i et IT-selskap har jeg hatt gleden av å samarbeide med flere lærlinger fra JobLoop. De har vist imponerende engasjement, teknisk forståelse og evne til å lære raskt. For oss har dette samarbeidet vært en stor ressurs – lærlingene bidrar med ny energi og nye perspektiver, samtidig som de får verdifull erfaring i ekte prosjekter. Vi er svært fornøyde og ser frem til å ta imot flere lærlinger i fremtiden!"
+    "position": "Prosjektleder",
+    "company": "Kodeverket Bergen",
+    "text": "Som prosjektleder i et IT-selskap har jeg hatt gleden av å samarbeide med flere lærlinger gjennom JobLoop. De har vist stor interesse, god teknisk forståelse og en imponerende evne til å lære. For oss har samarbeidet vært verdifullt – lærlingene bringer inn ny energi og friske perspektiver, samtidig som de får erfaring fra virkelige prosjekter. Det har vært et gjensidig utbytte, og vi ser frem til å fortsette samarbeidet fremover."
   },
   "services": {
     "title": "Våre tjenester",
