@@ -196,3 +196,21 @@ h6 {
     transition-delay: 0.5s;
   }
 }
+
+/* Animasjon til julekalenderen */
+@keyframes snowfall {
+  0% {
+    transform: translateY(-10%);
+  }
+  100% {
+    transform: translateY(110%);
+  }
+}
+
+.animate-snowfall {
+  animation: snowfall 8s linear infinite;
+}
+
+.animate-snowfall-slow {
+  animation: snowfall 14s linear infinite;
+}
