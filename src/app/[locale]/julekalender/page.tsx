@@ -1,3 +1,57 @@
+import type { Metadata } from 'next';
+
+type PageProps = {
+  params: {
+    locale: string;
+  };
+};
+
+// Denne sier til Next: bygg bare /nb/julekalender (eller /julekalender hvis nb er default)
+export async function generateStaticParams() {
+  return [{ locale: 'nb' }];
+}
+
+export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
+  const title = 'JobLoops digitale julekalender 2025 – Jul hos Jobloop';
+  const description =
+    'Åpne en ny luke hver dag i Jobloops digitale julekalender 2025. Få små drypp med motivasjon, læring og desembermagi.';
+
+  return {
+    title,
+    description,
+    icons: {
+      icon: '/favicon-jul.png',
+      shortcut: '/favicon-jul.png',
+      apple: '/favicon-jul.png',
+    },
+    alternates: {
+      canonical: 'https://jobloop.no/julekalender',
+    },
+    openGraph: {
+      title,
+      description,
+      url: 'https://jobloop.no/julekalender',
+      siteName: 'Jobloop',
+      images: [
+        {
+          url: 'https://jobloop.no/images/Jobloop-julekalender.png',
+          width: 1200,
+          height: 630,
+          alt: title,
+        },
+      ],
+      locale: 'nb_NO',
+      type: 'website',
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title,
+      description,
+      images: ['https://jobloop.no/images/Jobloop-julekalender.png'],
+    },
+  };
+}
+
 export default function Julekalender() {
   return (
     <main
