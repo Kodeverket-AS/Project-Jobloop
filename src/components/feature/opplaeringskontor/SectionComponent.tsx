@@ -76,7 +76,7 @@ export const TextBlock: React.FC<TextBlockProps> = ({
           isCentered ? "max-w-4xl mx-auto" : "xl:max-w-[70ch]"
         }`}
       >
-        <p>{contentString}</p>
+          <p>{contentString}</p>
       </div>
 
     </article>
