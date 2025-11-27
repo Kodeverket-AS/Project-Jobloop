@@ -1,17 +1,10 @@
 import type { Metadata } from 'next';
 
-type PageProps = {
-  params: {
-    locale: string;
-  };
-};
-
-// Denne sier til Next: bygg bare /nb/julekalender (eller /julekalender hvis nb er default)
 export async function generateStaticParams() {
   return [{ locale: 'nb' }];
 }
 
-export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
+export async function generateMetadata(): Promise<Metadata> {
   const title = 'JobLoops digitale julekalender 2025 – Jul hos Jobloop';
   const description =
     'Åpne en ny luke hver dag i Jobloops digitale julekalender 2025. Få små drypp med motivasjon, læring og desembermagi.';
