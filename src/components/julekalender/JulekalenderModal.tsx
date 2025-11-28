@@ -4,6 +4,7 @@ import { useState, useEffect } from "react";
 import Image from "next/image";
 import Snowflakes from "./Snowflakes";
 import SnowflakesModal from "./SnowflakesModal";
+import SparklyText from "./SparklyText";
 
 const JulekalenderModal = () => {
     const [isOpen, setIsOpen] = useState(false);
@@ -62,11 +63,19 @@ const JulekalenderModal = () => {
 
                 <div className='relative flex flex-col items-center justify-center gap-4 z-10 p-2 min-h-[85vh]'>
                     <div className='bg-white/80 rounded-3xl shadow-2xl
-                     flex flex-col items-center justify-center text-center gap-8 min-h-[70vh] w-4/5 p-4 md:p-6 my-auto'>
+                     flex flex-col items-center justify-center text-center gap-6 h-[70vh] w-4/5 p-4 md:p-6 my-auto'>
                        
-                        <p className='text-3xl md:text-4xl lg:text-5xl font-semibold text-jobloop-secondary-green' style={{ textShadow: '1px 1px 3px rgba(0, 0, 0, 0.3)' }}>
-                           Digital Julekalender 2025
-                        </p>
+                        <SparklyText
+                            className='text-3xl md:text-4xl lg:text-5xl font-semibold text-jobloop-secondary-green'
+                            numberOfSparkles={3}
+                            sparkleColor="#ffd700"
+                            sparkleSize="0.8em"
+                            animationLength="1.5s"
+                        >
+                            <span style={{ textShadow: '1px 1px 3px rgba(0, 0, 0, 0.3)' }}>
+                                Digital Julekalender 2025
+                            </span>
+                        </SparklyText>
 
                         <div className='mb-2 md:mb-4 space-y-1'>
                             <h3 className='text-sm md:text-lg lg:text-xl xl:text-2xl leading-relaxed font-semibold text-neutral-800 px-1 md:px-3'>
