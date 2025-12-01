@@ -1,7 +1,7 @@
 import type { Metadata } from 'next';
 
 export async function generateStaticParams() {
-  return [{ locale: 'nb' }];
+  return [{ locale: 'nb' }, { locale: 'sv' }, { locale: 'en' }];
 }
 
 export async function generateMetadata(): Promise<Metadata> {
