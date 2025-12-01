@@ -30,11 +30,11 @@ export function Header() {
       label: t('navigation.about.label'),
       aria: t('navigation.about.aria'),
     },
-    {
-      href: '/opplaeringskontor',
-      label: t('navigation.opplæringskontor.label'),
-      aria: t('navigation.opplæringskontor.aria'),
-    },
+    // {
+    //   href: '/opplaeringskontor',
+    //   label: t('navigation.opplæringskontor.label'),
+    //   aria: t('navigation.opplæringskontor.aria'),
+    // },
     {
       href: '/kontakt',
       label: t('navigation.contact.label'),
