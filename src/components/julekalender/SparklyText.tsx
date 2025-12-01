@@ -22,10 +22,6 @@ const SparklyText = ({
   const containerRef = useRef<HTMLDivElement>(null);
   const [motionOK, setMotionOK] = useState(true);
 
-  const sparkleSvg = `<svg width="1200" height="1200" viewBox="0 0 1200 1200" aria-hidden="true">
-    <path fill="${sparkleColor}" d="m611.04 866.16c17.418-61.09 50.25-116.68 95.352-161.42 45.098-44.742 100.94-77.133 162.17-94.062l38.641-10.68-38.641-10.68c-61.227-16.93-117.07-49.32-162.17-94.062-45.102-44.738-77.934-100.33-95.352-161.42l-11.039-38.641-11.039 38.641c-17.418 61.09-50.25 116.68-95.352 161.42-45.098 44.742-100.94 77.133-162.17 94.062l-38.641 10.68 38.641 10.68c61.227 16.93 117.07 49.32 162.17 94.062 45.102 44.738 77.934 100.33 95.352 161.42l11.039 38.641z"/>
-  </svg>`;
-
   useEffect(() => {
     const mediaQuery = window.matchMedia("(prefers-reduced-motion: no-preference)");
     setMotionOK(mediaQuery.matches);
@@ -40,6 +36,10 @@ const SparklyText = ({
 
   useEffect(() => {
     if (!motionOK || !containerRef.current) return;
+
+    const sparkleSvg = `<svg width="1200" height="1200" viewBox="0 0 1200 1200" aria-hidden="true">
+      <path fill="${sparkleColor}" d="m611.04 866.16c17.418-61.09 50.25-116.68 95.352-161.42 45.098-44.742 100.94-77.133 162.17-94.062l38.641-10.68-38.641-10.68c-61.227-16.93-117.07-49.32-162.17-94.062-45.102-44.738-77.934-100.33-95.352-161.42l-11.039-38.641-11.039 38.641c-17.418 61.09-50.25 116.68-95.352 161.42-45.098 44.742-100.94 77.133-162.17 94.062l-38.641 10.68 38.641 10.68c61.227 16.93 117.07 49.32 162.17 94.062 45.102 44.738 77.934 100.33 95.352 161.42l11.039 38.641z"/>
+    </svg>`;
 
     const container = containerRef.current;
     const sparkles: SVGElement[] = [];
@@ -70,7 +70,6 @@ const SparklyText = ({
         svg.style.transformOrigin = "center";
         svg.style.pointerEvents = "none";
         
-        const containerRect = containerRef.current.getBoundingClientRect();
         const topPercent = Math.random() * 100;
         const leftPercent = Math.random() * 100;
         

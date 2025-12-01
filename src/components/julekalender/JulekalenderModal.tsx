@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from "react";
 import Image from "next/image";
+import { Link } from "@/i18n/navigation";
 import Snowflakes from "./Snowflakes";
 import SnowflakesModal from "./SnowflakesModal";
 import SparklyText from "./SparklyText";
@@ -93,17 +94,13 @@ const JulekalenderModal = () => {
                                 className='w-full max-w-[180px] md:max-w-[260px] h-auto'
                             />
                         </div>
-                        <div
-                            className='mt-4 md:mt-6 w-full  bg-jobloop-secondary-green text-white font-extrabold py-4 rounded-full text-sm md:text-base lg:text-lg uppercase tracking-wider hover:bg-jobloop-secondary-orange transition duration-300 ease-in-out transform hover:scale-105 shadow-xl cursor-pointer text-center'
+                        <Link
+                            href='/julekalender'
+                            className='mt-4 md:mt-6 w-full bg-jobloop-secondary-green text-white font-extrabold py-4 rounded-full text-sm md:text-base lg:text-lg uppercase tracking-wider hover:bg-jobloop-secondary-orange transition duration-300 ease-in-out transform hover:scale-105 shadow-xl cursor-pointer text-center block'
                             onClick={handleClose}
                         >
-                            <a
-                                href='/nb/julekalender'
-                                className='w-full h-full block'
-                            >
-                                Åpne julekalenderen
-                            </a>
-                        </div>
+                            Åpne julekalenderen
+                        </Link>
                     </div>
                 </div>
             </div>
