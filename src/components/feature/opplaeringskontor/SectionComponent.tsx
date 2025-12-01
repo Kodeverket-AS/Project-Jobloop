@@ -77,6 +77,26 @@
 //         <p>{contentString}</p>
 //       </div>
 
-//     </article>
-//   );
-// };
+  return (
+    <article className={`flex flex-col gap-4 w-full ${textAlignment} my-auto`}>
+      <h2
+        className={`text-kv-black  md:!text-xl lg:!text-3xl xl:!text-4xl underline underline-offset-8  leading-relaxed pb-2 ${
+          isOrange
+            ? "decoration-jobloop-primary-orange"
+            : "decoration-jobloop-primary-green"
+        }`}
+      >
+        {title}
+      </h2>
+
+      <div
+        className={`text-kv-black/70 text-base xl:text-xl xl:leading-relaxed ${
+          isCentered ? "max-w-4xl mx-auto" : "xl:max-w-[70ch]"
+        }`}
+      >
+          <p>{contentString}</p>
+      </div>
+
+    </article>
+  );
+};

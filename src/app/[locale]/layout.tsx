@@ -90,10 +90,14 @@ export default async function Layout({
 
   // Enable static rendering
   setRequestLocale(locale);
+  
+  // Get messages for the locale
+  const messages = await getMessages();
+  
   return (
     <html lang={locale} className={roboto.className}>
       <body>
-        <NextIntlClientProvider>
+        <NextIntlClientProvider messages={messages}>
           <Header />
           {children}
           <ScrollToTopButton />
