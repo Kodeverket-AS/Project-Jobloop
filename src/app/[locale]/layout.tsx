@@ -38,7 +38,7 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
     description: t('description'),
     keywords: messages.metadata.keywords ?? [],
     authors: [
-      { name: 'Jobloop', url: 'https://www.jobloop.no' },
+      { name: 'JobLoop', url: 'https://www.jobloop.no' },
       { name: 'Kodeverket', url: 'https://www.kodeverketbergen.no/' },
     ],
     robots: 'index, follow',
@@ -46,7 +46,7 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
       title: t('openGraph.title'),
       description: t('openGraph.description'),
       url: t('openGraph.url'),
-      siteName: 'Jobloop',
+      siteName: 'JobLoop',
       images: [
         {
           url: '/FSE-Vinner2024-063.webp',
@@ -90,10 +90,10 @@ export default async function Layout({
 
   // Enable static rendering
   setRequestLocale(locale);
-  
+
   // Get messages for the locale
   const messages = await getMessages();
-  
+
   return (
     <html lang={locale} className={roboto.className}>
       <body>
