@@ -5,7 +5,6 @@ import WorkCourses from '@/components/feature/landing/WorkCourses';
 import CooperationProjects from '@/components/feature/landing/CooperationProjects';
 import JobloopSuccess from '@/components/feature/landing/JobloopSuccess';
 import ContactComponent from '@/components/feature/landing/ContactComponent';
-import JulekalenderModal from '@/components/julekalender/JulekalenderModal';
 
 export default function Home() {
   return (
@@ -19,7 +18,6 @@ export default function Home() {
         <JobloopSuccess />
         <ContactComponent />
       </main>
-      <JulekalenderModal />
     </>
   );
 }
