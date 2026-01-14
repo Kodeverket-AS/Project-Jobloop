@@ -39,35 +39,29 @@ export default function ContactContainer({
     }
   }, [initialName, initialDepartment]);
 
-  // Helper to build query string
-  const createQueryString = useCallback(
-    (name: string, value: string) => {
-      const params = new URLSearchParams(searchParams.toString());
-      if (value.trim()) {
-        params.set(name, value.trim());
-      } else {
-        params.delete(name);
-      }
-      return params.toString();
-    },
-    [searchParams]
-  );
-
-  // Update URL without full navigation
+  // Synchronize URL query parameters with name and department filters
   const updateUrl = useCallback(
     (nameVal: string, deptVal: string) => {
       startTransition(() => {
-        const qs = createQueryString('name', nameVal);
-        const finalQs = deptVal
-          ? qs
-            ? `${qs}&${createQueryString('department', deptVal)}`
-            : createQueryString('department', deptVal)
-          : qs;
+        const params = new URLSearchParams(searchParams);
 
-        router.replace(`${pathname}${finalQs ? '?' + finalQs : ''}`, { scroll: false });
+        if (nameVal.trim()) {
+          params.set('name', nameVal.trim());
+        } else {
+          params.delete('name');
+        }
+
+        if (deptVal.trim()) {
+          params.set('department', deptVal.trim());
+        } else {
+          params.delete('department');
+        }
+
+        const query = params.toString();
+        router.replace(`${pathname}${query ? '?' + query : ''}`, { scroll: false });
       });
     },
-    [pathname, router, createQueryString]
+    [pathname, router, searchParams]
   );
 
   // Handle input changes → update URL
