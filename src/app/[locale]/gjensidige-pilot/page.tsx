@@ -1,5 +1,6 @@
 import { Link } from '@/i18n/navigation';
 import type { Metadata } from 'next';
+import LogoutButton from './LogoutButton';
 
 export async function generateStaticParams() {
   return [{ locale: 'nb' }, { locale: 'sv' }, { locale: 'en' }];
@@ -83,7 +84,8 @@ export default function GjensidigePilot() {
   return (
     <main className='min-h-screen bg-gray-50 py-12 px-4'>
       <div className='max-w-6xl mx-auto'>
-        <header className='bg-[#002B49] text-white py-10 px-6 text-center mb-8 rounded-lg'>
+        <header className='bg-[#002B49] text-white py-10 px-6 text-center mb-8 rounded-lg relative'>
+          <LogoutButton />
           <h1 className='text-3xl font-bold mb-2'>Gjensidige | JobLoop</h1>
           <p className='text-lg opacity-90'>Pilotprosjekt: Inkludering av unge (13–26 år)</p>
         </header>
