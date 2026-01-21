@@ -50,10 +50,12 @@ export default function TeamSection() {
   return (
     <section className="w-full">
       <div className="w-full text-center mb-12">
-        <h2 className="text-4xl md:text-5xl font-bold text-kv-black mb-4">
-          Vårt team
-        </h2>
-        <div className="block w-24 h-1 bg-jobloop-primary-green mt-2 mb-6 mx-auto"></div>
+        <div className="inline-block">
+          <h2 className="text-4xl md:text-5xl font-bold text-kv-black mb-4">
+            Vårt team
+          </h2>
+          <div className="block w-full h-1 bg-jobloop-primary-green mt-2 mb-6"></div>
+        </div>
       </div>
       
       <div className="grid lg:grid-cols-3 gap-8">
