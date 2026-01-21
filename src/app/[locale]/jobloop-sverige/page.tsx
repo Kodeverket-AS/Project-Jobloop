@@ -1,5 +1,5 @@
 import Image from 'next/image';
-import { LinkButtonAnimatedWithIcon } from '@/components/buttons';
+
 import { IoInformationCircle } from 'react-icons/io5';
 import TeamSection from '@/components/feature/jobloop-sverige/TeamSection';
 
@@ -14,7 +14,7 @@ export default async function JobloopSverige() {
           <p className="text-xl md:text-2xl text-jobloop-primary-grey font-semibold">
             Nya digitala lärmiljöer för grundskola och IM/gymnasium
           </p>
-          <div className="block w-1/3 h-1 bg-jobloop-primary-green mt-4 mb-8 mx-auto"></div>
+          <div className="block  h-1 bg-jobloop-primary-green mt-4 mb-8 mx-auto"></div>
         </div>
 
         <section className="w-full relative overflow-hidden rounded-3xl shadow-2xl group">
