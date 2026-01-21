@@ -18,7 +18,9 @@ export default function TeamSection() {
       description: [
         'Johanna Axelsson ansvarar för marknadsföring och affärsutveckling på JobLoop Sverige och är en drivande kraft i företagets svenska etablering. Parallellt med sin roll slutför hon en civilekonomexamen vid Mittuniversitetet i Östersund.',
         'Hon kombinerar starka akademiska meriter med bred arbetslivserfarenhet från både privat och offentlig sektor. Johanna har haft en rad olika service- och ledarskapsroller, bland annat som restaurangchef och skidlärare i Nya Zeeland, samt som vikarie och resurs i den svenska skolan.',
-        'På JobLoop ansvarar Johanna för att sprida kunskap om lösningar som Gamify och Spelbaserad kvalificering, samt att bygga relationer med kommuner, skolor och beslutsfattare. Hon beskrivs som analytisk, nyfiken och lösningsorienterad, med hög arbetskapacitet och stor handlingskraft.',
+        'Hon har även arbetat som ekonomikonsult och stöttat företag med analys, struktur och ekonomiska processer. Kombinationen av ekonomisk förståelse och vana att arbeta med människor gör henne särskilt skicklig på att bygga förtroende och utveckla partnerskap.',
+        'På JobLoop ansvarar Johanna för att sprida kunskap om lösningar som Gamify och Spelbaserad kvalificering, samt att bygga relationer med kommuner, skolor och beslutsfattare. Hon arbetar brett med marknadsstrategi, kommunikation och kvalitetssäkring, och fungerar som en viktig länk mellan JobLoops expertteam och det svenska utbildningssystemet.',
+        'Johanna beskrivs som analytisk, nyfiken och lösningsorienterad, med hög arbetskapacitet och stor handlingskraft. Hennes engagemang för inkludering och för att motverka problematisk skolfrånvaro gör henne till en nyckelspelare i JobLoops arbete.',
       ],
     },
     {
@@ -42,9 +44,11 @@ export default function TeamSection() {
       email: 'monica@jobloop.no',
       phone: null,
       description: [
-        'Monica Hallquist har en unik bakgrund som spänner över pedagogik och ledarskap inom skolan, men även av politiskt ledarskap inom den offentliga sektorn. Hon är i grunden utbildad lärare och har arbetat både som rektor och som förvaltningschef för utbildningssektorn.',
-        'Dessutom har Monica en bred politisk bakgrund som bland annat kommunstyrelsens ordförande i Berg, och har arbetat politiskt med folkhälsofrågor på regional nivå. Idag är hon ordförande för utbildningsnämnden i Bergs kommun.',
-        'Monica brinner för att modernisera skolan och göra lärandet mer relevant och lustfyllt för barn och unga. Som pedagogisk ledare på JobLoop Sverige kommer hon att bidra till att introducera Gamify som en ny och alternativ lärmiljö, samt bygga relationer med skolor, kommuner och beslutsfattare.',
+        'Monica Hallquist har en unik bakgrund som spänner över pedagogik och ledarskap inom skolan, men även politiskt ledarskap inom den offentliga sektorn. Hon är i grunden utbildad lärare och har arbetat både som rektor och som förvaltningschef för utbildningssektorn.',
+        'Som förvaltningschef ledde hon en skolorganisation med ansvar för budget, kvalitet och strategisk utveckling, och har lång erfarenhet av att arbeta med komplexa frågor inom utbildning och styrning.',
+        'Monica har även en bred politisk bakgrund, bland annat som kommunstyrelsens ordförande i Berg, och har arbetat politiskt med folkhälsofrågor på regional nivå. Idag är hon ordförande för utbildningsnämnden i Bergs kommun.',
+        'Monica brinner för att modernisera skolan och göra lärandet mer relevant och lustfyllt för barn och unga. Hon ser stor potential i innovativa arbetssätt som Gamify och Spelbaserad kvalificering för att erbjuda alternativa lärmiljöer där fler elever kan klara skolan med godkända betyg.',
+        'Som pedagogisk ledare på JobLoop Sverige bidrar Monica till att introducera Gamify som en ny och alternativ lärmiljö, samt till att bygga relationer med skolor, kommuner och beslutsfattare. Med sin kombination av pedagogisk bakgrund, skolledning och politisk erfarenhet är hon en viktig brobyggare mellan utbildning, innovation och samhällsutveckling.',
       ],
     },
   ];
