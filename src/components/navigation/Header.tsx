@@ -40,6 +40,11 @@ export function Header() {
       label: t('navigation.contact.label'),
       aria: t('navigation.contact.aria'),
     },
+    {
+      href: '/jobloop-sverige',
+      label: t('navigation.sverige.label'),
+      aria: t('navigation.sverige.aria'),
+    },
   ];
   return (
     <header
