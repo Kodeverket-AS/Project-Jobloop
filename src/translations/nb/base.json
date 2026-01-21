@@ -13,6 +13,10 @@
       "contact": {
         "label": "Kontakt",
         "aria": "gå til denne undersiden for å ta kontakt med en av oss"
+      },
+      "sverige": {
+        "label": "Jobloop Sverige",
+        "aria": "gå til denne undersiden for å lese mer om Jobloop Sverige"
       }
     },
     "localeSwitcher": {
