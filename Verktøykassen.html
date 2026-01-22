@@ -1,0 +1,112 @@
+
+<!DOCTYPE html>
+<html lang="no">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pilot JobLoop - Verktøykasse</title>
+    <style>
+        body { font-family: 'Segoe UI', sans-serif; margin: 0; background-color: #f4f6f8; color: #333; }
+        
+        /* Header */
+        header { background-color: #002B49; color: white; padding: 40px 20px; text-align: center; }
+        .logo { font-size: 1.5rem; font-weight: bold; margin-bottom: 10px; }
+        .subtitle { font-size: 1.1rem; opacity: 0.8; }
+
+        /* Grid */
+        .container { max-width: 1100px; margin: -30px auto 50px auto; padding: 20px; display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; }
+
+        /* Cards */
+        .tool-card {
+            background: white;
+            padding: 25px;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            transition: transform 0.2s;
+            border-top: 5px solid #ccc;
+            text-decoration: none;
+            color: #333;
+            display: block;
+            height: 100%;
+            box-sizing: border-box;
+            position: relative;
+        }
+
+        .tool-card:hover { transform: translateY(-5px); box-shadow: 0 8px 25px rgba(0,0,0,0.15); }
+        .tool-card h3 { margin-top: 0; color: #002B49; display: flex; align-items: center; gap: 10px; font-size: 1.2rem; }
+        .icon { font-size: 1.5rem; background: #EBF2F6; width: 40px; height: 40px; border-radius: 50%; display: flex; align-items: center; justify-content: center; }
+        .desc { font-size: 0.9rem; color: #666; margin-top: 10px; line-height: 1.5; }
+        .tag { position: absolute; top: 15px; right: 15px; font-size: 0.7rem; text-transform: uppercase; color: #999; font-weight: bold; }
+
+        /* Colors for borders */
+        .border-blue { border-top-color: #002B49; } /* Info / Admin */
+        .border-teal { border-top-color: #4AB5A3; } /* Action / User */
+        .border-red { border-top-color: #C3002F; }  /* Reporting / Important */
+
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="logo">Gjensidige | JobLoop</div>
+        <div class="subtitle">Pilotprosjekt: Inkludering av unge (13–26 år)</div>
+    </header>
+
+    <div class="container">
+
+        <a href="interninfo.html" class="tool-card border-blue">
+            <span class="tag">Info</span>
+            <h3><div class="icon">ℹ️</div> Produktinfo</h3>
+            <div class="desc">Start her! Faktaark om piloten. Målgruppe, kriterier for "nei", og de tre sporene forklart.</div>
+        </a>
+
+        <a href="ansattportal.html" class="tool-card border-blue">
+            <span class="tag">Ansatt</span>
+            <h3><div class="icon">👷</div> Ansattportal</h3>
+            <div class="desc">Ressursside for veilederne våre. Metodikk, lenke til Proplan-registrering og forventninger.</div>
+        </a>
+
+        <a href="samtale.html" class="tool-card border-teal">
+            <span class="tag">Telefon</span>
+            <h3><div class="icon">📞</div> Samtaleguiden</h3>
+            <div class="desc">Manus og støtte til den aller første telefonsamtalen med kunde/foreldre.</div>
+        </a>
+
+        <a href="kartlegging.html" class="tool-card border-teal">
+            <span class="tag">Møte</span>
+            <h3><div class="icon">🕵️</div> Kartleggingsguide</h3>
+            <div class="desc"><strong>Ny!</strong> Hva spør du om i det første møtet? Guide for å bygge relasjon og velge riktig spor.</div>
+        </a>
+
+        <a href="prosess.html" class="tool-card border-teal">
+            <span class="tag">Flyt</span>
+            <h3><div class="icon">🔄</div> Prosesskart</h3>
+            <div class="desc">Visuell oversikt over saksflyten. Hvem gjør hva, og når tar JobLoop over ansvaret?</div>
+        </a>
+
+        <a href="pilot.html" class="tool-card border-teal">
+            <span class="tag">Kunde</span>
+            <h3><div class="icon">🌐</div> Landingsside for kunde</h3>
+            <div class="desc">Lenken vi sender til ungdommen. Selger inn tilbudet med fokus på interesser.</div>
+        </a>
+
+        <a href="forberedelse.html" class="tool-card border-teal">
+            <span class="tag">Kunde</span>
+            <h3><div class="icon">📝</div> Forberedelse (Del 2)</h3>
+            <div class="desc">Sjekkliste ungdommen fyller ut FØR kartleggingssamtalen for å stille forberedt.</div>
+        </a>
+
+        <a href="rapport.html" class="tool-card border-red">
+            <span class="tag">Admin</span>
+            <h3><div class="icon">📊</div> Månedsrapporten</h3>
+            <div class="desc">Eksempel på rapportering og "Flagg-systemet" (Gult/Rødt flagg) vi bruker mot Gjensidige.</div>
+        </a>
+
+    </div>
+
+    <footer style="text-align: center; color: #888; padding: 20px; font-size: 0.9rem;">
+        <p>JobLoop Pilot Verktøykasse – Versjon 2.0</p>
+    </footer>
+
+</body>
+</html>
