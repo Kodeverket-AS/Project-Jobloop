@@ -2,6 +2,7 @@ import Image from 'next/image';
 import { LuMail } from 'react-icons/lu';
 import johannaImage from '@public/johanna.webp';
 import oddbjørnImage from '@public/oddbjørn.webp';
+import monicaImage from '@public/monica.png';
 
 function formatTelHref(raw = '') {
   return raw.replace(/[^\d+]/g, '');
@@ -40,7 +41,7 @@ export default function TeamSection() {
     {
       name: 'Monica Hallquist',
       role: 'Pedagogisk ledare – JobLoop Sverige',
-      image: null,
+      image: monicaImage,
       email: 'monica@jobloop.no',
       phone: null,
       description: [
