@@ -158,7 +158,7 @@ export default async function JobloopSverige() {
               </p>
               <div className='flex justify-center items-center pt-4'>
                 <a
-                  href='mailto:oddbjørn@jobloop.no'
+                  href='mailto:johanna@jobloop.no'
                   className='bg-white text-jobloop-primary-green px-10 py-4 rounded-full text-lg md:text-xl font-semibold hover:bg-jobloop-primary-orange hover:text-kv-white hover:border-jobloop-primary-orange border-2 border-white transition-all duration-300 hover:scale-105 shadow-xl hover:shadow-2xl'
                 >
                   Skicka e-post
