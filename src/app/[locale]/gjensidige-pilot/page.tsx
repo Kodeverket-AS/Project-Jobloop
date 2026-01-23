@@ -21,7 +21,7 @@ export default function GjensidigePilot() {
       href: '/gjensidige-pilot/interninfo',
       icon: 'ℹ️',
       tag: 'Info',
-      borderColor: 'border-blue-600',
+      borderClass: 'border-blue',
     },
     {
       title: 'Ansattportal',
@@ -29,7 +29,7 @@ export default function GjensidigePilot() {
       href: '/gjensidige-pilot/ansattportal',
       icon: '👷',
       tag: 'Ansatt',
-      borderColor: 'border-blue-600',
+      borderClass: 'border-blue',
     },
     {
       title: 'Samtaleguiden',
@@ -37,15 +37,19 @@ export default function GjensidigePilot() {
       href: '/gjensidige-pilot/samtale',
       icon: '📞',
       tag: 'Telefon',
-      borderColor: 'border-teal-500',
+      borderClass: 'border-teal',
     },
     {
       title: 'Kartleggingsguide',
-      description: 'Hva spør du om i det første møtet? Guide for å bygge relasjon og velge riktig spor.',
+      description: (
+        <>
+          <strong>Ny!</strong> Hva spør du om i det første møtet? Guide for å bygge relasjon og velge riktig spor.
+        </>
+      ),
       href: '/gjensidige-pilot/kartlegging',
       icon: '🕵️',
       tag: 'Møte',
-      borderColor: 'border-teal-500',
+      borderClass: 'border-teal',
     },
     {
       title: 'Prosesskart',
@@ -53,7 +57,7 @@ export default function GjensidigePilot() {
       href: '/gjensidige-pilot/prosess',
       icon: '🔄',
       tag: 'Flyt',
-      borderColor: 'border-teal-500',
+      borderClass: 'border-teal',
     },
     {
       title: 'Landingsside for kunde',
@@ -61,7 +65,7 @@ export default function GjensidigePilot() {
       href: '/gjensidige-pilot/pilot',
       icon: '🌐',
       tag: 'Kunde',
-      borderColor: 'border-teal-500',
+      borderClass: 'border-teal',
     },
     {
       title: 'Forberedelse (Del 2)',
@@ -69,7 +73,7 @@ export default function GjensidigePilot() {
       href: '/gjensidige-pilot/forberedelse',
       icon: '📝',
       tag: 'Kunde',
-      borderColor: 'border-teal-500',
+      borderClass: 'border-teal',
     },
     {
       title: 'Månedsrapporten',
@@ -77,47 +81,145 @@ export default function GjensidigePilot() {
       href: '/gjensidige-pilot/rapport',
       icon: '📊',
       tag: 'Admin',
-      borderColor: 'border-red-600',
+      borderClass: 'border-red',
     },
   ];
 
   return (
-    <main className='min-h-screen bg-gray-50 py-12 px-4'>
-      <div className='max-w-6xl mx-auto'>
-        <header className='bg-[#002B49] text-white py-10 px-6 text-center mb-8 rounded-lg relative'>
-          <LogoutButton />
-          <h1 className='text-3xl font-bold mb-2'>Gjensidige | JobLoop</h1>
-          <p className='text-lg opacity-90'>Pilotprosjekt: Inkludering av unge (13–26 år)</p>
+    <>
+      <style>{`
+        .verktoykasse-page {
+          font-family: 'Segoe UI', sans-serif;
+          margin: 0;
+          background-color: #f4f6f8;
+          color: #333;
+        }
+        .verktoykasse-page header {
+          background-color: #002B49;
+          color: white;
+          padding: 40px 20px;
+          text-align: center;
+          position: relative;
+        }
+        .verktoykasse-page .header-content {
+          max-width: 1100px;
+          margin: 0 auto;
+          position: relative;
+        }
+        .verktoykasse-page .logo {
+          font-size: 1.5rem;
+          font-weight: bold;
+          margin-bottom: 10px;
+        }
+        .verktoykasse-page .subtitle {
+          font-size: 1.1rem;
+          opacity: 0.8;
+        }
+        .verktoykasse-page .container {
+          max-width: 1100px;
+          margin: -30px auto 50px auto;
+          padding: 20px;
+          display: grid;
+          grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+          gap: 20px;
+        }
+        .verktoykasse-page .tool-card {
+          background: white;
+          padding: 25px;
+          border-radius: 8px;
+          box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+          transition: transform 0.2s;
+          border-top: 5px solid #ccc;
+          text-decoration: none;
+          color: #333;
+          display: block;
+          height: 100%;
+          box-sizing: border-box;
+          position: relative;
+        }
+        .verktoykasse-page .tool-card:hover {
+          transform: translateY(-5px);
+          box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+        }
+        .verktoykasse-page .tool-card h3 {
+          margin-top: 0;
+          color: #002B49;
+          display: flex;
+          align-items: center;
+          gap: 10px;
+          font-size: 1.2rem;
+        }
+        .verktoykasse-page .icon {
+          font-size: 1.5rem;
+          background: #EBF2F6;
+          width: 40px;
+          height: 40px;
+          border-radius: 50%;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+        }
+        .verktoykasse-page .desc {
+          font-size: 0.9rem;
+          color: #666;
+          margin-top: 10px;
+          line-height: 1.5;
+        }
+        .verktoykasse-page .tag {
+          position: absolute;
+          top: 15px;
+          right: 15px;
+          font-size: 0.7rem;
+          text-transform: uppercase;
+          color: #999;
+          font-weight: bold;
+        }
+        .verktoykasse-page .border-blue {
+          border-top-color: #002B49;
+        }
+        .verktoykasse-page .border-teal {
+          border-top-color: #4AB5A3;
+        }
+        .verktoykasse-page .border-red {
+          border-top-color: #C3002F;
+        }
+        .verktoykasse-page footer {
+          text-align: center;
+          color: #888;
+          padding: 20px;
+          font-size: 0.9rem;
+        }
+      `}</style>
+      <main className='verktoykasse-page'>
+        <header>
+          <div className='header-content'>
+            <LogoutButton />
+            <div className='logo'>Gjensidige | JobLoop</div>
+            <div className='subtitle'>Pilotprosjekt: Inkludering av unge (13–26 år)</div>
+          </div>
         </header>
 
-        <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6'>
+        <div className='container'>
           {tools.map((tool) => (
             <Link
               key={tool.href}
               href={tool.href}
-              className='bg-white p-6 rounded-lg shadow-md hover:shadow-xl transition-all duration-200 transform hover:-translate-y-1 border-t-4 relative group'
-              style={{ borderTopColor: tool.borderColor.includes('blue') ? '#002B49' : tool.borderColor.includes('teal') ? '#4AB5A3' : '#C3002F' }}
+              className={`tool-card ${tool.borderClass}`}
             >
-              <span className='absolute top-4 right-4 text-xs uppercase text-gray-400 font-bold'>
-                {tool.tag}
-              </span>
-              <div className='flex items-center gap-3 mb-3'>
-                <div className='text-2xl bg-gray-100 w-10 h-10 rounded-full flex items-center justify-center'>
-                  {tool.icon}
-                </div>
-                <h3 className='text-xl font-semibold text-[#002B49] group-hover:text-[#4AB5A3] transition-colors'>
-                  {tool.title}
-                </h3>
-              </div>
-              <p className='text-sm text-gray-600 leading-relaxed'>{tool.description}</p>
+              <span className='tag'>{tool.tag}</span>
+              <h3>
+                <div className='icon'>{tool.icon}</div>
+                {tool.title}
+              </h3>
+              <div className='desc'>{tool.description}</div>
             </Link>
           ))}
         </div>
 
-        <footer className='text-center text-gray-500 mt-12 py-6'>
+        <footer>
           <p>JobLoop Pilot Verktøykasse – Versjon 2.0</p>
         </footer>
-      </div>
-    </main>
+      </main>
+    </>
   );
 }
