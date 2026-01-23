@@ -1,3 +1,4 @@
+import { Link } from '@/i18n/navigation';
 import type { Metadata } from 'next';
 
 export async function generateStaticParams() {
@@ -219,6 +220,15 @@ export default function Kartlegging() {
               Husk: Send en kort oppsummering til Kim (Gult/Grønt flagg) etter første møte.
             </p>
           </div>
+        </div>
+
+        <div className='container'>
+          <Link
+            href='/gjensidige-pilot'
+            className='inline-block mt-6 text-[#4AB5A3] hover:text-[#002B49] transition-colors'
+          >
+            ← Tilbake til verktøykassen
+          </Link>
         </div>
       </main>
     </>

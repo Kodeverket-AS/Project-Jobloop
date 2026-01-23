@@ -1,3 +1,4 @@
+import { Link } from '@/i18n/navigation';
 import type { Metadata } from 'next';
 
 export async function generateStaticParams() {
@@ -235,6 +236,15 @@ export default function Samtale() {
         <footer>
           <p>Husk: Dette dokumentet utvikles sammen med dere. Har du innspill til hva som fungerer/ikke fungerer? Ta kontakt med prosjektleder.</p>
         </footer>
+
+        <div className='container'>
+          <Link
+            href='/gjensidige-pilot'
+            className='inline-block mt-6 text-[#4AB5A3] hover:text-[#002B49] transition-colors'
+          >
+            ← Tilbake til verktøykassen
+          </Link>
+        </div>
       </main>
     </>
   );

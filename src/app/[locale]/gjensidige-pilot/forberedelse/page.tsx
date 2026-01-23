@@ -207,6 +207,14 @@ export default function Forberedelse() {
         <p>Hilsen Kim i JobLoop</p>
       </footer>
 
+      <div className='container'>
+        <Link
+          href='/gjensidige-pilot'
+          className='inline-block mt-6 text-[#4AB5A3] hover:text-[#002B49] transition-colors'
+        >
+          ← Tilbake til verktøykassen
+        </Link>
+      </div>
       </main>
     </>
   );

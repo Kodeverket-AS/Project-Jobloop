@@ -158,7 +158,16 @@ export default function Rapport() {
           Har hatt synkende oppmøte siste to uker. Prosjektleder Kim har hatt samtale med ungdom og OT.
           <br /><em>Tiltak:</em> Vi justerer ned timeplanen midlertidig og øker 1-til-1 oppfølging i to uker for å bygge trygghet (se "Tidlig tiltak" i avtalen).</p>
         </div>
-      </div>
+        </div>
+
+        <div style={{ maxWidth: '900px', margin: '0 auto', padding: '0 30px' }}>
+          <Link
+            href='/gjensidige-pilot'
+            className='inline-block mt-6 text-[#4AB5A3] hover:text-[#002B49] transition-colors'
+          >
+            ← Tilbake til verktøykassen
+          </Link>
+        </div>
       </main>
     </>
   );

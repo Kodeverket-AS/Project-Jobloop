@@ -389,6 +389,14 @@ export default function Pilot() {
         <p>Pilotprosjekt – Innhold kan endres underveis.</p>
       </footer>
 
+      <div className='max-w-4xl mx-auto px-4 pb-8'>
+        <Link
+          href='/gjensidige-pilot'
+          className='inline-block mt-6 text-[#4AB5A3] hover:text-[#002B49] transition-colors'
+        >
+          ← Tilbake til verktøykassen
+        </Link>
+      </div>
       </main>
     </>
   );

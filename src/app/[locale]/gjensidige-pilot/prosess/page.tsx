@@ -1,3 +1,4 @@
+import { Link } from '@/i18n/navigation';
 import type { Metadata } from 'next';
 
 export async function generateStaticParams() {
@@ -303,6 +304,15 @@ export default function Prosess() {
         <footer>
           Pilotprosjekt 2026 - Samarbeid for bedre inkludering
         </footer>
+
+        <div className='timeline-container'>
+          <Link
+            href='/gjensidige-pilot'
+            className='inline-block mt-6 text-[#4AB5A3] hover:text-[#002B49] transition-colors'
+          >
+            ← Tilbake til verktøykassen
+          </Link>
+        </div>
       </main>
     </>
   );
