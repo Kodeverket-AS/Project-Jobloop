@@ -12,14 +12,23 @@ export default function Login() {
   const router = useRouter();
   const locale = useLocale();
 
-  const submit = () => {
+  const submit = async () => {
     setError('');
-    const expectedPassword = process.env.NEXT_PUBLIC_PILOT_PASSWORD;
-    if (pass === expectedPassword && expectedPassword) {
-      document.cookie = `pilot-access=${expectedPassword}; path=/; max-age=86400`;
-      router.push('/gjensidige-pilot');
-    } else {
-      setError('Feil passord');
+    try {
+      const response = await fetch('/api/pilot/login', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ password: pass }),
+      });
+
+      if (response.ok) {
+        router.push('/gjensidige-pilot');
+      } else {
+        const data = await response.json();
+        setError(data.error || 'Feil passord');
+      }
+    } catch (err) {
+      setError('Noe gikk galt. Prøv igjen.');
     }
   };
 
@@ -43,11 +52,11 @@ export default function Login() {
             }}
             className="space-y-6"
           >
-            <div>
+    <div>
               <div className="relative">
-                <input
+      <input
                   type={showPassword ? 'text' : 'password'}
-                  value={pass}
+        value={pass}
                   onChange={e => {
                     setPass(e.target.value);
                     setError('');
@@ -58,10 +67,10 @@ export default function Login() {
                       submit();
                     }
                   }}
-                  placeholder="Passord"
+        placeholder="Passord"
                   className="w-full rounded-xl border-2 border-gray-200 bg-white px-4 py-3 pr-12 text-base focus:outline-none focus:ring-2 focus:ring-jobloop-primary-green/60 focus:border-jobloop-primary-green transition-all duration-300 hover:border-jobloop-primary-green/50"
                   autoFocus
-                />
+      />
                 <button
                   type="button"
                   onClick={() => setShowPassword(!showPassword)}
