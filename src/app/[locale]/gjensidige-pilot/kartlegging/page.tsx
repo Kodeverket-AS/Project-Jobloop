@@ -160,13 +160,13 @@ export default function Kartlegging() {
           <div className='step-box'>
             <div className='step-number'>Steg 1: Isbryteren (Gaming/Interesse)</div>
             <h2>Start med det som er gøy</h2>
-            <p>Ikke spør "hvordan har du det?" med en gang. Gå rett på interessen de oppga i skjemaet sitt.</p>
+            <p>Ikke spør &quot;hvordan har du det?&quot; med en gang. Gå rett på interessen de oppga i skjemaet sitt.</p>
             <ul className='question-list'>
-              <li>"Jeg så du krysset av for [Spill/Interesse]. Hva er det som fenger mest med det?"</li>
-              <li>"Spiller du mest for å vinne (rank), eller for å henge med folk (social)?"
+              <li>&quot;Jeg så du krysset av for [Spill/Interesse]. Hva er det som fenger mest med det?&quot;</li>
+              <li>&quot;Spiller du mest for å vinne (rank), eller for å henge med folk (social)?&quot;
                 <span className='sub-text'>Dette forteller oss om vi skal fokusere på faglig mestring eller sosial trygghet.</span>
               </li>
-              <li>"Hva slags setup har du hjemme? Bygd selv?"</li>
+              <li>&quot;Hva slags setup har du hjemme? Bygd selv?&quot;</li>
             </ul>
           </div>
 
@@ -175,11 +175,11 @@ export default function Kartlegging() {
             <h2>Hvordan ser hverdagen egentlig ut?</h2>
             <p>Prøv å normalisere at ting er vanskelig. Vi dømmer ikke.</p>
             <ul className='question-list'>
-              <li>"Hvis vi ser bort fra gamingen – hvordan ser en vanlig tirsdag ut for deg?"
+              <li>&quot;Hvis vi ser bort fra gamingen – hvordan ser en vanlig tirsdag ut for deg?&quot;
                 <span className='sub-text'>Sover de hele dagen? Er de på skolen litt?</span>
               </li>
-              <li>"Når var sist du følte at skole eller jobb faktisk ga deg noe positivt?"</li>
-              <li>"Er det noe som stresser deg spesielt mye akkurat nå? (Folk, krav, fremtid?)"</li>
+              <li>&quot;Når var sist du følte at skole eller jobb faktisk ga deg noe positivt?&quot;</li>
+              <li>&quot;Er det noe som stresser deg spesielt mye akkurat nå? (Folk, krav, fremtid?)&quot;</li>
             </ul>
           </div>
 
@@ -188,9 +188,9 @@ export default function Kartlegging() {
             <h2>Match med riktig spor</h2>
             <p>Her må vi finne ut om de passer inn i piloten, og hvilket spor vi skal velge.</p>
             <ul className='question-list'>
-              <li>"Hvis du kunne velge fritt: Ville du helst lært koding/IT for å få jobb, eller trenger du bare et sted å være for å få ro til å gjøre ferdig VGS?"</li>
-              <li>"Hvordan lærer du best? Alene med en veileder, eller i en liten gruppe?"</li>
-              <li>"Hva skal til for at du faktisk orker å møte opp her hos oss?"</li>
+              <li>&quot;Hvis du kunne velge fritt: Ville du helst lært koding/IT for å få jobb, eller trenger du bare et sted å være for å få ro til å gjøre ferdig VGS?&quot;</li>
+              <li>&quot;Hvordan lærer du best? Alene med en veileder, eller i en liten gruppe?&quot;</li>
+              <li>&quot;Hva skal til for at du faktisk orker å møte opp her hos oss?&quot;</li>
             </ul>
           </div>
 

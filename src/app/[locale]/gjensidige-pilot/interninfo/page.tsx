@@ -254,7 +254,7 @@ export default function InternInfo() {
             <p>For elever i ungdomsskolen som sliter med å møte opp.</p>
             <ul style={{ fontSize: '0.95rem', marginBottom: 0 }}>
               <li><strong>Mål:</strong> Økt trivsel, redusert fravær og å fullføre 10. trinn.</li>
-              <li><strong>Innhold:</strong> Eleven er hos oss 1-2 dager i uken som et "pusterom". Vi bruker gaming og kreative verktøy pedagogisk for å bygge mestring.</li>
+              <li><strong>Innhold:</strong> Eleven er hos oss 1-2 dager i uken som et &quot;pusterom&quot;. Vi bruker gaming og kreative verktøy pedagogisk for å bygge mestring.</li>
               <li><strong>Samarbeid:</strong> Tett dialog med skole og PPT for å sikre at dette støtter opp om skolegangen, ikke erstatter den.</li>
             </ul>
           </div>
@@ -296,7 +296,7 @@ export default function InternInfo() {
               <ul style={{ fontSize: '0.9rem', paddingLeft: '20px', listStyleType: 'disc' }}>
                 <li><strong>Inntaks-tilbakemelding:</strong> Vi gir beskjed om vilket spor vi velger etter kartlegging.</li>
                 <li><strong>Månedsrapport:</strong> En enkel status på oppmøte, trivsel og progresjon.</li>
-                <li><strong>Varsling:</strong> Vi bruker "Gult/Rødt flagg"-system. Du får beskjed med en gang hvis oppmøtet svikter, slik at vi kan sette inn tiltak sammen.</li>
+                <li><strong>Varsling:</strong> Vi bruker &quot;Gult/Rødt flagg&quot;-system. Du får beskjed med en gang hvis oppmøtet svikter, slik at vi kan sette inn tiltak sammen.</li>
               </ul>
             </div>
           </div>
@@ -335,7 +335,7 @@ export default function InternInfo() {
             Tlf: 97 46 91 10<br />
             E-post: <a href='mailto:kim@jobloop.no' style={{ color: 'var(--gjensidige-blue)', textDecoration: 'underline' }}>kim@jobloop.no</a></p>
             <br />
-            <p style={{ fontSize: '0.85rem', color: '#666' }}>"Det er bedre å ta en telefon for mye enn en for lite."</p>
+            <p style={{ fontSize: '0.85rem', color: '#666' }}>&quot;Det er bedre å ta en telefon for mye enn en for lite.&quot;</p>
           </div>
 
         </div>

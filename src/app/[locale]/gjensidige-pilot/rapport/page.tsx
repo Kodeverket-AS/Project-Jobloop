@@ -156,7 +156,7 @@ export default function Rapport() {
           <br />
           <p><strong>Avvikshåndtering (Gult flagg - Kandidat C):</strong><br />
           Har hatt synkende oppmøte siste to uker. Prosjektleder Kim har hatt samtale med ungdom og OT.
-          <br /><em>Tiltak:</em> Vi justerer ned timeplanen midlertidig og øker 1-til-1 oppfølging i to uker for å bygge trygghet (se "Tidlig tiltak" i avtalen).</p>
+          <br /><em>Tiltak:</em> Vi justerer ned timeplanen midlertidig og øker 1-til-1 oppfølging i to uker for å bygge trygghet (se &quot;Tidlig tiltak&quot; i avtalen).</p>
         </div>
         </div>
 

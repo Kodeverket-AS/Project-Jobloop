@@ -172,7 +172,7 @@ export default function AnsattPortal() {
           <div style={{ fontSize: '2rem' }}>👉</div>
           <div>
             <strong>Første steg: Registrer din kompetanse!</strong><br />
-            For at Kim skal kunne matche deg med riktig ungdom, må du oppdatere profilen din i Proplan under fanen "Gjensidige".
+            For at Kim skal kunne matche deg med riktig ungdom, må du oppdatere profilen din i Proplan under fanen &quot;Gjensidige&quot;.
           </div>
           <a href='#' className='action-btn'>
             Gå til Proplan
@@ -196,7 +196,7 @@ export default function AnsattPortal() {
               <p><strong>Fokus:</strong> Motivasjon & Nærvær.</p>
            
               <p>
-                Eleven er her 1-2 dager i uken. Vi skal være et "pusterom" som gir energi til å klare resten av uken på skolen. Tett dialog med kontaktlærer er nøkkelen.
+                Eleven er her 1-2 dager i uken. Vi skal være et &quot;pusterom&quot; som gir energi til å klare resten av uken på skolen. Tett dialog med kontaktlærer er nøkkelen.
               </p>
             </div>
 
@@ -222,7 +222,7 @@ export default function AnsattPortal() {
         </div>
 
         <div className='card'>
-          <h2>🚨 Rapportering og "Flagg-systemet"</h2>
+          <h2>🚨 Rapportering og &quot;Flagg-systemet&quot;</h2>
           <p style={{ marginBottom: '1.5em' }}>
             Gjensidige krever tett oppfølging. Vi bruker et trafikklys-system for å fange opp problemer tidlig.
           </p>
@@ -235,7 +235,7 @@ export default function AnsattPortal() {
             <li>
               <strong>Gult Flagg (Obs!):</strong><br />
               <em>Kriterier:</em> Fravær over 30% siste to uker, eller synkende trivsel/motivasjon.<br />
-              <em>Din jobb:</em> Meld fra til Prosjektleder (Kim) umiddelbart. Vi setter inn "Tidlig innsats" (f.eks. justert plan, mer 1-1 tid).
+              <em>Din jobb:</em> Meld fra til Prosjektleder (Kim) umiddelbart. Vi setter inn &quot;Tidlig innsats&quot; (f.eks. justert plan, mer 1-1 tid).
             </li>
             <li>
               <strong>Rødt Flagg (Fare):</strong><br />

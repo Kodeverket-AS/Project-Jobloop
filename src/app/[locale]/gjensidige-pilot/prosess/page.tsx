@@ -259,7 +259,7 @@ export default function Prosess() {
             <div className='step-content'>
               <span className='owner-badge badge-g'>Gjensidige ansvar</span>
               <h3>Motivasjon & Info</h3>
-              <p><strong>Dette er nøkkelen:</strong> Du sender lenken til den "skjulte" landingssiden til kunden (og evt. foreldre). <br />
+              <p><strong>Dette er nøkkelen:</strong> Du sender lenken til den &quot;skjulte&quot; landingssiden til kunden (og evt. foreldre). <br />
               Her kan de se video og lese om sporene i ro og fred, før de eventuelt tar kontakt med Kim.</p>
             </div>
           </div>
@@ -278,7 +278,7 @@ export default function Prosess() {
             <div className='step-content'>
               <span className='owner-badge badge-j'>JobLoop rapporterer</span>
               <h3>Tilbakemelding</h3>
-              <p>Kim rapporterer tilbake til Gjensidige: <br />Hva ble vi enige om? Hvilket spor velger vi? Er dette "go/no-go"?</p>
+              <p>Kim rapporterer tilbake til Gjensidige: <br />Hva ble vi enige om? Hvilket spor velger vi? Er dette &quot;go/no-go&quot;?</p>
             </div>
           </div>
 
