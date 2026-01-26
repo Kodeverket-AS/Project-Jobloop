@@ -28,7 +28,7 @@ export default function TeamSection() {
       name: 'Oddbjørn Sve',
       role: 'Ledare för JobLoop Sverige ',
       image: oddbjørnImage,
-      email: 'oddbjørn@jobloop.no',
+      email: 'o.sve@online.no',
       phone: null,
       description: [
         'Oddbjørn Sve leder företagets etablering i Sverige. Med bakgrund inom norska försvarsmakten och högre utbildning inom management, ekonomi och administration kombinerar han gedigen yrkeskunskap med god struktur och handlingskraft i komplexa utvecklingsprojekt.',
