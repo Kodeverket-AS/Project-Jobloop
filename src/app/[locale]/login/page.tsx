@@ -2,7 +2,6 @@
 'use client';
 import { useState } from 'react';
 import { useRouter } from '@/i18n/navigation';
-import { useLocale } from 'next-intl';
 import { LuEye, LuEyeOff } from 'react-icons/lu';
 
 export default function Login() {
@@ -10,7 +9,6 @@ export default function Login() {
   const [error, setError] = useState('');
   const [showPassword, setShowPassword] = useState(false);
   const router = useRouter();
-  const locale = useLocale();
 
   const submit = async () => {
     setError('');

@@ -174,7 +174,7 @@ export default function AnsattPortal() {
             <strong>Første steg: Registrer din kompetanse!</strong><br />
             For at Kim skal kunne matche deg med riktig ungdom, må du oppdatere profilen din i Proplan under fanen &quot;Gjensidige&quot;.
           </div>
-          <a href='#' className='action-btn'>
+          <a href='https://proplan.net/' target='_blank' rel='noopener noreferrer' className='action-btn'>
             Gå til Proplan
           </a>
         </div>
