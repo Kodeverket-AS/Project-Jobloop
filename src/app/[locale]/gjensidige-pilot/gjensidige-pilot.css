@@ -7,7 +7,6 @@
     --highlight-bg: #fff3cd;
     --grey-bg: #EBF2F6;
     --soft-bg: #e0f2f1;
-    --light-grey: #EBF2F6;
     --alert-yellow: #fff3cd;
     --alert-text: #856404;
     --jobloop-light: #e0f2f1;
@@ -18,74 +17,156 @@
     --light-bg: #EBF2F6;
 }
 
-.samtale-page {
+[class*="-page"] {
     font-family: 'Segoe UI', Arial, sans-serif;
-    margin: 0;
-    padding: 0;
     background-color: #f4f6f8;
     color: #333;
     line-height: 1.6;
+    margin: 0;
+    padding: 0;
 }
 
-.samtale-page header {
-    background-color: white;
+[class*="-page"] header {
     padding: 20px 10%;
     display: flex;
     justify-content: space-between;
     align-items: center;
     border-bottom: 5px solid var(--gjensidige-blue);
+    background-color: white;
 }
 
-.samtale-page .logo {
+[class*="-page"] header h1 {
+    margin: 0;
+    font-size: 2rem;
+    color: var(--gjensidige-blue);
+}
+
+[class*="-page"] header p {
+    opacity: 0.8;
+    margin-top: 5px;
+}
+
+[class*="-page"] .logo {
     font-size: 24px;
     font-weight: bold;
     color: var(--gjensidige-blue);
 }
 
-.samtale-page .container {
+[class*="-page"] .container {
     max-width: 900px;
     margin: 40px auto;
     padding: 0 20px;
 }
 
-.samtale-page .intro-box {
-    background-color: white;
-    padding: 30px;
-    padding-bottom: 50px;
+[class*="-page"] footer {
+    text-align: center;
+    padding: 40px;
+    color: #888;
+    font-size: 0.9rem;
+}
+
+[class*="-page"] h1 {
+    color: var(--gjensidige-blue);
+    font-size: 2rem;
+}
+
+[class*="-page"] h2 {
+    color: var(--gjensidige-blue);
+    font-size: 1.5rem;
+    margin-top: 0;
+}
+
+[class*="-page"] h3 {
+    color: var(--gjensidige-blue);
+    font-size: 1.3rem;
+    margin-top: 0;
+    margin-bottom: 10px;
+}
+
+[class*="-page"] p {
+    line-height: 1.6;
+}
+
+[class*="-page"] .card,
+[class*="-page"] .box,
+[class*="-page"] [class*="-box"],
+[class*="-page"] [class*="-card"],
+[class*="-page"] [class*="-content"] {
+    background: white;
+    padding: 25px;
     border-radius: 8px;
-    margin-bottom: 30px;
-    border-left: 6px solid var(--gjensidige-blue);
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
 }
 
+[class*="-page"] [class*="-list"] {
+    list-style: none;
+    padding: 0;
+}
+
+[class*="-page"] [class*="-list"] li {
+    position: relative;
+}
+
+[class*="-page"] .hero {
+    background-color: var(--gjensidige-blue);
+    color: white;
+    padding: 40px 20px;
+    text-align: center;
+}
+
+[class*="-page"] .hero h1 {
+    margin: 0 0 10px 0;
+    font-size: 2.2rem;
+    color: white;
+}
+
+[class*="-page"] .hero p {
+    opacity: 0.8;
+    font-size: 1.1rem;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+[class*="-page"] [class*="badge"] {
+    display: inline-block;
+    font-weight: bold;
+    padding: 3px 10px;
+    border-radius: 4px;
+}
+
+[class*="-page"] [class*="icon"] {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.samtale-page .intro-box {
+    padding-bottom: 50px;
+    margin-bottom: 30px;
+    border-left: 6px solid var(--gjensidige-blue);
+}
+
 .samtale-page .intro-box h1 {
-    margin-top: 0;
-    color: var(--gjensidige-blue);
-    font-size: 2rem;
     padding-bottom: 20px;
 }
 
 .samtale-page .badge {
-    display: inline-block;
     background-color: #e2e6ea;
     color: #666;
     padding: 5px 10px;
     border-radius: 20px;
     font-size: 0.85rem;
     margin-bottom: 15px;
-    font-weight: bold;
 }
 
 .samtale-page .concept-box {
     background-color: var(--highlight-bg);
     border: 1px solid #ffeeba;
     padding: 20px;
-    border-radius: 8px;
     margin-bottom: 40px;
 }
 
 .samtale-page .concept-box h3 {
-    margin-top: 0;
     color: #856404;
     display: flex;
     align-items: center;
@@ -103,12 +184,9 @@
 }
 
 .samtale-page .script-section h2 {
-    color: var(--gjensidige-blue);
     border-bottom: 2px solid #eee;
     padding-bottom: 15px;
     margin-bottom: 20px;
-    font-size: 1.5rem;
-    margin-top: 0;
 }
 
 .samtale-page .dialogue-wrapper {
@@ -127,7 +205,6 @@
 }
 
 .samtale-page .bubble-caseworker {
-    background-color: white;
     border: 1px solid #ddd;
     border-left: 5px solid var(--gjensidige-red);
     align-self: flex-start;
@@ -155,55 +232,8 @@
 }
 
 .samtale-page footer {
-    text-align: center;
-    padding: 40px;
-    color: #888;
-    font-size: 0.9rem;
     margin-top: 50px;
     border-top: 1px solid #eee;
-}
-
-.prosess-page {
-    font-family: 'Segoe UI', Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    background-color: #f4f6f8;
-    color: #333;
-    line-height: 1.6;
-}
-
-.prosess-page header {
-    background-color: white;
-    padding: 20px 10%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    border-bottom: 5px solid var(--gjensidige-blue);
-}
-
-.prosess-page .logo {
-    font-size: 24px;
-    font-weight: bold;
-    color: var(--gjensidige-blue);
-}
-
-.prosess-page .hero {
-    background-color: var(--gjensidige-blue);
-    color: white;
-    padding: 40px 20px;
-    text-align: center;
-}
-
-.prosess-page .hero h1 {
-    margin: 0 0 10px 0;
-    font-size: 2.2rem;
-}
-
-.prosess-page .hero p {
-    opacity: 0.8;
-    font-size: 1.1rem;
-    max-width: 600px;
-    margin: 0 auto;
 }
 
 .prosess-page .timeline-container {
@@ -272,12 +302,9 @@
 }
 
 .prosess-page .step-content {
-    background: white;
-    padding: 25px;
-    border-radius: 8px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
     position: relative;
     width: 100%;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
 }
 
 .prosess-page .step:nth-child(odd) .step-content::after {
@@ -316,12 +343,6 @@
     color: var(--jobloop-dark);
 }
 
-.prosess-page h3 {
-    margin-top: 0;
-    margin-bottom: 10px;
-    font-size: 1.3rem;
-}
-
 .prosess-page p {
     margin: 0;
     color: #666;
@@ -329,12 +350,9 @@
 }
 
 .prosess-page .owner-badge {
-    display: inline-block;
     font-size: 0.75rem;
     text-transform: uppercase;
-    font-weight: bold;
     padding: 3px 8px;
-    border-radius: 4px;
     margin-bottom: 10px;
 }
 
@@ -385,20 +403,7 @@
 }
 
 .prosess-page footer {
-    text-align: center;
-    padding: 40px;
-    color: #888;
-    font-size: 0.9rem;
     clear: both;
-}
-
-.kartlegging-page {
-    font-family: 'Segoe UI', Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    background-color: #f4f6f8;
-    color: #333;
-    line-height: 1.6;
 }
 
 .kartlegging-page header {
@@ -406,23 +411,19 @@
     color: white;
     padding: 30px 20px;
     text-align: center;
-    border-bottom: 5px solid var(--gjensidige-blue);
 }
 
 .kartlegging-page header h1 {
-    margin: 0;
-    font-size: 2rem;
+    color: white;
 }
 
 .kartlegging-page header p {
     opacity: 0.9;
-    margin-top: 5px;
 }
 
 .kartlegging-page .container {
     max-width: 800px;
     margin: 30px auto;
-    padding: 0 20px;
 }
 
 .kartlegging-page .golden-rule {
@@ -430,7 +431,6 @@
     border: 1px solid #ffeeba;
     color: #856404;
     padding: 20px;
-    border-radius: 8px;
     margin-bottom: 30px;
     display: flex;
     align-items: center;
@@ -442,10 +442,6 @@
 }
 
 .kartlegging-page .step-box {
-    background: white;
-    padding: 25px;
-    border-radius: 8px;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
     margin-bottom: 25px;
     position: relative;
     border-left: 5px solid var(--jobloop-teal);
@@ -465,21 +461,16 @@
 
 .kartlegging-page h2 {
     margin-top: 10px;
-    color: var(--gjensidige-blue);
-    font-size: 1.3rem;
     padding-bottom: 20px;
 }
 
 .kartlegging-page .question-list {
-    list-style: none;
-    padding: 0;
     margin-top: 15px;
 }
 
 .kartlegging-page .question-list li {
     margin-bottom: 12px;
     padding-left: 25px;
-    position: relative;
     font-weight: 500;
 }
 
@@ -502,12 +493,10 @@
     background-color: var(--gjensidige-blue);
     color: white;
     padding: 30px;
-    border-radius: 8px;
     margin-top: 40px;
 }
 
 .kartlegging-page .checklist-area h3 {
-    margin-top: 0;
     color: var(--jobloop-teal);
     font-size: 1.1rem;
     padding-bottom: 10px;
@@ -538,10 +527,8 @@
 .rapport-page .report-container {
     max-width: 900px;
     margin: 0 auto;
-    background: white;
     padding: 30px;
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.05);
-    border-radius: 8px;
 }
 
 .rapport-page h1 {
@@ -586,7 +573,6 @@
     padding: 5px 10px;
     border-radius: 15px;
     font-size: 0.8rem;
-    font-weight: bold;
 }
 
 .rapport-page .badge.green {
@@ -611,20 +597,11 @@
 .rapport-page .summary-box {
     background-color: #EBF2F6;
     padding: 20px;
-    border-radius: 8px;
     margin-top: 30px;
 }
 
 .rapport-page .summary-box h3 {
-    margin-top: 0;
     color: #002B49;
-}
-
-.ansattportal-page {
-    font-family: 'Segoe UI', Arial, sans-serif;
-    background-color: #f4f6f8;
-    color: #333;
-    line-height: 1.6;
 }
 
 .ansattportal-page header {
@@ -632,31 +609,19 @@
     color: white;
     padding: 30px 20px;
     text-align: center;
-    border-bottom: 5px solid var(--gjensidige-blue);
 }
 
 .ansattportal-page header h1 {
     margin-bottom: 10px;
-    font-size: 2rem;
+    color: white;
 }
 
 .ansattportal-page header p {
     opacity: 0.9;
-    margin-top: 5px;
     font-size: 1.1rem;
 }
 
-.ansattportal-page .container {
-    max-width: 900px;
-    margin: 30px auto;
-    padding: 0 20px;
-}
-
 .ansattportal-page .card {
-    background: white;
-    padding: 30px;
-    border-radius: 8px;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
     margin-bottom: 30px;
 }
 
@@ -664,7 +629,6 @@
     background-color: var(--alert-yellow);
     border: 1px solid #ffeeba;
     padding: 20px;
-    border-radius: 8px;
     color: var(--alert-text);
     margin-bottom: 30px;
     display: flex;
@@ -678,7 +642,6 @@
     text-decoration: none;
     padding: 10px 20px;
     border-radius: 5px;
-    font-weight: bold;
     white-space: nowrap;
 }
 
@@ -702,18 +665,14 @@
 
 .ansattportal-page .track-card h3 {
     margin-bottom: 10px;
-    color: var(--gjensidige-blue);
     font-size: 1.1rem;
 }
 
 .ansattportal-page .step-list {
     counter-reset: step;
-    list-style: none;
-    padding: 0;
 }
 
 .ansattportal-page .step-list li {
-    position: relative;
     padding-left: 50px;
     margin-bottom: 20px;
 }
@@ -735,12 +694,9 @@
 }
 
 .ansattportal-page h2 {
-    color: var(--gjensidige-blue);
     border-bottom: 2px solid #eee;
     padding-bottom: 10px;
     margin-bottom: 20px;
-    margin-top: 0;
-    font-size: 1.5rem;
 }
 
 .ansattportal-page .card p,
@@ -760,13 +716,6 @@
     margin-bottom: 0;
 }
 
-.ansattportal-page footer {
-    text-align: center;
-    color: #888;
-    padding: 40px;
-    font-size: 0.9rem;
-}
-
 .ansattportal-page .card a {
     color: var(--gjensidige-blue);
     text-decoration: underline;
@@ -775,14 +724,6 @@
 
 .ansattportal-page .card a:hover {
     color: var(--jobloop-dark);
-    text-decoration: underline;
-}
-
-.interninfo-page {
-    font-family: 'Segoe UI', Arial, sans-serif;
-    background-color: #f4f6f8;
-    color: #333;
-    line-height: 1.6;
 }
 
 .interninfo-page header {
@@ -793,29 +734,17 @@
 }
 
 .interninfo-page header h1 {
-    margin: 0;
-    font-size: 2rem;
-}
-
-.interninfo-page header p {
-    opacity: 0.8;
-    margin-top: 5px;
+    color: white;
 }
 
 .interninfo-page .container {
-    max-width: 900px;
-    margin: 30px auto;
-    padding: 0 20px;
     display: grid;
     grid-template-columns: 2fr 1fr;
     gap: 30px;
 }
 
 .interninfo-page .main-content {
-    background: white;
     padding: 40px;
-    border-radius: 8px;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
 }
 
 .interninfo-page .sidebar {
@@ -828,13 +757,12 @@
     background-color: var(--gjensidige-blue);
     color: white;
     padding: 25px;
-    border-radius: 8px;
 }
 
 .interninfo-page .tool-box h3 {
-    margin-top: 0;
     border-bottom: 1px solid rgba(255, 255, 255, 0.2);
     padding-bottom: 10px;
+    color: white;
 }
 
 .interninfo-page .tool-link {
@@ -859,22 +787,13 @@
 }
 
 .interninfo-page h2 {
-    color: var(--gjensidige-blue);
-    margin-top: 0;
-    border-bottom: 2px solid var(--light-grey);
+    border-bottom: 2px solid var(--light-bg);
     padding-bottom: 10px;
     margin-bottom: 20px;
-    font-size: 1.5rem;
 }
 
 .interninfo-page h3 {
-    color: var(--gjensidige-blue);
     margin-top: 30px;
-    margin-bottom: 10px;
-}
-
-.interninfo-page p {
-    line-height: 1.6;
 }
 
 .interninfo-page .fact-grid {
@@ -885,7 +804,7 @@
 }
 
 .interninfo-page .fact-item {
-    background: var(--light-grey);
+    background: var(--light-bg);
     padding: 15px;
     border-radius: 6px;
 }
@@ -905,7 +824,6 @@
 }
 
 .interninfo-page .track-box {
-    background: #fff;
     border: 1px solid #eee;
     border-left: 5px solid var(--jobloop-teal);
     padding: 20px;
@@ -930,15 +848,9 @@
     margin-bottom: 5px;
 }
 
-.interninfo-page .check-list {
-    list-style: none;
-    padding: 0;
-}
-
 .interninfo-page .check-list li {
     margin-bottom: 8px;
     padding-left: 25px;
-    position: relative;
 }
 
 .interninfo-page .check-list.yes li::before {
@@ -969,25 +881,12 @@
     }
 }
 
-.pilot-page {
-    font-family: 'Segoe UI', Arial, sans-serif;
-    background-color: #f4f6f8;
-    color: #333;
-    line-height: 1.6;
-}
-
 .pilot-page header {
     background-color: #ffffff;
-    padding: 20px 10%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
     border-bottom: 5px solid var(--dark-blue);
 }
 
 .pilot-page .logo {
-    font-size: 24px;
-    font-weight: bold;
     color: var(--dark-blue);
 }
 
@@ -997,10 +896,8 @@
 }
 
 .pilot-page .hero {
-    background-color: var(--dark-blue);
-    color: #ffffff;
     padding: 60px 20px;
-    text-align: center;
+    background-color: var(--dark-blue);
 }
 
 .pilot-page .hero h1 {
@@ -1059,7 +956,6 @@
 }
 
 .pilot-page .intro h2 {
-    color: var(--dark-blue);
     margin-bottom: 20px;
     font-size: 1.5rem;
 }
@@ -1073,10 +969,8 @@
 }
 
 .pilot-page .card {
-    background-color: #ffffff;
     border: 1px solid #e0e0e0;
     border-top: 6px solid var(--teal);
-    border-radius: 8px;
     width: 350px;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
     display: flex;
@@ -1112,7 +1006,6 @@
 }
 
 .pilot-page .card h3 {
-    color: var(--dark-blue);
     margin-top: 10px;
     margin-bottom: 10px;
     font-size: 1.4rem;
@@ -1122,11 +1015,6 @@
     font-size: 0.95rem;
     color: #555;
     margin-bottom: 15px;
-    line-height: 1.6;
-}
-
-.pilot-page p {
-    line-height: 1.6;
 }
 
 .pilot-page .age-badge {
@@ -1135,9 +1023,7 @@
     padding: 4px 8px;
     border-radius: 4px;
     font-size: 0.85rem;
-    font-weight: bold;
     text-transform: uppercase;
-    display: inline-block;
     margin-bottom: 10px;
 }
 
@@ -1166,7 +1052,6 @@
 
 .pilot-page .faq h2 {
     text-align: center;
-    color: var(--dark-blue);
     margin-bottom: 40px;
     font-size: 1.5rem;
 }
@@ -1180,7 +1065,6 @@
 .pilot-page .faq-question {
     font-weight: bold;
     font-size: 1.1rem;
-    color: var(--dark-blue);
     margin-bottom: 10px;
     display: block;
 }
@@ -1197,11 +1081,9 @@
 }
 
 .pilot-page .cta-box {
-    background-color: #ffffff;
     max-width: 600px;
     margin: 0 auto;
     padding: 50px 40px 40px 40px;
-    border-radius: 8px;
     border-left: 10px solid var(--red);
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
 }
@@ -1212,7 +1094,6 @@
     color: #ffffff;
     padding: 15px 35px;
     text-decoration: none;
-    font-weight: bold;
     border-radius: 50px;
     margin-top: 30px;
     font-size: 1.1rem;
@@ -1226,16 +1107,11 @@
 .pilot-page footer {
     background-color: var(--dark-blue);
     color: #ccc;
-    text-align: center;
     padding: 30px;
-    font-size: 0.9rem;
 }
 
 .verktoykasse-page {
     font-family: 'Segoe UI', sans-serif;
-    margin: 0;
-    background-color: #f4f6f8;
-    color: #333;
 }
 
 .verktoykasse-page header {
@@ -1254,7 +1130,6 @@
 
 .verktoykasse-page .logo {
     font-size: 1.5rem;
-    font-weight: bold;
     margin-bottom: 10px;
 }
 
@@ -1273,10 +1148,6 @@
 }
 
 .verktoykasse-page .tool-card {
-    background: white;
-    padding: 25px;
-    border-radius: 8px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
     transition: transform 0.2s;
     border-top: 5px solid #ccc;
     text-decoration: none;
@@ -1285,6 +1156,7 @@
     height: 100%;
     box-sizing: border-box;
     position: relative;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
 }
 
 .verktoykasse-page .tool-card:hover {
@@ -1293,7 +1165,6 @@
 }
 
 .verktoykasse-page .tool-card h3 {
-    margin-top: 0;
     color: #002B49;
     display: flex;
     align-items: center;
@@ -1307,9 +1178,6 @@
     width: 40px;
     height: 40px;
     border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
 }
 
 .verktoykasse-page .desc {
@@ -1341,40 +1209,10 @@
     border-top-color: #C3002F;
 }
 
-.verktoykasse-page footer {
-    text-align: center;
-    color: #888;
-    padding: 20px;
-    font-size: 0.9rem;
-}
-
-.forberedelse-page {
-    font-family: 'Segoe UI', Arial, sans-serif;
-    background-color: #f4f6f8;
-    color: #333;
-    line-height: 1.6;
-}
-
-.forberedelse-page header {
-    background-color: var(--white);
-    padding: 20px 10%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    border-bottom: 5px solid var(--gjensidige-blue);
-}
-
-.forberedelse-page .logo {
-    font-size: 24px;
-    font-weight: bold;
-    color: var(--gjensidige-blue);
-}
-
 .forberedelse-page .hero {
+    padding: 50px 20px;
     background-color: var(--gjensidige-blue);
     color: var(--white);
-    padding: 50px 20px;
-    text-align: center;
 }
 
 .forberedelse-page .hero h1 {
@@ -1392,11 +1230,9 @@
 .forberedelse-page .container {
     max-width: 800px;
     margin: 40px auto;
-    padding: 0 20px;
 }
 
 .forberedelse-page .prep-card {
-    background-color: var(--white);
     border-radius: 12px;
     padding: 30px;
     box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
@@ -1405,9 +1241,7 @@
 }
 
 .forberedelse-page .prep-card h3 {
-    color: var(--gjensidige-blue);
     margin-bottom: 20px;
-    margin-top: 0;
     display: flex;
     align-items: center;
     gap: 10px;
@@ -1424,19 +1258,10 @@
     width: 40px;
     height: 40px;
     border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
     font-size: 1.2rem;
 }
 
-.forberedelse-page .check-list {
-    list-style: none;
-    padding: 0;
-}
-
 .forberedelse-page .check-list li {
-    position: relative;
     padding-left: 35px;
     margin-bottom: 15px;
     font-size: 1rem;
@@ -1459,11 +1284,4 @@
     color: #444;
     border: 1px solid #e6e600;
     margin-top: 20px;
-}
-
-.forberedelse-page footer {
-    text-align: center;
-    padding: 40px;
-    color: #888;
-    font-size: 0.9rem;
 }
