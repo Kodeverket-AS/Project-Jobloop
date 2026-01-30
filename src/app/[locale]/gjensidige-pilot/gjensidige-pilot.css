@@ -1,0 +1,1469 @@
+:root {
+    --gjensidige-blue: #002B49;
+    --gjensidige-red: #C3002F;
+    --jobloop-teal: #4AB5A3;
+    --jobloop-dark: #2C8C7D;
+    --text-grey: #555;
+    --highlight-bg: #fff3cd;
+    --grey-bg: #EBF2F6;
+    --soft-bg: #e0f2f1;
+    --light-grey: #EBF2F6;
+    --alert-yellow: #fff3cd;
+    --alert-text: #856404;
+    --jobloop-light: #e0f2f1;
+    --white: #ffffff;
+    --dark-blue: #002B49;
+    --red: #C3002F;
+    --teal: #4AB5A3;
+    --light-bg: #EBF2F6;
+}
+
+.samtale-page {
+    font-family: 'Segoe UI', Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f6f8;
+    color: #333;
+    line-height: 1.6;
+}
+
+.samtale-page header {
+    background-color: white;
+    padding: 20px 10%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 5px solid var(--gjensidige-blue);
+}
+
+.samtale-page .logo {
+    font-size: 24px;
+    font-weight: bold;
+    color: var(--gjensidige-blue);
+}
+
+.samtale-page .container {
+    max-width: 900px;
+    margin: 40px auto;
+    padding: 0 20px;
+}
+
+.samtale-page .intro-box {
+    background-color: white;
+    padding: 30px;
+    padding-bottom: 50px;
+    border-radius: 8px;
+    margin-bottom: 30px;
+    border-left: 6px solid var(--gjensidige-blue);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+}
+
+.samtale-page .intro-box h1 {
+    margin-top: 0;
+    color: var(--gjensidige-blue);
+    font-size: 2rem;
+    padding-bottom: 20px;
+}
+
+.samtale-page .badge {
+    display: inline-block;
+    background-color: #e2e6ea;
+    color: #666;
+    padding: 5px 10px;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    margin-bottom: 15px;
+    font-weight: bold;
+}
+
+.samtale-page .concept-box {
+    background-color: var(--highlight-bg);
+    border: 1px solid #ffeeba;
+    padding: 20px;
+    border-radius: 8px;
+    margin-bottom: 40px;
+}
+
+.samtale-page .concept-box h3 {
+    margin-top: 0;
+    color: #856404;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 1.1rem;
+    padding-bottom: 15px;
+}
+
+.samtale-page .concept-icon {
+    font-size: 1.5rem;
+}
+
+.samtale-page .script-section {
+    margin-bottom: 50px;
+}
+
+.samtale-page .script-section h2 {
+    color: var(--gjensidige-blue);
+    border-bottom: 2px solid #eee;
+    padding-bottom: 15px;
+    margin-bottom: 20px;
+    font-size: 1.5rem;
+    margin-top: 0;
+}
+
+.samtale-page .dialogue-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.samtale-page .bubble {
+    padding: 20px;
+    border-radius: 12px;
+    position: relative;
+    max-width: 80%;
+    margin-top: 20px;
+}
+
+.samtale-page .bubble-caseworker {
+    background-color: white;
+    border: 1px solid #ddd;
+    border-left: 5px solid var(--gjensidige-red);
+    align-self: flex-start;
+}
+
+.samtale-page .bubble-caseworker::before {
+    content: "Deg / Saksbehandler";
+    position: absolute;
+    top: -12px;
+    left: 20px;
+    background: white;
+    padding: 0 10px;
+    font-size: 0.8rem;
+    font-weight: bold;
+    color: var(--gjensidige-red);
+}
+
+.samtale-page .tip-box {
+    margin-top: 10px;
+    font-size: 0.9rem;
+    color: #666;
+    font-style: italic;
+    padding-left: 15px;
+    border-left: 3px solid #ccc;
+}
+
+.samtale-page footer {
+    text-align: center;
+    padding: 40px;
+    color: #888;
+    font-size: 0.9rem;
+    margin-top: 50px;
+    border-top: 1px solid #eee;
+}
+
+.prosess-page {
+    font-family: 'Segoe UI', Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f6f8;
+    color: #333;
+    line-height: 1.6;
+}
+
+.prosess-page header {
+    background-color: white;
+    padding: 20px 10%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 5px solid var(--gjensidige-blue);
+}
+
+.prosess-page .logo {
+    font-size: 24px;
+    font-weight: bold;
+    color: var(--gjensidige-blue);
+}
+
+.prosess-page .hero {
+    background-color: var(--gjensidige-blue);
+    color: white;
+    padding: 40px 20px;
+    text-align: center;
+}
+
+.prosess-page .hero h1 {
+    margin: 0 0 10px 0;
+    font-size: 2.2rem;
+}
+
+.prosess-page .hero p {
+    opacity: 0.8;
+    font-size: 1.1rem;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.prosess-page .timeline-container {
+    max-width: 800px;
+    margin: 50px auto;
+    padding: 0 20px;
+    position: relative;
+}
+
+.prosess-page .timeline-container::after {
+    content: '';
+    position: absolute;
+    width: 4px;
+    background-color: #ddd;
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    margin-left: -2px;
+    z-index: -1;
+}
+
+.prosess-page .step {
+    display: flex;
+    justify-content: flex-end;
+    padding-bottom: 50px;
+    position: relative;
+    width: 50%;
+    clear: both;
+}
+
+.prosess-page .step:nth-child(odd) {
+    float: left;
+    text-align: right;
+    padding-right: 40px;
+}
+
+.prosess-page .step:nth-child(even) {
+    float: right;
+    text-align: left;
+    justify-content: flex-start;
+    padding-left: 40px;
+    margin-top: 50px;
+}
+
+.prosess-page .step-number {
+    position: absolute;
+    top: 0;
+    width: 50px;
+    height: 50px;
+    line-height: 50px;
+    border-radius: 50%;
+    text-align: center;
+    font-weight: bold;
+    font-size: 1.2rem;
+    color: white;
+    box-shadow: 0 0 0 5px #f4f6f8;
+    z-index: 10;
+}
+
+.prosess-page .step:nth-child(odd) .step-number {
+    right: -25px;
+}
+
+.prosess-page .step:nth-child(even) .step-number {
+    left: -25px;
+}
+
+.prosess-page .step-content {
+    background: white;
+    padding: 25px;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    position: relative;
+    width: 100%;
+}
+
+.prosess-page .step:nth-child(odd) .step-content::after {
+    content: " ";
+    position: absolute;
+    top: 15px;
+    right: -10px;
+    border-width: 10px 0 10px 10px;
+    border-style: solid;
+    border-color: transparent transparent transparent white;
+}
+
+.prosess-page .step:nth-child(even) .step-content::after {
+    content: " ";
+    position: absolute;
+    top: 15px;
+    left: -10px;
+    border-width: 10px 10px 10px 0;
+    border-style: solid;
+    border-color: transparent white transparent transparent;
+}
+
+.prosess-page .step.gjensidige .step-number {
+    background-color: var(--gjensidige-blue);
+}
+
+.prosess-page .step.gjensidige h3 {
+    color: var(--gjensidige-blue);
+}
+
+.prosess-page .step.jobloop .step-number {
+    background-color: var(--jobloop-teal);
+}
+
+.prosess-page .step.jobloop h3 {
+    color: var(--jobloop-dark);
+}
+
+.prosess-page h3 {
+    margin-top: 0;
+    margin-bottom: 10px;
+    font-size: 1.3rem;
+}
+
+.prosess-page p {
+    margin: 0;
+    color: #666;
+    font-size: 0.95rem;
+}
+
+.prosess-page .owner-badge {
+    display: inline-block;
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    font-weight: bold;
+    padding: 3px 8px;
+    border-radius: 4px;
+    margin-bottom: 10px;
+}
+
+.prosess-page .badge-g {
+    background-color: #EBF2F6;
+    color: var(--gjensidige-blue);
+}
+
+.prosess-page .badge-j {
+    background-color: #e0f2f1;
+    color: var(--jobloop-dark);
+}
+
+@media screen and (max-width: 768px) {
+    .prosess-page .timeline-container::after {
+        left: 30px;
+    }
+
+    .prosess-page .step {
+        width: 100%;
+        float: none;
+        padding-left: 70px;
+        padding-right: 0;
+        text-align: left;
+    }
+
+    .prosess-page .step:nth-child(even) {
+        margin-top: 0;
+    }
+
+    .prosess-page .step:nth-child(odd) {
+        text-align: left;
+        padding-right: 0;
+        padding-left: 70px;
+    }
+
+    .prosess-page .step-number {
+        left: 5px !important;
+        right: auto !important;
+    }
+
+    .prosess-page .step-content::after {
+        left: -10px !important;
+        right: auto !important;
+        border-width: 10px 10px 10px 0 !important;
+        border-color: transparent white transparent transparent !important;
+    }
+}
+
+.prosess-page footer {
+    text-align: center;
+    padding: 40px;
+    color: #888;
+    font-size: 0.9rem;
+    clear: both;
+}
+
+.kartlegging-page {
+    font-family: 'Segoe UI', Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f6f8;
+    color: #333;
+    line-height: 1.6;
+}
+
+.kartlegging-page header {
+    background-color: var(--jobloop-dark);
+    color: white;
+    padding: 30px 20px;
+    text-align: center;
+    border-bottom: 5px solid var(--gjensidige-blue);
+}
+
+.kartlegging-page header h1 {
+    margin: 0;
+    font-size: 2rem;
+}
+
+.kartlegging-page header p {
+    opacity: 0.9;
+    margin-top: 5px;
+}
+
+.kartlegging-page .container {
+    max-width: 800px;
+    margin: 30px auto;
+    padding: 0 20px;
+}
+
+.kartlegging-page .golden-rule {
+    background-color: #fff3cd;
+    border: 1px solid #ffeeba;
+    color: #856404;
+    padding: 20px;
+    border-radius: 8px;
+    margin-bottom: 30px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.kartlegging-page .golden-rule strong {
+    font-size: 1.1rem;
+}
+
+.kartlegging-page .step-box {
+    background: white;
+    padding: 25px;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+    margin-bottom: 25px;
+    position: relative;
+    border-left: 5px solid var(--jobloop-teal);
+}
+
+.kartlegging-page .step-number {
+    position: absolute;
+    top: -15px;
+    left: 20px;
+    background: var(--jobloop-teal);
+    color: white;
+    padding: 5px 15px;
+    border-radius: 20px;
+    font-weight: bold;
+    font-size: 0.9rem;
+}
+
+.kartlegging-page h2 {
+    margin-top: 10px;
+    color: var(--gjensidige-blue);
+    font-size: 1.3rem;
+    padding-bottom: 20px;
+}
+
+.kartlegging-page .question-list {
+    list-style: none;
+    padding: 0;
+    margin-top: 15px;
+}
+
+.kartlegging-page .question-list li {
+    margin-bottom: 12px;
+    padding-left: 25px;
+    position: relative;
+    font-weight: 500;
+}
+
+.kartlegging-page .question-list li::before {
+    content: "💬";
+    position: absolute;
+    left: 0;
+    font-size: 1rem;
+}
+
+.kartlegging-page .sub-text {
+    font-weight: normal;
+    font-size: 0.9rem;
+    color: #666;
+    display: block;
+    margin-top: 3px;
+}
+
+.kartlegging-page .checklist-area {
+    background-color: var(--gjensidige-blue);
+    color: white;
+    padding: 30px;
+    border-radius: 8px;
+    margin-top: 40px;
+}
+
+.kartlegging-page .checklist-area h3 {
+    margin-top: 0;
+    color: var(--jobloop-teal);
+    font-size: 1.1rem;
+    padding-bottom: 10px;
+}
+
+.kartlegging-page .checkbox-row {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 10px;
+    opacity: 0.9;
+}
+
+.kartlegging-page .checkbox-box {
+    width: 20px;
+    height: 20px;
+    border: 2px solid var(--jobloop-teal);
+    display: inline-block;
+    border-radius: 4px;
+}
+
+.rapport-page {
+    font-family: 'Segoe UI', sans-serif;
+    background-color: #f9f9f9;
+    padding: 40px;
+}
+
+.rapport-page .report-container {
+    max-width: 900px;
+    margin: 0 auto;
+    background: white;
+    padding: 30px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.05);
+    border-radius: 8px;
+}
+
+.rapport-page h1 {
+    color: #002B49;
+    margin-bottom: 5px;
+    font-size: 1.8rem;
+}
+
+.rapport-page h3 {
+    font-size: 1.2rem;
+}
+
+.rapport-page .meta {
+    color: #666;
+    font-size: 0.9rem;
+    margin-bottom: 30px;
+    border-bottom: 2px solid #eee;
+    padding-bottom: 20px;
+}
+
+.rapport-page table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+}
+
+.rapport-page th {
+    text-align: left;
+    padding: 12px;
+    background-color: #f4f6f8;
+    color: #002B49;
+    border-bottom: 2px solid #ddd;
+}
+
+.rapport-page td {
+    padding: 10px;
+    border-bottom: 1px solid #eee;
+    font-size: 0.95rem;
+}
+
+.rapport-page .badge {
+    padding: 5px 10px;
+    border-radius: 15px;
+    font-size: 0.8rem;
+    font-weight: bold;
+}
+
+.rapport-page .badge.green {
+    background-color: #d4edda;
+    color: #155724;
+}
+
+.rapport-page .badge.yellow {
+    background-color: #fff3cd;
+    color: #856404;
+}
+
+.rapport-page .badge.red {
+    background-color: #f8d7da;
+    color: #721c24;
+}
+
+.rapport-page .flag-icon {
+    font-size: 1.2rem;
+}
+
+.rapport-page .summary-box {
+    background-color: #EBF2F6;
+    padding: 20px;
+    border-radius: 8px;
+    margin-top: 30px;
+}
+
+.rapport-page .summary-box h3 {
+    margin-top: 0;
+    color: #002B49;
+}
+
+.ansattportal-page {
+    font-family: 'Segoe UI', Arial, sans-serif;
+    background-color: #f4f6f8;
+    color: #333;
+    line-height: 1.6;
+}
+
+.ansattportal-page header {
+    background-color: var(--jobloop-dark);
+    color: white;
+    padding: 30px 20px;
+    text-align: center;
+    border-bottom: 5px solid var(--gjensidige-blue);
+}
+
+.ansattportal-page header h1 {
+    margin-bottom: 10px;
+    font-size: 2rem;
+}
+
+.ansattportal-page header p {
+    opacity: 0.9;
+    margin-top: 5px;
+    font-size: 1.1rem;
+}
+
+.ansattportal-page .container {
+    max-width: 900px;
+    margin: 30px auto;
+    padding: 0 20px;
+}
+
+.ansattportal-page .card {
+    background: white;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+    margin-bottom: 30px;
+}
+
+.ansattportal-page .action-box {
+    background-color: var(--alert-yellow);
+    border: 1px solid #ffeeba;
+    padding: 20px;
+    border-radius: 8px;
+    color: var(--alert-text);
+    margin-bottom: 30px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.ansattportal-page .action-btn {
+    background-color: var(--gjensidige-blue);
+    color: white;
+    text-decoration: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-weight: bold;
+    white-space: nowrap;
+}
+
+.ansattportal-page .action-btn:hover {
+    opacity: 0.9;
+}
+
+.ansattportal-page .track-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.ansattportal-page .track-card {
+    background: #f9f9f9;
+    padding: 20px;
+    border-radius: 6px;
+    border-top: 4px solid var(--jobloop-teal);
+}
+
+.ansattportal-page .track-card h3 {
+    margin-bottom: 10px;
+    color: var(--gjensidige-blue);
+    font-size: 1.1rem;
+}
+
+.ansattportal-page .step-list {
+    counter-reset: step;
+    list-style: none;
+    padding: 0;
+}
+
+.ansattportal-page .step-list li {
+    position: relative;
+    padding-left: 50px;
+    margin-bottom: 20px;
+}
+
+.ansattportal-page .step-list li::before {
+    counter-increment: step;
+    content: counter(step);
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 35px;
+    height: 35px;
+    background-color: var(--jobloop-teal);
+    color: white;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 35px;
+    font-weight: bold;
+}
+
+.ansattportal-page h2 {
+    color: var(--gjensidige-blue);
+    border-bottom: 2px solid #eee;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+    margin-top: 0;
+    font-size: 1.5rem;
+}
+
+.ansattportal-page .card p,
+.ansattportal-page .track-card p {
+    margin-top: 1em;
+    margin-bottom: 1em;
+    line-height: 1.8;
+}
+
+.ansattportal-page .card p:first-of-type,
+.ansattportal-page .track-card p:first-of-type {
+    margin-top: 0;
+}
+
+.ansattportal-page .card p:last-of-type,
+.ansattportal-page .track-card p:last-of-type {
+    margin-bottom: 0;
+}
+
+.ansattportal-page footer {
+    text-align: center;
+    color: #888;
+    padding: 40px;
+    font-size: 0.9rem;
+}
+
+.ansattportal-page .card a {
+    color: var(--gjensidige-blue);
+    text-decoration: underline;
+    font-weight: 500;
+}
+
+.ansattportal-page .card a:hover {
+    color: var(--jobloop-dark);
+    text-decoration: underline;
+}
+
+.interninfo-page {
+    font-family: 'Segoe UI', Arial, sans-serif;
+    background-color: #f4f6f8;
+    color: #333;
+    line-height: 1.6;
+}
+
+.interninfo-page header {
+    background-color: var(--gjensidige-blue);
+    color: white;
+    padding: 30px 20px;
+    text-align: center;
+}
+
+.interninfo-page header h1 {
+    margin: 0;
+    font-size: 2rem;
+}
+
+.interninfo-page header p {
+    opacity: 0.8;
+    margin-top: 5px;
+}
+
+.interninfo-page .container {
+    max-width: 900px;
+    margin: 30px auto;
+    padding: 0 20px;
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 30px;
+}
+
+.interninfo-page .main-content {
+    background: white;
+    padding: 40px;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+}
+
+.interninfo-page .sidebar {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.interninfo-page .tool-box {
+    background-color: var(--gjensidige-blue);
+    color: white;
+    padding: 25px;
+    border-radius: 8px;
+}
+
+.interninfo-page .tool-box h3 {
+    margin-top: 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    padding-bottom: 10px;
+}
+
+.interninfo-page .tool-link {
+    display: block;
+    color: white;
+    text-decoration: none;
+    padding: 10px 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    transition: opacity 0.2s;
+}
+
+.interninfo-page .tool-link:hover {
+    opacity: 0.7;
+}
+
+.interninfo-page .tool-link:last-child {
+    border-bottom: none;
+}
+
+.interninfo-page .icon {
+    margin-right: 10px;
+}
+
+.interninfo-page h2 {
+    color: var(--gjensidige-blue);
+    margin-top: 0;
+    border-bottom: 2px solid var(--light-grey);
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+    font-size: 1.5rem;
+}
+
+.interninfo-page h3 {
+    color: var(--gjensidige-blue);
+    margin-top: 30px;
+    margin-bottom: 10px;
+}
+
+.interninfo-page p {
+    line-height: 1.6;
+}
+
+.interninfo-page .fact-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+    margin-bottom: 30px;
+}
+
+.interninfo-page .fact-item {
+    background: var(--light-grey);
+    padding: 15px;
+    border-radius: 6px;
+}
+
+.interninfo-page .fact-label {
+    font-size: 0.8rem;
+    color: #666;
+    text-transform: uppercase;
+    font-weight: bold;
+    display: block;
+    margin-bottom: 5px;
+}
+
+.interninfo-page .fact-value {
+    font-weight: bold;
+    color: var(--gjensidige-blue);
+}
+
+.interninfo-page .track-box {
+    background: #fff;
+    border: 1px solid #eee;
+    border-left: 5px solid var(--jobloop-teal);
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 0 8px 8px 0;
+}
+
+.interninfo-page .track-box ul {
+    list-style-type: disc;
+    padding-left: 20px;
+}
+
+.interninfo-page .track-box ul li {
+    margin-bottom: 8px;
+}
+
+.interninfo-page .track-title {
+    font-weight: bold;
+    font-size: 1.1rem;
+    color: var(--gjensidige-blue);
+    display: block;
+    margin-bottom: 5px;
+}
+
+.interninfo-page .check-list {
+    list-style: none;
+    padding: 0;
+}
+
+.interninfo-page .check-list li {
+    margin-bottom: 8px;
+    padding-left: 25px;
+    position: relative;
+}
+
+.interninfo-page .check-list.yes li::before {
+    content: "✅";
+    position: absolute;
+    left: 0;
+}
+
+.interninfo-page .check-list.no li::before {
+    content: "⛔";
+    position: absolute;
+    left: 0;
+}
+
+.interninfo-page .process-step {
+    margin-bottom: 10px;
+    padding-left: 15px;
+    border-left: 3px solid #ddd;
+}
+
+.interninfo-page .process-step strong {
+    color: var(--gjensidige-blue);
+}
+
+@media (max-width: 768px) {
+    .interninfo-page .container {
+        grid-template-columns: 1fr;
+    }
+}
+
+.pilot-page {
+    font-family: 'Segoe UI', Arial, sans-serif;
+    background-color: #f4f6f8;
+    color: #333;
+    line-height: 1.6;
+}
+
+.pilot-page header {
+    background-color: #ffffff;
+    padding: 20px 10%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 5px solid var(--dark-blue);
+}
+
+.pilot-page .logo {
+    font-size: 24px;
+    font-weight: bold;
+    color: var(--dark-blue);
+}
+
+.pilot-page .sub-logo {
+    color: #666;
+    font-size: 0.9rem;
+}
+
+.pilot-page .hero {
+    background-color: var(--dark-blue);
+    color: #ffffff;
+    padding: 60px 20px;
+    text-align: center;
+}
+
+.pilot-page .hero h1 {
+    margin-bottom: 15px;
+    font-size: 2.5rem;
+}
+
+.pilot-page .hero p {
+    font-size: 1.2rem;
+    max-width: 700px;
+    margin: 0 auto 40px auto;
+    opacity: 0.9;
+}
+
+.pilot-page .intro h2 {
+    font-size: 2rem;
+}
+
+.pilot-page .faq h2 {
+    font-size: 2rem;
+}
+
+.pilot-page .contact h2 {
+    font-size: 1.5rem;
+}
+
+.pilot-page .cta-box h3 {
+    font-size: 1.2rem;
+}
+
+.pilot-page .main-video {
+    background-color: #001f35;
+    width: 100%;
+    max-width: 600px;
+    height: 340px;
+    margin: 0 auto;
+    border: 2px dashed rgba(255, 255, 255, 0.3);
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.pilot-page .play-icon {
+    font-size: 50px;
+    color: white;
+    opacity: 0.8;
+    cursor: pointer;
+}
+
+.pilot-page .intro {
+    background-color: #ffffff;
+    padding: 50px 20px;
+    text-align: center;
+}
+
+.pilot-page .intro h2 {
+    color: var(--dark-blue);
+    margin-bottom: 20px;
+    font-size: 1.5rem;
+}
+
+.pilot-page .tracks-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+    padding: 0 5% 60px 5%;
+}
+
+.pilot-page .card {
+    background-color: #ffffff;
+    border: 1px solid #e0e0e0;
+    border-top: 6px solid var(--teal);
+    border-radius: 8px;
+    width: 350px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+.pilot-page .card-video {
+    background-color: #333;
+    height: 180px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    position: relative;
+}
+
+.pilot-page .card-video::after {
+    content: "▶";
+    font-size: 30px;
+    background: rgba(0, 0, 0, 0.5);
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.pilot-page .card-content {
+    padding: 25px;
+}
+
+.pilot-page .card h3 {
+    color: var(--dark-blue);
+    margin-top: 10px;
+    margin-bottom: 10px;
+    font-size: 1.4rem;
+}
+
+.pilot-page .card p {
+    font-size: 0.95rem;
+    color: #555;
+    margin-bottom: 15px;
+    line-height: 1.6;
+}
+
+.pilot-page p {
+    line-height: 1.6;
+}
+
+.pilot-page .age-badge {
+    background-color: var(--light-bg);
+    color: var(--dark-blue);
+    padding: 4px 8px;
+    border-radius: 4px;
+    font-size: 0.85rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    display: inline-block;
+    margin-bottom: 10px;
+}
+
+.pilot-page .card ul {
+    padding-left: 20px;
+    margin-top: 0;
+    color: #444;
+    font-size: 0.95rem;
+    list-style-type: disc;
+}
+
+.pilot-page .card li {
+    margin-bottom: 8px;
+}
+
+.pilot-page .faq {
+    background-color: #ffffff;
+    padding: 60px 20px;
+    border-top: 1px solid #eee;
+}
+
+.pilot-page .faq-container {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.pilot-page .faq h2 {
+    text-align: center;
+    color: var(--dark-blue);
+    margin-bottom: 40px;
+    font-size: 1.5rem;
+}
+
+.pilot-page .faq-item {
+    margin-bottom: 20px;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 20px;
+}
+
+.pilot-page .faq-question {
+    font-weight: bold;
+    font-size: 1.1rem;
+    color: var(--dark-blue);
+    margin-bottom: 10px;
+    display: block;
+}
+
+.pilot-page .faq-answer {
+    color: #555;
+    font-size: 0.95rem;
+}
+
+.pilot-page .contact {
+    background-color: var(--light-bg);
+    padding: 60px 20px;
+    text-align: center;
+}
+
+.pilot-page .cta-box {
+    background-color: #ffffff;
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 50px 40px 40px 40px;
+    border-radius: 8px;
+    border-left: 10px solid var(--red);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+}
+
+.pilot-page .btn {
+    display: inline-block;
+    background-color: var(--red);
+    color: #ffffff;
+    padding: 15px 35px;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 50px;
+    margin-top: 30px;
+    font-size: 1.1rem;
+    transition: background 0.3s;
+}
+
+.pilot-page .btn:hover {
+    background-color: #a10026;
+}
+
+.pilot-page footer {
+    background-color: var(--dark-blue);
+    color: #ccc;
+    text-align: center;
+    padding: 30px;
+    font-size: 0.9rem;
+}
+
+.verktoykasse-page {
+    font-family: 'Segoe UI', sans-serif;
+    margin: 0;
+    background-color: #f4f6f8;
+    color: #333;
+}
+
+.verktoykasse-page header {
+    background-color: #002B49;
+    color: white;
+    padding: 40px 20px;
+    text-align: center;
+    position: relative;
+}
+
+.verktoykasse-page .header-content {
+    max-width: 1100px;
+    margin: 0 auto;
+    position: relative;
+}
+
+.verktoykasse-page .logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.verktoykasse-page .subtitle {
+    font-size: 1.1rem;
+    opacity: 0.8;
+}
+
+.verktoykasse-page .container {
+    max-width: 1100px;
+    margin: -30px auto 50px auto;
+    padding: 20px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+}
+
+.verktoykasse-page .tool-card {
+    background: white;
+    padding: 25px;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s;
+    border-top: 5px solid #ccc;
+    text-decoration: none;
+    color: #333;
+    display: block;
+    height: 100%;
+    box-sizing: border-box;
+    position: relative;
+}
+
+.verktoykasse-page .tool-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+.verktoykasse-page .tool-card h3 {
+    margin-top: 0;
+    color: #002B49;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 1.2rem;
+}
+
+.verktoykasse-page .icon {
+    font-size: 1.5rem;
+    background: #EBF2F6;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.verktoykasse-page .desc {
+    font-size: 0.9rem;
+    color: #666;
+    margin-top: 10px;
+    line-height: 1.5;
+}
+
+.verktoykasse-page .tag {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    color: #999;
+    font-weight: bold;
+}
+
+.verktoykasse-page .border-blue {
+    border-top-color: #002B49;
+}
+
+.verktoykasse-page .border-teal {
+    border-top-color: #4AB5A3;
+}
+
+.verktoykasse-page .border-red {
+    border-top-color: #C3002F;
+}
+
+.verktoykasse-page footer {
+    text-align: center;
+    color: #888;
+    padding: 20px;
+    font-size: 0.9rem;
+}
+
+.forberedelse-page {
+    font-family: 'Segoe UI', Arial, sans-serif;
+    background-color: #f4f6f8;
+    color: #333;
+    line-height: 1.6;
+}
+
+.forberedelse-page header {
+    background-color: var(--white);
+    padding: 20px 10%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 5px solid var(--gjensidige-blue);
+}
+
+.forberedelse-page .logo {
+    font-size: 24px;
+    font-weight: bold;
+    color: var(--gjensidige-blue);
+}
+
+.forberedelse-page .hero {
+    background-color: var(--gjensidige-blue);
+    color: var(--white);
+    padding: 50px 20px;
+    text-align: center;
+}
+
+.forberedelse-page .hero h1 {
+    margin-bottom: 15px;
+    font-size: 2.2rem;
+}
+
+.forberedelse-page .hero p {
+    opacity: 0.9;
+    max-width: 600px;
+    margin: 0 auto;
+    font-size: 1.1rem;
+}
+
+.forberedelse-page .container {
+    max-width: 800px;
+    margin: 40px auto;
+    padding: 0 20px;
+}
+
+.forberedelse-page .prep-card {
+    background-color: var(--white);
+    border-radius: 12px;
+    padding: 30px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+    margin-bottom: 30px;
+    border-left: 8px solid var(--jobloop-teal);
+}
+
+.forberedelse-page .prep-card h3 {
+    color: var(--gjensidige-blue);
+    margin-bottom: 20px;
+    margin-top: 0;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 1.4rem;
+}
+
+.forberedelse-page .prep-card p {
+    color: #555;
+    margin-bottom: 20px;
+}
+
+.forberedelse-page .icon {
+    background-color: var(--jobloop-light);
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+}
+
+.forberedelse-page .check-list {
+    list-style: none;
+    padding: 0;
+}
+
+.forberedelse-page .check-list li {
+    position: relative;
+    padding-left: 35px;
+    margin-bottom: 15px;
+    font-size: 1rem;
+}
+
+.forberedelse-page .check-list li::before {
+    content: "✔";
+    position: absolute;
+    left: 0;
+    color: var(--jobloop-teal);
+    font-weight: bold;
+    font-size: 1.2rem;
+}
+
+.forberedelse-page .note-area {
+    background-color: #fff9c4;
+    padding: 20px;
+    border-radius: 4px;
+    font-family: 'Courier New', Courier, monospace;
+    color: #444;
+    border: 1px solid #e6e600;
+    margin-top: 20px;
+}
+
+.forberedelse-page footer {
+    text-align: center;
+    padding: 40px;
+    color: #888;
+    font-size: 0.9rem;
+}
