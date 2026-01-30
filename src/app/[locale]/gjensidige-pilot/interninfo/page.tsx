@@ -15,174 +15,6 @@ export async function generateMetadata(): Promise<Metadata> {
 export default function InternInfo() {
   return (
     <>
-      <style>{`
-        :root {
-          --gjensidige-blue: #002B49;
-          --gjensidige-red: #C3002F;
-          --jobloop-teal: #4AB5A3;
-          --light-grey: #EBF2F6;
-        }
-        .interninfo-page {
-          font-family: 'Segoe UI', Arial, sans-serif;
-          background-color: #f4f6f8;
-          color: #333;
-          line-height: 1.6;
-        }
-        .interninfo-page header {
-          background-color: var(--gjensidige-blue);
-          color: white;
-          padding: 30px 20px;
-          text-align: center;
-        }
-        .interninfo-page header h1 {
-          margin: 0;
-          font-size: 2rem;
-        }
-        .interninfo-page header p {
-          opacity: 0.8;
-          margin-top: 5px;
-        }
-        .interninfo-page .container {
-          max-width: 900px;
-          margin: 30px auto;
-          padding: 0 20px;
-          display: grid;
-          grid-template-columns: 2fr 1fr;
-          gap: 30px;
-        }
-        .interninfo-page .main-content {
-          background: white;
-          padding: 40px;
-          border-radius: 8px;
-          box-shadow: 0 2px 10px rgba(0,0,0,0.05);
-        }
-        .interninfo-page .sidebar {
-          display: flex;
-          flex-direction: column;
-          gap: 20px;
-        }
-        .interninfo-page .tool-box {
-          background-color: var(--gjensidige-blue);
-          color: white;
-          padding: 25px;
-          border-radius: 8px;
-        }
-        .interninfo-page .tool-box h3 {
-          margin-top: 0;
-          border-bottom: 1px solid rgba(255,255,255,0.2);
-          padding-bottom: 10px;
-        }
-        .interninfo-page .tool-link {
-          display: block;
-          color: white;
-          text-decoration: none;
-          padding: 10px 0;
-          border-bottom: 1px solid rgba(255,255,255,0.1);
-          transition: opacity 0.2s;
-        }
-        .interninfo-page .tool-link:hover {
-          opacity: 0.7;
-        }
-        .interninfo-page .tool-link:last-child {
-          border-bottom: none;
-        }
-        .interninfo-page .icon {
-          margin-right: 10px;
-        }
-        .interninfo-page h2 {
-          color: var(--gjensidige-blue);
-          margin-top: 0;
-          border-bottom: 2px solid var(--light-grey);
-          padding-bottom: 10px;
-          margin-bottom: 20px;
-          font-size: 1.5rem;
-        }
-        .interninfo-page h3 {
-          color: var(--gjensidige-blue);
-          margin-top: 30px;
-          margin-bottom: 10px;
-        }
-        .interninfo-page p {
-          line-height: 1.6;
-        }
-        .interninfo-page .fact-grid {
-          display: grid;
-          grid-template-columns: 1fr 1fr;
-          gap: 15px;
-          margin-bottom: 30px;
-        }
-        .interninfo-page .fact-item {
-          background: var(--light-grey);
-          padding: 15px;
-          border-radius: 6px;
-        }
-        .interninfo-page .fact-label {
-          font-size: 0.8rem;
-          color: #666;
-          text-transform: uppercase;
-          font-weight: bold;
-          display: block;
-          margin-bottom: 5px;
-        }
-        .interninfo-page .fact-value {
-          font-weight: bold;
-          color: var(--gjensidige-blue);
-        }
-        .interninfo-page .track-box {
-          background: #fff;
-          border: 1px solid #eee;
-          border-left: 5px solid var(--jobloop-teal);
-          padding: 20px;
-          margin-bottom: 20px;
-          border-radius: 0 8px 8px 0;
-        }
-        .interninfo-page .track-box ul {
-          list-style-type: disc;
-          padding-left: 20px;
-        }
-        .interninfo-page .track-box ul li {
-          margin-bottom: 8px;
-        }
-        .interninfo-page .track-title {
-          font-weight: bold;
-          font-size: 1.1rem;
-          color: var(--gjensidige-blue);
-          display: block;
-          margin-bottom: 5px;
-        }
-        .interninfo-page .check-list {
-          list-style: none;
-          padding: 0;
-        }
-        .interninfo-page .check-list li {
-          margin-bottom: 8px;
-          padding-left: 25px;
-          position: relative;
-        }
-        .interninfo-page .check-list.yes li::before {
-          content: "✅";
-          position: absolute;
-          left: 0;
-        }
-        .interninfo-page .check-list.no li::before {
-          content: "⛔";
-          position: absolute;
-          left: 0;
-        }
-        .interninfo-page .process-step {
-          margin-bottom: 10px;
-          padding-left: 15px;
-          border-left: 3px solid #ddd;
-        }
-        .interninfo-page .process-step strong {
-          color: var(--gjensidige-blue);
-        }
-        @media (max-width: 768px) {
-          .interninfo-page .container {
-            grid-template-columns: 1fr;
-          }
-        }
-      `}</style>
       <main className='interninfo-page min-h-screen'>
       <header>
         <h1>Pilot JobLoop</h1>
@@ -254,7 +86,7 @@ export default function InternInfo() {
             <p>For elever i ungdomsskolen som sliter med å møte opp.</p>
             <ul style={{ fontSize: '0.95rem', marginBottom: 0 }}>
               <li><strong>Mål:</strong> Økt trivsel, redusert fravær og å fullføre 10. trinn.</li>
-              <li><strong>Innhold:</strong> Eleven er hos oss 1-2 dager i uken som et "pusterom". Vi bruker gaming og kreative verktøy pedagogisk for å bygge mestring.</li>
+              <li><strong>Innhold:</strong> Eleven er hos oss 1-2 dager i uken som et &quot;pusterom&quot;. Vi bruker gaming og kreative verktøy pedagogisk for å bygge mestring.</li>
               <li><strong>Samarbeid:</strong> Tett dialog med skole og PPT for å sikre at dette støtter opp om skolegangen, ikke erstatter den.</li>
             </ul>
           </div>
@@ -296,7 +128,7 @@ export default function InternInfo() {
               <ul style={{ fontSize: '0.9rem', paddingLeft: '20px', listStyleType: 'disc' }}>
                 <li><strong>Inntaks-tilbakemelding:</strong> Vi gir beskjed om vilket spor vi velger etter kartlegging.</li>
                 <li><strong>Månedsrapport:</strong> En enkel status på oppmøte, trivsel og progresjon.</li>
-                <li><strong>Varsling:</strong> Vi bruker "Gult/Rødt flagg"-system. Du får beskjed med en gang hvis oppmøtet svikter, slik at vi kan sette inn tiltak sammen.</li>
+                <li><strong>Varsling:</strong> Vi bruker &quot;Gult/Rødt flagg&quot;-system. Du får beskjed med en gang hvis oppmøtet svikter, slik at vi kan sette inn tiltak sammen.</li>
               </ul>
             </div>
           </div>
@@ -335,7 +167,7 @@ export default function InternInfo() {
             Tlf: 97 46 91 10<br />
             E-post: <a href='mailto:kim@jobloop.no' style={{ color: 'var(--gjensidige-blue)', textDecoration: 'underline' }}>kim@jobloop.no</a></p>
             <br />
-            <p style={{ fontSize: '0.85rem', color: '#666' }}>"Det er bedre å ta en telefon for mye enn en for lite."</p>
+            <p style={{ fontSize: '0.85rem', color: '#666' }}>&quot;Det er bedre å ta en telefon for mye enn en for lite.&quot;</p>
           </div>
 
         </div>

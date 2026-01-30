@@ -319,7 +319,7 @@ export default function Pilot() {
             <span className='age-badge'>16 – 26 år</span>
             <h3>Jobb og IT-kompetanse</h3>
             <p><strong>Konsept for arbeid:</strong> For deg som står utenfor skole og jobb, og vil lære praktisk koding, design eller IT.</p>
-            <p>Her får du praktisk opplæring i ferdigheter bedriftene trenger. Vi fokuserer på "tech" og kreativitet som døråpner til arbeidslivet.</p>
+            <p>Her får du praktisk opplæring i ferdigheter bedriftene trenger. Vi fokuserer på &quot;tech&quot; og kreativitet som døråpner til arbeidslivet.</p>
             <ul>
               <li>Lær koding, design og utvikling</li>
               <li>Praksis i samarbeidsbedrifter</li>
@@ -351,7 +351,7 @@ export default function Pilot() {
 
           <div className='faq-item'>
             <span className='faq-question'>Mister jeg plassen min på skolen?</span>
-            <p className='faq-answer'>Nei. Spesielt for "Konsept for utdanning" samarbeider vi tett med skolen din slik at du beholder elevstatusen din. Målet vårt er å hjelpe deg å fullføre.</p>
+            <p className='faq-answer'>Nei. Spesielt for &quot;Konsept for utdanning&quot; samarbeider vi tett med skolen din slik at du beholder elevstatusen din. Målet vårt er å hjelpe deg å fullføre.</p>
             </div>
 
           <div className='faq-item'>
