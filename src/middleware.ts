@@ -17,21 +17,10 @@ export default function middleware(request: NextRequest) {
   }
 
   if (isGjensidigePilot) {
-    const expectedPassword = process.env.PILOT_PASSWORD;
-    
-    if (!expectedPassword) {
-      const pathSegments = pathname.split('/').filter(Boolean);
-      const firstSegment = pathSegments[0];
-      const isLocale = ['nb', 'sv', 'en'].includes(firstSegment);
-      const locale = isLocale ? firstSegment : routing.defaultLocale;
-      const loginUrl = new URL(`/${locale}/login`, request.url);
-      return NextResponse.redirect(loginUrl);
-    }
-    
     const hasValidToken = 
       token && 
       token.value && 
-      token.value === expectedPassword;
+      token.value.length === 64;
     
     if (!hasValidToken) {
       const pathSegments = pathname.split('/').filter(Boolean);
