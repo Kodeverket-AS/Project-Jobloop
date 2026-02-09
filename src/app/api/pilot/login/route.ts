@@ -1,4 +1,5 @@
 import { NextRequest, NextResponse } from 'next/server';
+import { randomBytes } from 'crypto';
 
 export async function POST(request: NextRequest) {
   const { password } = await request.json();
@@ -12,8 +13,9 @@ export async function POST(request: NextRequest) {
   }
 
   if (password === expectedPassword) {
+    const token = randomBytes(32).toString('hex');
     const response = NextResponse.json({ success: true });
-    response.cookies.set('pilot-access', expectedPassword, {
+    response.cookies.set('pilot-access', token, {
       path: '/',
       maxAge: 43200,
       httpOnly: true,
