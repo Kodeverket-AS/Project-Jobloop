@@ -1,5 +1,6 @@
 import { Link } from '@/i18n/navigation';
 import type { Metadata } from 'next';
+import { BookKimButton } from '@/components/buttons';
 
 export async function generateStaticParams() {
   return [{ locale: 'nb' }, { locale: 'sv' }, { locale: 'en' }];
@@ -177,9 +178,47 @@ export default function GjensidigeKunde() {
             </div>
           </div>
 
-          <div className="text-center bg-white p-8 rounded-lg shadow-sm">
-            <p className="text-xl font-semibold text-[#002B49] mb-2">Vi gleder oss til å snakke med deg!</p>
-            <p className="text-[#555]">book time med kim </p>
+          <div className="bg-[#EBF2F6] py-16 px-5 -mx-5">
+            <div className="max-w-4xl mx-auto text-center">
+              <h2 className="text-3xl font-bold text-[#002B49] mb-4">Høres dette interessant ut?</h2>
+              <p className="text-lg text-[#555] mb-8 max-w-2xl mx-auto">
+                Du trenger ikke vite nøyaktig hva som passer. Det er jobben vår.
+              </p>
+              
+              <div className="bg-white max-w-2xl mx-auto p-12 rounded-lg shadow-md border-l-[10px] border-[#002B49]">
+                <h3 className="text-2xl font-bold text-[#002B49] mb-6">Ta kontakt for kartlegging</h3>
+                <p className="text-[#555] mb-6">
+                  Send oss en e-post eller ring, så tar vi en uforpliktende prat. Vi finner ut hvilket spor som gir deg best utbytte.
+                </p>
+                
+                <div className="mb-8 text-lg">
+                  <p className="font-semibold text-[#002B49] mb-3">Prosjektleder Kim</p>
+                  <p className="text-[#555]">
+                    📞 97 46 91 10 &nbsp; | &nbsp; ✉️{' '}
+                    <a
+                      href="mailto:kim@jobloop.no"
+                      className="text-[#002B49] underline hover:text-[#4AB5A3] transition-colors"
+                    >
+                      kim@jobloop.no
+                    </a>
+                  </p>
+                </div>
+
+                <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+                  <a
+                    href="mailto:kim@jobloop.no"
+                    className="inline-block bg-[#002B49] text-white px-8 py-4 rounded-full font-bold text-lg hover:bg-[#004d7a] hover:scale-105 hover:shadow-lg transition-all duration-300"
+                  >
+                    Send e-post nå
+                  </a>
+                  <BookKimButton />
+                </div>
+              </div>
+
+              <div className="mt-8 text-center">
+                <p className="text-xl font-semibold text-[#002B49] mb-2">Vi gleder oss til å snakke med deg!</p>
+              </div>
+            </div>
           </div>
         </div>
       </section>
