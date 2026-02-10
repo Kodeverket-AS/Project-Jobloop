@@ -15,7 +15,7 @@ export async function generateMetadata(): Promise<Metadata> {
 
 export default function GjensidigeKunde() {
   return (
-    <main className="min-h-screen bg-[#f4f6f8] font-['Segoe_UI',Arial,sans-serif] text-[#333] leading-relaxed">
+    <div className="min-h-screen bg-[#f4f6f8] font-['Segoe_UI',Arial,sans-serif] text-[#333] leading-relaxed">
       <header className="bg-white py-5 flex justify-between items-center border-b-[5px] border-[#002B49]">
         <div className="w-full max-w-[1536px] mx-auto px-4 flex justify-between items-center">
           <div className="text-2xl font-bold text-[#002B49]">
@@ -24,7 +24,8 @@ export default function GjensidigeKunde() {
         </div>
       </header>
 
-      <section className="bg-gradient-to-b from-[#002B49] to-[#003d6b] text-white py-16 px-5">
+      <main className="max-w-[1536px] px-4 py-16 flex flex-col items-center gap-16 w-full mx-auto">
+      <section className="bg-gradient-to-b from-[#002B49] to-[#003d6b] text-white py-16 px-5 w-full rounded-2xl">
         <div className="w-full max-w-[1536px] mx-auto px-4">
           <div className="flex flex-col lg:flex-row items-center gap-8 lg:gap-12">
             <div className="flex-shrink-0 order-2 lg:order-1">
@@ -55,8 +56,8 @@ export default function GjensidigeKunde() {
         </div>
       </section>
 
-      <section className="bg-white py-12 px-5">
-        <div className="w-full max-w-[1536px] mx-auto px-4">
+      <section className="bg-white py-12 px-5 w-full rounded-2xl">
+        <div className="w-full mx-auto px-4">
           <h2 className="text-3xl font-bold text-[#002B49] mb-8 text-center">Før praten</h2>
           <div className="max-w-4xl mx-auto space-y-8 text-[#555]">
             <div className="text-center mb-8">
@@ -144,8 +145,8 @@ export default function GjensidigeKunde() {
         </div>
       </section>
 
-      <section className="bg-[#EBF2F6] py-16 px-5">
-        <div className="w-full max-w-[1536px] mx-auto px-4">
+      <section className="bg-[#EBF2F6] py-16 px-5 w-full rounded-2xl">
+        <div className="w-full mx-auto px-4">
           <div className="text-center mb-12">
             <h2 className="text-4xl font-bold text-[#002B49] mb-6">Snart snakkes vi!</h2>
             <p className="text-xl text-[#555] mb-4 max-w-2xl mx-auto">
@@ -222,8 +223,8 @@ export default function GjensidigeKunde() {
             </div>
           </div>
 
-          <div className="bg-gradient-to-b from-[#EBF2F6] to-white py-20 px-5 -mx-5">
-            <div className="w-full max-w-[1536px] mx-auto px-4">
+          <div className="bg-gradient-to-b from-[#EBF2F6] to-white py-20 px-5 w-full">
+            <div className="w-full mx-auto px-4">
               <div className="max-w-4xl mx-auto text-center mb-12">
                 <h2 className="text-4xl md:text-5xl font-bold text-[#002B49] mb-6">Høres dette interessant ut?</h2>
                 <p className="text-xl text-[#555] mb-4 max-w-2xl mx-auto leading-relaxed">
@@ -293,8 +294,7 @@ export default function GjensidigeKunde() {
           </div>
         </div>
       </section>
-
-     
-    </main>
+      </main>
+    </div>
   );
 }
