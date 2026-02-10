@@ -1,5 +1,5 @@
-import { Link } from '@/i18n/navigation';
 import type { Metadata } from 'next';
+import Image from 'next/image';
 import { BookKimButton } from '@/components/buttons';
 
 export async function generateStaticParams() {
@@ -29,9 +29,11 @@ export default function GjensidigeKunde() {
         <div className="w-full max-w-[1536px] mx-auto px-4">
           <div className="flex flex-col lg:flex-row items-center gap-8 lg:gap-12">
             <div className="flex-shrink-0 order-2 lg:order-1">
-              <img 
+              <Image 
                 src="/gjensidige.jpg" 
                 alt="Gjensidige" 
+                width={384}
+                height={512}
                 className="w-64 md:w-80 lg:w-96 h-auto rounded-lg shadow-2xl object-contain"
               />
             </div>
@@ -247,9 +249,11 @@ export default function GjensidigeKunde() {
                   <div className="bg-gradient-to-r from-[#EBF2F6] to-[#e0f2f1] p-6 rounded-lg mb-8 max-w-4xl mx-auto">
                     <div className="flex flex-col sm:flex-row items-center gap-6">
                       <div className="flex-shrink-0">
-                        <img 
+                        <Image 
                           src="/Kim.jpg" 
                           alt="Prosjektleder Kim" 
+                          width={128}
+                          height={128}
                           className="w-32 h-32 rounded-full object-cover shadow-lg border-4 border-white"
                         />
                       </div>
