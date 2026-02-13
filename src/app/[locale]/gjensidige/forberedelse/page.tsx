@@ -5,7 +5,7 @@ import { QuestionCard } from './components/QuestionCard';
 import { InfoCard } from './components/InfoCard';
 import { AnimateOnScroll } from './components/AnimateOnScroll';
 import { questions, infoCards, expectations } from './data';
-import GjensidigeImage from '@public/gjensidige2.jpg';
+import GjensidigeImage from '@public/gjensidige.jpg';
 import KimImage from '@public/Kim.jpg';
 
 export async function generateStaticParams() {
