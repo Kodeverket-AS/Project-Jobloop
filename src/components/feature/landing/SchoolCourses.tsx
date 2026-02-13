@@ -9,6 +9,7 @@ import Gamify from '@public/gamify2.webp';
 import Spillbasert from '@public/spillbasert.webp';
 import Loop from '@public/loop.webp';
 import Ki from '@public/ki.jpg';
+import Gjensidige from '@public/gjensidige.jpg';
 
 export default async function SchoolCourses() {
   const t = await getTranslations('landing');
@@ -48,6 +49,14 @@ export default async function SchoolCourses() {
       image: Ki,
       alt: t('school.courses.ki.alt'),
       path: '/ki-kurs',
+      isNew: true,
+    },
+    {
+      title: t('school.courses.gjensidige.title'),
+      text: t('school.courses.gjensidige.text'),
+      image: Gjensidige,
+      alt: t('school.courses.gjensidige.alt'),
+      path: '/gjensidige',
       isNew: true,
     },
   ];

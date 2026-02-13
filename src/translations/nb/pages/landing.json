@@ -44,6 +44,11 @@
         "title": "KI-Kurs",
         "text": "Lær om kunstig intelligens og hvordan den kan brukes i arbeidslivet.",
         "alt": "KI-Kurs leder"
+      },
+      "gjensidige": {
+        "title": "Gjensidige & JobLoop",
+        "text": "Nytt tilbud fra Gjensidige og JobLoop. Vi bruker interessene dine til å bygge mestring, motivasjon og en vei videre i livet.",
+        "alt": "Gjensidige logo"
       }
     }
   },

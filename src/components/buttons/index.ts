@@ -9,3 +9,4 @@ export {
   ExternalLinkButton,
   LesMerButton,
 } from './SpecialButtons';
+export { BookKimButton } from './BookKimButton';

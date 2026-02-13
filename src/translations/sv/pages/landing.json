@@ -44,6 +44,11 @@
         "title": "AI-kurs",
         "text": "Lär dig om artificiell intelligens och hur den kan användas i arbetslivet.",
         "alt": "AI-kursledare"
+      },
+      "gjensidige": {
+        "title": "Gjensidige & JobLoop",
+        "text": "Nytt erbjudande från Gjensidige och JobLoop. Vi använder dina intressen för att bygga mästerskap, motivation och en väg framåt i livet.",
+        "alt": "Gjensidige logotyp"
       }
     }
   },
