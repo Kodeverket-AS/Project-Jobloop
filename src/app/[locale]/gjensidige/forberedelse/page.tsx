@@ -5,6 +5,8 @@ import { QuestionCard } from './components/QuestionCard';
 import { InfoCard } from './components/InfoCard';
 import { AnimateOnScroll } from './components/AnimateOnScroll';
 import { questions, infoCards, expectations } from './data';
+import GjensidigeImage from '@public/gjensidige2.jpg';
+import KimImage from '@public/Kim.jpg';
 
 export async function generateStaticParams() {
   return [{ locale: 'nb' }, { locale: 'sv' }, { locale: 'en' }];
@@ -35,7 +37,7 @@ export default function Forberedelse() {
           <div className="flex flex-col lg:flex-row items-center gap-8 lg:gap-12">
             <div className="flex-shrink-0 order-2 lg:order-1 animate-fade-in-up delay-100">
               <Image 
-                src="/gjensidige.jpg" 
+                src={GjensidigeImage} 
                 alt="Gjensidige" 
                 width={384}
                 height={512}
@@ -178,7 +180,7 @@ export default function Forberedelse() {
                     <div className="flex flex-col sm:flex-row items-center gap-6">
                       <div className="flex-shrink-0">
                         <Image 
-                          src="/Kim.jpg" 
+                          src={KimImage} 
                           alt="Prosjektleder Kim" 
                           width={128}
                           height={128}
