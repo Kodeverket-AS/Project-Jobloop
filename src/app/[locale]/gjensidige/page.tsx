@@ -24,9 +24,9 @@ export default function Pilot() {
         </div>
       </header>
 
-      <main className="max-w-[1536px] mx-auto">
-        <section className="bg-gradient-to-b from-[#002B49] to-[#001f35] text-white py-16 px-5 text-center relative overflow-hidden">
-          <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/5 to-transparent animate-shimmer bg-[length:200%_100%]"></div>
+      <main className="max-w-[1536px] px-4 py-16 flex flex-col items-center gap-16 w-full mx-auto">
+        <section className="bg-gradient-to-b from-[#002B49] to-[#001f35] text-white py-16 px-5 w-full rounded-2xl text-center relative overflow-hidden">
+          <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/5 to-transparent animate-shimmer bg-[length:200%_100%] rounded-2xl"></div>
           <div className="max-w-4xl mx-auto relative z-10">
             <h1 className="text-4xl md:text-5xl font-bold mb-6 animate-fade-in-up delay-100">Nytt pilottilbud for kunder av Gjensidige</h1>
             <p className="text-xl md:text-2xl mb-12 opacity-90 leading-relaxed animate-fade-in-up delay-200">
@@ -53,7 +53,7 @@ export default function Pilot() {
           </div>
         </section>
 
-        <section className="bg-white py-16 px-5">
+        <section className="bg-white py-16 px-5 w-full rounded-2xl">
           <div className="max-w-4xl mx-auto text-center">
             <h2 className="text-3xl md:text-4xl font-bold text-[#002B49] mb-6 animate-fade-in-up delay-100">Hvilket spor passer for deg?</h2>
             <p className="text-lg text-[#555] leading-relaxed max-w-2xl mx-auto animate-fade-in-up delay-200">
@@ -63,7 +63,7 @@ export default function Pilot() {
           </div>
         </section>
 
-        <section className="bg-white py-12 px-5">
+        <section className="bg-white py-12 px-5 w-full rounded-2xl">
           <div className="max-w-[1536px] mx-auto">
             <div className="grid md:grid-cols-3 gap-8">
               <div className="bg-white border border-gray-200 rounded-xl shadow-lg hover:shadow-2xl hover:-translate-y-2 transition-all duration-500 overflow-hidden border-t-[6px] border-t-[#4AB5A3] animate-fade-in-up delay-100 group">
@@ -141,7 +141,7 @@ export default function Pilot() {
           </div>
         </section>
 
-        <section className="bg-white py-16 px-5 border-t border-gray-200">
+        <section className="bg-white py-16 px-5 w-full rounded-2xl">
           <div className="max-w-4xl mx-auto">
             <h2 className="text-3xl md:text-4xl font-bold text-[#002B49] mb-12 text-center animate-fade-in-up delay-100">Ofte stilte spørsmål</h2>
             
@@ -184,8 +184,8 @@ export default function Pilot() {
           </div>
         </section>
 
-        <section className="bg-[#EBF2F6] py-16 px-5 relative overflow-hidden">
-          <div className="absolute inset-0 bg-gradient-to-br from-[#4AB5A3]/5 to-transparent"></div>
+        <section className="bg-[#EBF2F6] py-16 px-5 w-full rounded-2xl relative overflow-hidden">
+          <div className="absolute inset-0 bg-gradient-to-br from-[#4AB5A3]/5 to-transparent rounded-2xl"></div>
           <div className="max-w-4xl mx-auto text-center relative z-10">
             <h2 className="text-3xl md:text-4xl font-bold text-[#002B49] mb-6 animate-fade-in-up delay-100">Høres dette interessant ut?</h2>
             <p className="text-lg text-[#555] mb-6 leading-relaxed animate-fade-in-up delay-200">
@@ -254,10 +254,7 @@ export default function Pilot() {
           </div>
         </section>
 
-        <footer className="bg-[#002B49] text-gray-300 text-center py-8 px-5 animate-fade-in">
-          <p className="mb-2">Et samarbeid mellom Gjensidige Forsikring og JobLoop AS.</p>
-          <p className="text-sm">Pilotprosjekt – Innhold kan endres underveis.</p>
-        </footer>
+
 
       
        
