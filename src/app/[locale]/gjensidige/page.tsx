@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import Image from 'next/image';
 import { Link } from '@/i18n/navigation';
+import GjensidigeImage from '@public/gjensidige.jpg';
 
 export async function generateStaticParams() {
   return [{ locale: 'nb' }, { locale: 'sv' }, { locale: 'en' }];
@@ -35,11 +36,11 @@ export default function Pilot() {
             
             <div className="flex justify-center animate-fade-in-up delay-300">
               <Image
-                src="/Gjensidige2.jpg"
+                src={GjensidigeImage}
                 alt="Gjensidige"
-                width={600}
-                height={340}
-                className="w-full max-w-[600px] h-auto rounded-lg object-cover border-2 border-white/30"
+                width={320}
+                height={427}
+                className="w-64 md:w-80 max-w-[320px] h-auto rounded-lg object-cover border-2 border-white/30 aspect-[3/4]"
               />
             </div>
             {/* VIDEO placeholder 

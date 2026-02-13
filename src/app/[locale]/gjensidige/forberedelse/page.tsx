@@ -35,14 +35,16 @@ export default function Forberedelse() {
         <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/5 to-transparent animate-shimmer bg-[length:200%_100%] rounded-2xl" />
         <div className="w-full max-w-[1536px] mx-auto px-4 relative z-10">
           <div className="flex flex-col lg:flex-row items-center gap-8 lg:gap-12">
-            <div className="flex-shrink-0 order-2 lg:order-1 animate-fade-in-up delay-100">
-              <Image 
-                src={GjensidigeImage} 
-                alt="Gjensidige" 
-                width={384}
-                height={512}
-                className="w-64 md:w-80 lg:w-96 h-auto rounded-lg shadow-2xl object-contain"
-              />
+            <div className="flex-shrink-0 order-2 lg:order-1 animate-fade-in-up delay-100 w-64 md:w-72 lg:w-80">
+              <div className="aspect-[3/4] relative rounded-lg shadow-2xl overflow-hidden">
+                <Image 
+                  src={GjensidigeImage} 
+                  alt="Gjensidige" 
+                  fill
+                  sizes="(max-width: 768px) 256px, (max-width: 1024px) 288px, 320px"
+                  className="object-cover object-center"
+                />
+              </div>
             </div>
             <div className="flex-1 text-center lg:text-left order-1 lg:order-2">
               <h1 className="text-4xl md:text-5xl mb-6 font-bold animate-fade-in-up delay-200">Nytt tilbud fra Gjensidige & JobLoop</h1>
