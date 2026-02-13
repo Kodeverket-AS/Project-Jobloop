@@ -1,7 +1,7 @@
 import type { Metadata } from 'next';
 import Image from 'next/image';
 import { Link } from '@/i18n/navigation';
-import GjensidigeImage from '@public/gjensidige.jpg';
+import GjensidigeImage from '@public/gjensidige2.jpg';
 
 export async function generateStaticParams() {
   return [{ locale: 'nb' }, { locale: 'sv' }, { locale: 'en' }];
