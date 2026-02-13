@@ -25,7 +25,7 @@ export default function Login() {
         const data = await response.json();
         setError(data.error || 'Feil passord');
       }
-    } catch (err) {
+    } catch {
       setError('Noe gikk galt. Prøv igjen.');
     }
   };

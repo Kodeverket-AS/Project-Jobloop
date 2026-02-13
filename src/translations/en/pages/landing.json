@@ -44,6 +44,11 @@
         "title": "AI Course",
         "text": "Learn about artificial intelligence and how it can be applied in the workplace.",
         "alt": "AI course instructor"
+      },
+      "gjensidige": {
+        "title": "Gjensidige & JobLoop",
+        "text": "New offer from Gjensidige and JobLoop. We use your interests to build mastery, motivation and a way forward in life.",
+        "alt": "Gjensidige logo"
       }
     }
   },
