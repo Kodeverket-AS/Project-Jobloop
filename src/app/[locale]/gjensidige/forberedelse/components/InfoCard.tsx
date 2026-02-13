@@ -4,11 +4,12 @@ interface InfoCardProps {
   description: string;
   items?: string[];
   additionalText?: string;
+  className?: string;
 }
 
-export function InfoCard({ icon, title, description, items, additionalText }: InfoCardProps) {
+export function InfoCard({ icon, title, description, items, additionalText, className = '' }: InfoCardProps) {
   return (
-    <div className="bg-white p-6 rounded-lg shadow-md hover:shadow-xl transition-all duration-300 hover:-translate-y-1 border-l-4 border-[#4AB5A3]">
+    <div className={`bg-white p-6 rounded-lg shadow-md hover:shadow-xl transition-all duration-300 hover:-translate-y-1 border-l-4 border-[#4AB5A3] ${className}`}>
       <h3 className="text-xl font-bold text-[#002B49] mb-4 flex items-center gap-3">
         <span className="text-3xl bg-[#e0f2f1] w-12 h-12 rounded-full flex items-center justify-center">{icon}</span>
         {title}
