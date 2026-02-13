@@ -25,19 +25,7 @@ export const questions = [
     borderColor: 'border-l-[#4AB5A3]',
     iconBg: 'bg-[#e0f2f1]',
   },
-  {
-    icon: '🤝',
-    title: 'Hvem andre er med på laget?',
-    description: 'For at vi skal kunne hjelpe deg best mulig, må vi ofte samarbeide med andre systemer.',
-    items: [
-      'Har du kontakt med OT (Oppfølgingstjenesten)?',
-      'Er du registrert hos NAV?',
-      'Er det noen andre som støtter deg i hverdagen?',
-    ],
-    borderColor: 'border-l-[#2C8C7D]',
-    iconBg: 'bg-[#EBF2F6]',
-    tip: 'Hvis du har navn eller telefonnummer til en kontaktperson der, er det supert om du finner det frem til samtalen.',
-  },
+  
   {
     icon: '🚀',
     title: 'Hva drømmer du om?',
