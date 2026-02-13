@@ -38,9 +38,9 @@ export default function Pilot() {
               <Image
                 src={GjensidigeImage}
                 alt="Gjensidige"
-                width={320}
-                height={427}
-                className="w-64 md:w-80 max-w-[320px] h-auto rounded-lg object-cover border-2 border-white/30 aspect-[3/4]"
+                width={600}
+                height={340}
+                className="w-full max-w-[600px] h-auto rounded-lg object-cover object-center border-2 border-white/30 aspect-video"
               />
             </div>
             {/* VIDEO placeholder 
