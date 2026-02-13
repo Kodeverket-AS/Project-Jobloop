@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import Image from 'next/image';
 import { Link } from '@/i18n/navigation';
 
 export async function generateStaticParams() {
@@ -32,12 +33,23 @@ export default function Pilot() {
               Vi bruker interessene dine til å bygge mestring, motivasjon og en vei videre i livet.
             </p>
             
+            <div className="flex justify-center animate-fade-in-up delay-300">
+              <Image
+                src="/Gjensidige2.jpg"
+                alt="Gjensidige"
+                width={600}
+                height={340}
+                className="w-full max-w-[600px] h-auto rounded-lg object-cover border-2 border-white/30"
+              />
+            </div>
+            {/* VIDEO placeholder 
             <div className="bg-[#001f35] w-full max-w-[600px] h-[340px] mx-auto rounded-lg border-2 border-dashed border-white/30 flex items-center justify-center relative hover:border-white/50 transition-all duration-500 animate-fade-in-up delay-300 group cursor-pointer">
               <div className="text-center group-hover:scale-105 transition-transform duration-300">
                 <div className="text-6xl mb-4 opacity-80 animate-pulse-slow">▶</div>
                 <p className="text-gray-300">VIDEO: Hei, er du forsikret i Gjensidige?</p>
               </div>
             </div>
+            */}
           </div>
         </section>
 
@@ -57,7 +69,7 @@ export default function Pilot() {
               <div className="bg-white border border-gray-200 rounded-xl shadow-lg hover:shadow-2xl hover:-translate-y-2 transition-all duration-500 overflow-hidden border-t-[6px] border-t-[#4AB5A3] animate-fade-in-up delay-100 group">
                 <div className="bg-[#2c3e50] h-[180px] flex items-end p-4 relative overflow-hidden group-hover:scale-105 transition-transform duration-500">
                   <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div>
-                  <span className="text-white text-sm absolute bottom-3 left-4 z-10">Video: Stå i skolen</span>
+                  {/* <span className="text-white text-sm absolute bottom-3 left-4 z-10">Video: Stå i skolen</span> */}
                 </div>
                 <div className="p-6">
                   <span className="bg-[#EBF2F6] text-[#002B49] px-3 py-1 rounded text-xs font-bold uppercase mb-3 inline-block">
@@ -79,9 +91,9 @@ export default function Pilot() {
               </div>
 
               <div className="bg-white border border-gray-200 rounded-xl shadow-lg hover:shadow-2xl hover:-translate-y-2 transition-all duration-500 overflow-hidden border-t-[6px] border-t-[#4AB5A3] animate-fade-in-up delay-200 group">
-                <div className="bg-[#34495e] h-[180px] flex items-end p-4 relative overflow-hidden group-hover:scale-105 transition-transform duration-500">
+                <div className="bg-[#34495e]/70 h-[180px] flex items-end p-4 relative overflow-hidden group-hover:scale-105 transition-transform duration-500">
                   <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div>
-                  <span className="text-white text-sm absolute bottom-3 left-4 z-10">Video: Bestå fag</span>
+                  {/* <span className="text-white text-sm absolute bottom-3 left-4 z-10">Video: Bestå fag</span> */}
                 </div>
                 <div className="p-6">
                   <span className="bg-[#EBF2F6] text-[#002B49] px-3 py-1 rounded text-xs font-bold uppercase mb-3 inline-block">
@@ -105,7 +117,7 @@ export default function Pilot() {
               <div className="bg-white border border-gray-200 rounded-xl shadow-lg hover:shadow-2xl hover:-translate-y-2 transition-all duration-500 overflow-hidden border-t-[6px] border-t-[#4AB5A3] animate-fade-in-up delay-300 group">
                 <div className="bg-[#27ae60] h-[180px] flex items-end p-4 relative overflow-hidden group-hover:scale-105 transition-transform duration-500">
                   <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div>
-                  <span className="text-white text-sm absolute bottom-3 left-4 z-10">Video: Veien til jobb</span>
+                  {/* <span className="text-white text-sm absolute bottom-3 left-4 z-10">Video: Veien til jobb</span> */}
                 </div>
                 <div className="p-6">
                   <span className="bg-[#EBF2F6] text-[#002B49] px-3 py-1 rounded text-xs font-bold uppercase mb-3 inline-block">
