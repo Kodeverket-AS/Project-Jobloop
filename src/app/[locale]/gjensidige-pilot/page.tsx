@@ -62,7 +62,7 @@ export default function GjensidigePilot() {
     {
       title: 'Landingsside for kunde',
       description: 'Lenken vi sender til ungdommen. Selger inn tilbudet med fokus på interesser.',
-      href: '/gjensidige-pilot/pilot',
+      href: '/gjensidige',
       icon: '🌐',
       tag: 'Kunde',
       borderClass: 'border-teal',
