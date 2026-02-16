@@ -144,7 +144,7 @@ export default function InternInfo() {
             <Link href='/gjensidige-pilot/samtale' className='tool-link'>
               <span className='icon'>📞</span> Samtaleguide (Manus)
             </Link>
-            <Link href='/gjensidige-pilot/pilot' className='tool-link'>
+            <Link href='/gjensidige' className='tool-link'>
               <span className='icon'>🌐</span> Landingsside for kunde ↗
             </Link>
             <Link href='/gjensidige-pilot/prosess' className='tool-link'>
