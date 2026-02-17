@@ -1114,18 +1114,128 @@
     font-family: 'Segoe UI', sans-serif;
 }
 
-.verktoykasse-page header {
-    background-color: #002B49;
+main.verktoykasse-page header.pilot-header {
+    background-color: #002B49 !important;
     color: white;
-    padding: 40px 20px;
-    text-align: center;
+    padding: 24px 20px;
     position: relative;
+    text-align: center;
 }
 
 .verktoykasse-page .header-content {
     max-width: 1100px;
     margin: 0 auto;
-    position: relative;
+    padding: 0 20px;
+    width: 100%;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 16px;
+    background: none !important;
+}
+
+.verktoykasse-page .header-spacer {
+    width: 100px;
+    flex-shrink: 0;
+}
+
+.verktoykasse-page .header-center {
+    background-color: #fff;
+    color: #002B49;
+    padding: 14px 28px;
+    border-radius: 10px;
+    border: 2px solid rgba(0, 43, 73, 0.25);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    text-align: center;
+    flex-shrink: 0;
+}
+
+.verktoykasse-page .header-center .logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin: 0 0 4px 0;
+    color: #002B49;
+}
+
+.verktoykasse-page .header-center .subtitle {
+    font-size: 0.95rem;
+    margin: 0;
+    color: #555;
+    opacity: 1;
+}
+
+.verktoykasse-page .header-logout {
+    flex-shrink: 0;
+    background: transparent !important;
+}
+
+.verktoykasse-page .pilot-logout-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 18px;
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: #fff;
+    background: rgba(255, 255, 255, 0.12);
+    border: 1px solid rgba(255, 255, 255, 0.45);
+    border-radius: 9999px;
+    cursor: pointer;
+    transition: background 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.verktoykasse-page .pilot-logout-btn:hover {
+    background: rgba(255, 255, 255, 0.22);
+    border-color: rgba(255, 255, 255, 0.65);
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.15);
+}
+
+@media (max-width: 768px) {
+    main.verktoykasse-page header.pilot-header {
+        padding: 16px 12px;
+    }
+
+    .verktoykasse-page .header-content {
+        flex-direction: column;
+        gap: 12px;
+        padding: 0 12px;
+    }
+
+    .verktoykasse-page .header-spacer {
+        display: none;
+    }
+
+    .verktoykasse-page .header-center {
+        width: 100%;
+        padding: 12px 16px;
+        border-radius: 8px;
+    }
+
+    .verktoykasse-page .header-center .logo {
+        font-size: 1.25rem;
+    }
+
+    .verktoykasse-page .header-center .subtitle {
+        font-size: 0.85rem;
+    }
+
+    .verktoykasse-page .header-logout {
+        width: 100%;
+        display: flex;
+        justify-content: flex-end;
+    }
+
+    .verktoykasse-page .pilot-logout-btn {
+        padding: 10px 16px;
+        font-size: 0.85rem;
+    }
+}
+
+.verktoykasse-page .pilot-logout-btn__icon {
+    width: 18px;
+    height: 18px;
+    flex-shrink: 0;
 }
 
 .verktoykasse-page .logo {
