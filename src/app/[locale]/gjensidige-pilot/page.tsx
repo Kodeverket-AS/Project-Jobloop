@@ -88,11 +88,16 @@ export default function GjensidigePilot() {
   return (
     <>
       <main className='verktoykasse-page'>
-        <header>
+        <header className='pilot-header' style={{ backgroundColor: '#002B49' }}>
           <div className='header-content'>
-            <LogoutButton />
-            <div className='logo'>Gjensidige | JobLoop</div>
-            <div className='subtitle'>Pilotprosjekt: Inkludering av unge (13–26 år)</div>
+            <div className='header-spacer' aria-hidden="true" />
+            <div className='header-center'>
+              <div className='logo'>Gjensidige | JobLoop</div>
+              <div className='subtitle'>Pilotprosjekt: Inkludering av unge (13–26 år)</div>
+            </div>
+            <div className='header-logout'>
+              <LogoutButton />
+            </div>
           </div>
         </header>
 
