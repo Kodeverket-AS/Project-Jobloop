@@ -66,11 +66,17 @@ export default function Pilot() {
 
         <section className="bg-white py-12 px-5 w-full rounded-2xl">
           <div className="max-w-[1536px] mx-auto">
-            <div className="grid md:grid-cols-3 gap-8">
-              <div className="bg-white border border-gray-200 rounded-xl shadow-lg hover:shadow-2xl hover:-translate-y-2 transition-all duration-500 overflow-hidden border-t-[6px] border-t-[#4AB5A3] animate-fade-in-up delay-100 group">
-                <div className="bg-[#2c3e50] h-[180px] flex items-end p-4 relative overflow-hidden group-hover:scale-105 transition-transform duration-500">
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div>
-                  {/* <span className="text-white text-sm absolute bottom-3 left-4 z-10">Video: Stå i skolen</span> */}
+            <div className="grid lg:grid-cols-3 gap-8">
+              <div className="bg-white border border-gray-200 rounded-xl shadow-lg hover:shadow-2xl hover:-translate-y-2 transition-all duration-500 overflow-hidden animate-fade-in-up delay-100 group">
+                <div className="relative w-full overflow-hidden rounded-t-xl border-t-[6px] border-t-[#4AB5A3] transition-transform duration-500 bg-[#2c3e50] aspect-video">
+                  <iframe
+                    src="https://www.youtube.com/embed/68ujVT_dw6A?rel=0"
+                    title="Video: Stå i skolen"
+                    className="absolute inset-0 w-full h-full"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowFullScreen
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent pointer-events-none" aria-hidden />
                 </div>
                 <div className="p-6">
                   <span className="bg-[#EBF2F6] text-[#002B49] px-3 py-1 rounded text-xs font-bold uppercase mb-3 inline-block">
@@ -91,10 +97,10 @@ export default function Pilot() {
                 </div>
               </div>
 
-              <div className="bg-white border border-gray-200 rounded-xl shadow-lg hover:shadow-2xl hover:-translate-y-2 transition-all duration-500 overflow-hidden border-t-[6px] border-t-[#4AB5A3] animate-fade-in-up delay-200 group">
-                <div className="bg-[#34495e]/70 h-[180px] flex items-end p-4 relative overflow-hidden group-hover:scale-105 transition-transform duration-500">
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div>
-                  {/* <span className="text-white text-sm absolute bottom-3 left-4 z-10">Video: Bestå fag</span> */}
+              <div className="bg-white border border-gray-200 rounded-xl shadow-lg hover:shadow-2xl hover:-translate-y-2 transition-all duration-500 overflow-hidden animate-fade-in-up delay-200 group">
+                <div className="relative w-full overflow-hidden rounded-t-xl border-t-[6px] border-t-[#4AB5A3] aspect-video bg-[#34495e]/70 transition-transform duration-500">
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent" />
+                  <span className="text-white text-xs absolute bottom-3 left-4 z-10 opacity-90">Video kommer snart</span>
                 </div>
                 <div className="p-6">
                   <span className="bg-[#EBF2F6] text-[#002B49] px-3 py-1 rounded text-xs font-bold uppercase mb-3 inline-block">
@@ -115,10 +121,10 @@ export default function Pilot() {
                 </div>
               </div>
 
-              <div className="bg-white border border-gray-200 rounded-xl shadow-lg hover:shadow-2xl hover:-translate-y-2 transition-all duration-500 overflow-hidden border-t-[6px] border-t-[#4AB5A3] animate-fade-in-up delay-300 group">
-                <div className="bg-[#27ae60] h-[180px] flex items-end p-4 relative overflow-hidden group-hover:scale-105 transition-transform duration-500">
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div>
-                  {/* <span className="text-white text-sm absolute bottom-3 left-4 z-10">Video: Veien til jobb</span> */}
+              <div className="bg-white border border-gray-200 rounded-xl shadow-lg hover:shadow-2xl hover:-translate-y-2 transition-all duration-500 overflow-hidden animate-fade-in-up delay-300 group">
+                <div className="relative w-full overflow-hidden rounded-t-xl border-t-[6px] border-t-[#4AB5A3] aspect-video bg-[#27ae60] transition-transform duration-500">
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent" />
+                  <span className="text-white text-xs absolute bottom-3 left-4 z-10 opacity-90">Video kommer snart</span>
                 </div>
                 <div className="p-6">
                   <span className="bg-[#EBF2F6] text-[#002B49] px-3 py-1 rounded text-xs font-bold uppercase mb-3 inline-block">
