@@ -20,28 +20,28 @@ export default async function LeaderSection({ leaders }: { leaders: Tiltak['cour
       {leaders.map((courseLeader, index) => (
         <div
           key={index}
-          className=' rounded-xl p-8 shadow-lg border-3 border-jobloop-primary-green '
+          className='rounded-xl p-5 md:p-6 shadow-lg border-2 border-jobloop-primary-green'
         >
-          <div className='flex flex-col md:flex-row items-center gap-8'>
-            <div className='w-full lg:w-1/3 flex justify-center'>
-              <div className='relative overflow-hidden rounded-xl shadow-lg group bg-linear-to-br from-jobloop-primary-green/20 to-jobloop-primary-orange/20'>
+          <div className='flex flex-col md:flex-row items-center gap-5 md:gap-6'>
+            <div className='w-full md:w-1/3 flex justify-center flex-shrink-0'>
+              <div className='relative overflow-hidden rounded-lg shadow-md group bg-linear-to-br from-jobloop-primary-green/20 to-jobloop-primary-orange/20'>
                 {courseLeader.image ? (
                   <Image
                     src={
                       typeof courseLeader.image === 'string'
                         ? courseLeader.image
-                        : urlFor(courseLeader.image).width(400).url()
+                        : urlFor(courseLeader.image).width(300).url()
                     }
-                    width={400}
-                    height={400}
+                    width={300}
+                    height={300}
                     alt={courseLeader.image?.alt || `Bilde av ${courseLeader.name}`}
-                    className='object-cover w-64 h-64 lg:w-80 lg:h-80 group-hover:scale-105 transition-transform duration-300'
+                    className='object-cover w-32 h-32 sm:w-40 sm:h-40 lg:w-44 lg:h-44 group-hover:scale-105 transition-transform duration-300'
                   />
                 ) : (
-                  <div className='w-64 h-64 lg:w-80 lg:h-80 flex items-center justify-center'>
+                  <div className='w-32 h-32 sm:w-40 sm:h-40 lg:w-44 lg:h-44 flex items-center justify-center'>
                     <div className='text-center'>
-                      <div className='w-24 h-24 lg:w-32 lg:h-32 mx-auto mb-4 bg-jobloop-primary-green/30 rounded-full flex items-center justify-center'>
-                        <span className='text-2xl lg:text-4xl font-bold text-jobloop-primary-green'>
+                      <div className='w-16 h-16 sm:w-20 sm:h-20 mx-auto mb-2 bg-jobloop-primary-green/30 rounded-full flex items-center justify-center'>
+                        <span className='text-xl sm:text-2xl font-bold text-jobloop-primary-green'>
                           {courseLeader.name
                             ? courseLeader.name
                                 .split(' ')
@@ -50,24 +50,24 @@ export default async function LeaderSection({ leaders }: { leaders: Tiltak['cour
                             : ''}
                         </span>
                       </div>
-                      <p className='text-sm text-gray-600 font-medium'>{courseLeader.name}</p>
+                      <p className='text-xs sm:text-sm text-gray-600 font-medium'>{courseLeader.name}</p>
                     </div>
                   </div>
                 )}
-                <div className='absolute inset-0 bg-linear-to-t from-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300'></div>
+                <div className='absolute inset-0 bg-linear-to-t from-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300' />
               </div>
             </div>
-            <div className='w-full lg:w-2/3 space-y-4'>
+            <div className='w-full md:w-2/3 space-y-2 md:space-y-3 min-w-0'>
               <div>
-                <h3 className='text-kv-black text-xl md:text-2xl font-bold border-b-2 border-jobloop-primary-green w-fit pb-2'>
+                <h3 className='text-kv-black text-lg md:text-xl font-bold border-b-2 border-jobloop-primary-green w-fit pb-1.5'>
                   {courseLeader.position}
                 </h3>
               </div>
-              <p className='text-lg font-semibold text-jobloop-primary-green'>
+              <p className='text-base font-semibold text-jobloop-primary-green'>
                 {courseLeader.name}
               </p>
               {courseLeader.description && (
-                <div className='prose prose-lg max-w-none text-gray-700 leading-relaxed'>
+                <div className='prose prose-sm sm:prose max-w-none text-gray-700 leading-relaxed'>
                   <PortableText value={courseLeader.description} />
                 </div>
               )}

@@ -98,9 +98,15 @@ export default function Pilot() {
               </div>
 
               <div className="bg-white border border-gray-200 rounded-xl shadow-lg hover:shadow-2xl hover:-translate-y-2 transition-all duration-500 overflow-hidden animate-fade-in-up delay-200 group">
-                <div className="relative w-full overflow-hidden rounded-t-xl border-t-[6px] border-t-[#4AB5A3] aspect-video bg-[#34495e]/70 transition-transform duration-500">
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent" />
-                  <span className="text-white text-xs absolute bottom-3 left-4 z-10 opacity-90">Video kommer snart</span>
+                <div className="relative w-full overflow-hidden rounded-t-xl border-t-[6px] border-t-[#4AB5A3] transition-transform duration-500 bg-[#2c3e50] aspect-video">
+                  <iframe
+                    src="https://www.youtube.com/embed/9rvvNz67NxY?rel=0"
+                    title="Video: Fullføre VGS"
+                    className="absolute inset-0 w-full h-full"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowFullScreen
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent pointer-events-none" aria-hidden />
                 </div>
                 <div className="p-6">
                   <span className="bg-[#EBF2F6] text-[#002B49] px-3 py-1 rounded text-xs font-bold uppercase mb-3 inline-block">
