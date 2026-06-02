@@ -106,21 +106,22 @@ export default async function OmOss() {
           </div>
         </div>
       </section>
-      <section className=' flex flex-col gap-8 team-section'>
+      <section className='flex flex-col gap-8 team-section w-full'>
         <div className='w-fit mx-auto'>
           <h2 className='text-2xl md:text-3xl font-bold text-center'>
             {t('about.employees.title')}
           </h2>
           <div className='block w-full h-1 bg-jobloop-primary-orange mt-2 mb-6 mx-auto'></div>
         </div>
-        <div className='container flex  gap-8 md:grid-cols-3 lg:grid-cols-3 2xl:grid-cols-6'>
+
+        {/* La til mx-auto her for å midtstille hele containeren, og justify-items-center for penere plassering av kortene */}
+        {/* Beholder grid på mobil, men blir til en perfekt midtstilt flex-box på desktop */}
+        <div className='container mx-auto grid grid-cols-2 gap-8 md:flex md:flex-wrap md:justify-center px-5'>
           {teamData.map((person) => (
-            <TeamMember
-              key={person.name}
-              name={person.name}
-              role={person.role}
-              image={person.image}
-            />
+            // La på en valgfri md:w-48 (eller tilsvarende) så kortene beholder en fin størrelse i flex-layouten
+            <div key={person.name} className='w-full md:w-44 lg:w-48'>
+              <TeamMember name={person.name} role={person.role} image={person.image} />
+            </div>
           ))}
         </div>
       </section>
