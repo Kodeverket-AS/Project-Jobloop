@@ -12,7 +12,7 @@
     "employees": {
       "title": "Våre ansatte i Jobloop",
       "roles": {
-        "ceo": "Daglig Leder",
+        "ceo": "Administrerende Direktør",
         "course": "Kursleder",
         "team": "Teamleder",
         "market": "Markedsutvikler"
@@ -42,7 +42,7 @@
     },
     "contactUs": {
       "title": "Ønsker du å samarbeide med oss?",
-      "text": "Vi er er alltid klar for å finne de gode løsningene! Christer er ansvarlig for bedriftsmarkedet og kan sørge for at vi spisser et par kandidater etter din tech-stack og behov. Inger-Johanne kan alt om Kodehode og Kim om våre Spillbaserte tilnærminger. Karl-Håkon hjelper deg i gang med Medarbeiderskap. Du kan også se hvem som er ansvarlig kursleder i din by på siden for de ulike tiltakene eller under “kontakt oss”.",
+      "text": "Vi er er alltid klar for å finne de gode løsningene! Christer er ansvarlig for bedriftsmarkedet og kan sørge for at vi spisser et par kandidater etter din tech-stack og behov. Inger-Johanne kan alt om Kodehode og Kim om våre Spillbaserte tilnærminger. Du kan også se hvem som er ansvarlig kursleder i din by på siden for de ulike tiltakene eller under “kontakt oss”.",
       "cta": "Kontakt Oss"
     },
     "locations": {
