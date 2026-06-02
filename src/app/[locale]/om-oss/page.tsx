@@ -19,9 +19,9 @@ export default async function OmOss() {
 
   const teamData = [
     { name: 'Sina', role: t('about.employees.roles.ceo'), image: Sina },
-    { name: 'Karl Haakon', role: t('about.employees.roles.market'), image: Karl },
+    // { name: 'Karl Haakon', role: t('about.employees.roles.market'), image: Karl },
     { name: 'Inger Johanne', role: t('about.employees.roles.team'), image: Inger },
-    { name: 'Beate', role: t('about.employees.roles.course'), image: Beate },
+    // { name: 'Beate', role: t('about.employees.roles.course'), image: Beate },
     { name: 'Oda Kristin', role: t('about.employees.roles.course'), image: Oda },
     { name: 'Kim', role: t('about.employees.roles.course'), image: Kim },
   ];
@@ -113,7 +113,7 @@ export default async function OmOss() {
           </h2>
           <div className='block w-full h-1 bg-jobloop-primary-orange mt-2 mb-6 mx-auto'></div>
         </div>
-        <div className='container grid grid-cols-2 gap-8 md:grid-cols-3 lg:grid-cols-3 2xl:grid-cols-6'>
+        <div className='container flex  gap-8 md:grid-cols-3 lg:grid-cols-3 2xl:grid-cols-6'>
           {teamData.map((person) => (
             <TeamMember
               key={person.name}

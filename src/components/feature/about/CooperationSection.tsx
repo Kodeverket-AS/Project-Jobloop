@@ -45,13 +45,7 @@ export function CooperationSection() {
       <div className='container mx-auto px-4 flex flex-col lg:flex-row items-center lg:items-start'>
         <div className='relative w-full md:w-64 h-64 mb-24 lg:mb-0 lg:mr-12'>
           <div className='absolute top-0 left-[-20px] team-photo slide-left'>
-            <Image
-              src='/Karl.webp'
-              alt='Karl Håkon'
-              width={150}
-              height={150}
-              className='rounded-full'
-            />
+            <Image src='/Kim.jpg' alt='Kim' width={150} height={150} className='rounded-full' />
           </div>
           <div className='absolute top-0 right-[-20px] team-photo slide-right'>
             <Image
