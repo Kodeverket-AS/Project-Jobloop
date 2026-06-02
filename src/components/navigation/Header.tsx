@@ -1,5 +1,6 @@
 'use client';
 
+import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import { useTranslations } from 'next-intl';
@@ -8,6 +9,13 @@ import { HamburgerMenu } from './Hamburger';
 import LocaleMenu from '../ui/menu/LocaleMenu';
 
 export function Header() {
+  // Sjekker om vi er i juni (måned nummer 5 i JS: jan=0, feb=1 ... juni=5)
+  const [isJune, setIsJune] = useState(false);
+
+  useEffect(() => {
+    setIsJune(new Date().getMonth() === 5);
+  }, []);
+
   // Apply specific colors on homepage... /shrug
   const pathname = usePathname();
   const isLanding = pathname === '/';
@@ -46,20 +54,47 @@ export function Header() {
       aria: t('navigation.sverige.aria'),
     },
   ];
+
   return (
     <header
       className={`${isLanding ? 'absolute top-0 z-50' : ''} w-full px-5 lg:px-7 ${isKiKurs ? 'bg-jobloop-primary-green/20' : ''}`}
     >
       <div className='flex items-center justify-between max-w-[1536px] mx-auto'>
         <div className='p-4'>
-          <Link href='/' aria-label='Gå til landingssiden'>
+          <Link href='/' aria-label='Gå til landingssiden' className='relative inline-block'>
             <Image
-              className='w-28 lg:w-36'
+              className='w-28 lg:w-36 h-auto'
               src={isLanding ? '/logoJobloopHvit.svg' : '/JobloopFarge.svg'}
               width={350}
               height={220}
-              alt='Jobloop Logo'
+              alt={isJune ? 'Jobloop Logo med Pride-regnbue' : 'Jobloop Logo'}
             />
+
+            {/* Vaktmester-spesial: Vises kun i juni måned */}
+            {isJune && (
+              <svg
+                viewBox='0 0 100 20'
+                className='absolute top-[-4px] left-[35%] w-[63%] h-auto pointer-events-none select-none'
+              >
+                <defs>
+                  <linearGradient id='pride-rainbow' x1='0%' y1='0%' x2='100%' y2='0%'>
+                    <stop offset='0%' stopColor='#E40303' />
+                    <stop offset='16.6%' stopColor='#FF8C00' />
+                    <stop offset='33.3%' stopColor='#FFED00' />
+                    <stop offset='50%' stopColor='#008026' />
+                    <stop offset='66.6%' stopColor='#004CFF' />
+                    <stop offset='100%' stopColor='#732982' />
+                  </linearGradient>
+                </defs>
+                <path
+                  d='M 3,18 Q 50,2 97,18'
+                  fill='none'
+                  stroke='url(#pride-rainbow)'
+                  strokeWidth='5'
+                  strokeLinecap='round'
+                />
+              </svg>
+            )}
           </Link>
         </div>
         <div>
