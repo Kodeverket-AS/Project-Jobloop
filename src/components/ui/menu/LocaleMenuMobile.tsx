@@ -13,7 +13,7 @@ export default function LocaleMenuMobile() {
 
   // State
   const [isPending, startTransition] = useTransition();
-  const container = useRef<HTMLDivElement>(null);
+  const container = useRef<HTMLLIElement>(null);
 
   // Gather info
   const router = useRouter();
@@ -35,34 +35,43 @@ export default function LocaleMenuMobile() {
   }
 
   return (
-    <span
+    <li
       ref={container}
       className='flex flex-col pt-12 border-t border-jobloop-primary-green'
     >
       <p className='font-bold text-center text-jobloop-secondary-green'>{t('changeLocale')}</p>
-      {routing.locales.map((locale) => (
-        <button
-          key={locale}
-          tabIndex={0}
-          disabled={isPending}
-          onClick={() => onSelectChange(locale)}
-          aria-label={`Click to select ${t('locales', { locale })} as your language`}
-          className={`
-            group flex gap-2 items-center py-2 px-4 rounded-md
-            ${curLocale === locale ? "bg-jobloop-primary-green/50" : ""}
-            cursor-pointer
-          `}
-        >
-          <Image
-            src={`/images/flags/${locale}.svg`}
-            height={20}
-            width={24}
-            alt={`Picture of ${t('locales', { locale: locale })}s flag`}
-            className='rounded-md'
-          />
-          <p className='group-hover:underline duration-200'>{t('locales', { locale: locale })}</p>
-        </button>
-      ))}
-    </span>
+      <ul className='flex flex-col items-stretch'>
+        {routing.locales.map((locale) => (
+          <li
+            key={locale}
+          >
+            {/* TODO: Add hover/touch styles for visual touch feedback for mobile. */}
+            <button // TODO: Figure out if switching to <a> is better.
+              key={locale}
+              tabIndex={0}
+              disabled={isPending}
+              onClick={() => onSelectChange(locale)}
+              aria-label={`Click to select ${t('locales', { locale })} as your language`}
+              className={`
+                group flex gap-2 items-center py-2 px-4 rounded-md w-full
+                ${curLocale === locale ? "bg-jobloop-primary-green/50" : ""}
+                cursor-pointer
+              `}
+              // TODO: Add hreflang attribute for SEO.
+              lang={locale}
+            >
+              <Image
+                src={`/images/flags/${locale}.svg`}
+                height={20}
+                width={24}
+                alt={`Picture of ${t('locales', { locale: locale })}s flag`}
+                className='rounded-md'
+              />
+              <p className='group-hover:underline duration-200'>{t('locales', { locale: locale })}</p>
+            </button>
+          </li>
+        ))}
+      </ul>
+    </li>
   );
 }

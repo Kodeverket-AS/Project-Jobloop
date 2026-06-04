@@ -3,6 +3,7 @@
 import Image, { type StaticImageData } from 'next/image';
 import ButtonCTA from './ButtonCTA';
 import { useTranslations } from 'next-intl';
+import Link from 'next/link';
 
 interface IntroSection {
   title: string;
@@ -33,38 +34,9 @@ export function IntroSection({
   const t1 = useTranslations('landing');
 
   return (
-    <div className='flex flex-col gap-6   lg:flex-row lg:gap-12 rounded-xl'>
-      {ifImageLink ? (
-        <a
-          href={imageLinkPath}
-          target='_blank'
-          title='Klikk bilde for å lese mer om FERD prisen her'
-          className='relative w-full lg:w-1/2 overflow-hidden group saturate-100 hover:saturate-150'
-        >
-          <div className='absolute z-10 p-4 transition-all rounded-b-2xl duration-500 bottom-0 lg:-bottom-20 lg:group-hover:-bottom-0 left-0 w-full h-20 bg-black/70'>
-            <h3 className='text-kv-white text-center '>{t1('intro.award')}</h3>
-          </div>
-          <Image
-            alt={alt}
-            src={image}
-            width={1500}
-            height={700}
-            className='max-w-full h-112 object-cover rounded-xl shadow-lg shadow-gray-300/50 hover:shadow-xl hover:shadow-gray-400/50 transition-all duration-500 hover:scale-[1.02]'
-          />
-        </a>
-      ) : (
-        <div className='w-full lg:w-1/2'>
-          <Image
-            alt={alt}
-            src={image}
-            width={1000}
-            height={500}
-            className='max-w-full h-96 object-cover rounded-xl shadow-lg shadow-gray-300/50 hover:shadow-xl hover:shadow-gray-400/50 transition-all duration-500 hover:scale-[1.02]'
-          />
-        </div>
-      )}
-
-      <div className='flex flex-col gap-4 w-full lg:w-1/2 justify-center'>
+    <div className='flex flex-col gap-[calc(var(--spacing)*6)] lg:gap-[calc(var(--spacing)*12)] lg:flex-row le:gap-12 rounded-xl'>
+      <section className='flex flex-col gap-4 w-full lg:w-1/2 justify-center'>
+      {/* TODO: Try to move the figure into the section, but ensure that the section is followed by a h2 element. */}
         <h2 className='text-kv-black text-xl md:text-2xl lg:text-3xl border-b-2 md:border-b-4 pb-2 border-jobloop-primary-green w-fit'>
           {title}
         </h2>
@@ -77,7 +49,38 @@ export function IntroSection({
             btnVariant={btnVariant}
           />
         )}
-      </div>
+      </section>
+      {ifImageLink ? (
+        <Link
+          href={imageLinkPath}
+          target='_blank'
+          rel='noopener noreferrer'
+          aria-label={t1('intro.award')}
+          className='w-full lg:w-1/2 order-first block saturate-100 hover:saturate-150'
+        >
+          <figure className='relative group overflow-hidden rounded-xl'>
+            <Image
+              alt={alt}
+              src={image}
+              width={1500}
+              height={700}
+              className='max-w-full h-112 object-cover shadow-lg shadow-gray-300/50 hover:shadow-xl hover:shadow-gray-400/50 transition-all duration-500 hover:scale-[1.02]'
+            />
+            <figcaption className='absolute z-10 p-4 transition-all rounded-b-2xl duration-500 bottom-0 lg:-bottom-20 lg:group-hover:bottom-0 left-0 w-full h-20 bg-black/70 text-kv-white text-center lg:text-[1.4rem] font-bold md:text-[1.1rem]'>
+              {t1('intro.award')}
+            </figcaption>
+          </figure>
+        </Link>
+      ) : (
+        <Image
+          alt={alt}
+          src={image}
+          width={1000}
+          height={500}
+          className='w-full lg:w-1/2 order-first block saturate-100 hover:saturate-150 rounded-xl max-w-full h-96 object-cover shadow-lg shadow-gray-300/50 hover:shadow-xl hover:shadow-gray-400/50 transition-all duration-500 hover:scale-[1.02]'
+          // TODO: Add aria-label
+        />
+      )}
     </div>
   );
 }

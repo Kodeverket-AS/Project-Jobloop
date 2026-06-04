@@ -6,10 +6,10 @@ interface QuoteProps {
 
 export function QuoteCard({ name, company, text }: QuoteProps) {
   return (
-    <div className='flex flex-col w-full gap-1 md:w-1/3 '>
-      <h4 className='text-xl text-kv-black'>{name}</h4>
-      <p className='text-xs text-kv-black'>{company}</p>
+    <section className='flex flex-col w-full gap-1 md:w-1/3 '>
+      <h3 className='!text-[1.25rem] leading-[calc(1.75/1.25)] text-kv-black'>{name}</h3>
+      <p className='text-xs leading-[calc(1.25/1)] text-kv-black'>{company}</p>
       <q className='italic'>{text}</q>
-    </div>
+    </section>
   );
 }

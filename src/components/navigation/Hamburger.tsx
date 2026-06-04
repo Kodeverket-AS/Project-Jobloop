@@ -46,7 +46,7 @@ export function HamburgerMenu({ links, altColor }: MenuProps) {
           <button
             className='absolute top-4 right-4 w-10 h-10'
             onClick={() => setIsOpen(!isOpen)}
-            aria-label='Lukke navigasjonsmeny'
+            aria-label='Lukke navigasjonsmeny' // TODO: Figure out how to have this also translate.
           >
             <IoCloseSharp
               className={`${
@@ -55,24 +55,31 @@ export function HamburgerMenu({ links, altColor }: MenuProps) {
             />
           </button>
           <div className='flex flex-col items-center gap-12 py-12 overflow-scroll'>
-            <nav className='flex flex-col items-center gap-8'>
-            {links.map(({ label, href, aria }) => (
-              <Link
-                key={label}
-                href={href}
-                aria-label={aria}
-                className='text-xl font-bold text-jobloop-secondary-green group w-fit'
-                onClick={() => {
-                  setIsOpen(false);
-                }}
-              >
-                {label}
-              </Link>
-            ))}
-          </nav>
-          <LocaleMenuMobile />
+            <nav>
+              <ul className='flex flex-col items-center gap-8'>
+                {links.map(({ label, href, aria }, index) => (
+                  <li
+                    key={label}
+                    className={index === links.length - 1 ? 'pb-4' : 'pb-0'}
+                  >
+                    {/* TODO: Add hover/touch styles for visual touch feedback for mobile. */}
+                    <Link
+                      key={label}
+                      href={href}
+                      aria-label={aria}
+                      className='text-xl font-bold text-jobloop-secondary-green group w-fit hover:underline'
+                      onClick={() => {
+                        setIsOpen(false);
+                      }}
+                    >
+                      {label}
+                    </Link>
+                  </li>
+                ))}
+                <LocaleMenuMobile />
+              </ul>
+            </nav>
           </div>
-          
         </div>
       </div>
     </div>
