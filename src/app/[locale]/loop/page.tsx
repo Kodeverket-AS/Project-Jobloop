@@ -15,7 +15,7 @@ export default async function Loop({ params }: { params: Promise<{ locale: strin
   if (!tiltak) return notFound();
 
   return (
-    <main className='flex flex-col items-center gap-16 w-full max-w-[1536px] mx-auto my-16'>
+    <main id='main' className='flex flex-col items-center gap-16 w-full max-w-[1536px] mx-auto my-16'>
       <HeroSub {...tiltak} />
     </main>
   );

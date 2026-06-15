@@ -87,7 +87,7 @@ export default function GjensidigePilot() {
 
   return (
     <>
-      <main className='verktoykasse-page'>
+      <main id='main' className='verktoykasse-page'>
         <header className='pilot-header' style={{ backgroundColor: '#002B49' }}>
           <div className='header-content'>
             <div className='header-spacer' aria-hidden="true" />

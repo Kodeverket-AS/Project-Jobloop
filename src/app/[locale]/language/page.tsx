@@ -22,7 +22,7 @@ export default async function Page({ params }: { params: Promise<{ locale: strin
   if (!tiltak) return notFound();
 
   return (
-    <main>
+    <main id='main'>
       <h1>language test page</h1>
       <HeroSub {...tiltak} />
     </main>

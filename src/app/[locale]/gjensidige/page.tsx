@@ -25,7 +25,7 @@ export default function Pilot() {
         </div>
       </header>
 
-      <main className="max-w-[1536px] px-4 py-16 flex flex-col items-center gap-16 w-full mx-auto">
+      <main id='main' className="max-w-[1536px] px-4 py-16 flex flex-col items-center gap-16 w-full mx-auto">
         <section className="bg-gradient-to-b from-[#002B49] to-[#001f35] text-white py-16 px-5 w-full rounded-2xl text-center relative overflow-hidden">
           <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/5 to-transparent animate-shimmer bg-[length:200%_100%] rounded-2xl"></div>
           <div className="max-w-4xl mx-auto relative z-10">
