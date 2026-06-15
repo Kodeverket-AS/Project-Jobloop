@@ -27,9 +27,10 @@ export const PartnerProjectReverse = ({
   return (
     <div className='flex flex-col-reverse gap-6   lg:flex-row lg:gap-12 '>
       <div className='flex flex-col gap-4 w-full lg:w-1/2 justify-center'>
-        <h2 className='text-kv-black text-xl md:text-2xl lg:text-3xl border-b-2 md:border-b-4 pb-2 border-jobloop-primary-green w-fit'>
+        {/* TODO: Check if these text-sizes are correct or not, as they get overwritten by the css */}
+        <h3 className='text-kv-black text-xl md:text-2xl lg:text-3xl border-b-2 md:border-b-4 pb-2 border-jobloop-primary-green w-fit !text-[2rem]'>
           {title}
-        </h2>
+        </h3>
         <p className='text-gray-600 text-base xl:leading-relaxed lg:text-lg'>
           {text}
         </p>

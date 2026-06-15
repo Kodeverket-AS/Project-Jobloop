@@ -60,9 +60,8 @@ export function Header() {
       className={`${isLanding ? 'absolute top-0 z-50' : ''} w-full px-5 lg:px-7 ${isKiKurs ? 'bg-jobloop-primary-green/20' : ''}`}
     >
       <Link
-        href="#main"
-        className="absolute left-0 top-0 bg-jobloop-primary-green text-white py-2 px-4 z-50 transform -translate-y-full focus:translate-y-0 transition"
-        // TODO: Add id="main" to all <main> elements.
+        href='#main'
+        className='absolute left-0 top-0 bg-jobloop-primary-green text-white py-2 px-4 z-50 transform -translate-y-full focus:translate-y-0 transition'
       >
         Skip to main content
       </Link>
