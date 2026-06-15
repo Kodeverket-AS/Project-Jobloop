@@ -8,8 +8,10 @@ import JobloopFafo from '@public/jobbloop-fafo.webp';
 export default async function JobloopSuccess() {
   const t = await getTranslations('landing');
 
+  // TODO: Clean up divs and reorder elements.
+  // TODO: Check that changing root div to section did not break any styles.
   return (
-    <div className='bg-linear-to-br from-jobloop-primary-green/10 via-white to-jobloop-primary-orange/10 border-2 border-jobloop-primary-green/20 rounded-2xl flex flex-col gap-12 px-8 py-12 md:flex-row md:items-center shadow-lg'>
+    <section className='bg-linear-to-br from-jobloop-primary-green/10 via-white to-jobloop-primary-orange/10 border-2 border-jobloop-primary-green/20 rounded-2xl flex flex-col gap-12 px-8 py-12 md:flex-row md:items-center shadow-lg'>
       <div className='w-full md:w-1/2 flex justify-center'>
         <div className='relative overflow-hidden rounded-xl shadow-md'>
           <Image
@@ -41,6 +43,6 @@ export default async function JobloopSuccess() {
           />
         </div>
       </div>
-    </div>
+    </section>
   );
 }

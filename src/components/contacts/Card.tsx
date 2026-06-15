@@ -21,6 +21,7 @@ export default function ContactCard({ contact }: { contact: Contacts }) {
   const fullName = `${fname} ${lname}`.trim();
   const phone = mobile || '';
 
+  // TODO: Add aria-label for title
   return (
     <article className='group rounded-xl border border-slate-200 bg-white shadow-xs hover:shadow-md transition-all duration-300 p-4 max-w-80 w-full flex flex-col hover:scale-105'>
       <div className='flex flex-col items-center text-center grow'>

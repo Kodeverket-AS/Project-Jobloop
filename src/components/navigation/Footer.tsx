@@ -26,6 +26,7 @@ export default async function Footer() {
     },
   ];
 
+  // TODO: Remove target='_blank' on mailto: links, it is unexpected behavior
   return (
     <footer className='w-full text-kv-white bg-jobloop-primary-grey'>
       <div className='mx-auto max-w-[1536px] px-4 md:px-8 lg:px-12'>

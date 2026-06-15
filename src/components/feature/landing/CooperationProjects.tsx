@@ -36,6 +36,14 @@ export default async function CooperationProjects() {
       btnText: t1('readMore'),
     },
   ];
+
+  // TODO: Add section and fix visual errors that will occur
+  /**
+   // BUG: btnVariant={partner.path ? 'externalLink' : 'internalLink'} is always
+   * 'externalLink' because partner.path is always a truthy string — including
+   * the internal /teamwork path. The TeamWork "Read more" button is rendered as
+   * an external link button when it should be internal.
+   */
   return (
     <>
       <h2 className='pb-2 border-b-4 border-jobloop-primary-green w-fit'>

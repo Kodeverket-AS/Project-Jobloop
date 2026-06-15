@@ -20,7 +20,10 @@ export function LinkButtonAnimatedWithIcon({ Path, Text }: ButtonProps) {
         style={{ transform: 'skewX(-45deg)', left: '-10%' }}
       ></div>
       <span className='relative z-10'>{Text}</span>
-      <LuMail className='inline-block h-5 lg:w-5' />
+      <LuMail
+        className='inline-block h-5 lg:w-5'
+        aria-hidden='true'
+      />
     </Link>
   );
 }

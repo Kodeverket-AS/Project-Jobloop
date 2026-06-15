@@ -11,6 +11,7 @@ export default async function HeroSub({
   introtext,
 }: Pick<Tiltak, 'image' | 'introtext' | 'heading'>) {
   const t = await getTranslations("dictionary")
+  // TODO: Check heading levels
   return (
     <div className='flex flex-col gap-6  lg:flex-row  rounded-xl'>
       <div className='w-full lg:w-1/2 flex items-center'>

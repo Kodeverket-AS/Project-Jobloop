@@ -6,9 +6,11 @@ import { getTranslations } from 'next-intl/server';
 export default async function LandingHero() {
   const t = await getTranslations('landing');
 
+  // TODO: Clean up divs and reorder elements.
+  // TODO: Check that changing root div to section did not break any styles.
   return (
     <>
-      <div className='w-full h-[45vh]  lg:-[50vh] 2xl:h-[60vh] min-h-[500px]  lg:min-h-[700px] relative mb-16'>
+      <section className='w-full h-[45vh]  lg:-[50vh] 2xl:h-[60vh] min-h-[500px]  lg:min-h-[700px] relative mb-16'>
         <div className='absolute top-0 left-0 w-full h-full -z-50'>
           <div className='absolute bg-linear-to-b from-[rgba(34,34,34,0.7)] to-[rgba(34,34,34,0.6)] z-50 h-full w-full' />
           <Image
@@ -32,7 +34,7 @@ export default async function LandingHero() {
             <LinkButtonAnimated Path={'#courses'} Text={t('hero.cta.courses')} />
           </div>
         </div>
-      </div>
+      </section>
     </>
   );
 }
