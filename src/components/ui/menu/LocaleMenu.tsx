@@ -39,6 +39,12 @@ export default function LocaleMenu({ altColor }: { altColor: boolean }) {
     });
   }
 
+  /**
+   * Problem: LocaleMenu dropdown has no keyboard Escape handler
+   * In LocaleMenu.tsx, the dropdown only closes via useClickOutside. Keyboard
+   * users expect Escape to close it.
+   // TODO: Add keyboard Escape handler to close the dropdown.
+   */
   return (
     <li ref={container} className='relative'>
       <button // TODO: Finn ut hvordan underline svg-elementet i tillegg.

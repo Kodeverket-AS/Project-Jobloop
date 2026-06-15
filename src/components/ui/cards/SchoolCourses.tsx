@@ -20,6 +20,15 @@ export function SchoolCoursesCard({
   isNew,
 }: SchoolCoursesCardProps) {
   const t = useTranslations('dictionary');
+  /**
+   * Problem: SchoolCoursesCard has a double link issue.
+   * In SchoolCourses.tsx and Courses.tsx, each card has two separate <a> tags
+   * pointing to the same path: one wrapping the image and one for the
+   * LesMerButton. Screen readers will announce two identical links per card.
+   * Suggested fix: add aria-hidden="true" and tabIndex={-1} to the image link,
+   * or make the whole card a single link.
+   // TODO: Fix double link issue, where screen-reader announces two links to the same content.
+   */
   return (
     <div className='group flex flex-col w-full gap-4 lg:gap-6 xl:flex-row-reverse bg-white rounded-xl shadow-sm hover:shadow-md border border-gray-50 p-6 transition-all duration-200 justify-between relative'>
       <div className='flex flex-col w-full gap-4 xl:w-1/2 justify-center'>
@@ -33,7 +42,11 @@ export function SchoolCoursesCard({
           {text}
         </p>
         <div className='pt-2'>
-          <LesMerButton Path={path} Text={t('readMore')} />
+          <LesMerButton
+            Path={path}
+            Text={t('readMore')}
+            Aria={`Les mer om ${title}`} // TODO: Translate aria-label
+          />
         </div>
       </div>
       <a

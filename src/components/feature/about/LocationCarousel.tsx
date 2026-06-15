@@ -22,6 +22,13 @@ export function LocationCarousel() {
     { name: 'Ålesund', src: '/Ålesund.webp' },
   ];
 
+  /**
+   * Problem: Location Carousel has no pause mechanism for motion-sensitive users
+   * In LocationCarousel.tsx, the Swiper carousel autoplays without checking
+   * prefers-reduced-motion or providing a pause button. This fails WCAG 2.2.2
+   * (Pause, Stop, Hide) and can be problematic for vestibular disorder users.
+   // TODO: Add a pause mechanism
+   */
   return (
     <section className=' w-full max-w-[1536px] mx-auto py-16 bg-linear-to-br from-jobloop-primary-green/50 via-white to-jobloop-primary-orange/50 rounded-xl'>
       <div className='container mx-auto px-4 text-center'>

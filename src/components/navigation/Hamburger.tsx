@@ -23,11 +23,33 @@ export function HamburgerMenu({ links, altColor }: MenuProps) {
   const menuRef = useRef<HTMLDivElement>(null);
   useClickOutside(menuRef, () => setIsOpen(false));
 
+  /**
+   * Problem: Right now the overlay stays mounted and is only moved off-screen
+   * with translate-x-full at Hamburger.tsx:61.
+   * That means its links and buttons may still exist in the accessibility tree
+   * when closed. The cleanest fix is to only render the overlay when isOpen is
+   * true, or otherwise mark it hidden/inert when closed. If you keep it
+   * mounted, the focus trap and modal semantics should only be active while
+   * open.
+   // TODO: Add translations for aria-labels
+
+   * Problem: Mobile menu overlay has no focus trap, no role, no Escape key
+   * The overlay div in Hamburger.tsx is missing:
+   * 
+   * role="dialog" and aria-modal="true" (screen readers will navigate behind the overlay)
+   * Focus trap (keyboard users can tab to content behind the overlay)
+   * Escape key handler to close the menu
+   * 
+   // TODO: Add role="dialog" and aria-modal="true" to the overlay div.
+   // TODO: Add focus trap.
+   // TODO: Add escape key handler to close the menu.
+   */
   return (
     <div className='block md:hidden'>
       <button
         className='flex items-center justify-center w-10 h-10 transition duration-500 rounded-xl top-4 right-4'
-        aria-label='Åpne mobil navigasjonsmeny'
+        aria-label='Åpne mobil navigasjonsmeny' // TODO: Add translation
+        aria-expanded={isOpen}
         onClick={() => setIsOpen(!isOpen)}
       >
         <GiHamburgerMenu
@@ -41,12 +63,16 @@ export function HamburgerMenu({ links, altColor }: MenuProps) {
           ${isOpen ? 'translate-x-0' : 'translate-x-full'}
         `}
         ref={menuRef}
+        role='dialog'
+        aria-modal='true'
+        aria-label='Mobil navigasjonsmeny' // TODO: Add translation
       >
         <div className='relative flex-1 flex flex-col justify-center'>
           <button
             className='absolute top-4 right-4 w-10 h-10'
             onClick={() => setIsOpen(!isOpen)}
-            aria-label='Lukke navigasjonsmeny' // TODO: Figure out how to have this also translate.
+            aria-label='Lukke navigasjonsmeny' // TODO: Add translation
+            aria-expanded={isOpen}
           >
             <IoCloseSharp
               className={`${

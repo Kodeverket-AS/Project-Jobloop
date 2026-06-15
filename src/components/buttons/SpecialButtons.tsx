@@ -20,12 +20,17 @@ export function KontaktButton({ Path, Text }: ButtonProps) {
       className='group flex items-center justify-center w-full gap-1 px-8 py-3 text-base tracking-normal text-center transition-all border-2 rounded-full scale-100 lg:hover:scale-105 group sm:w-fit text-kv-black bg-jobloop-primary-green hover:bg-jobloop-primary-green/0 border-jobloop-primary-green underline underline-offset-2 decoration-kv-black/0 hover:decoration-kv-black'
     >
       {Text}
-      <LuMail className='inline-block h-5 lg:w-5 transition-all group-hover:translate-x-1 group-hover:animate-pulse' />
+      <LuMail
+        className='inline-block h-5 lg:w-5 transition-all group-hover:translate-x-1 group-hover:animate-pulse'
+        aria-hidden='true'
+      />
     </Link>
   );
 }
 
 export function ExternalLinkButton({ Path, Text, Aria }: ButtonProps) {
+  // TODO: Check if it is too much with both aria-label and sr-only span.
+  // TODO: Need to check Aria property for all uses to ensure consistency.
   return (
     <a
       href={Path}
@@ -33,19 +38,29 @@ export function ExternalLinkButton({ Path, Text, Aria }: ButtonProps) {
       className='flex items-center justify-center w-full gap-1 px-8 py-3 text-base scale-100 lg:hover:scale-105 text-kv-black tracking-normal text-center transition-all duration-300 border-2 border-solid rounded-full sm:w-fit bg-kv-white border-jobloop-primary-green hover:bg-jobloop-primary-green hover:border-jobloop-primary-orange hover:shadow-lg shadow-md shadow-kv-black/20 focus:bg-jobloop-primary-green focus:text-kv-white'
     >
       {Text}
-      <BiLinkExternal className='inline-block h-5 lg:w-5 transition-transform duration-300 group-hover:scale-110' />
+      <span className='sr-only'>
+        (åpner i ny fane) {/* TODO: Translate */}
+      </span>
+      <BiLinkExternal
+        className='inline-block h-5 lg:w-5 transition-transform duration-300 group-hover:scale-110'
+        aria-hidden='true'
+      />
     </a>
   );
 }
 
-export function LesMerButton({ Path, Text = 'Les mer' }: Partial<ButtonProps>) {
+export function LesMerButton({ Path, Text = 'Les mer', Aria = '' }: Partial<ButtonProps>) {
   return (
     <a
       href={Path}
+      aria-label={Aria}
       className='w-full md:w-auto md:max-w-[155px] inline-flex items-center justify-center gap-3 px-6 py-3 bg-jobloop-primary-green text-white rounded-full hover:bg-jobloop-primary-orange hover:shadow-lg transition-all duration-300 group/btn hover:scale-105'
     >
       <span className='font-medium'>{Text}</span>
-      <FaArrowRight className='transition-transform duration-300 group-hover/btn:translate-x-1 group-hover/btn:scale-110' />
+      <FaArrowRight
+        className='transition-transform duration-300 group-hover/btn:translate-x-1 group-hover/btn:scale-110'
+        aria-hidden='true'
+      />
     </a>
   );
 }

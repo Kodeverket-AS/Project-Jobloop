@@ -55,6 +55,7 @@ export function Header() {
     },
   ];
 
+  // TODO: Add translation to skip-link!
   return (
     <header
       className={`${isLanding ? 'absolute top-0 z-50' : ''} w-full px-5 lg:px-7 ${isKiKurs ? 'bg-jobloop-primary-green/20' : ''}`}

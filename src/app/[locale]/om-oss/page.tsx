@@ -159,7 +159,12 @@ export default async function OmOss() {
                     {partner.text}
                   </p>
                   <div className='pt-2'>
-                    <LesMerButton Path={partner.link} Text={t('about.partners.cta.label')} />
+                    <LesMerButton
+                      Path={partner.link}
+                      Text={t('about.partners.cta.label')}
+                      Aria={`Les mer om ${partner.title}`} // TODO: Translate aria
+                      // TODO: Make it clear when link goes to an external site.
+                    />
                   </div>
                 </div>
               </div>

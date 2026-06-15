@@ -27,7 +27,11 @@ export function CoursesCard({ image, title, text, path, alt }: CoursesProps) {
         <h3 className='text-xl text-kv-black md:text-2xl font-semibold leading-tight'>{title}</h3>
         <p className='text-base text-gray-600 md:text-lg leading-relaxed'>{text}</p>
         <div className='pt-2'>
-          <LesMerButton Path={path} Text={t("readMore")}/>
+          <LesMerButton
+            Path={path}
+            Text={t("readMore")}
+            Aria={`Les mer om ${title}`} // TODO: Translate aria-label
+          />
         </div>
       </div>
     </div>

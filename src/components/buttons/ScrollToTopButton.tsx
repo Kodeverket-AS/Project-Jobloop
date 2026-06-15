@@ -19,10 +19,15 @@ export function ScrollToTopButton() {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   }
 
+  // TODO: Add translation for aria-label
+  // TODO: Consider adding a key-binding for accessing the button?
+  // TODO: If adding key-binding, should there be something announcing it at the start of the page?
   return (
     <button
       onClick={scrollToTop}
       aria-label='Scroll til toppen'
+      aria-hidden={!isVisible}
+      tabIndex={isVisible ? 0 : -1}
       className={` z-50 p-4 fixed md:bottom-20 bottom-4 right-4 xl:right-[calc((100vw-1536px)/2+1rem)] transition-all duration-200  bg-jobloop-primary-grey text-jobloop-primary-green rounded-full hover:scale-[0.90] border shadow ${
         isVisible ? 'opacity-100 ' : 'opacity-0 cursor-default'
       }`}

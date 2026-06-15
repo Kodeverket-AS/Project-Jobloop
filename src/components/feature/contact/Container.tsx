@@ -68,6 +68,15 @@ export default function ContactContainer({ data = [] }: { data: Contacts[] }) {
     return () => document.removeEventListener('keydown', onEsc);
   }, [onEsc]);
 
+  /**
+   * Problem: Contact page form inputs have no <label> elements
+   * In Container.tsx, the name <input> and department <select> only have
+   * placeholder text — no <label htmlFor> or aria-label. Placeholders vanish on
+   * input and are not reliably read by all screen readers.
+   // TODO: Add <label> elements or aria-labels for accessibility.
+   // TODO: Ensure that listed contacts show up as lists for each department!
+   // TODO: Consider using form element even if it does not submit traditionally.
+   */
   return (
     <div className='space-y-12 bg-linear-to-br from-jobloop-primary-green/5 via-white to-jobloop-primary-orange/5 p-8 rounded-2xl border border-jobloop-primary-green/10'>
       <div className='text-center mb-8'>
@@ -78,14 +87,21 @@ export default function ContactContainer({ data = [] }: { data: Contacts[] }) {
       <div className='bg-linear-to-br from-white to-gray-50 p-6 rounded-xl shadow-lg border border-jobloop-primary-green/20'>
         <div className='grid grid-cols-1 sm:grid-cols-3 gap-4 mb-6'>
           <div className='relative'>
+            <label htmlFor='name' className='sr-only'>
+              Søk etter ansatt {/* TODO: Add translation */}
+            </label>
             <input
+              id='name'
               ref={nameInput}
               onChange={doFilter}
               type='text'
               placeholder={t('search.input.placeholder')}
               className='w-full rounded-xl border-2 border-gray-200 bg-white px-4 py-3 text-base focus:outline-hidden focus:ring-2 focus:ring-jobloop-primary-green/60 focus:border-jobloop-primary-green transition-all duration-300 hover:border-jobloop-primary-green/50'
             />
-            <div className='absolute inset-y-0 right-0 flex items-center pr-3 pointer-events-none'>
+            <div
+              className='absolute inset-y-0 right-0 flex items-center pr-3 pointer-events-none'
+              aria-hidden='true'
+            >
               <svg
                 className='w-5 h-5 text-gray-400'
                 fill='none'
@@ -103,7 +119,11 @@ export default function ContactContainer({ data = [] }: { data: Contacts[] }) {
           </div>
 
           <div className='relative'>
+            <label htmlFor='department' className='sr-only'>
+              Velg avdeling {/* TODO: Add translation */}
+            </label>
             <select
+              id='department'
               ref={departmentSelect}
               onChange={doFilter}
               defaultValue=''
@@ -116,7 +136,10 @@ export default function ContactContainer({ data = [] }: { data: Contacts[] }) {
                 </option>
               ))}
             </select>
-            <div className='absolute inset-y-0 right-0 flex items-center pr-3 pointer-events-none'>
+            <div
+              className='absolute inset-y-0 right-0 flex items-center pr-3 pointer-events-none'
+              aria-hidden='true'
+            >
               <svg
                 className='w-5 h-5 text-gray-400'
                 fill='none'
