@@ -28,6 +28,7 @@ export function LocationCarousel() {
    * prefers-reduced-motion or providing a pause button. This fails WCAG 2.2.2
    * (Pause, Stop, Hide) and can be problematic for vestibular disorder users.
    // TODO: Add a pause mechanism
+   // TODO: Remove divs where possible and restructure.
    */
   return (
     <section className=' w-full max-w-[1536px] mx-auto py-16 bg-linear-to-br from-jobloop-primary-green/50 via-white to-jobloop-primary-orange/50 rounded-xl'>

@@ -8,6 +8,8 @@ interface ButtonProps {
   Text: string;
 }
 
+// TODO: See if this can be simplified together with SpecialButtons.tsx
+
 export function LinkButton({ Path, Text }: ButtonProps) {
   return (
     <Link

@@ -61,8 +61,13 @@ export default async function SchoolCourses() {
     },
   ];
 
+  // TODO: Remove divs where reasonable.
   return (
-    <section id='courses' className=' courses w-full max-w-[1536px] mx-auto'>
+    <section
+      id='courses' // TODO: Find out why this has an id.
+      className=' courses w-full max-w-[1536px] mx-auto'
+      aria-labelledby='courses-title'
+    >
       <div className='space-y-16'>
         <IntroSectionReverse
           image={Læringstilbud}
@@ -71,6 +76,7 @@ export default async function SchoolCourses() {
           path='/laringstilbud'
           isButton={false}
           alt={t('school.image.alt')}
+          headingId='courses-title'
         />
         <div className='grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-4 auto-rows-fr'>
           {courses.map((card, index) => (

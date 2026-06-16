@@ -37,16 +37,16 @@ export default async function CooperationProjects() {
     },
   ];
 
-  // TODO: Add section and fix visual errors that will occur
-  /**
-   // BUG: btnVariant={partner.path ? 'externalLink' : 'internalLink'} is always
-   * 'externalLink' because partner.path is always a truthy string — including
-   * the internal /teamwork path. The TeamWork "Read more" button is rendered as
-   * an external link button when it should be internal.
-   */
+  // TODO: Fix button styles
   return (
-    <>
-      <h2 className='pb-2 border-b-4 border-jobloop-primary-green w-fit'>
+    <section
+      className='w-full space-y-16 flex flex-col items-center'
+      aria-labelledby='collaborations-title'
+    >
+      <h2
+        id='collaborations-title'
+        className='pb-2 border-b-4 border-jobloop-primary-green w-fit'
+      >
         {t('collaborations.title')}
       </h2>
       {partners.map((partner, index) =>
@@ -54,18 +54,16 @@ export default async function CooperationProjects() {
           <PartnerProject
             key={partner.title + index}
             isButton
-            btnVariant={partner.path ? 'externalLink' : 'internalLink'}
             {...partner}
           />
         ) : (
           <PartnerProjectReverse
             key={partner.title + index}
             isButton
-            btnVariant={partner.path ? 'externalLink' : 'internalLink'}
             {...partner}
           />
         )
       )}
-    </>
+    </section>
   );
 }

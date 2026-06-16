@@ -68,15 +68,9 @@ export default function ContactContainer({ data = [] }: { data: Contacts[] }) {
     return () => document.removeEventListener('keydown', onEsc);
   }, [onEsc]);
 
-  /**
-   * Problem: Contact page form inputs have no <label> elements
-   * In Container.tsx, the name <input> and department <select> only have
-   * placeholder text — no <label htmlFor> or aria-label. Placeholders vanish on
-   * input and are not reliably read by all screen readers.
-   // TODO: Add <label> elements or aria-labels for accessibility.
-   // TODO: Ensure that listed contacts show up as lists for each department!
-   // TODO: Consider using form element even if it does not submit traditionally.
-   */
+
+  // TODO: Ensure that listed contacts show up as lists for each department!
+  // TODO: Consider using form element even if it does not submit traditionally.
   return (
     <div className='space-y-12 bg-linear-to-br from-jobloop-primary-green/5 via-white to-jobloop-primary-orange/5 p-8 rounded-2xl border border-jobloop-primary-green/10'>
       <div className='text-center mb-8'>

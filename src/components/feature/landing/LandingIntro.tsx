@@ -5,6 +5,7 @@ import { getTranslations } from 'next-intl/server';
 export default async function LandingIntro() {
   const t = await getTranslations('landing');
 
+  // TODO: Improve and translate intro image alt text.
   return (
     <IntroSection
       alt='Jobloop photo'

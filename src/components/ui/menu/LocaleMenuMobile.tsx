@@ -34,6 +34,10 @@ export default function LocaleMenuMobile() {
     });
   }
 
+  // TODO: Add keyboard Escape handler to close the dropdown.
+  // TODO: Add hover/touch styles for visual touch feedback for mobile.
+  // TODO: Switch language buttons to <a> elements for better semantics.
+  // TODO: Add hreflang attribute to language switchers.
   return (
     <li
       ref={container}
@@ -45,8 +49,7 @@ export default function LocaleMenuMobile() {
           <li
             key={locale}
           >
-            {/* TODO: Add hover/touch styles for visual touch feedback for mobile. */}
-            <button // TODO: Figure out if switching to <a> is better.
+            <button
               key={locale}
               tabIndex={0}
               disabled={isPending}
@@ -57,7 +60,6 @@ export default function LocaleMenuMobile() {
                 ${curLocale === locale ? "bg-jobloop-primary-green/50" : ""}
                 cursor-pointer
               `}
-              // TODO: Add hreflang attribute for SEO.
               lang={locale}
             >
               <Image

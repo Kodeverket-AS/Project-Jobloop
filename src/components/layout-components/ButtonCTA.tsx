@@ -15,6 +15,11 @@ interface ButtonCTAProps {
   Aria?: AriaAttributes['aria-label'];
 }
 
+const isExternalPath = (path: string) =>
+  /^https?:\/\//i.test(path) ||
+  path.startsWith('mailto:') ||
+  path.startsWith('tel:');
+
 const ButtonCTA = ({
   isButton,
   btnVariant,
@@ -26,10 +31,13 @@ const ButtonCTA = ({
     return null;
   }
 
+  const resolvedVariant =
+    btnVariant ?? (isExternalPath(Path) ? 'externalLink' : 'internalLink');
+
   let ButtonComponent;
   const ButtonComponentProps = { Path, Text, Aria };
 
-  switch (btnVariant) {
+  switch (resolvedVariant) {
     case 'externalLink':
       ButtonComponent = ExternalLinkButton;
       break;

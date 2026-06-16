@@ -44,10 +44,15 @@ export default function LocaleMenu({ altColor }: { altColor: boolean }) {
    * In LocaleMenu.tsx, the dropdown only closes via useClickOutside. Keyboard
    * users expect Escape to close it.
    // TODO: Add keyboard Escape handler to close the dropdown.
+   // TODO: Find out if it is possible to underline the svg-element in addition to the button.
+   // TODO: Switch language buttons to <a> elements for better semantics.
+   // TODO: Add hreflang attribute to language switchers.
+   // TODO: Improve and translate flag alt text.
+   // TODO: Translate locale button labels.
    */
   return (
     <li ref={container} className='relative'>
-      <button // TODO: Finn ut hvordan underline svg-elementet i tillegg.
+      <button
         tabIndex={0}
         onClick={() => setIsOpen(!isOpen)}
         className={`flex items-center gap-2 px-2 font-semibold text-xl md:hover:underline cursor-pointer uppercase ${altColor ? 'text-kv-white' : 'text-jobloop-primary-grey'} ${isPending ? 'animate-pulse' : ''}`}
@@ -63,14 +68,13 @@ export default function LocaleMenu({ altColor }: { altColor: boolean }) {
       >
         {routing.locales.map((locale) => (
           <li key={locale}>
-            <button // TODO: Figure out if switching to <a> is better.
+            <button
               key={locale}
               tabIndex={0}
               disabled={isPending}
               onClick={() => onSelectChange(locale)}
               aria-label={`Click to select ${t('locales', { locale })} as your language`}
               className='group flex gap-2 p-1 cursor-pointer text-jobloop-primary-grey'
-              // TODO: Add hreflang(?) attribute for SEO.
               lang={locale}
             >
               <Image

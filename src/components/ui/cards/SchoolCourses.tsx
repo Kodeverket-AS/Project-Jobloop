@@ -28,6 +28,8 @@ export function SchoolCoursesCard({
    * Suggested fix: add aria-hidden="true" and tabIndex={-1} to the image link,
    * or make the whole card a single link.
    // TODO: Fix double link issue, where screen-reader announces two links to the same content.
+   // TODO: Get rid of divs where reasonable.
+   // TODO: Translate aria-labels
    */
   return (
     <div className='group flex flex-col w-full gap-4 lg:gap-6 xl:flex-row-reverse bg-white rounded-xl shadow-sm hover:shadow-md border border-gray-50 p-6 transition-all duration-200 justify-between relative'>
@@ -45,7 +47,7 @@ export function SchoolCoursesCard({
           <LesMerButton
             Path={path}
             Text={t('readMore')}
-            Aria={`Les mer om ${title}`} // TODO: Translate aria-label
+            Aria={`Les mer om ${title}`}
           />
         </div>
       </div>

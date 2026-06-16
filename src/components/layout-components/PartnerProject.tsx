@@ -24,20 +24,18 @@ export const PartnerProject = ({
   btnVariant,
   btnText,
 }: PartnerProject) => {
+  // TODO: Remove divs where reasonable and reorganize.
+  // TODO: !!!Suggest removing reverse variant and just use flex order to style
   return (
-    <div className='flex flex-col gap-6   lg:flex-row lg:gap-12 '>
-      <div className='w-full lg:w-1/2'>
-        <Image
-          alt={alt}
-          src={image}
-          width={1000}
-          height={500}
-          className='max-w-full h-96 object-cover rounded-xl shadow-lg shadow-gray-300/50 hover:shadow-xl hover:shadow-gray-400/50 transition-all duration-500 hover:scale-[1.02]'
-        />
-      </div>
-      <div className='flex flex-col gap-4 w-full lg:w-1/2 justify-center'>
-        {/* TODO: Check if these text-sizes are correct or not, as they get overwritten by the css */}
-        <h3 className='text-kv-black max-sm:!text-[1.3rem] sm:!text-[2rem] md:text-2xl lg:text-3xl border-b-2 md:border-b-4 pb-2 border-jobloop-primary-green w-fit'>
+    <section
+      className='flex flex-col gap-6 lg:flex-row lg:gap-12'
+      aria-labelledby={'partner-title-' + title}
+    >
+      <div className='flex flex-col gap-4 w-full lg:w-1/2 justify-center order-last'>
+        <h3
+          id={'partner-title-' + title}
+          className='text-kv-black max-sm:!text-[1.3rem] sm:!text-[2rem] md:text-2xl lg:text-3xl border-b-2 md:border-b-4 pb-2 border-jobloop-primary-green w-fit'
+        >
           {title}
         </h3>
         <p className='text-gray-600 text-base xl:leading-relaxed lg:text-lg'>
@@ -52,6 +50,15 @@ export const PartnerProject = ({
           />
         )}
       </div>
-    </div>
+      <div className='w-full lg:w-1/2 order-first'>
+        <Image
+          alt={alt}
+          src={image}
+          width={1000}
+          height={500}
+          className='max-w-full h-96 object-cover rounded-xl shadow-lg shadow-gray-300/50 hover:shadow-xl hover:shadow-gray-400/50 transition-all duration-500 hover:scale-[1.02]'
+        />
+      </div>
+    </section>
   );
 };

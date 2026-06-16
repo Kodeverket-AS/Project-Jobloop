@@ -63,8 +63,13 @@ export default async function WorkCourses() {
     },
   ];
 
+  // TODO: Find out if the quotes should go up another heading level, and thus also work.quotes.title should use h3 instead (Are the quotes part of "Arbeidsrettede tilbud", or a separate section?).
+  // TODO: Add section to relevant parts.
   return (
-    <div className='space-y-16'>
+    <section
+      className='space-y-16'
+      aria-labelledby='work-title'
+    >
       <IntroSectionReverse
         title={t('work.title')}
         text={t('work.text')}
@@ -72,6 +77,7 @@ export default async function WorkCourses() {
         alt={t('work.image.alt')}
         path='/tilbud'
         isButton={false}
+        headingId='work-title'
       />
       <PartnerProject
         title={t('work.partner.title')}
@@ -90,16 +96,16 @@ export default async function WorkCourses() {
       </div>
 
       {/* Temporary Quotes Solution */}
-      <div className='relative flex flex-col gap-8 px-8 pt-8 pb-12 overflow-hidden border-2 rounded-xl bg-jobloop-primary-orange/5 border-jobloop-primary-orange text-kv-black lg:gap-12'>
+      <section className='relative flex flex-col gap-8 px-8 pt-8 pb-12 overflow-hidden border-2 rounded-xl bg-jobloop-primary-orange/5 border-jobloop-primary-orange text-kv-black lg:gap-12'>
         <h2 className='pb-2 mx-auto text-center border-b-4 border-jobloop-primary-orange w-fit'>
           {t("work.quotes.title")}
         </h2>
-        <div className='flex flex-col gap-8 md:flex-row'>
+        <ul className='flex flex-col gap-8 md:flex-row'>
           {quotes.map((quote, index) => (
             <QuoteCard key={`${quote.name}-${index}`} {...quote} />
           ))}
-        </div>
-      </div>
-    </div>
+        </ul>
+      </section>
+    </section>
   );
 }

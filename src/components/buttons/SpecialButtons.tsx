@@ -31,6 +31,7 @@ export function KontaktButton({ Path, Text }: ButtonProps) {
 export function ExternalLinkButton({ Path, Text, Aria }: ButtonProps) {
   // TODO: Check if it is too much with both aria-label and sr-only span.
   // TODO: Need to check Aria property for all uses to ensure consistency.
+  // TODO: Add a sr-only part to link buttons that adds more context (eg. Read more [about <topic>])
   return (
     <a
       href={Path}

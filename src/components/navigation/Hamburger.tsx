@@ -31,7 +31,6 @@ export function HamburgerMenu({ links, altColor }: MenuProps) {
    * true, or otherwise mark it hidden/inert when closed. If you keep it
    * mounted, the focus trap and modal semantics should only be active while
    * open.
-   // TODO: Add translations for aria-labels
 
    * Problem: Mobile menu overlay has no focus trap, no role, no Escape key
    * The overlay div in Hamburger.tsx is missing:
@@ -40,15 +39,17 @@ export function HamburgerMenu({ links, altColor }: MenuProps) {
    * Focus trap (keyboard users can tab to content behind the overlay)
    * Escape key handler to close the menu
    * 
-   // TODO: Add role="dialog" and aria-modal="true" to the overlay div.
-   // TODO: Add focus trap.
+   // TODO: Add hover/touch styles for visual touch feedback for mobile?
+   // TODO: Conditionally render the overlay only when isOpen is true.
    // TODO: Add escape key handler to close the menu.
+   // TODO: Add translations for aria-labels.
+   // TODO: Add focus trap.
    */
   return (
     <div className='block md:hidden'>
       <button
         className='flex items-center justify-center w-10 h-10 transition duration-500 rounded-xl top-4 right-4'
-        aria-label='Åpne mobil navigasjonsmeny' // TODO: Add translation
+        aria-label='Åpne mobil navigasjonsmeny'
         aria-expanded={isOpen}
         onClick={() => setIsOpen(!isOpen)}
       >
@@ -65,13 +66,13 @@ export function HamburgerMenu({ links, altColor }: MenuProps) {
         ref={menuRef}
         role='dialog'
         aria-modal='true'
-        aria-label='Mobil navigasjonsmeny' // TODO: Add translation
+        aria-label='Mobil navigasjonsmeny'
       >
         <div className='relative flex-1 flex flex-col justify-center'>
           <button
             className='absolute top-4 right-4 w-10 h-10'
             onClick={() => setIsOpen(!isOpen)}
-            aria-label='Lukke navigasjonsmeny' // TODO: Add translation
+            aria-label='Lukke navigasjonsmeny'
             aria-expanded={isOpen}
           >
             <IoCloseSharp
@@ -80,32 +81,29 @@ export function HamburgerMenu({ links, altColor }: MenuProps) {
               } text-kv-black rounded-full transition duration-500 z-50 w-12 h-12`}
             />
           </button>
-          <div className='flex flex-col items-center gap-12 py-12 overflow-scroll'>
-            <nav>
-              <ul className='flex flex-col items-center gap-8'>
-                {links.map(({ label, href, aria }, index) => (
-                  <li
+          <nav className='flex flex-col items-center gap-12 py-12 overflow-scroll'>
+            <ul className='flex flex-col items-center gap-8'>
+              {links.map(({ label, href, aria }, index) => (
+                <li
+                  key={label}
+                  className={index === links.length - 1 ? 'pb-4' : 'pb-0'}
+                >
+                  <Link
                     key={label}
-                    className={index === links.length - 1 ? 'pb-4' : 'pb-0'}
+                    href={href}
+                    aria-label={aria}
+                    className='text-xl font-bold text-jobloop-secondary-green group w-fit hover:underline'
+                    onClick={() => {
+                      setIsOpen(false);
+                    }}
                   >
-                    {/* TODO: Add hover/touch styles for visual touch feedback for mobile. */}
-                    <Link
-                      key={label}
-                      href={href}
-                      aria-label={aria}
-                      className='text-xl font-bold text-jobloop-secondary-green group w-fit hover:underline'
-                      onClick={() => {
-                        setIsOpen(false);
-                      }}
-                    >
-                      {label}
-                    </Link>
-                  </li>
-                ))}
-                <LocaleMenuMobile />
-              </ul>
-            </nav>
-          </div>
+                    {label}
+                  </Link>
+                </li>
+              ))}
+              <LocaleMenuMobile />
+            </ul>
+          </nav>
         </div>
       </div>
     </div>

@@ -26,7 +26,7 @@ export default async function Footer() {
     },
   ];
 
-  // TODO: Remove target='_blank' on mailto: links, it is unexpected behavior
+  // TODO: Remove divs where possible and restructure.
   return (
     <footer className='w-full text-kv-white bg-jobloop-primary-grey'>
       <div className='mx-auto max-w-[1536px] px-4 md:px-8 lg:px-12'>
@@ -95,7 +95,6 @@ export default async function Footer() {
                     <a
                       href={`mailto:${person.email}`}
                       className='text-gray-300 hover:text-jobloop-primary-green transition-colors duration-300 block'
-                      target='_blank'
                       aria-label={`Åpner email for å opprette epost til ${person.name}`}
                     >
                       {person.email}

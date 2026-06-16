@@ -8,27 +8,19 @@ import JobloopFafo from '@public/jobbloop-fafo.webp';
 export default async function JobloopSuccess() {
   const t = await getTranslations('landing');
 
-  // TODO: Clean up divs and reorder elements.
-  // TODO: Check that changing root div to section did not break any styles.
+  // TODO: Clean up divs
   return (
-    <section className='bg-linear-to-br from-jobloop-primary-green/10 via-white to-jobloop-primary-orange/10 border-2 border-jobloop-primary-green/20 rounded-2xl flex flex-col gap-12 px-8 py-12 md:flex-row md:items-center shadow-lg'>
-      <div className='w-full md:w-1/2 flex justify-center'>
-        <div className='relative overflow-hidden rounded-xl shadow-md'>
-          <Image
-            src={JobloopFafo}
-            width={1500}
-            height={500}
-            className='object-cover'
-            alt={t('success.image.alt')}
-          />
-        </div>
-      </div>
-      <div className='w-full md:w-1/2 space-y-6'>
-        <div>
-          <h2 className='text-2xl md:text-3xl font-bold text-kv-black pb-3 border-b-2 border-jobloop-primary-orange w-fit'>
-            {t('success.title')}
-          </h2>
-        </div>
+    <section
+      className='bg-linear-to-br from-jobloop-primary-green/10 via-white to-jobloop-primary-orange/10 border-2 border-jobloop-primary-green/20 rounded-2xl flex flex-col gap-12 px-8 py-12 md:flex-row md:items-center shadow-lg'
+      aria-labelledby='jobloop-success-title'
+    >
+      <div className='w-full md:w-1/2 space-y-6 order-last'>
+        <h2
+          id='jobloop-success-title'
+          className='text-2xl md:text-3xl font-bold text-kv-black pb-3 border-b-2 border-jobloop-primary-orange w-fit'
+        >
+          {t('success.title')}
+        </h2>
         <p className='text-lg leading-relaxed text-gray-700'>{t('success.text')}</p>
         <div className='space-y-4 pt-4'>
           <ExternalLinkButton
@@ -42,6 +34,15 @@ export default async function JobloopSuccess() {
             Aria='Menon Economics (2023)'
           />
         </div>
+      </div>
+      <div className='w-full md:w-1/2 flex justify-center relative overflow-hidden rounded-xl shadow-md'>
+        <Image
+          src={JobloopFafo}
+          width={1500}
+          height={500}
+          className='object-cover order-first'
+          alt={t('success.image.alt')}
+        />
       </div>
     </section>
   );

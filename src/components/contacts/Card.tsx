@@ -7,7 +7,7 @@ function formatTelHref(raw = '') {
 }
 
 export default function ContactCard({ contact }: { contact: Contacts }) {
-  // todo: don't override, instead conditionally render later
+  // TODO: don't override, instead conditionally render later
   const {
     fname = '',
     lname = '',
@@ -21,9 +21,13 @@ export default function ContactCard({ contact }: { contact: Contacts }) {
   const fullName = `${fname} ${lname}`.trim();
   const phone = mobile || '';
 
-  // TODO: Add aria-label for title
+  // TODO: Translate aria-labels.
+  // TODO: Remove divs where possible and restructure.
   return (
-    <article className='group rounded-xl border border-slate-200 bg-white shadow-xs hover:shadow-md transition-all duration-300 p-4 max-w-80 w-full flex flex-col hover:scale-105'>
+    <article
+      className='group rounded-xl border border-slate-200 bg-white shadow-xs hover:shadow-md transition-all duration-300 p-4 max-w-80 w-full flex flex-col hover:scale-105'
+      aria-labelledby={`contact-${fullName.replace(/\s+/g, '-').toLowerCase()}`}
+    >
       <div className='flex flex-col items-center text-center grow'>
         <div className='relative w-32 h-32 sm:w-36 sm:h-36 md:w-40 md:h-40 lg:w-44 lg:h-44 xl:w-48 xl:h-48 overflow-hidden rounded-full border-2 border-jobloop-primary-orange shadow-jobloop-primary-orange/15 group-hover:border-4 shadow-2xl transition-all duration-300'>
           <Image
@@ -35,7 +39,10 @@ export default function ContactCard({ contact }: { contact: Contacts }) {
           />
         </div>
 
-        <h3 className='mt-4 text-lg font-semibold leading-tight tracking-tight text-slate-900 group-hover:text-jobloop-primary-orange transition-colors duration-300'>
+        <h3
+          id={`contact-${fullName.replace(/\s+/g, '-').toLowerCase()}`}
+          className='mt-4 text-lg font-semibold leading-tight tracking-tight text-slate-900 group-hover:text-jobloop-primary-orange transition-colors duration-300'
+        >
           {fullName}
         </h3>
 
@@ -57,6 +64,7 @@ export default function ContactCard({ contact }: { contact: Contacts }) {
               href={`mailto:${email}`}
               className='block truncate px-1 hover:underline'
               title={`Send e-post til ${fullName}`}
+              aria-label={`Åpner email for å opprette epost til ${fullName}`}
             >
               {email}
             </a>
@@ -66,6 +74,7 @@ export default function ContactCard({ contact }: { contact: Contacts }) {
               href={`tel:${formatTelHref(phone)}`}
               className='block px-1 hover:underline'
               title={`Ring ${fullName}`}
+              aria-label={`Åpner telefon for å ringe ${fullName}`}
             >
               {phone}
             </a>
