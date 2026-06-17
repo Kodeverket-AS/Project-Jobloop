@@ -51,6 +51,7 @@ export function ExternalLinkButton({ Path, Text, Aria }: ButtonProps) {
 }
 
 export function LesMerButton({ Path, Text = 'Les mer', Aria = '' }: Partial<ButtonProps>) {
+  // TODO: Set up some way to add more context to the link
   return (
     <a
       href={Path}

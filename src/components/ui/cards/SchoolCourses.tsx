@@ -55,6 +55,7 @@ export function SchoolCoursesCard({
         href={path}
         className='w-full h-80 xl:w-1/2 relative overflow-hidden rounded-xl order-first'
       >
+        {/* TODO: Find out if i can put the button here instead, without it's link? */}
         <Image
           alt={alt}
           src={image}
