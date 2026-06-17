@@ -34,6 +34,7 @@ export function HamburgerMenu({ links, altColor }: MenuProps) {
 
   // TODO: Add hover/touch styles for visual touch feedback for mobile?
   // TODO: Add translations for aria-labels.
+  // BUG: Fix bonus scrollbars on chrome browser
   return (
     <div className='block md:hidden'>
       <button
