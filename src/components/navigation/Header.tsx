@@ -62,7 +62,7 @@ export function Header() {
     >
       <Link
         href='#main'
-        className='absolute left-0 top-0 bg-jobloop-primary-green text-white py-2 px-4 z-50 transform -translate-y-full focus:translate-y-0 transition'
+        className='absolute left-0 top-0 bg-jobloop-primary-green py-2 px-4 z-50 transform -translate-y-full focus:translate-y-0 transition'
       >
         Skip to main content
       </Link>

@@ -34,7 +34,12 @@ export default function LocaleMenuMobile() {
     });
   }
 
+  // Variable to avoid expected ts error in the Link element
+  const hrefPath = {pathname, params};
+
   // TODO: Add hover/touch styles for visual touch feedback for mobile.
+  // TODO: Test that onSelectChange is handled correctly.
+  // TODO: Test that isPending is handled correctly.
   return (
     <li
       ref={container}
@@ -51,7 +56,7 @@ export default function LocaleMenuMobile() {
           return (
             <li key={locale}>
               <Link
-                href={{pathname, params}}
+                href={hrefPath}
                 locale={locale}
                 hrefLang={locale}
                 lang={locale}
@@ -75,49 +80,20 @@ export default function LocaleMenuMobile() {
                     }
                 }
               >
+                <span className='order-last group-hover:underline duration-200'>
+                  {localeLabel}
+                </span>
                 <Image
                   src={`/images/flags/${locale}.svg`}
                   height={20}
                   width={24}
                   alt={`Picture of ${localeLabel} flag`}
-                  className='rounded-md'
+                  className='rounded-md order-first'
+                  aria-hidden='true'
                 />
-                <span className='group-hover:underline duration-200'>
-                  {localeLabel}
-                </span>
               </Link>
             </li>
           );
-          {// TODO: Ensure that isPending is handled correctly
-          // TODO: Ensure that onSelectChange is handled correctly
-          /*
-            <li
-              key={locale}
-            >
-              <button
-                key={locale}
-                tabIndex={0}
-                disabled={isPending}
-                onClick={() => onSelectChange(locale)}
-                aria-label={`Click to select ${t('locales', { locale })} as your language`}
-                className={`
-                  group flex gap-2 items-center py-2 px-4 rounded-md w-full
-                  ${curLocale === locale ? "bg-jobloop-primary-green/50" : ""}
-                  cursor-pointer
-                `}
-                lang={locale}
-              >
-                <Image
-                  src={`/images/flags/${locale}.svg`}
-                  height={20}
-                  width={24}
-                  alt={`Picture of ${t('locales', { locale: locale })}s flag`}
-                  className='rounded-md'
-                />
-                <p className='group-hover:underline duration-200'>{t('locales', { locale: locale })}</p>
-              </button>
-            </li>
-          */}
         })}
       </ul>
     </li>
