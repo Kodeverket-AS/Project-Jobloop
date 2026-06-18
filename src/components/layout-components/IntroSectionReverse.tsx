@@ -30,9 +30,8 @@ export function IntroSectionReverse({
   const t = useTranslations('dictionary');
   // TODO: Deal with divs
   return (
-    <section
+    <div
       className='flex flex-col-reverse gap-6  lg:flex-row lg:gap-12'
-      aria-labelledby={headingId}
     >
       <div className='flex flex-col gap-4 w-full lg:w-1/2 justify-center'>
         <h2
@@ -60,6 +59,6 @@ export function IntroSectionReverse({
           className='max-w-full h-96 object-cover rounded-xl shadow-lg shadow-gray-300/50 hover:shadow-xl hover:shadow-gray-400/50 transition-all duration-500 hover:scale-[1.02]'
         />
       </div>
-    </section>
+    </div>
   );
 }
