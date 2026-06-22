@@ -69,8 +69,7 @@ export default function ContactContainer({ data = [] }: { data: Contacts[] }) {
   }, [onEsc]);
 
 
-  // TODO: Ensure that listed contacts show up as lists for each department!
-  // TODO: Consider using form element even if it does not submit traditionally.
+  // TODO: Remove divs where possible
   return (
     <div className='space-y-12 bg-linear-to-br from-jobloop-primary-green/5 via-white to-jobloop-primary-orange/5 p-8 rounded-2xl border border-jobloop-primary-green/10'>
       <div className='text-center mb-8'>
@@ -78,7 +77,7 @@ export default function ContactContainer({ data = [] }: { data: Contacts[] }) {
         <p className='text-lg text-gray-600 max-w-2xl mx-auto'>{t('text')}</p>
       </div>
 
-      <div className='bg-linear-to-br from-white to-gray-50 p-6 rounded-xl shadow-lg border border-jobloop-primary-green/20'>
+      <form className='bg-linear-to-br from-white to-gray-50 p-6 rounded-xl shadow-lg border border-jobloop-primary-green/20'>
         <div className='grid grid-cols-1 sm:grid-cols-3 gap-4 mb-6'>
           <div className='relative'>
             <label htmlFor='name' className='sr-only'>
@@ -174,7 +173,7 @@ export default function ContactContainer({ data = [] }: { data: Contacts[] }) {
             </span>
           </div>
         )}
-      </div>
+      </form>
 
       <div className='space-y-16'>
         {Object.keys(groupByRole)

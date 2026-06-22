@@ -38,16 +38,14 @@ export function ContactGroup({ groupID, people = [] }: ContactGroupProps) {
 
   return (
     <section className={`space-y-8 mx-auto ${maxWidth}`}>
-      <div className='text-center'>
-        <h2 className='text-2xl md:text-3xl font-bold text-kv-black pb-2 border-b-2 md:border-b-4 border-jobloop-primary-green w-fit mx-auto'>
-          {groupName}
-        </h2>
-      </div>
-      <div className='grid gap-8 justify-center justify-items-center grid-cols-[repeat(auto-fit,minmax(220px,1fr))]'>
+      <h2 className='text-center text-2xl md:text-3xl font-bold text-kv-black pb-2 border-b-2 md:border-b-4 border-jobloop-primary-green w-fit mx-auto'>
+        {groupName}
+      </h2>
+      <ul className='grid gap-8 justify-center justify-items-center grid-cols-[repeat(auto-fit,minmax(220px,1fr))]'>
         {people.map((contact) => (
           <ContactCard key={contact._id} contact={contact} />
         ))}
-      </div>
+      </ul>
     </section>
   );
 }
