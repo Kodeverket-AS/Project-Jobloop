@@ -27,8 +27,16 @@ export function LocationCarousel() {
    * In LocationCarousel.tsx, the Swiper carousel autoplays without checking
    * prefers-reduced-motion or providing a pause button. This fails WCAG 2.2.2
    * (Pause, Stop, Hide) and can be problematic for vestibular disorder users.
+   * 
    // TODO: Add a pause mechanism
    // TODO: Remove divs where possible and restructure.
+   // TODO: Consider if adding buttons and/or pagination bullets for manual navigation is necessary for accessibility.
+   // TODO: Give the carousel entries a better description.
+   *
+   * Note: Is the carousel currently purely decorative? I would not say so, but
+   * it clearly does not provide proper information about the locations, nor
+   * does it provide a way to navigate somewhere one can get more information
+   * about them. How can we improve that?
    */
   return (
     <section className=' w-full max-w-[1536px] mx-auto py-16 bg-linear-to-br from-jobloop-primary-green/50 via-white to-jobloop-primary-orange/50 rounded-xl'>
