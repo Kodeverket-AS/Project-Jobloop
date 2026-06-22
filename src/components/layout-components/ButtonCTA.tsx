@@ -9,7 +9,7 @@ import {
 
 interface ButtonCTAProps {
   isButton: boolean;
-  btnVariant?: 'internalLink' | 'externalLink';
+  btnVariant?: 'internalLink' | 'externalLink' | 'readMorePill';
   Path: string;
   Text: string;
   Aria?: AriaAttributes['aria-label'];
@@ -43,6 +43,9 @@ const ButtonCTA = ({
       break;
     case 'internalLink':
       ButtonComponent = LinkButtonInternal;
+      break;
+    case 'readMorePill':
+      ButtonComponent = LesMerButton;
       break;
     default:
       ButtonComponent = LesMerButton;

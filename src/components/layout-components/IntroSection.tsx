@@ -12,7 +12,7 @@ interface IntroSection {
   alt: string;
   path: string;
   isButton: boolean;
-  btnVariant?: 'internalLink' | 'externalLink';
+  btnVariant?: 'internalLink' | 'externalLink' | 'readMorePill';
   btnText?: string;
   ifImageLink: boolean;
   imageLinkPath: string;

@@ -10,7 +10,7 @@ interface PartnerProject {
   alt: string;
   path: string;
   isButton: boolean;
-  btnVariant?: 'internalLink' | 'externalLink';
+  btnVariant?: 'internalLink' | 'externalLink' | 'readMorePill';
   btnText?: string;
 }
 

@@ -13,6 +13,7 @@ export default async function LandingIntro() {
       image={FSEVinnerPhoto}
       imageLinkPath='https://www.linkedin.com/posts/sina-erichsen-28403998_jobloop-finalist-activity-7148672163053580289-81Yo/?originalSubdomain=no'
       isButton
+      btnVariant='readMorePill'
       path='/om-oss'
       title={t('intro.title')}
       text={t('intro.text')}
