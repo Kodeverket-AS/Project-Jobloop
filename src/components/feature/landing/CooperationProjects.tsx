@@ -34,10 +34,10 @@ export default async function CooperationProjects() {
       alt: t('collaborations.teamwork.alt'),
       path: '/teamwork',
       btnText: t1('readMore'),
+      btnVariant: 'readMorePill' as const,
     },
   ];
 
-  // TODO: Fix button styles
   return (
     <section
       className='w-full space-y-16 flex flex-col items-center'

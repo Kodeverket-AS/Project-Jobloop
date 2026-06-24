@@ -1,6 +1,7 @@
 'use client';
 
 import Link from 'next/link';
+import { useTranslations } from 'next-intl';
 import { FaArrowRight } from 'react-icons/fa';
 import { BiLinkExternal } from 'react-icons/bi';
 import { LuMail } from 'react-icons/lu';
@@ -31,16 +32,19 @@ export function KontaktButton({ Path, Text }: ButtonProps) {
 export function ExternalLinkButton({ Path, Text, Aria }: ButtonProps) {
   // TODO: Check if it is too much with both aria-label and sr-only span.
   // TODO: Need to check Aria property for all uses to ensure consistency.
-  // TODO: Add a sr-only part to link buttons that adds more context (eg. Read more [about <topic>])
+  const t = useTranslations('dictionary');
+
   return (
     <a
       href={Path}
+      target='_blank'
+      rel='noopener noreferrer'
       aria-label={Aria}
       className='flex items-center justify-center w-full gap-1 px-8 py-3 text-base scale-100 lg:hover:scale-105 text-kv-black tracking-normal text-center transition-all duration-300 border-2 border-solid rounded-full sm:w-fit bg-kv-white border-jobloop-primary-green hover:bg-jobloop-primary-green hover:border-jobloop-primary-orange hover:shadow-lg shadow-md shadow-kv-black/20 focus:bg-jobloop-primary-green focus:text-kv-white'
     >
       {Text}
       <span className='sr-only'>
-        (åpner i ny fane) {/* TODO: Translate */}
+        ({t('opensInNewTab')})
       </span>
       <BiLinkExternal
         className='inline-block h-5 lg:w-5 transition-transform duration-300 group-hover:scale-110'
@@ -51,7 +55,12 @@ export function ExternalLinkButton({ Path, Text, Aria }: ButtonProps) {
 }
 
 export function LesMerButton({ Path, Text = 'Les mer', Aria = '' }: Partial<ButtonProps>) {
-  // TODO: Set up some way to add more context to the link
+  /**
+   * Problem: The current implementation does not provide enough context for screen readers.
+   * Solution: Consider adding a visually hidden span with additional context.
+   * 
+   // TODO: Add a sr-only part to link buttons that adds more context (eg. Read more [about <topic>])
+   */
   return (
     <a
       href={Path}

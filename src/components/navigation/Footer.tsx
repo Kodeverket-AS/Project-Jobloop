@@ -92,9 +92,9 @@ export default async function Footer() {
         </div>
         <div className='flex flex-row gap-8 lg:gap-12'>
           <section className='flex flex-col gap-6 w-2/3'>
-            <h3 className='text-2xl font-bold text-jobloop-primary-green'>
+            <h2 className='!text-[1.4rem] font-bold text-jobloop-primary-green'>
               {t('footer.links.title')}
-            </h3>
+            </h2>
             <ul className='flex flex-col gap-3'>
               {pageList.map((page) => (
                 <li key={page.name}>
@@ -110,18 +110,18 @@ export default async function Footer() {
             </ul>
           </section>
           <section className='flex flex-col gap-6 w-1/2'>
-            <h3 className='text-2xl font-bold text-jobloop-primary-green'>
+            <h2 className='!text-[1.4rem] font-bold text-jobloop-primary-green'>
               {t('footer.contacts.title')}
-            </h3>
+            </h2>
             <ul className='space-y-4'>
               {contactInformation.map((person) => (
                 <li
                   key={person.name}
                   className='border-l-2 border-jobloop-primary-green/30 pl-4'
                 >
-                  <h4 className='font-semibold text-white mb-1'>
+                  <h3 className='font-semibold text-white mb-1 !text-base'>
                     {person.name}
-                  </h4>
+                  </h3>
                   <a
                     href={`mailto:${person.email}`}
                     className='text-gray-300 hover:text-jobloop-primary-green transition-colors duration-300 block'

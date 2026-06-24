@@ -10,8 +10,8 @@ export default async function HeroSub({
   image,
   introtext,
 }: Pick<Tiltak, 'image' | 'introtext' | 'heading'>) {
-  const t = await getTranslations("dictionary")
-  // TODO: Check heading levels
+  const t = await getTranslations("dictionary");
+
   return (
     <div className='flex flex-col gap-6  lg:flex-row  rounded-xl'>
       <div className='w-full lg:w-1/2 flex items-center'>
@@ -24,9 +24,12 @@ export default async function HeroSub({
         />
       </div>
       <div className='flex flex-col gap-4 w-full lg:w-1/2 justify-center'>
-        <h2 className='text-kv-black text-xl md:text-2xl lg:text-3xl border-b-2 md:border-b-4 pb-2 border-jobloop-primary-green w-fit'>
+        <h1 className={`
+          w-fit pb-2 border-b-2 md:border-b-4 border-jobloop-primary-green
+          text-kv-black text-3xl !text-[1.3rem] sm:!text-[2rem]
+        `}>
           {heading ? heading : 'Tittel kommer her'}
-        </h2>
+        </h1>
         <div className='text-gray-600 text-base xl:leading-relaxed lg:text-xl'>
           {introtext ? (
             <PortableText value={introtext} />

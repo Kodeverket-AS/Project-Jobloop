@@ -38,8 +38,6 @@ export default function LocaleMenuMobile() {
   const hrefPath = {pathname, params};
 
   // TODO: Add hover/touch styles for visual touch feedback for mobile.
-  // TODO: Test that onSelectChange is handled correctly.
-  // TODO: Test that isPending is handled correctly.
   return (
     <li
       ref={container}

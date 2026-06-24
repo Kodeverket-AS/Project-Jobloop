@@ -1,6 +1,7 @@
 {
   "header": {
     "navigation": {
+      "skipLink": "Hoppa till sidans huvudinnehåll",
       "index": "Hjem",
       "about": {
         "label": "Om Oss",

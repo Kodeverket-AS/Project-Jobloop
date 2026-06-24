@@ -6,6 +6,9 @@ import CourseSummary from '@/components/CourseSummary';
 import Curriculum from '@/components/Curriculum';
 import LeaderSection from '@/components/feature/LeaderSection';
 
+// TODO: The "contact" button should go to an actual contact form, or at the very least highlight WHO to contact!
+// A quickfix could be by having the link automatically select the "Digitale Talenter" from the contact page dropdown.
+
 export async function generateStaticParams() {
   const result = await getTiltakById({ index: 2 });
   return result.map((tiltak) => ({ locale: tiltak.language ?? '' }));
