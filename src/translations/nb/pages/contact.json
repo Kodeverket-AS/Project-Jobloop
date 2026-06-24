@@ -10,9 +10,10 @@
   },
   "search": {
     "input": {
-      "placeholder": "Søk etter ansatt …"
+      "placeholder": "Søk etter ansatt"
     },
     "departments": {
+      "label": "Velg avdeling",
       "all": "Alle avdelinger"
     },
     "reset": {
@@ -21,7 +22,7 @@
     "filter": "Viser {filtered} av {total} ansatte",
     "empty": {
       "text": "Beklager, ditt søk ga ingen resultater.",
-      "label": "røv et annet søk"
+      "label": "Prøv et annet søk"
     }
   }
 }

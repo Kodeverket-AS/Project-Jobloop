@@ -61,6 +61,7 @@ export default async function Footer() {
     }
   ];
 
+  // TODO: Consider if adding a footer heading to gather its subheadings is appropriate.
   // TODO: Consider if using secondary nav-element could be correct here.
   // TODO: Remove divs where possible.
   // TODO: Translate aria-labels.

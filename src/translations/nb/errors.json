@@ -18,5 +18,8 @@
         }
       }
     }
+  },
+  "video": {
+    "noBrowserSupport": "Nettleseren din støtter ikke videoavspilling."
   }
 }

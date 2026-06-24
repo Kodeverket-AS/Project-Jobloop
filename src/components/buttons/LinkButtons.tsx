@@ -8,7 +8,7 @@ interface ButtonProps {
   Text: string;
 }
 
-// TODO: See if this can be simplified together with SpecialButtons.tsx
+// TODO: Clean up to loosely respect common line length standards to increase readability.
 
 export function LinkButton({ Path, Text }: ButtonProps) {
   return (

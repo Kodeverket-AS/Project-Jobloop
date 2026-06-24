@@ -10,9 +10,10 @@
   },
   "search": {
     "input": {
-      "placeholder": "Search for an employee …"
+      "placeholder": "Search for an employee"
     },
     "departments": {
+      "label": "Select department",
       "all": "All departments"
     },
     "reset": {

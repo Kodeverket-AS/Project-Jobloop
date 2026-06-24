@@ -39,7 +39,12 @@ export function LocationCarousel() {
    * about them. How can we improve that?
    */
   return (
-    <section className=' w-full max-w-[1536px] mx-auto py-16 bg-linear-to-br from-jobloop-primary-green/50 via-white to-jobloop-primary-orange/50 rounded-xl'>
+    <section
+      className={`
+        w-full max-w-[1536px] mx-auto py-16 rounded-xl bg-linear-to-br
+        from-jobloop-primary-green/50 via-white to-jobloop-primary-orange/50
+      `}
+    >
       <div className='container mx-auto px-4 text-center'>
         <h2 className='text-2xl md:text-3xl font-bold mb-4 text-kv-black'>
           {t('about.locations.title')}

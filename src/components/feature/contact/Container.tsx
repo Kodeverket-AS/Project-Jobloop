@@ -80,15 +80,18 @@ export default function ContactContainer({ data = [] }: { data: Contacts[] }) {
       <form className='bg-linear-to-br from-white to-gray-50 p-6 rounded-xl shadow-lg border border-jobloop-primary-green/20'>
         <div className='grid grid-cols-1 sm:grid-cols-3 gap-4 mb-6'>
           <div className='relative'>
-            <label htmlFor='name' className='sr-only'>
-              Søk etter ansatt {/* TODO: Add translation */}
+            <label
+              htmlFor='name'
+              className='sr-only'
+            >
+              {t('search.input.placeholder')}
             </label>
             <input
               id='name'
               ref={nameInput}
               onChange={doFilter}
               type='text'
-              placeholder={t('search.input.placeholder')}
+              placeholder={t('search.input.placeholder') + "…"}
               className='w-full rounded-xl border-2 border-gray-200 bg-white px-4 py-3 text-base focus:outline-hidden focus:ring-2 focus:ring-jobloop-primary-green/60 focus:border-jobloop-primary-green transition-all duration-300 hover:border-jobloop-primary-green/50'
             />
             <div
@@ -112,8 +115,11 @@ export default function ContactContainer({ data = [] }: { data: Contacts[] }) {
           </div>
 
           <div className='relative'>
-            <label htmlFor='department' className='sr-only'>
-              Velg avdeling {/* TODO: Add translation */}
+            <label
+              htmlFor='department'
+              className='sr-only'
+            >
+              {t('search.departments.label')}
             </label>
             <select
               id='department'

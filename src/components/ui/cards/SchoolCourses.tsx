@@ -32,7 +32,11 @@ export function SchoolCoursesCard({
    // TODO: Translate aria-labels
    */
   return (
-    <div className='group flex flex-col w-full gap-4 lg:gap-6 xl:flex-row-reverse bg-white rounded-xl shadow-sm hover:shadow-md border border-gray-50 p-6 transition-all duration-200 justify-between relative'>
+    <li className={`
+      group relative flex flex-col w-full p-6 gap-4 lg:gap-6 xl:flex-row-reverse
+      justify-between bg-white border border-gray-50 rounded-xl shadow-sm
+      hover:shadow-md transition-all duration-200
+    `}>
       <div className='flex flex-col w-full gap-4 xl:w-1/2 justify-center'>
         <h3 className='text-kv-black text-xl md:text-2xl'>
           {isNew && (
@@ -55,7 +59,6 @@ export function SchoolCoursesCard({
         href={path}
         className='w-full h-80 xl:w-1/2 relative overflow-hidden rounded-xl order-first'
       >
-        {/* TODO: Find out if i can put the button here instead, without it's link? */}
         <Image
           alt={alt}
           src={image}
@@ -66,13 +69,16 @@ export function SchoolCoursesCard({
       </a>
       {isNew && (
         <div
-          className='absolute top-4 left-4  bg-jobloop-primary-orange text-white px-6 py-2 text-md font-bold transform  z-10 shadow-lg'
+          className={`
+            absolute px-6 py-2 top-4 left-4 z-10 bg-jobloop-primary-orange
+            text-white text-md font-bold transform shadow-lg
+          `}
           style={{ transform: 'rotate(-20deg) translateX(-10px)' }}
           aria-hidden='true'
         >
           {t('new')}
         </div>
       )}
-    </div>
+    </li>
   );
 }

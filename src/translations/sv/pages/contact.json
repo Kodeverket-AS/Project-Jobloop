@@ -10,9 +10,10 @@
   },
   "search": {
     "input": {
-      "placeholder": "Sök efter anställd …"
+      "placeholder": "Sök efter anställd"
     },
     "departments": {
+      "label": "Välj avdelning",
       "all": "Alla avdelningar"
     },
     "reset": {

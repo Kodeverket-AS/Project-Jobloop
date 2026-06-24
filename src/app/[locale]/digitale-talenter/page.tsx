@@ -6,6 +6,7 @@ import CourseSummary from '@/components/CourseSummary';
 import Curriculum from '@/components/Curriculum';
 import LeaderSection from '@/components/feature/LeaderSection';
 
+// TODO: Add translation to video element fallback.
 // TODO: The "contact" button should go to an actual contact form, or at the very least highlight WHO to contact!
 // A quickfix could be by having the link automatically select the "Digitale Talenter" from the contact page dropdown.
 
@@ -25,11 +26,19 @@ export default async function DigitaleTalenter({
   if (!tiltak) return notFound();
 
   return (
-    <main id='main' className='flex flex-col items-center gap-12 w-full max-w-[1536px] my-12 mx-auto px-4'>
+    <main
+      id='main'
+      className={`
+        flex flex-col items-center gap-12 w-full max-w-[1536px] my-12 mx-auto px-4
+      `}
+    >
       <HeroSub {...tiltak} />
       <CourseSummary {...tiltak} />
       <div className='w-full max-w-4xl px-4'>
-        <div className='relative rounded-xl overflow-hidden shadow-2xl bg-white/5 backdrop-blur-xs aspect-video animate-fade-in ring-1 ring-black/10'>
+        <div className={`
+          relative rounded-xl overflow-hidden shadow-2xl bg-white/5
+          backdrop-blur-xs aspect-video animate-fade-in ring-1 ring-black/10
+        `}>
           <video muted loop playsInline controls className='w-full h-full object-cover'>
             <source src='/videos/Digitale talenter.mp4' type='video/mp4' />
             Nettleseren din støtter ikke videoavspilling.

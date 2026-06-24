@@ -42,7 +42,10 @@ export function CoursesCard({ image, title, text, path, alt }: CoursesProps) {
           />
         </div>
       </div>
-      <a href={path} className='w-full h-80 xl:w-1/2 relative overflow-hidden rounded-xl order-first'>
+      <a
+        href={path}
+        className='w-full h-80 xl:w-1/2 relative overflow-hidden rounded-xl order-first'
+      >
         <Image
           alt={alt}
           src={image}
