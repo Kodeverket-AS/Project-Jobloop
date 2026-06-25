@@ -3,7 +3,7 @@
 import { Tiltak } from '@/types/sanity/sanity.types';
 import Image from 'next/image';
 
-// todo is this even used?
+// TODO: Is this even used? (Seemingly not)
 
 export default function Places({ cities }: Pick<Tiltak, 'cities'>) {
   return (

@@ -8,6 +8,9 @@ export default async function CourseCard({
   locations,
 }: Tiltak) {
   const t = await getTranslations('base.components.course');
+
+  // TODO: Get rid of divs where possible.
+  // TODO: Consider if using a list would be better here.
   return (
     <div className='flex flex-col p-6 shadow-lg hover:shadow-xl transition-all duration-300 bg-kv-white rounded-xl border border-gray-100 hover:border-jobloop-primary-green/20'>
       <h3 className='text-xl md:text-2xl font-bold text-kv-black mb-4 border-b-2 border-jobloop-primary-green w-fit pb-2'>

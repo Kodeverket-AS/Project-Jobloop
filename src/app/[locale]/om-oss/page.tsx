@@ -80,6 +80,8 @@ export default async function OmOss() {
           <span className='block w-1/2 h-1 bg-jobloop-primary-green mt-2 mb-6' />
         </h1>
         <figure // NOTE: This currently balances against the heading by using a negative top margin to maintain visual alignment. Might need adjustment if heading size changes.
+        // TODO: Consider if adding figcaption would be correct here.
+        // TODO: Find out if using figure at all is even correct for this use (it currently does not need a visual caption, which would be the primary purpose of a figure element).
           className={`
             w-full overflow-hidden rounded-xl order-first
             lg:w-2/5 lg:float-right lg:mb-4 lg:ml-4 lg:-mt-[10.75rem]
@@ -141,8 +143,7 @@ export default async function OmOss() {
 
       <section
         className='container mx-auto px-4'
-        // TODO: Add aria-labelledby.
-        // TODO: Consider adding a subheading to this section or change to div.
+        // TODO: Add aria-labelledby and add a subheading to this section, or change to div.
       >
         <div
           className={` mx-auto px-4

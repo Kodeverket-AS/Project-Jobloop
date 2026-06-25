@@ -34,6 +34,7 @@ export function IntroSection({
   const t1 = useTranslations('landing');
 
   // TODO: Find out if this should be combined with its reverse version similar to PartnerProject.tsx
+  // TODO: Fix repeated static heading id.
   return (
     <section
       className='flex flex-col gap-[calc(var(--spacing)*6)] lg:gap-[calc(var(--spacing)*12)] lg:flex-row le:gap-12 rounded-xl'

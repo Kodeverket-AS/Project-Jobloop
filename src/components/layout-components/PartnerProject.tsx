@@ -26,6 +26,7 @@ export const PartnerProject = ({
 }: PartnerProject) => {
   // TODO: Remove divs where reasonable and reorganize.
   // TODO: !!!Suggest removing reverse variant and just use flex order to style
+  // TODO: Improve the heading id creation to ensure valid ids.
   return (
     <section
       className='flex flex-col gap-6 lg:flex-row lg:gap-12'

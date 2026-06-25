@@ -28,7 +28,8 @@ export function LocationCarousel() {
    * prefers-reduced-motion or providing a pause button. This fails WCAG 2.2.2
    * (Pause, Stop, Hide) and can be problematic for vestibular disorder users.
    * 
-   // TODO: Add a pause mechanism
+   // TODO: Add a pause mechanism.
+   // TODO: Add a "prefers-reduced-motion" check.
    // TODO: Remove divs where possible and restructure.
    // TODO: Consider if adding buttons and/or pagination bullets for manual navigation is necessary for accessibility.
    // TODO: Give the carousel entries a better description.

@@ -6,6 +6,8 @@ import { LinkButtonAnimatedWithIcon } from './buttons';
 import { Tiltak } from '@/types/sanity/sanity.types';
 import { urlFor } from '@/lib/Sanity';
 
+// TODO: Is this even used?
+
 export default function HeroSub({ image, heading, introtext }: Tiltak) {
   return (
     <div className='flex flex-col gap-6  lg:flex-row  rounded-xl'>

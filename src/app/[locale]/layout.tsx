@@ -67,7 +67,7 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
     icons: {
       icon: '/favicon.ico',
       shortcut: '/favicon.ico',
-      apple: '/apple-touch-icon.png',
+      apple: '/apple-touch-icon.png', // TODO: Fix apple touch icon 404
     },
   } satisfies Metadata;
 }

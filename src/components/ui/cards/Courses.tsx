@@ -10,7 +10,7 @@ interface CoursesProps {
   alt: string;
 }
 
-// TODO: Deal with double link issue.
+// TODO: Fix double link issue, where screen-reader announces two links to the same content.
 // TODO: Remove divs where possible.
 // TODO: Translate aria-labels.
 export function CoursesCard({ image, title, text, path, alt }: CoursesProps) {

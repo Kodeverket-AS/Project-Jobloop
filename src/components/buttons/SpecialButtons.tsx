@@ -80,6 +80,7 @@ export function LesMerButton({ Path, Text = 'Les mer', Aria = '' }: Partial<Butt
    * Solution: Consider adding a visually hidden span with additional context.
    * 
    // TODO: Ensure that ALL uses of LesMerButton provide an appropriate Aria label for accessibility.
+   // TODO: Add an "about [context]" to the Aria label for better screen reader context.
    */
   return (
     <a

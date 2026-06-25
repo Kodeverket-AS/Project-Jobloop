@@ -77,7 +77,10 @@ export default function ContactContainer({ data = [] }: { data: Contacts[] }) {
         <p className='text-lg text-gray-600 max-w-2xl mx-auto'>{t('text')}</p>
       </div>
 
-      <form className='bg-linear-to-br from-white to-gray-50 p-6 rounded-xl shadow-lg border border-jobloop-primary-green/20'>
+      <form
+        // TODO: Prevent accidental page submit/reload.
+        className='bg-linear-to-br from-white to-gray-50 p-6 rounded-xl shadow-lg border border-jobloop-primary-green/20'
+      >
         <div className='grid grid-cols-1 sm:grid-cols-3 gap-4 mb-6'>
           <div className='relative'>
             <label

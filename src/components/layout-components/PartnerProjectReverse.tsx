@@ -25,6 +25,7 @@ export const PartnerProjectReverse = ({
   btnText,
 }: PartnerProject) => {
   // TODO: Remove divs where reasonable and reorganize.
+  // TODO: Improve the heading id creation to ensure valid ids.
   return (
     <section
       className='flex flex-col-reverse gap-6 lg:flex-row lg:gap-12'
