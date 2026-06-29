@@ -13,6 +13,8 @@ export default async function HeroSub({
   const t = await getTranslations("dictionary");
 
   // TODO: Ensure that image has aria label or is hidden if only decorative.
+  // TODO: Figure out if this should be a header instead of a section.
+  // TODO: Suggest a better introtext fallback, as it currently can be confusing for users who see this (e.g. on the "/loop" page).
   return (
     <section
       className='flex flex-col gap-6  lg:flex-row  rounded-xl'
