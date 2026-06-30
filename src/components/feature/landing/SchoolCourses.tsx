@@ -63,7 +63,7 @@ export default async function SchoolCourses() {
 
   // TODO: Make sure that using a list is the correct solution here.
   return (
-    <section
+    <article
       id='courses'
       className=' courses w-full max-w-[1536px] mx-auto space-y-16'
       aria-labelledby='courses-title'
@@ -89,6 +89,6 @@ export default async function SchoolCourses() {
           />
         ))}
       </ul>
-    </section>
+    </article>
   );
 }

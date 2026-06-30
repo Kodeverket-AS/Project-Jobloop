@@ -66,9 +66,9 @@ export default async function WorkCourses() {
   // TODO: Find out if the quotes should go up another heading level, and thus also work.quotes.title should use h3 instead (Are the quotes part of "Arbeidsrettede tilbud", or a separate section?).
   // TODO: Add section to relevant parts.
   return (
-    <section
+    <article
       className='space-y-16'
-      aria-labelledby='work-title'
+      aria-labelledby='work-title' // TODO: Connect up this aria-labelledby to the correct heading
     >
       <IntroSectionReverse
         title={t('work.title')}
@@ -88,15 +88,25 @@ export default async function WorkCourses() {
         isButton
         btnVariant={'externalLink'}
       />
-      <div className='grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-4 auto-rows-fr'>
+      <div
+        className='grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-4 auto-rows-fr'
+      >
         {courses.map((card, index) => (
           <CoursesCard key={index} {...card} />
         ))}
       </div>
 
       {/* Temporary Quotes Solution */}
-      <section className='relative flex flex-col gap-8 px-8 pt-8 pb-12 overflow-hidden border-2 rounded-xl bg-jobloop-primary-orange/5 border-jobloop-primary-orange text-kv-black lg:gap-12'>
-        <h2 className='pb-2 mx-auto text-center border-b-4 border-jobloop-primary-orange w-fit'>
+      <section className={`
+        relative flex flex-col gap-8 px-8 pt-8 pb-12 overflow-hidden border-2
+        rounded-xl bg-jobloop-primary-orange/5 border-jobloop-primary-orange
+        text-kv-black lg:gap-12
+      `}>
+        <h2
+          className={`
+          pb-2 mx-auto text-center border-b-4 border-jobloop-primary-orange w-fit
+          `}
+        >
           {t("work.quotes.title")}
         </h2>
         <ul className='flex flex-col gap-8 md:flex-row'>
@@ -105,6 +115,6 @@ export default async function WorkCourses() {
           ))}
         </ul>
       </section>
-    </section>
+    </article>
   );
 }
