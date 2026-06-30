@@ -4,7 +4,7 @@ import { Tiltak } from '@/types/sanity/sanity.types';
 import { urlFor } from '@/lib/Sanity';
 import { getTranslations } from 'next-intl/server';
 
-// TODO: Deal with divs and reorder.
+// TODO: Deal with divs.
 export default async function ForSchool({ image4, school }: Pick<Tiltak, 'image4' | 'school'>) {
   const t = await getTranslations('base.components.school');
   return (
@@ -17,7 +17,23 @@ export default async function ForSchool({ image4, school }: Pick<Tiltak, 'image4
         from-jobloop-primary-green/20 via-white to-jobloop-primary-green/10
         rounded-2xl p-8 shadow-lg border border-jobloop-primary-green/20
       `}>
-        <div className='w-full lg:w-1/2 flex justify-center'>
+        <div className='w-full lg:w-1/2 space-y-6 order-last'>
+          <h2
+            id='for-school-title'
+            className={`
+              text-2xl md:text-3xl font-bold text-kv-black pb-3 border-b-2
+              border-jobloop-primary-green w-fit
+            `}
+          >
+            {t('title', { target: t('school') })}
+          </h2>
+
+          <div className='prose prose-lg max-w-none text-gray-700 leading-relaxed'>
+            {school && <PortableText value={school} />}
+          </div>
+        </div>
+
+        <div className='w-full lg:w-1/2 flex justify-center order-first'>
           <div className='relative overflow-hidden rounded-xl shadow-lg group'>
             <Image
               src={image4 ? urlFor(image4).url() : ''}
@@ -35,22 +51,6 @@ export default async function ForSchool({ image4, school }: Pick<Tiltak, 'image4
               opacity-0 group-hover:opacity-100 transition-opacity duration-300
             `}>
             </div>
-          </div>
-        </div>
-
-        <div className='w-full lg:w-1/2 space-y-6'>
-          <h2
-            id='for-school-title'
-            className={`
-              text-2xl md:text-3xl font-bold text-kv-black pb-3 border-b-2
-              border-jobloop-primary-green w-fit
-            `}
-          >
-            {t('title', { target: t('school') })}
-          </h2>
-
-          <div className='prose prose-lg max-w-none text-gray-700 leading-relaxed'>
-            {school && <PortableText value={school} />}
           </div>
         </div>
       </div>

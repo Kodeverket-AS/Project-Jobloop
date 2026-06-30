@@ -28,7 +28,7 @@ export const PartnerProjectReverse = ({
   const headingId = 'partner-title-' + title.toLowerCase().replace(/\s+/g, '-');
 
   return (
-    <section
+    <article
       className='flex flex-col-reverse gap-6 lg:flex-row lg:gap-12'
       aria-labelledby={headingId}
     >
@@ -60,6 +60,6 @@ export const PartnerProjectReverse = ({
           className='max-w-full h-96 object-cover rounded-xl shadow-lg shadow-gray-300/50 hover:shadow-xl hover:shadow-gray-400/50 transition-all duration-500 hover:scale-[1.02]'
         />
       </div>
-    </section>
+    </article>
   );
 };

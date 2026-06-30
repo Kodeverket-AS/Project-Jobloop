@@ -32,17 +32,17 @@ export function IntroSection({
 }: IntroSection) {
   const t = useTranslations('dictionary');
   const t1 = useTranslations('landing');
+  const headingId = 'intro-section-title-' + title.toLowerCase().replace(/\s+/g, '-');
 
   // TODO: Find out if this should be combined with its reverse version similar to PartnerProject.tsx
-  // TODO: Fix repeated static heading id.
   return (
     <section
       className='flex flex-col gap-[calc(var(--spacing)*6)] lg:gap-[calc(var(--spacing)*12)] lg:flex-row le:gap-12 rounded-xl'
-      aria-labelledby='intro-section-title'
+      aria-labelledby={headingId}
       >
       <div className='flex flex-col gap-4 w-full lg:w-1/2 justify-center'>
         <h2
-          id='intro-section-title'
+          id={headingId}
           className='text-kv-black text-xl md:text-2xl lg:text-3xl border-b-2 md:border-b-4 pb-2 border-jobloop-primary-green w-fit'
         >
           {title}

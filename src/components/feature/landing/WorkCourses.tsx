@@ -77,7 +77,6 @@ export default async function WorkCourses() {
         alt={t('work.image.alt')}
         path='/tilbud'
         isButton={false}
-        headingId='work-title'
       />
       <PartnerProject
         title={t('work.partner.title')}

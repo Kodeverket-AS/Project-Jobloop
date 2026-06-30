@@ -75,7 +75,6 @@ export default async function SchoolCourses() {
         path='/laringstilbud'
         isButton={false}
         alt={t('school.image.alt')}
-        headingId='courses-title'
       />
       <ul className='grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-4 auto-rows-fr'>
         {courses.map((card, index) => (
