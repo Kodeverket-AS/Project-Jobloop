@@ -78,7 +78,7 @@ export default function LocaleMenu({ altColor }: { altColor: boolean }) {
         className={`
           w-36 absolute right-0 flex flex-col p-2 overflow-hidden bg-kv-white
           shadow-md border-jobloop-primary-grey border rounded-md duration-200
-          ${isOpen ? 'visible opacity-100' : 'hidden opacity-0'}
+          ${isOpen ? 'visible opacity-100 z-99' : 'hidden opacity-0'}
         `}
       >
         {routing.locales.map((locale) => {

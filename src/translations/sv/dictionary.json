@@ -5,5 +5,6 @@
   "goTo": "Gå til",
   "contactUs": "Kontakt oss",
   "new": "Nyhet",
-  "opensInNewTab": "Öppnas i ny flik"
+  "opensInNewTab": "Öppnas i ny flik",
+  "videoFallback": "Din webbläsare stöder inte videouppspelning."
 }

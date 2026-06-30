@@ -1,20 +1,27 @@
 'use client';
 
+import { useTranslations } from 'next-intl';
+
 interface BookKimButtonProps {
   className?: string;
 }
 
-// TODO: Translate aria-label
+// TODO: Translate button text!
 export function BookKimButton({ className = '' }: BookKimButtonProps) {
+  const t = useTranslations('dictionary');
   return (
     <a
       href="https://calendar.app.google/RRhkgNFmGyTTbYmd6"
       target="_blank"
       rel="noopener noreferrer"
-      className={`inline-block bg-[#002B49] text-white px-8 py-4 rounded-full font-bold text-lg hover:bg-[#004d7a] hover:scale-105 hover:shadow-lg transition-all duration-300 ${className}`}
-      aria-label="Book en samtale med Kim (åpner i ny fane)"
+      className={`
+        inline-block bg-[#002B49] text-white px-8 py-4 rounded-full font-bold
+        text-lg hover:bg-[#004d7a] hover:scale-105 hover:shadow-lg
+        transition-all duration-300 ${className}
+      `}
     >
       Book en samtale med Kim
+      <span className='sr-only'> ({t('opensInNewTab')})</span>
     </a>
   );
 }

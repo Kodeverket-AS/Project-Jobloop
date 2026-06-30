@@ -2,6 +2,7 @@
   "header": {
     "navigation": {
       "skipLink": "Gå til sidens hovedinnhold",
+      "scrollToTop": "Scroll til toppen",
       "index": "Hjem",
       "about": {
         "label": "Om Oss",

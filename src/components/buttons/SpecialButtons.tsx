@@ -81,7 +81,10 @@ export function LesMerButton({ Path, Text = 'Les mer', Aria = '' }: Partial<Butt
    * 
    // TODO: Ensure that ALL uses of LesMerButton provide an appropriate Aria label for accessibility.
    // TODO: Add an "about [context]" to the Aria label for better screen reader context.
+   // TODO: Add a "context" variable.
    */
+  const t = useTranslations('dictionary');
+
   return (
     <a
       href={Path}
@@ -94,7 +97,7 @@ export function LesMerButton({ Path, Text = 'Les mer', Aria = '' }: Partial<Butt
       `}
     >
       <span className='font-medium'>{Text}</span>
-      {Aria ? <span className='sr-only'>{Aria}</span> : null}
+      {/*Aria ? <span className='sr-only'>{Aria}</span> : null*/}
       <FaArrowRight
         className={`
           group-hover/btn:translate-x-1 group-hover/btn:scale-110

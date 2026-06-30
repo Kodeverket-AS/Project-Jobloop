@@ -75,6 +75,7 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
 // Configure Roboto font
 const roboto = Roboto({ weight: ['400', '700', '900'], subsets: ['latin'] });
 
+// TODO: Consider adding breadcrumbs to improve navigation accessibility.
 export default async function Layout({
   children,
   params,

@@ -25,15 +25,16 @@ export const PartnerProjectReverse = ({
   btnText,
 }: PartnerProject) => {
   // TODO: Remove divs where reasonable and reorganize.
-  // TODO: Improve the heading id creation to ensure valid ids.
+  const headingId = 'partner-title-' + title.toLowerCase().replace(/\s+/g, '-');
+
   return (
     <section
       className='flex flex-col-reverse gap-6 lg:flex-row lg:gap-12'
-      aria-labelledby={'partner-title-' + title}
+      aria-labelledby={headingId}
     >
       <div className='flex flex-col gap-4 w-full lg:w-1/2 justify-center'>
         <h3
-          id={'partner-title-' + title}
+          id={headingId}
           className='text-kv-black max-sm:!text-[1.3rem] sm:!text-[2rem] md:text-2xl lg:text-3xl border-b-2 md:border-b-4 pb-2 border-jobloop-primary-green w-fit'
           >
           {title}

@@ -1,4 +1,5 @@
 import { getTiltakById, getTiltakByIdLocalized } from '@/lib/sanity/fetch';
+import { getTranslations } from 'next-intl/server';
 import { AvailableLocales } from '@/i18n/routing';
 import { notFound } from 'next/navigation';
 import HeroSub from '@/components/herosub';
@@ -6,7 +7,6 @@ import CourseSummary from '@/components/CourseSummary';
 import Curriculum from '@/components/Curriculum';
 import LeaderSection from '@/components/feature/LeaderSection';
 
-// TODO: Add translation to video element fallback.
 // TODO: The "contact" button should go to an actual contact form, or at the very least highlight WHO to contact!
 // A quickfix could be by having the link automatically select the "Digitale Talenter" from the contact page dropdown.
 
@@ -25,6 +25,8 @@ export default async function DigitaleTalenter({
   const tiltak = await getTiltakByIdLocalized({ index: 2, locale: locale as AvailableLocales });
   if (!tiltak) return notFound();
 
+  const t = await getTranslations('dictionary');
+
   return (
     <main
       id='main'
@@ -41,7 +43,7 @@ export default async function DigitaleTalenter({
         `}>
           <video muted loop playsInline controls className='w-full h-full object-cover'>
             <source src='/videos/Digitale talenter.mp4' type='video/mp4' />
-            Nettleseren din støtter ikke videoavspilling.
+            {t('videoFallback')}
           </video>
         </div>
       </div>

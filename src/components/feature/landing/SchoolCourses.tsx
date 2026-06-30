@@ -61,6 +61,7 @@ export default async function SchoolCourses() {
     },
   ];
 
+  // TODO: Make sure that using a list is the correct solution here.
   return (
     <section
       id='courses'

@@ -2,6 +2,7 @@
   "header": {
     "navigation": {
       "skipLink": "Skip to main content",
+      "scrollToTop": "Scroll to top",
       "index": "Home",
       "about": {
         "label": "About Us",

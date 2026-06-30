@@ -19,6 +19,8 @@ export async function generateMetadata(): Promise<Metadata> {
   };
 }
 
+// TODO: Translate page!
+// TODO: Respect prefers-reduced-motion!
 export default function Forberedelse() {
   return (
     <div className="min-h-screen bg-[#f4f6f8] font-['Segoe_UI',Arial,sans-serif] text-[#333] leading-relaxed">

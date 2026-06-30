@@ -33,6 +33,7 @@ export function LocationCarousel() {
    // TODO: Remove divs where possible and restructure.
    // TODO: Consider if adding buttons and/or pagination bullets for manual navigation is necessary for accessibility.
    // TODO: Give the carousel entries a better description.
+   // TODO: Make it possible to escape the carousel when navigating using tab.
    *
    * Note: Is the carousel currently purely decorative? I would not say so, but
    * it clearly does not provide proper information about the locations, nor
