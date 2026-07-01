@@ -37,10 +37,7 @@ export function IntroSection({
   // TODO: Find out if this should be combined with its reverse version similar to PartnerProject.tsx
   return (
     <article
-      className={`
-        flex flex-col rounded-xl gap-[calc(var(--spacing)*6)]
-        lg:gap-[calc(var(--spacing)*12)] lg:flex-row le:gap-12
-      `}
+      className={`flex flex-col rounded-xl gap-6 lg:gap-12 lg:flex-row le:gap-12`}
       aria-labelledby={headingId}
       >
       <div className='flex flex-col gap-4 w-full lg:w-1/2 justify-center'>
