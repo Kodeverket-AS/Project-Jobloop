@@ -1,6 +1,9 @@
 import { Tiltak } from '@/types/sanity/sanity.types';
 import { getTranslations } from 'next-intl/server';
 
+/**
+ * Renders an "About the course" card.
+ */
 export default async function CourseCard({
   targetGroupShort,
   duration,
@@ -26,7 +29,7 @@ export default async function CourseCard({
       hover:border-jobloop-primary-green/20
     `}>
       <h2 className={`
-        !text-[1.4rem] md:text-2xl font-bold text-kv-black mb-4 border-b-2
+        text-[1.4rem]! md:text-2xl font-bold text-kv-black mb-4 border-b-2
         border-jobloop-primary-green w-fit pb-2
       `}>
         {t('title')}
@@ -39,7 +42,7 @@ export default async function CourseCard({
           <section key={label}
           >
             <h3 className={`
-              !text-[1.125rem] font-semibold text-jobloop-primary-green mb-2
+              text-[1.125rem]! font-semibold text-jobloop-primary-green mb-2
             `}>
               {label}
             </h3>

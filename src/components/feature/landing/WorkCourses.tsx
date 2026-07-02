@@ -63,7 +63,6 @@ export default async function WorkCourses() {
     },
   ];
 
-  // TODO: Find out if the quotes should go up another heading level, and thus also work.quotes.title should use h3 instead (Are the quotes part of "Arbeidsrettede tilbud", or a separate section?).
   // TODO: Add section to relevant parts.
   return (
     <article
@@ -78,7 +77,7 @@ export default async function WorkCourses() {
         path='/tilbud'
         isButton={false}
       />
-      <PartnerProject
+      <PartnerProject // TODO: Try to move this into the list below.
         title={t('work.partner.title')}
         text={t('work.partner.text')}
         image={KodehodeImage}
@@ -97,18 +96,21 @@ export default async function WorkCourses() {
       </ul>
 
       {/* Temporary Quotes Solution */}
-      <section className={`
-        relative flex flex-col gap-8 px-8 pt-8 pb-12 overflow-hidden border-2
-        rounded-xl bg-jobloop-primary-orange/5 border-jobloop-primary-orange
-        text-kv-black lg:gap-12
-      `}>
-        <h2
-          className={`
-          pb-2 mx-auto text-center border-b-4 border-jobloop-primary-orange w-fit
-          `}
+      <section
+        className='
+          relative flex flex-col gap-8 px-8 pt-8 pb-12 overflow-hidden border-2
+          rounded-xl bg-jobloop-primary-orange/5
+          border-jobloop-primary-orange text-kv-black lg:gap-12
+        '
+      >
+        <h3
+          className='
+          pb-2 mx-auto text-center border-b-4 border-jobloop-primary-orange
+          w-fit text-[2rem]!
+          '
         >
           {t("work.quotes.title")}
-        </h2>
+        </h3>
         <ul className='flex flex-col gap-8 md:flex-row'>
           {quotes.map((quote, index) => (
             <QuoteCard key={`${quote.name}-${index}`} {...quote} />

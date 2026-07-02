@@ -1,5 +1,5 @@
 import { getTranslations } from 'next-intl/server';
-import { PartnerProject, PartnerProjectReverse } from '@/components/layout-components';
+import { PartnerProject } from '@/components/layout-components';
 
 // Images
 import Kodeloftet from '@public/kodeloftet.webp';
@@ -34,7 +34,7 @@ export default async function CooperationProjects() {
       alt: t('collaborations.teamwork.alt'),
       path: '/teamwork',
       btnText: t1('readMore'), // TODO: Deal with "Read More" button with no descriptive title.
-      btnVariant: 'readMorePill' as const,
+      btnVariant: 'readMorePill' as const, // TODO: Deal with "Read More" button looking different.
     },
   ];
 
@@ -50,19 +50,12 @@ export default async function CooperationProjects() {
         {t('collaborations.title')}
       </h2>
       {partners.map((partner, index) =>
-        index % 2 === 0 ? (
-          <PartnerProject
-            key={partner.title + index}
-            isButton
-            {...partner}
-          />
-        ) : (
-          <PartnerProjectReverse
-            key={partner.title + index}
-            isButton
-            {...partner}
-          />
-        )
+        <PartnerProject
+          key={partner.title + index}
+          direction={index % 2 === 0 ? 'normal' : 'reverse'}
+          isButton
+          {...partner}
+        />
       )}
     </section>
   );
