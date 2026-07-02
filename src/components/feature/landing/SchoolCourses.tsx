@@ -1,6 +1,6 @@
 import { getTranslations } from 'next-intl/server';
 import { IntroSectionReverse } from '@/components/layout-components';
-import { SchoolCoursesCard } from '@/components/ui/cards/SchoolCourses';
+import { LandingCoursesCard } from '@/components/ui/cards/LandingCourses';
 
 // Images
 import Læringstilbud from '@public/læringstilbud.webp';
@@ -78,13 +78,14 @@ export default async function SchoolCourses() {
       />
       <ul className='grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-4 auto-rows-fr'>
         {courses.map((card, index) => (
-          <SchoolCoursesCard
+          <LandingCoursesCard
             key={index}
             image={card.image}
             title={card.title}
             text={card.text}
             path={card.path}
             alt={card.alt}
+            context='school'
             isNew={card.isNew ?? false}
           />
         ))}

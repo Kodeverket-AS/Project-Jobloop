@@ -1,10 +1,7 @@
-import { LesMerButton } from '@/components/buttons';
 import { Link } from '@/i18n/navigation';
 import { useTranslations } from 'next-intl';
 import Image, { type StaticImageData } from 'next/image';
-
-import { FaArrowRight } from 'react-icons/fa'; // TODO: Remove after moving button to a separate component.
-
+import { FaArrowRight } from 'react-icons/fa';
 interface CoursesProps {
   image: StaticImageData;
   title: string;
@@ -13,9 +10,9 @@ interface CoursesProps {
   alt: string;
 }
 
-// TODO: Remove divs where possible.
-// TODO: Test these with a screen reader!
-// TODO: Move the emulated button and it's span to a separate component.
+/**
+ * @deprecated This function was used for rendering work course cards before the LandingCoursesCard component was introduced.
+ */
 export function CoursesCard({ image, title, text, path, alt }: CoursesProps) {
   const t = useTranslations("dictionary");
   const slug = title.replace(/\s+/g, '-').toLowerCase();
@@ -57,8 +54,8 @@ export function CoursesCard({ image, title, text, path, alt }: CoursesProps) {
         >
           {text}
         </p>
-        <div className='pt-2 xl:mt-auto'> {/* TODO: Consider changing this to a footer? */}
-          <span // TODO: Remove after moving this to a button file.
+        <div className='pt-2 xl:mt-auto'>
+          <span
             aria-hidden='true'
             className='
               w-full md:w-auto md:max-w-[155px] inline-flex gap-3 px-6 py-3
@@ -75,7 +72,7 @@ export function CoursesCard({ image, title, text, path, alt }: CoursesProps) {
           </span>
         </div>
       </div>
-      <div // TODO: Consider changing this to a figure?
+      <div
         className={`
           relative z-20 w-full h-80 xl:w-1/2 overflow-hidden rounded-xl
           order-first pointer-events-none
@@ -106,7 +103,6 @@ export function CoursesCard({ image, title, text, path, alt }: CoursesProps) {
           `}
         />
         <span // Drawback: User can't right click and save the image, as it is below the link.
-          // TODO: Fix image-hit stretching past the image width.
           aria-hidden='true'
           className={`
             image-hit absolute top-6 left-0 h-80 w-full rounded-xl

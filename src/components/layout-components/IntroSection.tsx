@@ -18,6 +18,7 @@ interface IntroSection {
   imageLinkPath: string;
 }
 
+// TODO: Deal with "Read More" button with no descriptive title.
 export function IntroSection({
   title,
   text,

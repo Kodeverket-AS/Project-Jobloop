@@ -33,7 +33,7 @@ export default async function CooperationProjects() {
       text: t('collaborations.teamwork.text'),
       alt: t('collaborations.teamwork.alt'),
       path: '/teamwork',
-      btnText: t1('readMore'),
+      btnText: t1('readMore'), // TODO: Deal with "Read More" button with no descriptive title.
       btnVariant: 'readMorePill' as const,
     },
   ];

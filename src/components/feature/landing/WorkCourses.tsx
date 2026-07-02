@@ -1,6 +1,6 @@
 import { getTranslations } from 'next-intl/server';
 import { IntroSectionReverse, PartnerProject } from '@/components/layout-components';
-import { CoursesCard } from '@/components/ui/cards/Courses';
+import { LandingCoursesCard } from '@/components/ui/cards/LandingCourses';
 import { QuoteCard } from '@/components/ui/cards/Quotes';
 
 // Images
@@ -88,13 +88,13 @@ export default async function WorkCourses() {
         isButton
         btnVariant={'externalLink'}
       />
-      <div
+      <ul
         className='grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-4 auto-rows-fr'
       >
         {courses.map((card, index) => (
-          <CoursesCard key={index} {...card} />
+          <LandingCoursesCard key={index} context="work" {...card} />
         ))}
-      </div>
+      </ul>
 
       {/* Temporary Quotes Solution */}
       <section className={`

@@ -6,5 +6,7 @@
   "contactUs": "Contact us",
   "new": "New",
   "opensInNewTab": "Opens in a new tab",
-  "videoFallback": "Your browser does not support video playback."
+  "videoFallback": "Your browser does not support video playback.",
+  "newSchoolCourse": "New school course",
+  "newWorkCourse": "New work course"
 }

@@ -11,6 +11,9 @@ interface SchoolCoursesCardProps {
   isNew?: boolean;
 }
 
+/**
+ * @deprecated This function was used for rendering school course cards before the LandingCoursesCard component was introduced.
+ */
 export function SchoolCoursesCard({
   image,
   title,
@@ -20,17 +23,7 @@ export function SchoolCoursesCard({
   isNew,
 }: SchoolCoursesCardProps) {
   const t = useTranslations('dictionary');
-  /**
-   * Problem: SchoolCoursesCard has a double link issue.
-   * In SchoolCourses.tsx and Courses.tsx, each card has two separate <a> tags
-   * pointing to the same path: one wrapping the image and one for the
-   * LesMerButton. Screen readers will announce two identical links per card.
-   * Suggested fix: add aria-hidden="true" and tabIndex={-1} to the image link,
-   * or make the whole card a single link.
-   // TODO: Fix double link issue, where screen-reader announces two links to the same content.
-   // TODO: Get rid of divs where reasonable.
-   // TODO: Translate aria-labels
-   */
+
   return (
     <li className={`
       group relative flex flex-col w-full p-6 gap-4 lg:gap-6 xl:flex-row-reverse
@@ -40,7 +33,7 @@ export function SchoolCoursesCard({
       <div className='flex flex-col w-full gap-4 xl:w-1/2 justify-center'>
         <h3 className='text-kv-black text-xl md:text-2xl'>
           {isNew && (
-            <span className='sr-only'>{t('new')}: </span> // TODO: Improve text ('new course'?)
+            <span className='sr-only'>{t('new')}: </span>
           )}
           {title}
         </h3>
