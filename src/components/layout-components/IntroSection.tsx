@@ -14,8 +14,9 @@ interface IntroSection {
   isButton: boolean;
   btnVariant?: 'internalLink' | 'externalLink' | 'readMorePill';
   btnText?: string;
-  ifImageLink: boolean;
-  imageLinkPath: string;
+  direction?: 'normal' | 'reverse';
+  ifImageLink?: boolean;
+  imageLinkPath?: string;
 }
 
 // TODO: Deal with "Read More" button with no descriptive title.
@@ -28,25 +29,28 @@ export function IntroSection({
   isButton,
   btnVariant,
   btnText,
-  ifImageLink,
-  imageLinkPath,
+  direction = 'normal',
+  ifImageLink = false,
+  imageLinkPath = '',
 }: IntroSection) {
   const t = useTranslations('dictionary');
   const t1 = useTranslations('landing');
   const headingId = 'intro-section-title-' + title.toLowerCase().replace(/\s+/g, '-');
 
-  // TODO: Find out if this should be combined with its reverse version similar to PartnerProject.tsx
   return (
     <article
-      className='flex flex-col rounded-xl gap-6 lg:gap-12 lg:flex-row le:gap-12'
+      className={`
+        flex rounded-xl gap-6 lg:gap-12 lg:flex-row
+        ${direction === 'reverse' ? 'flex-col-reverse' : 'flex-col'}
+      `}
       aria-labelledby={headingId}
       >
       <div className='flex flex-col gap-4 w-full lg:w-1/2 justify-center'>
         <h2
           id={headingId}
           className='
-            text-kv-black text-xl md:text-2xl lg:text-3xl border-b-2
-            md:border-b-4 pb-2 border-jobloop-primary-green w-fit
+            text-kv-black pb-2 w-fit text-xl md:text-2xl lg:text-3xl
+            border-b-2 md:border-b-4 border-jobloop-primary-green
           '
         >
           {title}
@@ -69,9 +73,10 @@ export function IntroSection({
           target='_blank'
           rel='noopener noreferrer'
           aria-label={t1('intro.award')}
-          className='
-            w-full lg:w-1/2 order-first block saturate-100 hover:saturate-150
-          '
+          className={`
+            w-full lg:w-1/2 block saturate-100 hover:saturate-150
+            ${direction === 'normal' ? 'order-first' : ''}
+          `}
         >
           <figure className='relative group overflow-hidden rounded-xl'>
             <Image
@@ -101,12 +106,13 @@ export function IntroSection({
           src={image}
           width={1000}
           height={500}
-          className='
-            w-full lg:w-1/2 order-first block saturate-100 hover:saturate-150
-            rounded-xl max-w-full h-96 object-cover shadow-lg shadow-gray-300/50
-            hover:shadow-xl hover:shadow-gray-400/50 transition-all duration-500
-            hover:scale-[1.02]
-          '
+          className={`
+            w-full lg:w-1/2 max-w-full h-96 block object-cover rounded-xl
+            saturate-100 shadow-lg shadow-gray-300/50 transition-all
+            duration-500 hover:saturate-150 hover:shadow-xl
+            hover:shadow-gray-400/50 hover:scale-[1.02]
+            ${direction === 'normal' ? 'order-first' : ''}
+          `}
         />
       )}
     </article>

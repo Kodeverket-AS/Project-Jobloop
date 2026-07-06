@@ -1,5 +1,5 @@
 import { getTranslations } from 'next-intl/server';
-import { IntroSectionReverse, PartnerProject } from '@/components/layout-components';
+import { IntroSection, PartnerProject } from '@/components/layout-components';
 import { LandingCoursesCard } from '@/components/ui/cards/LandingCourses';
 import { QuoteCard } from '@/components/ui/cards/Quotes';
 
@@ -69,13 +69,14 @@ export default async function WorkCourses() {
       className='space-y-16'
       aria-labelledby='work-title' // TODO: Connect up this aria-labelledby to the correct heading
     >
-      <IntroSectionReverse
+      <IntroSection
         title={t('work.title')}
         text={t('work.text')}
         image={JobbtilbudBilde}
         alt={t('work.image.alt')}
         path='/tilbud'
         isButton={false}
+        direction='reverse'
       />
       <PartnerProject // TODO: Try to move this into the list below.
         title={t('work.partner.title')}

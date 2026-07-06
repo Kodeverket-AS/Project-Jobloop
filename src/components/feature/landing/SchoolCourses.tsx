@@ -1,5 +1,5 @@
 import { getTranslations } from 'next-intl/server';
-import { IntroSectionReverse } from '@/components/layout-components';
+import { IntroSection } from '@/components/layout-components';
 import { LandingCoursesCard } from '@/components/ui/cards/LandingCourses';
 
 // Images
@@ -68,13 +68,14 @@ export default async function SchoolCourses() {
       className=' courses w-full max-w-[1536px] mx-auto space-y-16'
       aria-labelledby='courses-title'
     >
-      <IntroSectionReverse
+      <IntroSection
         image={Læringstilbud}
         title={t('school.title')}
         text={t('school.text')}
         path='/laringstilbud'
         isButton={false}
         alt={t('school.image.alt')}
+        direction='reverse'
       />
       <ul className='grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-4 auto-rows-fr'>
         {courses.map((card, index) => (

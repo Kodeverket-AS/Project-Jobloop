@@ -17,6 +17,7 @@ interface LandingCoursesCardProps {
 // TODO: Test these with a screen reader!
 // TODO: Move the emulated button and it's span to a separate component.
 // TODO: Ensure that the link is understood as a read more.
+// TODO: Fix titles not being positioned correctly on smaller screens.
 /**
  * Creates a card component for displaying course information on the landing page.
  * 
