@@ -15,9 +15,9 @@ interface LandingCoursesCardProps {
 
 // TODO: Remove divs where possible.
 // TODO: Test these with a screen reader!
-// TODO: Move the emulated button and it's span to a separate component.
 // TODO: Ensure that the link is understood as a read more.
 // TODO: Fix titles not being positioned correctly on smaller screens.
+// TODO: Remove button-like after moving it to a button file, or get the button style from there.
 /**
  * Creates a card component for displaying course information on the landing page.
  * 
@@ -56,24 +56,27 @@ export function LandingCoursesCard({
   const descriptionId = `${context}-course-description-${slug}`;
 
   return (
-    <li>
+    <li className='
+      flex
+      bg-white rounded-xl shadow-sm hover:shadow-md border border-gray-50
+      transition-all duration-200
+      [&:has(.read-more-hit:hover)_.read-more-pill]:bg-jobloop-primary-orange
+      [&:has(.read-more-hit:hover)_.read-more-pill]:shadow-lg
+      [&:has(.read-more-hit:hover)_.read-more-pill]:scale-105
+      [&:has(.read-more-hit:hover)_.read-more-icon]:translate-x-1
+      [&:has(.read-more-hit:hover)_.read-more-icon]:scale-110
+    '>
       <article
         aria-labelledby={titleId}
         className='
           group relative flex flex-col w-full gap-4 lg:gap-6 xl:flex-row-reverse
-          bg-white rounded-xl shadow-xs hover:shadow-md border border-gray-50
-          p-6 transition-all duration-200 justify-between xl:h-full
-          [&:has(.read-more-hit:hover)_.read-more-pill]:bg-jobloop-primary-orange
-          [&:has(.read-more-hit:hover)_.read-more-pill]:shadow-lg
-          [&:has(.read-more-hit:hover)_.read-more-pill]:scale-105
-          [&:has(.read-more-hit:hover)_.read-more-icon]:translate-x-1
-          [&:has(.read-more-hit:hover)_.read-more-icon]:scale-110
+          p-6 xl:pl-0 xl:h-full justify-start md:justify-start xl:justify-between
         '
       >
         <div
           className='
-            relative z-20 flex flex-col w-full gap-4 xl:w-1/2 order-last
-            pointer-events-none xl:h-full xl:py-3
+            relative z-20 flex flex-col flex-1 w-full gap-4 xl:w-1/2 order-last
+            pointer-events-none xl:h-full xl:py-3 xl:pl-6 mt-7 lg:mt-0 xl:pt-14
           '
         >
           <h3
@@ -93,17 +96,18 @@ export function LandingCoursesCard({
             id={descriptionId}
             className='
               text-base text-gray-600 md:text-lg leading-relaxed
-              pointer-events-auto select-text cursor-text
+              pointer-events-auto select-text cursor-text xl:mr-2
             '
           >
             {text}
           </p>
-          <footer className='pt-2 xl:mt-auto'>
-            <span // TODO: Remove after moving this to a button file.
+          <footer className='mt-auto pt-2'>
+            <span
               // TODO: Act like hover when this card is tabbed to.
+              // TODO: Fix too big space between button and text on small screens.
               aria-hidden='true'
               className='
-                w-full md:w-auto md:max-w-[155px] inline-flex gap-3 px-6 py-3
+                w-full h-12 md:w-auto md:max-w-[155px] inline-flex gap-3 px-6 py-3
                 text-white items-center justify-center
                 bg-jobloop-primary-green rounded-full transition-all
                 duration-300 read-more-pill pointer-events-none
@@ -119,8 +123,8 @@ export function LandingCoursesCard({
         </div>
         <div // TODO: Consider changing this to a figure?
           className='
-            relative z-20 w-full h-80 xl:w-1/2 overflow-hidden rounded-xl
-            order-first pointer-events-none
+            relative z-20 w-full h-80 overflow-hidden rounded-xl
+            order-first pointer-events-none xl:w-[calc(50%-1.5rem)]
           '
         >
           <Image
@@ -128,7 +132,7 @@ export function LandingCoursesCard({
             src={image}
             width={600}
             height={600}
-            className='object-cover h-full max-w-full'
+            className='object-cover object-center h-full w-full'
           />
         </div>
         <Link // Link with hits to emulate having one link on the image and one on the button.
@@ -139,20 +143,21 @@ export function LandingCoursesCard({
             absolute inset-0 z-10 rounded-xl pointer-events-none focus-visible:outline
             focus-visible:outline-offset-4 focus-visible:outline-jobloop-primary-green
           '
+          // TODO: Find out if i should add tabindex to the spans, and have them be described by their respective elements.
         >
           <span
             aria-hidden='true'
             className='
-              read-more-hit absolute left-6 right-6 bottom-6 h-12
-              pointer-events-auto md:right-auto md:w-[135px] xl:bottom-9
+              read-more-hit absolute left-6 right-6 bottom-6 xl:bottom-9 h-12
+              pointer-events-auto md:right-auto md:w-[135px] rounded-full
             '
           />
           <span
-            // TODO: Fix image-hit stretching past the image width.
             aria-hidden='true'
             className='
-              image-hit absolute top-6 left-0 h-80 w-full rounded-xl
-              pointer-events-auto xl:left-auto xl:right-0 xl:w-[calc(50%-0.75rem)]
+              image-hit absolute top-6 left-0 h-80 rounded-xl
+              pointer-events-auto xl:left-auto xl:right-0 xl:w-[calc(50%-2.2rem)]
+              ml-6 w-[calc(100%-8rem)] md:w-[calc(100%-3rem)] xl:mr-6
             '
           />
         </Link>
