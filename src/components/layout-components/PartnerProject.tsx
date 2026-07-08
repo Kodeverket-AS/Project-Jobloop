@@ -68,7 +68,7 @@ export const PartnerProject = ({
           ${direction === 'reverse' ? 'order-last' : 'order-first'}
         `}
       >
-        <Image
+        <Image // TODO: Fix Gløde image showing in incorrect location on small screens.
           alt={alt}
           src={image}
           width={1000}

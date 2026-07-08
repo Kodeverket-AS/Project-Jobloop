@@ -18,6 +18,7 @@ interface LandingCoursesCardProps {
 // TODO: Ensure that the link is understood as a read more.
 // TODO: Fix titles not being positioned correctly on smaller screens.
 // TODO: Remove button-like after moving it to a button file, or get the button style from there.
+// TODO: Find a more robust solution for the double-link issue..
 /**
  * Creates a card component for displaying course information on the landing page.
  * 
@@ -56,27 +57,28 @@ export function LandingCoursesCard({
   const descriptionId = `${context}-course-description-${slug}`;
 
   return (
-    <li className='
-      flex
-      bg-white rounded-xl shadow-sm hover:shadow-md border border-gray-50
+    <li className={`
+      flex h-full
+      bg-white rounded-xl hover:shadow-md border border-gray-50
       transition-all duration-200
       [&:has(.read-more-hit:hover)_.read-more-pill]:bg-jobloop-primary-orange
       [&:has(.read-more-hit:hover)_.read-more-pill]:shadow-lg
       [&:has(.read-more-hit:hover)_.read-more-pill]:scale-105
       [&:has(.read-more-hit:hover)_.read-more-icon]:translate-x-1
       [&:has(.read-more-hit:hover)_.read-more-icon]:scale-110
-    '>
+      ${context === 'work' ? 'shadow-xs' : 'shadow-sm'}
+    `}>
       <article
         aria-labelledby={titleId}
         className='
           group relative flex flex-col w-full gap-4 lg:gap-6 xl:flex-row-reverse
-          p-6 xl:pl-0 xl:h-full justify-start md:justify-start xl:justify-between
+          p-6 xl:pl-0 h-full justify-start md:justify-start xl:justify-between
         '
       >
         <div
           className='
             relative z-20 flex flex-col flex-1 w-full gap-4 xl:w-1/2 order-last
-            pointer-events-none xl:h-full xl:py-3 xl:pl-6 mt-7 lg:mt-0 xl:pt-14
+            pointer-events-none xl:h-full xl:py-3 xl:pl-6 xl:pt-14 mt-2 lg:mt-0
           '
         >
           <h3
@@ -101,7 +103,7 @@ export function LandingCoursesCard({
           >
             {text}
           </p>
-          <footer className='mt-auto pt-2'>
+          <footer className='md:mt-auto pt-2'>
             <span
               // TODO: Act like hover when this card is tabbed to.
               // TODO: Fix too big space between button and text on small screens.
