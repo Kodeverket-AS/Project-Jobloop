@@ -107,6 +107,39 @@ h6 {
   }
 }
 
+/* Solution for removing double-links in landing cards. */
+.landing-card footer a::before {
+  border-radius: var(--radius-xl);
+  position: absolute;
+  content: '';
+  inset: 0;
+  height: calc(var(--spacing) * 80);
+  width: calc(100% - 50px);
+  margin: 25px;
+  z-index: 1;
+  @media (width >= 80rem) { /* xl breakpoint */
+    grid-row-start: 1;
+    grid-column-start: 2;
+    width: calc(100% - 25px);
+    margin: 0;
+  }
+}
+.landing-card:focus-within {
+  box-shadow: 0 0 0 1px var(--color-jobloop-primary-green);
+  border-radius: var(--radius-xl);
+}
+.landing-card footer a:focus-visible {
+  outline: none;
+}
+.landing-card footer a:focus-visible > span {
+  outline: none;
+  box-shadow: 0 0 0 2px var(--jobloop-secondary-green);
+  border-radius: calc(infinity * 1px);
+}
+.landing-card footer a:focus-visible:hover > span {
+  transform: scale(1.05);
+}
+
 .team-photo {
   opacity: 1;
   will-change: transform, opacity;

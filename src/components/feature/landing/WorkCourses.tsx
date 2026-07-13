@@ -89,7 +89,7 @@ export default async function WorkCourses() {
         btnVariant={'externalLink'}
       />
       <ul
-        className='grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-4 auto-rows-fr'
+        className='grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-4 auto-rows-auto'
       >
         {courses.map((card, index) => (
           <LandingCoursesCard key={index} context="work" {...card} />

@@ -13,18 +13,10 @@ interface LandingCoursesCardProps {
   isNew?: boolean;
 }
 
-// TODO: Remove divs where possible.
-// TODO: Test these with a screen reader!
+// TODO: Properly test with a screen reader!
 // TODO: Ensure that the link is understood as a read more.
-// TODO: Fix titles not being positioned correctly on smaller screens.
-// TODO: Remove button-like after moving it to a button file, or get the button style from there.
-// TODO: Find a more robust solution for the double-link issue..
 /**
  * Creates a card component for displaying course information on the landing page.
- * 
- * This card makes use of only one link, which covers both the image and the
- * "read more" button by using hit-spans to emulate multiple clickable areas.
- * Drawback: User can't right click to save the image.
  * 
  * The card allows for marking new courses with a visually hidden label for
  * screen readers, while announcing the new status in the heading.
@@ -54,79 +46,53 @@ export function LandingCoursesCard({
   const t = useTranslations("dictionary");
   const slug = title.replace(/\s+/g, '-').toLowerCase();
   const titleId = `${context}-course-${slug}`;
-  const descriptionId = `${context}-course-description-${slug}`;
 
   return (
-    <li className={`
-      flex h-full
-      bg-white rounded-xl hover:shadow-md border border-gray-50
-      transition-all duration-200
-      [&:has(.read-more-hit:hover)_.read-more-pill]:bg-jobloop-primary-orange
-      [&:has(.read-more-hit:hover)_.read-more-pill]:shadow-lg
-      [&:has(.read-more-hit:hover)_.read-more-pill]:scale-105
-      [&:has(.read-more-hit:hover)_.read-more-icon]:translate-x-1
-      [&:has(.read-more-hit:hover)_.read-more-icon]:scale-110
-      ${context === 'work' ? 'shadow-xs' : 'shadow-sm'}
-    `}>
+    <li
+      className={`
+        flex
+        bg-white rounded-xl hover:shadow-md border border-gray-50
+        transition-all duration-200
+        ${context === 'work' ? 'shadow-xs' : 'shadow-sm'}
+      `}
+    >
       <article
         aria-labelledby={titleId}
-        className='
-          group relative flex flex-col w-full gap-4 lg:gap-6 xl:flex-row-reverse
-          p-6 xl:pl-0 h-full justify-start md:justify-start xl:justify-between
-        '
+        className={`
+          landing-card group relative flex flex-col w-full p-6 gap-4
+          [&>a]:order-1 [&>h3]:order-2 [&>p]:order-3 [&>footer]:order-4
+          xl:grid xl:grid-cols-2 xl:grid-rows-[1fr_auto_auto_auto_1fr] xl:gap-x-6 xl:gap-y-4
+        `}
       >
-        <div
+        <h3
+          id={titleId}
           className='
-            relative z-20 flex flex-col flex-1 w-full gap-4 xl:w-1/2 order-last
-            pointer-events-none xl:h-full xl:py-3 xl:pl-6 xl:pt-14 mt-2 lg:mt-0
+            text-xl text-kv-black md:text-2xl font-semibold leading-tight
+            pt-7 lg:pt-8
+            xl:col-start-1 xl:row-start-2 xl:pt-0
           '
         >
-          <h3
-            id={titleId}
-            className='
-              text-xl text-kv-black md:text-2xl font-semibold leading-tight
-            '
-          >
-            {isNew && (
-              <span className='sr-only'>
-                {t(`new${context.charAt(0).toUpperCase() + context.slice(1)}Course`)}:
-              </span>
-            )}
-            {title}
-          </h3>
-          <p
-            id={descriptionId}
-            className='
-              text-base text-gray-600 md:text-lg leading-relaxed
-              pointer-events-auto select-text cursor-text xl:mr-2
-            '
-          >
-            {text}
-          </p>
-          <footer className='md:mt-auto pt-2'>
-            <span
-              // TODO: Act like hover when this card is tabbed to.
-              // TODO: Fix too big space between button and text on small screens.
-              aria-hidden='true'
-              className='
-                w-full h-12 md:w-auto md:max-w-[155px] inline-flex gap-3 px-6 py-3
-                text-white items-center justify-center
-                bg-jobloop-primary-green rounded-full transition-all
-                duration-300 read-more-pill pointer-events-none
-              '
-            >
-              <span className='font-medium'>{t('readMore')}</span>
-              <FaArrowRight
-                className='read-more-icon transition-transform duration-300'
-                aria-hidden='true'
-              />
+          {isNew && (
+            <span className='sr-only'>
+              { // TODO: Simplify this.
+                t(`new${context.charAt(0).toUpperCase() + context.slice(1)}Course`)
+              }:
             </span>
-          </footer>
-        </div>
-        <div // TODO: Consider changing this to a figure?
+          )}
+          {title}
+        </h3>
+        <p
           className='
-            relative z-20 w-full h-80 overflow-hidden rounded-xl
-            order-first pointer-events-none xl:w-[calc(50%-1.5rem)]
+            text-base text-gray-600 md:text-lg leading-relaxed pb-2
+            xl:col-start-1 xl:row-start-3
+          '
+        >
+          {text}
+        </p>
+        <div
+          className='
+            w-full h-80 overflow-hidden rounded-xl
+            xl:col-start-2 xl:row-start-1 xl:row-span-5 xl:h-80 xl:min-h-0 xl:self-center
           '
         >
           <Image
@@ -137,32 +103,39 @@ export function LandingCoursesCard({
             className='object-cover object-center h-full w-full'
           />
         </div>
-        <Link // Link with hits to emulate having one link on the image and one on the button.
-          href={path}
-          aria-labelledby={titleId}
-          aria-describedby={descriptionId}
+        <footer
           className='
-            absolute inset-0 z-10 rounded-xl pointer-events-none focus-visible:outline
-            focus-visible:outline-offset-4 focus-visible:outline-jobloop-primary-green
+            order-4 md:mt-auto xl:mt-0
+            xl:col-start-1 xl:row-start-4
           '
-          // TODO: Find out if i should add tabindex to the spans, and have them be described by their respective elements.
         >
-          <span
-            aria-hidden='true'
-            className='
-              read-more-hit absolute left-6 right-6 bottom-6 xl:bottom-9 h-12
-              pointer-events-auto md:right-auto md:w-[135px] rounded-full
-            '
-          />
-          <span
-            aria-hidden='true'
-            className='
-              image-hit absolute top-6 left-0 h-80 rounded-xl
-              pointer-events-auto xl:left-auto xl:right-0 xl:w-[calc(50%-2.2rem)]
-              ml-6 w-[calc(100%-8rem)] md:w-[calc(100%-3rem)] xl:mr-6
-            '
-          />
-        </Link>
+          <Link
+            href={path}
+          >
+            <span
+              className='
+                w-full md:w-auto md:max-w-[155px] inline-flex items-center
+                justify-center gap-3 px-6 py-3 bg-jobloop-primary-green
+                text-white rounded-full hover:bg-jobloop-primary-orange
+                hover:shadow-lg transition-all duration-300 group/btn
+                hover:scale-105
+              '
+            >
+              <span className='font-medium'>
+                { // TODO: Add context to the "read more" button.
+                  t('readMore')
+                }
+              </span>
+              <FaArrowRight
+                className='
+                  transition-transform duration-300
+                  group-hover/btn:translate-x-1 group-hover/btn:scale-110
+                '
+                aria-hidden='true'
+              />
+            </span>
+          </Link>
+        </footer>
         {isNew && (
           <div
             aria-hidden='true'

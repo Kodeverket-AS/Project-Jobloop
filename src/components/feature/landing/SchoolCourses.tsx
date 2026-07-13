@@ -77,7 +77,7 @@ export default async function SchoolCourses() {
         alt={t('school.image.alt')}
         direction='reverse'
       />
-      <ul className='grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-4 auto-rows-fr'>
+      <ul className='grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-4 auto-rows-auto'>
         {courses.map((card, index) => (
           <LandingCoursesCard
             key={index}
