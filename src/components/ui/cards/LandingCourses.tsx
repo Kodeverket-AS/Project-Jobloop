@@ -58,18 +58,21 @@ export function LandingCoursesCard({
     >
       <article
         aria-labelledby={titleId}
-        className={`
-          landing-card group relative flex flex-col w-full p-6 gap-4
+        className='
+          landing-card
+          group relative flex flex-col w-full p-6 gap-4
           [&>a]:order-1 [&>h3]:order-2 [&>p]:order-3 [&>footer]:order-4
-          xl:grid xl:grid-cols-2 xl:grid-rows-[1fr_auto_auto_auto_1fr] xl:gap-x-6 xl:gap-y-4
-        `}
+          xl:grid xl:grid-cols-2 xl:grid-rows-[1fr_auto_auto_auto_1fr]
+          xl:gap-x-6 xl:gap-y-4
+          focus-within:rounded-xl focus-within:shadow-sm 
+          focus-within:shadow-jobloop-primary-green
+        '
       >
         <h3
           id={titleId}
           className='
             text-xl text-kv-black md:text-2xl font-semibold leading-tight
-            pt-7 lg:pt-8
-            xl:col-start-1 xl:row-start-2 xl:pt-0
+            pt-7 lg:pt-8 xl:col-start-1 xl:row-start-2 xl:pt-0
           '
         >
           {isNew && (
@@ -91,8 +94,8 @@ export function LandingCoursesCard({
         </p>
         <div
           className='
-            w-full h-80 overflow-hidden rounded-xl
-            xl:col-start-2 xl:row-start-1 xl:row-span-5 xl:h-80 xl:min-h-0 xl:self-center
+            w-full h-80 overflow-hidden rounded-xl xl:col-start-2 xl:row-start-1
+            xl:row-span-5 xl:h-80 xl:min-h-0 xl:self-center
           '
         >
           <Image
@@ -111,10 +114,14 @@ export function LandingCoursesCard({
         >
           <Link
             href={path}
+            className='
+              focus-visible:outline-none
+            '
           >
             <span
               // TODO: Move button-like to SpecialButtons.tsx
               // TODO: Check if button-animations should have "prefers reduced motion" media query.
+              // TODO: Consider removing custom css and copy hover style for focus style.
               className='
                 w-full md:w-auto md:max-w-[155px] inline-flex items-center
                 justify-center gap-3 px-6 py-3 bg-jobloop-primary-green

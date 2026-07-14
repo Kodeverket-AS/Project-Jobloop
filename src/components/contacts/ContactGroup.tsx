@@ -37,15 +37,27 @@ export function ContactGroup({ groupID, people = [] }: ContactGroupProps) {
     people.length <= 2 ? 'max-w-2xl' : people.length <= 3 ? 'max-w-5xl' : 'max-w-7xl';
 
   return (
-    <section className={`space-y-8 mx-auto ${maxWidth}`}>
-      <h2 className='text-center text-2xl md:text-3xl font-bold text-kv-black pb-2 border-b-2 md:border-b-4 border-jobloop-primary-green w-fit mx-auto'>
+    <li className={`space-y-8 mx-auto ${maxWidth}`}>
+      <h2
+        id={`contact-group-${groupID}`}
+        className='
+          w-fit text-center text-2xl md:text-3xl font-bold text-kv-black pb-2
+          border-b-2 md:border-b-4 border-jobloop-primary-green mx-auto
+        '
+      >
         {groupName}
       </h2>
-      <ul className='grid gap-8 justify-center justify-items-center grid-cols-[repeat(auto-fit,minmax(220px,1fr))]'>
+      <ul
+        className='
+          grid gap-8 justify-center justify-items-center items-stretch
+          grid-cols-[repeat(auto-fit,minmax(220px,1fr))]
+        '
+        aria-labelledby={`contact-group-${groupID}`}
+      >
         {people.map((contact) => (
           <ContactCard key={contact._id} contact={contact} />
         ))}
       </ul>
-    </section>
+    </li>
   );
 }

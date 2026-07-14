@@ -124,15 +124,8 @@ h6 {
     margin: 0;
   }
 }
-/* TODO: Implement focus styles across the site for accessibility and consistency */
+/* TODO: Implement focus styles across the site for accessibility and consistency. */
 /* TODO: Change focus styles for buttons to use a class that can be used globally. */
-.landing-card:focus-within {
-  box-shadow: 0 0 0 1px var(--color-jobloop-primary-green);
-  border-radius: var(--radius-xl);
-}
-.landing-card footer a:focus-visible {
-  outline: none;
-}
 .landing-card footer a:focus-visible > span {
   outline: none;
   box-shadow: 0 0 0 2px var(--jobloop-primary-orange);
