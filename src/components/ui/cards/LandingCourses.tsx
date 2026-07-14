@@ -113,6 +113,8 @@ export function LandingCoursesCard({
             href={path}
           >
             <span
+              // TODO: Move button-like to SpecialButtons.tsx
+              // TODO: Check if button-animations should have "prefers reduced motion" media query.
               className='
                 w-full md:w-auto md:max-w-[155px] inline-flex items-center
                 justify-center gap-3 px-6 py-3 bg-jobloop-primary-green

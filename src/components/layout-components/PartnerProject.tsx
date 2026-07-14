@@ -36,8 +36,8 @@ export const PartnerProject = ({
     >
       <div
         className={`
-          flex flex-col gap-4 w-full lg:w-1/2 justify-center
-          ${direction === 'reverse' ? 'order-first' : 'order-last'}
+          flex flex-col gap-4 w-full lg:w-1/2 justify-center order-last
+          ${direction === 'reverse' ? 'lg:order-first' : 'lg:order-last'}
         `}
       >
         <h3
@@ -64,11 +64,11 @@ export const PartnerProject = ({
       </div>
       <div
         className={`
-          w-full lg:w-1/2
-          ${direction === 'reverse' ? 'order-last' : 'order-first'}
+          w-full lg:w-1/2 order-first
+          ${direction === 'reverse' ? 'lg:order-last' : 'lg:order-first'}
         `}
       >
-        <Image // TODO: Fix Gløde image showing in incorrect location on small screens.
+        <Image
           alt={alt}
           src={image}
           width={1000}
