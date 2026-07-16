@@ -108,22 +108,6 @@ h6 {
 }
 
 /* Solution for removing double-links in landing cards. */
-.landing-card footer a::before {
-  border-radius: var(--radius-xl);
-  position: absolute;
-  content: '';
-  inset: 0;
-  height: calc(var(--spacing) * 80);
-  width: calc(100% - 50px);
-  margin: 25px;
-  z-index: 1;
-  @media (width >= 80rem) { /* xl breakpoint */
-    grid-row-start: 1;
-    grid-column-start: 2;
-    width: calc(100% - 25px);
-    margin: 0;
-  }
-}
 /* TODO: Implement focus styles across the site for accessibility and consistency. */
 /* TODO: Change focus styles for buttons to use a class that can be used globally. */
 .landing-card footer a:focus-visible > span {

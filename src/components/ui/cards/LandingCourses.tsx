@@ -15,6 +15,7 @@ interface LandingCoursesCardProps {
 
 // TODO: Properly test with a screen reader!
 // TODO: Ensure that the link is understood as a read more.
+// TODO: Rename to a more fitting name, as this is now also used on "om-oss".
 /**
  * Creates a card component for displaying course information on the landing page.
  * 
@@ -53,12 +54,12 @@ export function LandingCoursesCard({
         flex
         bg-white rounded-xl hover:shadow-md border border-gray-50
         transition-all duration-200
-        ${context === 'work' ? 'shadow-xs' : 'shadow-sm'}
+        ${context === 'school' ? 'shadow-sm' : 'shadow-xs'}
       `}
     >
       <article
         aria-labelledby={titleId}
-        className='
+        className={`
           landing-card
           group relative flex flex-col w-full p-6 gap-4
           [&>a]:order-1 [&>h3]:order-2 [&>p]:order-3 [&>footer]:order-4
@@ -66,14 +67,19 @@ export function LandingCoursesCard({
           xl:gap-x-6 xl:gap-y-4
           focus-within:rounded-xl focus-within:shadow-sm 
           focus-within:shadow-jobloop-primary-green
-        '
+          ${context === 'partners' ? 'xl:pb-0 xl:pt-2' : ''}
+        `}
       >
         <h3
           id={titleId}
-          className='
+          className={`
             text-xl text-kv-black md:text-2xl font-semibold leading-tight
-            pt-7 lg:pt-8 xl:col-start-1 xl:row-start-2 xl:pt-0
-          '
+            xl:col-start-1 xl:row-start-2 xl:pt-0
+            ${context === 'partners'
+              ? 'lg:pt-2'
+              : 'pt-7 lg:pt-8'
+            }
+          `}
         >
           {isNew && (
             <span className='sr-only'>
@@ -93,17 +99,26 @@ export function LandingCoursesCard({
           {text}
         </p>
         <div
-          className='
-            w-full h-80 overflow-hidden rounded-xl xl:col-start-2 xl:row-start-1
-            xl:row-span-5 xl:h-80 xl:min-h-0 xl:self-center
-          '
+          className={`
+            max-w-full overflow-hidden rounded-xl xl:col-start-2 xl:row-start-1
+            xl:row-span-5 xl:min-h-0 xl:self-center
+            ${context === 'partners'
+              ? 'rounded-lg h-48 flex justify-center xl:mb-4'
+              : 'rounded-xl max-h-full h-80'
+            }
+          `}
         >
           <Image
             alt={alt}
             src={image}
-            width={600}
-            height={600}
-            className='object-cover object-center h-full w-full'
+            width={context === 'partners' ? 300 : 600}
+            height={context === 'partners' ? 150 : 600}
+            className={`
+              ${context === 'partners'
+                ? 'object-contain max-h-full max-w-full'
+                : 'object-cover object-center h-full w-full'
+              }
+            `}
           />
         </div>
         <footer
@@ -113,10 +128,19 @@ export function LandingCoursesCard({
           '
         >
           <Link
+            // TODO: Make sure to differ between internal and external links!
             href={path}
-            className='
+            className={`
               focus-visible:outline-none
-            '
+              before:rounded-xl before:absolute before:content-['']
+              before:inset-0 before:w-[calc(100% - 50px)] before:m-[25px]
+              before:z-1 xl:before:m-0 xl:before:row-start-1
+              xl:before:col-start-2 xl:before:w-[calc(100%-25px)]
+              ${context === 'partners'
+                ? 'before:h-48 xl:before:h-80'
+                : 'before:h-80'
+              }
+            `}
           >
             <span
               // TODO: Move button-like to SpecialButtons.tsx

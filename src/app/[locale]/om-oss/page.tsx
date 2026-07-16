@@ -4,6 +4,7 @@ import { IoInformationCircle } from 'react-icons/io5';
 import { LocationCarousel } from '@/components/feature/about/LocationCarousel';
 import { CooperationSection } from '@/components/feature/about/CooperationSection';
 import { LesMerButton, LinkButtonAnimatedWithIcon } from '@/components/buttons';
+import { LandingCoursesCard } from '@/components/ui/cards/LandingCourses';
 import { TeamMember } from '@/components/ui/cards/TeamMember';
 
 // Images
@@ -13,6 +14,11 @@ import Inger from '@public/Inger.jpg';
 import Beate from '@public/Beate.jpg';
 import Oda from '@public/Oda.jpg';
 import Kim from '@public/Kim.jpg';
+
+import FonteneLogo from '@public/fontenelogo 1.png';
+import GlodeLogo from '@public/glode-logo 1.png';
+import PodiumLogo from '@public/podium.png';
+import PlaywellLogo from '@public/playwell.png';
 
 export default async function OmOss() {
   const t = await getTranslations('about');
@@ -29,31 +35,40 @@ export default async function OmOss() {
 
   const partners = [
     {
-      image: '/fontenelogo 1.png',
+      image: FonteneLogo,
       title: t('about.partners.fontenehuset.title'),
       text: t('about.partners.fontenehuset.text'),
       link: 'https://www.fontenehusetbergen.no/',
     },
     {
-      image: '/glode-logo 1.png',
+      image: GlodeLogo,
       title: t('about.partners.gloede.title'),
       text: t('about.partners.gloede.text'),
       link: 'https://www.gløde.no',
     },
     {
-      image: '/podium.png',
+      image: PodiumLogo,
       title: t('about.partners.podium.title'),
       text: t('about.partners.podium.text'),
       link: 'https://www.podium.no/',
     },
     {
-      image: '/playwell.png',
+      image: PlaywellLogo,
       title: t('about.partners.playwell.title'),
       text: t('about.partners.playwell.text'),
       link: 'https://www.playwell.no/',
     },
   ];
 
+  /**
+   * Problem: "About us" has some big blocks of text that would benefit from
+   * better structuring and possibly breaking into smaller sections.
+   * 
+   * Visual content such as images or visualizations of statistics could help
+   * break up the text and make the page more engaging.
+   * 
+   // TODO: Break down large text blocks into smaller sections for better readability.
+   */
   // TODO: Clean divs and restructure!
   // TODO: Consider getting rid of empty decorative spans if possible.
   return (
@@ -209,54 +224,22 @@ export default async function OmOss() {
           </h2>
           <div className='block w-full h-1 bg-jobloop-primary-orange mt-2 mb-6 mx-auto'></div>
         </div>
-        <ul className='grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-4 auto-rows-fr'>
-          {/* TODO: Deal with double link issue. */}
+        <ul
+          className='grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-4 auto-rows-fr'
+          aria-labelledby='partners-title'
+        >
           {partners.map((partner, index) => (
-            <li
-              key={partner.title + index}
-              // TODO: Check if li can/should have an aria-labelledby when containing a heading.
-              className={`
-                w-full group flex flex-col p-6 gap-4 lg:gap-6 xl:flex-row-reverse
-                justify-between bg-white border border-gray-50 rounded-xl
-                shadow-xs hover:shadow-md transition-all duration-200
-              `}
-            >
-              <div className='flex flex-col w-full gap-4 xl:w-1/2 justify-center order-last'>
-                <h3 className='text-xl text-kv-black md:text-2xl font-semibold leading-tight'>
-                  {partner.title}
-                </h3>
-                <p className='text-base text-gray-600 md:text-lg leading-relaxed text-pretty'>
-                  {partner.text}
-                </p>
-                <div className='pt-2'>
-                  <LesMerButton
-                    Path={partner.link}
-                    Text={t('about.partners.cta.label')}
-                    Aria={`${t1('about').toLowerCase()} ${partner.title}`}
-                    // TODO: Test listening to this aria label!
-                    // TODO: Make it clear that link goes to an external site.
-                  />
-                </div>
-              </div>
-              <a
-                href={partner.link}
-                className={`
-                  relative flex items-center justify-center w-full h-48 xl:w-1/2
-                  rounded-lg overflow-hidden order-first
-                `}
-              >
-                <Image
-                  src={partner.image}
-                  alt={`Picture of ${partner.title}s logo`}
-                  width={300}
-                  height={150}
-                  className='object-contain max-h-full max-w-full'
-                />
-              </a>
-            </li>
+            <LandingCoursesCard // TODO: Change component name when renaming LandingCourses.tsx
+              key={index}
+              image={partner.image}
+              title={partner.title}
+              text={partner.text}
+              path={partner.link}
+              alt={`Picture of ${partner.title}s logo`}
+              context='partners'
+            />
           ))}
         </ul>
-
       </section>
       <CooperationSection />
       <LocationCarousel />
