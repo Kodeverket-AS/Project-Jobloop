@@ -5,7 +5,6 @@ import { urlFor } from '@/lib/Sanity';
 import { getTranslations } from 'next-intl/server';
 
 // TODO: Deal with divs.
-// TODO: Add list.
 export default async function LeaderSection({ leaders }: { leaders: Tiltak['courseLeaders'] }) {
   if (!leaders || leaders.length === 0) {
     return null;
@@ -30,7 +29,10 @@ export default async function LeaderSection({ leaders }: { leaders: Tiltak['cour
         <div className='w-24 h-1 bg-jobloop-primary-green mx-auto'></div>
       </div>
 
-      <ul className='space-y-8'>
+      <ul
+        aria-labelledby='course-leaders-title'
+        className='space-y-8'
+      >
       {leaders.map((courseLeader, index) => (
         <li
           key={index}
@@ -51,6 +53,7 @@ export default async function LeaderSection({ leaders }: { leaders: Tiltak['cour
               </h3>
             </div>
 
+            {/* TODO: Consider if the name of the person matters more than their position. Especially for course leaders, who are already under a heading indicating their role. */}
             <p className='text-base font-semibold text-jobloop-primary-green'>
               {courseLeader.name}
             </p>
@@ -60,7 +63,11 @@ export default async function LeaderSection({ leaders }: { leaders: Tiltak['cour
                 prose prose-sm sm:prose max-w-none text-gray-700
                 leading-relaxed
               '>
-                <PortableText value={courseLeader.description} />
+                <PortableText
+                  // TODO: Request that location, email and phone number be served one at a time to allow for easier parsing.
+                  // The content of courseLeader.description is served in a variation of formats, making parsing it challenging and a potential source of errors.
+                  value={courseLeader.description}
+                />
               </div>
             )}
           </div>
@@ -68,10 +75,10 @@ export default async function LeaderSection({ leaders }: { leaders: Tiltak['cour
           <div className='
             w-full md:w-1/3 flex justify-center shrink-0 order-first
           '>
-            <div className={`
+            <div className='
               relative overflow-hidden rounded-lg shadow-md group bg-linear-to-br
               from-jobloop-primary-green/20 to-jobloop-primary-orange/20
-            `}>
+            '>
               {courseLeader.image ? (
                 <Image
                   src={
@@ -89,15 +96,15 @@ export default async function LeaderSection({ leaders }: { leaders: Tiltak['cour
                 />
               ) : (
                 <div
-                  className={`
+                  className='
                     w-32 h-32 sm:w-40 sm:h-40 lg:w-44 lg:h-44 flex items-center
                     justify-center
-                `}>
+                  '>
                   <div className='text-center'>
-                    <div className={`
+                    <div className='
                       w-16 h-16 sm:w-20 sm:h-20 mx-auto mb-2 flex items-center
                       justify-center rounded-full bg-jobloop-primary-green/30
-                    `}>
+                    '>
                       <span className='
                         text-xl sm:text-2xl font-bold
                         text-jobloop-primary-green
@@ -119,10 +126,10 @@ export default async function LeaderSection({ leaders }: { leaders: Tiltak['cour
                   </div>
                 </div>
               )}
-              <div className={`
+              <div className='
                 absolute inset-0 bg-linear-to-t from-black/20 to-transparent
                 opacity-0 group-hover:opacity-100 transition-opacity duration-300
-              `} />
+              '/>
             </div>
           </div>
         </li>

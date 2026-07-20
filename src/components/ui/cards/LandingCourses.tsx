@@ -128,7 +128,6 @@ export function LandingCoursesCard({
           '
         >
           <Link
-            // TODO: Make sure to differ between internal and external links!
             href={path}
             className={`
               focus-visible:outline-none
