@@ -67,7 +67,7 @@ export default async function WorkCourses() {
   return (
     <article
       className='space-y-16'
-      aria-labelledby='work-title' // TODO: Connect up this aria-labelledby to the correct heading
+      aria-labelledby={'intro-section-title-' + t('work.title').toLowerCase().replace(/\s+/g, '-')}
     >
       <IntroSection
         title={t('work.title')}

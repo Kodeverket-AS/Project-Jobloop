@@ -65,8 +65,8 @@ export default async function SchoolCourses() {
   return (
     <article
       id='courses'
-      className=' courses w-full max-w-[1536px] mx-auto space-y-16'
-      aria-labelledby='courses-title'
+      className='courses w-full max-w-[1536px] mx-auto space-y-16'
+      aria-labelledby={'intro-section-title-' + t('school.title').toLowerCase().replace(/\s+/g, '-')}
     >
       <IntroSection
         image={Læringstilbud}

@@ -20,6 +20,7 @@ interface IntroSection {
 }
 
 // TODO: Deal with "Read More" button with no descriptive title.
+// TODO: Deal with divs.
 export function IntroSection({
   title,
   text,

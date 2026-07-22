@@ -7,6 +7,8 @@ import Snowflakes from "./Snowflakes";
 import SnowflakesModal from "./SnowflakesModal";
 import SparklyText from "./SparklyText";
 
+// TODO: Deal with divs.
+// TODO: Improve modal focus management.
 const JulekalenderModal = () => {
     const [isOpen, setIsOpen] = useState(false);
     const [isMounted, setIsMounted] = useState(false);
