@@ -82,6 +82,7 @@ export default function ContactContainer({ data = [] }: { data: Contacts[] }) {
    // TODO: Find out if this is still relevant when using next.js
    */
   // TODO: Remove divs where possible
+  // TODO: Find out why the Learnwell department filter shows no results.
   return (
     <article
       className='

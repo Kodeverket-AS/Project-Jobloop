@@ -52,23 +52,60 @@ export default function ContactCard({ contact }: { contact: Contacts }) {
         </h3>
 
         {!!role?.length && (
-          <p className='
-            mt-1 text-sm text-slate-600 transition-colors duration-300
-            group-hover:text-jobloop-primary-orange
-          '>
-            {role.join(' · ')}
-          </p>
+          <ul
+            aria-label='Roller' // TODO: Translate and improve aria-label
+            className='
+              mt-1 text-sm gap-x-2 text-slate-600 transition-colors flex
+              flex-row flex-wrap justify-center duration-300
+              group-hover:text-jobloop-primary-orange
+            '
+          >
+            {role.map((r, index) => (
+              <li
+                key={r}
+                className={`
+                  relative
+                  ${
+                    role?.length > 1 && index !== role?.length - 1
+                    ? 'mr-1 after:absolute after:content-["·"] after:text-sm after:text-slate-600 after:h-full after:-right-2 after:top-0 after:flex after:items-center group-hover:after:text-jobloop-primary-orange'
+                    : ''
+                  }
+                `}
+              >
+                {r}
+              </li>
+            ))}
+          </ul>
         )}
 
         {!!company?.length && (
-          <p className='mt-1 text-xs text-slate-500'>{company.join(' · ')}</p>
+          <ul
+            aria-label='Avdelinger' // TODO: Translate and improve aria-label
+            className='mt-1 text-xs text-slate-500 flex flex-row flex-nowrap gap-2'
+          >
+            {company.map((c, index) => (
+              <li
+                key={c}
+                className={`
+                  relative
+                  ${
+                    index > 0
+                    ? 'ml-px before:absolute before:content-["·"] before:text-slate-500 before:text-xs before:h-full before:-left-1.5 before:flex before:justify-center before:items-center'
+                    : ''
+                  }
+                `}
+              >
+                {c}
+              </li>
+            ))}
+          </ul>
         )}
 
         <address
           className='mt-auto pt-4 w-full space-y-1 text-sm order-last not-italic'
         >
           {email && (
-            <a
+            <a // TODO: Translate title and labels.
               href={`mailto:${email}`}
               className='block truncate px-1 hover:underline'
               title={`Send e-post til ${fullName}`}
@@ -78,7 +115,7 @@ export default function ContactCard({ contact }: { contact: Contacts }) {
             </a>
           )}
           {phone && (
-            <a
+            <a // TODO: Translate title and labels.
               href={`tel:${formatTelHref(phone)}`}
               className='block px-1 hover:underline'
               title={`Ring ${fullName}`}
@@ -95,7 +132,7 @@ export default function ContactCard({ contact }: { contact: Contacts }) {
           group-hover:border-4 shadow-2xl transition-all duration-300
           order-first
         '>
-          <Image
+          <Image // TODO: Translate image alt.
             src={image ? urlFor(image).url() : '/contact_placeholder.jpg'}
             alt={fullName || 'Ansattbilde'}
             fill
