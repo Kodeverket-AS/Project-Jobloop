@@ -108,3 +108,44 @@ export function LesMerButton({ Path, Text = 'Les mer', Aria = '' }: Partial<Butt
     </a>
   );
 }
+
+/**
+ * Outputs a span element styled like a button.
+ * This is used for the LandingCoursesCard component to emulate having two links
+ * which both go to the same location, without duplicating the link element and
+ * causing accessibility issues.
+ * 
+ // TODO: Check if button-animations should have "prefers reduced motion" media query.
+ */
+export function SpanButtonLike({ Text = 'readMore', Context = '' }: { Text?: string, Context?: string }) {
+  const t = useTranslations('dictionary');
+
+  return (
+    <span
+      className='
+        w-full md:w-auto md:max-w-[155px] inline-flex items-center
+        justify-center gap-3 px-6 py-3 bg-jobloop-primary-green text-white
+        rounded-full hover:bg-jobloop-primary-orange hover:shadow-lg
+        transition-all duration-300 group/btn hover:scale-105
+      '
+    >
+      <span className='font-medium'>
+        {t(`${Text}`)}
+        {Context && (
+          <span className='sr-only'>
+            { // TODO: Translate this
+              ` about ${Context}`
+            }
+          </span>
+        )}
+      </span>
+      <FaArrowRight
+        className='
+          transition-transform duration-300
+          group-hover/btn:translate-x-1 group-hover/btn:scale-110
+        '
+        aria-hidden='true'
+      />
+    </span>
+  );
+}

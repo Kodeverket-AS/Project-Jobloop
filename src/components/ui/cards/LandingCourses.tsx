@@ -2,6 +2,7 @@ import Image, { type StaticImageData } from 'next/image';
 import { FaArrowRight } from 'react-icons/fa';
 import { useTranslations } from 'next-intl';
 import { Link } from '@/i18n/navigation';
+import { SpanButtonLike } from '@/components/buttons/SpecialButtons';
 
 interface LandingCoursesCardProps {
   image: StaticImageData;
@@ -141,31 +142,7 @@ export function LandingCoursesCard({
               }
             `}
           >
-            <span
-              // TODO: Move button-like to SpecialButtons.tsx
-              // TODO: Check if button-animations should have "prefers reduced motion" media query.
-              // TODO: Consider removing custom css and copy hover style for focus style.
-              className='
-                w-full md:w-auto md:max-w-[155px] inline-flex items-center
-                justify-center gap-3 px-6 py-3 bg-jobloop-primary-green
-                text-white rounded-full hover:bg-jobloop-primary-orange
-                hover:shadow-lg transition-all duration-300 group/btn
-                hover:scale-105
-              '
-            >
-              <span className='font-medium'>
-                { // TODO: Add context to the "read more" button.
-                  t('readMore')
-                }
-              </span>
-              <FaArrowRight
-                className='
-                  transition-transform duration-300
-                  group-hover/btn:translate-x-1 group-hover/btn:scale-110
-                '
-                aria-hidden='true'
-              />
-            </span>
+            <SpanButtonLike Context={title} />
           </Link>
         </footer>
         {isNew && (
