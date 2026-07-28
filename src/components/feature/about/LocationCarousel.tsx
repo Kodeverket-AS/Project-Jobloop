@@ -1,9 +1,10 @@
 'use client';
 
 import 'swiper/css';
+import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 import { Swiper, SwiperSlide } from 'swiper/react';
-import { Pagination, Autoplay } from 'swiper/modules';
+import { A11y, Pagination, Autoplay, Navigation } from 'swiper/modules';
 import { useTranslations } from 'next-intl';
 import Image from 'next/image';
 
@@ -28,10 +29,9 @@ export function LocationCarousel() {
    * prefers-reduced-motion or providing a pause button. This fails WCAG 2.2.2
    * (Pause, Stop, Hide) and can be problematic for vestibular disorder users.
    * 
-   // TODO: Add a pause mechanism.
+   // TODO: Add pause mechanism with a visible pause button
    // TODO: Add a "prefers-reduced-motion" check.
    // TODO: Remove divs where possible and restructure.
-   // TODO: Consider if adding buttons and/or pagination bullets for manual navigation is necessary for accessibility.
    // TODO: Give the carousel entries a better description.
    // TODO: Make it possible to escape the carousel when navigating using tab.
    *
@@ -46,82 +46,137 @@ export function LocationCarousel() {
         w-full max-w-[1536px] mx-auto py-16 rounded-xl bg-linear-to-br
         from-jobloop-primary-green/50 via-white to-jobloop-primary-orange/50
       `}
+      aria-labelledby='location-carousel-title'
     >
       <div className='container mx-auto px-4 text-center'>
-        <h2 className='text-2xl md:text-3xl font-bold mb-4 text-kv-black'>
+        <h2
+          id='location-carousel-title'
+          className='text-2xl md:text-3xl font-bold mb-4 text-kv-black'
+        >
           {t('about.locations.title')}
         </h2>
         <span className='block w-60 h-1 bg-jobloop-primary-orange mt-2 mb-8 mx-auto'></span>
 
-        <div className='relative max-w-7xl mx-auto'>
-          <Swiper
-            modules={[Pagination, Autoplay]}
-            spaceBetween={15}
-            slidesPerView={2}
-            breakpoints={{
-              480: {
-                slidesPerView: 2,
-                spaceBetween: 10,
-              },
-              640: {
-                slidesPerView: 3,
-                spaceBetween: 15,
-              },
-              768: {
-                slidesPerView: 4,
-                spaceBetween: 15,
-              },
-              1024: {
-                slidesPerView: 5,
-                spaceBetween: 15,
-              },
-              1280: {
-                slidesPerView: 6,
-                spaceBetween: 15,
-              },
-            }}
-            autoplay={{
-              delay: 2000,
-              disableOnInteraction: false,
-              pauseOnMouseEnter: true,
-            }}
-            loop={true}
-            speed={1200}
-            effect='slide'
-            grabCursor={true}
-            touchRatio={1}
-            touchAngle={45}
-            threshold={5}
-            touchStartPreventDefault={false}
-            touchMoveStopPropagation={false}
-            pagination={{
-              clickable: true,
-              bulletClass: 'swiper-pagination-bullet-custom',
-              bulletActiveClass: 'swiper-pagination-bullet-active-custom',
-            }}
-            className='locations-swiper'
-          >
-            {cities.map((city) => (
-              <SwiperSlide key={city.name}>
-                <div className='flex flex-col items-center gap-3 p-2'>
-                  <div className='relative w-32 h-32 md:w-40 md:h-40 overflow-hidden rounded-xl shadow-lg group hover:shadow-xl transition-all duration-300 hover:scale-105'>
-                    <Image
-                      src={city.src}
-                      alt={city.name}
-                      width={200}
-                      height={200}
-                      className='object-cover w-full h-full group-hover:scale-110 transition-transform duration-300'
-                    />
-                    <div className='absolute inset-0 bg-linear-to-t from-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300'></div>
-                  </div>
-                  <h3 className='text-lg font-semibold text-kv-black group-hover:text-jobloop-primary-green transition-colors duration-300'>
-                    {city.name}
-                  </h3>
-                </div>
-              </SwiperSlide>
-            ))}
-          </Swiper>
-        </div>
+        <Swiper
+          modules={[A11y, Navigation, Pagination, Autoplay]}
+          wrapperTag={'ul'}
+          className='relative max-w-7xl mx-auto locations-swiper'
+
+          // Accessibility
+          a11y={{
+            enabled: true,
+            // TODO: Translate a11y messages!
+            // firstSlideMessage: '',
+            // lastSlideMessage: '',
+            // nextSlideMessage: '',
+            // prevSlideMessage: '',
+            // paginationBulletMessage: '',
+            // slideLabelMessage: '',
+          }}
+
+          // Navigation
+          // navigation={{
+            // TODO: Find out how to place the navigation buttons neatly.
+            // TODO: Change the navigation divs to buttons.
+            // TODO: Move the buttons so they are outside the carousel container.
+            // enabled: true,
+          // }}
+
+          // Pagination
+          pagination={{
+            enabled: true,
+            clickable: true,
+            // TODO: Place the pagination container in a proper location.
+            // TODO: Style pagination to match Jobloop better.
+            // bulletClass: 'swiper-pagination-bullet-custom',
+            // bulletActiveClass: 'swiper-pagination-bullet-active-custom',
+          }}
+
+          // Sizing
+          spaceBetween={15}
+          slidesPerView={2}
+          breakpoints={{
+            480: {
+              slidesPerView: 2,
+              spaceBetween: 10,
+            },
+            640: {
+              slidesPerView: 3,
+              spaceBetween: 15,
+            },
+            768: {
+              slidesPerView: 4,
+              spaceBetween: 15,
+            },
+            1024: {
+              slidesPerView: 5,
+              spaceBetween: 15,
+            },
+            1280: {
+              slidesPerView: 6,
+              spaceBetween: 15,
+            },
+          }}
+
+          // Autoplay
+          autoplay={{
+            delay: 2000,
+            disableOnInteraction: false,
+            pauseOnMouseEnter: true,
+          }}
+          loop={true} // TODO: Examine if this still breaks keyboard navigation.
+          speed={1200}
+          effect='slide'
+
+          // Interaction
+          grabCursor={true}
+          touchRatio={1}
+          touchAngle={45}
+          threshold={5}
+          touchStartPreventDefault={false}
+          touchMoveStopPropagation={false}
+
+          // Events (if needed)
+          // onSlideChange={() => console.log('slide change')}
+          // onSwiper={(swiper) => console.log(swiper)}
+        >
+          {cities.map((city) => (
+            <SwiperSlide
+              key={city.name}
+              tag={'li'}
+              className='flex! flex-col! items-center gap-3 p-2 mb-8'
+            >
+              <h3 className='order-last'>
+                {city.name}
+              </h3>
+              <div
+                className={`
+                  w-32 h-32 md:w-40 md:h-40 overflow-hidden
+                  rounded-xl shadow-lg group hover:shadow-xl transition-all
+                  duration-300 hover:scale-105
+                `}
+              >
+                <Image
+                  src={city.src}
+                  alt={city.name}
+                  width={200}
+                  height={200}
+                  className={`
+                    object-cover w-full h-full group-hover:scale-110
+                    transition-transform duration-300
+                  `}
+                />
+                <div
+                  className={`
+                    absolute inset-0 bg-linear-to-t from-black/20
+                    to-transparent opacity-0 group-hover:opacity-100
+                    transition-opacity duration-300
+                  `}
+                />
+              </div>
+            </SwiperSlide>
+          ))}
+        </Swiper>
       </div>
 
       <style jsx global>{`
