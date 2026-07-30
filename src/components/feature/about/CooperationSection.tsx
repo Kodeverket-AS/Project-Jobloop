@@ -5,6 +5,8 @@ import { useEffect, useState } from 'react';
 import { LinkButtonAnimatedWithIcon } from '@/components/buttons';
 import { useTranslations } from 'next-intl';
 
+// TODO: Clean divs and reorganize where reasonable.
+// TODO: Respect reduced motion preferences.
 export function CooperationSection() {
   const [photosAnimated, setPhotosAnimated] = useState(false);
 

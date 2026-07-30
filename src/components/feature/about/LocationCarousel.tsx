@@ -4,10 +4,13 @@ import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 import { Swiper, SwiperSlide } from 'swiper/react';
-import { A11y, Pagination, Autoplay, Navigation } from 'swiper/modules';
+import { A11y, Pagination, Autoplay } from 'swiper/modules';
 import { useTranslations } from 'next-intl';
 import Image from 'next/image';
 
+/**
+ * @deprecated This function was used for rendering a location carousel, but has now been replaced by the LocationSwiper component for accessibility improvements.
+ */
 export function LocationCarousel() {
   const t = useTranslations('about');
 
@@ -23,23 +26,6 @@ export function LocationCarousel() {
     { name: 'Ålesund', src: '/Ålesund.webp' },
   ];
 
-  /**
-   * Problem: Location Carousel has no pause mechanism for motion-sensitive users
-   * In LocationCarousel.tsx, the Swiper carousel autoplays without checking
-   * prefers-reduced-motion or providing a pause button. This fails WCAG 2.2.2
-   * (Pause, Stop, Hide) and can be problematic for vestibular disorder users.
-   * 
-   // TODO: Add pause mechanism with a visible pause button
-   // TODO: Add a "prefers-reduced-motion" check.
-   // TODO: Remove divs where possible and restructure.
-   // TODO: Give the carousel entries a better description.
-   // TODO: Make it possible to escape the carousel when navigating using tab.
-   *
-   * Note: Is the carousel currently purely decorative? I would not say so, but
-   * it clearly does not provide proper information about the locations, nor
-   * does it provide a way to navigate somewhere one can get more information
-   * about them. How can we improve that?
-   */
   return (
     <section
       className={`
@@ -58,36 +44,20 @@ export function LocationCarousel() {
         <span className='block w-60 h-1 bg-jobloop-primary-orange mt-2 mb-8 mx-auto'></span>
 
         <Swiper
-          modules={[A11y, Navigation, Pagination, Autoplay]}
+          modules={[A11y, Pagination, Autoplay]}
           wrapperTag={'ul'}
-          className='relative max-w-7xl mx-auto locations-swiper'
+          className='relative max-w-7xl mx-auto locations-swiper motion-reduce:transition-none'
 
           // Accessibility
           a11y={{
             enabled: true,
-            // TODO: Translate a11y messages!
-            // firstSlideMessage: '',
-            // lastSlideMessage: '',
-            // nextSlideMessage: '',
-            // prevSlideMessage: '',
-            // paginationBulletMessage: '',
-            // slideLabelMessage: '',
           }}
-
-          // Navigation
-          // navigation={{
-            // TODO: Find out how to place the navigation buttons neatly.
-            // TODO: Change the navigation divs to buttons.
-            // TODO: Move the buttons so they are outside the carousel container.
-            // enabled: true,
-          // }}
 
           // Pagination
           pagination={{
             enabled: true,
             clickable: true,
-            // TODO: Place the pagination container in a proper location.
-            // TODO: Style pagination to match Jobloop better.
+            bulletElement: 'button',
             // bulletClass: 'swiper-pagination-bullet-custom',
             // bulletActiveClass: 'swiper-pagination-bullet-active-custom',
           }}
@@ -124,7 +94,7 @@ export function LocationCarousel() {
             disableOnInteraction: false,
             pauseOnMouseEnter: true,
           }}
-          loop={true} // TODO: Examine if this still breaks keyboard navigation.
+          loop={true}
           speed={1200}
           effect='slide'
 
@@ -135,10 +105,6 @@ export function LocationCarousel() {
           threshold={5}
           touchStartPreventDefault={false}
           touchMoveStopPropagation={false}
-
-          // Events (if needed)
-          // onSlideChange={() => console.log('slide change')}
-          // onSwiper={(swiper) => console.log(swiper)}
         >
           {cities.map((city) => (
             <SwiperSlide
@@ -211,6 +177,12 @@ export function LocationCarousel() {
 
         .locations-swiper .swiper-wrapper {
           transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+          .swiper-wrapper {
+            transition: none !important;
+          }
         }
       `}</style>
     </section>

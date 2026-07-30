@@ -1,7 +1,7 @@
 import Image from 'next/image';
 import { getTranslations } from 'next-intl/server';
 import { IoInformationCircle } from 'react-icons/io5';
-import { LocationCarousel } from '@/components/feature/about/LocationCarousel';
+import { LocationSwiper } from '@/components/feature/about/LocationSwiper';
 import { CooperationSection } from '@/components/feature/about/CooperationSection';
 import { LesMerButton, LinkButtonAnimatedWithIcon } from '@/components/buttons';
 import { LandingCoursesCard } from '@/components/ui/cards/LandingCourses';
@@ -242,7 +242,7 @@ export default async function OmOss() {
         </ul>
       </section>
       <CooperationSection />
-      <LocationCarousel />
+      <LocationSwiper />
     </main>
   );
 }
