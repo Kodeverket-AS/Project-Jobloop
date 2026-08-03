@@ -1,9 +1,9 @@
 'use client';
 
-import { useEffect, useRef } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import Swiper from 'swiper';
 import { A11y, Pagination, Navigation, Autoplay } from 'swiper/modules';
-import { FaPause , FaChevronLeft, FaChevronRight } from "react-icons/fa";
+import { FaPause, FaPlay, FaChevronLeft, FaChevronRight } from "react-icons/fa";
 
 import 'swiper/css';
 import 'swiper/css/pagination';
@@ -28,32 +28,21 @@ import Image from 'next/image';
  * decorative carousel.
  * 
  * Checklist for carousel accessibility:
- * 1. Users must be able to pause carousel movement because it can be too fast
- *    or distracting, making text hard to read.
- *    Status: ?
- // TODO: Add pause mechanism with a visible pause button
- // TODO: Find out why prefers-reduced-motion makes the swiper jump once and then pause.
- * 
- * 2. All functionality, including navigating between carousel items, must be
- *    operable by keyboard.
- *    Status: ?
- // TODO: Add option to navigate between carousel elements with arrow keys (left, right).
- // TODO: Consider if pausing the carousel while tabbed to is proper.
- * 
  * 3. Changes to carousel items must be communicated to all users, including
  *    screen reader users.
  *    Status: ?
  // TODO: Give the carousel entries a better description.
  * 
- * 4. The keyboard position (“focus”) is managed in a reasonable and
- *    comprehensible fashion.
- *    Status: ?
- // TODO: Make it possible to escape the carousel when navigating using tab.
- * 
  // TODO: Remove divs where possible and restructure.
  // TODO: Do something about slow response time when clicking the navigation and pagination buttons.
  */
 export function LocationSwiper() {
+  const swiperRef = useRef<Swiper | null>(null);
+  const [isPaused, setIsPaused] = useState(false);
+
+  const prefersReducedMotionRef = useRef(false);
+  const userPausedRef = useRef(false);
+
   const containerRef = useRef<HTMLDivElement | null>(null);
   const paginationRef = useRef<HTMLDivElement | null>(null);
   const nextRef = useRef<HTMLButtonElement | null>(null);
@@ -72,10 +61,47 @@ export function LocationSwiper() {
     { name: 'Ålesund', src: '/Ålesund.webp' },
   ];
 
+  const handleToggleAutoplay = () => {
+    const swiper = swiperRef.current;
+    if (!swiper?.autoplay) return;
+
+    if (swiper.autoplay.running) {
+      userPausedRef.current = true;
+      swiper.autoplay.stop();
+      setIsPaused(true);
+      return;
+    }
+    
+    // Respect reduced-motion: do not restart autoplay while reduce is enabled.
+    if (prefersReducedMotionRef.current) return;
+    userPausedRef.current = false;
+    swiper.autoplay.start();
+    setIsPaused(false);
+  };
+
+  const handleCarouselKeyDown = (event: React.KeyboardEvent<HTMLDivElement>) => {
+    // TODO: Find out how to have this work as long as the carousel has been clicked, same where it was clicked.
+    const swiper = swiperRef.current;
+    if (!swiper) return;
+
+    if (event.key === 'ArrowLeft') {
+      event.preventDefault();
+      swiper.slidePrev();
+    };
+
+    if (event.key === 'ArrowRight') {
+      event.preventDefault();
+      swiper.slideNext();
+    }
+  };
+
   useEffect(() => {
     if (!containerRef.current) return;
 
-    const swiper = new Swiper(containerRef.current, {
+    const mediaQuery = window.matchMedia('(prefers-reduced-motion: reduce)');
+    prefersReducedMotionRef.current = mediaQuery.matches;
+
+    swiperRef.current = new Swiper(containerRef.current, {
       modules: [A11y, Pagination, Navigation, Autoplay],
 
       // Accessibility
@@ -132,13 +158,15 @@ export function LocationSwiper() {
       },
 
       // Autoplay
-      autoplay: {
-        delay: 3000,
-        disableOnInteraction: false,
-        pauseOnMouseEnter: true,
-      },
-      loop: true, // TODO: Examine if this still breaks keyboard navigation.
-      speed: 1200,
+      autoplay: mediaQuery.matches
+        ? false
+        : {
+          delay: 3000,
+          disableOnInteraction: false,
+          pauseOnMouseEnter: true,
+        },
+      loop: true,
+      speed: prefersReducedMotionRef.current ? 0 : 1200,
       effect: 'slide',
 
       // Interaction
@@ -150,8 +178,35 @@ export function LocationSwiper() {
       touchMoveStopPropagation: false,
     });
 
+    // If reduced-motion is enabled on first load, reflect paused state in UI.
+    setIsPaused(mediaQuery.matches);
+    const handleMotionChange = (event: MediaQueryListEvent) => {
+      const swiper = swiperRef.current;
+      if (!swiper) return;
+
+      prefersReducedMotionRef.current = event.matches;
+      swiper.params.speed = event.matches ? 0 : 1200;
+
+      // Reduced motion turned on: force stop autoplay.
+      if (event.matches) {
+        swiper.autoplay?.stop();
+        setIsPaused(true);
+        return;
+      }
+
+      // Reduced motion turned off: resume only if user did not manually pause.
+      if (!userPausedRef.current) {
+        swiper.autoplay?.start();
+        setIsPaused(false);
+      }
+    };
+
+    mediaQuery.addEventListener('change', handleMotionChange);
+
     return () => {
-      swiper.destroy(true, true);
+      mediaQuery.removeEventListener('change', handleMotionChange);
+      swiperRef.current?.destroy(true, true);
+      swiperRef.current = null;
     };
   }, []);
 
@@ -177,25 +232,74 @@ export function LocationSwiper() {
         />
 
         <button
-          className='
-            absolute -top-12 left-4 text-jobloop-primary-orange hover:text-jobloop-primary-green
-          '
-          aria-label='Pause carousel'
-          // TODO: Add button function
+          className={`
+            absolute group overflow-hidden
+            -top-10 left-0 rounded-xl p-2 sm:left-6
+            shadow-lg shadow-kv-black/20 hover:cursor-pointer
+            scale-100 lg:hover:scale-105 transition-all
+            motion-reduce:transition-none motion-reduce:lg:hover:scale-100
+            ${
+              prefersReducedMotionRef.current
+              ? 'bg-[#adadab]'
+              : isPaused ? 'bg-jobloop-primary-orange' : 'bg-jobloop-primary-green'
+            }
+          `}
+          aria-label={
+            // TODO: Translate aria-label
+            prefersReducedMotionRef.current
+              ? 'Carousel autoplay disabled due to reduced motion preference'
+              : isPaused ? 'Play carousel' : 'Pause carousel'
+          }
+          aria-pressed={isPaused}
+          onClick={handleToggleAutoplay}
+          disabled={prefersReducedMotionRef.current}
+          title={
+            // TODO: Translate title
+            prefersReducedMotionRef.current
+              ? 'Carousel autoplay disabled due to reduced motion preference'
+              : isPaused ? 'Play carousel' : 'Pause carousel'
+          }
         >
-          <FaPause
-            className='text-2xl'
-            aria-hidden='true'
-          />
+          <div
+            className={`
+              absolute inset-0 w-0
+              group-hover:w-[175%] transition-all duration-500 md:duration-600
+              lg:duration-700 ease-in-out -z-10 motion-reduce:transition-none
+              ${
+                prefersReducedMotionRef.current
+                ? ''
+                : isPaused ? 'bg-jobloop-primary-green' : 'bg-jobloop-primary-orange'
+              }
+            `}
+            style={{ transform: 'skewX(-45deg)', left: '-35%' }}
+          ></div>
+          {isPaused ? (
+            <FaPlay
+              className='text-2xl'
+              aria-hidden='true'
+            />
+          ) : (
+            <FaPause
+              className='text-2xl'
+              aria-hidden='true'
+            />
+          )}
         </button>
 
         <div
+          // TODO: Consider moving the tabindex to the list element itself.
           ref={containerRef}
+          tabIndex={0}
+          role='region'
+          aria-roledescription='carousel'
+          aria-label={t('about.locations.title')}
+          onKeyDown={handleCarouselKeyDown}
           className='
             swiper relative max-w-7xl mx-auto locations-swiper w-full
-            overflow-hidden motion-reduce:transition-none
+            overflow-hidden focus:rounded-xl focus:shadow-sm
+            focus:shadow-jobloop-primary-green
           '
-          // TODO: Find out if using role='region' would be appropriate here.
+          // TODO: Improve the look of the carousel when focused.
         >
           <ul
             className='swiper-wrapper'
@@ -217,6 +321,7 @@ export function LocationSwiper() {
                     w-32 h-32 md:w-40 md:h-40 overflow-hidden
                     rounded-xl shadow-lg group hover:shadow-xl transition-all
                     duration-300 hover:scale-105 order-first
+                    motion-reduce:transition-none
                   '
                 >
                   <Image
@@ -227,6 +332,7 @@ export function LocationSwiper() {
                     className='
                       object-cover w-full h-full group-hover:scale-110
                       transition-transform duration-300
+                      motion-reduce:transition-none
                     '
                   />
                   <div
@@ -234,6 +340,7 @@ export function LocationSwiper() {
                       absolute inset-0 bg-linear-to-t from-black/20
                       to-transparent opacity-0 group-hover:opacity-100
                       transition-opacity duration-300
+                      motion-reduce:transition-none
                     '
                   />
                 </div>
@@ -249,34 +356,54 @@ export function LocationSwiper() {
         >
           {/* Navigation */}
           {/*
-          // TODO: Update text color on both buttons so they don't blend in too much.
           // TODO: Consider adding in a hover animation to make the color change less abrupt.
           */}
           <button
             ref={prevRef}
-            className='order-first hover:cursor-pointer'
+            className='
+              order-first hover:cursor-pointer scale-100 lg:hover:scale-110
+              transition-all motion-reduce:transition-none
+              motion-reduce:lg:hover:scale-100
+            '
             aria-label='Previous slide'
           >
             <FaChevronLeft
-              className='text-2xl text-jobloop-primary-orange hover:text-jobloop-primary-green'
+              className='
+                text-2xl text-jobloop-primary-orange
+                hover:text-jobloop-primary-green
+              '
               aria-hidden='true'
             />
           </button>
           <button
             ref={nextRef}
-            className='order-last hover:cursor-pointer'
+            className='
+              group overflow-hidden order-last hover:cursor-pointer scale-100
+              lg:hover:scale-110 transition-all motion-reduce:transition-none
+              motion-reduce:lg:hover:scale-100
+            '
             aria-label='Next slide'
           >
             <FaChevronRight
-              className='text-2xl text-jobloop-primary-orange hover:text-jobloop-primary-green'
+              // Using jobloop-secondary-orange to avoid it blending with background.
+              className='
+                text-2xl text-jobloop-secondary-orange
+                hover:text-jobloop-primary-green
+              '
               aria-hidden='true'
             />
           </button>
 
           {/* Pagination */}
           <div
+            // TODO: Find out why the scale transition seems to be delayed.
             ref={paginationRef}
-            className='swiper-pagination block! box-content! relative! top-[unset]! bottom-[unset]! left-[unset]! w-auto! *:hover:cursor-pointer'
+            className='
+              swiper-pagination block! box-content! relative! top-[unset]!
+              bottom-[unset]! left-[unset]! w-auto! *:hover:cursor-pointer
+              *:scale-100 *:lg:hover:scale-110 *:transition-all
+              *:motion-reduce:transition-none *:motion-reduce:lg:hover:scale-100
+            '
           ></div>
         </div>
       </div>

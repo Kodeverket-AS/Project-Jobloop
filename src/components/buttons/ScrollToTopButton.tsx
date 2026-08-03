@@ -21,7 +21,6 @@ export function ScrollToTopButton() {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   }
 
-  // TODO: Consider adding a key-binding for accessing the button (if adding key-binding, should there be something announcing it at the start of the page?)?
   return (
     <button
       onClick={scrollToTop}

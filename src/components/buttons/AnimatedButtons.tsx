@@ -8,6 +8,7 @@ interface ButtonProps {
   Text: string;
 }
 
+// TODO: Translate labels.
 export function LinkButtonAnimatedWithIcon({ Path, Text }: ButtonProps) {
   return (
     <Link
