@@ -1,16 +1,13 @@
 'use client';
 
-import 'swiper/css';
-import 'swiper/css/navigation';
-import 'swiper/css/pagination';
+import { useEffect, useState } from 'react';
+import type { Swiper as SwiperType } from 'swiper';
 import { Swiper, SwiperSlide } from 'swiper/react';
-import { A11y, Pagination, Autoplay } from 'swiper/modules';
+import { A11y, Keyboard, Pagination, Autoplay } from 'swiper/modules';
+import { FaPause, FaPlay } from 'react-icons/fa';
 import { useTranslations } from 'next-intl';
 import Image from 'next/image';
 
-/**
- * @deprecated This function was used for rendering a location carousel, but has now been replaced by the LocationSwiper component for accessibility improvements.
- */
 export function LocationCarousel() {
   const t = useTranslations('about');
 
@@ -25,6 +22,45 @@ export function LocationCarousel() {
     { name: 'Alta', src: '/Alta.webp' },
     { name: 'Ålesund', src: '/Ålesund.webp' },
   ];
+
+  // TODO: Test this properly with a screen reader.
+  // TODO: Find out if and how to add in navigation buttons that are accessible and can be placed correctly.
+  // TODO: Attempt to clean up divs
+  const [swiper, setSwiper] = useState<SwiperType | null>(null);
+  const [reducedMotion, setReducedMotion] = useState(false);
+  const [userPaused, setUserPaused] = useState(false);
+
+  const isPaused = reducedMotion || userPaused;
+
+  // Watch prefers-reduced-motion
+  useEffect(() => {
+    const media = window.matchMedia('(prefers-reduced-motion: reduce)');
+    setReducedMotion(media.matches);
+
+    const onChange = (event: MediaQueryListEvent) => {
+      setReducedMotion(event.matches);
+    };
+
+    media.addEventListener('change', onChange);
+    return () => media.removeEventListener('change', onChange);
+  }, []);
+
+  // Keep Swiper autoplay in sync with reduced motion
+  useEffect(() => {
+    if (!swiper?.autoplay) return;
+
+    if (isPaused) {
+      swiper.autoplay.stop();
+    } else {
+      swiper.autoplay.start();
+    }
+  }, [swiper, isPaused]);
+
+  // Respect reduced motion: user cannot force autoplay on
+  const handleToggleAutoplay = () => {
+    if (reducedMotion) return;
+    setUserPaused((prev) => !prev);
+  };
 
   return (
     <section
@@ -43,13 +79,52 @@ export function LocationCarousel() {
         </h2>
         <span className='block w-60 h-1 bg-jobloop-primary-orange mt-2 mb-8 mx-auto'></span>
 
+        <button
+          // TODO: Move pause button to a logical spot.
+          type='button'
+          onClick={handleToggleAutoplay}
+          aria-pressed={isPaused}
+          disabled={reducedMotion}
+          aria-label={
+            reducedMotion
+              ? 'Autoplay disabled due to reduced motion preference'
+              : isPaused
+              ? 'Play carousel'
+              : 'Pause carousel'
+          }
+          title={
+            reducedMotion
+              ? 'Autoplay disabled due to reduced motion preference'
+              : isPaused
+              ? 'Play carousel'
+              : 'Pause carousel'
+          }
+          className='rounded-xl p-2 shadow-lg disabled:opacity-60 disabled:cursor-not-allowed'
+        >
+          {isPaused ? <FaPlay aria-hidden='true' /> : <FaPause aria-hidden='true' />}
+        </button>
+
         <Swiper
-          modules={[A11y, Pagination, Autoplay]}
+          modules={[A11y, Keyboard, Pagination, Autoplay]}
           wrapperTag={'ul'}
           className='relative max-w-7xl mx-auto locations-swiper motion-reduce:transition-none'
 
+          onSwiper={setSwiper}
+
           // Accessibility
           a11y={{
+            enabled: true,
+            // TODO: Translate a11y messages!
+            // firstSlideMessage: '',
+            // lastSlideMessage: '',
+            // nextSlideMessage: '',
+            // prevSlideMessage: '',
+            // paginationBulletMessage: '',
+            // slideLabelMessage: '',
+          }}
+
+          // Keyboard navigation
+          keyboard={{
             enabled: true,
           }}
 
@@ -58,8 +133,8 @@ export function LocationCarousel() {
             enabled: true,
             clickable: true,
             bulletElement: 'button',
-            // bulletClass: 'swiper-pagination-bullet-custom',
-            // bulletActiveClass: 'swiper-pagination-bullet-active-custom',
+            bulletClass: 'swiper-pagination-bullet-custom',
+            bulletActiveClass: 'swiper-pagination-bullet-active-custom',
           }}
 
           // Sizing
@@ -89,13 +164,17 @@ export function LocationCarousel() {
           }}
 
           // Autoplay
-          autoplay={{
-            delay: 2000,
-            disableOnInteraction: false,
-            pauseOnMouseEnter: true,
-          }}
-          loop={true}
-          speed={1200}
+          autoplay={
+            reducedMotion
+              ? false
+              : {
+                delay: 2000,
+                disableOnInteraction: false,
+                pauseOnMouseEnter: true,
+              }
+          }
+          loop={false} // This creates a focus trap if enabled.
+          speed={reducedMotion ? 0 : 1200}
           effect='slide'
 
           // Interaction
@@ -167,12 +246,14 @@ export function LocationCarousel() {
           margin: 0 6px;
           transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
           border-radius: 50%;
+          cursor: pointer;
         }
 
         .swiper-pagination-bullet-active-custom {
           background: #f4a366;
           transform: scale(1.3);
           box-shadow: 0 0 10px rgba(244, 163, 102, 0.5);
+          cursor: pointer;
         }
 
         .locations-swiper .swiper-wrapper {
