@@ -8,6 +8,8 @@
     "interns": "Interns",
     "undefined": "Uncategorized"
   },
+  "roles": "Roles",
+  "departments": "Departments",
   "search": {
     "input": {
       "placeholder": "Search for an employee"
@@ -23,6 +25,19 @@
     "empty": {
       "text": "Sorry, your search returned no results.",
       "label": "Try another search"
+    }
+  },
+  "card": {
+    "mail": {
+      "title": "Send e-mail to",
+      "label": "Opens email to compose a message to"
+    },
+    "phone": {
+      "title": "Call",
+      "label": "Opens phone to call"
+    },
+    "fallbackImage": {
+      "alt": "Employee photo"
     }
   }
 }

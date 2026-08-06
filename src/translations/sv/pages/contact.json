@@ -8,6 +8,8 @@
     "interns": "Praktikanter",
     "undefined": "Okategoriserad"
   },
+  "roles": "Roller",
+  "departments": "Avdelningar",
   "search": {
     "input": {
       "placeholder": "Sök efter anställd"
@@ -23,6 +25,19 @@
     "empty": {
       "text": "Tyvärr gav din sökning inga resultat.",
       "label": "Försök med en annan sökning"
+    }
+  },
+  "card": {
+    "mail": {
+      "title": "Skicka e-post till",
+      "label": "Öppnar e-post för att skriva ett meddelande till"
+    },
+    "phone": {
+      "title": "Ring",
+      "label": "Öppnar telefonen för att ringa"
+    },
+    "fallbackImage": {
+      "alt": "Anställdfoto"
     }
   }
 }

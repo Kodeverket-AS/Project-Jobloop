@@ -1,12 +1,14 @@
 import { urlFor } from '@/lib/Sanity';
 import { Contacts } from '@/types/sanity/sanity.types';
 import Image from 'next/image';
+import { useTranslations } from 'next-intl';
 
 function formatTelHref(raw = '') {
   return raw.replace(/[^\d+]/g, '');
 }
 
 export default function ContactCard({ contact }: { contact: Contacts }) {
+  const t = useTranslations('contact');
   // TODO: don't override, instead conditionally render later
   const {
     fname = '',
@@ -21,7 +23,6 @@ export default function ContactCard({ contact }: { contact: Contacts }) {
   const fullName = `${fname} ${lname}`.trim();
   const phone = mobile || '';
 
-  // TODO: Translate aria-labels.
   // TODO: Test cards with screen reader.
   return (
     <li
@@ -53,7 +54,7 @@ export default function ContactCard({ contact }: { contact: Contacts }) {
 
         {!!role?.length && (
           <ul
-            aria-label='Roller' // TODO: Translate and improve aria-label
+            aria-label={t('roles')}
             className='
               mt-1 text-sm gap-x-2 text-slate-600 transition-colors flex
               flex-row flex-wrap justify-center duration-300
@@ -80,7 +81,7 @@ export default function ContactCard({ contact }: { contact: Contacts }) {
 
         {!!company?.length && (
           <ul
-            aria-label='Avdelinger' // TODO: Translate and improve aria-label
+            aria-label={t('departments')}
             className='mt-1 text-xs text-slate-500 flex flex-row flex-nowrap gap-2'
           >
             {company.map((c, index) => (
@@ -105,21 +106,21 @@ export default function ContactCard({ contact }: { contact: Contacts }) {
           className='mt-auto pt-4 w-full space-y-1 text-sm order-last not-italic'
         >
           {email && (
-            <a // TODO: Translate title and labels.
+            <a
               href={`mailto:${email}`}
               className='block truncate px-1 hover:underline'
-              title={`Send e-post til ${fullName}`}
-              aria-label={`Åpner email for å opprette epost til ${fullName}`}
+              title={`${t('card.mail.title')} ${fullName}`}
+              aria-label={`${t('card.mail.label')} ${fullName}`}
             >
               {email}
             </a>
           )}
           {phone && (
-            <a // TODO: Translate title and labels.
+            <a
               href={`tel:${formatTelHref(phone)}`}
               className='block px-1 hover:underline'
-              title={`Ring ${fullName}`}
-              aria-label={`Åpner telefon for å ringe ${fullName}`}
+              title={`${t('card.phone.title')} ${fullName}`}
+              aria-label={`${t('card.phone.label')} ${fullName}`}
             >
               {phone}
             </a>
@@ -132,9 +133,9 @@ export default function ContactCard({ contact }: { contact: Contacts }) {
           group-hover:border-4 shadow-2xl transition-all duration-300
           order-first
         '>
-          <Image // TODO: Translate image alt.
+          <Image
             src={image ? urlFor(image).url() : '/contact_placeholder.jpg'}
-            alt={fullName || 'Ansattbilde'}
+            alt={fullName || t('card.fallbackImage.alt')}
             fill
             sizes='
               (max-width: 640px) 8rem, (max-width: 768px) 9rem,
