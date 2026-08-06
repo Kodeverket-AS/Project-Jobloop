@@ -70,7 +70,7 @@ export function LocationCarousel() {
       `}
       aria-labelledby='location-carousel-title'
     >
-      <div className='container mx-auto px-4 text-center'>
+      <div className='relative container mx-auto px-4 text-center'>
         <h2
           id='location-carousel-title'
           className='text-2xl md:text-3xl font-bold mb-4 text-kv-black'
@@ -80,7 +80,7 @@ export function LocationCarousel() {
         <span className='block w-60 h-1 bg-jobloop-primary-orange mt-2 mb-8 mx-auto'></span>
 
         <button
-          // TODO: Move pause button to a logical spot.
+          // TODO: Translate aria-labels
           type='button'
           onClick={handleToggleAutoplay}
           aria-pressed={isPaused}
@@ -99,7 +99,7 @@ export function LocationCarousel() {
               ? 'Play carousel'
               : 'Pause carousel'
           }
-          className='rounded-xl p-2 shadow-lg disabled:opacity-60 disabled:cursor-not-allowed'
+          className='absolute top-0 left-0 lg:left-4 xl:left-6 rounded-xl ml-4 p-2 shadow-lg bg-jobloop-primary-green hover:bg-jobloop-primary-orange disabled:opacity-60 disabled:cursor-not-allowed'
         >
           {isPaused ? <FaPlay aria-hidden='true' /> : <FaPause aria-hidden='true' />}
         </button>
