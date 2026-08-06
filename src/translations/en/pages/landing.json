@@ -5,6 +5,9 @@
     "cta": {
       "contactUs": "Contact us",
       "courses": "Our programs"
+    },
+    "image": {
+      "alt": "Three people talking and looking at a computer screen together."
     }
   },
   "intro": {
