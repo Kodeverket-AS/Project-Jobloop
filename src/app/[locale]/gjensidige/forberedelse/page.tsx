@@ -21,6 +21,8 @@ export async function generateMetadata(): Promise<Metadata> {
 
 // TODO: Translate page!
 // TODO: Respect prefers-reduced-motion!
+// TODO: Deal with divs and restructure where reasonable.
+// TODO: Consider hiding emojis in headings from screen-readers.
 export default function Forberedelse() {
   return (
     <div className="min-h-screen bg-[#f4f6f8] font-['Segoe_UI',Arial,sans-serif] text-[#333] leading-relaxed">
@@ -41,7 +43,7 @@ export default function Forberedelse() {
               <div className="aspect-[3/4] relative rounded-lg shadow-2xl overflow-hidden">
                 <Image 
                   src={GjensidigeImage} 
-                  alt="Gjensidige" 
+                  alt="Gjensidige" // TODO: Improve alt text.
                   fill
                   sizes="(max-width: 768px) 256px, (max-width: 1024px) 288px, 320px"
                   className="object-cover object-center"

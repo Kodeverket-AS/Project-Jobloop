@@ -75,17 +75,16 @@ export default async function OmOss() {
   return (
     <main
       id='main'
-      className={`
+      className='
         flex flex-col items-center justify-between mt-10 space-y-16 mb-12 px-4
         min-h-screen
-      `}
+      '
     >
       <section
-        className={`
-          container flex flex-col gap-4 mx-auto
-          text-kv-black text-pretty
+        className='
+          container flex flex-col gap-4 mx-auto text-kv-black text-pretty
           lg:block lg:mb-20 lg:flow-root lg:pb-2
-        `}
+        '
         aria-labelledby='about-title'
       >
         <h1
@@ -96,44 +95,42 @@ export default async function OmOss() {
           <span className='block w-1/2 h-1 bg-jobloop-primary-green mt-2 mb-6' />
         </h1>
         <div // NOTE: This currently balances against the heading by using a negative top margin to maintain visual alignment. Might need adjustment if heading size changes.
-        // TODO: Consider if adding figcaption would be correct here.
-        // TODO: Find out if using figure at all is even correct for this use (it currently does not need a visual caption, which would be the primary purpose of a figure element).
-          className={`
-            w-full overflow-hidden rounded-xl order-first
-            lg:w-2/5 lg:float-right lg:mb-4 lg:ml-4 lg:-mt-[10.75rem]
-          `}
+          className='
+            w-full overflow-hidden rounded-xl order-first lg:w-2/5
+            lg:float-right lg:mb-4 lg:ml-4 lg:-mt-[10.75rem]
+          '
         >
           <Image
             src='/JLomossbilde.webp'
-            alt='3 personer i jobloop som sitter å snakker sammen rundt et bord ute'
+            alt={t('about.JLomossbilde')}
             width={500}
             height={375}
             className='w-full h-56 lg:h-80 object-cover'
           />
         </div>
         <p
-          className={`
-            -mt-2 text-base font-bold
-            md:text-xl md:leading-loose xl:leading-loose lg:mb-8
-          `}
+          className='
+            -mt-2 text-base font-bold md:text-xl md:leading-loose
+            xl:leading-loose lg:mb-8
+          '
         >
           {t('about.paragraph-1')}
         </p>
         <p
-          className={`
-            mt-4 text-base text-neutral-600
-            md:text-xl md:leading-loose xl:leading-loose lg:mb-8
-          `}
+          className='
+            mt-4 text-base text-neutral-600 md:text-xl md:leading-loose
+            xl:leading-loose lg:mb-8
+          '
         >
           {t('about.paragraph-2')}
         </p>
         <aside // Set as aside due to this not being required to understand the current content
-          className={`
+          className='
             relative rounded-xl p-6 mt-4
             bg-jobloop-primary-orange/5 border border-jobloop-primary-orange
             shadow-lg shadow-jobloop-secondary-orange/15
             lg:w-2/5 lg:float-left lg:mt-0 lg:mr-8 lg:mb-4
-          `}
+          '
         >
           <p
             className='text-base text-center text-pretty md:leading-loose lg:text-xl'
@@ -142,9 +139,9 @@ export default async function OmOss() {
           </p>
           <IoInformationCircle
             aria-hidden='true'
-            className={`
+            className='
               absolute bottom-0 right-0 text-5xl text-jobloop-primary-orange/15
-            `}
+            '
           />
         </aside>
         <p
@@ -162,14 +159,17 @@ export default async function OmOss() {
         // TODO: Add aria-labelledby and add a subheading to this section, or change to div.
       >
         <div
-          className={` mx-auto px-4
-            container relative flex flex-col justify-center items-center
-            gap-4 md:gap-6 p-3 sm:p-4 md:p-6 bg-jobloop-primary-green/5
-            border border-jobloop-primary-green rounded-xl md:rounded-xl
-            shadow-lg shadow-jobloop-secondary-green/15
-          `}
+          className='
+            mx-auto px-4 container relative flex flex-col justify-center
+            items-center gap-4 md:gap-6 p-3 sm:p-4 md:p-6
+            bg-jobloop-primary-green/5 border border-jobloop-primary-green
+            rounded-xl md:rounded-xl shadow-lg shadow-jobloop-secondary-green/15
+          '
         >
-          <IoInformationCircle className='absolute bottom-0 right-0 text-5xl text-jobloop-primary-green/15' />
+          <IoInformationCircle
+            className='absolute bottom-0 right-0 text-5xl text-jobloop-primary-green/15'
+            aria-hidden={true}
+          />
           <p className='text-lg md:text-xl xl:text-2xl md:leading-loose text-center'>
             {t('about.cta-1.text')}
           </p>
@@ -196,10 +196,10 @@ export default async function OmOss() {
         {/* La til mx-auto her for å midtstille hele containeren, og justify-items-center for penere plassering av kortene */}
         {/* Beholder grid på mobil, men blir til en perfekt midtstilt flex-box på desktop */}
         <ul
-          className={`
+          className='
             container mx-auto grid grid-cols-2 gap-8 px-5
             md:flex md:flex-wrap md:justify-center
-          `}
+          '
         >
           {teamData.map((person) => (
             // La på en valgfri md:w-48 (eller tilsvarende) så kortene beholder en fin størrelse i flex-layouten
@@ -230,7 +230,7 @@ export default async function OmOss() {
           aria-labelledby='partners-title'
         >
           {partners.map((partner, index) => (
-            <LandingCoursesCard // TODO: Change component name when renaming LandingCourses.tsx
+            <LandingCoursesCard
               key={index}
               image={partner.image}
               title={partner.title}
