@@ -11,7 +11,10 @@
     "title": "Vem är Jobloop?",
     "text": "Jobloop är ett snabbt växande företag drivet av sociala entreprenörer. Vi har ett viktigt mål: att minska utanförskap genom att förebygga skolavhopp, kvalificera människor och förmedla fler till arbete. För att lyckas samarbetar vi med offentliga aktörer, utbildningsinstitutioner och det lokala näringslivet. År 2024 fick vi FERD-priset ”Årets sociala entreprenör” för vårt arbete mot skolavhopp.",
     "cta": "Läs mer",
-    "award": "Klikk bilde for å lese om da vi mottok FERD prisen 2024"
+    "award": "Klikk bilde for å lese om da vi mottok FERD prisen 2024",
+    "image": {
+      "alt": "Jobloop tilldelas FERD-priset 2024"
+    }
   },
   "school": {
     "title": "Program för att förebygga skolavhopp och stödja utbildning",

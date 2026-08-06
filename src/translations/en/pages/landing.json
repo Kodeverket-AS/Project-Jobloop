@@ -11,7 +11,10 @@
     "title": "Who is Jobloop?",
     "text": "Jobloop is a rapidly growing company driven by social entrepreneurs. We have an important mission: to reduce social exclusion by preventing school dropout, qualifying people, and connecting more individuals to work. To achieve this, we collaborate with public institutions, educational organizations, and the local business community. In 2024, we received the FERD Award 'Social Entrepreneur of the Year' for our work against school dropout.",
     "cta": "Read more",
-    "award": "Klikk bilde for å lese om da vi mottok FERD prisen 2024"
+    "award": "Klikk bilde for å lese om da vi mottok FERD prisen 2024",
+    "image": {
+      "alt": "JobLoop receives the FERD Award 2024"
+    }
   },
   "school": {
     "title": "Programs to prevent school dropout and support education",

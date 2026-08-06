@@ -11,7 +11,10 @@
     "title": "Hvem er Jobloop?",
     "text": "JobLoop er et raskt voksende selskap drevet av sosiale entreprenører. Vi har et viktig mål: å begrense utenforskap ved å forebygge frafall i skolen, kvalifisere og formidle flere til arbeid. For å få til det samarbeider vi med offentlige aktører, utdanningsinstitusjoner og lokalt arbeidsliv. I 2024 mottok vi FERD-prisen «Årets Sosiale Entreprenør» for vårt arbeid mot skolefrafall.",
     "cta": "Les mer",
-    "award": "Klikk bilde for å lese om da vi mottok FERD prisen 2024"
+    "award": "Klikk bilde for å lese om da vi mottok FERD prisen 2024",
+    "image": {
+      "alt": "JobLoop mottar FERD-prisen 2024"
+    }
   },
   "school": {
     "title": "Tilbud mot frafall fra skole og utdanning",
