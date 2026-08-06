@@ -133,9 +133,7 @@ export function SpanButtonLike({ Text = 'readMore', Context = '' }: { Text?: str
         {t(`${Text}`)}
         {Context && (
           <span className='sr-only'>
-            { // TODO: Translate this
-              ` about ${Context}`
-            }
+            {` ${t('about')} ${Context}`}
           </span>
         )}
       </span>
