@@ -39,6 +39,7 @@ export type Contacts = {
   location?: string;
   email?: string;
   mobile?: string;
+  absence?: 'none' | 'parental-leave' | 'sick-leave' | 'other-leave';
   priority?: number;
 };
 

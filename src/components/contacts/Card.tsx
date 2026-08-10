@@ -6,6 +6,12 @@ function formatTelHref(raw = '') {
   return raw.replace(/[^\d+]/g, '');
 }
 
+const ABSENCE_LABELS: Record<string, string> = {
+  'parental-leave': 'Foreldrepermisjon',
+  'sick-leave': 'Sykemelding',
+  'other-leave': 'Permisjon',
+};
+
 export default function ContactCard({ contact }: { contact: Contacts }) {
   // todo: don't override, instead conditionally render later
   const {
@@ -16,10 +22,12 @@ export default function ContactCard({ contact }: { contact: Contacts }) {
     mobile = '',
     image,
     company = [],
+    absence,
   } = contact;
 
   const fullName = `${fname} ${lname}`.trim();
   const phone = mobile || '';
+  const absenceLabel = absence ? ABSENCE_LABELS[absence] : undefined;
 
   return (
     <article className='group rounded-xl border border-slate-200 bg-white shadow-xs hover:shadow-md transition-all duration-300 p-4 max-w-80 w-full flex flex-col hover:scale-105'>
@@ -37,6 +45,12 @@ export default function ContactCard({ contact }: { contact: Contacts }) {
         <h3 className='mt-4 text-lg font-semibold leading-tight tracking-tight text-slate-900 group-hover:text-jobloop-primary-orange transition-colors duration-300'>
           {fullName}
         </h3>
+
+        {absenceLabel && (
+          <span className='mt-1 inline-block rounded-full bg-amber-100 px-2.5 py-0.5 text-xs font-medium text-amber-800'>
+            {absenceLabel}
+          </span>
+        )}
 
         {!!role?.length && (
           <p className='mt-1 text-sm text-slate-600 group-hover:text-jobloop-primary-orange transition-colors duration-300'>
