@@ -14,9 +14,9 @@ export default async function Footer() {
     },
     {
       name: t('footer.contacts.companies'),
-      email: 'christer@jobloop.no',
-      phoneDisplay: '+47 41 39 23 35',
-      phoneLink: '+4741392335',
+      email: 'daniel.h@jobloop.no',
+      phoneDisplay: '+47 45 84 67 10',
+      phoneLink: '+4745846710',
     },
     {
       name: t('footer.contacts.clients'),
@@ -47,9 +47,7 @@ export default async function Footer() {
                 />
               </a>
             </div>
-            <p className='text-gray-300 text-left leading-relaxed'>
-              {t('footer.branding.text')}
-            </p>
+            <p className='text-gray-300 text-left leading-relaxed'>{t('footer.branding.text')}</p>
           </div>
           <div className='flex flex-row gap-8 lg:gap-12'>
             <div className='flex flex-col gap-6 w-2/3'>
