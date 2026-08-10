@@ -10,5 +10,5 @@ export function sanityGenerateTiltakLocalizedQuery(id: number, locale: Available
 }
 
 export function sanityGenerateContactsQuery(): string {
-  return defineQuery(`*[_type == "contacts"]{..., "image": image.asset->url} | order(priority asc, lname asc)`);
+  return defineQuery(`*[_type == "contacts"]{..., "image": image.asset->url} | order(priority asc, fname asc)`);
 }
