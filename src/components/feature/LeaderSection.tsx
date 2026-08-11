@@ -12,6 +12,7 @@ export default async function LeaderSection({ leaders }: { leaders: Tiltak['cour
 
   const t = await getTranslations('base.components.courseLeaders');
 
+  // TODO: Deal with divs and restructure where possible.
   // TODO: Add proper links to addresses and phone numbers.
   // TODO: Find out how to access that part of the text..
   return (

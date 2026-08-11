@@ -7,6 +7,7 @@
   "contactUs": "Kontakt oss",
   "new": "Nyhet",
   "opensInNewTab": "Öppnas i ny flik",
+  "subpageLinkLabel": "Länk till undersida {path}",
   "videoFallback": "Din webbläsare stöder inte videouppspelning.",
   "school": "skol",
   "work": "arbets",

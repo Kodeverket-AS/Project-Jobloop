@@ -90,6 +90,7 @@ export default async function WorkCourses() {
       />
       <ul
         className='grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-4 auto-rows-auto'
+        // TODO: Add list label.
       >
         {courses.map((card, index) => (
           <LandingCoursesCard key={index} context="work" {...card} />
@@ -112,7 +113,10 @@ export default async function WorkCourses() {
         >
           {t("work.quotes.title")}
         </h3>
-        <ul className='flex flex-col gap-8 md:flex-row'>
+        <ul
+        className='flex flex-col gap-8 md:flex-row'
+        // TODO: Add list label.
+        >
           {quotes.map((quote, index) => (
             <QuoteCard key={`${quote.name}-${index}`} {...quote} />
           ))}

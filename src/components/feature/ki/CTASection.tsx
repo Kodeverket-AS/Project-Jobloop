@@ -3,6 +3,8 @@ import Link from 'next/link';
 
 export default async function CTASection() {
   const t = await getTranslations('ki.cta');
+
+  // TODO: Deal with divs and restructure.
   return (
     <div className='w-full mx-auto text-center '>
       <div className='bg-jobloop-primary-green/50 rounded-2xl p-8 '>

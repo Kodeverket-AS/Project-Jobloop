@@ -11,21 +11,21 @@ export default async function JobloopSuccess() {
   // TODO: Clean up divs
   return (
     <article
-      className={`
+      className='
         flex flex-col gap-12 px-8 py-12 rounded-2xl shadow-lg
         bg-linear-to-br from-jobloop-primary-green/10 via-white
         to-jobloop-primary-orange/10 border-2 border-jobloop-primary-green/20
         md:flex-row md:items-center
-      `}
+      '
       aria-labelledby='jobloop-success-title'
     >
       <div className='w-full md:w-1/2 space-y-6 order-last'>
         <h2
           id='jobloop-success-title'
-          className={`
+          className='
             text-2xl md:text-3xl font-bold text-kv-black pb-3 border-b-2
             border-jobloop-primary-orange w-fit
-          `}
+          '
         >
           {t('success.title')}
         </h2>
@@ -45,10 +45,10 @@ export default async function JobloopSuccess() {
       </div>
 
       <div
-        className={`
+        className='
           w-full md:w-1/2 flex justify-center relative overflow-hidden
           rounded-xl shadow-md
-        `}
+        '
       >
         <Image
           src={JobloopFafo}

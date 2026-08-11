@@ -42,6 +42,8 @@ export function CooperationSection() {
 
     return () => observer.disconnect();
   }, [photosAnimated]);
+
+  // TODO: Deal with divs and restructure.
   return (
     <section className=' samarbeid-section'>
       <div className='container mx-auto px-4 flex flex-col lg:flex-row items-center lg:items-start'>

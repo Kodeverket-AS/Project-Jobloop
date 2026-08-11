@@ -30,6 +30,7 @@ export default function CourseInfoCards() {
     return () => observer.disconnect();
   }, []);
 
+  // TODO: Deal with divs and restructure.
   return (
     <div className='w-full mx-auto mb-16'>
       <h2 className='text-3xl font-bold text-center mb-12 text-jobloop-primary-green'>

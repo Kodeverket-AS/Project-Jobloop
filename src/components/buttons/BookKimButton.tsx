@@ -6,9 +6,9 @@ interface BookKimButtonProps {
   className?: string;
 }
 
-// TODO: Translate button text!
 export function BookKimButton({ className = '' }: BookKimButtonProps) {
   const t = useTranslations('dictionary');
+  const t1 = useTranslations('gjensidige');
   return (
     <a
       href="https://calendar.app.google/RRhkgNFmGyTTbYmd6"
@@ -20,7 +20,7 @@ export function BookKimButton({ className = '' }: BookKimButtonProps) {
         transition-all duration-300 ${className}
       `}
     >
-      Book en samtale med Kim
+      {t1('gjensidige.buttons.bookConversationWithKim')}
       <span className='sr-only'> ({t('opensInNewTab')})</span>
     </a>
   );

@@ -7,6 +7,7 @@ import { AnimateOnScroll } from './components/AnimateOnScroll';
 import { questions, infoCards, expectations } from './data';
 import GjensidigeImage from '@public/gjensidige.jpg';
 import KimImage from '@public/Kim.jpg';
+import { getTranslations } from 'next-intl/server';
 
 export async function generateStaticParams() {
   return [{ locale: 'nb' }, { locale: 'sv' }, { locale: 'en' }];
@@ -23,7 +24,8 @@ export async function generateMetadata(): Promise<Metadata> {
 // TODO: Respect prefers-reduced-motion!
 // TODO: Deal with divs and restructure where reasonable.
 // TODO: Consider hiding emojis in headings from screen-readers.
-export default function Forberedelse() {
+export default async function Forberedelse() {
+  const t = await getTranslations('gjensidige');
   return (
     <div className="min-h-screen bg-[#f4f6f8] font-['Segoe_UI',Arial,sans-serif] text-[#333] leading-relaxed">
       <header className="bg-white py-5 flex justify-between items-center border-b-[5px] border-[#002B49] shadow-sm">
@@ -220,7 +222,7 @@ export default function Forberedelse() {
                       href="mailto:kim@jobloop.no"
                       className="inline-block bg-[#002B49] text-white px-10 py-4 rounded-full font-bold text-lg hover:bg-[#004d7a] hover:scale-105 hover:shadow-lg transition-all duration-300"
                     >
-                      Send e-post nå
+                      {t('gjensidige.buttons.sendEmailNow')}
                     </a>
                     <BookKimButton />
                   </div>

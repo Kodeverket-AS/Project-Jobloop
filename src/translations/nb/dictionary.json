@@ -7,6 +7,7 @@
   "contactUs": "Kontakt oss",
   "new": "Nyhet",
   "opensInNewTab": "Åpnes i ny fane",
+  "subpageLinkLabel": "Lenke til underside {path}",
   "videoFallback": "Nettleseren din støtter ikke videoavspilling.",
   "school": "skole",
   "work": "arbeid",

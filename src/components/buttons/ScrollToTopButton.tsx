@@ -34,7 +34,11 @@ export function ScrollToTopButton() {
         ${isVisible ? 'opacity-100 ' : 'opacity-0 cursor-default'}
       `}
     >
-      <FaArrowUp className='w-6 h-6 ' strokeWidth={1.5} />
+      <FaArrowUp
+        className='w-6 h-6'
+        strokeWidth={1.5}
+        aria-hidden='true'
+      />
     </button>
   );
 }

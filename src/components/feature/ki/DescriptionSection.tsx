@@ -3,6 +3,8 @@ import Image from 'next/image';
 
 export default async function DescriptionSection() {
   const t = await getTranslations('ki.description');
+
+  // TODO: Deal with divs and restructure.
   return (
     <div className='w-full space-y-8 text-lg '>
       <div className='grid md:grid-cols-2 gap-8 items-center'>

@@ -18,20 +18,20 @@ export function KontaktButton({ Path, Text }: ButtonProps) {
     <Link
       href={Path}
       aria-label={`Lenke til underside ${Path}`}
-      className={`
+      className='
         group flex items-center justify-center w-full sm:w-fit gap-1 px-8 py-3
         rounded-full border-2 border-jobloop-primary-green bg-jobloop-primary-green
         text-base text-center text-kv-black underline underline-offset-2
         group tracking-normal transition-all scale-100 lg:hover:scale-105
         decoration-kv-black/0 hover:decoration-kv-black hover:bg-jobloop-primary-green/0
-      `}
+      '
     >
       {Text}
       <LuMail
-        className={`
+        className='
           inline-block h-5 lg:w-5 transition-all
           group-hover:translate-x-1 group-hover:animate-pulse
-        `}
+        '
         aria-hidden='true'
       />
     </Link>
@@ -49,7 +49,7 @@ export function ExternalLinkButton({ Path, Text, Aria }: ButtonProps) {
       target='_blank'
       rel='noopener noreferrer'
       aria-label={Aria}
-      className={`
+      className='
         w-full sm:w-fit flex items-center justify-center gap-1 px-8 py-3
         bg-kv-white rounded-full tracking-normal shadow-md shadow-kv-black/20
         text-base text-center text-kv-black border-2 border-solid
@@ -57,17 +57,17 @@ export function ExternalLinkButton({ Path, Text, Aria }: ButtonProps) {
         hover:shadow-lg hover:bg-jobloop-primary-green lg:hover:scale-105
         focus:bg-jobloop-primary-green focus:text-kv-white
         transition-all duration-300 scale-100
-      `}
+      '
     >
       {Text}
       <span className='sr-only'>
         ({t('opensInNewTab')})
       </span>
       <BiLinkExternal
-        className={`
+        className='
           inline-block h-5 lg:w-5 transition-transform duration-300
           group-hover:scale-110
-        `}
+        '
         aria-hidden='true'
       />
     </a>
@@ -89,20 +89,20 @@ export function LesMerButton({ Path, Text = 'Les mer', Aria = '' }: Partial<Butt
     <a
       href={Path}
       aria-label={Aria}
-      className={`
+      className='
         w-full md:w-auto md:max-w-[155px] inline-flex gap-3 px-6 py-3 text-white
         items-center justify-center bg-jobloop-primary-green rounded-full
         hover:bg-jobloop-primary-orange hover:shadow-lg hover:scale-105
         transition-all duration-300 group/btn
-      `}
+      '
     >
       <span className='font-medium'>{Text}</span>
       {/*Aria ? <span className='sr-only'>{Aria}</span> : null*/}
       <FaArrowRight
-        className={`
+        className='
           group-hover/btn:translate-x-1 group-hover/btn:scale-110
           transition-transform duration-300
-        `}
+        '
         aria-hidden='true'
       />
     </a>

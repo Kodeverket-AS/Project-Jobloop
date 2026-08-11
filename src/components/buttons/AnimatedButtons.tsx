@@ -2,18 +2,20 @@
 
 import Link from 'next/link';
 import { LuMail } from 'react-icons/lu';
+import { useTranslations } from 'next-intl';
 
 interface ButtonProps {
   Path: string;
   Text: string;
 }
 
-// TODO: Translate labels.
 export function LinkButtonAnimatedWithIcon({ Path, Text }: ButtonProps) {
+  const t = useTranslations('dictionary');
+
   return (
     <Link
       href={Path}
-      aria-label={`Lenke til underside ${Path}`}
+      aria-label={t('subpageLinkLabel', { path: Path })}
       className='relative group overflow-hidden flex items-center justify-center w-full gap-1 px-8 py-3 text-base font-medium text-center transition-all rounded-full sm:w-fit text-kv-black bg-jobloop-primary-green scale-100 lg:hover:scale-105 shadow-lg shadow-kv-black/30 hover:shadow-jobloop-primary-orange/20'
     >
       <div
@@ -30,10 +32,12 @@ export function LinkButtonAnimatedWithIcon({ Path, Text }: ButtonProps) {
 }
 
 export function LinkButtonAnimated({ Path, Text }: ButtonProps) {
+  const t = useTranslations('dictionary');
+
   return (
     <Link
       href={Path}
-      aria-label={`Lenke til underside ${Path}`}
+      aria-label={t('subpageLinkLabel', { path: Path })}
       className='relative group overflow-hidden flex items-center justify-center w-full gap-1 px-8 py-3 text-base font-medium text-center transition-all rounded-full sm:w-fit text-kv-black bg-jobloop-primary-green scale-100 lg:hover:scale-105 shadow-lg shadow-kv-black/30 hover:shadow-jobloop-primary-orange/20'
     >
       <div

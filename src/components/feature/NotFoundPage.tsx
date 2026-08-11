@@ -7,6 +7,8 @@ import { useRouter } from 'next/navigation';
 export function NotFoundPage() {
   const router = useRouter();
   const t = useTranslations('errors');
+
+  // TODO: Deal with divs and restructure where needed.
   return (
     <div className='flex flex-wrap gap-12'>
       <span className='flex flex-col items-center'>

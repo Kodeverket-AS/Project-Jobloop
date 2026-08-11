@@ -9,6 +9,8 @@ const caveat = Caveat({
 
 export default async function HeroSection() {
   const t = await getTranslations('ki.hero');
+
+  // TODO: Deal with divs and restructure.
   return (
     <div className='w-full grid md:grid-cols-2 gap-8 '>
       <div className='space-y-6 flex flex-col items-center justify-center'>
