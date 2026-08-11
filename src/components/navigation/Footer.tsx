@@ -64,20 +64,18 @@ export default async function Footer() {
   // TODO: Consider if adding a footer heading to gather its subheadings is appropriate.
   // TODO: Consider if using secondary nav-element could be correct here.
   // TODO: Remove divs where possible.
-  // TODO: Translate aria-labels.
   return (
     <footer className='w-full text-kv-white bg-jobloop-primary-grey'>
-      <div className={`
+      <div className='
         mx-auto max-w-[1536px] px-4 py-12 flex flex-col gap-8
         md:justify-around lg:flex-row lg:justify-between md:px-8 lg:px-12 lg:mp-34
-      `}>
+      '>
         <div className='flex flex-col items-start justify-center gap-6 lg:w-1/3'>
           <a
             href='https://jobloop.no/'
             target='_blank'
             rel='noopener noreferrer'
             className='w-48'
-            aria-label='Lenke til Jobloops nettside'
           >
             <Image
               alt='Jobloop logo'
@@ -93,10 +91,16 @@ export default async function Footer() {
         </div>
         <div className='flex flex-row gap-8 lg:gap-12'>
           <section className='flex flex-col gap-6 w-2/3'>
-            <h2 className='!text-[1.4rem] font-bold text-jobloop-primary-green'>
+            <h2
+              id='footer-links-heading'
+              className='text-[1.4rem]! font-bold text-jobloop-primary-green'
+            >
               {t('footer.links.title')}
             </h2>
-            <ul className='flex flex-col gap-3'>
+            <ul
+              className='flex flex-col gap-3'
+              aria-labelledby='footer-links-heading'
+            >
               {pageList.map((page) => (
                 <li key={page.name}>
                   <Link
@@ -111,22 +115,28 @@ export default async function Footer() {
             </ul>
           </section>
           <section className='flex flex-col gap-6 w-1/2'>
-            <h2 className='!text-[1.4rem] font-bold text-jobloop-primary-green'>
+            <h2
+              id='footer-contacts-heading'
+              className='text-[1.4rem]! font-bold text-jobloop-primary-green'
+            >
               {t('footer.contacts.title')}
             </h2>
-            <ul className='space-y-4'>
+            <ul
+              className='space-y-4'
+              aria-labelledby='footer-contacts-heading'
+            >
               {contactInformation.map((person) => (
                 <li
                   key={person.name}
                   className='border-l-2 border-jobloop-primary-green/30 pl-4'
                 >
-                  <h3 className='font-semibold text-white mb-1 !text-base'>
+                  <h3 className='font-semibold text-white mb-1 text-base!'>
                     {person.name}
                   </h3>
                   <a
                     href={`mailto:${person.email}`}
                     className='text-gray-300 hover:text-jobloop-primary-green transition-colors duration-300 block'
-                    aria-label={`Åpner email for å opprette epost til ${person.name}`}
+                    aria-label={t('footer.contacts.openEmail', { name: person.name })}
                   >
                     {person.email}
                   </a>
@@ -134,7 +144,7 @@ export default async function Footer() {
                     <a
                       href={`tel:${person.phoneLink}`}
                       className='text-gray-300 hover:text-jobloop-primary-green transition-colors duration-300 block'
-                      aria-label={`Åpner telefon for å ringe ${person.name}`}
+                      aria-label={t('footer.contacts.openPhone', { name: person.name })}
                     >
                       {person.phoneDisplay}
                     </a>
@@ -142,8 +152,10 @@ export default async function Footer() {
                 </li>
               ))}
             </ul>
-            {/* TODO: Add a list heading for screen readers */}
-            <ul className='flex gap-4'>
+            <ul
+              className='flex gap-4'
+              aria-label={t('footer.contacts.socialMediaList')}
+            >
               {socialMediaLinks.map((link) => (
                 <li
                   key={link.label}
@@ -153,12 +165,12 @@ export default async function Footer() {
                     href={link.href}
                     target='_blank'
                     rel='noopener noreferrer'
-                    aria-label={`Åpner vår side på ${link.label}`}
-                    className={`
+                    aria-label={t('footer.contacts.openSocialMedia', { platform: link.label })}
+                    className='
                       p-2 bg-gray-700 rounded-lg
                       hover:bg-jobloop-primary-green transition-all
                       duration-300 hover:scale-110
-                    `}
+                    '
                   >
                     {link.icon}
                   </a>
@@ -169,11 +181,11 @@ export default async function Footer() {
         </div>
       </div>
       <div // TODO: Find out if this can be a section with heading
-        className={`
+        className='
           border-t border-gray-700 py-6 max-w-[1536px] mx-auto px-4 flex
           flex-col justify-between items-center gap-4
           md:px-8 lg:px-12 md:flex-row
-        `}
+        '
       >
         <p className='text-gray-400 text-sm'>
           &copy; {new Date().getFullYear()} {t('footer.copyright')}

@@ -60,7 +60,6 @@ export default function LocaleMenu({ altColor }: { altColor: boolean }) {
 
   // TODO: Find out if it is possible to underline the svg-element in addition to the button.
   // TODO: Have current locale background expand fully?
-  // TODO: Translate aria labels.
   return (
     <li ref={container} className='relative'>
       <button
@@ -68,7 +67,7 @@ export default function LocaleMenu({ altColor }: { altColor: boolean }) {
         tabIndex={0}
         onClick={() => setIsOpen(!isOpen)}
         className={`flex items-center gap-2 px-2 font-semibold text-xl md:hover:underline cursor-pointer uppercase ${altColor ? 'text-kv-white' : 'text-jobloop-primary-grey'} ${isPending ? 'animate-pulse' : ''}`}
-        aria-label='Click button to open language switcher'
+        aria-label={t('openLanguageSwitcher')}
         aria-expanded={isOpen}
       >
         {isPending ? <LuLoader className='animate-spin' /> : <MdLanguage aria-hidden='true' />}
@@ -92,7 +91,7 @@ export default function LocaleMenu({ altColor }: { altColor: boolean }) {
                 locale={locale}
                 hrefLang={locale}
                 lang={locale}
-                aria-label={`Select ${localeLabel} as your language`}
+                aria-label={t('selectLanguage', { locale })}
                 aria-current={isCurrent ? 'page' : undefined}
                 className={`
                   group flex gap-2 p-1 text-jobloop-primary-grey
@@ -119,7 +118,7 @@ export default function LocaleMenu({ altColor }: { altColor: boolean }) {
                   src={`/images/flags/${locale}.svg`}
                   height={20}
                   width={24}
-                  alt={`Picture of ${localeLabel} flag`}
+                  alt={t('flagAlt', { locale })}
                   className='rounded-md order-first'
                   aria-hidden='true'
                 />

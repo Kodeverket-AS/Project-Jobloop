@@ -7,6 +7,7 @@ import Link from 'next/link';
 import { useClickOutside } from '@/hooks/useClickOutside';
 import LocaleMenuMobile from '../ui/menu/LocaleMenuMobile';
 import { useFocusTrap } from '@/hooks/useFocusTrap';
+import { useTranslations } from 'next-intl';
 
 interface MenuItems {
   href: string;
@@ -24,6 +25,8 @@ export function HamburgerMenu({ links, altColor }: MenuProps) {
   const menuRef = useRef<HTMLDivElement>(null);
   const triggerRef = useRef<HTMLButtonElement>(null);
 
+  const t = useTranslations('base.header.hamburgerMenu');
+
   useClickOutside(menuRef, () => setIsOpen(false));
   useFocusTrap({
     containerRef: menuRef,
@@ -33,13 +36,12 @@ export function HamburgerMenu({ links, altColor }: MenuProps) {
   });
 
   // TODO: Add hover/touch styles for visual touch feedback for mobile?
-  // TODO: Add translations for aria-labels.
   // BUG: Fix bonus scrollbars on chrome browser
   return (
     <div className='block md:hidden'>
       <button
         className='flex items-center justify-center w-10 h-10 transition duration-500 rounded-xl top-4 right-4'
-        aria-label='Åpne mobil navigasjonsmeny'
+        aria-label={t('open')}
         ref={triggerRef}
         aria-expanded={isOpen}
         aria-controls='mobile-nav-dialog'
@@ -61,14 +63,14 @@ export function HamburgerMenu({ links, altColor }: MenuProps) {
           ref={menuRef}
           role='dialog'
           aria-modal='true'
-          aria-label='Mobil navigasjonsmeny'
+          aria-label={t('mobileLocationMenu')}
           aria-hidden={!isOpen}
           inert={!isOpen}
         >
             <button
               className='absolute top-4 right-4 w-10 h-10'
               onClick={() => setIsOpen(false)}
-              aria-label='Lukke navigasjonsmeny'
+              aria-label={t('close')}
             >
               <IoCloseSharp
                 className={`${

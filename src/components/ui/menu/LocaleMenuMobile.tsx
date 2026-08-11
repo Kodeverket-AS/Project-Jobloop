@@ -58,7 +58,7 @@ export default function LocaleMenuMobile() {
                 locale={locale}
                 hrefLang={locale}
                 lang={locale}
-                aria-label={`Select ${localeLabel} as your language`}
+                aria-label={t('selectLanguage', { locale })}
                 aria-current={isCurrent ? 'page' : undefined}
                 className={`
                   group flex gap-2 items-center py-2 px-4 rounded-md w-full
@@ -85,7 +85,7 @@ export default function LocaleMenuMobile() {
                   src={`/images/flags/${locale}.svg`}
                   height={20}
                   width={24}
-                  alt={`Picture of ${localeLabel} flag`}
+                  alt={t('flagAlt', { locale })}
                   className='rounded-md order-first'
                   aria-hidden='true'
                 />

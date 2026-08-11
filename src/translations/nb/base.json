@@ -23,12 +23,21 @@
     },
     "localeSwitcher": {
       "locales": "{locale, select, nb {Norsk} sv {Svensk} en {Engelsk} other {Ukjent}}",
-      "changeLocale": "Bytt språk"
+      "changeLocale": "Bytt språk",
+      "openLanguageSwitcher": "Åpne språkvelger",
+      "selectLanguage": "Velg {locale, select, nb {Norsk} sv {Svensk} en {Engelsk} other {Ukjent}} som ditt språk",
+      "flagAlt": "Flagget til {locale, select, nb {Norge} sv {Sverige} en {Storbritannia} other {Ukjent}}"
+    },
+    "hamburgerMenu": {
+      "mobileLocationMenu": "Mobil navigasjonsmeny",
+      "open": "Åpne mobil navigasjonsmeny",
+      "close": "Lukk mobil navigasjonsmeny"
     }
   },
   "footer": {
     "branding": {
-      "text": "Vi hjelper deg med å finne din drømmejobb gjennom innovative kurs og personlig veiledning."
+      "text": "Vi hjelper deg med å finne din drømmejobb gjennom innovative kurs og personlig veiledning.",
+      "jobloopLogo": "Jobloop logo"
     },
     "links": {
       "title": "Sider",
@@ -57,7 +66,11 @@
       "title": "Kontakt",
       "participants": "Deltaker",
       "companies": "Bedrifter",
-      "clients": "Oppdragsgiver"
+      "clients": "Oppdragsgiver",
+      "openEmail": "Åpne e-post for å kontakte {name}",
+      "openPhone": "Åpne telefon for å ringe {name}",
+      "socialMediaList": "Linker til våre sosiale medier sider",
+      "openSocialMedia": "Åpne vår side på {platform}"
     },
     "copyright": "JobLoop. Alle rettigheter forbeholdt."
   },

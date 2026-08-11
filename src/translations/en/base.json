@@ -23,12 +23,21 @@
     },
     "localeSwitcher": {
       "locales": "{locale, select, nb {Norwegian} sv {Swedish} en {English} other {Unknown}}",
-      "changeLocale": "Change language"
+      "changeLocale": "Change language",
+      "openLanguageSwitcher": "Open language switcher",
+      "selectLanguage": "Select {locale, select, nb {Norwegian} sv {Swedish} en {English} other {Unknown}} as your language",
+      "flagAlt": "Flag of {locale, select, nb {Norway} sv {Sweden} en {United Kingdom} other {Unknown}}"
+    },
+    "hamburgerMenu": {
+      "mobileLocationMenu": "Mobile navigation menu",
+      "open": "Open mobile navigation menu",
+      "close": "Close mobile navigation menu"
     }
   },
   "footer": {
     "branding": {
-      "text": "We help you find your dream job through innovative courses and personalized guidance."
+      "text": "We help you find your dream job through innovative courses and personalized guidance.",
+      "jobloopLogo": "Jobloop logo"
     },
     "links": {
       "title": "Pages",
@@ -57,7 +66,11 @@
       "title": "Contact",
       "participants": "Participant",
       "companies": "Companies",
-      "clients": "Clients"
+      "clients": "Clients",
+      "openEmail": "Open email to contact {name}",
+      "openPhone": "Open phone to call {name}",
+      "socialMediaList": "Links to our social media pages",
+      "openSocialMedia": "Open our page on {platform}"
     },
     "copyright": "Jobloop. All rights reserved."
   },
