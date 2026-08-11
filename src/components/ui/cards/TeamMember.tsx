@@ -8,6 +8,7 @@ interface TeamMemberProps {
 }
 
 export function TeamMember({ name, role, image }: TeamMemberProps) {
+  // TODO: Clean up divs and restructure.
   return (
     <Link
       href='/kontakt'

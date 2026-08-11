@@ -55,6 +55,7 @@ export function Header() {
     },
   ];
 
+  // TODO: Deal with divs where possible.
   return (
     <header
       className={`${isLanding ? 'absolute top-0 z-50' : ''} w-full px-5 lg:px-7 ${isKiKurs ? 'bg-jobloop-primary-green/20' : ''}`}
@@ -68,20 +69,25 @@ export function Header() {
       </Link>
       <div className='flex items-center justify-between max-w-[1536px] mx-auto'>
         <div className='p-4'>
-          <Link href='/' aria-label='Gå til landingssiden' className='relative inline-block'>
+          <Link
+            href='/'
+            aria-label={t('navigation.goToLanding')}
+            className='relative inline-block'
+          >
             <Image
               className='w-28 lg:w-36 h-auto'
               src={isLanding ? '/logoJobloopHvit.svg' : '/JobloopFarge.svg'}
               width={350}
               height={220}
-              alt={isJune ? 'Jobloop Logo med Pride-regnbue' : 'Jobloop Logo'}
+              alt={isJune ? t('navigation.logo.prideAlt') : t('navigation.logo.alt')}
             />
 
             {/* Vaktmester-spesial: Vises kun i juni måned */}
             {isJune && (
               <svg
                 viewBox='0 0 100 20'
-                className='absolute top-[-4px] left-[35%] w-[63%] h-auto pointer-events-none select-none'
+                className='absolute -top-1 left-[35%] w-[63%] h-auto pointer-events-none select-none'
+                aria-hidden='true'
               >
                 <defs>
                   <linearGradient id='pride-rainbow' x1='0%' y1='0%' x2='100%' y2='0%'>
@@ -106,7 +112,10 @@ export function Header() {
         </div>
         <div>
           <nav className='hidden h-auto p-0 md:flex'>
-            <ul className="p-4 md:flex">
+            <ul
+              className='p-4 md:flex'
+              // TODO: Consider if adding aria-label={t('navigation.mainMenu')} is appropriate here, or if the nav element is sufficient.
+            >
               {links.map(({ href, label, aria }) => (
                 <li
                   key={label}
@@ -115,7 +124,10 @@ export function Header() {
                     key={label}
                     href={href}
                     aria-label={aria}
-                    className={`${isLanding ? 'text-kv-white' : 'text-jobloop-primary-grey'}  px-2 font-semibold text-xl md:px-4  md:hover:underline uppercase`}
+                    className={`
+                      ${isLanding ? 'text-kv-white' : 'text-jobloop-primary-grey'}
+                      px-2 font-semibold text-xl md:px-4 md:hover:underline uppercase
+                    `}
                   >
                     {label}
                   </Link>

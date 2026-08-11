@@ -3,22 +3,27 @@
     "navigation": {
       "skipLink": "Skip to main content",
       "scrollToTop": "Scroll to top",
+      "goToLanding": "Go to the landing page",
+      "logo": {
+        "alt": "Jobloop logo",
+        "prideAlt": "Jobloop logo with a Pride-rainbow"
+      },
       "index": "Home",
       "about": {
         "label": "About Us",
-        "aria": "gå til denne undersiden for å lese mer om oss"
+        "aria": "Go to this subpage to read more about us"
       },
       "opplæringskontor": {
         "label": "Training Office",
-        "aria": "gå til denne undersiden for å lese mer om opplæringskontoret"
+        "aria": "Go to this subpage to read more about opplæringskontoret"
       },
       "contact": {
         "label": "Contact",
-        "aria": "gå til denne undersiden for å ta kontakt med en av oss"
+        "aria": "Go to this subpage to get in touch with one of us"
       },
       "sverige": {
         "label": "Jobloop Sverige",
-        "aria": "go to this page to read more about Jobloop Sverige"
+        "aria": "Go to this page to read more about Jobloop Sverige"
       }
     },
     "localeSwitcher": {
@@ -36,8 +41,7 @@
   },
   "footer": {
     "branding": {
-      "text": "We help you find your dream job through innovative courses and personalized guidance.",
-      "jobloopLogo": "Jobloop logo"
+      "text": "We help you find your dream job through innovative courses and personalized guidance."
     },
     "links": {
       "title": "Pages",
@@ -78,7 +82,7 @@
     "course": {
       "targetGroup": "Who is { target } for?",
       "title": "Course details",
-      "description": "Innhold og rammer for kurset",
+      "description": "Course content and framework",
       "demographic": "Demographic",
       "duration": "Duration",
       "format": "Format",

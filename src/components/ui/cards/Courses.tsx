@@ -22,7 +22,7 @@ export function CoursesCard({ image, title, text, path, alt }: CoursesProps) {
   return (
     <article
       aria-labelledby={titleId}
-      className={`
+      className='
         group relative flex flex-col w-full gap-4 lg:gap-6 xl:flex-row-reverse
         bg-white rounded-xl shadow-xs hover:shadow-md border border-gray-50
         p-6 transition-all duration-200 justify-between xl:h-full
@@ -31,26 +31,26 @@ export function CoursesCard({ image, title, text, path, alt }: CoursesProps) {
         [&:has(.read-more-hit:hover)_.read-more-pill]:scale-105
         [&:has(.read-more-hit:hover)_.read-more-icon]:translate-x-1
         [&:has(.read-more-hit:hover)_.read-more-icon]:scale-110
-      `}
+      '
     >
-      <div className={`
+      <div className='
         relative z-20 flex flex-col w-full gap-4 xl:w-1/2 order-last
         pointer-events-none xl:h-full xl:py-3
-      `}>
+      '>
         <h3
           id={titleId}
-          className={`
+          className='
             text-xl text-kv-black md:text-2xl font-semibold leading-tight
-          `}
+          '
         >
           {title}
         </h3>
         <p
           id={descriptionId}
-          className={`
+          className='
             text-base text-gray-600 md:text-lg leading-relaxed
             pointer-events-auto select-text cursor-text
-          `}
+          '
         >
           {text}
         </p>
@@ -73,10 +73,10 @@ export function CoursesCard({ image, title, text, path, alt }: CoursesProps) {
         </div>
       </div>
       <div
-        className={`
+        className='
           relative z-20 w-full h-80 xl:w-1/2 overflow-hidden rounded-xl
           order-first pointer-events-none
-        `}
+        '
         >
         <Image
           alt={alt}
@@ -90,24 +90,24 @@ export function CoursesCard({ image, title, text, path, alt }: CoursesProps) {
         href={path}
         aria-labelledby={titleId}
         aria-describedby={descriptionId}
-        className={`
+        className='
           absolute inset-0 z-10 rounded-xl pointer-events-none focus-visible:outline
           focus-visible:outline-offset-4 focus-visible:outline-jobloop-primary-green
-        `}
+        '
       >
         <span
           aria-hidden='true'
-          className={`
+          className='
             read-more-hit absolute left-6 right-6 bottom-6 h-12
             pointer-events-auto md:right-auto md:w-[135px] xl:bottom-9
-          `}
+          '
         />
         <span // Drawback: User can't right click and save the image, as it is below the link.
           aria-hidden='true'
-          className={`
+          className='
             image-hit absolute top-6 left-0 h-80 w-full rounded-xl
             pointer-events-auto xl:left-auto xl:right-0 xl:w-[calc(50%-0.75rem)]
-          `}
+          '
         />
       </Link>
     </article>

@@ -3,22 +3,27 @@
     "navigation": {
       "skipLink": "Gå til sidens hovedinnhold",
       "scrollToTop": "Scroll til toppen",
+      "goToLanding": "Gå til landingssiden",
+      "logo": {
+        "alt": "Jobloop logo",
+        "prideAlt": "Jobloop logo med Pride-regnbue"
+      },
       "index": "Hjem",
       "about": {
         "label": "Om Oss",
-        "aria": "gå til denne undersiden for å lese mer om oss"
+        "aria": "Gå til denne undersiden for å lese mer om oss"
       },
       "opplæringskontor": {
         "label": "Opplæringskontor",
-        "aria": "gå til denne undersiden for å lese mer om opplæringskontoret"
+        "aria": "Gå til denne undersiden for å lese mer om opplæringskontoret"
       },
       "contact": {
         "label": "Kontakt",
-        "aria": "gå til denne undersiden for å ta kontakt med en av oss"
+        "aria": "Gå til denne undersiden for å ta kontakt med en av oss"
       },
       "sverige": {
         "label": "Jobloop Sverige",
-        "aria": "gå til denne undersiden for å lese mer om Jobloop Sverige"
+        "aria": "Gå til denne undersiden for å lese mer om Jobloop Sverige"
       }
     },
     "localeSwitcher": {
@@ -36,8 +41,7 @@
   },
   "footer": {
     "branding": {
-      "text": "Vi hjelper deg med å finne din drømmejobb gjennom innovative kurs og personlig veiledning.",
-      "jobloopLogo": "Jobloop logo"
+      "text": "Vi hjelper deg med å finne din drømmejobb gjennom innovative kurs og personlig veiledning."
     },
     "links": {
       "title": "Sider",

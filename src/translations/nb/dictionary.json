@@ -8,6 +8,7 @@
   "new": "Nyhet",
   "opensInNewTab": "Åpnes i ny fane",
   "videoFallback": "Nettleseren din støtter ikke videoavspilling.",
-  "newSchoolCourse": "Nytt skolekurs",
-  "newWorkCourse": "Nytt arbeidskurs"
+  "school": "skole",
+  "work": "arbeid",
+  "newCourse": "Nytt {context}skurs"
 }

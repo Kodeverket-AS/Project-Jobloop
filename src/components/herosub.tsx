@@ -23,10 +23,10 @@ export default async function HeroSub({
       <div className='flex flex-col gap-4 w-full lg:w-1/2 justify-center order-last'>
         <h1
           id='hero-sub-heading'
-          className={`
+          className='
             w-fit pb-2 border-b-2 md:border-b-4 border-jobloop-primary-green
-            text-kv-black text-3xl !text-[1.3rem] sm:!text-[2rem]
-          `}
+            text-kv-black text-3xl text-[1.3rem]! sm:text-[2rem]!
+          '
         >
           {heading ? heading : 'Tittel kommer her'}
         </h1>
@@ -44,11 +44,11 @@ export default async function HeroSub({
           src={image ? urlFor(image).url() : ''}
           width={1000}
           height={500}
-          className={`
+          className='
             max-w-full h-96 object-cover rounded-xl shadow-lg shadow-gray-300/50
             hover:shadow-xl hover:shadow-gray-400/50 hover:scale-[1.02]
             transition-all duration-500
-          `}
+          '
           alt={image?.alt || ''}
         />
       </div>

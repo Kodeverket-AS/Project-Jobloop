@@ -15,7 +15,6 @@ interface LandingCoursesCardProps {
 }
 
 // TODO: Properly test with a screen reader!
-// TODO: Ensure that the link is understood as a read more.
 // TODO: Rename to a more fitting name, as this is now also used on "om-oss".
 /**
  * Creates a card component for displaying course information on the landing page.
@@ -84,9 +83,9 @@ export function LandingCoursesCard({
         >
           {isNew && (
             <span className='sr-only'>
-              { // TODO: Simplify this.
-                t(`new${context.charAt(0).toUpperCase() + context.slice(1)}Course`)
-              }:
+              {
+                t('newCourse', { context: t(context) }) + ":"
+              }
             </span>
           )}
           {title}

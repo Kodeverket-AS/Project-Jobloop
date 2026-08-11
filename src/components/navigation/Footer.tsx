@@ -78,7 +78,7 @@ export default async function Footer() {
             className='w-48'
           >
             <Image
-              alt='Jobloop logo'
+              alt={t('header.navigation.logo.alt')}
               src={'/logoJobloopHvit.svg'}
               width={350}
               height={250}

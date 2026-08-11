@@ -15,6 +15,7 @@ export function SocialMediaCard({ text, link, icon }: SocialMediaCardProps) {
     window.location.href = link;
   };
 
+  // TODO: Clean divs where possible.
   return (
     <a href={link} className='w-full flex justify-center'>
       <div className='w-full  flex flex-row p-12 gap-10 rounded-xl shadow-lg items-center '>
