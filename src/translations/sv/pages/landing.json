@@ -23,8 +23,9 @@
     "title": "Program för att förebygga skolavhopp och stödja utbildning",
     "text": "I våra alternativa lär- och utvecklingsmiljöer arbetar vi varje dag för att fler elever ska uppleva framgång, tillhörighet och meningsfulla dagar. Vi arbetar styrkebaserat och nära eleverna för att hjälpa dem att utforska och utveckla sina intressen. Vi samarbetar alltid med den enskilda elevens skola och skolpsykologtjänst (PPT) för att bygga broar mellan våra alternativa lärmiljöer och klassrummet.",
     "image": {
-      "alt": "Bild av jobbmöjligheter"
+      "alt": "En lärare som står framför en whiteboard."
     },
+    "listLabel": "Lista över skolprogram",
     "courses": {
       "learnWell": {
         "title": "LearnWell",

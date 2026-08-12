@@ -78,7 +78,7 @@ export default async function SchoolCourses() {
       />
       <ul 
         className='grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-4 auto-rows-auto'
-        // TODO: Add list label.
+        aria-label={t('school.listLabel')}
       >
         {courses.map((card, index) => (
           <LandingCoursesCard
