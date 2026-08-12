@@ -33,8 +33,9 @@ export default async function CooperationProjects() {
       text: t('collaborations.teamwork.text'),
       alt: t('collaborations.teamwork.alt'),
       path: '/teamwork',
-      btnText: t1('readMore'), // TODO: Deal with "Read More" button with no descriptive title.
-      btnVariant: 'readMorePill' as const, // TODO: Deal with "Read More" button looking different.
+      btnText: t1('readMore'),
+      btnVariant: 'readMorePill' as const,
+      context: t1('about') + ' ' + t('collaborations.teamwork.title'),
     },
   ];
 

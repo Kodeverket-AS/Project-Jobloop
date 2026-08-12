@@ -13,6 +13,7 @@ interface PartnerProject {
   direction?: 'normal' | 'reverse';
   btnVariant?: 'internalLink' | 'externalLink' | 'readMorePill';
   btnText?: string;
+  context?: string;
 }
 
 // TODO: Remove divs where reasonable.
@@ -26,6 +27,7 @@ export const PartnerProject = ({
   direction = 'normal',
   btnVariant,
   btnText,
+  context,
 }: PartnerProject) => {
   const headingId = 'partner-title-' + title.toLowerCase().replace(/\s+/g, '-');
 
@@ -59,6 +61,7 @@ export const PartnerProject = ({
             Path={path}
             Text={btnText ?? 'Les mer'}
             btnVariant={btnVariant}
+            Context={context}
           />
         )}
       </div>

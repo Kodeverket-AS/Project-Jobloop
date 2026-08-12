@@ -4,6 +4,7 @@ import { getTranslations } from 'next-intl/server';
 
 export default async function LandingIntro() {
   const t = await getTranslations('landing');
+  const t1 = await getTranslations('base');
 
   return (
     <IntroSection
@@ -13,6 +14,7 @@ export default async function LandingIntro() {
       imageLinkPath='https://www.linkedin.com/posts/sina-erichsen-28403998_jobloop-finalist-activity-7148672163053580289-81Yo/?originalSubdomain=no'
       isButton
       btnVariant='readMorePill'
+      context={t1('header.navigation.about.label')}
       path='/om-oss'
       title={t('intro.title')}
       text={t('intro.text')}

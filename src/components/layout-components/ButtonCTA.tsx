@@ -13,6 +13,7 @@ interface ButtonCTAProps {
   Path: string;
   Text: string;
   Aria?: AriaAttributes['aria-label'];
+  Context?: string;
 }
 
 const isExternalPath = (path: string) =>
@@ -26,6 +27,7 @@ const ButtonCTA = ({
   Path,
   Text,
   Aria,
+  Context,
 }: ButtonCTAProps) => {
   if (!isButton) {
     return null;
@@ -35,7 +37,7 @@ const ButtonCTA = ({
     btnVariant ?? (isExternalPath(Path) ? 'externalLink' : 'internalLink');
 
   let ButtonComponent;
-  const ButtonComponentProps = { Path, Text, Aria };
+  const ButtonComponentProps = { Path, Text, Aria, Context };
 
   switch (resolvedVariant) {
     case 'externalLink':

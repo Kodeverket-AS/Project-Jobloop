@@ -14,12 +14,12 @@ interface IntroSection {
   isButton: boolean;
   btnVariant?: 'internalLink' | 'externalLink' | 'readMorePill';
   btnText?: string;
+  context?: string;
   direction?: 'normal' | 'reverse';
   ifImageLink?: boolean;
   imageLinkPath?: string;
 }
 
-// TODO: Deal with "Read More" button with no descriptive title.
 // TODO: Deal with divs.
 export function IntroSection({
   title,
@@ -30,6 +30,7 @@ export function IntroSection({
   isButton,
   btnVariant,
   btnText,
+  context,
   direction = 'normal',
   ifImageLink = false,
   imageLinkPath = '',
@@ -64,6 +65,7 @@ export function IntroSection({
             isButton={true}
             Path={path}
             Text={btnText ?? t('readMore')}
+            Context={context}
             btnVariant={btnVariant}
           />
         )}

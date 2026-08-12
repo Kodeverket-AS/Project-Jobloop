@@ -11,6 +11,7 @@ interface ButtonProps {
   Path: string;
   Text: string;
   Aria?: AriaAttributes['aria-label'];
+  Context?: string;
 }
 
 export function KontaktButton({ Path, Text }: ButtonProps) {
@@ -74,17 +75,14 @@ export function ExternalLinkButton({ Path, Text, Aria }: ButtonProps) {
   );
 }
 
-export function LesMerButton({ Path, Text = 'Les mer', Aria = '' }: Partial<ButtonProps>) {
-  /**
-   * Problem: The current implementation does not provide enough context for screen readers.
-   * Solution: Consider adding a visually hidden span with additional context.
-   * 
-   // TODO: Ensure that ALL uses of LesMerButton provide an appropriate Aria label for accessibility.
-   // TODO: Add an "about [context]" to the Aria label for better screen reader context.
-   // TODO: Add a "context" variable.
-   */
-  const t = useTranslations('dictionary');
-
+export function LesMerButton(
+  {
+    Path,
+    Text = 'Les mer',
+    Aria = '',
+    Context = ''
+  }: Partial<ButtonProps> & { Context?: string }
+) {
   return (
     <a
       href={Path}
@@ -97,7 +95,7 @@ export function LesMerButton({ Path, Text = 'Les mer', Aria = '' }: Partial<Butt
       '
     >
       <span className='font-medium'>{Text}</span>
-      {/*Aria ? <span className='sr-only'>{Aria}</span> : null*/}
+      {Context != '' ? <span className='sr-only'>{Context}</span> : null}
       <FaArrowRight
         className='
           group-hover/btn:translate-x-1 group-hover/btn:scale-110
