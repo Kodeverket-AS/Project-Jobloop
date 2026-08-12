@@ -1,8 +1,129 @@
 {
-  "gjensidige": {
+  "common": {
+    "interested": {
+      "title": "Høres dette interessant ut?",
+      "text": "Du trenger ikke vite nøyaktig hva som passer. Det er jobben vår.",
+      "contact": {
+        "title": "Ta kontakt for kartlegging",
+        "text": "Send oss en e-post eller ring, så tar vi en uforpliktende prat. Vi finner ut hvilket spor som gir deg best utbytte."
+      }
+    },
     "buttons": {
-      "sendEmailNow": "Skicka e-post nu",
-      "bookConversationWithKim": "Boka ett samtal med Kim"
+      "sendEmailNow": "Send e-mail now",
+      "bookConversationWithKim": "Book a conversation with Kim"
+    },
+    "projectLeader": "Prosjektleder"
+  },
+  "about": {
+    "hero": {
+      "title": "Nytt pilottilbud for kunder av Gjensidige",
+      "subtitle": "Vi bruker interessene dine til å bygge mestring, motivasjon og en vei videre i livet.",
+      "image": {
+        "alt": "Gjensidige"
+      }
+    },
+    "tracks": {
+      "title": "Hvilket spor passer for deg?",
+      "text": "",
+      "completeUngdomsskole": {
+        "title": "Stå i skolen",
+        "text": "",
+        "video": {
+          "title": "Video: Stå i skolen"
+        }
+      },
+      "completeVGS": {
+        "title": "Fullføre VGS",
+        "video": {
+          "title": "Video: Fullføre VGS"
+        }
+      },
+      "workAndITCompetence": {
+        "title": "Jobb og IT-kompetanse",
+        "video": {
+          "title": "Video kommer snart"
+        }
+      }
+    },
+    "commonQuestions": {
+      "title": "Ofte stilte spørsmål",
+      "cost": {
+        "question": "Koster det noe å være med?",
+        "answer": "Nei. For deg som får plass gjennom dette pilotprosjektet med Gjensidige, er hele tilbudet dekket av forsikringen din."
+      },
+      "treatment": {
+        "question": "Er dette behandling eller terapi?",
+        "answer": "Nei. JobLoop er en lærings- og mestringsarena, ikke en klinikk. Vi fokuserer på dine interesser og styrker, ikke på diagnoser. Men vi tilpasser oss selvfølgelig hvis du har utfordringer som angst eller ADHD."
+      },
+      "skillset": {
+        "question": "Må jeg være supergod i gaming eller koding?",
+        "answer": "Absolutt ikke! Det viktigste er at du har en interesse for det digitale. Vi tilpasser nivået til akkurat der du er, enten du er nybegynner eller har holdt på lenge."
+      },
+      "school": {
+        "question": "Mister jeg plassen min på skolen?",
+        "answer": "Nei. Spesielt for &quot;Konsept for utdanning&quot; samarbeider vi tett med skolen din slik at du beholder elevstatusen din. Målet vårt er å hjelpe deg å fullføre."
+      },
+      "workFromHome": {
+        "question": "Hva skjer hvis jeg ikke tør å møte opp fysisk?",
+        "answer": "Vi har full forståelse for at dørstokkmila kan være lang. Derfor kan vi starte digitalt via Discord eller Teams, slik at du blir trygg på veilederen din før du møter oss fysisk."
+      }
+    },
+    "uncertain": {
+      "title": "Usikker på om dette er noe for deg?",
+      "text": "Vi har laget en guide som hjelper deg å forberede deg på samtalen. Her kan du lese mer om hva vi snakker om, og hva det kan være nyttig å tenke over på forhånd.",
+      "linkText": "Les mer om forberedelser"
+    }
+  },
+  "prep": {
+    "hero": {
+      "title": "Nytt tilbud fra Gjensidige & JobLoop",
+      "subtitle": "Vi bruker interessene dine til å bygge mestring, motivasjon og en vei videre i livet.",
+      "paragraph1": "Dette er ikke et intervju eller en test. Det er en uforpliktende prat hvor vi skal finne ut sammen hva som passer best for deg.",
+      "paragraph2": "Vi er her for å lytte til deg, forstå dine interesser og hjelpe deg med å finne veien videre. Du trenger ikke å være nervøs eller forberedt på noe spesielt – vi møter deg akkurat der du er.",
+      "paragraph3": "Samtalen handler om deg, dine drømmer og hva du ønsker å oppnå. Sammen finner vi ut hvilket spor som passer best for din situasjon.",
+      "image": {
+        "alt": "Gjensidige"
+      }
+    },
+    "beforeMeeting": {
+      "title": "Før praten",
+      "paragraph1": "Dette er et tilbud fra Gjensidige og JobLoop. Vi i JobLoop er glade for å få muligheten til å bli kjent med deg!",
+      "paragraph2": "Du trenger ikke å grue deg – vi er her for å hjelpe deg finne veien videre.",
+      "questions": {
+        "whereAreYouNow": {},
+        "whatAreYourInterests": {},
+        "whatDoYouDreamOf": {}
+      },
+      "remember": {
+        "title": "Husk:",
+        "paragraph1": "Du trenger ikke å være ekspert i noe som helst. Det viktigste er at du har en interesse for det digitale, eller at du er nysgjerrig på å lære. Vi tilpasser alt til akkurat der du er.",
+        "paragraph2": "Det er helt greit hvis du ikke vet alt enda – det er nettopp derfor vi skal snakke sammen. Vi finner ut av det sammen!"
+      }
+    },
+    "talkingSoon": {
+      "title": "Snart snakkes vi!",
+      "paragraph1": "Vi gleder oss til å høre fra deg og finne ut sammen hvilket spor som passer best for deg.",
+      "paragraph2": "Du trenger ikke å være nervøs eller forberedt på noe spesielt. Dette er bare en hyggelig prat hvor vi blir kjent med hverandre.",
+      "duringMeeting": {
+        "title": "Hva skjer i samtalen?",
+        "paragraph1": ""
+      },
+      "meetingLength": {
+        "title": "Hvor lenge varer det?",
+        "paragraph1": ""
+      }
+    },
+    "afterMeeting": {
+      "title": "Etter samtalen",
+      "text": "Etter at vi har snakket sammen, tar vi en vurdering av hva som passer best for deg. Vi vil gi deg tilbakemelding på hvilket spor vi anbefaler, og så kan vi starte når du er klar.",
+      "whatToExpect": {
+        "title": "Du kan forvente:",
+        "paragraph1": ""
+      }
+    },
+    "outro": {
+      "title": "Vi gleder oss til å snakke med deg!",
+      "text": "Hilsen Kim i JobLoop"
     }
   }
 }

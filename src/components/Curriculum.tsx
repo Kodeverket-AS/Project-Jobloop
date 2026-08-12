@@ -4,7 +4,6 @@ import { getTranslations } from 'next-intl/server';
 
 // TODO: Deal with divs.
 // TODO: Fix spacing difference that happens when removing the parent div.
-// TODO: Fix spacing issue that happens when removing h2 div.
 // TODO: Look into the heading border solution here and see if it can be used to replace divs in other files.
 export default async function Curriculum({
   curriculum,

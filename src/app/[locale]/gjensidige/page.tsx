@@ -1,7 +1,9 @@
 import type { Metadata } from 'next';
 import Image from 'next/image';
 import { Link } from '@/i18n/navigation';
+import GjensidigeHeader from '@/components/feature/gjensidige/GjensidigeHeader';
 import GjensidigeImage from '@public/gjensidige2.jpg';
+import { getTranslations } from 'next-intl/server';
 
 export async function generateStaticParams() {
   return [{ locale: 'nb' }, { locale: 'sv' }, { locale: 'en' }];
@@ -14,16 +16,39 @@ export async function generateMetadata(): Promise<Metadata> {
   };
 }
 
-export default function Pilot() {
+// TODO: Translate page
+// TODO: Deal with divs and restructure
+// TODO: Minimize repetition
+// TODO: Respect prefers-reduced-motion!
+export default async function Pilot() {
+  const t = await getTranslations('gjensidige');
+
+  const commonQuestions = [
+    {
+      q: t('about.commonQuestions.cost.question'),
+      a: t('about.commonQuestions.cost.answer'),
+    },
+    {
+      q: t('about.commonQuestions.treatment.question'),
+      a: t('about.commonQuestions.treatment.answer'),
+    },
+    {
+      q: t('about.commonQuestions.skillset.question'),
+      a: t('about.commonQuestions.skillset.answer'),
+    },
+    {
+      q: t('about.commonQuestions.school.question'),
+      a: t('about.commonQuestions.school.answer'),
+    },
+    {
+      q: t('about.commonQuestions.workFromHome.question'),
+      a: t('about.commonQuestions.workFromHome.answer'),
+    },
+  ];
+
   return (
     <div className="min-h-screen bg-[#f4f6f8] font-['Segoe_UI',Arial,sans-serif] text-[#333] leading-relaxed">
-      <header className="bg-white py-5 border-b-[5px] border-[#002B49] shadow-sm">
-        <div className="max-w-[1536px] mx-auto px-4 md:px-10 flex justify-between items-center">
-          <div className="text-2xl font-bold text-[#002B49] animate-fade-in">
-            Gjensidige | <span className="text-[#4AB5A3]">JobLoop</span>
-          </div>
-        </div>
-      </header>
+      <GjensidigeHeader />
 
       <main id='main' className="max-w-[1536px] px-4 py-16 flex flex-col items-center gap-16 w-full mx-auto">
         <section className="bg-gradient-to-b from-[#002B49] to-[#001f35] text-white py-16 px-5 w-full rounded-2xl text-center relative overflow-hidden">
@@ -37,7 +62,7 @@ export default function Pilot() {
             <div className="flex justify-center animate-fade-in-up delay-300">
               <Image
                 src={GjensidigeImage}
-                alt="Gjensidige"
+                alt="Gjensidige" // TODO: Update alt text to something more descriptive (use image description from previous use of this image?)
                 width={600}
                 height={340}
                 className="w-full max-w-[600px] h-auto rounded-lg object-cover object-center border-2 border-white/30 aspect-video"
@@ -57,14 +82,19 @@ export default function Pilot() {
         <section className="bg-white py-16 px-5 w-full rounded-2xl">
           <div className="max-w-4xl mx-auto text-center">
             <h2 className="text-3xl md:text-4xl font-bold text-[#002B49] mb-6 animate-fade-in-up delay-100">Hvilket spor passer for deg?</h2>
-            <p className="text-lg text-[#555] leading-relaxed max-w-2xl mx-auto animate-fade-in-up delay-200">
+            <p // TODO: Find out how to keep the <strong /> while translating.
+              className="text-lg text-[#555] leading-relaxed max-w-2xl mx-auto animate-fade-in-up delay-200"
+            >
               Vi har tre hovedveier, avhengig av hvor gammel du er og hva du trenger akkurat nå.{' '}
               <strong>Usikker?</strong> Det gjør ingenting. Vi finner ut av det sammen.
             </p>
           </div>
         </section>
 
-        <section className="bg-white py-12 px-5 w-full rounded-2xl">
+        <section
+          className="bg-white py-12 px-5 w-full rounded-2xl"
+          // TODO: Add aria-labelledby
+        >
           <div className="max-w-[1536px] mx-auto">
             <div className="grid lg:grid-cols-3 gap-8">
               <div className="bg-white border border-gray-200 rounded-xl shadow-lg hover:shadow-2xl hover:-translate-y-2 transition-all duration-500 overflow-hidden animate-fade-in-up delay-100 group">
@@ -159,7 +189,21 @@ export default function Pilot() {
             <h2 className="text-3xl md:text-4xl font-bold text-[#002B49] mb-12 text-center animate-fade-in-up delay-100">Ofte stilte spørsmål</h2>
             
             <div className="space-y-8">
-              <div className="border-b border-gray-200 pb-6 hover:border-[#4AB5A3] transition-colors duration-300 animate-fade-in-up delay-100 group">
+              {commonQuestions.map((item, index) => {
+                // TODO: Increase delay by 100 for each new item.
+                return (
+                  <div
+                    key={index}
+                    className='border-b border-gray-200 pb-6 hover:border-[#4AB5A3] transition-colors duration-300 animate-fade-in-up delay-100 group'
+                  >
+                    <h3 className="text-xl font-bold text-[#002B49] mb-3 group-hover:text-[#4AB5A3] transition-colors duration-300">{item.q}</h3>
+                    <p className="text-[#555] leading-relaxed">
+                      {item.a}
+                    </p>
+                  </div>
+                )
+              })}
+              {/*<div className="border-b border-gray-200 pb-6 hover:border-[#4AB5A3] transition-colors duration-300 animate-fade-in-up delay-100 group">
                 <h3 className="text-xl font-bold text-[#002B49] mb-3 group-hover:text-[#4AB5A3] transition-colors duration-300">Koster det noe å være med?</h3>
                 <p className="text-[#555] leading-relaxed">
                   Nei. For deg som får plass gjennom dette pilotprosjektet med Gjensidige, er hele tilbudet dekket av forsikringen din.
@@ -192,7 +236,7 @@ export default function Pilot() {
                 <p className="text-[#555] leading-relaxed">
                   Vi har full forståelse for at dørstokkmila kan være lang. Derfor kan vi starte digitalt via Discord eller Teams, slik at du blir trygg på veilederen din før du møter oss fysisk.
                 </p>
-              </div>
+              </div>*/}
             </div>
           </div>
         </section>
@@ -212,7 +256,7 @@ export default function Pilot() {
               <p className="text-[#555] mb-6 leading-relaxed">
                 Vi har laget en guide som hjelper deg å forberede deg på samtalen. Her kan du lese mer om hva vi snakker om, og hva det kan være nyttig å tenke over på forhånd.
               </p>
-              <Link
+              <Link // TODO: Turn the arrow icon to a span icon and hide it from screen readers
                 href="/gjensidige/forberedelse"
                 className="inline-block bg-[#4AB5A3] text-white px-8 py-3 rounded-full font-bold text-lg hover:bg-[#3a9a8a] hover:scale-110 hover:shadow-xl transition-all duration-300 transform"
               >
@@ -221,13 +265,13 @@ export default function Pilot() {
             </div>
             
             <div className="bg-white rounded-xl p-10 md:p-12 shadow-xl border-l-[10px] border-[#C3002F] hover:shadow-2xl transition-all duration-500 animate-fade-in-up delay-300">
-              <h3 className="text-2xl font-bold text-[#002B49] mb-6">Ta kontakt for kartlegging</h3>
+              <h3 className="text-2xl font-bold text-[#002B49] mb-6">{t('common.interested.contact.title')}</h3>
               <p className="text-[#555] mb-8 leading-relaxed">
-                Send oss en e-post eller ring, så tar vi en uforpliktende prat. Vi finner ut hvilket spor som gir deg best utbytte.
+                {t('common.interested.contact.text')}
               </p>
               
               <div className="mb-8">
-                <p className="font-bold text-[#002B49] text-xl mb-4">Prosjektleder Kim</p>
+                <p className="font-bold text-[#002B49] text-xl mb-4">{t('common.projectLeader')} Kim</p>
                 <div className="flex flex-col sm:flex-row items-center justify-center gap-4 text-lg">
                   <div className="flex items-center gap-2 text-[#555] hover:text-[#4AB5A3] transition-colors duration-300">
                     <span className="text-2xl animate-pulse-slow">📞</span>
@@ -251,7 +295,7 @@ export default function Pilot() {
                   href="mailto:kim@jobloop.no"
                   className="inline-block bg-[#C3002F] text-white px-10 py-4 rounded-full font-bold text-lg hover:bg-[#a10026] hover:scale-110 hover:shadow-xl transition-all duration-300 transform"
                 >
-                  Send e-post nå
+                  {t('common.buttons.sendEmailNow')}
                 </a>
                 <a
                   href="https://calendar.app.google/RRhkgNFmGyTTbYmd6"
@@ -260,17 +304,12 @@ export default function Pilot() {
                   className="inline-block bg-[#C3002F] text-white px-10 py-4 rounded-full font-bold text-lg hover:bg-[#a10026] hover:scale-110 hover:shadow-xl transition-all duration-300 transform"
                   aria-label="Book en samtale med Kim"
                 >
-                  Book en samtale med Kim
+                  {t('common.buttons.bookConversationWithKim')}
                 </a>
               </div>
             </div>
           </div>
         </section>
-
-
-
-      
-       
       </main>
     </div>
   );

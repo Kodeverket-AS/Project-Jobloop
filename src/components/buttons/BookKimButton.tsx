@@ -20,7 +20,7 @@ export function BookKimButton({ className = '' }: BookKimButtonProps) {
         transition-all duration-300 ${className}
       `}
     >
-      {t1('gjensidige.buttons.bookConversationWithKim')}
+      {t1('common.buttons.bookConversationWithKim')}
       <span className='sr-only'> ({t('opensInNewTab')})</span>
     </a>
   );
