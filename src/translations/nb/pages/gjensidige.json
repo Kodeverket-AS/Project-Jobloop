@@ -12,7 +12,8 @@
       "sendEmailNow": "Send e-mail now",
       "bookConversationWithKim": "Book a conversation with Kim"
     },
-    "projectLeader": "Prosjektleder"
+    "projectLeader": "Prosjektleder",
+    "year": "År"
   },
   "about": {
     "hero": {
@@ -24,22 +25,46 @@
     },
     "tracks": {
       "title": "Hvilket spor passer for deg?",
-      "text": "",
+      "text1": "Vi har tre hovedveier, avhengig av hvor gammel du er og hva du trenger akkurat nå.",
+      "text2": "<strong>Usikker?</strong> Det gjør ingenting. Vi finner ut av det sammen.",
       "completeUngdomsskole": {
         "title": "Stå i skolen",
-        "text": "",
+        "paragraph1": "<strong>Konsept for utdanning:</strong> For deg som går på ungdomsskolen, men hvor hverdagen er tung og fraværet øker.",
+        "paragraph2": "Vi bruker gaming og teknologi pedagogisk for å gi deg mestringsopplevelser. Du er hos oss 1–2 dager i uken som et avbrekk, mens vi samarbeider tett med skolen din.",
+        "goals": {
+          "goalListTitle": "Mål for å stå i skolen",
+          "goal1": "Finn motivasjon gjennom interesse",
+          "goal2": "Sosial trening i trygge rammer",
+          "goal3": "Mål: Trives bedre og fullføre 10. trinn"
+        },
         "video": {
           "title": "Video: Stå i skolen"
         }
       },
       "completeVGS": {
         "title": "Fullføre VGS",
+        "paragraph1": "<strong>Konsept for utdanning:</strong> For deg som har falt ut av videregående, eller trenger en annen arena for å fullføre.",
+        "paragraph2": "Dette er en alternativ læringsarena. Her kan du jobbe med fagene dine, få leksehjelp eller lese til privatisteksamen i ditt eget tempo, uten stresset fra et klasserom.",
+        "goals": {
+          "goalListTitle": "Mål for å fullføre VGS",
+          "goal1": "Individuell tilrettelegging",
+          "goal2": "Fokus på enkeltfag eller vitnemål",
+          "goal3": "Vi samarbeider med OT/Skole"
+        },
         "video": {
           "title": "Video: Fullføre VGS"
         }
       },
       "workAndITCompetence": {
         "title": "Jobb og IT-kompetanse",
+        "paragraph1": "<strong>Konsept for arbeid:</strong> For deg som står utenfor skole og jobb, og vil lære praktisk koding, design eller IT.",
+        "paragraph2": "Her får du praktisk opplæring i ferdigheter bedriftene trenger. Vi fokuserer på \"tech\" og kreativitet som døråpner til arbeidslivet.",
+        "goals": {
+          "goalListTitle": "Mål for å oppnå jobb og IT-kompetanse",
+          "goal1": "Lær koding, design og utvikling",
+          "goal2": "Praksis i samarbeidsbedrifter",
+          "goal3": "Veien mot lærlingplass eller jobb"
+        },
         "video": {
           "title": "Video kommer snart"
         }
@@ -61,7 +86,7 @@
       },
       "school": {
         "question": "Mister jeg plassen min på skolen?",
-        "answer": "Nei. Spesielt for &quot;Konsept for utdanning&quot; samarbeider vi tett med skolen din slik at du beholder elevstatusen din. Målet vårt er å hjelpe deg å fullføre."
+        "answer": "Nei. Spesielt for \"Konsept for utdanning\" samarbeider vi tett med skolen din slik at du beholder elevstatusen din. Målet vårt er å hjelpe deg å fullføre."
       },
       "workFromHome": {
         "question": "Hva skjer hvis jeg ikke tør å møte opp fysisk?",

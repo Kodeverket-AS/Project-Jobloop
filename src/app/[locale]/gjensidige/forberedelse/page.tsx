@@ -49,14 +49,15 @@ export default async function Forberedelse() {
         <div
           className='
             absolute inset-0 bg-gradient-to-r from-transparent via-white/5
-            to-transparent animate-shimmer bg-[length:200%_100%] rounded-2xl
+            to-transparent motion-safe:animate-shimmer bg-[length:200%_100%]
+            rounded-2xl
           '
         />
         <div className='w-full max-w-[1536px] mx-auto px-4 relative z-10'>
           <div className='flex flex-col lg:flex-row items-center gap-8 lg:gap-12'>
             <div className='
-              flex-shrink-0 order-2 lg:order-1 animate-fade-in-up delay-100 w-64
-              md:w-72 lg:w-80
+              flex-shrink-0 order-2 lg:order-1 w-64 md:w-72 lg:w-80
+              motion-safe:animate-fade-in-up motion-safe:delay-100
             '>
               <div className='
                 aspect-[3/4] relative rounded-lg shadow-2xl overflow-hidden
@@ -72,19 +73,20 @@ export default async function Forberedelse() {
             </div>
             <div className='flex-1 text-center lg:text-left order-1 lg:order-2'>
               <h1 className='
-                text-4xl md:text-5xl mb-6 font-bold animate-fade-in-up delay-200
+                text-4xl md:text-5xl mb-6 font-bold
+                motion-safe:animate-fade-in-up motion-safe:delay-200
               '>
                 {t('prep.hero.title')}
               </h1>
               <p className='
                 text-xl md:text-2xl opacity-95 leading-relaxed mb-6
-                animate-fade-in-up delay-300
+                motion-safe:animate-fade-in-up motion-safe:delay-300
               '>
                 {t('prep.hero.subtitle')}
               </p>
               <div className='
-                space-y-3 text-lg opacity-90 leading-relaxed animate-fade-in-up
-                delay-400
+                space-y-3 text-lg opacity-90 leading-relaxed
+                motion-safe:animate-fade-in-up motion-safe:delay-400
               '>
                 <p>{t('prep.hero.paragraph1')}</p>
                 <p>{t('prep.hero.paragraph2')}</p>
@@ -100,7 +102,9 @@ export default async function Forberedelse() {
         aria-labelledby='beforeMeeting'
       >
         <div className='w-full mx-auto px-4'>
-          <AnimateOnScroll>
+          <AnimateOnScroll
+            // TODO: Find out how to respect reduced motion
+          >
             <h2
               id='beforeMeeting'
               className='text-3xl font-bold text-[#002B49] mb-8 text-center'
