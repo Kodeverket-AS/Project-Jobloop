@@ -92,7 +92,8 @@ export default async function LeaderSection({ leaders }: { leaders: Tiltak['cour
                   alt={courseLeader.image?.alt || `Bilde av ${courseLeader.name}`}
                   className='
                     object-cover w-32 h-32 sm:w-40 sm:h-40 lg:w-44 lg:h-44
-                    group-hover:scale-105 transition-transform duration-300
+                    motion-safe:group-hover:scale-105 transition-transform
+                    motion-safe:duration-300
                   '
                 />
               ) : (

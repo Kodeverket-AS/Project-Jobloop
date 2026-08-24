@@ -90,14 +90,14 @@ export function IntroSection({
               className='
                 max-w-full h-112 object-cover shadow-lg shadow-gray-300/50
                 hover:shadow-xl hover:shadow-gray-400/50 transition-all
-                duration-500 hover:scale-[1.02]
+                motion-safe:duration-500 motion-safe:hover:scale-[1.02]
               '
             />
             <figcaption className='
-              absolute z-10 p-4 transition-all rounded-b-2xl duration-500
-              bottom-0 lg:-bottom-20 lg:group-hover:bottom-0 left-0 w-full h-20
+              absolute z-10 p-4 transition-all rounded-b-2xl bottom-0
+              lg:-bottom-20 lg:group-hover:bottom-0 left-0 w-full h-20
               bg-black/70 text-kv-white text-center font-bold
-              md:text-[1.4rem] text-[1.1rem]
+              md:text-[1.4rem] text-[1.1rem] motion-safe:duration-500
             '>
               {t1('intro.award')}
             </figcaption>
@@ -112,8 +112,8 @@ export function IntroSection({
           className={`
             w-full lg:w-1/2 max-w-full h-96 block object-cover rounded-xl
             saturate-100 shadow-lg shadow-gray-300/50 transition-all
-            duration-500 hover:saturate-150 hover:shadow-xl
-            hover:shadow-gray-400/50 hover:scale-[1.02]
+            motion-safe:duration-500 hover:saturate-150 hover:shadow-xl
+            hover:shadow-gray-400/50 motion-safe:hover:scale-[1.02]
             ${direction === 'normal' ? 'order-first' : ''}
           `}
         />

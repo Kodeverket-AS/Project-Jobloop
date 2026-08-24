@@ -78,8 +78,8 @@ export const PartnerProject = ({
           height={500}
           className='
             max-w-full h-96 object-cover rounded-xl shadow-lg shadow-gray-300/50
-            hover:shadow-xl hover:shadow-gray-400/50 transition-all duration-500
-            hover:scale-[1.02]
+            hover:shadow-xl hover:shadow-gray-400/50 transition-all
+            motion-safe:duration-500 motion-safe:hover:scale-[1.02]
           '
         />
       </div>

@@ -112,7 +112,7 @@ h6 {
 /* TODO: Change focus styles for buttons to use a class that can be used globally. */
 .landing-card footer a:focus-visible > span {
   outline: none;
-  box-shadow: 0 0 0 2px var(--jobloop-primary-orange);
+  box-shadow: 0 0 0 2px blue;
   border-radius: calc(infinity * 1px);
 }
 .landing-card footer a:focus-visible:hover > span {
@@ -206,6 +206,18 @@ h6 {
 
   .card-slide-in:nth-child(5) {
     transition-delay: 0.5s;
+  }
+}
+
+/* Ensure that the team photos respect reduced motion preferences */
+@media (prefers-reduced-motion: reduce) {
+  .team-photo,
+  .slide-left,
+  .slide-right,
+  .slide-bottom {
+    transition: none !important;
+    transform: none !important;
+    opacity: 1 !important;
   }
 }
 

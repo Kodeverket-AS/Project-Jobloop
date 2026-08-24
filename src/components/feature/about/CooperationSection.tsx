@@ -5,7 +5,6 @@ import { useEffect, useState } from 'react';
 import { LinkButtonAnimatedWithIcon } from '@/components/buttons';
 import { useTranslations } from 'next-intl';
 
-// TODO: Clean divs and reorganize where reasonable.
 // TODO: Respect reduced motion preferences.
 export function CooperationSection() {
   const [photosAnimated, setPhotosAnimated] = useState(false);
@@ -13,6 +12,9 @@ export function CooperationSection() {
   const t = useTranslations('about');
 
   useEffect(() => {
+    const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if (prefersReducedMotion) return;
+
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
@@ -44,6 +46,7 @@ export function CooperationSection() {
   }, [photosAnimated]);
 
   // TODO: Deal with divs and restructure.
+  // TODO: Improve alt text and translate it!
   return (
     <section className=' samarbeid-section'>
       <div className='container mx-auto px-4 flex flex-col lg:flex-row items-center lg:items-start'>

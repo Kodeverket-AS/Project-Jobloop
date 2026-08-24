@@ -24,14 +24,15 @@ export default function ContactCard({ contact }: { contact: Contacts }) {
   const phone = mobile || '';
 
   // TODO: Test cards with screen reader.
+  // TODO: Deal with increased image border causing image to shrink, which is an issue for prefers-reduced-motion users.
   return (
     <li
       className='
         group rounded-xl border border-slate-200 bg-white shadow-xs
-        hover:shadow-md transition-all duration-300 p-4 max-w-80 w-full h-full
-        hover:scale-105 text-center flex
-        focus-within:rounded-xl focus-within:shadow-sm
-        focus-within:shadow-jobloop-primary-orange focus-within:scale-105
+        hover:shadow-md transition-all p-4 max-w-80 w-full h-full
+        text-center flex focus-within:rounded-xl focus-within:shadow-sm
+        focus-within:shadow-jobloop-primary-orange motion-safe:hover:scale-105
+        motion-safe:focus-within:scale-105 motion-safe:duration-300
       '
     >
       <article
@@ -46,7 +47,7 @@ export default function ContactCard({ contact }: { contact: Contacts }) {
           className='
             mt-4 text-lg font-semibold leading-tight tracking-tight
             text-slate-900 group-hover:text-jobloop-primary-orange
-            transition-colors duration-300
+            transition-colors motion-safe:duration-300
           '
         >
           {fullName}
@@ -57,7 +58,7 @@ export default function ContactCard({ contact }: { contact: Contacts }) {
             aria-label={t('roles')}
             className='
               mt-1 text-sm gap-x-2 text-slate-600 transition-colors flex
-              flex-row flex-wrap justify-center duration-300
+              flex-row flex-wrap justify-center motion-safe:duration-300
               group-hover:text-jobloop-primary-orange
             '
           >
@@ -128,10 +129,10 @@ export default function ContactCard({ contact }: { contact: Contacts }) {
         </address>
         <div className='
           relative w-32 h-32 sm:w-36 sm:h-36 md:w-40 md:h-40 lg:w-44 lg:h-44
-          xl:w-48 xl:h-48 overflow-hidden rounded-full border-2
+          xl:w-48 xl:h-48 overflow-hidden rounded-full border-2 order-first
           border-jobloop-primary-orange shadow-jobloop-primary-orange/15
-          group-hover:border-4 shadow-2xl transition-all duration-300
-          order-first
+          group-hover:border-4 shadow-2xl motion-safe:transition-all
+          motion-safe:duration-300
         '>
           <Image
             src={image ? urlFor(image).url() : '/contact_placeholder.jpg'}
@@ -143,7 +144,8 @@ export default function ContactCard({ contact }: { contact: Contacts }) {
             '
             className='
               object-cover object-top w-full h-full scale-100
-              group-hover:scale-105 transition-all duration-500
+              motion-safe:group-hover:scale-105 transition-all
+              motion-safe:duration-500
             '
           />
         </div>

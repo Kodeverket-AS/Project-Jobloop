@@ -81,7 +81,7 @@ export default async function WorkCourses() {
       <PartnerProject // TODO: Try to move this into the list below.
         title={t('work.partner.title')}
         text={t('work.partner.text')}
-        image={KodehodeImage}
+        image={KodehodeImage} // TODO: Find out why this image is not centered properly in it's container.
         alt={t('work.partner.image.alt')}
         path='https://www.kodehode.no'
         btnText='kodehode.no'

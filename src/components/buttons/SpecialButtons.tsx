@@ -54,10 +54,10 @@ export function ExternalLinkButton({ Path, Text, Aria }: ButtonProps) {
         w-full sm:w-fit flex items-center justify-center gap-1 px-8 py-3
         bg-kv-white rounded-full tracking-normal shadow-md shadow-kv-black/20
         text-base text-center text-kv-black border-2 border-solid
-        border-jobloop-primary-green hover:border-jobloop-primary-orange
-        hover:shadow-lg hover:bg-jobloop-primary-green lg:hover:scale-105
-        focus:bg-jobloop-primary-green focus:text-kv-white
-        transition-all duration-300 scale-100
+        border-jobloop-primary-green hover:border-blue-500
+        hover:shadow-lg hover:bg-jobloop-primary-green
+        motion-safe:lg:hover:scale-105 focus:bg-jobloop-primary-green
+        focus:text-kv-white transition-all motion-safe:duration-300 scale-100
       '
     >
       {Text}
@@ -90,16 +90,17 @@ export function LesMerButton(
       className='
         w-full md:w-auto md:max-w-[155px] inline-flex gap-3 px-6 py-3 text-white
         items-center justify-center bg-jobloop-primary-green rounded-full
-        hover:bg-jobloop-primary-orange hover:shadow-lg hover:scale-105
-        transition-all duration-300 group/btn
+        hover:bg-jobloop-primary-orange hover:shadow-lg
+        motion-safe:hover:scale-105 motion-safe:duration-300 transition-all
+        group/btn
       '
     >
       <span className='font-medium'>{Text}</span>
       {Context != '' ? <span className='sr-only'>{Context}</span> : null}
       <FaArrowRight
         className='
-          group-hover/btn:translate-x-1 group-hover/btn:scale-110
-          transition-transform duration-300
+          motion-safe:group-hover/btn:translate-x-1 transition-transform
+          motion-safe:group-hover/btn:scale-110 motion-safe:duration-300
         '
         aria-hidden='true'
       />
@@ -124,7 +125,7 @@ export function SpanButtonLike({ Text = 'readMore', Context = '' }: { Text?: str
         w-full md:w-auto md:max-w-[155px] inline-flex items-center
         justify-center gap-3 px-6 py-3 bg-jobloop-primary-green text-white
         rounded-full hover:bg-jobloop-primary-orange hover:shadow-lg
-        transition-all duration-300 group/btn hover:scale-105
+        transition-all motion-safe:duration-300 group/btn motion-safe:hover:scale-105
       '
     >
       <span className='font-medium'>
@@ -137,8 +138,9 @@ export function SpanButtonLike({ Text = 'readMore', Context = '' }: { Text?: str
       </span>
       <FaArrowRight
         className='
-          transition-transform duration-300
-          group-hover/btn:translate-x-1 group-hover/btn:scale-110
+          transition-transform motion-safe:duration-300
+          motion-safe:group-hover/btn:translate-x-1
+          motion-safe:group-hover/btn:scale-110
         '
         aria-hidden='true'
       />

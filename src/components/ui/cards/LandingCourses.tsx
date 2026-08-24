@@ -65,8 +65,8 @@ export function LandingCoursesCard({
           [&>a]:order-1 [&>h3]:order-2 [&>p]:order-3 [&>footer]:order-4
           xl:grid xl:grid-cols-2 xl:grid-rows-[1fr_auto_auto_auto_1fr]
           xl:gap-x-6 xl:gap-y-4
-          focus-within:rounded-xl focus-within:shadow-sm 
-          focus-within:shadow-jobloop-primary-green
+          focus-within:rounded-xl focus-within:border-2
+          focus-within:border-jobloop-primary-green
           ${context === 'partners' ? 'xl:pb-0 xl:pt-2' : ''}
         `}
       >
