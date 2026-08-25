@@ -54,7 +54,7 @@ export function ExternalLinkButton({ Path, Text, Aria }: ButtonProps) {
         w-full sm:w-fit flex items-center justify-center gap-1 px-8 py-3
         bg-kv-white rounded-full tracking-normal shadow-md shadow-kv-black/20
         text-base text-center text-kv-black border-2 border-solid
-        border-jobloop-primary-green hover:border-blue-500
+        border-jobloop-primary-green hover:border-jobloop-primary-orange
         hover:shadow-lg hover:bg-jobloop-primary-green
         motion-safe:lg:hover:scale-105 focus:bg-jobloop-primary-green
         focus:text-kv-white transition-all motion-safe:duration-300 scale-100
@@ -125,10 +125,12 @@ export function SpanButtonLike({ Text = 'readMore', Context = '' }: { Text?: str
         w-full md:w-auto md:max-w-[155px] inline-flex items-center
         justify-center gap-3 px-6 py-3 bg-jobloop-primary-green text-white
         rounded-full hover:bg-jobloop-primary-orange hover:shadow-lg
-        transition-all motion-safe:duration-300 group/btn motion-safe:hover:scale-105
+        border-2 border-solid border-jobloop-primary-green hover:border-jobloop-primary-green
+        transition-all motion-safe:duration-300 group/btn
+        motion-safe:hover:scale-105
       '
     >
-      <span className='font-medium'>
+      <span className='font-medium text-nowrap'>
         {t(`${Text}`)}
         {Context && (
           <span className='sr-only'>

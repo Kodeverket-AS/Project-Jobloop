@@ -30,32 +30,32 @@
       "learnWell": {
         "title": "LearnWell",
         "text": "Anpassad praktik inom kreativa digitala ämnen. För elever i gymnasieåldern.",
-        "alt": "Datorskärm med headset"
+        "alt": "Datorskärm med LearnWell-logotyp och ett headset hängande bredvid."
       },
       "gamify": {
         "title": "Gamify",
         "text": "Motivation och lärande genom spel och gaming. För elever i grundskolan.",
-        "alt": "Två flickor i Gamify"
+        "alt": "Två flickor ler och ger tummen upp vid varsin dator."
       },
       "spillbasert": {
         "title": "Spelbaserad",
         "text": "Gaming och alternativt lärande för dig som vill slutföra gymnasiet.",
-        "alt": "Tre personer involverade i projektet"
+        "alt": "Tre personer involverade i projektet."
       },
       "loop": {
         "title": "Loop",
         "text": "Få relevant arbetslivserfarenhet och bygg fler jobbmöjligheter.",
-        "alt": "Teknisk arbetsstation"
+        "alt": "Ett arbetsbord med bärbara datorer, anteckningsblock och kaffe."
       },
       "ki": {
         "title": "AI-kurs",
         "text": "Lär dig om artificiell intelligens och hur den kan användas i arbetslivet.",
-        "alt": "AI-kursledare"
+        "alt": "Kvinna med grått hår arbetar vid en bärbar dator på ett kontor."
       },
       "gjensidige": {
         "title": "Gjensidige & JobLoop",
         "text": "Nytt erbjudande från Gjensidige och JobLoop. Vi använder dina intressen för att bygga mästerskap, motivation och en väg framåt i livet.",
-        "alt": "Gjensidige logotyp"
+        "alt": "Personer med bärbara datorer samarbetar runt ett bord."
       }
     }
   },
@@ -63,35 +63,35 @@
     "title": "Arbetsinriktade program",
     "text": "Våra arbetsinriktade program ser till att människor får rätt kompetens och blir väl förberedda för arbetslivet. Många av programmen inkluderar praktik, vilket ger dig som arbetsgivare en unik möjlighet att ta socialt ansvar och lära känna kompetenta kandidater – helt utan förpliktelser. Om du endast rekryterar på traditionellt sätt kan du gå miste om många talangfulla resurser.",
     "image": {
-      "alt": "Bild av jobbmöjligheter"
+      "alt": "Fem personer sitter runt ett kontorsbord; de samtalar och arbetar vid en bärbar dator."
     },
     "partner": {
       "title": "Kodehode",
       "text": "Kodehode rekryterar kandidater som av olika skäl står utanför arbetsmarknaden och erbjuder utbildning inom frontend-, backend- och fullstack-utveckling, IT-drift, support och AI. Genom en kombination av teori, case-arbete och praktik lär sig deltagarna det viktigaste för en karriär inom IT. Kodehode är Jobloops största arbetsinriktade program och en ledande aktör inom inkluderande rekrytering i IT-branschen. Satsningen bidrar till att minska utanförskap och täppa till kompetensgapet genom riktad kvalificering, praktik, rekrytering och matchning med arbetsgivare i IT-sektorn.",
       "image": {
-        "alt": "Bild av jobbmöjligheter"
+        "alt": "Två föreläsare bredvid en bild med frågan ”Vad gör egentligen en frontend-utvecklare?”"
       }
     },
     "courses": {
       "grunnleggendeIT": {
         "title": "Grundläggande IT",
         "text": "Delta i dagens digitala samhälle. Vi erbjuder grundläggande IT-kunskaper som öppnar dörrar till framtidens arbetsliv. Lär dig det viktigaste inom digital teknik och skapa en solid grund för vidare utveckling.",
-        "alt": "Tre trevliga anställda"
+        "alt": "Tre trevliga anställda ler mot kameran."
       },
       "digitaleTalenter": {
         "title": "Digitala talanger",
         "text": "Utveckla dina intressen och få fast anställning. Vi hjälper dig att utveckla dina digitala talanger och färdigheter. Genom praktik och utbildning får du den kompetens som arbetslivet efterfrågar.",
-        "alt": "Leende person som är en digital talang"
+        "alt": "Leende person som är en digital talang."
       },
       "IndividuellAMO": {
         "title": "Individuell AMO",
         "text": "Få ett skräddarsytt upplägg genom NAV. Vi anpassar utbildningen efter dina mål och behov. Tillsammans bygger vi en väg mot ny kompetens och nya möjligheter i arbetslivet.",
-        "alt": "Person som tittar in i kameran"
+        "alt": "Person som tittar in i kameran."
       },
       "loop": {
         "title": "Loop",
         "text": "Få relevant arbetslivserfarenhet och kontakter. Vi matchar dig med arbetsgivare som kan ge värdefull praktik. Det här är din väg till att bygga CV och få in en fot på arbetsmarknaden.",
-        "alt": "Arbetsbord"
+        "alt": "Ett arbetsbord med bärbara datorer, anteckningsblock och kaffe."
       }
     },
     "quotes": {
@@ -118,24 +118,24 @@
     "kodeloftet": {
       "title": "Kodeloftet",
       "text": "Fontenehusen är frivilliga arbetsgemenskaper för personer som har eller har haft psykiska hälsoutmaningar. År 2022 inledde Kodehode ett samarbete med Fontenehuset Bergen för att erbjuda en kurs i programmering – Kodeloftet – en tre månaders kurs som fungerar som en förberedande utbildning till Kodehode.",
-      "alt": "Bild från Kodeloftet"
+      "alt": "Ljust klassrum med bänkar, stolar och väggmonterad skärm."
     },
     "gloede": {
       "title": "Gløde",
       "text": "Gløde AS har som mål att främja arbetsinkludering, kompetensförmedling och relaterad verksamhet. Målgruppen är personer som behöver kartläggning, arbetsträning, utbildning och stöd för att komma ut i ordinarie arbete, eller som behöver varaktigt anpassat arbete. År 2023 inledde Gløde Data och Jobloop ett samarbete för AFT-deltagare. 'Grundläggande programmering med JavaScript' är ett 12-veckors program där deltagarna lär sig att utveckla webbplatser och appar med JavaScript.",
-      "alt": "Glødes logotyp"
+      "alt": "Personer samarbetar vid datorer på ett kontor."
     },
     "teamwork": {
       "title": "TeamWork",
       "text": "TeamWork är ett nytt samarbetsprojekt mellan Jobloop och TeamWork OU AS, som arbetar för att leverera nya koncept till företag för att förbättra arbetsmiljön, minska sjukfrånvaron och reducera personalomsättningen.",
-      "alt": "Bild av TeamWork"
+      "alt": "Tre män på ett kontor; en av dem håller en presentation om att sätta en tidsgräns."
     }
   },
   "success": {
     "title": "Inkluderingsarbete som fungerar i praktiken!",
     "text": "Varje år samarbetar vi med forskare och branschorganisationer för att dela insikter och statistik med forskningsfältet. Vi är i kontakt med olika målgrupper och vill bidra till att utveckla bästa praxis i mötet med alla. Här kan du läsa ett urval av vad forskningen säger om oss:",
     "image": {
-      "alt": "Bild av Kodehode"
+      "alt": "Kvinna med glasögon håller en kopp bredvid en glasvägg med vita illustrationer."
     }
   },
   "contact": {

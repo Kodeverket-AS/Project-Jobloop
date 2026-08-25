@@ -30,32 +30,32 @@
       "learnWell": {
         "title": "LearnWell",
         "text": "Tailored practice in creative digital subjects. For upper secondary school students.",
-        "alt": "Computer screen with headset"
+        "alt": "Computer screen with the LearnWell logo and a headset hanging next to it."
       },
       "gamify": {
         "title": "Gamify",
         "text": "Motivation and learning through games and gaming. For primary school students.",
-        "alt": "Two girls in Gamify"
+        "alt": "Two girls smiling and giving thumbs-up at their computers."
       },
       "spillbasert": {
         "title": "Game-Based",
         "text": "Gaming and alternative learning for those who want to complete upper secondary school.",
-        "alt": "Three people involved in the project"
+        "alt": "Three people involved in the project."
       },
       "loop": {
         "title": "Loop",
         "text": "Gain relevant work experience and build opportunities for future employment.",
-        "alt": "Tech workstation"
+        "alt": "A work desk with laptops, notebooks and coffee."
       },
       "ki": {
         "title": "AI Course",
         "text": "Learn about artificial intelligence and how it can be applied in the workplace.",
-        "alt": "AI course instructor"
+        "alt": "Woman with gray hair working on a laptop in an office."
       },
       "gjensidige": {
         "title": "Gjensidige & JobLoop",
         "text": "New offer from Gjensidige and JobLoop. We use your interests to build mastery, motivation and a way forward in life.",
-        "alt": "Gjensidige logo"
+        "alt": "People with laptops collaborate around a table."
       }
     }
   },
@@ -63,35 +63,35 @@
     "title": "Employment-oriented programs",
     "text": "Our employment-focused programs ensure that people gain the right skills and are well prepared for working life. Many of our programs include internships, giving you as an employer a unique opportunity to take social responsibility and get to know talented candidates – completely without obligation. If you only recruit through traditional methods, you might miss out on many talented individuals.",
     "image": {
-      "alt": "Job opportunities image"
+      "alt": "Five people sit around an office table, talking and working on a laptop together."
     },
     "partner": {
       "title": "Kodehode",
       "text": "Kodehode recruits candidates who, for various reasons, are outside the labor market and offers training in frontend, backend, and full-stack development, IT operations, support and AI. Through a combination of theory, casework, and practice, participants learn the essentials for a career in IT. Kodehode is Jobloop’s largest employment-oriented program and a leading player in inclusive recruitment within the IT industry. The initiative helps reduce social exclusion and close the skills gap through focused qualification, internships, recruitment, and matchmaking with employers in the IT sector.",
       "image": {
-        "alt": "Job opportunities image"
+        "alt": "Two presenters beside a slide asking, “What does a frontend developer actually do?”"
       }
     },
     "courses": {
       "grunnleggendeIT": {
         "title": "Basic IT",
         "text": "Join today’s digital society. We provide fundamental IT skills that open doors to the future of work. Learn the essentials of digital technology and build a solid foundation for further development.",
-        "alt": "Three friendly employees"
+        "alt": "Three friendly employees smiling at the camera."
       },
       "digitaleTalenter": {
         "title": "Digital Talents",
         "text": "Develop your interests and secure a permanent job. We help you grow your digital talents and skills. Through training and practice, you’ll gain the competence that today’s employers are looking for.",
-        "alt": "Smiling person who is a digital talent"
+        "alt": "Smiling person who is a digital talent."
       },
       "IndividuellAMO": {
         "title": "Individual AMO",
         "text": "Get a tailored program through NAV. We customize the training to your goals and needs. Together we build a path toward new skills and new opportunities in working life.",
-        "alt": "Person looking into the camera"
+        "alt": "Person looking into the camera."
       },
       "loop": {
         "title": "Loop",
         "text": "Gain relevant work experience and connections. We match you with employers who can provide valuable practice. This is your way to build a CV and get your foot in the door.",
-        "alt": "Work desk"
+        "alt": "A work desk with laptops, notebooks and coffee."
       }
     },
     "quotes": {
@@ -118,24 +118,24 @@
     "kodeloftet": {
       "title": "Kodeloftet",
       "text": "Fontenehus are voluntary work communities for people who have or have had mental health challenges. In 2022, Kodehode began a collaboration with Fontenehuset Bergen to offer a coding course at the house – Kodeloftet – a three-month course considered a preparatory program for Kodehode.",
-      "alt": "Photo from Kodeloftet"
+      "alt": "Bright classroom with desks, chairs and a wall-mounted screen."
     },
     "gloede": {
       "title": "Gløde",
       "text": "Gløde AS aims to promote work inclusion, competence development, and related services. The target group consists of individuals who need clarification, job training, education, and support to enter regular employment, or who require adapted long-term work. In 2023, Gløde Data and Jobloop began a collaboration for AFT participants. 'Basic Programming with JavaScript' is a 12-week program where participants learn to build websites and apps using JavaScript.",
-      "alt": "Gløde logo"
+      "alt": "People working together at computers in an office."
     },
     "teamwork": {
       "title": "TeamWork",
       "text": "TeamWork is a new collaboration project between Jobloop and TeamWork OU AS. It focuses on delivering new concepts to companies to improve the work environment, reduce sick leave, and lower staff turnover.",
-      "alt": "Photo of TeamWork"
+      "alt": "Three men in an office, one presenting about setting a deadline."
     }
   },
   "success": {
     "title": "Inclusion work that delivers results!",
     "text": "Every year we collaborate with researchers and industry associations to share insights and statistics with the research community. We engage with a wide range of target groups and are passionate about contributing to developing best practices in working with everyone. You can read a selection of what research says about us here:",
     "image": {
-      "alt": "Kodehode image"
+      "alt": "Woman with glasses holding a cup beside a glass wall with white illustrations."
     }
   },
   "contact": {
