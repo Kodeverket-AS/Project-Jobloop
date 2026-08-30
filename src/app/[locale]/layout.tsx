@@ -13,6 +13,7 @@ import { getMessages, getTranslations, setRequestLocale } from 'next-intl/server
 import { ScrollToTopButton } from '@/components/buttons';
 import Footer from '@/components/navigation/Footer';
 import { Header } from '@/components/navigation/Header';
+import { MourningBanner } from '@/components/navigation/MourningBanner';
 
 /**
  * This function is responsible for generating all localized routes at runtime ensuring that
@@ -98,6 +99,7 @@ export default async function Layout({
     <html lang={locale} className={roboto.className}>
       <body>
         <NextIntlClientProvider messages={messages}>
+          <MourningBanner />
           <Header />
           {children}
           <ScrollToTopButton />
