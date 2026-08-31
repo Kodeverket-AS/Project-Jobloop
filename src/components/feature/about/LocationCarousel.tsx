@@ -62,6 +62,7 @@ export function LocationCarousel() {
     setUserPaused((prev) => !prev);
   };
 
+  // TODO: Ensure that aria-live is set to either off (if automatically rotating) or polite (if not automatically rotating).
   return (
     <section
       className={`
@@ -108,12 +109,15 @@ export function LocationCarousel() {
           modules={[A11y, Keyboard, Pagination, Autoplay]}
           wrapperTag={'ul'}
           className='relative max-w-7xl mx-auto locations-swiper motion-reduce:transition-none'
+          role='region'
+          aria-roledescription='carousel'
 
           onSwiper={setSwiper}
 
           // Accessibility
           a11y={{
             enabled: true,
+            wrapperLiveRegion: true,
             // TODO: Translate a11y messages!
             // firstSlideMessage: '',
             // lastSlideMessage: '',
@@ -190,8 +194,14 @@ export function LocationCarousel() {
               key={city.name}
               tag={'li'}
               className='flex! flex-col! items-center gap-3 p-2 mb-8'
+              role='group'
+              aria-roledescription='slide'
+              aria-labelledby={`${city.name}-slide`}
             >
-              <h3 className='order-last'>
+              <h3
+                id={`${city.name}-slide`}
+                className='order-last'
+              >
                 {city.name}
               </h3>
               <div
