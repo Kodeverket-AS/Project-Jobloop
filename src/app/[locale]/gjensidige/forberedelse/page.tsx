@@ -22,10 +22,7 @@ export async function generateMetadata(): Promise<Metadata> {
 }
 
 // TODO: Translate page!
-// TODO: Respect prefers-reduced-motion!
 // TODO: Deal with divs and restructure where reasonable.
-// TODO: Consider hiding emojis in headings from screen-readers.
-// TODO: Deal with emojis.
 export default async function Forberedelse() {
   const t = await getTranslations('gjensidige');
   return (
@@ -41,26 +38,26 @@ export default async function Forberedelse() {
       >
       <section
         className='
-          bg-gradient-to-b from-[#002B49] to-[#003d6b] text-white py-16
+          bg-linear-to-b from-[#002B49] to-[#003d6b] text-white py-16
           px-5 w-full rounded-2xl relative overflow-hidden
         '
         // TODO: Add aria-labelledby
       >
         <div
           className='
-            absolute inset-0 bg-gradient-to-r from-transparent via-white/5
-            to-transparent motion-safe:animate-shimmer bg-[length:200%_100%]
+            absolute inset-0 bg-linear-to-r from-transparent via-white/5
+            to-transparent motion-safe:animate-shimmer bg-size-[200%_100%]
             rounded-2xl
           '
         />
         <div className='w-full max-w-[1536px] mx-auto px-4 relative z-10'>
           <div className='flex flex-col lg:flex-row items-center gap-8 lg:gap-12'>
             <div className='
-              flex-shrink-0 order-2 lg:order-1 w-64 md:w-72 lg:w-80
+              shrink-0 order-2 lg:order-1 w-64 md:w-72 lg:w-80
               motion-safe:animate-fade-in-up motion-safe:delay-100
             '>
               <div className='
-                aspect-[3/4] relative rounded-lg shadow-2xl overflow-hidden
+                aspect-3/4 relative rounded-lg shadow-2xl overflow-hidden
               '>
                 <Image 
                   src={GjensidigeImage} 
@@ -102,9 +99,7 @@ export default async function Forberedelse() {
         aria-labelledby='beforeMeeting'
       >
         <div className='w-full mx-auto px-4'>
-          <AnimateOnScroll
-            // TODO: Find out how to respect reduced motion
-          >
+          <AnimateOnScroll>
             <h2
               id='beforeMeeting'
               className='text-3xl font-bold text-[#002B49] mb-8 text-center'
@@ -121,8 +116,6 @@ export default async function Forberedelse() {
             </AnimateOnScroll>
 
             {questions.map((q, idx) => (
-              // TODO: Fix up these
-              // TODO: Hide emojis from screen readers, as they are just decorative.
               <AnimateOnScroll key={idx}>
                 <QuestionCard {...q} />
               </AnimateOnScroll>
@@ -130,7 +123,7 @@ export default async function Forberedelse() {
 
             <AnimateOnScroll>
               <div className='
-                bg-gradient-to-r from-[#fff5f5] to-[#fffafa] p-8 rounded-lg
+                bg-linear-to-r from-[#fff5f5] to-[#fffafa] p-8 rounded-lg
                 border-l-4 border-[#C3002F] shadow-md
               '>
                 <p // TODO: Should this be h3 instead?
@@ -180,21 +173,22 @@ export default async function Forberedelse() {
 
           <AnimateOnScroll>
             <div className='
-              bg-gradient-to-br from-white to-[#EBF2F6] p-8 rounded-lg
-              shadow-lg border-l-[10px] border-[#2C8C7D] mb-8 hover:shadow-xl
+              bg-linear-to-br from-white to-[#EBF2F6] p-8 rounded-lg
+              shadow-lg border-l-10 border-[#2C8C7D] mb-8 hover:shadow-xl
               transition-all duration-300
             '>
             <div className='flex items-start gap-4 mb-6'>
-              <div
+              <span
                 // TODO: Move this and hide it from screen readers as it is just decorative
                 className='
                   bg-[#2C8C7D] text-white w-16 h-16 rounded-full flex
-                  items-center justify-center text-3xl flex-shrink-0
+                  items-center justify-center text-3xl shrink-0
                 '
+                aria-hidden='true'
               >
                 ✅
-              </div>
-              <div className="flex-1">
+              </span>
+              <div className='flex-1'>
                 <h3 className='text-2xl font-bold text-[#002B49] mb-3'>
                   {t('prep.afterMeeting.title')}
                 </h3>
@@ -223,7 +217,7 @@ export default async function Forberedelse() {
           </AnimateOnScroll>
 
           <div className='
-            bg-gradient-to-b from-[#EBF2F6] to-white py-20 px-5 w-full
+            bg-linear-to-b from-[#EBF2F6] to-white py-20 px-5 w-full
           '>
             <div className='w-full mx-auto px-4'>
               <AnimateOnScroll>
@@ -242,15 +236,18 @@ export default async function Forberedelse() {
               <AnimateOnScroll>
                 <div className='
                   bg-white max-w-4xl mx-auto p-10 md:p-14 rounded-xl
-                  shadow-xl border-l-[10px] border-[#002B49]
+                  shadow-xl border-l-10 border-[#002B49]
                 '>
                   <div className='flex items-center justify-center gap-3 mb-6'>
-                    <div className='
-                      bg-[#002B49] text-white w-14 h-14 rounded-full flex
-                      items-center justify-center text-2xl
-                    '>
+                    <span
+                      className='
+                        bg-[#002B49] text-white w-14 h-14 rounded-full
+                        flex items-center justify-center text-2xl
+                      '
+                      aria-hidden='true'
+                    >
                       📧
-                    </div>
+                    </span>
                     <h3 className='text-3xl font-bold text-[#002B49]'>
                       {t('common.interested.contact.title')}
                     </h3>
@@ -263,11 +260,11 @@ export default async function Forberedelse() {
                   </p>
                   
                   <div className='
-                    bg-gradient-to-r from-[#EBF2F6] to-[#e0f2f1] p-6
+                    bg-linear-to-r from-[#EBF2F6] to-[#e0f2f1] p-6
                     rounded-lg mb-8 max-w-4xl mx-auto
                   '>
                     <div className='flex flex-col sm:flex-row items-center gap-6'>
-                      <div className='flex-shrink-0'>
+                      <div className='shrink-0'>
                         <Image 
                           src={KimImage} 
                           alt={t('common.projectLeader') + ' Kim'}
@@ -320,8 +317,8 @@ export default async function Forberedelse() {
                       className='
                         inline-block bg-[#002B49] text-white px-10 py-4
                         rounded-full font-bold text-lg hover:bg-[#004d7a]
-                        hover:scale-105 hover:shadow-lg transition-all
-                        duration-300
+                        motion-safe:hover:scale-105 hover:shadow-lg transition-all
+                        motion-safe:duration-300
                       '
                     >
                       {t('common.buttons.sendEmailNow')}

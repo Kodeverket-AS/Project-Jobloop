@@ -42,7 +42,7 @@ const Snowflakes = () => {
           }
         }
       `}</style>
-      <div className="absolute inset-0 overflow-hidden pointer-events-none z-[1]">
+      <div className="absolute inset-0 overflow-hidden pointer-events-none z-1">
         {flakes.map((flake) => (
           <div
             key={`bg-${flake.id}`}

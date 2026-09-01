@@ -132,14 +132,15 @@ export default async function Pilot() {
       >
         <section
           className='
-            bg-gradient-to-b from-[#002B49] to-[#001f35] text-white
+            bg-linear-to-b from-[#002B49] to-[#001f35] text-white
             py-16 px-5 w-full rounded-2xl text-center relative overflow-hidden
           '
           aria-labelledby='gjensidige-hero-title'
         >
           <div className='
-            absolute inset-0 bg-gradient-to-r from-transparent via-white/5
-            to-transparent motion-safe:animate-shimmer bg-[length:200%_100%] rounded-2xl
+            absolute inset-0 bg-linear-to-r from-transparent via-white/5
+            to-transparent motion-safe:animate-shimmer bg-size-[200%_100%]
+            rounded-2xl
           '/>
           <div className='max-w-4xl mx-auto relative z-10'>
             <h1
@@ -288,7 +289,7 @@ export default async function Pilot() {
           aria-labelledby='gjensidige-interested-title'
         >
           <div className='
-            absolute inset-0 bg-gradient-to-br from-[#4AB5A3]/5 to-transparent
+            absolute inset-0 bg-linear-to-br from-[#4AB5A3]/5 to-transparent
             rounded-2xl
           '/>
           <div className='max-w-4xl mx-auto text-center relative z-10'>
@@ -340,9 +341,10 @@ export default async function Pilot() {
             </div>
             
             <div className='
-              bg-white rounded-xl p-10 md:p-12 shadow-xl border-l-[10px]
-              border-[#C3002F] hover:shadow-2xl transition-all motion-safe:duration-500
-              motion-safe:animate-fade-in-up motion-safe:delay-300
+              bg-white rounded-xl p-10 md:p-12 shadow-xl border-l-10
+              border-[#C3002F] hover:shadow-2xl transition-all
+              motion-safe:duration-500 motion-safe:animate-fade-in-up
+              motion-safe:delay-300
             '>
               <h3 className='text-2xl font-bold text-[#002B49] mb-6'>
                 {t('common.interested.contact.title')}

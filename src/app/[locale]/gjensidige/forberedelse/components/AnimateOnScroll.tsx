@@ -7,6 +7,7 @@ interface AnimateOnScrollProps {
   className?: string;
 }
 
+// TODO: Respect "prefers-reduced-motion"
 export function AnimateOnScroll({ children, className = '' }: AnimateOnScrollProps) {
   const ref = useRef<HTMLDivElement>(null);
   const [inView, setInView] = useState(false);
@@ -29,7 +30,7 @@ export function AnimateOnScroll({ children, className = '' }: AnimateOnScrollPro
   return (
     <div
       ref={ref}
-      className={`animate-on-scroll ${inView ? 'scroll-in-view' : ''} ${className}`}
+      className={`motion-safe:animate-on-scroll ${inView ? 'motion-safe:scroll-in-view' : ''} ${className}`}
     >
       {children}
     </div>
