@@ -57,8 +57,7 @@ export function Header() {
 
   return (
     <header
-      // top-16/mt-16 reserverer plass til den faste MourningBanner-linjen (h-16 md:h-20) i layout.tsx
-      className={`${isLanding ? 'absolute top-16 md:top-20 z-50' : 'mt-16 md:mt-20'} w-full px-5 lg:px-7 ${isKiKurs ? 'bg-jobloop-primary-green/20' : ''}`}
+      className={`${isLanding ? 'absolute top-0 z-50' : ''} w-full px-5 lg:px-7 ${isKiKurs ? 'bg-jobloop-primary-green/20' : ''}`}
     >
       <div className='flex items-center justify-between max-w-[1536px] mx-auto'>
         <div className='p-4'>
