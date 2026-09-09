@@ -8,8 +8,7 @@ export default async function LandingHero() {
 
   return (
     <>
-      {/* mt-16/md:mt-20 gir plass til den faste MourningBanner-linjen (h-16 md:h-20) som Header (absolute) flyter under */}
-      <div className='w-full h-[45vh]  lg:-[50vh] 2xl:h-[60vh] min-h-[500px]  lg:min-h-[700px] relative mb-16 mt-16 md:mt-20'>
+      <div className='w-full h-[45vh]  lg:-[50vh] 2xl:h-[60vh] min-h-[500px]  lg:min-h-[700px] relative mb-16'>
         <div className='absolute top-0 left-0 w-full h-full -z-50'>
           <div className='absolute bg-linear-to-b from-[rgba(34,34,34,0.7)] to-[rgba(34,34,34,0.6)] z-50 h-full w-full' />
           <Image
