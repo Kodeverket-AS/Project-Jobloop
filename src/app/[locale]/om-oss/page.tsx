@@ -83,13 +83,13 @@ export default async function OmOss() {
       <section
         className='
           container flex flex-col gap-4 mx-auto text-kv-black text-pretty
-          lg:block lg:mb-20 lg:flow-root lg:pb-2
+          lg:mb-20 lg:flow-root lg:pb-2
         '
         aria-labelledby='about-title'
       >
         <h1
           id='about-title'
-          className='font-bold text-4xl md:text-5xl lg:mb-[7rem]'
+          className='font-bold text-4xl md:text-5xl lg:mb-28'
         >
           {t('about.title')}
           <span className='block w-1/2 h-1 bg-jobloop-primary-green mt-2 mb-6' />
@@ -97,7 +97,7 @@ export default async function OmOss() {
         <div // NOTE: This currently balances against the heading by using a negative top margin to maintain visual alignment. Might need adjustment if heading size changes.
           className='
             w-full overflow-hidden rounded-xl order-first lg:w-2/5
-            lg:float-right lg:mb-4 lg:ml-4 lg:-mt-[10.75rem]
+            lg:float-right lg:mb-4 lg:ml-4 lg:-mt-43
           '
         >
           <Image
@@ -155,43 +155,40 @@ export default async function OmOss() {
       </section>
 
       <section
-        className='container mx-auto px-4'
+        className='
+          mx-auto px-4 container relative flex flex-col justify-center
+          items-center gap-4 md:gap-6 p-3 sm:p-4 md:p-6 lg:w-[90vw]
+          bg-jobloop-primary-green/5 border border-jobloop-primary-green
+          rounded-xl md:rounded-xl shadow-lg shadow-jobloop-secondary-green/15
+        '
         // TODO: Add aria-labelledby and add a subheading to this section, or change to div.
       >
-        <div
-          className='
-            mx-auto px-4 container relative flex flex-col justify-center
-            items-center gap-4 md:gap-6 p-3 sm:p-4 md:p-6
-            bg-jobloop-primary-green/5 border border-jobloop-primary-green
-            rounded-xl md:rounded-xl shadow-lg shadow-jobloop-secondary-green/15
-          '
-        >
-          <IoInformationCircle
-            className='absolute bottom-0 right-0 text-5xl text-jobloop-primary-green/15'
-            aria-hidden={true}
-          />
-          <p className='text-lg md:text-xl xl:text-2xl md:leading-loose text-center'>
-            {t('about.cta-1.text')}
-          </p>
-          <div className='mt-6'>
-            <LinkButtonAnimatedWithIcon Path={'/kontakt'} Text={t('about.cta-1.label')} />
-          </div>
+
+        <p className='text-lg md:text-xl xl:text-2xl md:leading-loose text-center'>
+          {t('about.cta-1.text')}
+        </p>
+        <div className='mt-6'>
+          <LinkButtonAnimatedWithIcon Path={'/kontakt'} Text={t('about.cta-1.label')} />
         </div>
+        <IoInformationCircle
+          className='absolute bottom-0 right-0 text-5xl text-jobloop-primary-green/15'
+          aria-hidden={true}
+        />
       </section>
 
       <section
         className='flex flex-col gap-8 team-section w-full'
         aria-labelledby='team-title'
       >
-        <div className='w-fit mx-auto'>
-          <h2
-            id='team-title'
-            className='text-2xl md:text-3xl font-bold text-center'
-          >
-            {t('about.employees.title')}
-          </h2>
-          <div className='block w-full h-1 bg-jobloop-primary-orange mt-2 mb-6 mx-auto'></div>
-        </div>
+        <h2
+          id='team-title'
+          className='
+            text-2xl md:text-3xl font-bold text-center w-fit mx-auto
+            border-jobloop-primary-orange border-b-4 pb-2 mb-6
+          '
+        >
+          {t('about.employees.title')}
+        </h2>
 
         {/* La til mx-auto her for å midtstille hele containeren, og justify-items-center for penere plassering av kortene */}
         {/* Beholder grid på mobil, men blir til en perfekt midtstilt flex-box på desktop */}
@@ -216,15 +213,15 @@ export default async function OmOss() {
         className='container mx-auto px-4'
         aria-labelledby='partners-title'
       >
-        <div className='w-fit mx-auto mb-12'>
-          <h2
-            id='partners-title'
-            className='text-2xl md:text-3xl font-bold text-center'
-          >
-            {t('about.partners.title')}
-          </h2>
-          <div className='block w-full h-1 bg-jobloop-primary-orange mt-2 mb-6 mx-auto'></div>
-        </div>
+        <h2
+          id='partners-title'
+          className='
+            text-2xl md:text-3xl font-bold text-center mb-12 w-fit mx-auto
+            border-jobloop-primary-orange border-b-4 pb-2
+          '
+        >
+          {t('about.partners.title')}
+        </h2>
         <ul
           className='grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-4 auto-rows-fr'
           aria-labelledby='partners-title'
