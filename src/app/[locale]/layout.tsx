@@ -76,6 +76,7 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
 const roboto = Roboto({ weight: ['400', '700', '900'], subsets: ['latin'] });
 
 // TODO: Consider adding breadcrumbs to improve navigation accessibility.
+// TODO: Consider making the title element more descriptive (currently using the same title on all pages).
 export default async function Layout({
   children,
   params,

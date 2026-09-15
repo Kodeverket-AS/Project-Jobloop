@@ -72,7 +72,13 @@ export function CooperationSection() {
 
         <div className='relative w-full md:w-64 h-64 mb-24 lg:mb-0 lg:mr-12 order-first'>
           <div className='absolute top-0 -left-5 team-photo slide-left'>
-            <Image src='/Kim.jpg' alt='Kim' width={150} height={150} className='rounded-full' />
+            <Image
+              src='/Kim.jpg'
+              alt='Kim'
+              width={150}
+              height={150}
+              className='rounded-full'
+            />
           </div>
           <div className='absolute top-0 -right-5 team-photo slide-right'>
             <Image
@@ -84,7 +90,13 @@ export function CooperationSection() {
             />
           </div>
           <div className='absolute bottom-0 left-1/4 team-photo slide-bottom'>
-            <Image src='/Sina.jpg' alt='Sina' width={150} height={150} className='rounded-full' />
+            <Image
+              src='/Sina.jpg'
+              alt='Sina'
+              width={150}
+              height={150}
+              className='rounded-full'
+            />
           </div>
         </div>
       </div>

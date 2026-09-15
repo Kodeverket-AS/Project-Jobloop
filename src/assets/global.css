@@ -209,12 +209,13 @@ h6 {
   }
 }
 
-/* Ensure that the team photos respect reduced motion preferences */
+/* Ensure that animated classes respect reduced motion preferences */
 @media (prefers-reduced-motion: reduce) {
   .team-photo,
   .slide-left,
   .slide-right,
-  .slide-bottom {
+  .slide-bottom,
+  .card-slide-in {
     transition: none !important;
     transform: none !important;
     opacity: 1 !important;
