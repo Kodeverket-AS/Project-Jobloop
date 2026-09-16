@@ -35,15 +35,14 @@ export default async function HeroSection() {
           {t('title')}
           <span className='sr-only'>Jobloop.</span>
         </p>
-        <div className='flex items-center space-x-4'>
-          <Image
-            src='/JobloopFarge.svg'
-            alt={t1('logo.alt')}
-            width={180}
-            height={180}
-            aria-hidden='true' // Purely decorative, hidden from screen readers.
-          />
-        </div>
+        <Image
+          src='/JobloopFarge.svg'
+          alt={t1('logo.alt')}
+          width={180}
+          height={180}
+          className='space-x-4'
+          aria-hidden='true' // Purely decorative, hidden from screen readers.
+        />
         <div className='
           w-full bg-white-50 rounded-2xl p-6 text-center border-2
           border-jobloop-primary-orange hover:shadow-lg

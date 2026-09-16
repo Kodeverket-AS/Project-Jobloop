@@ -30,7 +30,7 @@ export function AnimateOnScroll({ children, className = '' }: AnimateOnScrollPro
   return (
     <div
       ref={ref}
-      className={`motion-safe:animate-on-scroll ${inView ? 'motion-safe:scroll-in-view' : ''} ${className}`}
+      className={`animate-on-scroll ${inView ? 'scroll-in-view' : ''} ${className}`}
     >
       {children}
     </div>

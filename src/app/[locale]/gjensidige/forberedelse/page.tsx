@@ -23,18 +23,22 @@ export async function generateMetadata(): Promise<Metadata> {
 
 // TODO: Translate page!
 // TODO: Deal with divs and restructure where reasonable.
+// TODO: Find out why animations are not working after adding the motion-safe classes.
 export default async function Forberedelse() {
   const t = await getTranslations('gjensidige');
   return (
-    <div className="min-h-screen bg-[#f4f6f8] font-['Segoe_UI',Arial,sans-serif] text-[#333] leading-relaxed">
+    <main className='
+      min-h-screen bg-[#f4f6f8] font-["Segoe_UI",Arial,sans-serif]
+      text-[#333] leading-relaxed
+    '>
       <GjensidigeHeader />
-
-      <main
+      <article
         id='main'
         className='
           max-w-[1536px] px-4 py-16 flex flex-col items-center gap-16 w-full
           mx-auto
         '
+        aria-labelledby='heroTitle'
       >
       <section
         className='
@@ -43,55 +47,53 @@ export default async function Forberedelse() {
         '
         // TODO: Add aria-labelledby
       >
+        <div className='w-full max-w-[1536px] mx-auto px-4 relative z-10 flex flex-col lg:flex-row items-center gap-8 lg:gap-12'>
+          <div className='flex-1 text-center lg:text-left order-1 lg:order-2'>
+            <h1
+              id='heroTitle'
+              className='
+                text-4xl md:text-5xl mb-6 font-bold
+                animate-fade-in-up delay-200
+              '
+            >
+              {t('prep.hero.title')}
+            </h1>
+            <p className='
+              text-xl md:text-2xl opacity-95 leading-relaxed mb-6
+              animate-fade-in-up delay-300
+            '>
+              {t('prep.hero.subtitle')}
+            </p>
+            <div className='
+              space-y-3 text-lg opacity-90 leading-relaxed
+              animate-fade-in-up delay-400
+            '>
+              <p>{t('prep.hero.paragraph1')}</p>
+              <p>{t('prep.hero.paragraph2')}</p>
+              <p>{t('prep.hero.paragraph3')}</p>
+            </div>
+          </div>
+          <div className='
+            shrink-0 order-2 lg:order-1 w-64 md:w-72 lg:w-80
+            animate-fade-in-up delay-100
+            aspect-3/4 relative rounded-lg shadow-2xl overflow-hidden
+          '>
+            <Image 
+              src={GjensidigeImage} 
+              alt={t('prep.hero.image.alt')} // TODO: Improve alt text.
+              fill
+              sizes='(max-width: 768px) 256px, (max-width: 1024px) 288px, 320px'
+              className='object-cover object-center'
+            />
+          </div>
+        </div>
         <div
           className='
             absolute inset-0 bg-linear-to-r from-transparent via-white/5
-            to-transparent motion-safe:animate-shimmer bg-size-[200%_100%]
+            to-transparent animate-shimmer bg-size-[200%_100%]
             rounded-2xl
           '
         />
-        <div className='w-full max-w-[1536px] mx-auto px-4 relative z-10'>
-          <div className='flex flex-col lg:flex-row items-center gap-8 lg:gap-12'>
-            <div className='
-              shrink-0 order-2 lg:order-1 w-64 md:w-72 lg:w-80
-              motion-safe:animate-fade-in-up motion-safe:delay-100
-            '>
-              <div className='
-                aspect-3/4 relative rounded-lg shadow-2xl overflow-hidden
-              '>
-                <Image 
-                  src={GjensidigeImage} 
-                  alt={t('prep.hero.image.alt')} // TODO: Improve alt text.
-                  fill
-                  sizes='(max-width: 768px) 256px, (max-width: 1024px) 288px, 320px'
-                  className='object-cover object-center'
-                />
-              </div>
-            </div>
-            <div className='flex-1 text-center lg:text-left order-1 lg:order-2'>
-              <h1 className='
-                text-4xl md:text-5xl mb-6 font-bold
-                motion-safe:animate-fade-in-up motion-safe:delay-200
-              '>
-                {t('prep.hero.title')}
-              </h1>
-              <p className='
-                text-xl md:text-2xl opacity-95 leading-relaxed mb-6
-                motion-safe:animate-fade-in-up motion-safe:delay-300
-              '>
-                {t('prep.hero.subtitle')}
-              </p>
-              <div className='
-                space-y-3 text-lg opacity-90 leading-relaxed
-                motion-safe:animate-fade-in-up motion-safe:delay-400
-              '>
-                <p>{t('prep.hero.paragraph1')}</p>
-                <p>{t('prep.hero.paragraph2')}</p>
-                <p>{t('prep.hero.paragraph3')}</p>
-              </div>
-            </div>
-          </div>
-        </div>
       </section>
 
       <section
@@ -342,7 +344,7 @@ export default async function Forberedelse() {
           </div>
         </div>
       </section>
-      </main>
-    </div>
+      </article>
+    </main>
   );
 }
