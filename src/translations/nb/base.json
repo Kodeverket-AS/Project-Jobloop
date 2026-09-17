@@ -26,7 +26,12 @@
   },
   "footer": {
     "branding": {
+      "award": "JobLoop | Årets Sosiale Entreprenør 2024",
       "text": "Vi hjelper deg med å finne din drømmejobb gjennom innovative kurs og personlig veiledning."
+    },
+    "badges": {
+      "gaselle2024Alt": "DN Gaselle 2024 - Dagens Næringslivs kåring av landets mest fremgangsrike bedrifter",
+      "gaselle2025Alt": "DN Gaselle 2025 - Dagens Næringslivs kåring av landets mest fremgangsrike bedrifter"
     },
     "links": {
       "title": "Sider",
