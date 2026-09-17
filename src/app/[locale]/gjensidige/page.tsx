@@ -117,51 +117,44 @@ export default async function Pilot() {
   ];
 
   return (
-    <div className="
-      min-h-screen bg-[#f4f6f8] font-['Segoe_UI',Arial,sans-serif]
+    <main className='
+      min-h-screen bg-[#f4f6f8] font-["Segoe_UI",Arial,sans-serif]
       text-[#333] leading-relaxed
-    ">
+    '>
       <GjensidigeHeader />
 
-      <main
+      <article
         id='main'
         className='
           max-w-[1536px] px-4 py-16 flex flex-col items-center gap-16 w-full
           mx-auto
         '
+        aria-labelledby='gjensidige-hero-title'
       >
-        <section
-          className='
-            bg-linear-to-b from-[#002B49] to-[#001f35] text-white
-            py-16 px-5 w-full rounded-2xl text-center relative overflow-hidden
-          '
-          aria-labelledby='gjensidige-hero-title'
-        >
-          <div className='
-            absolute inset-0 bg-linear-to-r from-transparent via-white/5
-            to-transparent motion-safe:animate-shimmer bg-size-[200%_100%]
-            rounded-2xl
-          '/>
+        <div className='
+          bg-linear-to-b from-[#002B49] to-[#001f35] text-white
+          py-16 px-5 w-full rounded-2xl text-center relative overflow-hidden
+          animate-shimmer
+        '>
           <div className='max-w-4xl mx-auto relative z-10'>
             <h1
               id='gjensidige-hero-title'
               className='
                 text-4xl md:text-5xl font-bold mb-6
-                motion-safe:animate-fade-in-up motion-safe:delay-100
+                animate-fade-in-up delay-100
               '
             >
               {t('about.hero.title')}
             </h1>
             <p className='
               text-xl md:text-2xl mb-12 opacity-90 leading-relaxed
-              motion-safe:animate-fade-in-up motion-safe:delay-200
+              animate-fade-in-up delay-200
             '>
               {t('about.hero.subtitle')}
             </p>
             
             <div className='
-              flex justify-center motion-safe:animate-fade-in-up
-              motion-safe:delay-300
+              flex justify-center animate-fade-in-up delay-300
             '>
               <Image
                 src={GjensidigeImage}
@@ -183,7 +176,7 @@ export default async function Pilot() {
             </div>
             */}
           </div>
-        </section>
+        </div>
 
         <section
           className='bg-white py-16 px-5 w-full rounded-2xl'
@@ -195,14 +188,14 @@ export default async function Pilot() {
               id='gjensidige-tracks-title'
               className='
                 text-3xl md:text-4xl font-bold text-[#002B49] mb-6
-                motion-safe:animate-fade-in-up motion-safe:delay-100
+                animate-fade-in-up delay-100
               '
             >
               {t('about.tracks.title')}
             </h2>
             <p className='
                 text-lg text-[#555] leading-relaxed max-w-2xl mx-auto
-                motion-safe:animate-fade-in-up motion-safe:delay-200
+                animate-fade-in-up delay-200
               '
             >
               {t('about.tracks.text1')}{' '}
@@ -247,7 +240,7 @@ export default async function Pilot() {
               id='gjensidige-common-questions-title'
               className='
                 text-3xl md:text-4xl font-bold text-[#002B49] mb-12 text-center
-                motion-safe:animate-fade-in-up motion-safe:delay-100
+                animate-fade-in-up delay-100
               '
             >
               {t('about.commonQuestions.title')}
@@ -297,14 +290,14 @@ export default async function Pilot() {
               id='gjensidige-interested-title'
               className='
                 text-3xl md:text-4xl font-bold text-[#002B49] mb-6
-                motion-safe:animate-fade-in-up motion-safe:delay-100
+                animate-fade-in-up delay-100
               '
             >
               {t('common.interested.title')}
             </h2>
             <p className='
-              text-lg text-[#555] mb-6 leading-relaxed motion-safe:animate-fade-in-up
-              motion-safe:delay-200
+              text-lg text-[#555] mb-6 leading-relaxed animate-fade-in-up
+              delay-200
             '>
               {t('common.interested.text')}
             </p>
@@ -312,8 +305,8 @@ export default async function Pilot() {
             <div className='
               mb-8 p-6 bg-white rounded-xl shadow-md border-2
               border-[#4AB5A3] hover:shadow-xl hover:border-[#3a9a8a]
-              transition-all duration-500 motion-safe:animate-fade-in-up
-              motion-safe:delay-200 group
+              transition-all duration-500 animate-fade-in-up
+              delay-200 group
             '>
               <p className='text-[#555] mb-4 leading-relaxed'>
                 <strong className='
@@ -343,8 +336,7 @@ export default async function Pilot() {
             <div className='
               bg-white rounded-xl p-10 md:p-12 shadow-xl border-l-10
               border-[#C3002F] hover:shadow-2xl transition-all
-              motion-safe:duration-500 motion-safe:animate-fade-in-up
-              motion-safe:delay-300
+              duration-500 animate-fade-in-up delay-300
             '>
               <h3 className='text-2xl font-bold text-[#002B49] mb-6'>
                 {t('common.interested.contact.title')}
@@ -434,7 +426,7 @@ export default async function Pilot() {
             </div>
           </div>
         </section>
-      </main>
-    </div>
+      </article>
+    </main>
   );
 }
