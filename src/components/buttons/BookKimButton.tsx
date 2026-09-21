@@ -6,6 +6,7 @@ interface BookKimButtonProps {
   className?: string;
 }
 
+// TODO: Check if this should also be updated to use the projectLeader data (it probably should, but then the URL and text would need to be dynamic).
 export function BookKimButton({ className = '' }: BookKimButtonProps) {
   const t = useTranslations('dictionary');
   const t1 = useTranslations('gjensidige');

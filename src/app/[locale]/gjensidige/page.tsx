@@ -5,6 +5,7 @@ import GjensidigeHeader from '@/components/feature/gjensidige/GjensidigeHeader';
 import GjensidigeTrackCard from '@/components/feature/gjensidige/GjensidigeTrackCard';
 import GjensidigeImage from '@public/gjensidige2.jpg';
 import { getTranslations } from 'next-intl/server';
+import { projectLeader } from './projectLeader';
 
 export async function generateStaticParams() {
   return [{ locale: 'nb' }, { locale: 'sv' }, { locale: 'en' }];
@@ -359,22 +360,24 @@ export default async function Pilot() {
                   '>
                     <span
                       className='text-2xl animate-pulse-slow'
+                      role='img'
                       aria-hidden='true'
                     >
                       📞
                     </span>
                     <a
-                      href='tel:97469110'
+                      href={`tel:${projectLeader.phone}`}
                       className='hover:scale-105 transform'
                       // TODO: Add aria-label or title.
                     >
-                      97 46 91 10
+                      {projectLeader.phoneDisplay}
                     </a>
                   </div>
                   <span className='hidden sm:inline text-gray-400'>|</span>
                   <div className='flex items-center gap-2 text-[#555]'>
                     <span
                       className='text-2xl'
+                      role='img'
                       aria-hidden='true'
                     >
                       ✉️
@@ -388,7 +391,7 @@ export default async function Pilot() {
                       '
                       // TODO: Add aria-label or title
                     >
-                      kim@jobloop.no
+                      {projectLeader.email}
                     </a>
                   </div>
                 </div>
@@ -398,7 +401,7 @@ export default async function Pilot() {
                 flex flex-col sm:flex-row items-center justify-center gap-4
               '>
                 <a
-                  href='mailto:kim@jobloop.no'
+                  href={`mailto:${projectLeader.email}`}
                   className='
                     inline-block bg-[#C3002F] text-white px-10 py-4
                     rounded-full font-bold text-lg hover:bg-[#a10026]

@@ -5,10 +5,16 @@ import { useRef, useState, useEffect, type ReactNode } from 'react';
 interface AnimateOnScrollProps {
   children: ReactNode;
   className?: string;
+  as?: 'div' | 'section';
+  ariaLabelledBy?: string;
 }
 
-// TODO: Respect "prefers-reduced-motion"
-export function AnimateOnScroll({ children, className = '' }: AnimateOnScrollProps) {
+export function AnimateOnScroll({
+  children,
+  className = '',
+  as: Tag = 'div',
+  ariaLabelledBy = undefined,
+}: AnimateOnScrollProps) {
   const ref = useRef<HTMLDivElement>(null);
   const [inView, setInView] = useState(false);
 
@@ -28,11 +34,12 @@ export function AnimateOnScroll({ children, className = '' }: AnimateOnScrollPro
   }, []);
 
   return (
-    <div
+    <Tag
       ref={ref}
       className={`animate-on-scroll ${inView ? 'scroll-in-view' : ''} ${className}`}
+      {...(ariaLabelledBy ? { 'aria-labelledby': ariaLabelledBy } : {})}
     >
       {children}
-    </div>
+    </Tag>
   );
 }

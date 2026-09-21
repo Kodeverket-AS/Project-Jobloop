@@ -7,8 +7,8 @@ import { InfoCard } from './components/InfoCard';
 import { AnimateOnScroll } from './components/AnimateOnScroll';
 import { questions, infoCards, expectations } from './data';
 import GjensidigeImage from '@public/gjensidige.jpg';
-import KimImage from '@public/Kim.jpg';
 import { getTranslations } from 'next-intl/server';
+import { projectLeader } from '../projectLeader';
 
 export async function generateStaticParams() {
   return [{ locale: 'nb' }, { locale: 'sv' }, { locale: 'en' }];
@@ -22,8 +22,6 @@ export async function generateMetadata(): Promise<Metadata> {
 }
 
 // TODO: Translate page!
-// TODO: Deal with divs and restructure where reasonable.
-// TODO: Decrease hero animation to minimize flickering!
 export default async function Forberedelse() {
   const t = await getTranslations('gjensidige');
   return (
@@ -35,7 +33,7 @@ export default async function Forberedelse() {
       <article
         id='main'
         className='
-          max-w-[1536px] px-4 py-16 flex flex-col items-center gap-16 w-full
+          max-w-[1536px] px-4 py-16 flex flex-col items-center *:mb-16 w-full
           mx-auto
         '
         aria-labelledby='heroTitle'
@@ -85,20 +83,21 @@ export default async function Forberedelse() {
           </div>
         </div>
 
-        <section
+        <AnimateOnScroll
+          as='section'
+          ariaLabelledBy='beforeMeeting'
           className='bg-white py-12 px-5 w-full rounded-2xl mx-auto'
-          aria-labelledby='beforeMeeting'
         >
-          <AnimateOnScroll>
-            <h2
-              id='beforeMeeting'
-              className='text-3xl font-bold text-[#002B49] mb-8 text-center'
-            >
-              {t('prep.beforeMeeting.title')}
-            </h2>
-          </AnimateOnScroll>
+          <h2
+            id='beforeMeeting'
+            className='text-3xl font-bold text-[#002B49] mb-8 text-center'
+          >
+            {t('prep.beforeMeeting.title')}
+          </h2>
           <div className='max-w-4xl mx-auto space-y-8 text-[#555]'>
-            <AnimateOnScroll className='text-center mb-8'>
+            <AnimateOnScroll
+              className='text-center mb-8'
+            >
               <p className='text-lg mb-4'>{t('prep.beforeMeeting.paragraph1')}</p>
               <p className='mb-4'>{t('prep.beforeMeeting.paragraph2')}</p>
             </AnimateOnScroll>
@@ -108,17 +107,26 @@ export default async function Forberedelse() {
                 <QuestionCard {...q} />
               </AnimateOnScroll>
             ))}
-
-            <AnimateOnScroll className='
-              bg-linear-to-r from-[#fff5f5] to-[#fffafa] p-8 rounded-lg
-              border-l-4 border-[#C3002F] shadow-md
-            '>
-              <p // TODO: Should this be h3 instead?
-                className='font-semibold text-[#002B49] mb-3 text-lg'
+            <AnimateOnScroll
+              as='section'
+              ariaLabelledBy='prep-before-meeting-remember-title'
+              className='
+                bg-linear-to-r from-[#fff5f5] to-[#fffafa] p-8 rounded-lg
+                border-l-4 border-[#C3002F] shadow-md
+              '
+            >
+              <h3
+                id='prep-before-meeting-remember-title'
+                className='font-semibold! text-[#002B49] mb-3 text-lg! flex'
               >
-                <span role='img' aria-hidden='true'>💡</span>
                 {t('prep.beforeMeeting.remember.title')}
-              </p>
+                <span
+                  className='mr-1 order-first'
+                  aria-hidden='true'
+                >
+                  💡
+                </span>
+              </h3>
               <p className='mb-3 text-[#555] leading-relaxed'>
                 {t('prep.beforeMeeting.remember.paragraph1')}
               </p>
@@ -127,200 +135,248 @@ export default async function Forberedelse() {
               </p>
             </AnimateOnScroll>
           </div>
-        </section>
+        </AnimateOnScroll>
 
-        <section
-          className='bg-[#EBF2F6] py-16 px-9 w-full rounded-2xl mx-auto'
-          // TODO: Add aria-labelledby
+        <AnimateOnScroll
+          as='section'
+          ariaLabelledBy='prep-talking-soon-title'
+          className='bg-[#EBF2F6] pt-16 px-9 w-full rounded-t-2xl mx-auto mb-0!'
         >
-          <AnimateOnScroll className='text-center mb-12'>
-            <h2 className='text-4xl font-bold text-[#002B49] mb-6'>
-              {t('prep.talkingSoon.title')}
-            </h2>
-            <p className='text-xl text-[#555] mb-4 max-w-2xl mx-auto'>
-              {t('prep.talkingSoon.paragraph1')}
-            </p>
-            <p className='text-lg text-[#555] max-w-2xl mx-auto'>
-              {t('prep.talkingSoon.paragraph2')}
-            </p>
-          </AnimateOnScroll>
-
-          <div className='grid md:grid-cols-2 gap-6 mb-12'>
+          <h2
+            id='prep-talking-soon-title'
+            className='text-4xl font-bold text-[#002B49] mb-6 text-center'
+          >
+            {t('prep.talkingSoon.title')}
+          </h2>
+          <p className='text-xl text-center text-[#555] mb-4 max-w-2xl mx-auto'>
+            {t('prep.talkingSoon.paragraph1')}
+          </p>
+          <p className='text-lg text-center text-[#555] max-w-2xl mx-auto'>
+            {t('prep.talkingSoon.paragraph2')}
+          </p>
+          <div className='grid md:grid-cols-2 gap-6 my-12'>
             {infoCards.map((card, idx) => (
               <AnimateOnScroll key={idx}>
                 <InfoCard {...card} />
               </AnimateOnScroll>
             ))}
           </div>
-
-          <AnimateOnScroll className='
-            bg-linear-to-br from-white to-[#EBF2F6] p-8 rounded-lg
-            shadow-lg border-l-10 border-[#2C8C7D] mb-8 hover:shadow-xl
-            transition-all duration-300
-          '>
+          <AnimateOnScroll
+            as='section'
+            ariaLabelledBy='prep-after-meeting-title'
+            className='
+              bg-linear-to-br from-white to-[#EBF2F6] p-8 rounded-lg
+              shadow-lg border-l-10 border-[#2C8C7D] mb-12 hover:shadow-xl
+              transition-all duration-300
+            '
+          >
             <div className='flex items-start gap-4 mb-6'>
-              <span
-                // TODO: Move this and hide it from screen readers as it is just decorative
-                className='
-                  bg-[#2C8C7D] text-white w-16 h-16 rounded-full flex
-                  items-center justify-center text-3xl shrink-0
-                '
-                aria-hidden='true'
-              >
-                ✅
-              </span>
-              <div className='flex-1'>
-                <h3 className='text-2xl font-bold text-[#002B49] mb-3'>
+              <div className='flex-1 order-last'>
+                <h3
+                  id='prep-after-meeting-title'
+                  className='text-2xl font-bold text-[#002B49] mb-3'
+                >
                   {t('prep.afterMeeting.title')}
                 </h3>
                 <p className='text-[#555] mb-6 leading-relaxed'>
                   {t('prep.afterMeeting.text')}
                 </p>
               </div>
+              <span
+                className='
+                  bg-[#2C8C7D] text-white w-16 h-16 rounded-full flex
+                  items-center justify-center text-3xl shrink-0 order-first
+                '
+                aria-hidden='true'
+              >
+                ✅
+              </span>
             </div>
-            <div className='bg-white p-6 rounded-lg border border-gray-200'>
-              <p
-                // TODO: Should this be a h4?
+            <section
+              className='bg-white p-6 rounded-lg border border-gray-200'
+              aria-labelledby='prep-after-meeting-what-to-expect-title'
+            >
+              <h4
+                id='prep-after-meeting-what-to-expect-title'
                 className='font-semibold text-[#002B49] text-lg mb-4'
               >
                 {t('prep.afterMeeting.whatToExpect.title')}
-              </p>
-              <div className='grid md:grid-cols-2 gap-4'>
+              </h4>
+              <ul
+                className='grid md:grid-cols-2 gap-4'
+                aria-label={t('prep.afterMeeting.whatToExpect.title')}
+              >
                 {expectations.map((item, idx) => (
-                  <div key={idx} className='flex items-start gap-3'>
-                    <span className='text-[#2C8C7D] text-xl'>✓</span>
-                    <span className='text-[#555] text-sm'>{item}</span>
-                  </div>
+                  <li key={idx} className='flex gap-3 items-baseline mb-1'>
+                    <span className='text-[#555] text-sm order-last'>
+                      {item}
+                    </span>
+                    <span
+                      className='text-[#2C8C7D] text-xl order-first'
+                      aria-hidden='true'
+                    >
+                      ✓
+                    </span>
+                  </li>
                 ))}
-              </div>
-            </div>
+              </ul>
+            </section>
           </AnimateOnScroll>
+        </AnimateOnScroll>
 
-          <div className='
-            bg-linear-to-b from-[#EBF2F6] to-white py-20 px-5 w-full
-          '>
-            <div className='w-full mx-auto px-4'>
-              <AnimateOnScroll className='max-w-4xl mx-auto text-center mb-12'>
-                <h2 className='text-4xl md:text-5xl font-bold text-[#002B49] mb-6'>
-                  {t('common.interested.title')}
-                </h2>
-                <p className='
-                  text-xl text-[#555] mb-4 max-w-2xl mx-auto leading-relaxed
-                '>
-                  {t('common.interested.text')}
-                </p>
-              </AnimateOnScroll>
-
-              <AnimateOnScroll className='
-                bg-white max-w-4xl mx-auto p-10 md:p-14 rounded-xl
-                shadow-xl border-l-10 border-[#002B49]
+        <AnimateOnScroll
+          as='section'
+          ariaLabelledBy='common-interested-title'
+          className='bg-[#EBF2F6] py-16 px-9 w-full mx-auto text-center mt-0! mb-0! rounded-b-2xl -top-1 relative'
+        >
+          <div
+            className='bg-linear-to-b from-[#EBF2F6] to-white rounded-2xl'
+          >
+            <h2
+              id='common-interested-title'
+              className='text-4xl md:text-5xl font-bold text-[#002B49] mb-6'
+            >
+              {t('common.interested.title')}
+            </h2>
+            <p className='
+              text-xl text-[#555] mb-12 max-w-2xl mx-auto leading-relaxed
+            '>
+              {t('common.interested.text')}
+            </p>
+            <AnimateOnScroll
+              as='section'
+              ariaLabelledBy='common-interested-contact-title'
+              className='
+                bg-white max-w-4xl p-10 md:p-14 rounded-xl shadow-xl
+                border-l-10 border-[#002B49] mx-9 lg:mx-auto
+              '
+            >
+              <h3
+                id='common-interested-contact-title'
+                className='
+                  text-3xl font-bold text-[#002B49] flex items-center gap-3 mb-6
+                  justify-center
+                '
+              >
+                {t('common.interested.contact.title')}
+                <span
+                  className='
+                    bg-[#002B49] text-white w-14 h-14 rounded-full flex
+                    items-center justify-center text-2xl order-first
+                  '
+                  aria-hidden='true'
+                >
+                  📧
+                </span>
+              </h3>
+              <p className='
+                text-lg text-[#555] mb-8 leading-relaxed max-w-2xl mx-auto
+                text-left
               '>
-                <div className='flex items-center justify-center gap-3 mb-6'>
-                  <span
-                    className='
-                      bg-[#002B49] text-white w-14 h-14 rounded-full
-                      flex items-center justify-center text-2xl
-                    '
-                    aria-hidden='true'
-                  >
-                    📧
-                  </span>
-                  <h3 className='text-3xl font-bold text-[#002B49]'>
-                    {t('common.interested.contact.title')}
-                  </h3>
-                </div>
-
-                <p className='
-                  text-lg text-[#555] mb-8 leading-relaxed max-w-2xl mx-auto
-                '>
-                  {t('common.interested.contact.text')}
-                </p>
-
-                <div className='
-                  bg-linear-to-r from-[#EBF2F6] to-[#e0f2f1] p-6
-                  rounded-lg mb-8 max-w-4xl mx-auto
-                '>
-                  <div className='flex flex-col sm:flex-row items-center gap-6'>
-                    <div className='shrink-0'>
-                      <Image 
-                        src={KimImage} 
-                        alt={t('common.projectLeader') + ' Kim'}
-                        width={128}
-                        height={128}
-                        className='
-                          w-32 h-32 rounded-full object-cover shadow-lg
-                          border-4 border-white
-                        '
-                      />
-                    </div>
-                    <div className='flex-1 text-center sm:text-left'>
-                      <p className='font-bold text-[#002B49] text-xl mb-4'>
-                        {t('common.projectLeader')} Kim
-                      </p>
-                      <div className='
-                        flex flex-col sm:flex-row items-center sm:items-start
-                        justify-center sm:justify-start gap-4 text-lg
+                {t('common.interested.contact.text')}
+              </p>
+              <div className='
+                bg-linear-to-r from-[#EBF2F6] to-[#e0f2f1] p-6
+                rounded-lg mb-8 max-w-4xl mx-auto
+                flex flex-col sm:flex-row items-center gap-6
+              '>
+                <Image 
+                  src={projectLeader.image} 
+                  alt={t('common.projectLeader') + ' ' + projectLeader.name}
+                  width={128}
+                  height={128}
+                  className='
+                    w-32 h-32 rounded-full object-cover shadow-lg
+                    border-4 border-white shrink-0
+                  '
+                />
+                <div className='flex-1 text-center sm:text-left'>
+                  <p className='font-bold text-[#002B49] text-xl mb-4'>
+                    {t('common.projectLeader')} {projectLeader.name}
+                  </p>
+                  <address className='
+                    flex flex-col sm:flex-row items-center sm:items-start
+                    justify-center sm:justify-start gap-4 text-lg not-italic
+                  '>
+                    <a
+                      href={`tel:${projectLeader.phone}`}
+                      className='
+                        flex items-center gap-2 text-[#555] hover:text-[#4AB5A3]
+                        transition-colors after:content-["|"] after:text-gray-400
+                        after:sm:inline after:hidden after:order-last after:ml-2
+                        after:self-baseline
+                      '
+                    >
+                      <span
+                        // TODO: Consider adding "+47" to the phone number for international format
+                        className='order-last'
+                      >
+                        {projectLeader.phoneDisplay}
+                      </span>
+                      <span
+                        className='text-2xl order-first'
+                        aria-hidden='true'
+                      >
+                        📞
+                      </span>
+                    </a>
+                    <a
+                      href={`mailto:${projectLeader.email}`}
+                      className='flex items-center gap-2 text-[#555]'
+                    >
+                      <span className='
+                        text-[#002B49] underline font-medium
+                        hover:text-[#4AB5A3] transition-colors order-last
                       '>
-                        <div
-                          // TODO: Mark up phone number as an actual tel link
-                          className='flex items-center gap-2 text-[#555]'
-                        >
-                          <span className='text-2xl'>📞</span>
-                          <span>97 46 91 10</span>
-                        </div>
-                        <span
-                          className='hidden sm:inline text-gray-400'
-                          aria-hidden='true'
-                        >
-                          |
-                        </span>
-                        <div className='flex items-center gap-2 text-[#555]'>
-                          <span className='text-2xl'>✉️</span>
-                          <a
-                            href='mailto:kim@jobloop.no'
-                            className='
-                              text-[#002B49] underline font-medium
-                              hover:text-[#4AB5A3] transition-colors
-                            '
-                          >
-                            kim@jobloop.no
-                          </a>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
+                        {projectLeader.email}
+                      </span>
+                      <span
+                        className='text-2xl order-first'
+                        aria-hidden='true'
+                      >
+                        ✉️
+                      </span>
+                    </a>
+                  </address>
                 </div>
-
-                <div className='
-                  flex flex-col sm:flex-row items-center justify-center gap-4
-                '>
-                  <a
-                    href='mailto:kim@jobloop.no'
-                    className='
-                      inline-block bg-[#002B49] text-white px-10 py-4
-                      rounded-full font-bold text-lg hover:bg-[#004d7a]
-                      motion-safe:hover:scale-105 hover:shadow-lg transition-all
-                      motion-safe:duration-300
-                    '
-                  >
-                    {t('common.buttons.sendEmailNow')}
-                  </a>
-                  <BookKimButton />
-                </div>
-              </AnimateOnScroll>
-
-              <AnimateOnScroll className='mt-12 text-center'>
-                <p className='text-2xl font-bold text-[#002B49] mb-3'>
-                  {t('prep.outro.title')}
-                </p>
-                <p className='text-lg text-[#555]'>
-                  {t('prep.outro.text')}
-                </p>
-              </AnimateOnScroll>
-            </div>
+              </div>
+              <div className='
+                flex flex-col sm:flex-row items-center justify-center gap-4
+              '>
+                <a
+                  href={`mailto:${projectLeader.email}`}
+                  className='
+                    inline-block bg-[#002B49] text-white px-10 py-4
+                    rounded-full font-bold text-lg hover:bg-[#004d7a]
+                    motion-safe:hover:scale-105 hover:shadow-lg transition-all
+                    motion-safe:duration-300
+                  '
+                >
+                  {t('common.buttons.sendEmailNow')}
+                </a>
+                <BookKimButton />
+              </div>
+            </AnimateOnScroll>
+            <AnimateOnScroll
+              as='section'
+              ariaLabelledBy='prepOutroTitle'
+              className='mt-12 pb-20 text-center'
+            >
+              <h3
+                id='prepOutroTitle'
+                className='text-2xl! font-bold text-[#002B49] mb-3'
+              >
+                {t('prep.outro.title')}
+              </h3>
+              <p
+                // TODO: Consider changing this if Kim is not the contact person!
+                className='text-lg text-[#555]'
+              >
+                {t('prep.outro.text')}
+              </p>
+            </AnimateOnScroll>
           </div>
-
-        </section>
+        </AnimateOnScroll>
       </article>
     </main>
   );
