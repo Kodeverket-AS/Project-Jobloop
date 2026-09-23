@@ -182,7 +182,6 @@ export default async function Pilot() {
         <section
           className='bg-white py-16 px-5 w-full rounded-2xl'
           aria-labelledby='gjensidige-tracks-title'
-          // TODO: Consider combining this section with the bottom one
         >
           <div className='max-w-4xl mx-auto text-center'>
             <h2
@@ -210,26 +209,24 @@ export default async function Pilot() {
         <section
           className='bg-white py-12 px-5 w-full rounded-2xl'
           aria-label='Gjensidige tracks section' // TODO: Add aria-label translation
-          // TODO: Consider adding in a silent heading to this section
+          // TODO: Consider merging this section with the one above it.
         >
-          <div className='max-w-[1536px] mx-auto'>
-            <ul
-              className='grid lg:grid-cols-3 gap-8'
-              // TODO: Add aria-label or aria-labelledby to the list
-            >
-              {tracks.map((track) => (
-                <GjensidigeTrackCard
-                  key={track.title}
-                  title={track.title}
-                  ageRange={track.ageRange}
-                  text={track.text}
-                  goals={track.goals}
-                  goalListTitle={track.goalListTitle}
-                  video={track.video}
-                />
-              ))}
-            </ul>
-          </div>
+          <ul
+            className='max-w-[1536px] mx-auto grid lg:grid-cols-3 gap-8'
+            // TODO: Add aria-label or aria-labelledby to the list
+          >
+            {tracks.map((track) => (
+              <GjensidigeTrackCard
+                key={track.title}
+                title={track.title}
+                ageRange={track.ageRange}
+                text={track.text}
+                goals={track.goals}
+                goalListTitle={track.goalListTitle}
+                video={track.video}
+              />
+            ))}
+          </ul>
         </section>
 
         <section
@@ -247,10 +244,10 @@ export default async function Pilot() {
               {t('about.commonQuestions.title')}
             </h2>
             
-            <div className='space-y-8'>
+            <ul className='space-y-8'>
               {commonQuestions.map((item, index) => {
                 return (
-                  <div
+                  <li
                     key={index}
                     className={`
                       pb-6 hover:border-[#4AB5A3]
@@ -269,23 +266,20 @@ export default async function Pilot() {
                     <p className='text-[#555] leading-relaxed'>
                       {item.a}
                     </p>
-                  </div>
+                  </li>
                 )
               })}
-            </div>
+            </ul>
           </div>
         </section>
 
         <section
           className='
             bg-[#EBF2F6] py-16 px-5 w-full rounded-2xl relative overflow-hidden
+            bg-linear-to-br from-[#4AB5A3]/5 to-transparent
           '
           aria-labelledby='gjensidige-interested-title'
         >
-          <div className='
-            absolute inset-0 bg-linear-to-br from-[#4AB5A3]/5 to-transparent
-            rounded-2xl
-          '/>
           <div className='max-w-4xl mx-auto text-center relative z-10'>
             <h2
               id='gjensidige-interested-title'
@@ -303,20 +297,24 @@ export default async function Pilot() {
               {t('common.interested.text')}
             </p>
             
-            <div className='
-              mb-8 p-6 bg-white rounded-xl shadow-md border-2
-              border-[#4AB5A3] hover:shadow-xl hover:border-[#3a9a8a]
-              transition-all duration-500 animate-fade-in-up
-              delay-200 group
-            '>
-              <p className='text-[#555] mb-4 leading-relaxed'>
-                <strong className='
+            <section
+              className='
+                mb-8 p-6 bg-white rounded-xl shadow-md border-2
+                border-[#4AB5A3] hover:shadow-xl hover:border-[#3a9a8a]
+                transition-all duration-500 animate-fade-in-up
+                delay-200 group
+              '
+              aria-labelledby='gjensidige-uncertain-title'
+            >
+              <h3
+                id='gjensidige-uncertain-title'
+                className='
                   text-[#002B49] group-hover:text-[#4AB5A3]
-                  transition-colors duration-300
-                '>
-                  {t('about.uncertain.title')}
-                </strong>
-              </p>
+                  transition-colors duration-300 leading-relaxed mb-4 text-base!
+                '
+              >
+                {t('about.uncertain.title')}
+              </h3>
               <p className='text-[#555] mb-6 leading-relaxed'>
                 {t('about.uncertain.text')}
               </p>
@@ -325,78 +323,85 @@ export default async function Pilot() {
                 className='
                   inline-block bg-[#4AB5A3] text-white px-8 py-3
                   rounded-full font-bold text-lg hover:bg-[#3a9a8a]
-                  motion-safe:hover:scale-110 hover:shadow-xl transition-all duration-300
-                  transform
+                  motion-safe:hover:scale-110 hover:shadow-xl transition-all
+                  duration-300 transform
                 '
               >
                 {t('about.uncertain.linkText')}
                 <span aria-hidden='true'> →</span>
               </Link>
-            </div>
-            
-            <div className='
-              bg-white rounded-xl p-10 md:p-12 shadow-xl border-l-10
-              border-[#C3002F] hover:shadow-2xl transition-all
-              duration-500 animate-fade-in-up delay-300
-            '>
-              <h3 className='text-2xl font-bold text-[#002B49] mb-6'>
+            </section>
+
+            <section
+              className='
+                bg-white rounded-xl p-10 md:p-12 shadow-xl border-l-10
+                border-[#C3002F] hover:shadow-2xl transition-all
+                duration-500 animate-fade-in-up delay-300
+              '
+            aria-labelledby='gjensidige-contact-title'
+            >
+              <h3
+                id='gjensidige-contact-title'
+                className='text-2xl font-bold text-[#002B49] mb-6'
+              >
                 {t('common.interested.contact.title')}
               </h3>
               <p className='text-[#555] mb-8 leading-relaxed'>
                 {t('common.interested.contact.text')}
               </p>
-              
-              <div className='mb-8'>
-                <p className='font-bold text-[#002B49] text-xl mb-4'>
-                  {t('common.projectLeader')} Kim
-                </p>
-                <div className='
-                  flex flex-col sm:flex-row items-center justify-center gap-4
-                  text-lg
-                '>
-                  <div className='
+              <p // TODO: Add this to the address element for better semantic structure
+                className='font-bold text-[#002B49] text-xl mb-4'
+              >
+                {t('common.projectLeader')} {projectLeader.name}
+              </p>
+              <address className='
+                flex flex-col sm:flex-row items-center justify-center gap-4
+                text-lg not-italic mb-8
+              '>
+                <a
+                  href={`tel:${projectLeader.phone}`}
+                  className='
                     flex items-center gap-2 text-[#555]
-                    hover:text-[#4AB5A3] transition-colors duration-300
+                  hover:text-[#4AB5A3] transition-colors duration-300
+                  '
+                >
+                  <span className='hover:scale-105 transform order-last'>
+                    {projectLeader.phoneDisplay}
+                  </span>
+                  <span
+                    className='text-2xl animate-pulse-slow order-first'
+                    role='img'
+                    aria-hidden='true'
+                  >
+                    📞
+                  </span>
+                </a>
+                <span
+                  className='hidden sm:inline text-gray-400'
+                  aria-hidden='true'
+                >
+                  |
+                </span>
+                <a
+                  href='mailto:kim@jobloop.no'
+                  className='flex items-center gap-2 text-[#555]'
+                >
+                  <span className='
+                    text-[#002B49] underline hover:text-[#4AB5A3]
+                    transition-colors font-medium order-last
+                    motion-safe:hover:scale-105 inline-block transform
                   '>
-                    <span
-                      className='text-2xl animate-pulse-slow'
-                      role='img'
-                      aria-hidden='true'
-                    >
-                      📞
-                    </span>
-                    <a
-                      href={`tel:${projectLeader.phone}`}
-                      className='hover:scale-105 transform'
-                      // TODO: Add aria-label or title.
-                    >
-                      {projectLeader.phoneDisplay}
-                    </a>
-                  </div>
-                  <span className='hidden sm:inline text-gray-400'>|</span>
-                  <div className='flex items-center gap-2 text-[#555]'>
-                    <span
-                      className='text-2xl'
-                      role='img'
-                      aria-hidden='true'
-                    >
-                      ✉️
-                    </span>
-                    <a
-                      href='mailto:kim@jobloop.no'
-                      className='
-                        text-[#002B49] underline hover:text-[#4AB5A3]
-                        transition-colors font-medium
-                        motion-safe:hover:scale-105 inline-block transform
-                      '
-                      // TODO: Add aria-label or title
-                    >
-                      {projectLeader.email}
-                    </a>
-                  </div>
-                </div>
-              </div>
-
+                    {projectLeader.email}
+                  </span>
+                  <span
+                    className='text-2xl order-first'
+                    role='img'
+                    aria-hidden='true'
+                  >
+                    ✉️
+                  </span>
+                </a>
+              </address>
               <div className='
                 flex flex-col sm:flex-row items-center justify-center gap-4
               '>
@@ -426,7 +431,7 @@ export default async function Pilot() {
                   {t('common.buttons.bookConversationWithKim')}
                 </a>*/}
               </div>
-            </div>
+            </section>
           </div>
         </section>
       </article>

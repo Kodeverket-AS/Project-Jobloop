@@ -12,6 +12,7 @@ interface ButtonProps {
   Text: string;
   Aria?: AriaAttributes['aria-label'];
   Context?: string;
+  ClassName?: string;
 }
 
 export function KontaktButton({ Path, Text }: ButtonProps) {
@@ -39,7 +40,7 @@ export function KontaktButton({ Path, Text }: ButtonProps) {
   );
 }
 
-export function ExternalLinkButton({ Path, Text, Aria }: ButtonProps) {
+export function ExternalLinkButton({ Path, Text, Aria, ClassName }: ButtonProps) {
   // TODO: Check if it is too much with both aria-label and sr-only span.
   // TODO: Need to check Aria property for all uses to ensure consistency.
   const t = useTranslations('dictionary');
@@ -50,7 +51,7 @@ export function ExternalLinkButton({ Path, Text, Aria }: ButtonProps) {
       target='_blank'
       rel='noopener noreferrer'
       aria-label={Aria}
-      className='
+      className={`
         w-full sm:w-fit flex items-center justify-center gap-1 px-8 py-3
         bg-kv-white rounded-full tracking-normal shadow-md shadow-kv-black/20
         text-base text-center text-kv-black border-2 border-solid
@@ -58,7 +59,8 @@ export function ExternalLinkButton({ Path, Text, Aria }: ButtonProps) {
         hover:shadow-lg hover:bg-jobloop-primary-green
         motion-safe:lg:hover:scale-105 focus:bg-jobloop-primary-green
         focus:text-kv-white transition-all motion-safe:duration-300 scale-100
-      '
+        ${ClassName ?? ''}
+      `}
     >
       {Text}
       <span className='sr-only'>

@@ -19,9 +19,11 @@ export function QuestionCard({ icon, title, description, items, borderColor, ico
       `}
       // TODO: Add aria-labelledby here, or let AnimateOnScroll be able to change div to section if specified - and then add aria-labelledby there.
     >
-      <h3 className='
+      <h3
+        className='
         text-xl font-bold text-[#002B49] mb-4 flex items-center gap-3
-      '>
+      '
+      >
         {title}
         <span
           className={`
