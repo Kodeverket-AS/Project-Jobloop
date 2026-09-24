@@ -1,6 +1,12 @@
 'use client';
 
-import { useRef, useState, useEffect, type ReactNode } from 'react';
+import {
+  useRef,
+  useState,
+  useEffect,
+  type ReactNode,
+  type ElementType
+} from 'react';
 
 interface AnimateOnScrollProps {
   children: ReactNode;
@@ -12,9 +18,10 @@ interface AnimateOnScrollProps {
 export function AnimateOnScroll({
   children,
   className = '',
-  as: Tag = 'div',
+  as = 'div',
   ariaLabelledBy = undefined,
 }: AnimateOnScrollProps) {
+  const Tag: ElementType = as;
   const ref = useRef<HTMLElement | null>(null);
   const [inView, setInView] = useState(false);
 
@@ -35,7 +42,9 @@ export function AnimateOnScroll({
 
   return (
     <Tag
-      ref={ref as any}
+      ref={(node: HTMLElement | null) => {
+        ref.current = node;
+      }}
       className={`animate-on-scroll ${inView ? 'scroll-in-view' : ''} ${className}`}
       {...(ariaLabelledBy ? { 'aria-labelledby': ariaLabelledBy } : {})}
     >

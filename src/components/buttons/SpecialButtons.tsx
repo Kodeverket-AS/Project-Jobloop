@@ -11,6 +11,7 @@ interface ButtonProps {
   Text: string;
   Context?: string;
   ClassName?: string;
+  Aria?: string;
 }
 
 export function KontaktButton({ Path, Text }: ButtonProps) {
@@ -76,7 +77,8 @@ export function LesMerButton(
   {
     Path,
     Text = 'Les mer',
-    Context = ''
+    Context = '',
+    Aria = undefined
   }: Partial<ButtonProps> & { Context?: string }
 ) {
   return (
@@ -89,6 +91,7 @@ export function LesMerButton(
         motion-safe:hover:scale-105 motion-safe:duration-300 transition-all
         group/btn
       '
+      aria-label={Aria}
     >
       <span className='font-medium'>{Text}</span>
       {Context != '' ? <span className='sr-only'>{Context}</span> : null}
