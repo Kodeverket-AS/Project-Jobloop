@@ -19,6 +19,7 @@ interface GjensidigeTrackCardProps {
   };
 };
 
+// TODO: Deal with divs
 export default async function GjensidigeTrackCard({
   title,
   ageRange,

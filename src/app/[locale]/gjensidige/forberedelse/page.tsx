@@ -103,8 +103,17 @@ export default async function Forberedelse() {
             </AnimateOnScroll>
 
             {questions.map((q, idx) => (
-              <AnimateOnScroll key={idx}>
-                <QuestionCard {...q} />
+              <AnimateOnScroll
+                key={idx}
+                as='section'
+                ariaLabelledBy={`question-${idx}`}
+                className={`
+                  bg-white border border-gray-200 rounded-lg p-6 shadow-md
+                  hover:shadow-xl transition-all motion-safe:duration-300
+                  motion-safe:hover:-translate-y-1 border-l-4 ${q.borderColor}
+                `}
+              >
+                <QuestionCard {...q} idx={idx} />
               </AnimateOnScroll>
             ))}
             <AnimateOnScroll

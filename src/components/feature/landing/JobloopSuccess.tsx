@@ -34,12 +34,10 @@ export default async function JobloopSuccess() {
           <ExternalLinkButton
             Path='https://www.fafo.no/zoo-publikasjoner/fafo-rapporter/sysselsetting-av-unge-med-nedsatt-funksjonsevne-3'
             Text='FAFOs Rapport'
-            Aria='FAFOs Rapport'
           />
           <ExternalLinkButton
             Path='https://www.virke.no/contentassets/bb882874e5f5449bb72e58a6bb76c3f1/161023menon-publikasjon-nr.-113_2023-arbeids--og-inkluderingsvirksomhetenes-samfunnsverdi.pdf '
             Text='Menon Economics (2023) - PDF'
-            Aria='Menon Economics (2023)'
           />
         </div>
       </div>

@@ -15,7 +15,7 @@ export function AnimateOnScroll({
   as: Tag = 'div',
   ariaLabelledBy = undefined,
 }: AnimateOnScrollProps) {
-  const ref = useRef<HTMLDivElement>(null);
+  const ref = useRef<HTMLElement | null>(null);
   const [inView, setInView] = useState(false);
 
   useEffect(() => {
@@ -35,7 +35,7 @@ export function AnimateOnScroll({
 
   return (
     <Tag
-      ref={ref}
+      ref={ref as any}
       className={`animate-on-scroll ${inView ? 'scroll-in-view' : ''} ${className}`}
       {...(ariaLabelledBy ? { 'aria-labelledby': ariaLabelledBy } : {})}
     >

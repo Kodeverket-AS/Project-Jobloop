@@ -5,12 +5,10 @@ import { useTranslations } from 'next-intl';
 import { FaArrowRight } from 'react-icons/fa';
 import { BiLinkExternal } from 'react-icons/bi';
 import { LuMail } from 'react-icons/lu';
-import { AriaAttributes } from 'react';
 
 interface ButtonProps {
   Path: string;
   Text: string;
-  Aria?: AriaAttributes['aria-label'];
   Context?: string;
   ClassName?: string;
 }
@@ -40,9 +38,7 @@ export function KontaktButton({ Path, Text }: ButtonProps) {
   );
 }
 
-export function ExternalLinkButton({ Path, Text, Aria, ClassName }: ButtonProps) {
-  // TODO: Check if it is too much with both aria-label and sr-only span.
-  // TODO: Need to check Aria property for all uses to ensure consistency.
+export function ExternalLinkButton({ Path, Text, ClassName }: ButtonProps) {
   const t = useTranslations('dictionary');
 
   return (
@@ -50,7 +46,6 @@ export function ExternalLinkButton({ Path, Text, Aria, ClassName }: ButtonProps)
       href={Path}
       target='_blank'
       rel='noopener noreferrer'
-      aria-label={Aria}
       className={`
         w-full sm:w-fit flex items-center justify-center gap-1 px-8 py-3
         bg-kv-white rounded-full tracking-normal shadow-md shadow-kv-black/20
@@ -81,14 +76,12 @@ export function LesMerButton(
   {
     Path,
     Text = 'Les mer',
-    Aria = '',
     Context = ''
   }: Partial<ButtonProps> & { Context?: string }
 ) {
   return (
     <a
       href={Path}
-      aria-label={Aria}
       className='
         w-full md:w-auto md:max-w-[155px] inline-flex gap-3 px-6 py-3 text-white
         items-center justify-center bg-jobloop-primary-green rounded-full

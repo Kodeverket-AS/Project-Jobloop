@@ -2,7 +2,8 @@ import Image from 'next/image';
 import { ExternalLinkButton } from '@/components/buttons';
 
 // todo: Is this page in use?
-// TODO: Remove div and restructure where possible.
+// The page is seemingly in use, but no page links to it directly.
+// TODO: Translate this page!
 export default function Ansettelser() {
   return (
     <main
@@ -12,10 +13,14 @@ export default function Ansettelser() {
         my-12 px-4
       '
     >
-      <div className='
-        relative bg-white p-8 rounded-lg shadow-md flex flex-col
-      '>
-        <h1 className='text-4xl font-bold mb-4 text-center order-2'>
+      <section
+        className='relative bg-white p-8 rounded-lg shadow-md flex flex-col'
+        aria-labelledby='ansettelser-title'
+      >
+        <h1
+          id='ansettelser-title'
+          className='text-4xl font-bold mb-4 text-center order-2'
+        >
           Jobloop Ansetter
           <span className='block w-full h-1 bg-jobloop-primary-green mt-2 mb-6'></span>
         </h1>
@@ -41,11 +46,10 @@ export default function Ansettelser() {
         </p>
         <ExternalLinkButton
           Path='https://arbeidsplassen.nav.no/stillinger?q=jobloop&v=3'
-          Text='Les mer'
-          Aria='Les mer'
+          Text='Finn stillinger'
           ClassName='mx-auto order-last'
         />
-      </div>
+      </section>
     </main>
   );
 }

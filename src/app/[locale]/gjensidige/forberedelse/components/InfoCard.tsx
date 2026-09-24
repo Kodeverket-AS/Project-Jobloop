@@ -29,7 +29,6 @@ export function InfoCard({ icon, title, description, items, additionalText, clas
             text-3xl bg-[#e0f2f1] w-12 h-12 rounded-full flex items-center
             justify-center order-first
           '
-          role='img'
           aria-hidden='true'
         >
           {icon}

@@ -7,19 +7,14 @@ interface QuestionCardProps {
   iconBg: string;
   tip?: string;
   className?: string;
+  idx?: number;
 }
 
-export function QuestionCard({ icon, title, description, items, borderColor, iconBg, tip, className = '' }: QuestionCardProps) {
+export function QuestionCard({ icon, title, description, items, borderColor, iconBg, tip, className = '', idx }: QuestionCardProps) {
   return (
-    <section
-      className={`
-        bg-white border border-gray-200 rounded-lg p-6 shadow-md
-        hover:shadow-xl transition-all motion-safe:duration-300
-        motion-safe:hover:-translate-y-1 border-l-4 ${borderColor} ${className}
-      `}
-      // TODO: Add aria-labelledby here, or let AnimateOnScroll be able to change div to section if specified - and then add aria-labelledby there.
-    >
+    <>
       <h3
+        id={`question-${idx}`}
         className='
         text-xl font-bold text-[#002B49] mb-4 flex items-center gap-3
       '
@@ -51,6 +46,6 @@ export function QuestionCard({ icon, title, description, items, borderColor, ico
           </p>
         </div>
       )}
-    </section>
+    </>
   );
 }

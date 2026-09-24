@@ -19,9 +19,6 @@ export async function generateMetadata(): Promise<Metadata> {
 }
 
 // TODO: Translate page
-// TODO: Deal with divs and restructure
-// TODO: Minimize repetition
-// TODO: Find out if Kim is the correct person, as the live site says something different (maybe set a simple controller for it at the top of the file?).
 export default async function Pilot() {
   const t = await getTranslations('gjensidige');
 
@@ -132,58 +129,51 @@ export default async function Pilot() {
         '
         aria-labelledby='gjensidige-hero-title'
       >
-        <div className='
-          bg-linear-to-b from-[#002B49] to-[#001f35] text-white
-          py-16 px-5 w-full rounded-2xl text-center relative overflow-hidden
-          animate-shimmer
+        <header className='
+          relative flex flex-col items-center py-16 px-5 w-full z-10 mx-auto
+          rounded-2xl text-white text-center overflow-hidden bg-linear-to-b
+          from-[#002B49] to-[#001f35] animate-shimmer
         '>
-          <div className='max-w-4xl mx-auto relative z-10'>
-            <h1
-              id='gjensidige-hero-title'
-              className='
-                text-4xl md:text-5xl font-bold mb-6
-                animate-fade-in-up delay-100
-              '
-            >
-              {t('about.hero.title')}
-            </h1>
-            <p className='
-              text-xl md:text-2xl mb-12 opacity-90 leading-relaxed
-              animate-fade-in-up delay-200
-            '>
-              {t('about.hero.subtitle')}
-            </p>
-            
-            <div className='
-              flex justify-center animate-fade-in-up delay-300
-            '>
-              <Image
-                src={GjensidigeImage}
-                alt={t('about.hero.image.alt')} // TODO: Update alt text to something more descriptive (use image description from previous use of this image?)
-                width={600}
-                height={340}
-                className='
-                  w-full max-w-[600px] h-auto rounded-lg object-cover
-                  object-center border-2 border-white/30 aspect-video
-                '
-              />
+          <h1
+            id='gjensidige-hero-title'
+            className='
+              text-4xl md:text-5xl font-bold mb-6 max-w-4xl animate-fade-in-up
+              delay-100
+            '
+          >
+            {t('about.hero.title')}
+          </h1>
+          <p className='
+            text-xl md:text-2xl mb-12 opacity-90 leading-relaxed
+            animate-fade-in-up delay-200
+          '>
+            {t('about.hero.subtitle')}
+          </p>
+          <Image
+            src={GjensidigeImage}
+            alt={t('about.hero.image.alt')} // TODO: Update alt text to something more descriptive (use image description from previous use of this image?)
+            width={600}
+            height={340}
+            className='
+              w-full max-w-[600px] h-auto rounded-lg object-cover object-center
+              border-2 border-white/30 aspect-video animate-fade-in-up
+              delay-300
+            '
+          />
+          {/* VIDEO placeholder 
+          <div className="bg-[#001f35] w-full max-w-[600px] h-[340px] mx-auto rounded-lg border-2 border-dashed border-white/30 flex items-center justify-center relative hover:border-white/50 transition-all duration-500 animate-fade-in-up delay-300 group cursor-pointer">
+            <div className="text-center group-hover:scale-105 transition-transform duration-300">
+              <div className="text-6xl mb-4 opacity-80 animate-pulse-slow">▶</div>
+              <p className="text-gray-300">VIDEO: Hei, er du forsikret i Gjensidige?</p>
             </div>
-            {/* VIDEO placeholder 
-            <div className="bg-[#001f35] w-full max-w-[600px] h-[340px] mx-auto rounded-lg border-2 border-dashed border-white/30 flex items-center justify-center relative hover:border-white/50 transition-all duration-500 animate-fade-in-up delay-300 group cursor-pointer">
-              <div className="text-center group-hover:scale-105 transition-transform duration-300">
-                <div className="text-6xl mb-4 opacity-80 animate-pulse-slow">▶</div>
-                <p className="text-gray-300">VIDEO: Hei, er du forsikret i Gjensidige?</p>
-              </div>
-            </div>
-            */}
           </div>
-        </div>
-
-        <section
-          className='bg-white py-16 px-5 w-full rounded-2xl'
-          aria-labelledby='gjensidige-tracks-title'
-        >
-          <div className='max-w-4xl mx-auto text-center'>
+          */}
+        </header>
+        <section aria-labelledby='gjensidige-tracks-title'>
+          <div className='
+            flex flex-col items-center mb-16 py-16 px-5 w-full rounded-2xl
+            bg-white text-center
+          '>
             <h2
               id='gjensidige-tracks-title'
               className='
@@ -194,26 +184,21 @@ export default async function Pilot() {
               {t('about.tracks.title')}
             </h2>
             <p className='
-                text-lg text-[#555] leading-relaxed max-w-2xl mx-auto
-                animate-fade-in-up delay-200
-              '
-            >
+              text-lg text-[#555] leading-relaxed max-w-2xl mx-auto
+              animate-fade-in-up delay-200
+            '>
               {t('about.tracks.text1')}{' '}
               {t.rich('about.tracks.text2', {
-                strong: (chunks) => <strong>{chunks}</strong>
+                strong: (chunks) => <span className='font-bold'>{chunks}</span>
               })}
             </p>
           </div>
-        </section>
-
-        <section
-          className='bg-white py-12 px-5 w-full rounded-2xl'
-          aria-label='Gjensidige tracks section' // TODO: Add aria-label translation
-          // TODO: Consider merging this section with the one above it.
-        >
           <ul
-            className='max-w-[1536px] mx-auto grid lg:grid-cols-3 gap-8'
-            // TODO: Add aria-label or aria-labelledby to the list
+            className='
+              max-w-[1536px] mx-auto grid lg:grid-cols-3 gap-8 py-12 px-5 w-full
+              rounded-2xl flex-col items-stretch justify-items-center bg-white
+            '
+            aria-label='Gjensidige spor liste'
           >
             {tracks.map((track) => (
               <GjensidigeTrackCard
@@ -228,141 +213,137 @@ export default async function Pilot() {
             ))}
           </ul>
         </section>
-
         <section
-          className='bg-white py-16 px-5 w-full rounded-2xl'
+          className='
+            bg-white py-16 px-5 w-full rounded-2xl flex flex-col items-center justify-items-center
+          '
           aria-labelledby='gjensidige-common-questions-title'
         >
-          <div className='max-w-4xl mx-auto'>
-            <h2
-              id='gjensidige-common-questions-title'
-              className='
-                text-3xl md:text-4xl font-bold text-[#002B49] mb-12 text-center
-                animate-fade-in-up delay-100
-              '
-            >
-              {t('about.commonQuestions.title')}
-            </h2>
-            
-            <ul className='space-y-8'>
-              {commonQuestions.map((item, index) => {
-                return (
-                  <li
-                    key={index}
-                    className={`
-                      pb-6 hover:border-[#4AB5A3]
-                      transition-colors motion-safe:duration-300
-                      motion-safe:animate-fade-in-up group
-                      motion-safe:delay-${index + 1}00
-                      ${index !== commonQuestions.length - 1 ? 'border-b border-gray-200' : ''}
-                    `}
-                  >
-                    <h3 className='
-                      text-xl font-bold text-[#002B49] mb-3
-                      group-hover:text-[#4AB5A3] transition-colors duration-300
-                    '>
-                      {item.q}
-                    </h3>
-                    <p className='text-[#555] leading-relaxed'>
-                      {item.a}
-                    </p>
-                  </li>
-                )
-              })}
-            </ul>
-          </div>
+          <h2
+            id='gjensidige-common-questions-title'
+            className='
+              text-3xl md:text-4xl font-bold text-[#002B49] mb-12 text-center
+              animate-fade-in-up delay-100 max-w-4xl
+            '
+          >
+            {t('about.commonQuestions.title')}
+          </h2>
+          <ul className='space-y-8 max-w-4xl'>
+            {commonQuestions.map((item, index) => {
+              return (
+                <li
+                  key={index}
+                  className={`
+                    pb-6 group transition-colors hover:border-[#4AB5A3]
+                    motion-safe:duration-300 motion-safe:animate-fade-in-up
+                    motion-safe:delay-${index + 1}00
+                    ${index !== commonQuestions.length - 1
+                      ? 'border-b border-gray-200'
+                      : ''
+                    }
+                  `}
+                >
+                  <h3 className='
+                    text-xl font-bold text-[#002B49] mb-3 transition-colors
+                    group-hover:text-[#4AB5A3] duration-300
+                  '>
+                    {item.q}
+                  </h3>
+                  <p className='text-[#555] leading-relaxed'>
+                    {item.a}
+                  </p>
+                </li>
+              )
+            })}
+          </ul>
         </section>
-
         <section
           className='
             bg-[#EBF2F6] py-16 px-5 w-full rounded-2xl relative overflow-hidden
             bg-linear-to-br from-[#4AB5A3]/5 to-transparent
+            flex flex-col items-center
           '
           aria-labelledby='gjensidige-interested-title'
         >
-          <div className='max-w-4xl mx-auto text-center relative z-10'>
-            <h2
-              id='gjensidige-interested-title'
+          <h2
+            id='gjensidige-interested-title'
+            className='
+              text-3xl md:text-4xl font-bold text-[#002B49] mb-6
+              animate-fade-in-up delay-100
+            '
+          >
+            {t('common.interested.title')}
+          </h2>
+          <p className='
+            text-lg text-[#555] mb-6 leading-relaxed animate-fade-in-up
+            delay-200
+          '>
+            {t('common.interested.text')}
+          </p>
+          <section
+            className='
+              mb-8 p-6 bg-white rounded-xl shadow-md border-2
+              border-[#4AB5A3] hover:shadow-xl hover:border-[#3a9a8a]
+              transition-all duration-500 animate-fade-in-up
+              delay-200 group flex flex-col items-center max-w-4xl
+            '
+            aria-labelledby='gjensidige-uncertain-title'
+          >
+            <h3
+              id='gjensidige-uncertain-title'
               className='
-                text-3xl md:text-4xl font-bold text-[#002B49] mb-6
-                animate-fade-in-up delay-100
+                text-[#002B49] group-hover:text-[#4AB5A3]
+                transition-colors duration-300 leading-relaxed mb-4 text-base!
               '
             >
-              {t('common.interested.title')}
-            </h2>
-            <p className='
-              text-lg text-[#555] mb-6 leading-relaxed animate-fade-in-up
-              delay-200
-            '>
-              {t('common.interested.text')}
+              {t('about.uncertain.title')}
+            </h3>
+            <p className='text-[#555] mb-6 leading-relaxed text-center'>
+              {t('about.uncertain.text')}
             </p>
-            
-            <section
+            <Link
+              href='/gjensidige/forberedelse'
               className='
-                mb-8 p-6 bg-white rounded-xl shadow-md border-2
-                border-[#4AB5A3] hover:shadow-xl hover:border-[#3a9a8a]
-                transition-all duration-500 animate-fade-in-up
-                delay-200 group
+                inline-block bg-[#4AB5A3] text-white px-8 py-3
+                rounded-full font-bold text-lg hover:bg-[#3a9a8a]
+                motion-safe:hover:scale-110 hover:shadow-xl transition-all
+                duration-300 transform
               '
-              aria-labelledby='gjensidige-uncertain-title'
             >
-              <h3
-                id='gjensidige-uncertain-title'
-                className='
-                  text-[#002B49] group-hover:text-[#4AB5A3]
-                  transition-colors duration-300 leading-relaxed mb-4 text-base!
-                '
-              >
-                {t('about.uncertain.title')}
-              </h3>
-              <p className='text-[#555] mb-6 leading-relaxed'>
-                {t('about.uncertain.text')}
-              </p>
-              <Link
-                href='/gjensidige/forberedelse'
-                className='
-                  inline-block bg-[#4AB5A3] text-white px-8 py-3
-                  rounded-full font-bold text-lg hover:bg-[#3a9a8a]
-                  motion-safe:hover:scale-110 hover:shadow-xl transition-all
-                  duration-300 transform
-                '
-              >
-                {t('about.uncertain.linkText')}
-                <span aria-hidden='true'> →</span>
-              </Link>
-            </section>
-
-            <section
-              className='
-                bg-white rounded-xl p-10 md:p-12 shadow-xl border-l-10
-                border-[#C3002F] hover:shadow-2xl transition-all
-                duration-500 animate-fade-in-up delay-300
-              '
+              {t('about.uncertain.linkText')}
+              <span aria-hidden='true'> →</span>
+            </Link>
+          </section>
+          <section
+            className='
+              bg-white rounded-xl p-10 md:p-12 shadow-xl border-l-10 w-full
+              border-[#C3002F] hover:shadow-2xl transition-all
+              duration-500 animate-fade-in-up delay-300 flex flex-col
+              items-center max-w-4xl
+            '
             aria-labelledby='gjensidige-contact-title'
+          >
+            <h3
+              id='gjensidige-contact-title'
+              className='text-2xl font-bold text-[#002B49] mb-6'
             >
-              <h3
-                id='gjensidige-contact-title'
-                className='text-2xl font-bold text-[#002B49] mb-6'
-              >
-                {t('common.interested.contact.title')}
-              </h3>
-              <p className='text-[#555] mb-8 leading-relaxed'>
-                {t('common.interested.contact.text')}
-              </p>
-              <p // TODO: Add this to the address element for better semantic structure
-                className='font-bold text-[#002B49] text-xl mb-4'
-              >
+              {t('common.interested.contact.title')}
+            </h3>
+            <p className='text-[#555] mb-8 leading-relaxed text-center'>
+              {t('common.interested.contact.text')}
+            </p>
+            <address className='
+              flex flex-col items-center justify-center text-lg not-italic mb-8
+            '>
+              <p className='font-bold text-[#002B49] text-xl mb-4'>
                 {t('common.projectLeader')} {projectLeader.name}
               </p>
-              <address className='
-                flex flex-col sm:flex-row items-center justify-center gap-4
-                text-lg not-italic mb-8
-              '>
+              <div className='flex flex-col sm:flex-row items-center gap-4'>
                 <a
                   href={`tel:${projectLeader.phone}`}
                   className='
-                    flex items-center gap-2 text-[#555]
-                  hover:text-[#4AB5A3] transition-colors duration-300
+                    flex items-center gap-2 text-[#555] hover:text-[#4AB5A3]
+                    transition-colors duration-300
                   '
                 >
                   <span className='hover:scale-105 transform order-last'>
@@ -370,7 +351,6 @@ export default async function Pilot() {
                   </span>
                   <span
                     className='text-2xl animate-pulse-slow order-first'
-                    role='img'
                     aria-hidden='true'
                   >
                     📞
@@ -387,52 +367,47 @@ export default async function Pilot() {
                   className='flex items-center gap-2 text-[#555]'
                 >
                   <span className='
-                    text-[#002B49] underline hover:text-[#4AB5A3]
-                    transition-colors font-medium order-last
-                    motion-safe:hover:scale-105 inline-block transform
+                    text-[#002B49] underline hover:text-[#4AB5A3] order-last
+                    transition-colors font-medium inline-block
+                    motion-safe:hover:scale-105 transform
                   '>
                     {projectLeader.email}
                   </span>
                   <span
                     className='text-2xl order-first'
-                    role='img'
                     aria-hidden='true'
                   >
                     ✉️
                   </span>
                 </a>
-              </address>
-              <div className='
-                flex flex-col sm:flex-row items-center justify-center gap-4
-              '>
-                <a
-                  href={`mailto:${projectLeader.email}`}
-                  className='
-                    inline-block bg-[#C3002F] text-white px-10 py-4
-                    rounded-full font-bold text-lg hover:bg-[#a10026]
-                    hover:shadow-xl transition-all transform
-                    motion-safe:hover:scale-110 motion-safe:duration-300
-                  '
-                >
-                  {t('common.buttons.sendEmailNow')}
-                </a>
-                {/*<a
-                  href='https://calendar.app.google/RRhkgNFmGyTTbYmd6'
-                  target='_blank'
-                  rel='noopener noreferrer'
-                  className='
-                    inline-block bg-[#C3002F] text-white px-10 py-4
-                    rounded-full font-bold text-lg hover:bg-[#a10026]
-                    hover:scale-110 hover:shadow-xl transition-all duration-300
-                    transform
-                  '
-                  aria-label={t('common.buttons.bookConversationWithKim')}
-                >
-                  {t('common.buttons.bookConversationWithKim')}
-                </a>*/}
               </div>
-            </section>
-          </div>
+            </address>
+            <a
+              href={`mailto:${projectLeader.email}`}
+              className='
+                inline-block bg-[#C3002F] text-white px-10 py-4
+                rounded-full font-bold text-lg hover:bg-[#a10026]
+                hover:shadow-xl transition-all transform
+                motion-safe:hover:scale-110 motion-safe:duration-300
+              '
+            >
+              {t('common.buttons.sendEmailNow')}
+            </a>
+            {/*<a
+              href='https://calendar.app.google/RRhkgNFmGyTTbYmd6'
+              target='_blank'
+              rel='noopener noreferrer'
+              className='
+                inline-block bg-[#C3002F] text-white px-10 py-4
+                rounded-full font-bold text-lg hover:bg-[#a10026]
+                hover:scale-110 hover:shadow-xl transition-all duration-300
+                transform
+              '
+              aria-label={t('common.buttons.bookConversationWithKim')}
+            >
+              {t('common.buttons.bookConversationWithKim')}
+            </a>*/}
+          </section>
         </section>
       </article>
     </main>
