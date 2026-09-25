@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import { Link as LocaleLink } from '@/i18n/navigation';
 import Image from 'next/image';
 import { getTranslations } from 'next-intl/server';
 import { FaFacebook, FaInstagram, FaLinkedinIn } from 'react-icons/fa';
@@ -168,18 +169,20 @@ export default async function Footer() {
               &copy; {new Date().getFullYear()} {t('footer.copyright')}
             </p>
             <div className='flex gap-6 text-sm'>
-              <Link
-                href='/om-oss'
+              <LocaleLink
+                href='/personvern'
                 className='text-gray-400 hover:text-jobloop-primary-green transition-colors duration-300'
+                aria-label={t('footer.links.privacy.aria')}
               >
                 {t('footer.links.privacy.label')}
-              </Link>
-              <Link
-                href='/kontakt'
+              </LocaleLink>
+              <LocaleLink
+                href='/vilkar'
                 className='text-gray-400 hover:text-jobloop-primary-green transition-colors duration-300'
+                aria-label={t('footer.links.tos.aria')}
               >
                 {t('footer.links.tos.label')}
-              </Link>
+              </LocaleLink>
             </div>
           </div>
         </div>
