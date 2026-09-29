@@ -1,6 +1,7 @@
 'use client';
 
 import Image, { type StaticImageData } from 'next/image';
+import { useTranslations } from 'next-intl';
 import ButtonCTA from './ButtonCTA';
 
 interface PartnerProject {
@@ -16,7 +17,6 @@ interface PartnerProject {
   context?: string;
 }
 
-// TODO: Remove divs where reasonable.
 export const PartnerProject = ({
   title,
   text,
@@ -30,6 +30,7 @@ export const PartnerProject = ({
   context,
 }: PartnerProject) => {
   const headingId = 'partner-title-' + title.toLowerCase().replace(/\s+/g, '-');
+  const t = useTranslations('dictionary');
 
   return (
     <article
@@ -59,30 +60,25 @@ export const PartnerProject = ({
           <ButtonCTA
             isButton={true}
             Path={path}
-            Text={btnText ?? 'Les mer'}
+            Text={btnText ?? t('readMore')}
             btnVariant={btnVariant}
             Context={context}
           />
         )}
       </div>
-      <div
+      <Image
+        alt={alt}
+        src={image}
+        width={1000}
+        height={500}
         className={`
+          max-w-full h-96 object-cover rounded-xl shadow-lg shadow-gray-300/50
+          hover:shadow-xl hover:shadow-gray-400/50 transition-all
+          motion-safe:duration-500 motion-safe:hover:scale-[1.02]
           w-full lg:w-1/2 order-first
           ${direction === 'reverse' ? 'lg:order-last' : 'lg:order-first'}
         `}
-      >
-        <Image
-          alt={alt}
-          src={image}
-          width={1000}
-          height={500}
-          className='
-            max-w-full h-96 object-cover rounded-xl shadow-lg shadow-gray-300/50
-            hover:shadow-xl hover:shadow-gray-400/50 transition-all
-            motion-safe:duration-500 motion-safe:hover:scale-[1.02]
-          '
-        />
-      </div>
+      />
     </article>
   );
 };

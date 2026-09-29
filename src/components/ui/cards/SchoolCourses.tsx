@@ -44,7 +44,7 @@ export function SchoolCoursesCard({
           <LesMerButton
             Path={path}
             Text={t('readMore')}
-            Aria={`Les mer om ${title}`} // TODO: Translate this
+            Aria={`${t('readMoreAbout')} ${title}`}
           />
         </div>
       </div>

@@ -4,6 +4,10 @@
       "skipLink": "Skip to main content",
       "scrollToTop": "Scroll to top",
       "goToLanding": "Go to the landing page",
+      "menu": {
+        "desktop": "Main navigation",
+        "mobile": "Mobile navigation"
+      },
       "logo": {
         "alt": "Jobloop logo",
         "prideAlt": "Jobloop logo with a Pride-rainbow"

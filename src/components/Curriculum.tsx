@@ -2,8 +2,6 @@ import { type Tiltak } from '@/types/sanity/sanity.types';
 import { PortableText } from '@portabletext/react';
 import { getTranslations } from 'next-intl/server';
 
-// TODO: Deal with div.
-// TODO: Fix spacing difference that happens when removing the parent div.
 // TODO: Look into the heading border solution here and see if it can be used to replace divs in other files.
 export default async function Curriculum({
   curriculum,
@@ -13,7 +11,7 @@ export default async function Curriculum({
   return (
     <section
       className='
-        w-full max-w-[1536px] mx-auto px-4
+        w-[calc(100%-2rem)] max-w-[1536px] mx-auto px-8
         bg-linear-to-br from-jobloop-primary-green/10 via-white
         to-jobloop-primary-orange/10 rounded-2xl p-8 shadow-lg border
         border-jobloop-primary-green/20

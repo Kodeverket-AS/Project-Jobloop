@@ -4,6 +4,10 @@
       "skipLink": "Hoppa till sidans huvudinnehåll",
       "scrollToTop": "Scrolla till toppen",
       "goToLanding": "Gå till landningssidan",
+      "menu": {
+        "desktop": "Huvudnavigation",
+        "mobile": "Mobilnavigation"
+      },
       "logo": {
         "alt": "Jobloop logo",
         "prideAlt": "Jobloop logo med Pride-regnbåge"
