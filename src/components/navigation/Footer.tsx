@@ -45,30 +45,27 @@ export default async function Footer() {
   // Social media links for the footer
   const socialMediaLinks = [
     {
-      icon: <FaFacebook size={20} />,
+      icon: <FaFacebook size={20} aria-hidden='true' />,
       href: 'https://www.facebook.com/JobLoop.Norge',
       label: 'Facebook'
     },
     {
-      icon: <FaInstagram size={20} />,
+      icon: <FaInstagram size={20} aria-hidden='true' />,
       href: 'https://www.instagram.com/jobloop.norge/',
       label: 'Instagram'
     },
     {
-      icon: <FaLinkedinIn size={20} />,
+      icon: <FaLinkedinIn size={20} aria-hidden='true' />,
       href: 'https://www.linkedin.com/company/jobloop/',
       label: 'LinkedIn'
     }
   ];
 
-  // TODO: Consider if adding a footer heading to gather its subheadings is appropriate.
-  // TODO: Consider if using secondary nav-element could be correct here.
-  // TODO: Remove divs where possible.
   return (
     <footer className='w-full text-kv-white bg-jobloop-primary-grey'>
       <div className='
-        mx-auto max-w-[1536px] px-4 py-12 flex flex-col gap-8
-        md:justify-around lg:flex-row lg:justify-between md:px-8 lg:px-12 lg:mp-34
+        mx-auto max-w-[1536px] px-4 py-12 flex flex-col gap-8 md:justify-around
+        lg:flex-row lg:justify-between md:px-8 lg:px-12 lg:mp-34
       '>
         <div className='flex flex-col items-start justify-center gap-6 lg:w-1/3'>
           <a
@@ -82,7 +79,10 @@ export default async function Footer() {
               src={'/logoJobloopHvit.svg'}
               width={350}
               height={250}
-              className='hover:opacity-80 transition-opacity duration-300'
+              className='
+                motion-safe:hover:opacity-80 transition-opacity
+                motion-safe:duration-300
+              '
             />
           </a>
           <p className='text-gray-300 text-left leading-relaxed'>
@@ -90,22 +90,25 @@ export default async function Footer() {
           </p>
         </div>
         <div className='flex flex-row gap-8 lg:gap-12'>
-          <section className='flex flex-col gap-6 w-2/3'>
+          <section
+            className='flex flex-col gap-6 w-2/3'
+            aria-labelledby='footer-links-heading'
+          >
             <h2
               id='footer-links-heading'
               className='text-[1.4rem]! font-bold text-jobloop-primary-green'
             >
               {t('footer.links.title')}
             </h2>
-            <ul
-              className='flex flex-col gap-3'
-              aria-labelledby='footer-links-heading'
-            >
+            <ul className='flex flex-col gap-3'>
               {pageList.map((page) => (
                 <li key={page.name}>
                   <Link
                     href={page.href}
-                    className='text-gray-300 hover:text-jobloop-primary-green transition-all duration-300 transform'
+                    className='
+                      text-gray-300 hover:text-jobloop-primary-green
+                      transition-all motion-safe:duration-300 transform
+                    '
                     aria-label={t(`footer.links.${page.name}.aria`)}
                   >
                     {t(`footer.links.${page.name}.label`)}
@@ -135,7 +138,10 @@ export default async function Footer() {
                   </h3>
                   <a
                     href={`mailto:${person.email}`}
-                    className='text-gray-300 hover:text-jobloop-primary-green transition-colors duration-300 block'
+                    className='
+                      text-gray-300 hover:text-jobloop-primary-green
+                      transition-colors motion-safe:duration-300 block
+                    '
                     aria-label={t('footer.contacts.openEmail', { name: person.name })}
                   >
                     {person.email}
@@ -143,7 +149,10 @@ export default async function Footer() {
                   {person.phoneDisplay && (
                     <a
                       href={`tel:${person.phoneLink}`}
-                      className='text-gray-300 hover:text-jobloop-primary-green transition-colors duration-300 block'
+                      className='
+                        text-gray-300 hover:text-jobloop-primary-green
+                        transition-colors motion-safe:duration-300 block
+                      '
                       aria-label={t('footer.contacts.openPhone', { name: person.name })}
                     >
                       {person.phoneDisplay}
@@ -169,7 +178,7 @@ export default async function Footer() {
                     className='
                       p-2 bg-gray-700 rounded-lg
                       hover:bg-jobloop-primary-green transition-all
-                      duration-300 hover:scale-110
+                      motion-safe:duration-300 motion-safe:hover:scale-110
                     '
                   >
                     {link.icon}
@@ -180,29 +189,35 @@ export default async function Footer() {
           </section>
         </div>
       </div>
-      <div // TODO: Find out if this can be a section with heading
-        className='
-          border-t border-gray-700 py-6 max-w-[1536px] mx-auto px-4 flex
-          flex-col justify-between items-center gap-4
-          md:px-8 lg:px-12 md:flex-row
-        '
-      >
+      <div className='
+        border-t border-gray-700 py-6 max-w-[1536px] mx-auto px-4 flex
+        flex-col justify-between items-center gap-4 md:px-8 lg:px-12 md:flex-row
+      '>
         <p className='text-gray-400 text-sm'>
           &copy; {new Date().getFullYear()} {t('footer.copyright')}
         </p>
-        <ul className='flex gap-6 text-sm'>
+        <ul
+          className='flex gap-6 text-sm'
+          // aria-label='Legal links' // TODO: Update this once legal pages exist.
+        >
           <li>
-            <Link
+            <Link // TODO: Have a Privacy Policy page, or remove this link!
               href='/om-oss'
-              className='text-gray-400 hover:text-jobloop-primary-green transition-colors duration-300'
+              className='
+                text-gray-400 hover:text-jobloop-primary-green
+                transition-colors motion-safe:duration-300
+              '
             >
               {t('footer.links.privacy.label')}
             </Link>
           </li>
           <li>
-            <Link
+            <Link // TODO: Have a Terms of Service page, or remove this link!
               href='/kontakt'
-              className='text-gray-400 hover:text-jobloop-primary-green transition-colors duration-300'
+              className='
+                text-gray-400 hover:text-jobloop-primary-green
+                transition-colors motion-safe:duration-300
+              '
             >
               {t('footer.links.tos.label')}
             </Link>

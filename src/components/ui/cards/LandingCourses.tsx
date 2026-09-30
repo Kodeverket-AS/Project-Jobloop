@@ -53,7 +53,7 @@ export function LandingCoursesCard({
       className={`
         flex
         bg-white rounded-xl hover:shadow-md border border-gray-50
-        transition-all duration-200
+        transition-all motion-safe:duration-200
         ${context === 'school' ? 'shadow-sm' : 'shadow-xs'}
       `}
     >

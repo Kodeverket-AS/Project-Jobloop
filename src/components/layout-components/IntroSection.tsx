@@ -20,7 +20,6 @@ interface IntroSection {
   imageLinkPath?: string;
 }
 
-// TODO: Deal with divs.
 export function IntroSection({
   title,
   text,
