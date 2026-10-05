@@ -198,7 +198,7 @@ export default async function Footer() {
         </p>
         <ul
           className='flex gap-6 text-sm'
-          // aria-label='Legal links' // TODO: Update this once legal pages exist.
+          // aria-label='Legal links' // TODO: Update and translate this once legal pages exist.
         >
           <li>
             <Link // TODO: Have a Privacy Policy page, or remove this link!
