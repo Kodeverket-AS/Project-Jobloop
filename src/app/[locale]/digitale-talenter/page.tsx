@@ -35,7 +35,7 @@ export default async function DigitaleTalenter({
         flex flex-col items-center gap-12 w-full max-w-[1536px] my-12 mx-auto px-4
       '
     >
-      <HeroSub {...tiltak} />
+      <HeroSub {...tiltak} department='Digitale Talenter' />
       <CourseSummary {...tiltak} />
       <div className='w-full max-w-4xl px-4'>
         <div className='

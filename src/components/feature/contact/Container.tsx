@@ -5,14 +5,47 @@ import { useEffect, useCallback, useRef, useState, useMemo } from 'react';
 import { useTranslations } from 'next-intl';
 import { ContactGroup } from '@/components/contacts/ContactGroup';
 
-export default function ContactContainer({ data = [] }: { data: Contacts[] }) {
-  const [filtered, setFiltered] = useState<Contacts[]>(data);
-  const [isFiltered, setIsFiltered] = useState<boolean>(false);
+// TODO: Test and clean this before merging!
+function filterContacts(data: Contacts[], dept: string, name: string) {
+  const deptVal = dept.toLowerCase();
+  const nameVal = name.toLowerCase();
+
+  return data.filter((p) => {
+    const matchesDept = deptVal
+      ? (p.company ?? []).some((c) => (c ?? '').trim().toLowerCase() === deptVal)
+      : true;
+    const fullName = `${p.fname ?? ''} ${p.lname ?? ''}`.trim().toLowerCase();
+    return matchesDept && (nameVal ? fullName.includes(nameVal) : true);
+  });
+}
+
+export default function ContactContainer({
+  data = [],
+  initialDepartment = '',
+}: {
+  data: Contacts[],
+  initialDepartment?: string
+}) {
+  // Get translations
+  const t = useTranslations('contact');
+
+  // const [filtered, setFiltered] = useState<Contacts[]>(data);
+  // const [isFiltered, setIsFiltered] = useState<boolean>(false);
   const nameInput = useRef<HTMLInputElement>(null);
   const departmentSelect = useRef<HTMLSelectElement>(null);
 
-  // Get translations
-  const t = useTranslations('contact');
+  // Create a unique set of all departments for select options
+  const departmentList = useMemo(() => {
+    const set = new Set<string>();
+    data.forEach((item) => (item?.company ?? []).forEach((c) => c?.trim() && set.add(c.trim())));
+    return Array.from(set).sort((a, b) => a.localeCompare(b, 'no'));
+  }, [data]);
+
+  const initialDept = departmentList.find((d) => d.toLowerCase() === initialDepartment.trim().toLowerCase()) ?? '';
+  const [filtered, setFiltered] = useState<Contacts[]>(() =>
+    filterContacts(data, initialDept, '')
+  );
+  const [isFiltered, setIsFiltered] = useState<boolean>(Boolean(initialDept));
 
   // Group contacts by their group number in an object, then iterate over key
   const groupByRole = filtered.reduce(
@@ -25,15 +58,14 @@ export default function ContactContainer({ data = [] }: { data: Contacts[] }) {
     {} as Record<number, Contacts[]>
   );
 
-  // Create a unique set of all departments for select options
-  const departmentList = useMemo(() => {
-    const set = new Set<string>();
-    data.forEach((item) => (item?.company ?? []).forEach((c) => c?.trim() && set.add(c.trim())));
-    return Array.from(set).sort((a, b) => a.localeCompare(b, 'no'));
-  }, [data]);
-
   // Apply filter
   const doFilter = useCallback(() => {
+    const dept = departmentSelect.current?.value ?? '';
+    const name = nameInput.current?.value ?? '';
+    setIsFiltered(Boolean(dept || name));
+    setFiltered(filterContacts(data, dept, name));
+  }, [data]);
+  /*const doFilter = useCallback(() => {
     const deptVal = (departmentSelect.current?.value ?? '').toLowerCase();
     const nameVal = (nameInput.current?.value ?? '').toLowerCase();
 
@@ -48,7 +80,7 @@ export default function ContactContainer({ data = [] }: { data: Contacts[] }) {
 
     setIsFiltered(Boolean(deptVal || nameVal));
     setFiltered(result);
-  }, [data]);
+  }, [data]);*/
 
   // Clear filter on escape keypress
   const onEsc = useCallback(
@@ -167,7 +199,7 @@ export default function ContactContainer({ data = [] }: { data: Contacts[] }) {
               id='department'
               ref={departmentSelect}
               onChange={doFilter}
-              defaultValue=''
+              defaultValue={initialDept}
               className='
                 w-full rounded-xl border-2 border-gray-200 bg-white px-4
                 py-3 text-base focus:outline-hidden focus:ring-2
@@ -235,6 +267,7 @@ export default function ContactContainer({ data = [] }: { data: Contacts[] }) {
                 inline-block bg-jobloop-primary-green/10 px-3 py-1
                 text-jobloop-primary-green rounded-full text-sm font-medium
               '
+              role='status'
             >
               {t('search.filter', {
                 filtered: filtered.length,

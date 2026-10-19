@@ -16,7 +16,7 @@ export default async function Teamwork({ params }: { params: Promise<{ locale: s
 
   return (
     <main id='main' className='flex flex-col items-center gap-16 w-full max-w-[1536px] my-16 mx-auto px-4'>
-      <HeroSub {...tiltak} />
+      <HeroSub {...tiltak} department='Teamwork' />
     </main>
   );
 }

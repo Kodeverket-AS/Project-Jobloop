@@ -16,7 +16,7 @@ export default async function IndividuellAMO({ params }: { params: Promise<{ loc
 
   return (
     <main id='main' className='flex flex-col items-center gap-16 w-full max-w-[1536px] mx-auto my-16 px-4'>
-      <HeroSub {...tiltak} />
+      <HeroSub {...tiltak} department='Individuell AMO' />
     </main>
   );
 }

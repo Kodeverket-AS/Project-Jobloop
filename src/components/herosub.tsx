@@ -9,7 +9,8 @@ export default async function HeroSub({
   heading,
   image,
   introtext,
-}: Pick<Tiltak, 'image' | 'introtext' | 'heading'>) {
+  department,
+}: Pick<Tiltak, 'image' | 'introtext' | 'heading'> & { department?: string }) {
   const t = await getTranslations("dictionary");
 
   // TODO: Ensure that image has aria label or is hidden if only decorative.
@@ -37,7 +38,11 @@ export default async function HeroSub({
             <p>Her kommer en introtekst</p>
           )}
         </div>
-        <LinkButtonAnimatedWithIcon Path='/kontakt' Text={t("contactUs")} />
+        <LinkButtonAnimatedWithIcon
+          Path='/kontakt'
+          Query={ department ? { department } : undefined }
+          Text={t("contactUs")}
+        />
       </div>
       <div className='w-full lg:w-1/2 flex items-center order-first'>
         <Image

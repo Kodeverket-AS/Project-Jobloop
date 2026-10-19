@@ -19,7 +19,7 @@ export default async function Spillbasert({ params }: { params: Promise<{ locale
 
   return (
     <main id='main' className='flex flex-col my-16 items-center gap-16 w-full max-w-[1536px] mx-auto px-4'>
-      <HeroSub {...tiltak} />
+      <HeroSub {...tiltak} department='Spillbasert' />
       <CourseSummary {...tiltak} />
       <Curriculum title={tiltak.title} curriculum={tiltak.curriculum} />
       <LeaderSection leaders={tiltak.courseLeaders} />

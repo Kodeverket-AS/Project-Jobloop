@@ -7,14 +7,15 @@ import { useTranslations } from 'next-intl';
 interface ButtonProps {
   Path: string;
   Text: string;
+  Query?: Record<string, string>;
 }
 
-export function LinkButtonAnimatedWithIcon({ Path, Text }: ButtonProps) {
+export function LinkButtonAnimatedWithIcon({ Path, Text, Query }: ButtonProps) {
   const t = useTranslations('dictionary');
 
   return (
     <Link
-      href={Path}
+      href={Query ? { pathname: Path, query: Query} : Path }
       aria-label={t('subpageLinkLabel', { path: Path })}
       className='
         relative group overflow-hidden flex items-center justify-center w-full
