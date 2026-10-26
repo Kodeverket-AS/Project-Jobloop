@@ -16,7 +16,8 @@ export default async function LeaderSection({ leaders }: { leaders: Tiltak['cour
       className='w-full max-w-[1536px] mx-auto px-4 space-y-8'
       aria-labelledby='course-leaders-title'
     >
-      <h2 // TODO: Shorten the bottom border so it is smaller than the text itself.
+      {/* TODO: Shorten the bottom border so it is smaller than the text itself. */}
+      <h2
         id='course-leaders-title'
         className='
           text-kv-black text-2xl md:text-3xl font-bold pb-4 text-center
@@ -37,7 +38,8 @@ export default async function LeaderSection({ leaders }: { leaders: Tiltak['cour
           <div className='
             w-full md:w-2/3 space-y-2 md:space-y-3 min-w-0 order-last
           '>
-            <h3 // TODO: Consider if the name of the person matters more than their position. Especially for course leaders, who are already under a heading indicating their role. 
+            {/* TODO: Consider if the name of the person matters more than their position. Especially for course leaders, who are already under a heading indicating their role.  */}
+            <h3
               className='
                 text-kv-black text-lg md:text-xl font-bold w-fit pb-1.5
                 border-b-2 border-jobloop-primary-green
@@ -93,7 +95,7 @@ export default async function LeaderSection({ leaders }: { leaders: Tiltak['cour
                 <div
                   className='
                     w-32 h-32 sm:w-40 sm:h-40 lg:w-44 lg:h-44 flex items-center
-                    justify-center flex flex-col
+                    justify-center flex-col
                   '
                   aria-hidden='true'
                 >

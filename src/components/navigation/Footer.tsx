@@ -196,12 +196,14 @@ export default async function Footer() {
         <p className='text-gray-400 text-sm'>
           &copy; {new Date().getFullYear()} {t('footer.copyright')}
         </p>
+        {/* TODO: Update and translate this once legal pages exist. */}
         <ul
           className='flex gap-6 text-sm'
-          // aria-label='Legal links' // TODO: Update and translate this once legal pages exist.
+          // aria-label='Legal links'
         >
           <li>
-            <Link // TODO: Have a Privacy Policy page, or remove this link!
+            {/* TODO: Have a Privacy Policy page, or remove this link! */}
+            <Link
               href='/om-oss'
               className='
                 text-gray-400 hover:text-jobloop-primary-green
@@ -212,7 +214,8 @@ export default async function Footer() {
             </Link>
           </li>
           <li>
-            <Link // TODO: Have a Terms of Service page, or remove this link!
+            {/* TODO: Have a Terms of Service page, or remove this link! */}
+            <Link
               href='/kontakt'
               className='
                 text-gray-400 hover:text-jobloop-primary-green
