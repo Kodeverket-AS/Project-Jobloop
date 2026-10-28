@@ -54,6 +54,7 @@ export default function TeamSection() {
     },
   ];
 
+  // TODO: Deal with divs and restructure.
   return (
     <section className='w-full'>
       <div className='w-full text-center mb-12'>

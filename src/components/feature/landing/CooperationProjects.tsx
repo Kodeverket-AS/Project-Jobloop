@@ -1,5 +1,5 @@
 import { getTranslations } from 'next-intl/server';
-import { PartnerProject, PartnerProjectReverse } from '@/components/layout-components';
+import { PartnerProject } from '@/components/layout-components';
 
 // Images
 import Kodeloftet from '@public/kodeloftet.webp';
@@ -34,30 +34,30 @@ export default async function CooperationProjects() {
       alt: t('collaborations.teamwork.alt'),
       path: '/teamwork',
       btnText: t1('readMore'),
+      btnVariant: 'readMorePill' as const,
+      context: t1('about') + ' ' + t('collaborations.teamwork.title'),
     },
   ];
+
   return (
-    <>
-      <h2 className='pb-2 border-b-4 border-jobloop-primary-green w-fit'>
+    <section
+      className='w-full space-y-16 flex flex-col items-center'
+      aria-labelledby='collaborations-title'
+    >
+      <h2
+        id='collaborations-title'
+        className='pb-2 border-b-4 border-jobloop-primary-green w-fit'
+      >
         {t('collaborations.title')}
       </h2>
       {partners.map((partner, index) =>
-        index % 2 === 0 ? (
-          <PartnerProject
-            key={partner.title + index}
-            isButton
-            btnVariant={partner.path ? 'externalLink' : 'internalLink'}
-            {...partner}
-          />
-        ) : (
-          <PartnerProjectReverse
-            key={partner.title + index}
-            isButton
-            btnVariant={partner.path ? 'externalLink' : 'internalLink'}
-            {...partner}
-          />
-        )
+        <PartnerProject
+          key={partner.title + index}
+          direction={index % 2 === 0 ? 'normal' : 'reverse'}
+          isButton
+          {...partner}
+        />
       )}
-    </>
+    </section>
   );
 }

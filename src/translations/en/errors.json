@@ -18,5 +18,8 @@
         }
       }
     }
+  },
+  "video": {
+    "noBrowserSupport": "Your browser does not support video playback."
   }
 }

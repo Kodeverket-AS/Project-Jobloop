@@ -8,11 +8,14 @@
     "interns": "Interns",
     "undefined": "Ukategorisert"
   },
+  "roles": "Roller",
+  "departments": "Avdelinger",
   "search": {
     "input": {
-      "placeholder": "Søk etter ansatt …"
+      "placeholder": "Søk etter ansatt"
     },
     "departments": {
+      "label": "Velg avdeling",
       "all": "Alle avdelinger"
     },
     "reset": {
@@ -21,7 +24,20 @@
     "filter": "Viser {filtered} av {total} ansatte",
     "empty": {
       "text": "Beklager, ditt søk ga ingen resultater.",
-      "label": "røv et annet søk"
+      "label": "Prøv et annet søk"
+    }
+  },
+  "card": {
+    "mail": {
+      "title": "Send e-post til",
+      "label": "Åpner email for å opprette epost til"
+    },
+    "phone": {
+      "title": "Ring",
+      "label": "Åpner telefon for å ringe"
+    },
+    "fallbackImage": {
+      "alt": "Ansattbilde"
     }
   }
 }

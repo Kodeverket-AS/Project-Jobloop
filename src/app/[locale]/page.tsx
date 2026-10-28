@@ -10,7 +10,7 @@ export default function Home() {
   return (
     <>
       <LandingHero />
-      <main className='flex flex-col items-center gap-16 w-full max-w-[1536px] mx-auto mb-16 px-4'>
+      <main id='main' className='flex flex-col items-center gap-16 w-full max-w-[1536px] mx-auto mb-16 px-4'>
         <LandingIntro />
         <SchoolCourses />
         <WorkCourses />

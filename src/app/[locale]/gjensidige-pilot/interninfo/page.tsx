@@ -15,7 +15,7 @@ export async function generateMetadata(): Promise<Metadata> {
 export default function InternInfo() {
   return (
     <>
-      <main className='interninfo-page min-h-screen'>
+      <main id='main' className='interninfo-page min-h-screen'>
       <header>
         <h1>Pilot JobLoop</h1>
         <p>Produktinformasjon for saksbehandlere</p>

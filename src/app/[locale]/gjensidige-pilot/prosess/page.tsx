@@ -15,7 +15,7 @@ export async function generateMetadata(): Promise<Metadata> {
 export default function Prosess() {
   return (
     <>
-      <main className='prosess-page'>
+      <main id='main' className='prosess-page'>
         <header>
           <div className='logo'>Gjensidige | <span style={{ color: 'var(--jobloop-teal)' }}>JobLoop</span></div>
           <div>Intern prosessbeskrivelse</div>

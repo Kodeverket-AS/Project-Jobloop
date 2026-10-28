@@ -10,10 +10,13 @@ interface PartnerProject {
   alt: string;
   path: string;
   isButton: boolean;
-  btnVariant?: 'internalLink' | 'externalLink';
+  btnVariant?: 'internalLink' | 'externalLink' | 'readMorePill';
   btnText?: string;
 }
 
+/**
+ * @deprecated Use `PartnerProject` with the `direction` prop instead.
+ */
 export const PartnerProjectReverse = ({
   title,
   text,
@@ -24,12 +27,26 @@ export const PartnerProjectReverse = ({
   btnVariant,
   btnText,
 }: PartnerProject) => {
+  const headingId = 'partner-title-' + title.toLowerCase().replace(/\s+/g, '-');
+
   return (
-    <div className='flex flex-col-reverse gap-6   lg:flex-row lg:gap-12 '>
-      <div className='flex flex-col gap-4 w-full lg:w-1/2 justify-center'>
-        <h2 className='text-kv-black text-xl md:text-2xl lg:text-3xl border-b-2 md:border-b-4 pb-2 border-jobloop-primary-green w-fit'>
+    <article
+      className='flex flex-col-reverse gap-6 lg:flex-row lg:gap-12'
+      aria-labelledby={headingId}
+    >
+      <div
+        className='flex flex-col gap-4 w-full lg:w-1/2 justify-center'
+      >
+        <h3
+          id={headingId}
+          className='
+            text-kv-black max-sm:text-[1.3rem]! sm:text-[2rem]! md:text-2xl
+            lg:text-3xl border-b-2 md:border-b-4 pb-2 w-fit
+            border-jobloop-primary-green
+          '
+          >
           {title}
-        </h2>
+        </h3>
         <p className='text-gray-600 text-base xl:leading-relaxed lg:text-lg'>
           {text}
         </p>
@@ -48,9 +65,13 @@ export const PartnerProjectReverse = ({
           src={image}
           width={1000}
           height={500}
-          className='max-w-full h-96 object-cover rounded-xl shadow-lg shadow-gray-300/50 hover:shadow-xl hover:shadow-gray-400/50 transition-all duration-500 hover:scale-[1.02]'
+          className='
+            max-w-full h-96 object-cover rounded-xl shadow-lg shadow-gray-300/50
+            hover:shadow-xl hover:shadow-gray-400/50 transition-all duration-500
+            hover:scale-[1.02]
+          '
         />
       </div>
-    </div>
+    </article>
   );
 };

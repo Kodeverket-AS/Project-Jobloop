@@ -18,5 +18,8 @@
         }
       }
     }
+  },
+  "video": {
+    "noBrowserSupport": "Din webbläsare stöder inte videouppspelning."
   }
 }

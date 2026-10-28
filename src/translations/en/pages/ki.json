@@ -1,12 +1,12 @@
 {
   "hero": {
     "title": "New course offer from",
-    "subtitle": "Digital confidence and<br></br>AI competence for<br></br>those over 50!",
+    "subtitle": "Digital confidence and <br></br>AI competence for <br></br>those over 50!",
     "questions": "Questions or registration"
   },
   "description": {
     "image": {
-      "alt": "Artificial intelligence and technology"
+      "alt": "Woman with gray hair working on a laptop in an office."
     },
     "paragraph1": "Many skilled and experienced employees feel that technology is moving a bit faster than their comfort zone. At the same time, they possess valuable experience that can truly shine — if they get the right digital toolbox.",
     "paragraph2": "Instead of yet another fruit basket, give the seniors on your team something they’ll actually thank you for: confidence in using AI, smart digital tools, and the feeling of being part of the future — not left behind."
@@ -39,5 +39,8 @@
     "text": "We’re here to help you find the perfect course for your company or yourself.",
     "email": "Send us an email",
     "contact": "Visit our contact page"
+  },
+  "bottomImage": {
+    "alt": "Text reading 'The result? A greater sense of mastery, less frustration - and employees who say: Send me the link, I'll solve it!'"
   }
 }

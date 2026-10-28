@@ -8,6 +8,7 @@ export async function generateStaticParams() {
   return result.map((tiltak) => ({ locale: tiltak.language ?? '' }));
 }
 
+// TODO: Should this be on the front page if it only leads to a "page not found" page? Especially as it has two cards on the landing page.
 export default async function Loop({ params }: { params: Promise<{ locale: string }> }) {
   // Check that page exists in Sanity with correct locale
   const locale = (await params).locale;
@@ -15,8 +16,8 @@ export default async function Loop({ params }: { params: Promise<{ locale: strin
   if (!tiltak) return notFound();
 
   return (
-    <main className='flex flex-col items-center gap-16 w-full max-w-[1536px] mx-auto my-16'>
-      <HeroSub {...tiltak} />
+    <main id='main' className='flex flex-col items-center gap-16 w-full max-w-[1536px] mx-auto my-16'>
+      <HeroSub {...tiltak} department='Loop' />
     </main>
   );
 }

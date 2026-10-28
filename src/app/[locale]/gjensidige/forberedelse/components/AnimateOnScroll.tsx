@@ -1,14 +1,28 @@
 'use client';
 
-import { useRef, useState, useEffect, type ReactNode } from 'react';
+import {
+  useRef,
+  useState,
+  useEffect,
+  type ReactNode,
+  type ElementType
+} from 'react';
 
 interface AnimateOnScrollProps {
   children: ReactNode;
   className?: string;
+  as?: 'div' | 'section';
+  ariaLabelledBy?: string;
 }
 
-export function AnimateOnScroll({ children, className = '' }: AnimateOnScrollProps) {
-  const ref = useRef<HTMLDivElement>(null);
+export function AnimateOnScroll({
+  children,
+  className = '',
+  as = 'div',
+  ariaLabelledBy = undefined,
+}: AnimateOnScrollProps) {
+  const Tag: ElementType = as;
+  const ref = useRef<HTMLElement | null>(null);
   const [inView, setInView] = useState(false);
 
   useEffect(() => {
@@ -27,11 +41,14 @@ export function AnimateOnScroll({ children, className = '' }: AnimateOnScrollPro
   }, []);
 
   return (
-    <div
-      ref={ref}
+    <Tag
+      ref={(node: HTMLElement | null) => {
+        ref.current = node;
+      }}
       className={`animate-on-scroll ${inView ? 'scroll-in-view' : ''} ${className}`}
+      {...(ariaLabelledBy ? { 'aria-labelledby': ariaLabelledBy } : {})}
     >
       {children}
-    </div>
+    </Tag>
   );
 }

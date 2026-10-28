@@ -1,6 +1,6 @@
 import { getTranslations } from 'next-intl/server';
-import { IntroSectionReverse, PartnerProject } from '@/components/layout-components';
-import { CoursesCard } from '@/components/ui/cards/Courses';
+import { IntroSection, PartnerProject } from '@/components/layout-components';
+import { LandingCoursesCard } from '@/components/ui/cards/LandingCourses';
 import { QuoteCard } from '@/components/ui/cards/Quotes';
 
 // Images
@@ -63,43 +63,65 @@ export default async function WorkCourses() {
     },
   ];
 
+  // TODO: Add section to relevant parts.
   return (
-    <div className='space-y-16'>
-      <IntroSectionReverse
+    <article
+      className='space-y-16'
+      aria-labelledby={'intro-section-title-' + t('work.title').toLowerCase().replace(/\s+/g, '-')}
+    >
+      <IntroSection
         title={t('work.title')}
         text={t('work.text')}
         image={JobbtilbudBilde}
         alt={t('work.image.alt')}
         path='/tilbud'
         isButton={false}
+        direction='reverse'
       />
-      <PartnerProject
+      <PartnerProject // TODO: Try to move this into the list below.
         title={t('work.partner.title')}
         text={t('work.partner.text')}
-        image={KodehodeImage}
+        image={KodehodeImage} // TODO: Find out why this image is not centered properly in its container.
         alt={t('work.partner.image.alt')}
         path='https://www.kodehode.no'
         btnText='kodehode.no'
         isButton
         btnVariant={'externalLink'}
       />
-      <div className='grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-4 auto-rows-fr'>
+      <ul
+        className='grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-4 auto-rows-auto'
+        // TODO: Add list label.
+      >
         {courses.map((card, index) => (
-          <CoursesCard key={index} {...card} />
+          <LandingCoursesCard key={index} context="work" {...card} />
         ))}
-      </div>
+      </ul>
 
       {/* Temporary Quotes Solution */}
-      <div className='relative flex flex-col gap-8 px-8 pt-8 pb-12 overflow-hidden border-2 rounded-xl bg-jobloop-primary-orange/5 border-jobloop-primary-orange text-kv-black lg:gap-12'>
-        <h2 className='pb-2 mx-auto text-center border-b-4 border-jobloop-primary-orange w-fit'>
+      <section
+        className='
+          relative flex flex-col gap-8 px-8 pt-8 pb-12 overflow-hidden border-2
+          rounded-xl bg-jobloop-primary-orange/5
+          border-jobloop-primary-orange text-kv-black lg:gap-12
+        '
+      >
+        <h3
+          className='
+          pb-2 mx-auto text-center border-b-4 border-jobloop-primary-orange
+          w-fit text-[2rem]!
+          '
+        >
           {t("work.quotes.title")}
-        </h2>
-        <div className='flex flex-col gap-8 md:flex-row'>
+        </h3>
+        <ul
+        className='flex flex-col gap-8 md:flex-row'
+        // TODO: Add list label.
+        >
           {quotes.map((quote, index) => (
             <QuoteCard key={`${quote.name}-${index}`} {...quote} />
           ))}
-        </div>
-      </div>
-    </div>
+        </ul>
+      </section>
+    </article>
   );
 }

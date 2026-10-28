@@ -15,7 +15,7 @@ export async function generateMetadata(): Promise<Metadata> {
 export default function Kartlegging() {
   return (
     <>
-      <main className='kartlegging-page'>
+      <main id='main' className='kartlegging-page'>
         <header>
           <h1>Kartleggingsguide</h1>
           <p>Mal for det første møtet med ungdommen (og evt. foreldre)</p>

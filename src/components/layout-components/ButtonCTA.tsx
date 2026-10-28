@@ -9,11 +9,17 @@ import {
 
 interface ButtonCTAProps {
   isButton: boolean;
-  btnVariant?: 'internalLink' | 'externalLink';
+  btnVariant?: 'internalLink' | 'externalLink' | 'readMorePill';
   Path: string;
   Text: string;
   Aria?: AriaAttributes['aria-label'];
+  Context?: string;
 }
+
+const isExternalPath = (path: string) =>
+  /^https?:\/\//i.test(path) ||
+  path.startsWith('mailto:') ||
+  path.startsWith('tel:');
 
 const ButtonCTA = ({
   isButton,
@@ -21,20 +27,27 @@ const ButtonCTA = ({
   Path,
   Text,
   Aria,
+  Context,
 }: ButtonCTAProps) => {
   if (!isButton) {
     return null;
   }
 
-  let ButtonComponent;
-  const ButtonComponentProps = { Path, Text, Aria };
+  const resolvedVariant =
+    btnVariant ?? (isExternalPath(Path) ? 'externalLink' : 'internalLink');
 
-  switch (btnVariant) {
+  let ButtonComponent;
+  const ButtonComponentProps = { Path, Text, Aria, Context };
+
+  switch (resolvedVariant) {
     case 'externalLink':
       ButtonComponent = ExternalLinkButton;
       break;
     case 'internalLink':
       ButtonComponent = LinkButtonInternal;
+      break;
+    case 'readMorePill':
+      ButtonComponent = LesMerButton;
       break;
     default:
       ButtonComponent = LesMerButton;

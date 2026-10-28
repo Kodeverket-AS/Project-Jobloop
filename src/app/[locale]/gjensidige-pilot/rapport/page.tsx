@@ -15,7 +15,7 @@ export async function generateMetadata(): Promise<Metadata> {
 export default function Rapport() {
   return (
     <>
-      <main className='rapport-page min-h-screen'>
+      <main id='main' className='rapport-page min-h-screen'>
       <div className='report-container'>
         <h1>Månedsrapport: Pilot JobLoop</h1>
         <div className='meta'>

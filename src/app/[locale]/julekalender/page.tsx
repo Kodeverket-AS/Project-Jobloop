@@ -48,6 +48,7 @@ export async function generateMetadata(): Promise<Metadata> {
 export default function Julekalender() {
   return (
     <main
+      id='main'
       className='
     min-h-screen
     w-full

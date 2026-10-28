@@ -67,7 +67,7 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
     icons: {
       icon: '/favicon.ico',
       shortcut: '/favicon.ico',
-      apple: '/apple-touch-icon.png',
+      apple: '/apple-touch-icon.png', // TODO: Fix apple touch icon 404
     },
   } satisfies Metadata;
 }
@@ -75,6 +75,8 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
 // Configure Roboto font
 const roboto = Roboto({ weight: ['400', '700', '900'], subsets: ['latin'] });
 
+// TODO: Consider adding breadcrumbs to improve navigation accessibility.
+// TODO: Consider making the title element more descriptive (currently using the same title on most pages).
 export default async function Layout({
   children,
   params,

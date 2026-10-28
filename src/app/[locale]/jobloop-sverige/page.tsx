@@ -6,7 +6,7 @@ import TeamSection from '@/components/feature/jobloop-sverige/TeamSection';
 export default async function JobloopSverige() {
   return (
     <div className='min-h-screen bg-kv-white'>
-      <main className='max-w-[1536px] px-4 py-16 flex flex-col items-center gap-20 w-full mx-auto'>
+      <main id='main' className='max-w-[1536px] px-4 py-16 flex flex-col items-center gap-20 w-full mx-auto'>
         <div className='w-full text-center space-y-6'>
           <h1 className='text-4xl md:text-5xl lg:text-6xl font-bold text-kv-black mb-4'>
             Gamify och Spelbaserad kvalificering

@@ -107,6 +107,18 @@ h6 {
   }
 }
 
+/* Solution for removing double-links in landing cards. */
+/* TODO: Implement focus styles across the site for accessibility and consistency. */
+/* TODO: Change focus styles for buttons to use a class that can be used globally. */
+.landing-card footer a:focus-visible > span {
+  outline: none;
+  box-shadow: 0 0 0 2px blue;
+  border-radius: calc(infinity * 1px);
+}
+.landing-card footer a:focus-visible:hover > span {
+  transform: scale(1.05);
+}
+
 .team-photo {
   opacity: 1;
   will-change: transform, opacity;
@@ -197,6 +209,26 @@ h6 {
   }
 }
 
+/* Ensure that animated classes respect reduced motion preferences */
+@media (prefers-reduced-motion: reduce) {
+  .team-photo,
+  .slide-left,
+  .slide-right,
+  .slide-bottom,
+  .card-slide-in,
+  .animate-shimmer::before,
+  .animate-on-scroll,
+  .animate-pulse-slow,
+  .animate-fade-in,
+  .animate-fade-in-up {
+    animation: none !important;
+    animation-delay: 0s !important;
+    transition: none !important;
+    transform: none !important;
+    opacity: 1 !important;
+  }
+}
+
 /* Gjensidige page animations (Server Component compatible) */
 @keyframes gjensidige-fadeInUp {
   from {
@@ -227,10 +259,10 @@ h6 {
 }
 @keyframes gjensidige-shimmer {
   0% {
-    background-position: -1000px 0;
+    background-position: 200% 0;
   }
   100% {
-    background-position: 1000px 0;
+    background-position: -200% 0;
   }
 }
 .animate-fade-in-up {
@@ -243,7 +275,23 @@ h6 {
   animation: gjensidige-pulse 3s ease-in-out infinite;
 }
 .animate-shimmer {
-  animation: gjensidige-shimmer 3s ease-in-out infinite;
+  position: relative;
+}
+.animate-shimmer::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  pointer-events: none;
+  background-image: linear-gradient(
+    90deg,
+    rgba(255, 255, 255, 0) 0%,
+    rgba(255, 255, 255, 0.08) 50%,
+    rgba(255, 255, 255, 0) 100%
+  );
+  background-size: 200% 100%;
+  background-repeat: no-repeat;
+  animation: gjensidige-shimmer 3s linear infinite;
 }
 .delay-100 {
   animation-delay: 0.1s;

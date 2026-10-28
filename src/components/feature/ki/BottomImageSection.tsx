@@ -1,17 +1,16 @@
 import Image from "next/image";
+import { useTranslations } from 'next-intl';
 
 export default function BottomImageSection() {
+  const t = useTranslations('ki');
+
   return (
-    <div className="w-full ">
-      <div className="flex justify-center">
-        <Image
-          src="/picture-ki.png"
-          alt="KI kurs informasjon"
-          width={800}
-          height={600}
-          className="w-full max-w-4xl h-auto rounded-2xl"
-        />
-      </div>
-    </div>
+    <Image
+      src='/picture-ki.png'
+      alt={t('bottomImage.alt')}
+      width={800}
+      height={600}
+      className='w-full max-w-4xl h-auto rounded-2xl flex justify-self-center'
+    />
   );
 }

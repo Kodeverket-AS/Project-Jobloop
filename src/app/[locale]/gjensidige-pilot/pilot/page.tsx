@@ -248,7 +248,7 @@ export default function Pilot() {
           font-size: 0.9rem;
         }
       `}</style>
-      <main className='pilot-page min-h-screen'>
+      <main id='main' className='pilot-page min-h-screen'>
       <header>
         <div className='logo'>
           Gjensidige | <span style={{ color: '#4AB5A3' }}>JobLoop</span>

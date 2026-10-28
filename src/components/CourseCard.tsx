@@ -1,6 +1,9 @@
 import { Tiltak } from '@/types/sanity/sanity.types';
 import { getTranslations } from 'next-intl/server';
 
+/**
+ * Renders an "About the course" card.
+ */
 export default async function CourseCard({
   targetGroupShort,
   duration,
@@ -8,32 +11,54 @@ export default async function CourseCard({
   locations,
 }: Tiltak) {
   const t = await getTranslations('base.components.course');
+
+  const courseDetails = [
+    {label: t('demographic'), value: targetGroupShort},
+    {label: t('duration'), value: duration},
+    {label: t('format'), value: lectureType},
+    {label: t('location'), value: locations},
+  ].filter((item): item is { label: string; value: string } => Boolean(item.value));
+
   return (
-    <div className='flex flex-col p-6 shadow-lg hover:shadow-xl transition-all duration-300 bg-kv-white rounded-xl border border-gray-100 hover:border-jobloop-primary-green/20'>
-      <h3 className='text-xl md:text-2xl font-bold text-kv-black mb-4 border-b-2 border-jobloop-primary-green w-fit pb-2'>
+    <section
+      className='
+        flex flex-col p-6 shadow-lg hover:shadow-xl transition-all duration-300
+        bg-kv-white rounded-xl border border-gray-100 w-full md:w-1/2
+        hover:border-jobloop-primary-green/20
+      '
+      aria-labelledby='course-card-title'
+    >
+      <h2
+        id='course-card-title'
+        className='
+          text-[1.4rem]! md:text-2xl font-bold text-kv-black mb-4 border-b-2
+          border-jobloop-primary-green w-fit pb-2
+        '
+      >
         {t('title')}
-      </h3>
-      <p className='pb-4 border-b-2 border-gray-200 md:pt-2 text-gray-600'>{t('description')}</p>
-      <div className='space-y-4 pt-4'>
-        <div>
-          <h4 className='text-lg font-semibold text-jobloop-primary-green mb-2'>
-            {t('demographic')}
-          </h4>
-          <p className='text-gray-700'>{targetGroupShort}</p>
-        </div>
-        <div>
-          <h4 className='text-lg font-semibold text-jobloop-primary-green mb-2'>{t('duration')}</h4>
-          <p className='text-gray-700'>{duration}</p>
-        </div>
-        <div>
-          <h4 className='text-lg font-semibold text-jobloop-primary-green mb-2'>{t('format')}</h4>
-          <p className='text-gray-700'>{lectureType}</p>
-        </div>
-        <div>
-          <h4 className='text-lg font-semibold text-jobloop-primary-green mb-2'>{t('location')}</h4>
-          <p className='text-gray-700'>{locations}</p>
-        </div>
-      </div>
-    </div>
+      </h2>
+      <p className='pb-4 border-b-2 border-gray-200 md:pt-2 text-gray-600'>
+        {t('description')}
+      </p>
+      {courseDetails.map(({ label, value }) => (
+        <section
+          key={label}
+          className='space-y-4 pt-4'
+          aria-labelledby={`course-detail-${label.toLowerCase().replace(/\s+/g, '-')}`}
+        >
+          <h3
+            id={`course-detail-${label.toLowerCase().replace(/\s+/g, '-')}`}
+            className='
+              text-[1.125rem]! font-semibold text-jobloop-primary-green mb-2
+            '
+          >
+            {label}
+          </h3>
+          <p className='text-gray-700'>
+            {value}
+          </p>
+        </section>
+      ))}
+    </section>
   );
 }

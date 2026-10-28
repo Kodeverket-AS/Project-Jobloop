@@ -1,15 +1,17 @@
 'use client';
 
 import Link from 'next/link';
+import { useTranslations } from 'next-intl';
 import { FaArrowRight } from 'react-icons/fa';
 import { BiLinkExternal } from 'react-icons/bi';
 import { LuMail } from 'react-icons/lu';
-import { AriaAttributes } from 'react';
 
 interface ButtonProps {
   Path: string;
   Text: string;
-  Aria?: AriaAttributes['aria-label'];
+  Context?: string;
+  ClassName?: string;
+  Aria?: string;
 }
 
 export function KontaktButton({ Path, Text }: ButtonProps) {
@@ -17,35 +19,131 @@ export function KontaktButton({ Path, Text }: ButtonProps) {
     <Link
       href={Path}
       aria-label={`Lenke til underside ${Path}`}
-      className='group flex items-center justify-center w-full gap-1 px-8 py-3 text-base tracking-normal text-center transition-all border-2 rounded-full scale-100 lg:hover:scale-105 group sm:w-fit text-kv-black bg-jobloop-primary-green hover:bg-jobloop-primary-green/0 border-jobloop-primary-green underline underline-offset-2 decoration-kv-black/0 hover:decoration-kv-black'
+      className='
+        group flex items-center justify-center w-full sm:w-fit gap-1 px-8 py-3
+        rounded-full border-2 border-jobloop-primary-green bg-jobloop-primary-green
+        text-base text-center text-kv-black underline underline-offset-2
+        group tracking-normal transition-all scale-100 lg:hover:scale-105
+        decoration-kv-black/0 hover:decoration-kv-black hover:bg-jobloop-primary-green/0
+      '
     >
       {Text}
-      <LuMail className='inline-block h-5 lg:w-5 transition-all group-hover:translate-x-1 group-hover:animate-pulse' />
+      <LuMail
+        className='
+          inline-block h-5 lg:w-5 transition-all
+          group-hover:translate-x-1 group-hover:animate-pulse
+        '
+        aria-hidden='true'
+      />
     </Link>
   );
 }
 
-export function ExternalLinkButton({ Path, Text, Aria }: ButtonProps) {
+export function ExternalLinkButton({ Path, Text, ClassName }: ButtonProps) {
+  const t = useTranslations('dictionary');
+
   return (
     <a
       href={Path}
-      aria-label={Aria}
-      className='flex items-center justify-center w-full gap-1 px-8 py-3 text-base scale-100 lg:hover:scale-105 text-kv-black tracking-normal text-center transition-all duration-300 border-2 border-solid rounded-full sm:w-fit bg-kv-white border-jobloop-primary-green hover:bg-jobloop-primary-green hover:border-jobloop-primary-orange hover:shadow-lg shadow-md shadow-kv-black/20 focus:bg-jobloop-primary-green focus:text-kv-white'
+      target='_blank'
+      rel='noopener noreferrer'
+      className={`
+        w-full sm:w-fit flex items-center justify-center gap-1 px-8 py-3
+        bg-kv-white rounded-full tracking-normal shadow-md shadow-kv-black/20
+        text-base text-center text-kv-black border-2 border-solid
+        border-jobloop-primary-green hover:border-jobloop-primary-green
+        hover:shadow-lg hover:bg-jobloop-primary-green
+        motion-safe:lg:hover:scale-105 focus:bg-jobloop-primary-green
+        focus:text-kv-white transition-all motion-safe:duration-300 scale-100
+        ${ClassName ?? ''}
+      `}
     >
       {Text}
-      <BiLinkExternal className='inline-block h-5 lg:w-5 transition-transform duration-300 group-hover:scale-110' />
+      <span className='sr-only'>
+        ({t('opensInNewTab')})
+      </span>
+      <BiLinkExternal
+        className='
+          inline-block h-5 lg:w-5 transition-transform duration-300
+          group-hover:scale-110
+        '
+        aria-hidden='true'
+      />
     </a>
   );
 }
 
-export function LesMerButton({ Path, Text = 'Les mer' }: Partial<ButtonProps>) {
+export function LesMerButton(
+  {
+    Path,
+    Text = 'Les mer',
+    Context = '',
+    Aria = undefined
+  }: Partial<ButtonProps> & { Context?: string }
+) {
   return (
     <a
       href={Path}
-      className='w-full md:w-auto md:max-w-[155px] inline-flex items-center justify-center gap-3 px-6 py-3 bg-jobloop-primary-green text-white rounded-full hover:bg-jobloop-primary-orange hover:shadow-lg transition-all duration-300 group/btn hover:scale-105'
+      className='
+        w-full md:w-auto md:max-w-[155px] inline-flex gap-3 px-6 py-3 text-white
+        items-center justify-center bg-jobloop-primary-green rounded-full
+        hover:bg-jobloop-primary-orange hover:shadow-lg
+        motion-safe:hover:scale-105 motion-safe:duration-300 transition-all
+        group/btn
+      '
+      aria-label={Aria}
     >
       <span className='font-medium'>{Text}</span>
-      <FaArrowRight className='transition-transform duration-300 group-hover/btn:translate-x-1 group-hover/btn:scale-110' />
+      {Context != '' ? <span className='sr-only'>{Context}</span> : null}
+      <FaArrowRight
+        className='
+          motion-safe:group-hover/btn:translate-x-1 transition-transform
+          motion-safe:group-hover/btn:scale-110 motion-safe:duration-300
+        '
+        aria-hidden='true'
+      />
     </a>
+  );
+}
+
+/**
+ * Outputs a span element styled like a button.
+ * This is used for the LandingCoursesCard component to emulate having two links
+ * which both go to the same location, without duplicating the link element and
+ * causing accessibility issues.
+ * 
+ // TODO: Check if button-animations should have "prefers reduced motion" media query.
+ */
+export function SpanButtonLike({ Text = 'readMore', Context = '' }: { Text?: string, Context?: string }) {
+  const t = useTranslations('dictionary');
+
+  return (
+    <span
+      className='
+        w-full md:w-auto md:max-w-[155px] inline-flex items-center
+        justify-center gap-3 px-6 py-3 bg-jobloop-primary-green text-white
+        rounded-full hover:bg-jobloop-primary-orange hover:shadow-lg
+        border-2 border-solid border-jobloop-primary-green hover:border-jobloop-primary-orange
+        transition-all motion-safe:duration-300 group/btn
+        motion-safe:hover:scale-105
+      '
+    >
+      <span className='font-medium text-nowrap'>
+        {t(`${Text}`)}
+        {Context && (
+          <span className='sr-only'>
+            {` ${t('about')} ${Context}`}
+          </span>
+        )}
+      </span>
+      <FaArrowRight
+        className='
+          transition-transform motion-safe:duration-300
+          motion-safe:group-hover/btn:translate-x-1
+          motion-safe:group-hover/btn:scale-110
+        '
+        aria-hidden='true'
+      />
+    </span>
   );
 }

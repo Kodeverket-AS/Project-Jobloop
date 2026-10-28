@@ -1,27 +1,46 @@
 {
   "header": {
     "navigation": {
+      "skipLink": "Gå til sidens hovedinnhold",
+      "scrollToTop": "Scroll til toppen",
+      "goToLanding": "Gå til landingssiden",
+      "menu": {
+        "desktop": "Hovednavigasjon",
+        "mobile": "Mobilnavigasjon"
+      },
+      "logo": {
+        "alt": "Jobloop logo",
+        "prideAlt": "Jobloop logo med Pride-regnbue"
+      },
       "index": "Hjem",
       "about": {
         "label": "Om Oss",
-        "aria": "gå til denne undersiden for å lese mer om oss"
+        "aria": "Gå til denne undersiden for å lese mer om oss"
       },
       "opplæringskontor": {
         "label": "Opplæringskontor",
-        "aria": "gå til denne undersiden for å lese mer om opplæringskontoret"
+        "aria": "Gå til denne undersiden for å lese mer om opplæringskontoret"
       },
       "contact": {
         "label": "Kontakt",
-        "aria": "gå til denne undersiden for å ta kontakt med en av oss"
+        "aria": "Gå til denne undersiden for å ta kontakt med en av oss"
       },
       "sverige": {
         "label": "Jobloop Sverige",
-        "aria": "gå til denne undersiden for å lese mer om Jobloop Sverige"
+        "aria": "Gå til denne undersiden for å lese mer om Jobloop Sverige"
       }
     },
     "localeSwitcher": {
       "locales": "{locale, select, nb {Norsk} sv {Svensk} en {Engelsk} other {Ukjent}}",
-      "changeLocale": "Bytt språk"
+      "changeLocale": "Bytt språk",
+      "openLanguageSwitcher": "Åpne språkvelger",
+      "selectLanguage": "Velg {locale, select, nb {Norsk} sv {Svensk} en {Engelsk} other {Ukjent}} som ditt språk",
+      "flagAlt": "Flagget til {locale, select, nb {Norge} sv {Sverige} en {Storbritannia} other {Ukjent}}"
+    },
+    "hamburgerMenu": {
+      "mobileLocationMenu": "Mobil navigasjonsmeny",
+      "open": "Åpne mobil navigasjonsmeny",
+      "close": "Lukk mobil navigasjonsmeny"
     }
   },
   "footer": {
@@ -60,7 +79,11 @@
       "title": "Kontakt",
       "participants": "Deltaker",
       "companies": "Bedrifter",
-      "clients": "Oppdragsgiver"
+      "clients": "Oppdragsgiver",
+      "openEmail": "Åpne e-post for å kontakte {name}",
+      "openPhone": "Åpne telefon for å ringe {name}",
+      "socialMediaList": "Linker til våre sosiale medier sider",
+      "openSocialMedia": "Åpne vår side på {platform}"
     },
     "copyright": "JobLoop. Alle rettigheter forbeholdt."
   },

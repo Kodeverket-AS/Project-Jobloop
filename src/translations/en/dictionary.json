@@ -1,7 +1,16 @@
 {
   "socialMedia": "Social media",
   "readMore": "Read more",
+  "about": "About",
+  "readMoreAbout": "Read more about",
+  "on": "On",
   "goTo": "Go to",
   "contactUs": "Contact us",
-  "new": "New"
+  "new": "New",
+  "opensInNewTab": "Opens in a new tab",
+  "subpageLinkLabel": "Link to subpage {path}",
+  "videoFallback": "Your browser does not support video playback.",
+  "school": "school",
+  "work": "work",
+  "newCourse": "New {context} course"
 }

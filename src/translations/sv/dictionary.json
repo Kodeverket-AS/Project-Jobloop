@@ -1,7 +1,16 @@
 {
   "socialMedia": "Sociale medier",
-  "readMore": "Les mer",
+  "readMore": "Läs mer",
+  "about": "Om",
+  "readMoreAbout": "Läs mer om",
+  "on": "På",
   "goTo": "Gå til",
   "contactUs": "Kontakt oss",
-  "new": "Nyhet"
+  "new": "Nyhet",
+  "opensInNewTab": "Öppnas i ny flik",
+  "subpageLinkLabel": "Länk till undersida {path}",
+  "videoFallback": "Din webbläsare stöder inte videouppspelning.",
+  "school": "skol",
+  "work": "arbets",
+  "newCourse": "Nytt {context}kurs"
 }

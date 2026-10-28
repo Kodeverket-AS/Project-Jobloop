@@ -19,8 +19,8 @@ export default async function Gamify({ params }: { params: Promise<{ locale: str
   if (!tiltak) return notFound();
 
   return (
-    <main className='flex flex-col items-center gap-16 w-full max-w-[1536px] mx-auto my-16 px-4'>
-      <HeroSub {...tiltak} />
+    <main id='main' className='flex flex-col items-center gap-16 w-full max-w-[1536px] mx-auto my-16 px-4'>
+      <HeroSub {...tiltak} department='Gamify' />
       <CourseSummary {...tiltak} />
       <Curriculum title={tiltak.title} curriculum={tiltak.curriculum} />
       <LeaderSection leaders={tiltak.courseLeaders} />

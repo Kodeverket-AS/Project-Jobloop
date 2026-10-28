@@ -1,33 +1,52 @@
 {
   "header": {
     "navigation": {
-      "index": "Hjem",
+      "skipLink": "Hoppa till sidans huvudinnehåll",
+      "scrollToTop": "Scrolla till toppen",
+      "goToLanding": "Gå till landningssidan",
+      "menu": {
+        "desktop": "Huvudnavigation",
+        "mobile": "Mobilnavigation"
+      },
+      "logo": {
+        "alt": "Jobloop logo",
+        "prideAlt": "Jobloop logo med Pride-regnbåge"
+      },
+      "index": "Hem",
       "about": {
         "label": "Om Oss",
-        "aria": "gå til denne undersiden for å lese mer om oss"
+        "aria": "Gå till den här undersidan för att läsa mer om oss"
       },
       "opplæringskontor": {
         "label": "Utbildningskontor",
-        "aria": "gå til denne undersiden for å lese mer om opplæringskontoret"
+        "aria": "Gå till den här undersidan för att läsa mer om utbildningskontoret"
       },
       "contact": {
         "label": "Kontakt",
-        "aria": "gå til denne undersiden for å ta kontakt med en av oss"
+        "aria": "Gå till den här undersidan för att kontakta en av oss"
       },
       "sverige": {
         "label": "Jobloop Sverige",
-        "aria": "gå till denna sida för att läsa mer om Jobloop Sverige"
+        "aria": "Gå till den här sidan för att läsa mer om Jobloop Sverige"
       }
     },
     "localeSwitcher": {
       "locales": "{locale, select, nb {Norska} sv {Svenska} en {Engelska} other {Okänd}}",
-      "changeLocale": "Byt språk"
+      "changeLocale": "Byt språk",
+      "openLanguageSwitcher": "Öppna språkväljaren",
+      "selectLanguage": "Välj {locale, select, nb {Norska} sv {Svenska} en {Engelska} other {Okänd}} som ditt språk",
+      "flagAlt": "Flaggan för {locale, select, nb {Norge} sv {Sverige} en {Storbritannien} other {Okänd}}"
+    },
+    "hamburgerMenu": {
+      "mobileLocationMenu": "Mobil navigationsmeny",
+      "open": "Öppna mobil navigationsmeny",
+      "close": "Stäng mobil navigationsmeny"
     }
   },
   "footer": {
     "branding": {
-      "award": "JobLoop | Årets Sociala Entreprenör 2024",
-      "text": "Vi hjälper dig att hitta ditt drömjobb genom innovativa kurser och personlig vägledning."
+      "text": "Vi hjälper dig att hitta ditt drömjobb genom innovativa kurser och personlig vägledning.",
+      "jobloopLogo": "Jobloop logo"
     },
     "badges": {
       "gaselle2024Alt": "DN Gaselle 2024 - Dagens Näringslivs utmärkelse för landets mest framgångsrika tillväxtföretag",
@@ -60,29 +79,33 @@
       "title": "Kontakt",
       "participants": "Deltagare",
       "companies": "Företag",
-      "clients": "Uppdragsgivare"
+      "clients": "Uppdragsgivare",
+      "openEmail": "Öppna e-post för att kontakta {name}",
+      "openPhone": "Öppna telefon för att ringa {name}",
+      "socialMediaList": "Länkar till våra sidor på sociala medier",
+      "openSocialMedia": "Öppna vår sida på {platform}"
     },
     "copyright": "Jobloop. Alla rättigheter förbehållna."
   },
   "components": {
     "course": {
-      "targetGroup": "Hvem passer { target } for?",
-      "title": "Course details",
-      "description": "Innhold og rammer for kurset",
-      "demographic": "Målgruppe",
+      "targetGroup": "Vem passar { target } för?",
+      "title": "Kursinformation",
+      "description": "Kursinnehåll och ramverk",
+      "demographic": "Målgrupp",
       "duration": "Tidsplan",
       "format": "Undervisningsform",
-      "location": "Sted"
+      "location": "Plats"
     },
     "courseLeaders": {
-      "title": "Kursledere"
+      "title": "Kursledare"
     },
     "curriculum": {
-      "title": "Hva lærer du i {subject}?"
+      "title": "Vad lär du i {subject}?"
     },
     "school": {
-      "title": "For { target }",
-      "school": "Skole"
+      "title": "För { target }",
+      "school": "Skola"
     }
   }
 }

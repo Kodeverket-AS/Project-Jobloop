@@ -15,7 +15,7 @@ export async function generateMetadata(): Promise<Metadata> {
 export default function AnsattPortal() {
   return (
     <>
-      <main className='ansattportal-page min-h-screen'>
+      <main id='main' className='ansattportal-page min-h-screen'>
         <header>
           <h1>Internressurs: Gjensidige Pilot</h1>
           <p>Alt du som veileder trenger å vite om prosjektet.</p>

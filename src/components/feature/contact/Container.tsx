@@ -5,14 +5,47 @@ import { useEffect, useCallback, useRef, useState, useMemo } from 'react';
 import { useTranslations } from 'next-intl';
 import { ContactGroup } from '@/components/contacts/ContactGroup';
 
-export default function ContactContainer({ data = [] }: { data: Contacts[] }) {
-  const [filtered, setFiltered] = useState<Contacts[]>(data);
-  const [isFiltered, setIsFiltered] = useState<boolean>(false);
+// TODO: Test and clean this before merging!
+function filterContacts(data: Contacts[], dept: string, name: string) {
+  const deptVal = dept.toLowerCase();
+  const nameVal = name.toLowerCase();
+
+  return data.filter((p) => {
+    const matchesDept = deptVal
+      ? (p.company ?? []).some((c) => (c ?? '').trim().toLowerCase() === deptVal)
+      : true;
+    const fullName = `${p.fname ?? ''} ${p.lname ?? ''}`.trim().toLowerCase();
+    return matchesDept && (nameVal ? fullName.includes(nameVal) : true);
+  });
+}
+
+export default function ContactContainer({
+  data = [],
+  initialDepartment = '',
+}: {
+  data: Contacts[],
+  initialDepartment?: string
+}) {
+  // Get translations
+  const t = useTranslations('contact');
+
+  // const [filtered, setFiltered] = useState<Contacts[]>(data);
+  // const [isFiltered, setIsFiltered] = useState<boolean>(false);
   const nameInput = useRef<HTMLInputElement>(null);
   const departmentSelect = useRef<HTMLSelectElement>(null);
 
-  // Get translations
-  const t = useTranslations('contact');
+  // Create a unique set of all departments for select options
+  const departmentList = useMemo(() => {
+    const set = new Set<string>();
+    data.forEach((item) => (item?.company ?? []).forEach((c) => c?.trim() && set.add(c.trim())));
+    return Array.from(set).sort((a, b) => a.localeCompare(b, 'no'));
+  }, [data]);
+
+  const initialDept = departmentList.find((d) => d.toLowerCase() === initialDepartment.trim().toLowerCase()) ?? '';
+  const [filtered, setFiltered] = useState<Contacts[]>(() =>
+    filterContacts(data, initialDept, '')
+  );
+  const [isFiltered, setIsFiltered] = useState<boolean>(Boolean(initialDept));
 
   // Group contacts by their group number in an object, then iterate over key
   const groupByRole = filtered.reduce(
@@ -25,15 +58,14 @@ export default function ContactContainer({ data = [] }: { data: Contacts[] }) {
     {} as Record<number, Contacts[]>
   );
 
-  // Create a unique set of all departments for select options
-  const departmentList = useMemo(() => {
-    const set = new Set<string>();
-    data.forEach((item) => (item?.company ?? []).forEach((c) => c?.trim() && set.add(c.trim())));
-    return Array.from(set).sort((a, b) => a.localeCompare(b, 'no'));
-  }, [data]);
-
   // Apply filter
   const doFilter = useCallback(() => {
+    const dept = departmentSelect.current?.value ?? '';
+    const name = nameInput.current?.value ?? '';
+    setIsFiltered(Boolean(dept || name));
+    setFiltered(filterContacts(data, dept, name));
+  }, [data]);
+  /*const doFilter = useCallback(() => {
     const deptVal = (departmentSelect.current?.value ?? '').toLowerCase();
     const nameVal = (nameInput.current?.value ?? '').toLowerCase();
 
@@ -48,7 +80,7 @@ export default function ContactContainer({ data = [] }: { data: Contacts[] }) {
 
     setIsFiltered(Boolean(deptVal || nameVal));
     setFiltered(result);
-  }, [data]);
+  }, [data]);*/
 
   // Clear filter on escape keypress
   const onEsc = useCallback(
@@ -68,24 +100,78 @@ export default function ContactContainer({ data = [] }: { data: Contacts[] }) {
     return () => document.removeEventListener('keydown', onEsc);
   }, [onEsc]);
 
-  return (
-    <div className='space-y-12 bg-linear-to-br from-jobloop-primary-green/5 via-white to-jobloop-primary-orange/5 p-8 rounded-2xl border border-jobloop-primary-green/10'>
-      <div className='text-center mb-8'>
-        <h1 className='text-3xl md:text-4xl font-bold text-kv-black mb-4'>{t('title')}</h1>
-        <p className='text-lg text-gray-600 max-w-2xl mx-auto'>{t('text')}</p>
-      </div>
 
-      <div className='bg-linear-to-br from-white to-gray-50 p-6 rounded-xl shadow-lg border border-jobloop-primary-green/20'>
+  /**
+   * Any CSS (for example, list-style: none;) that removes the markers from
+   * ordered or unordered lists will stop Safari from exposing the list as a
+   * list to assistive technologies. That is, Safari will not expose the
+   * affected <ul> or <ol> as having a role of list. Accordingly, the VoiceOver
+   * screen reader will not identify such elements as lists to the user.
+   * 
+   * To ensure that an ordered or unordered list with no list markers is exposed
+   * as a list in Safari, add role="list" to the <ol> or <ul>.
+   * 
+   // TODO: Find out if this is still relevant when using next.js
+   */
+  // TODO: Remove divs where possible
+  // TODO: Find out why the Learnwell department filter shows no results.
+  return (
+    <article
+      className='
+        space-y-12 bg-linear-to-br from-jobloop-primary-green/5 via-white
+        to-jobloop-primary-orange/5 p-8 rounded-2xl
+        border border-jobloop-primary-green/10
+      '
+      aria-labelledby='contact-title'
+    >
+      <header className='text-center mb-8'>
+        <h1
+          id='contact-title'
+          className='text-3xl md:text-4xl font-bold text-kv-black mb-4'
+        >
+          {t('title')}
+        </h1>
+        <p className='text-lg text-gray-600 max-w-2xl mx-auto'>
+          {t('text')}
+        </p>
+      </header>
+
+      <form
+        className='
+          bg-linear-to-br from-white to-gray-50 p-6 rounded-xl shadow-lg
+          border border-jobloop-primary-green/20
+        '
+        onSubmit={(e) => e.preventDefault()}
+      >
         <div className='grid grid-cols-1 sm:grid-cols-3 gap-4 mb-6'>
           <div className='relative'>
+            <label
+              htmlFor='name'
+              className='sr-only'
+            >
+              {t('search.input.placeholder')}
+            </label>
             <input
+              id='name'
               ref={nameInput}
               onChange={doFilter}
               type='text'
-              placeholder={t('search.input.placeholder')}
-              className='w-full rounded-xl border-2 border-gray-200 bg-white px-4 py-3 text-base focus:outline-hidden focus:ring-2 focus:ring-jobloop-primary-green/60 focus:border-jobloop-primary-green transition-all duration-300 hover:border-jobloop-primary-green/50'
+              placeholder={t('search.input.placeholder') + "…"}
+              className='
+                w-full rounded-xl border-2 border-gray-200 bg-white px-4
+                py-3 text-base focus:outline-hidden focus:ring-2
+                focus:ring-jobloop-primary-green/60
+                focus:border-jobloop-primary-green transition-all duration-300
+                hover:border-jobloop-primary-green/50
+              '
             />
-            <div className='absolute inset-y-0 right-0 flex items-center pr-3 pointer-events-none'>
+            <div
+              className='
+                absolute inset-y-0 right-0 flex items-center pr-3
+                pointer-events-none
+              '
+              aria-hidden='true'
+            >
               <svg
                 className='w-5 h-5 text-gray-400'
                 fill='none'
@@ -103,11 +189,25 @@ export default function ContactContainer({ data = [] }: { data: Contacts[] }) {
           </div>
 
           <div className='relative'>
+            <label
+              htmlFor='department'
+              className='sr-only'
+            >
+              {t('search.departments.label')}
+            </label>
             <select
+              id='department'
               ref={departmentSelect}
               onChange={doFilter}
-              defaultValue=''
-              className='w-full rounded-xl border-2 border-gray-200 bg-white px-4 py-3 text-base focus:outline-hidden focus:ring-2 focus:ring-jobloop-primary-green/60 focus:border-jobloop-primary-green transition-all duration-300 hover:border-jobloop-primary-green/50 appearance-none cursor-pointer'
+              defaultValue={initialDept}
+              className='
+                w-full rounded-xl border-2 border-gray-200 bg-white px-4
+                py-3 text-base focus:outline-hidden focus:ring-2
+                focus:ring-jobloop-primary-green/60
+                focus:border-jobloop-primary-green transition-all duration-300
+                hover:border-jobloop-primary-green/50
+                appearance-none cursor-pointer
+              '
             >
               <option value=''>{t('search.departments.all')}</option>
               {departmentList.map((opt) => (
@@ -116,7 +216,13 @@ export default function ContactContainer({ data = [] }: { data: Contacts[] }) {
                 </option>
               ))}
             </select>
-            <div className='absolute inset-y-0 right-0 flex items-center pr-3 pointer-events-none'>
+            <div
+              className='
+                absolute inset-y-0 right-0 flex items-center pr-3
+                pointer-events-none
+              '
+              aria-hidden='true'
+            >
               <svg
                 className='w-5 h-5 text-gray-400'
                 fill='none'
@@ -141,7 +247,14 @@ export default function ContactContainer({ data = [] }: { data: Contacts[] }) {
               setIsFiltered(false);
               setFiltered(data);
             }}
-            className='w-full rounded-xl border-2 border-jobloop-primary-orange bg-linear-to-r from-jobloop-primary-orange to-jobloop-primary-orange/80 px-4 py-3 text-base text-white hover:from-jobloop-primary-green/90 hover:to-jobloop-primary-green active:scale-95 transition-all duration-300 font-medium shadow-md hover:shadow-lg'
+            className='
+              w-full rounded-xl border-2 border-jobloop-primary-orange
+              bg-linear-to-r from-jobloop-primary-orange
+              to-jobloop-primary-orange/80 px-4 py-3 text-base text-white
+              hover:from-jobloop-primary-green/90
+              hover:to-jobloop-primary-green active:scale-95 transition-all
+              duration-300 font-medium shadow-md hover:shadow-lg
+            '
           >
             {t('search.reset.label')}
           </button>
@@ -149,7 +262,13 @@ export default function ContactContainer({ data = [] }: { data: Contacts[] }) {
 
         {isFiltered && (
           <div className='text-center'>
-            <span className='inline-block bg-jobloop-primary-green/10 text-jobloop-primary-green px-3 py-1 rounded-full text-sm font-medium'>
+            <span
+              className='
+                inline-block bg-jobloop-primary-green/10 px-3 py-1
+                text-jobloop-primary-green rounded-full text-sm font-medium
+              '
+              role='status'
+            >
               {t('search.filter', {
                 filtered: filtered.length,
                 total: data.length,
@@ -157,18 +276,32 @@ export default function ContactContainer({ data = [] }: { data: Contacts[] }) {
             </span>
           </div>
         )}
-      </div>
+      </form>
 
-      <div className='space-y-16'>
+      <ul
+        className='space-y-16'
+        // aria-label={t('search.results')}
+        // TODO: Set aria-label to state if the list is filtered
+      >
         {Object.keys(groupByRole)
           .map(Number)
           .sort((a, b) => a - b)
           .map((groupID) => (
-            <ContactGroup key={groupID} groupID={groupID} people={groupByRole[groupID]} />
+            <ContactGroup
+              key={groupID}
+              groupID={groupID}
+              people={groupByRole[groupID]}
+            />
           ))}
-        {!filtered.length && (
-          <div className='text-center py-12'>
-            <p className='text-lg text-slate-600 mb-4'>{t('search.empty.text')}</p>
+        {!filtered.length && ( // No results feedback
+          <li // TODO: Find out if using a list item is correct for the accessibility of a "no results" message.
+            className='text-center py-12'
+          >
+            <p // TODO: Would it be better if this is a h2?
+              className='text-lg text-slate-600 mb-4'
+            >
+              {t('search.empty.text')}
+            </p>
             <button
               onClick={() => {
                 if (nameInput.current) nameInput.current.value = '';
@@ -176,13 +309,16 @@ export default function ContactContainer({ data = [] }: { data: Contacts[] }) {
                 setIsFiltered(false);
                 setFiltered(data);
               }}
-              className='text-jobloop-primary-green hover:underline font-medium'
+              className='
+                text-jobloop-primary-green hover:underline font-medium
+                cursor-pointer
+              '
             >
               {t('search.empty.label')}
             </button>
-          </div>
+          </li>
         )}
-      </div>
-    </div>
+      </ul>
+    </article>
   );
 }

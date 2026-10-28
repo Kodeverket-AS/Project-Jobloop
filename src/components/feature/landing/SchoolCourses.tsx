@@ -1,6 +1,6 @@
 import { getTranslations } from 'next-intl/server';
-import { IntroSectionReverse } from '@/components/layout-components';
-import { SchoolCoursesCard } from '@/components/ui/cards/SchoolCourses';
+import { IntroSection } from '@/components/layout-components';
+import { LandingCoursesCard } from '@/components/ui/cards/LandingCourses';
 
 // Images
 import Læringstilbud from '@public/læringstilbud.webp';
@@ -62,30 +62,37 @@ export default async function SchoolCourses() {
   ];
 
   return (
-    <section id='courses' className=' courses w-full max-w-[1536px] mx-auto'>
-      <div className='space-y-16'>
-        <IntroSectionReverse
-          image={Læringstilbud}
-          title={t('school.title')}
-          text={t('school.text')}
-          path='/laringstilbud'
-          isButton={false}
-          alt={t('school.image.alt')}
-        />
-        <div className='grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-4 auto-rows-fr'>
-          {courses.map((card, index) => (
-            <SchoolCoursesCard
-              key={index}
-              image={card.image}
-              title={card.title}
-              text={card.text}
-              path={card.path}
-              alt={card.alt}
-              isNew={card.isNew ?? false}
-            />
-          ))}
-        </div>
-      </div>
-    </section>
+    <article
+      id='courses'
+      className='courses w-full max-w-[1536px] mx-auto space-y-16'
+      aria-labelledby={'intro-section-title-' + t('school.title').toLowerCase().replace(/\s+/g, '-')}
+    >
+      <IntroSection
+        image={Læringstilbud}
+        title={t('school.title')}
+        text={t('school.text')}
+        path='/laringstilbud'
+        isButton={false}
+        alt={t('school.image.alt')}
+        direction='reverse'
+      />
+      <ul 
+        className='grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-4 auto-rows-auto'
+        aria-label={t('school.listLabel')}
+      >
+        {courses.map((card, index) => (
+          <LandingCoursesCard
+            key={index}
+            image={card.image}
+            title={card.title}
+            text={card.text}
+            path={card.path}
+            alt={card.alt}
+            context='school'
+            isNew={card.isNew ?? false}
+          />
+        ))}
+      </ul>
+    </article>
   );
 }

@@ -15,7 +15,7 @@ export async function generateMetadata(): Promise<Metadata> {
 export default function Samtale() {
   return (
     <>
-      <main className='samtale-page'>
+      <main id='main' className='samtale-page'>
         <header>
           <div className='logo'>Gjensidige | <span style={{ color: 'var(--jobloop-teal)' }}>JobLoop</span></div>
           <div>Verktøy for kundebehandling</div>
