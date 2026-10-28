@@ -1,19 +1,21 @@
-import { getTiltakById, getTiltakByIdLocalized } from '@/lib/sanity/fetch';
-import { AvailableLocales } from '@/i18n/routing';
-import { notFound } from 'next/navigation';
-import HeroSub from '@/components/herosub';
+import type { Metadata } from 'next';
+import ContactSection from '@/components/feature/individuell-amo/ContactSection';
+import IntroSection from '@/components/feature/individuell-amo/IntroSection';
+import ProgramsSection from '@/components/feature/individuell-amo/ProgramsSection';
 
 export async function generateStaticParams() {
-  const result = await getTiltakById({ index: 5 });
-  return result.map((tiltak) => ({ locale: tiltak.language ?? '' }));
+  return [{ locale: 'nb' }, { locale: 'sv' }, { locale: 'en' }];
 }
 
-export default async function IndividuellAMO({ params }: { params: Promise<{ locale: string }> }) {
-  // Check that page exists in Sanity with correct locale
-  const locale = (await params).locale;
-  const tiltak = await getTiltakByIdLocalized({ index: 5, locale: locale as AvailableLocales });
-  if (!tiltak) return notFound();
+export async function generateMetadata(): Promise<Metadata> {
+  return {
+    title: 'Individuell AMO | JobLoop',
+    description:
+      'Individuell AMO fra JobLoop — skreddersydd arbeidsmarkedsopplæring med tett oppfølging, i samarbeid med NAV.',
+  };
+}
 
+export default function IndividuellAMO() {
   return (
     <main id='main' className='flex flex-col items-center gap-16 w-full max-w-[1536px] mx-auto my-16 px-4'>
       <HeroSub {...tiltak} department='Individuell AMO' />
