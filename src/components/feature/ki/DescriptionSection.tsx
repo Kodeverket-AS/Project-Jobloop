@@ -21,7 +21,9 @@ export default async function DescriptionSection() {
           {t('paragraph2')}
         </p>
       </div>
-      <Image // TODO: Consider if this should be less prominent on smaller screens (or swap with something more informative).
+      <Image
+        // TODO: Consider if this should be less prominent on smaller screens (or swap with something more informative).
+        // TODO: Fix incorrect image positioning on ~830px width.
         src='/ki.jpg'
         alt={t('image.alt')}
         width={600}

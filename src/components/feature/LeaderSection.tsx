@@ -4,6 +4,7 @@ import { PortableText } from '@portabletext/react';
 import { urlFor } from '@/lib/Sanity';
 import { getTranslations } from 'next-intl/server';
 
+// TODO: Consider adding a link to the contact page for each course leader?
 export default async function LeaderSection({ leaders }: { leaders: Tiltak['courseLeaders'] }) {
   if (!leaders || leaders.length === 0) {
     return null;

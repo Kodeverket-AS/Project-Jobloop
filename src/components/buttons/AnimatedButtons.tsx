@@ -13,6 +13,7 @@ interface ButtonProps {
 export function LinkButtonAnimatedWithIcon({ Path, Text, Query }: ButtonProps) {
   const t = useTranslations('dictionary');
 
+  // TODO: Fix button not turning orange when hovered while having animations disabled.
   return (
     <Link
       href={Query ? { pathname: Path, query: Query} : Path }

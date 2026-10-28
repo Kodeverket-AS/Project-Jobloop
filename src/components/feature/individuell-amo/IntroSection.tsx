@@ -1,14 +1,30 @@
 import { LuCalendarClock, LuTarget, LuUsers } from 'react-icons/lu';
 
+// TODO: Fix overlap from 640px width to 900px width.
+// TODO: Deal with divs where possible.
+// TODO: Translate this!
 export default function IntroSection() {
   return (
-    <section className='w-full flex flex-col gap-10'>
+    <section
+      className='w-full flex flex-col gap-10'
+      aria-labelledby='intro-section-heading'
+    >
       <div className='text-center max-w-5xl mx-auto flex flex-col gap-6'>
-        <h1 className='text-4xl md:text-5xl font-bold'>
+        <h1
+          id='intro-section-heading'
+          className='text-4xl md:text-5xl font-bold'
+        >
           Individuell AMO
-          <span className='block w-1/2 h-1 bg-jobloop-primary-green mt-4 mb-2 mx-auto'></span>
+          <span // TODO: Consider using only css for the underline effect.
+            className='
+              block w-1/2 h-1 bg-jobloop-primary-green mt-4 mb-2 mx-auto
+            '
+            aria-hidden='true'
+          ></span>
         </h1>
-        <p className='text-lg md:text-xl text-neutral-600 leading-relaxed text-left'>
+        <p className='
+          text-lg md:text-xl text-neutral-600 leading-relaxed text-left
+        '>
           Individuell AMO er JobLoops skreddersydde arbeidsmarkedsopplæring i samarbeid med NAV.
           Vi tar utgangspunkt i dine styrker og behov, og setter sammen et løp med innhold, tempo
           og mål som passer akkurat deg — med tett individuell oppfølging hele veien og en klar
@@ -18,7 +34,10 @@ export default function IntroSection() {
 
       <div className='grid sm:grid-cols-3 gap-6 w-full'>
         <div className='flex items-start gap-4 bg-gray-50 rounded-2xl p-6 border-l-4 border-jobloop-primary-green'>
-          <LuTarget className='text-3xl text-jobloop-primary-green flex-none' />
+          <LuTarget
+            className='text-3xl text-jobloop-primary-green flex-none'
+            aria-hidden='true'
+          />
           <div>
             <h2 className='font-bold text-lg mb-1'>Individuelt tilpasset</h2>
             <p className='text-neutral-600'>
@@ -27,7 +46,10 @@ export default function IntroSection() {
           </div>
         </div>
         <div className='flex items-start gap-4 bg-gray-50 rounded-2xl p-6 border-l-4 border-jobloop-primary-orange'>
-          <LuCalendarClock className='text-3xl text-jobloop-primary-orange flex-none' />
+          <LuCalendarClock
+            className='text-3xl text-jobloop-primary-orange flex-none'
+            aria-hidden='true'
+          />
           <div>
             <h2 className='font-bold text-lg mb-1'>Tett oppfølging</h2>
             <p className='text-neutral-600'>
@@ -36,7 +58,10 @@ export default function IntroSection() {
           </div>
         </div>
         <div className='flex items-start gap-4 bg-gray-50 rounded-2xl p-6 border-l-4 border-jobloop-primary-green'>
-          <LuUsers className='text-3xl text-jobloop-primary-green flex-none' />
+          <LuUsers
+            className='text-3xl text-jobloop-primary-green flex-none'
+            aria-hidden='true'
+          />
           <div>
             <h2 className='font-bold text-lg mb-1'>I samarbeid med NAV</h2>
             <p className='text-neutral-600'>

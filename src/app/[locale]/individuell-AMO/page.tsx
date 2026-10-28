@@ -17,8 +17,10 @@ export async function generateMetadata(): Promise<Metadata> {
 
 export default function IndividuellAMO() {
   return (
-    <main id='main' className='flex flex-col items-center gap-16 w-full max-w-[1536px] mx-auto my-16 px-4'>
-      <HeroSub {...tiltak} department='Individuell AMO' />
+    <main id='main' className='flex flex-col items-center gap-20 w-full max-w-[1536px] mx-auto mt-20 mb-16 px-4'>
+      <IntroSection />
+      <ProgramsSection />
+      <ContactSection />
     </main>
   );
 }

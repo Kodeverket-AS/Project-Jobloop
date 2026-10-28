@@ -3,6 +3,7 @@ import { PortableText } from '@portabletext/react';
 import { getTranslations } from 'next-intl/server';
 
 // TODO: Look into the heading border solution here and see if it can be used to replace divs in other files.
+// TODO: Try to get "Spillbasert" subject list properly marked up as a list.
 export default async function Curriculum({
   curriculum,
   title,

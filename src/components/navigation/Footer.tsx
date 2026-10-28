@@ -62,6 +62,7 @@ export default async function Footer() {
     }
   ];
 
+  // TODO: Fix slightly too much space between headings and content.
   return (
     <footer className='w-full text-kv-white bg-jobloop-primary-grey'>
       <div className='
@@ -86,9 +87,28 @@ export default async function Footer() {
               '
             />
           </a>
+          <p className='text-jobloop-primary-green font-semibold'>
+            {t('footer.branding.award')}
+          </p>
           <p className='text-gray-300 text-left leading-relaxed'>
             {t('footer.branding.text')}
           </p>
+          <div className='flex gap-4'>
+            <Image
+              alt={t('footer.badges.gaselle2024Alt')}
+              src='/images/gaselle/gaselle-2024.png'
+              width={90}
+              height={90}
+              className='rounded-lg'
+            />
+            <Image
+              alt={t('footer.badges.gaselle2025Alt')}
+              src='/images/gaselle/gaselle-2025.png'
+              width={90}
+              height={90}
+              className='rounded-lg'
+            />
+          </div>
         </div>
         <div className='flex flex-row gap-8 lg:gap-12'>
           <section

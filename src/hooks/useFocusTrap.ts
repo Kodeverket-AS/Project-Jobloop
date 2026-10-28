@@ -21,6 +21,7 @@ const FOCUSABLE = [
  * @param container - The container element to search within.
  * @returns An array of focusable elements.
  */
+// TODO: Look into npm run build error: "Warning: The ref value 'returnFocusRef.current' will likely have changed by the time this effect cleanup function runs. If this ref points to a node rendered by React, copy 'returnFocusRef.current' to a variable inside the effect, and use that variable in the cleanup function.  react-hooks/exhaustive-deps"
 function getFocusableElements(container: HTMLElement): HTMLElement[] {
   return Array.from(container.querySelectorAll<HTMLElement>(FOCUSABLE)).filter(
     (el) => !el.hasAttribute('disabled') && el.tabIndex !== -1

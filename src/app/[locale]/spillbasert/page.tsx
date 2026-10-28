@@ -17,6 +17,7 @@ export default async function Spillbasert({ params }: { params: Promise<{ locale
   const tiltak = await getTiltakByIdLocalized({ index: 4, locale: locale as AvailableLocales });
   if (!tiltak) return notFound();
 
+  // TODO: Consider translating the "Spillbasert kvalifisering" text.
   return (
     <main id='main' className='flex flex-col my-16 items-center gap-16 w-full max-w-[1536px] mx-auto px-4'>
       <HeroSub {...tiltak} department='Spillbasert' />

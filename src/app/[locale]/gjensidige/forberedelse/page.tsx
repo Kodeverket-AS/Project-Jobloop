@@ -22,6 +22,8 @@ export async function generateMetadata(): Promise<Metadata> {
 }
 
 // TODO: Translate page!
+// TODO: Fix phone number display being wrapped on small screens.
+// TODO: Find out if this should still be Kim, or if it should be updated to Inger Johanne.
 export default async function Forberedelse() {
   const t = await getTranslations('gjensidige');
   return (
@@ -378,7 +380,7 @@ export default async function Forberedelse() {
                 {t('prep.outro.title')}
               </h3>
               <p
-                // TODO: Consider changing this if Kim is not the contact person!
+                // TODO: Consider changing this from "Hilsen Kim i JobLoop" if Kim is not the contact person!
                 className='text-lg text-[#555]'
               >
                 {t('prep.outro.text')}

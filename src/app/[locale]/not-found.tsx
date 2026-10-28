@@ -6,6 +6,7 @@ export default async function NotFound() {
 
   // TODO: Consider adding some visual element to lessen irritation of encountering a 404 page (see "Evil By Design - Interaction Design to Lead Us Into Temptation" by Chris Nodder. Specifically the chapter on "Avoiding anger" 120).
   // TODO: Page could do well with more polish.
+  // TODO: Fix button sizes, so they match.
   return (
     <main id='main'>
       <section

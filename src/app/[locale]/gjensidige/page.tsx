@@ -19,6 +19,7 @@ export async function generateMetadata(): Promise<Metadata> {
 }
 
 // TODO: Translate page
+// TODO: Update contact person information!
 export default async function Pilot() {
   const t = await getTranslations('gjensidige');
 
@@ -245,7 +246,7 @@ export default async function Pilot() {
                 >
                   <h3 className='
                     text-xl font-bold text-[#002B49] mb-3 transition-colors
-                    group-hover:text-[#4AB5A3] duration-300
+                    group-hover:text-[#4AB5A3] motion-safe:duration-300
                   '>
                     {item.q}
                   </h3>
@@ -293,7 +294,7 @@ export default async function Pilot() {
               id='gjensidige-uncertain-title'
               className='
                 text-[#002B49] group-hover:text-[#4AB5A3]
-                transition-colors duration-300 leading-relaxed mb-4 text-base!
+                transition-colors motion-safe:duration-300 leading-relaxed mb-4 text-base!
               '
             >
               {t('about.uncertain.title')}
