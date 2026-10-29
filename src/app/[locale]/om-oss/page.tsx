@@ -69,9 +69,9 @@ export default async function OmOss() {
    * break up the text and make the page more engaging.
    * 
    // TODO: Break down large text blocks into smaller sections for better readability.
+   // TODO: Consider highlighting key points for easier reading (reference guides for writing in an accessible way for those with conditions such as dyslexia or ADHD).
    */
   // TODO: Clean divs and restructure!
-  // TODO: Consider getting rid of empty decorative spans if possible.
   return (
     <main
       id='main'
@@ -92,7 +92,10 @@ export default async function OmOss() {
           className='font-bold text-4xl md:text-5xl lg:mb-28'
         >
           {t('about.title')}
-          <span className='block w-1/2 h-1 bg-jobloop-primary-green mt-2 mb-6' />
+          <span
+            // TODO: Consider removing this and adding the style to the heading.
+            className='block w-1/2 h-1 bg-jobloop-primary-green mt-2 mb-6'
+          />
         </h1>
         <div // NOTE: This currently balances against the heading by using a negative top margin to maintain visual alignment. Might need adjustment if heading size changes.
           className='

@@ -18,8 +18,7 @@ export async function generateMetadata(): Promise<Metadata> {
   };
 }
 
-// TODO: Translate page
-// TODO: Update contact person information!
+// TODO: Translate page!
 export default async function Pilot() {
   const t = await getTranslations('gjensidige');
 

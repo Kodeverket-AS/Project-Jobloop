@@ -60,9 +60,15 @@ export default function LocaleMenu({ altColor }: { altColor: boolean }) {
 
   // TODO: Find out if it is possible to underline the svg-element in addition to the button.
   // TODO: Have current locale background expand fully?
-  // TODO: Find out if this also should have a focus trap when open.
   return (
-    <li ref={container} className='relative'>
+    <li
+      ref={container}
+      className='relative'
+      onBlur={(e) => {
+        if (!e.currentTarget.contains(e.relatedTarget as Node | null)) 
+          setIsOpen(false);
+      }}
+    >
       <button
         ref={toggleRef}
         tabIndex={0}

@@ -1,6 +1,5 @@
 import { LuCalendarClock, LuTarget, LuUsers } from 'react-icons/lu';
 
-// TODO: Fix overlap from 640px width to 900px width.
 // TODO: Deal with divs where possible.
 // TODO: Translate this!
 export default function IntroSection() {
@@ -32,7 +31,7 @@ export default function IntroSection() {
         </p>
       </div>
 
-      <div className='grid sm:grid-cols-3 gap-6 w-full'>
+      <div className='grid min-[800px]:grid-cols-3 gap-6 w-full'>
         <div className='flex items-start gap-4 bg-gray-50 rounded-2xl p-6 border-l-4 border-jobloop-primary-green'>
           <LuTarget
             className='text-3xl text-jobloop-primary-green flex-none'

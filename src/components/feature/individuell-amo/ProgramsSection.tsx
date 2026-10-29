@@ -19,7 +19,6 @@ const icons = {
   'oppfolging-og-karriereveiledning': LuHeadset,
 } as const;
 
-// TODO: Fix programs being too squished from 765px width to 900px width.
 // TODO: Translate this!
 export default function ProgramsSection() {
   const cardsRef = useRef<HTMLUListElement>(null);
@@ -61,7 +60,7 @@ export default function ProgramsSection() {
         </p>
       </div>
 
-      <ul className='grid md:grid-cols-2 gap-6' ref={cardsRef}>
+      <ul className='grid min-[850px]:grid-cols-2 gap-6' ref={cardsRef}>
         {individuellAmoPrograms.map((program) => {
           const Icon = icons[program.slug as keyof typeof icons];
           const details = [
@@ -129,7 +128,7 @@ export default function ProgramsSection() {
                 rel='noopener noreferrer'
                 aria-label={`Last ned produktark for ${program.tittel}`}
                 className='
-                  mt-auto w-full min-h-[4.5rem] flex items-center justify-center
+                  mt-auto w-full min-h-18 flex items-center justify-center
                   text-center gap-2 px-6 py-2.5 tracking-normal text-white
                   bg-jobloop-primary-green rounded-full 
                   hover:bg-jobloop-primary-orange motion-safe:duration-300

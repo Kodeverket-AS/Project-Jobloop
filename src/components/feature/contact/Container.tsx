@@ -5,7 +5,6 @@ import { useEffect, useCallback, useRef, useState, useMemo } from 'react';
 import { useTranslations } from 'next-intl';
 import { ContactGroup } from '@/components/contacts/ContactGroup';
 
-// TODO: Test and clean this before merging!
 function filterContacts(data: Contacts[], dept: string, name: string) {
   const deptVal = dept.toLowerCase();
   const nameVal = name.toLowerCase();
@@ -114,7 +113,6 @@ export default function ContactContainer({
    // TODO: Find out if this is still relevant when using next.js
    */
   // TODO: Remove divs where possible
-  // TODO: Find out why the Learnwell department filter shows no results.
   return (
     <article
       className='

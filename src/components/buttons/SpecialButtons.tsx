@@ -14,6 +14,7 @@ interface ButtonProps {
   Aria?: string;
 }
 
+// TODO: Check if aria-label is needed, and translate if so.
 export function KontaktButton({ Path, Text }: ButtonProps) {
   return (
     <Link

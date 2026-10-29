@@ -19,6 +19,7 @@ export function BookKimButton({ className = '' }: BookKimButtonProps) {
         inline-block bg-[#002B49] text-white px-8 py-4 rounded-full font-bold
         text-lg hover:bg-[#004d7a] motion-safe:hover:scale-105 hover:shadow-lg
         transition-all motion-safe:duration-300 ${className}
+        min-[525px]:w-max
       `}
     >
       {t1('common.buttons.bookConversationWithKim')}

@@ -9,7 +9,10 @@ export default function ContactSection() {
       className='w-full mx-auto text-center'
       aria-labelledby='contact-section-heading'
     >
-      <div className='bg-jobloop-primary-green/50 rounded-2xl p-8 md:p-12 flex flex-col items-center gap-4'>
+      <div className='
+        flex flex-col items-center p-8 md:p-12 gap-4
+        bg-jobloop-primary-green/50 rounded-2xl
+      '>
         <h2
           id='contact-section-heading'
           className='text-3xl font-bold'
@@ -27,23 +30,33 @@ export default function ContactSection() {
         '>
           <a
             href='mailto:andreas@jobloop.no'
-            className='flex items-center gap-2 bg-jobloop-primary-green text-white px-8 py-3 rounded-full text-lg hover:bg-jobloop-primary-orange transition-all duration-300 hover:scale-105 shadow-lg'
+            className='
+              flex items-center gap-2 px-8 py-3 text-lg text-white
+              rounded-full shadow-lg bg-jobloop-primary-green
+              hover:bg-jobloop-primary-orange motion-safe:hover:scale-105
+              motion-safe:duration-300 transition-all
+            '
           >
+            andreas@jobloop.no
             <LuMail
-              className='text-xl'
+              className='text-xl order-first'
               aria-hidden='true'
             />
-            andreas@jobloop.no
           </a>
           <a
             href='tel:+4741627916'
-            className='flex items-center gap-2 bg-jobloop-primary-green text-white px-8 py-3 rounded-full text-lg hover:bg-jobloop-primary-orange transition-all duration-300 hover:scale-105 shadow-lg'
+            className='
+              flex items-center gap-2 px-8 py-3 text-lg text-white
+              rounded-full shadow-lg bg-jobloop-primary-green
+              hover:bg-jobloop-primary-orange motion-safe:hover:scale-105
+              motion-safe:duration-300 transition-all
+            '
           >
+            416 27 916
             <LuPhone
-              className='text-xl'
+              className='text-xl order-first'
               aria-hidden='true'
             />
-            416 27 916
           </a>
         </address>
       </div>

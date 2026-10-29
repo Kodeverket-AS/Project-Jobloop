@@ -93,7 +93,7 @@ export function LocationCarousel() {
               ? 'Play carousel'
               : 'Pause carousel'
           }
-          title={
+          title={ // TODO: Translate this
             reducedMotion
               ? 'Autoplay disabled due to reduced motion preference'
               : isPaused
@@ -118,7 +118,7 @@ export function LocationCarousel() {
           a11y={{
             enabled: true,
             wrapperLiveRegion: true,
-            // TODO: Translate a11y messages!
+            // TODO: Translate and apply a11y messages!
             // firstSlideMessage: '',
             // lastSlideMessage: '',
             // nextSlideMessage: '',

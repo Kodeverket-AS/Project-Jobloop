@@ -4,7 +4,6 @@ import CTASection from "@/components/feature/ki/CTASection";
 import DescriptionSection from "@/components/feature/ki/DescriptionSection";
 import HeroSection from "@/components/feature/ki/HeroSection";
 
-// TODO: Update the contact button so it links with the correct contact form settings.
 export default function KiKurs() {
   return (
     <main

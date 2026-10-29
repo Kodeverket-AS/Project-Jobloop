@@ -22,8 +22,6 @@ export async function generateMetadata(): Promise<Metadata> {
 }
 
 // TODO: Translate page!
-// TODO: Fix phone number display being wrapped on small screens.
-// TODO: Find out if this should still be Kim, or if it should be updated to Inger Johanne.
 export default async function Forberedelse() {
   const t = await getTranslations('gjensidige');
   return (
@@ -265,8 +263,8 @@ export default async function Forberedelse() {
               <h3
                 id='common-interested-contact-title'
                 className='
-                  text-3xl font-bold text-[#002B49] flex items-center gap-3 mb-6
-                  justify-center
+                  flex items-center justify-center mb-6 gap-3 text-3xl font-bold
+                  text-[#002B49]
                 '
               >
                 {t('common.interested.contact.title')}
@@ -287,9 +285,9 @@ export default async function Forberedelse() {
                 {t('common.interested.contact.text')}
               </p>
               <div className='
-                bg-linear-to-r from-[#EBF2F6] to-[#e0f2f1] p-6
-                rounded-lg mb-8 max-w-4xl mx-auto
-                flex flex-col sm:flex-row items-center gap-6
+                flex flex-col min-[690px]:flex-row items-center mb-8 mx-auto p-6
+                gap-6 max-w-4xl rounded-lg bg-linear-to-r from-[#EBF2F6]
+                to-[#e0f2f1]
               '>
                 <Image 
                   src={projectLeader.image} 
@@ -306,38 +304,37 @@ export default async function Forberedelse() {
                     {t('common.projectLeader')} {projectLeader.name}
                   </p>
                   <address className='
-                    flex flex-col sm:flex-row items-center sm:items-start
-                    justify-center sm:justify-start gap-4 text-lg not-italic
+                    flex flex-col min-[880px]:flex-row gap-4 max-[880px]:gap-2
+                    items-center min-[690px]:items-start justify-center
+                    min-[690px]:justify-start not-italic text-lg
                   '>
                     <a
                       href={`tel:${projectLeader.phone}`}
+                      // TODO: Consider changing the after:content to a horizontal line on small screens?
                       className='
-                        flex items-center gap-2 text-[#555] hover:text-[#4AB5A3]
-                        transition-colors after:content-["|"] after:text-gray-400
+                        w-max flex items-center gap-2 text-[#555]
+                        hover:text-[#4AB5A3] motion-safe:transition-colors
+                        min-[880px]:after:content-["|"] after:text-gray-400
                         after:sm:inline after:hidden after:order-last after:ml-2
                         after:self-baseline
                       '
                     >
-                      <span
-                        // TODO: Consider adding "+47" to the phone number for international format
-                        className='order-last'
+                      <span // TODO: Consider adding "+47" to the phone number for international format
+                        className='order-last break-keep'
                       >
                         {projectLeader.phoneDisplay}
                       </span>
-                      <span
-                        className='text-2xl order-first'
-                        aria-hidden='true'
-                      >
+                      <span className='text-2xl order-first' aria-hidden='true'>
                         📞
                       </span>
                     </a>
                     <a
                       href={`mailto:${projectLeader.email}`}
-                      className='flex items-center gap-2 text-[#555]'
+                      className='w-max flex items-center gap-2 text-[#555]'
                     >
                       <span className='
-                        text-[#002B49] underline font-medium
-                        hover:text-[#4AB5A3] transition-colors order-last
+                        text-[#002B49] underline font-medium order-last
+                        hover:text-[#4AB5A3] motion-safe:transition-colors
                       '>
                         {projectLeader.email}
                       </span>
@@ -352,7 +349,7 @@ export default async function Forberedelse() {
                 </div>
               </div>
               <div className='
-                flex flex-col sm:flex-row items-center justify-center gap-4
+                flex flex-col min-[852px]:flex-row items-center justify-center gap-4
               '>
                 <a
                   href={`mailto:${projectLeader.email}`}
@@ -360,7 +357,7 @@ export default async function Forberedelse() {
                     inline-block bg-[#002B49] text-white px-10 py-4
                     rounded-full font-bold text-lg hover:bg-[#004d7a]
                     motion-safe:hover:scale-105 hover:shadow-lg transition-all
-                    motion-safe:duration-300
+                    motion-safe:duration-300 text-nowrap
                   '
                 >
                   {t('common.buttons.sendEmailNow')}

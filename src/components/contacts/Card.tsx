@@ -23,7 +23,6 @@ export default function ContactCard({ contact }: { contact: Contacts }) {
   const fullName = `${fname} ${lname}`.trim();
   const phone = mobile || '';
 
-  // TODO: Test cards with screen reader.
   // TODO: Deal with increased image border causing image to shrink, which is an issue for prefers-reduced-motion users.
   return (
     <li

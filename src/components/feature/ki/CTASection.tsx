@@ -29,6 +29,7 @@ export default async function CTASection() {
           {t('email')}
         </a>
         <Link
+          // TODO: Add department parameter if/when a KI-Kurs department exists.
           href='/kontakt'
           className='
             border-2 border-white text-white px-8 py-3 rounded-full
