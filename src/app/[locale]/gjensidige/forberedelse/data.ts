@@ -1,3 +1,4 @@
+// TODO: Set this up for translations
 export const questions = [
   {
     icon: '🏫',

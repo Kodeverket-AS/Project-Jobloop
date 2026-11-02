@@ -18,7 +18,6 @@ export async function generateMetadata(): Promise<Metadata> {
   };
 }
 
-// TODO: Translate page!
 export default async function Pilot() {
   const t = await getTranslations('gjensidige');
 
@@ -114,6 +113,7 @@ export default async function Pilot() {
     },
   ];
 
+  // TODO: Add a small explanation for what OT means (oppfølgingstjenesten)
   return (
     <main className='
       min-h-screen bg-[#f4f6f8] font-["Segoe_UI",Arial,sans-serif]

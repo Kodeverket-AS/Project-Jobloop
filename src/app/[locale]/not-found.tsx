@@ -5,8 +5,7 @@ export default async function NotFound() {
   const t = await getTranslations('errors');
 
   // TODO: Consider adding some visual element to lessen irritation of encountering a 404 page (see "Evil By Design - Interaction Design to Lead Us Into Temptation" by Chris Nodder. Specifically the chapter on "Avoiding anger" 120).
-  // TODO: Page could do well with more polish.
-  // TODO: Fix button sizes, so they match.
+  // TODO: Consider removing the "eller prøve et annet språk" part, unless there is any chance it can actually help.
   return (
     <main id='main'>
       <section

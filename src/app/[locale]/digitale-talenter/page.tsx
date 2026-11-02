@@ -7,10 +7,6 @@ import CourseSummary from '@/components/CourseSummary';
 import Curriculum from '@/components/Curriculum';
 import LeaderSection from '@/components/feature/LeaderSection';
 
-// TODO: The "contact" button should probably go to an actual contact form, some base contact area for those who don't know where to even start, or at the very least highlight WHO to contact!
-// Consider pre-filling the search field to direct towards the course leader.
-// OR: Simply send the user to the "course leaders" section of the page??
-
 export async function generateStaticParams() {
   const result = await getTiltakById({ index: 2 });
   return result.map((tiltak) => ({ locale: tiltak.language ?? '' }));

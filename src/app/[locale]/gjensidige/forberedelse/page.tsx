@@ -377,7 +377,7 @@ export default async function Forberedelse() {
                 {t('prep.outro.title')}
               </h3>
               <p
-                // TODO: Consider changing this from "Hilsen Kim i JobLoop" if Kim is not the contact person!
+                // TODO: Consider setting the name of the person in the "Hilsen" at the end using projectLeader.name
                 className='text-lg text-[#555]'
               >
                 {t('prep.outro.text')}

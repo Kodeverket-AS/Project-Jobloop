@@ -1,8 +1,6 @@
 import Image from 'next/image';
 import { ExternalLinkButton } from '@/components/buttons';
 
-// todo: Is this page in use?
-// The page is seemingly in use, but no page links to it directly.
 // TODO: Translate this page!
 export default function Ansettelser() {
   return (

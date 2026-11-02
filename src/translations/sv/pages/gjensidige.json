@@ -1,11 +1,11 @@
 {
   "common": {
     "interested": {
-      "title": "Høres dette interessant ut?",
-      "text": "Du trenger ikke vite nøyaktig hva som passer. Det er jobben vår.",
+      "title": "Låter detta intressant?",
+      "text": "Du behöver inte veta exakt vad som passar. Det är vårt jobb.",
       "contact": {
-        "title": "Ta kontakt for kartlegging",
-        "text": "Send oss en e-post eller ring, så tar vi en uforpliktende prat. Vi finner ut hvilket spor som gir deg best utbytte."
+        "title": "Hör av dig för en bedömning",
+        "text": "Skicka ett mejl eller ring oss, så tar vi ett förutsättningslöst samtal. Vi tar reda på vilken väg som ger dig det bästa resultatet."
       }
     },
     "buttons": {
@@ -17,53 +17,53 @@
   },
   "about": {
     "hero": {
-      "title": "Nytt pilottilbud for kunder av Gjensidige",
-      "subtitle": "Vi bruker interessene dine til å bygge mestring, motivasjon og en vei videre i livet.",
+      "title": "Nytt piloterbjudande för Gjensidiges kunder",
+      "subtitle": "Vi använder dina intressen för att bygga en känsla av bemästring, motivation och en väg framåt i livet.",
       "image": {
         "alt": "Elever samarbetar kring en bärbar dator på ett ljust kontor."
       }
     },
     "tracks": {
-      "title": "Hvilket spor passer for deg?",
-      "text1": "Vi har tre hovedveier, avhengig av hvor gammel du er og hva du trenger akkurat nå.",
-      "text2": "<strong>Usikker?</strong> Det gjør ingenting. Vi finner ut av det sammen.",
+      "title": "Vilket spår passar dig?",
+      "text1": "Vi har tre huvudvägar, beroende på hur gammal du är och vad du behöver just nu.",
+      "text2": "<strong>Osäker?</strong> Det är inga problem. Vi löser det tillsammans.",
       "completeUngdomsskole": {
-        "title": "Stå i skolen",
-        "paragraph1": "<strong>Konsept for utdanning:</strong> For deg som går på ungdomsskolen, men hvor hverdagen er tung og fraværet øker.",
-        "paragraph2": "Vi bruker gaming og teknologi pedagogisk for å gi deg mestringsopplevelser. Du er hos oss 1–2 dager i uken som et avbrekk, mens vi samarbeider tett med skolen din.",
+        "title": "Att stanna kvar i skolan",
+        "paragraph1": "<strong>Koncept för utbildning:</strong> För er i högstadiet som har en svår vardag och vars frånvaro ökar.",
+        "paragraph2": "Vi använder spel och teknik i utbildningssyfte för att ge dig upplevelser av bemästring. Du tillbringar 1–2 dagar i veckan hos oss som ett avbrott, samtidigt som vi har ett nära samarbete med din skola.",
         "goals": {
-          "goalListTitle": "Mål for å stå i skolen",
-          "goal1": "Finn motivasjon gjennom interesse",
-          "goal2": "Sosial trening i trygge rammer",
-          "goal3": "Mål: Trives bedre og fullføre 10. trinn"
+          "goalListTitle": "Mål för att stanna kvar i skolan",
+          "goal1": "Hitta motivation genom intresse",
+          "goal2": "Träning i sociala färdigheter i en trygg miljö",
+          "goal3": "Mål: Att må bättre och gå klart årskurs 10"
         },
         "video": {
-          "title": "Video: Stå i skolen"
+          "title": "Video: Att stanna kvar i skolan"
         }
       },
       "completeVGS": {
-        "title": "Fullføre VGS",
-        "paragraph1": "<strong>Konsept for utdanning:</strong> For deg som har falt ut av videregående, eller trenger en annen arena for å fullføre.",
-        "paragraph2": "Dette er en alternativ læringsarena. Her kan du jobbe med fagene dine, få leksehjelp eller lese til privatisteksamen i ditt eget tempo, uten stresset fra et klasserom.",
+        "title": "Slutföra gymnasieskolan",
+        "paragraph1": "<strong>Koncept för utbildning:</strong> För dem som har hoppat av gymnasieskolan, eller som behöver en annan miljö för att slutföra sin utbildning.",
+        "paragraph2": "Detta är en alternativ lärmiljö. Här kan du arbeta med dina ämnen, få hjälp med läxor eller studera inför prövningar i egen takt, utan stressen från ett klassrum.",
         "goals": {
-          "goalListTitle": "Mål for å fullføre VGS",
-          "goal1": "Individuell tilrettelegging",
-          "goal2": "Fokus på enkeltfag eller vitnemål",
-          "goal3": "Vi samarbeider med OT/Skole"
+          "goalListTitle": "Mål för att slutföra gymnasieskolan",
+          "goal1": "Individuella anpassningar",
+          "goal2": "Fokus på enstaka ämnen eller examen",
+          "goal3": "Vi samarbetar med OT/skola"
         },
         "video": {
-          "title": "Video: Fullføre VGS"
+          "title": "Video: Slutföra gymnasieskolan"
         }
       },
       "workAndITCompetence": {
-        "title": "Jobb og IT-kompetanse",
-        "paragraph1": "<strong>Konsept for arbeid:</strong> For deg som står utenfor skole og jobb, og vil lære praktisk koding, design eller IT.",
-        "paragraph2": "Her får du praktisk opplæring i ferdigheter bedriftene trenger. Vi fokuserer på \"tech\" og kreativitet som døråpner til arbeidslivet.",
+        "title": "Arbets- och IT-färdigheter",
+        "paragraph1": "<strong>Koncept för arbete:</strong> För dig som varken studerar eller arbetar och vill lära dig praktisk programmering, design eller IT.",
+        "paragraph2": "Här får du praktisk träning i de färdigheter som företag efterfrågar. Vi fokuserar på \"tech\" och kreativitet som en väg in i arbetslivet.",
         "goals": {
-          "goalListTitle": "Mål for å oppnå jobb og IT-kompetanse",
-          "goal1": "Lær koding, design og utvikling",
-          "goal2": "Praksis i samarbeidsbedrifter",
-          "goal3": "Veien mot lærlingplass eller jobb"
+          "goalListTitle": "Mål för att få anställning och skaffa IT-kompetens",
+          "goal1": "Lär dig programmering, design och utveckling",
+          "goal2": "Praktikplatser hos partnerföretag",
+          "goal3": "Vägen mot en lärlingsplats eller ett jobb"
         },
         "video": {
           "title": "Video kommer snart"
@@ -71,84 +71,84 @@
       }
     },
     "commonQuestions": {
-      "title": "Ofte stilte spørsmål",
+      "title": "Vanliga frågor",
       "cost": {
-        "question": "Koster det noe å være med?",
-        "answer": "Nei. For deg som får plass gjennom dette pilotprosjektet med Gjensidige, er hele tilbudet dekket av forsikringen din."
+        "question": "Kostar det något att delta?",
+        "answer": "Nej. För dem som får en plats genom detta pilotprojekt med Gjensidige täcks hela tjänsten av försäkringen."
       },
       "treatment": {
-        "question": "Er dette behandling eller terapi?",
-        "answer": "Nei. JobLoop er en lærings- og mestringsarena, ikke en klinikk. Vi fokuserer på dine interesser og styrker, ikke på diagnoser. Men vi tilpasser oss selvfølgelig hvis du har utfordringer som angst eller ADHD."
+        "question": "Är detta behandling eller terapi?",
+        "answer": "Nej. JobLoop är en arena för lärande och utveckling av hanteringsstrategier – det är inte en klinik. Vi fokuserar på dina intressen och styrkor, inte på diagnoser. Vi gör dock självklart anpassningar om du möter utmaningar, såsom ångest eller ADHD."
       },
       "skillset": {
-        "question": "Må jeg være supergod i gaming eller koding?",
-        "answer": "Absolutt ikke! Det viktigste er at du har en interesse for det digitale. Vi tilpasser nivået til akkurat der du er, enten du er nybegynner eller har holdt på lenge."
+        "question": "Måste jag vara superbra på att spela eller programmera?",
+        "answer": "Absolut inte! Det viktigaste är att du har ett intresse för den digitala världen. Vi anpassar nivån efter var du befinner dig, oavsett om du är nybörjare eller har hållit på länge."
       },
       "school": {
-        "question": "Mister jeg plassen min på skolen?",
-        "answer": "Nei. Spesielt for \"Konsept for utdanning\" samarbeider vi tett med skolen din slik at du beholder elevstatusen din. Målet vårt er å hjelpe deg å fullføre."
+        "question": "Kommer jag att förlora min plats på skolan?",
+        "answer": "Nej. När det gäller just \"utbildningskonceptet\" arbetar vi i nära samarbete med din skola för att säkerställa att du behåller din status som student. Vårt mål är att hjälpa dig att slutföra dina studier."
       },
       "workFromHome": {
-        "question": "Hva skjer hvis jeg ikke tør å møte opp fysisk?",
-        "answer": "Vi har full forståelse for at dørstokkmila kan være lang. Derfor kan vi starte digitalt via Discord eller Teams, slik at du blir trygg på veilederen din før du møter oss fysisk."
+        "question": "Vad händer om jag inte känner mig bekväm med att dyka upp personligen?",
+        "answer": "Vi har full förståelse för att det kan kännas överväldigande att ta det första steget. Därför kan vi börja digitalt via Discord eller Teams, så att du känner dig trygg med din mentor innan vi träffas personligen."
       }
     },
     "uncertain": {
-      "title": "Usikker på om dette er noe for deg?",
-      "text": "Vi har laget en guide som hjelper deg å forberede deg på samtalen. Her kan du lese mer om hva vi snakker om, og hva det kan være nyttig å tenke over på forhånd.",
-      "linkText": "Les mer om forberedelser"
+      "title": "Är du osäker på om detta passar dig?",
+      "text": "Vi har tagit fram en vägledning som hjälper dig att förbereda dig inför samtalet. Här kan du läsa mer om vad vi kommer att prata om och vad som kan vara bra att tänka på i förväg.",
+      "linkText": "Läs mer om förberedelser"
     }
   },
   "prep": {
     "hero": {
-      "title": "Nytt tilbud fra Gjensidige & JobLoop",
-      "subtitle": "Vi bruker interessene dine til å bygge mestring, motivasjon og en vei videre i livet.",
-      "paragraph1": "Dette er ikke et intervju eller en test. Det er en uforpliktende prat hvor vi skal finne ut sammen hva som passer best for deg.",
-      "paragraph2": "Vi er her for å lytte til deg, forstå dine interesser og hjelpe deg med å finne veien videre. Du trenger ikke å være nervøs eller forberedt på noe spesielt – vi møter deg akkurat der du er.",
-      "paragraph3": "Samtalen handler om deg, dine drømmer og hva du ønsker å oppnå. Sammen finner vi ut hvilket spor som passer best for din situasjon.",
+      "title": "Nytt erbjudande från Gjensidige & JobLoop",
+      "subtitle": "Vi använder dina intressen för att bygga en känsla av bemästring, motivation och en väg framåt i livet.",
+      "paragraph1": "Detta är varken en intervju eller ett test. Det är ett informellt samtal utan några förpliktelser, där vi tillsammans tar reda på vad som passar dig bäst.",
+      "paragraph2": "Vi finns här för att lyssna på dig, förstå vad du är intresserad av och hjälpa dig att hitta vägen framåt. Du behöver inte vara nervös eller förberedd på något särskilt – vi möter dig precis där du befinner dig.",
+      "paragraph3": "Samtalet handlar om dig, dina drömmar och vad du vill uppnå. Tillsammans kommer vi fram till vilken väg som passar din situation bäst.",
       "image": {
         "alt": "Gjensidige"
       }
     },
     "beforeMeeting": {
-      "title": "Før praten",
-      "paragraph1": "Dette er et tilbud fra Gjensidige og JobLoop. Vi i JobLoop er glade for å få muligheten til å bli kjent med deg!",
-      "paragraph2": "Du trenger ikke å grue deg – vi er her for å hjelpe deg finne veien videre.",
+      "title": "Innan samtalet",
+      "paragraph1": "Detta är ett erbjudande från Gjensidige och JobLoop. På JobLoop ser vi fram emot möjligheten att få lära känna dig!",
+      "paragraph2": "Du behöver inte frukta det – vi finns här för att hjälpa dig att hitta vägen framåt.",
       "questions": {
         "whereAreYouNow": {},
         "whatAreYourInterests": {},
         "whatDoYouDreamOf": {}
       },
       "remember": {
-        "title": "Husk:",
-        "paragraph1": "Du trenger ikke å være ekspert i noe som helst. Det viktigste er at du har en interesse for det digitale, eller at du er nysgjerrig på å lære. Vi tilpasser alt til akkurat der du er.",
-        "paragraph2": "Det er helt greit hvis du ikke vet alt enda – det er nettopp derfor vi skal snakke sammen. Vi finner ut av det sammen!"
+        "title": "Komma ihåg:",
+        "paragraph1": "Du behöver inte vara expert på någonting alls. Det viktigaste är att du har ett intresse för den digitala världen, eller att du är nyfiken på att lära dig. Vi anpassar allt utifrån var du befinner dig just nu.",
+        "paragraph2": "Det är helt okej om du inte vet allt än – det är precis därför vi ska prata. Vi löser det tillsammans!"
       }
     },
     "talkingSoon": {
-      "title": "Snart snakkes vi!",
-      "paragraph1": "Vi gleder oss til å høre fra deg og finne ut sammen hvilket spor som passer best for deg.",
-      "paragraph2": "Du trenger ikke å være nervøs eller forberedt på noe spesielt. Dette er bare en hyggelig prat hvor vi blir kjent med hverandre.",
+      "title": "Vi hörs snart!",
+      "paragraph1": "Vi ser fram emot att höra från dig och att tillsammans ta reda på vilken väg som passar dig bäst.",
+      "paragraph2": "Du behöver inte vara nervös eller förbereda något särskilt. Det är bara ett trevligt samtal där vi får lära känna varandra.",
       "duringMeeting": {
-        "title": "Hva skjer i samtalen?",
+        "title": "Vad händer i samtalet?",
         "paragraph1": ""
       },
       "meetingLength": {
-        "title": "Hvor lenge varer det?",
+        "title": "Hur länge varar det?",
         "paragraph1": ""
       }
     },
     "afterMeeting": {
-      "title": "Etter samtalen",
-      "text": "Etter at vi har snakket sammen, tar vi en vurdering av hva som passer best for deg. Vi vil gi deg tilbakemelding på hvilket spor vi anbefaler, og så kan vi starte når du er klar.",
+      "title": "Efter samtalet",
+      "text": "Efter att vi har pratat kommer vi att bedöma vad som är bäst för dig. Vi ger återkoppling kring vilken väg vi rekommenderar, och sedan kan vi sätta igång när du är redo.",
       "whatToExpect": {
-        "title": "Du kan forvente:",
+        "title": "Du kan förvänta dig:",
         "paragraph1": ""
       }
     },
     "outro": {
-      "title": "Vi gleder oss til å snakke med deg!",
-      "text": "Hilsen Kim i JobLoop"
+      "title": "Vi ser fram emot att prata med dig!",
+      "text": "Med vänlig hälsning, Kim på JobLoop"
     }
   }
 }

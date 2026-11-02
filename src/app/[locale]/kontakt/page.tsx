@@ -1,7 +1,6 @@
 import { getContacts } from '@/lib/sanity/fetch';
 import ContactContainer from '@/components/feature/contact/Container';
 
-// TODO: Consider if someone should be "highlighted" as someone to contact first if the user is uncertain who to reach out to. If so, implement a mechanism to mark and display that person prominently.
 export default async function Kontakt({
   searchParams,
 }: {
