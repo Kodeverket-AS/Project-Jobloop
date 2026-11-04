@@ -1,5 +1,4 @@
 import Image, { type StaticImageData } from 'next/image';
-import { FaArrowRight } from 'react-icons/fa';
 import { useTranslations } from 'next-intl';
 import { Link } from '@/i18n/navigation';
 import { SpanButtonLike } from '@/components/buttons/SpecialButtons';

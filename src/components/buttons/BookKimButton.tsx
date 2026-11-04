@@ -6,7 +6,7 @@ interface BookKimButtonProps {
   className?: string;
 }
 
-// TODO: Check if this should also be updated to use the projectLeader data (it probably should, but then the URL and text would need to be dynamic).
+// TODO: Check if this should also be updated to use the projectLeader data (it probably should, but then the URL needs to be changed).
 export function BookKimButton({ className = '' }: BookKimButtonProps) {
   const t = useTranslations('dictionary');
   const t1 = useTranslations('gjensidige');
@@ -22,7 +22,7 @@ export function BookKimButton({ className = '' }: BookKimButtonProps) {
         min-[525px]:w-max
       `}
     >
-      {t1('common.buttons.bookConversationWithKim')}
+      {t1('common.buttons.bookConversationWithKim', { name: 'Kim' })}
       <span className='sr-only'> ({t('opensInNewTab')})</span>
     </a>
   );

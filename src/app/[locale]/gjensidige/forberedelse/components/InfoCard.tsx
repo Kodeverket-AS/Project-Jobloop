@@ -1,4 +1,5 @@
 interface InfoCardProps {
+  id: string;
   icon: string;
   title: string;
   description: string;
@@ -7,7 +8,7 @@ interface InfoCardProps {
   className?: string;
 }
 
-export function InfoCard({ icon, title, description, items, additionalText, className = '' }: InfoCardProps) {
+export function InfoCard({ id, icon, title, description, items, additionalText, className = '' }: InfoCardProps) {
   return (
     <section
       className={`
@@ -15,10 +16,10 @@ export function InfoCard({ icon, title, description, items, additionalText, clas
         motion-safe:duration-300 motion-safe:hover:-translate-y-1 border-l-4
         border-[#4AB5A3] ${className}
       `}
-      aria-labelledby={`info-card-title-${title.replace(/\s+/g, '-')}`}
+      aria-labelledby={`info-card-title-${id}`} 
     >
       <h3
-        id={`info-card-title-${title.replace(/\s+/g, '-')}`}
+        id={`info-card-title-${id}`}
         className='
           text-xl font-bold text-[#002B49] mb-4 flex items-center gap-3
         '

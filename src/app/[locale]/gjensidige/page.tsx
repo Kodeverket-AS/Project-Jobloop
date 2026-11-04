@@ -12,9 +12,10 @@ export async function generateStaticParams() {
 }
 
 export async function generateMetadata(): Promise<Metadata> {
+  const t = await getTranslations('gjensidige');
   return {
-    title: 'Gjensidige & JobLoop Pilot',
-    description: 'Nytt pilottilbud for kunder av Gjensidige',
+    title: t('about.metadata.title'),
+    description: t('about.metadata.description'),
   };
 }
 

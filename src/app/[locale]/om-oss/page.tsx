@@ -4,7 +4,7 @@ import { getTranslations } from 'next-intl/server';
 import { IoInformationCircle } from 'react-icons/io5';
 import { LocationCarousel } from '@/components/feature/about/LocationCarousel';
 import { CooperationSection } from '@/components/feature/about/CooperationSection';
-import { LesMerButton, LinkButtonAnimatedWithIcon } from '@/components/buttons';
+import { LinkButtonAnimatedWithIcon } from '@/components/buttons';
 import { LandingCoursesCard } from '@/components/ui/cards/LandingCourses';
 import { TeamMember } from '@/components/ui/cards/TeamMember';
 
@@ -23,7 +23,6 @@ import PlaywellLogo from '@public/playwell.png';
 
 export default async function OmOss() {
   const t = await getTranslations('about');
-  const t1 = await getTranslations('dictionary');
 
   const teamData = [
     { name: 'Sina', role: t('about.employees.roles.ceo'), image: Sina },

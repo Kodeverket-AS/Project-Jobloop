@@ -1,6 +1,11 @@
 import KimImage from '@public/Kim.jpg';
 
 // TODO: Update project leader image!
+// TODO: Consider updating the link to the booking page?
+/**
+ * Project leader info
+ * Updates the project leader info on both the Gjensidige pages.
+ */
 export const projectLeader = {
   name: 'Inger Johanne',
   phone: '48358703',

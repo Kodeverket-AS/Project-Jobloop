@@ -10,12 +10,16 @@
     },
     "buttons": {
       "sendEmailNow": "Send e-mail now",
-      "bookConversationWithKim": "Book a conversation with Kim"
+      "bookConversationWithKim": "Book a conversation with {name}"
     },
     "projectLeader": "Project leader",
     "year": "Year"
   },
   "about": {
+    "metadata": {
+      "title": "Gjensidige & JobLoop Pilot",
+      "description": "New pilot offer for Gjensidige customers"
+    },
     "hero": {
       "title": "New pilot offer for Gjensidige customers",
       "subtitle": "We use your interests to build a sense of mastery, motivation, and a path forward in life.",
@@ -100,6 +104,10 @@
     }
   },
   "prep": {
+    "metadata": {
+      "title": "Preparation - Gjensidige & JobLoop",
+      "description": "Get ready for your conversation with JobLoop"
+    },
     "hero": {
       "title": "New offer from Gjensidige & JobLoop",
       "subtitle": "We use your interests to build a sense of mastery, motivation, and a path forward in life.",
@@ -107,17 +115,44 @@
       "paragraph2": "We are here to listen to you, understand your interests, and help you find your way forward. You don't need to be nervous or prepared for anything in particular - we meet you exactly where you are.",
       "paragraph3": "The conversation is about you, your dreams, and what you wish to achieve. Together, we will determine which path best suits your situation.",
       "image": {
-        "alt": "Gjensidige"
+        "alt": "Students collaborating around a laptop in a bright office."
       }
     },
-    "beforeMeeting": {
+    "before": {
       "title": "Before the conversation",
       "paragraph1": "This is an offer from Gjensidige and JobLoop. At JobLoop, we are excited to have the opportunity to get to know you!",
       "paragraph2": "There's no need to worry - we are here to help you find the way forward.",
       "questions": {
-        "whereAreYouNow": {},
-        "whatAreYourInterests": {},
-        "whatDoYouDreamOf": {}
+        "where": {
+          "title": "Where are you now?",
+          "description": "We are trying to get a picture of what your everyday life looks like. Consider the following:",
+          "items": [
+            "Are you in school right now? (What grade / program?)",
+            "Have you dropped out, or do you have a lot of absences?",
+            "Have you held any jobs or internships previously?",
+            "What does a typical day look like for you?"
+          ]
+        },
+        "interests": {
+          "title": "What do you like doing?",
+          "description": "We use your interests as a tool. It is important that we know what you actually find fun!",
+          "items": [
+            "Do you game? (What do you play?)",
+            "Do you like coding, design, drawing, or video editing?",
+            "Do you have other hobbies? (Music, animals, exercise, cooking?)",
+            "Is there something you have always wanted to try, but haven't managed to do?"
+          ]
+        },
+        "dreams": {
+          "title": "What are your dreams?",
+          "description": "This is perhaps the most important thing. We will work toward YOUR goals, not anyone else's.",
+          "items": [
+            "Do you want to return to school and complete upper secondary education?",
+            "Do you want to learn coding and get a job?",
+            "Or do you just want to get out of the house a bit and meet people?",
+            "Do you have any specific goals or dreams you want to achieve?"
+          ]
+        }
       },
       "remember": {
         "title": "Remember:",
@@ -125,30 +160,44 @@
         "paragraph2": "It's perfectly fine if you don't know everything yet - that's precisely why we're going to talk. We'll figure it out together!"
       }
     },
-    "talkingSoon": {
+    "soon": {
       "title": "Talk to you soon!",
       "paragraph1": "We look forward to hearing from you and figuring out together which path suits you best.",
       "paragraph2": "You don't need to be nervous or prepare for anything in particular. This is just a pleasant chat where we get to know each other.",
-      "duringMeeting": {
-        "title": "What happens in the conversation?",
-        "paragraph1": ""
-      },
-      "meetingLength": {
-        "title": "How long does it last?",
-        "paragraph1": ""
+      "infoCards": {
+        "conversation": {
+          "title": "What happens in the conversation?",
+          "description": "We start by getting to know each other. We want to hear about you, your interests, and what you hope to achieve.",
+          "items": [
+            "We talk about where you are in your life right now",
+            "We explore what interests you",
+            "We discuss which track might be the best fit.",
+            "You get answers to all your questions."
+          ]
+        },
+        "duration": {
+          "title": "How long does it last?",
+          "description": "The conversation usually takes between 30-45 minutes. We take our time, so there's no rush.",
+          "additionalText": "You decide for yourself how much you want to share. It is perfectly fine to take breaks or to say that you are not ready to talk about something yet."
+        }
       }
     },
-    "afterMeeting": {
+    "after": {
       "title": "After the conversation",
       "text": "After we have spoken, we will assess what is best for you. We will provide feedback on which path we recommend, and then we can get started whenever you are ready.",
       "whatToExpect": {
-        "title": "You can expect:",
-        "paragraph1": ""
+        "title": "What to expect:",
+        "items": [
+          "A clear plan for what happens next",
+          "Information about which track we recommend and why",
+          "Opportunity to ask questions at any time",
+          "Support throughout the entire process"
+        ]
       }
     },
     "outro": {
       "title": "We look forward to speaking with you!",
-      "text": "Best regards, Kim at JobLoop"
+      "text": "Best regards, {name} at JobLoop"
     }
   }
 }

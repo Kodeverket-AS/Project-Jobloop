@@ -10,12 +10,16 @@
     },
     "buttons": {
       "sendEmailNow": "Send e-post nå",
-      "bookConversationWithKim": "Book en samtale med Kim"
+      "bookConversationWithKim": "Book en samtale med {name}"
     },
     "projectLeader": "Prosjektleder",
     "year": "År"
   },
   "about": {
+    "metadata": {
+      "title": "Gjensidige & JobLoop Pilot",
+      "description": "Nytt pilottilbud for kunder av Gjensidige"
+    },
     "hero": {
       "title": "Nytt pilottilbud for kunder av Gjensidige",
       "subtitle": "Vi bruker interessene dine til å bygge mestring, motivasjon og en vei videre i livet.",
@@ -100,6 +104,10 @@
     }
   },
   "prep": {
+    "metadata": {
+      "title": "Forberedelse - Gjensidige & JobLoop",
+      "description": "Forbered deg på samtalen med JobLoop"
+    },
     "hero": {
       "title": "Nytt tilbud fra Gjensidige & JobLoop",
       "subtitle": "Vi bruker interessene dine til å bygge mestring, motivasjon og en vei videre i livet.",
@@ -107,17 +115,44 @@
       "paragraph2": "Vi er her for å lytte til deg, forstå dine interesser og hjelpe deg med å finne veien videre. Du trenger ikke å være nervøs eller forberedt på noe spesielt – vi møter deg akkurat der du er.",
       "paragraph3": "Samtalen handler om deg, dine drømmer og hva du ønsker å oppnå. Sammen finner vi ut hvilket spor som passer best for din situasjon.",
       "image": {
-        "alt": "Gjensidige"
+        "alt": "Elever samarbeider rundt en bærbar datamaskin på et lyst kontor."
       }
     },
-    "beforeMeeting": {
+    "before": {
       "title": "Før praten",
       "paragraph1": "Dette er et tilbud fra Gjensidige og JobLoop. Vi i JobLoop er glade for å få muligheten til å bli kjent med deg!",
       "paragraph2": "Du trenger ikke å grue deg – vi er her for å hjelpe deg finne veien videre.",
       "questions": {
-        "whereAreYouNow": {},
-        "whatAreYourInterests": {},
-        "whatDoYouDreamOf": {}
+        "where": {
+          "title": "Hvor er du nå?",
+          "description": "Vi prøver å få et bilde av hvordan hverdagen din ser ut. Tenk litt over:",
+          "items": [
+            "Går du på skole nå? (Hvilket trinn / linje?)",
+            "Har du droppet ut, eller har du mye fravær?",
+            "Har du hatt noen jobber eller praksisplasser tidligere?",
+            "Hvordan ser en typisk dag ut for deg?"
+          ]
+        },
+        "interests": {
+          "title": "Hva liker du å drive med?",
+          "description": "Vi bruker interessene dine som verktøy. Det er viktig at vi vet hva du faktisk synes er gøy!",
+          "items": [
+            "Gamer du? (Hva spiller du?)",
+            "Liker du koding, design, tegning, eller videoredigering?",
+            "Har du andre hobbyer? (Musikk, dyr, trening, matlaging?)",
+            "Er det noe du alltid har hatt lyst til å prøve, men ikke har fått til?"
+          ]
+        },
+        "dreams": {
+          "title": "Hva drømmer du om?",
+          "description": "Dette er kanskje det viktigste. Vi skal jobbe mot DINE mål, ikke alle andres.",
+          "items": [
+            "Vil du tilbake på skolebenken og fullføre VGS?",
+            "Vil du lære deg koding og komme ut i jobb?",
+            "Eller ønsker du bare å komme deg litt ut av huset og treffe folk?",
+            "Har du noen konkrete mål eller drømmer du vil oppnå?"
+          ]
+        }
       },
       "remember": {
         "title": "Husk:",
@@ -125,30 +160,44 @@
         "paragraph2": "Det er helt greit hvis du ikke vet alt enda – det er nettopp derfor vi skal snakke sammen. Vi finner ut av det sammen!"
       }
     },
-    "talkingSoon": {
+    "soon": {
       "title": "Snart snakkes vi!",
       "paragraph1": "Vi gleder oss til å høre fra deg og finne ut sammen hvilket spor som passer best for deg.",
       "paragraph2": "Du trenger ikke å være nervøs eller forberedt på noe spesielt. Dette er bare en hyggelig prat hvor vi blir kjent med hverandre.",
-      "duringMeeting": {
-        "title": "Hva skjer i samtalen?",
-        "paragraph1": ""
-      },
-      "meetingLength": {
-        "title": "Hvor lenge varer det?",
-        "paragraph1": ""
+      "infoCards": {
+        "conversation": {
+          "title": "Hva skjer i samtalen?",
+          "description": "Vi starter med å bli kjent med hverandre. Vi vil høre om deg, dine interesser og hva du håper på å oppnå.",
+          "items": [
+            "Vi snakker om hvor du er nå i livet ditt",
+            "Vi utforsker hva som interesserer deg",
+            "Vi diskuterer hvilket spor som kan passe best",
+            "Du får svar på alle spørsmålene dine"
+          ]
+        },
+        "duration": {
+          "title": "Hvor lenge varer det?",
+          "description": "Samtalen tar vanligvis mellom 30-45 minutter. Vi tar oss god tid, så det er ingen stress.",
+          "additionalText": "Du bestemmer selv hvor mye du vil dele. Det er helt greit å ta pauser eller si at du ikke er klar til å snakke om noe ennå."
+        }
       }
     },
-    "afterMeeting": {
+    "after": {
       "title": "Etter samtalen",
       "text": "Etter at vi har snakket sammen, tar vi en vurdering av hva som passer best for deg. Vi vil gi deg tilbakemelding på hvilket spor vi anbefaler, og så kan vi starte når du er klar.",
       "whatToExpect": {
         "title": "Du kan forvente:",
-        "paragraph1": ""
+        "items": [
+          "En tydelig plan for hva som skjer videre",
+          "Informasjon om hvilket spor vi anbefaler og hvorfor",
+          "Mulighet til å stille spørsmål når som helst",
+          "Støtte gjennom hele prosessen"
+        ]
       }
     },
     "outro": {
       "title": "Vi gleder oss til å snakke med deg!",
-      "text": "Hilsen Kim i JobLoop"
+      "text": "Hilsen {name} i JobLoop"
     }
   }
 }

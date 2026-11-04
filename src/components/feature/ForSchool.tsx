@@ -5,6 +5,7 @@ import { urlFor } from '@/lib/Sanity';
 import { getTranslations } from 'next-intl/server';
 
 // TODO: Deal with divs.
+// BUG: ForSchool.tsx passes src='' to next/image when image4 is missing. In some Next versions and locales that throws while pre-rendering.
 export default async function ForSchool({ image4, school }: Pick<Tiltak, 'image4' | 'school'>) {
   const t = await getTranslations('base.components.school');
   return (

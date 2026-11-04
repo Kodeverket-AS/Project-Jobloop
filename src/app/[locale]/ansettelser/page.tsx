@@ -1,8 +1,10 @@
 import Image from 'next/image';
 import { ExternalLinkButton } from '@/components/buttons';
+import { getTranslations } from 'next-intl/server';
 
-// TODO: Translate this page!
-export default function Ansettelser() {
+export default async function Ansettelser() {
+  const textKeys = ['text1', 'text2', 'text3'] as const;
+  const t = await getTranslations('ansettelser');
   return (
     <main
       id='main'
@@ -17,35 +19,34 @@ export default function Ansettelser() {
       >
         <h1
           id='ansettelser-title'
-          className='text-4xl font-bold mb-4 text-center order-2'
+          className='
+            text-4xl font-bold text-center order-2 pb-2 mb-6 border-b-4
+            border-jobloop-primary-green
+          '
         >
-          Jobloop Ansetter
-          <span className='block w-full h-1 bg-jobloop-primary-green mt-2 mb-6'></span>
+          {t('intro.title')}
         </h1>
         <Image
           src='/hiring.jpg'
-          alt='Colorful image of the text Join Us written with scrabble letters, some candy and hearts'
+          alt={t('intro.imageAlt')}
           width={150}
           height={150}
           className='flex justify-center mb-6 rounded-full order-first mx-auto'
         />
-        <h2 className='text-2xl! font-semibold mb-4 text-center order-3'>
-          Brenner du for inkludering og praktisk IT-faglig opplæring?
+        <h2 className='
+          text-xl! lg:text-2xl! font-semibold mb-4 text-center order-3
+        '>
+          {t('main.heading')}
         </h2>
-        <p className='text-lg mb-4 text-center order-4'>
-          Vi ser stadig etter nye mennesker som vil være en del av vårt team for
-          å skape muligheter for fler!
-        </p>
-        <p className='text-lg mb-4 text-center order-5'>
-          For å se stillinger vi har tilgjengelig for øyeblikket:
-        </p>
-        <p className='text-lg mb-4 text-center order-6'>
-          Se våre stillinger på arbeidsplassen.no
-        </p>
+        {textKeys.map((key, i) => (
+          <p key={key} className={`text-lg mb-4 text-center order-${i+3}`}>
+            {t(`main.${key}`)}
+          </p>
+        ))}
         <ExternalLinkButton
           Path='https://arbeidsplassen.nav.no/stillinger?q=jobloop&v=3'
-          Text='Finn stillinger'
-          ClassName='mx-auto order-last'
+          Text={t('main.linkAlt')}
+          ClassName='mx-auto order-last mt-1'
         />
       </section>
     </main>

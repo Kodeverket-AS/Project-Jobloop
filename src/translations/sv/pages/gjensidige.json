@@ -10,12 +10,16 @@
     },
     "buttons": {
       "sendEmailNow": "Skicka e-post nu",
-      "bookConversationWithKim": "Boka ett samtal med Kim"
+      "bookConversationWithKim": "Boka ett samtal med {name}"
     },
     "projectLeader": "Prosjektleder",
     "year": "År"
   },
   "about": {
+    "metadata": {
+      "title": "Gjensidige & JobLoop Pilot",
+      "description": "Nytt piloterbjudande för Gjensidiges kunder"
+    },
     "hero": {
       "title": "Nytt piloterbjudande för Gjensidiges kunder",
       "subtitle": "Vi använder dina intressen för att bygga en känsla av bemästring, motivation och en väg framåt i livet.",
@@ -100,6 +104,10 @@
     }
   },
   "prep": {
+    "metadata": {
+      "title": "Förberedelse - Gjensidige & JobLoop",
+      "description": "Förbered dig inför samtalet med JobLoop"
+    },
     "hero": {
       "title": "Nytt erbjudande från Gjensidige & JobLoop",
       "subtitle": "Vi använder dina intressen för att bygga en känsla av bemästring, motivation och en väg framåt i livet.",
@@ -107,17 +115,44 @@
       "paragraph2": "Vi finns här för att lyssna på dig, förstå vad du är intresserad av och hjälpa dig att hitta vägen framåt. Du behöver inte vara nervös eller förberedd på något särskilt – vi möter dig precis där du befinner dig.",
       "paragraph3": "Samtalet handlar om dig, dina drömmar och vad du vill uppnå. Tillsammans kommer vi fram till vilken väg som passar din situation bäst.",
       "image": {
-        "alt": "Gjensidige"
+        "alt": "Elever samarbetar kring en bärbar dator på ett ljust kontor."
       }
     },
-    "beforeMeeting": {
+    "before": {
       "title": "Innan samtalet",
       "paragraph1": "Detta är ett erbjudande från Gjensidige och JobLoop. På JobLoop ser vi fram emot möjligheten att få lära känna dig!",
       "paragraph2": "Du behöver inte frukta det – vi finns här för att hjälpa dig att hitta vägen framåt.",
       "questions": {
-        "whereAreYouNow": {},
-        "whatAreYourInterests": {},
-        "whatDoYouDreamOf": {}
+        "where": {
+          "title": "Var är du nu?",
+          "description": "Vi försöker få en bild av hur din vardag ser ut. Fundera på följande:",
+          "items": [
+            "Går du i skolan just nu? (Vilken årskurs / vilket program?)",
+            "Har du hoppat av, eller har du mycket frånvaro?",
+            "Har du haft några jobb eller praktikplatser tidigare?",
+            "Hur ser en vanlig dag ut för dig?"
+          ]
+        },
+        "interests": {
+          "title": "Vad tycker du om att göra?",
+          "description": "Vi använder dina intressen som ett verktyg. Det är viktigt att vi vet vad du faktiskt tycker är roligt!",
+          "items": [
+            "Gamer du? (Vad spelar du?)",
+            "Gillar du programmering, design, teckning eller videoredigering?",
+            "Har du andra fritidsintressen? (Musik, djur, träning, matlagning?)",
+            "Finns det något du alltid har velat prova, men som du inte har lyckats göra?"
+          ]
+        },
+        "dreams": {
+          "title": "Vad drömmer du om?",
+          "description": "Detta är kanske det viktigaste. Vi kommer att arbeta mot DINA mål - inte någon annans.",
+          "items": [
+            "Vill du återvända till skolan och slutföra gymnasieutbildningen?",
+            "Vill du lära dig programmera och få ett jobb?",
+            "Eller vill du bara komma hemifrån lite och träffa folk?",
+            "Har du några specifika mål eller drömmar som du vill uppnå?"
+          ]
+        }
       },
       "remember": {
         "title": "Komma ihåg:",
@@ -125,30 +160,44 @@
         "paragraph2": "Det är helt okej om du inte vet allt än – det är precis därför vi ska prata. Vi löser det tillsammans!"
       }
     },
-    "talkingSoon": {
+    "soon": {
       "title": "Vi hörs snart!",
       "paragraph1": "Vi ser fram emot att höra från dig och att tillsammans ta reda på vilken väg som passar dig bäst.",
       "paragraph2": "Du behöver inte vara nervös eller förbereda något särskilt. Det är bara ett trevligt samtal där vi får lära känna varandra.",
-      "duringMeeting": {
-        "title": "Vad händer i samtalet?",
-        "paragraph1": ""
-      },
-      "meetingLength": {
-        "title": "Hur länge varar det?",
-        "paragraph1": ""
+      "infoCards": {
+        "conversation": {
+          "title": "Vad händer i samtalet?",
+          "description": "Vi börjar med att lära känna varandra. Vi vill höra om dig, dina intressen och vad du hoppas uppnå.",
+          "items": [
+            "Vi pratar om var du befinner dig i livet just nu",
+            "Vi utforskar vad som intresserar dig",
+            "Vi diskuterar vilket spår som kan passa bäst.",
+            "Du kommer att få svar på alla dina frågor."
+          ]
+        },
+        "duration": {
+          "title": "Hur länge varar det?",
+          "description": "Samtalet tar vanligtvis mellan 30-45 minuter. Vi tar god tid på oss, så det är ingen brådska.",
+          "additionalText": "Du bestämmer själv hur mycket du vill dela med dig av. Det går alldeles utmärkt att ta pauser eller att säga att du inte är redo att prata om något än."
+        }
       }
     },
-    "afterMeeting": {
+    "after": {
       "title": "Efter samtalet",
       "text": "Efter att vi har pratat kommer vi att bedöma vad som är bäst för dig. Vi ger återkoppling kring vilken väg vi rekommenderar, och sedan kan vi sätta igång när du är redo.",
       "whatToExpect": {
         "title": "Du kan förvänta dig:",
-        "paragraph1": ""
+        "items": [
+          "En tydlig plan för vad som händer härnäst",
+          "Information om vilken bana vi rekommenderar och varför",
+          "Möjlighet att ställa frågor när som helst",
+          "Stöd genom hela processen"
+        ]
       }
     },
     "outro": {
       "title": "Vi ser fram emot att prata med dig!",
-      "text": "Med vänlig hälsning, Kim på JobLoop"
+      "text": "Med vänlig hälsning, {name} på JobLoop"
     }
   }
 }

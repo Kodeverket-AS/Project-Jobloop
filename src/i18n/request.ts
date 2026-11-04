@@ -19,9 +19,10 @@ export default getRequestConfig(async ({ requestLocale }) => {
   const contact = (await import(`../translations/${locale}/pages/contact.json`)).default;
   const opplæringskontor = (await import(`../translations/${locale}/pages/opplæringskontor.json`)).default;
   const gjensidige = (await import(`../translations/${locale}/pages/gjensidige.json`)).default;
+  const ansettelser = (await import(`../translations/${locale}/pages/ansettelser.json`)).default;
 
   return {
     locale,
-    messages: { metadata, base, errors, dictionary, landing, about, ki, contact, opplæringskontor, gjensidige },
+    messages: { metadata, base, errors, dictionary, landing, about, ki, contact, opplæringskontor, gjensidige, ansettelser },
   };
 });

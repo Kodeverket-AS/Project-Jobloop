@@ -5,7 +5,7 @@ import { BookKimButton } from '@/components/buttons';
 import { QuestionCard } from './components/QuestionCard';
 import { InfoCard } from './components/InfoCard';
 import { AnimateOnScroll } from './components/AnimateOnScroll';
-import { questions, infoCards, expectations } from './data';
+import { questions, infoCards } from './data';
 import GjensidigeImage from '@public/gjensidige.jpg';
 import { getTranslations } from 'next-intl/server';
 import { projectLeader } from '../projectLeader';
@@ -15,15 +15,18 @@ export async function generateStaticParams() {
 }
 
 export async function generateMetadata(): Promise<Metadata> {
+  const t = await getTranslations('gjensidige');
   return {
-    title: 'Forberedelse - Gjensidige & JobLoop',
-    description: 'Forbered deg på samtalen med JobLoop',
+    title: t('prep.metadata.title'),
+    description: t('prep.metadata.description'),
   };
 }
 
-// TODO: Translate page!
+// TODO: Make sure that project leader info is correct before publishing (should there be multiple people mentioned, or should there just be one contact person for the Gjensidige offer?)
 export default async function Forberedelse() {
   const t = await getTranslations('gjensidige');
+  const list = (key: string) =>
+    t.has(key) ? (t.raw(key) as string[]) : undefined;
   return (
     <main className='
       min-h-screen bg-[#f4f6f8] font-["Segoe_UI",Arial,sans-serif]
@@ -75,7 +78,7 @@ export default async function Forberedelse() {
           '>
             <Image 
               src={GjensidigeImage} 
-              alt={t('prep.hero.image.alt')} // TODO: Improve alt text.
+              alt={t('prep.hero.image.alt')}
               fill
               sizes='(max-width: 768px) 256px, (max-width: 1024px) 288px, 320px'
               className='object-cover object-center'
@@ -86,24 +89,26 @@ export default async function Forberedelse() {
         <AnimateOnScroll
           as='section'
           ariaLabelledBy='beforeMeeting'
-          className='bg-white py-12 px-5 w-full rounded-2xl mx-auto'
+          className='bg-white py-12 px-9 w-full max-w-4xl rounded-2xl mx-auto'
         >
           <h2
             id='beforeMeeting'
             className='text-3xl font-bold text-[#002B49] mb-8 text-center'
           >
-            {t('prep.beforeMeeting.title')}
+            {t('prep.before.title')}
           </h2>
           <div className='max-w-4xl mx-auto space-y-8 text-[#555]'>
             <AnimateOnScroll
               className='text-center mb-8'
             >
-              <p className='text-lg mb-4'>{t('prep.beforeMeeting.paragraph1')}</p>
-              <p className='mb-4'>{t('prep.beforeMeeting.paragraph2')}</p>
+              <p className='text-lg mb-4'>{t('prep.before.paragraph1')}</p>
+              <p className='mb-4'>{t('prep.before.paragraph2')}</p>
             </AnimateOnScroll>
 
-            {questions.map((q, idx) => (
-              <AnimateOnScroll
+            {questions.map((q, idx) => {
+              const base = `prep.before.questions.${q.id}`;
+              return (
+                <AnimateOnScroll
                 key={idx}
                 as='section'
                 ariaLabelledBy={`question-${idx}`}
@@ -113,9 +118,19 @@ export default async function Forberedelse() {
                   motion-safe:hover:-translate-y-1 border-l-4 ${q.borderColor}
                 `}
               >
-                <QuestionCard {...q} idx={idx} />
+                <QuestionCard
+                  icon={q.icon}
+                  borderColor={q.borderColor}
+                  iconBg={q.iconBg}
+                  idx={idx}
+                  title={t(`${base}.title`)}
+                  description={t(`${base}.description`)}
+                  items={list(`${base}.items`) ?? []}
+                  tip={t.has(`${base}.tip`) ? t(`${base}.tip`) : undefined}
+                />
               </AnimateOnScroll>
-            ))}
+              )
+            })}
             <AnimateOnScroll
               as='section'
               ariaLabelledBy='prep-before-meeting-remember-title'
@@ -128,7 +143,7 @@ export default async function Forberedelse() {
                 id='prep-before-meeting-remember-title'
                 className='font-semibold! text-[#002B49] mb-3 text-lg! flex'
               >
-                {t('prep.beforeMeeting.remember.title')}
+                {t('prep.before.remember.title')}
                 <span
                   className='mr-1 order-first'
                   aria-hidden='true'
@@ -137,10 +152,10 @@ export default async function Forberedelse() {
                 </span>
               </h3>
               <p className='mb-3 text-[#555] leading-relaxed'>
-                {t('prep.beforeMeeting.remember.paragraph1')}
+                {t('prep.before.remember.paragraph1')}
               </p>
               <p className='text-[#555] leading-relaxed'>
-                {t('prep.beforeMeeting.remember.paragraph2')}
+                {t('prep.before.remember.paragraph2')}
               </p>
             </AnimateOnScroll>
           </div>
@@ -155,20 +170,32 @@ export default async function Forberedelse() {
             id='prep-talking-soon-title'
             className='text-4xl font-bold text-[#002B49] mb-6 text-center'
           >
-            {t('prep.talkingSoon.title')}
+            {t('prep.soon.title')}
           </h2>
           <p className='text-xl text-center text-[#555] mb-4 max-w-2xl mx-auto'>
-            {t('prep.talkingSoon.paragraph1')}
+            {t('prep.soon.paragraph1')}
           </p>
           <p className='text-lg text-center text-[#555] max-w-2xl mx-auto'>
-            {t('prep.talkingSoon.paragraph2')}
+            {t('prep.soon.paragraph2')}
           </p>
           <div className='grid md:grid-cols-2 gap-6 my-12'>
-            {infoCards.map((card, idx) => (
-              <AnimateOnScroll key={idx}>
-                <InfoCard {...card} />
-              </AnimateOnScroll>
-            ))}
+            {infoCards.map((card, idx) => {
+              const base = `prep.soon.infoCards.${card.id}`;
+              return (
+                <AnimateOnScroll
+                  key={idx}
+                >
+                  <InfoCard
+                    id={card.id}
+                    icon={card.icon}
+                    title={t(`${base}.title`)}
+                    description={t(`${base}.description`)}
+                    items={list(`${base}.items`)}
+                    additionalText={t.has(`${base}.additionalText`) ? t(`${base}.additionalText`) : undefined}
+                  />
+                </AnimateOnScroll>
+              )
+            })}
           </div>
           <AnimateOnScroll
             as='section'
@@ -176,7 +203,7 @@ export default async function Forberedelse() {
             className='
               bg-linear-to-br from-white to-[#EBF2F6] p-8 rounded-lg
               shadow-lg border-l-10 border-[#2C8C7D] mb-12 hover:shadow-xl
-              transition-all duration-300
+              transition-all motion-safe:duration-300
             '
           >
             <div className='flex items-start gap-4 mb-6'>
@@ -185,10 +212,10 @@ export default async function Forberedelse() {
                   id='prep-after-meeting-title'
                   className='text-2xl font-bold text-[#002B49] mb-3'
                 >
-                  {t('prep.afterMeeting.title')}
+                  {t('prep.after.title')}
                 </h3>
                 <p className='text-[#555] mb-6 leading-relaxed'>
-                  {t('prep.afterMeeting.text')}
+                  {t('prep.after.text')}
                 </p>
               </div>
               <span
@@ -209,13 +236,13 @@ export default async function Forberedelse() {
                 id='prep-after-meeting-what-to-expect-title'
                 className='font-semibold text-[#002B49] text-lg mb-4'
               >
-                {t('prep.afterMeeting.whatToExpect.title')}
+                {t('prep.after.whatToExpect.title')}
               </h4>
               <ul
                 className='grid md:grid-cols-2 gap-4'
-                aria-label={t('prep.afterMeeting.whatToExpect.title')}
+                aria-label={t('prep.after.whatToExpect.title')}
               >
-                {expectations.map((item, idx) => (
+                {(list('prep.after.whatToExpect.items') ?? []).map((item, idx) => (
                   <li key={idx} className='flex gap-3 items-baseline mb-1'>
                     <span className='text-[#555] text-sm order-last'>
                       {item}
@@ -376,11 +403,8 @@ export default async function Forberedelse() {
               >
                 {t('prep.outro.title')}
               </h3>
-              <p
-                // TODO: Consider setting the name of the person in the "Hilsen" at the end using projectLeader.name
-                className='text-lg text-[#555]'
-              >
-                {t('prep.outro.text')}
+              <p className='text-lg text-[#555]'>
+                {t('prep.outro.text', { name: projectLeader.name })}
               </p>
             </AnimateOnScroll>
           </div>
