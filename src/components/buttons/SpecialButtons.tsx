@@ -14,12 +14,14 @@ interface ButtonProps {
   Aria?: string;
 }
 
-// TODO: Check if aria-label is needed, and translate if so.
+// TODO: Change the path based on locale (so instead of "Link to subpage /kontakt", it uses the localized path)
 export function KontaktButton({ Path, Text }: ButtonProps) {
+  const t = useTranslations('dictionary');
+
   return (
     <Link
       href={Path}
-      aria-label={`Lenke til underside ${Path}`}
+      aria-label={t('subpageLinkLabel', { path: Path })}
       className='
         group flex items-center justify-center w-full sm:w-fit gap-1 px-8 py-3
         rounded-full border-2 border-jobloop-primary-green bg-jobloop-primary-green
@@ -82,6 +84,8 @@ export function LesMerButton(
     Aria = undefined
   }: Partial<ButtonProps> & { Context?: string }
 ) {
+  const t = useTranslations('dictionary');
+
   return (
     <a
       href={Path}
@@ -94,7 +98,9 @@ export function LesMerButton(
       '
       aria-label={Aria}
     >
-      <span className='font-medium'>{Text}</span>
+      <span className='font-medium'>
+        {Text == 'Les mer' ? t('readMore') : Text}
+      </span>
       {Context != '' ? <span className='sr-only'>{Context}</span> : null}
       <FaArrowRight
         className='
@@ -112,8 +118,6 @@ export function LesMerButton(
  * This is used for the LandingCoursesCard component to emulate having two links
  * which both go to the same location, without duplicating the link element and
  * causing accessibility issues.
- * 
- // TODO: Check if button-animations should have "prefers reduced motion" media query.
  */
 export function SpanButtonLike({ Text = 'readMore', Context = '' }: { Text?: string, Context?: string }) {
   const t = useTranslations('dictionary');

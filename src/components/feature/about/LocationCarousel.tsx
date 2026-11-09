@@ -23,7 +23,6 @@ export function LocationCarousel() {
     { name: 'Ålesund', src: '/Ålesund.webp' },
   ];
 
-  // TODO: Test this properly with a screen reader.
   // TODO: Find out if and how to add in navigation buttons that are accessible and can be placed correctly.
   // TODO: Attempt to clean up divs
   const [swiper, setSwiper] = useState<SwiperType | null>(null);
@@ -62,7 +61,6 @@ export function LocationCarousel() {
     setUserPaused((prev) => !prev);
   };
 
-  // TODO: Ensure that aria-live is set to either off (if automatically rotating) or polite (if not automatically rotating).
   return (
     <section
       className={`
@@ -81,24 +79,23 @@ export function LocationCarousel() {
         <span className='block w-60 h-1 bg-jobloop-primary-orange mt-2 mb-8 mx-auto'></span>
 
         <button
-          // TODO: Translate aria-labels
           type='button'
           onClick={handleToggleAutoplay}
           aria-pressed={isPaused}
           disabled={reducedMotion}
           aria-label={
             reducedMotion
-              ? 'Autoplay disabled due to reduced motion preference'
+              ? t('about.locations.labels.motionDisabled')
               : isPaused
-              ? 'Play carousel'
-              : 'Pause carousel'
+              ? t('about.locations.labels.carouselPlay')
+              : t('about.locations.labels.carouselPause')
           }
-          title={ // TODO: Translate this
+          title={
             reducedMotion
-              ? 'Autoplay disabled due to reduced motion preference'
+              ? t('about.locations.labels.motionDisabled')
               : isPaused
-              ? 'Play carousel'
-              : 'Pause carousel'
+              ? t('about.locations.labels.carouselPlay')
+              : t('about.locations.labels.carouselPause')
           }
           className='absolute top-0 left-0 lg:left-4 xl:left-6 rounded-xl ml-4 p-2 shadow-lg bg-jobloop-primary-green hover:bg-jobloop-primary-orange disabled:opacity-60 disabled:cursor-not-allowed'
         >
@@ -117,14 +114,13 @@ export function LocationCarousel() {
           // Accessibility
           a11y={{
             enabled: true,
-            wrapperLiveRegion: true,
-            // TODO: Translate and apply a11y messages!
-            // firstSlideMessage: '',
-            // lastSlideMessage: '',
-            // nextSlideMessage: '',
-            // prevSlideMessage: '',
-            // paginationBulletMessage: '',
-            // slideLabelMessage: '',
+            wrapperLiveRegion: true, // TODO: Find out why this does not turn the aria-live to polite.
+            firstSlideMessage: t('about.locations.labels.firstSlide'),
+            lastSlideMessage: t('about.locations.labels.lastSlide'),
+            nextSlideMessage: t('about.locations.labels.nextSlide'),
+            prevSlideMessage: t('about.locations.labels.prevSlide'),
+            paginationBulletMessage: `${t('about.locations.labels.paginationBullet')} {{index}}`,
+            slideLabelMessage: '{{index}} / {{slidesLength}}',
           }}
 
           // Keyboard navigation

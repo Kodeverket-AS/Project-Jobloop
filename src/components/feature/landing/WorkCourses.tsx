@@ -74,6 +74,7 @@ export default async function WorkCourses() {
         text={t('work.text')}
         image={JobbtilbudBilde}
         alt={t('work.image.alt')}
+        imageAdjustmentClass='saturate-85! hover:saturate-100!'
         path='/tilbud'
         isButton={false}
         direction='reverse'
@@ -81,7 +82,7 @@ export default async function WorkCourses() {
       <PartnerProject // TODO: Try to move this into the list below.
         title={t('work.partner.title')}
         text={t('work.partner.text')}
-        image={KodehodeImage} // TODO: Find out why this image is not centered properly in its container.
+        image={KodehodeImage} // TODO: Crop this image so that the checkerboard pattern is removed!
         alt={t('work.partner.image.alt')}
         path='https://www.kodehode.no'
         btnText='kodehode.no'
@@ -113,10 +114,7 @@ export default async function WorkCourses() {
         >
           {t("work.quotes.title")}
         </h3>
-        <ul
-        className='flex flex-col gap-8 md:flex-row'
-        // TODO: Add list label.
-        >
+        <ul className='flex flex-col gap-8 md:flex-row'>
           {quotes.map((quote, index) => (
             <QuoteCard key={`${quote.name}-${index}`} {...quote} />
           ))}

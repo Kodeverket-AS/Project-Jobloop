@@ -4,13 +4,14 @@ import { Tiltak } from '@/types/sanity/sanity.types';
 import { urlFor } from '@/lib/Sanity';
 import { getTranslations } from 'next-intl/server';
 
-// TODO: Deal with divs.
 // BUG: ForSchool.tsx passes src='' to next/image when image4 is missing. In some Next versions and locales that throws while pre-rendering.
 export default async function ForSchool({ image4, school }: Pick<Tiltak, 'image4' | 'school'>) {
   const t = await getTranslations('base.components.school');
   return (
     <section
-      className='w-full max-w-[1536px] mx-auto px-4'
+      className='
+        w-full max-w-[1536px] mx-auto px-4
+      '
       aria-labelledby='for-school-title'
     >
       <div className='
@@ -34,24 +35,26 @@ export default async function ForSchool({ image4, school }: Pick<Tiltak, 'image4
           </div>
         </div>
 
-        <div className='w-full lg:w-1/2 flex justify-center order-first'>
-          <div className='relative overflow-hidden rounded-xl shadow-lg group'>
-            <Image
-              src={image4 ? urlFor(image4).url() : ''}
-              width={500}
-              height={500}
-              alt={image4?.alt ? image4?.alt : ''}
-              className='
-                object-cover w-full h-80 lg:h-96 group-hover:scale-105
-                transition-transform duration-300
-              '
-            />
+        <div className='
+          w-full lg:w-1/2 flex justify-center order-first relative
+          overflow-hidden rounded-xl shadow-lg group
+        '>
+          <Image
+            src={image4 ? urlFor(image4).url() : ''}
+            width={500}
+            height={500}
+            alt={image4?.alt ? image4?.alt : ''}
+            className='
+              object-cover w-full h-80 lg:h-96 motion-safe:group-hover:scale-105
+              transition-transform motion-safe:duration-300
+            '
+          />
 
-            <div className='
-              absolute inset-0 bg-linear-to-t from-black/20 to-transparent
-              opacity-0 group-hover:opacity-100 transition-opacity duration-300
-            '/>
-          </div>
+          <div className='
+            absolute inset-0 bg-linear-to-t from-black/20 to-transparent
+            opacity-0 group-hover:opacity-100 transition-opacity
+            motion-safe:duration-300
+          '/>
         </div>
       </div>
     </section>

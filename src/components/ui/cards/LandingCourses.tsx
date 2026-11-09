@@ -13,7 +13,6 @@ interface LandingCoursesCardProps {
   isNew?: boolean;
 }
 
-// TODO: Properly test with a screen reader!
 // TODO: Rename to a more fitting name, as this is now also used on "om-oss".
 /**
  * Creates a card component for displaying course information on the landing page.

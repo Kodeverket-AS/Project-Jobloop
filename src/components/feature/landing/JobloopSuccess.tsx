@@ -8,7 +8,6 @@ import JobloopFafo from '@public/jobbloop-fafo.webp';
 export default async function JobloopSuccess() {
   const t = await getTranslations('landing');
 
-  // TODO: Clean up divs
   return (
     <article
       className='

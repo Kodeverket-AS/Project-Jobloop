@@ -13,7 +13,6 @@ interface ButtonProps {
 export function LinkButtonAnimatedWithIcon({ Path, Text, Query }: ButtonProps) {
   const t = useTranslations('dictionary');
 
-  // TODO: Fix button not turning orange when hovered while having animations disabled.
   return (
     <Link
       href={Query ? { pathname: Path, query: Query} : Path }
@@ -24,6 +23,7 @@ export function LinkButtonAnimatedWithIcon({ Path, Text, Query }: ButtonProps) {
         rounded-full sm:w-fit text-kv-black bg-jobloop-primary-green
         motion-safe:scale-100 motion-safe:lg:hover:scale-105 shadow-lg
         shadow-kv-black/30 hover:shadow-jobloop-primary-orange/20
+        motion-reduce:hover:bg-jobloop-primary-orange
       '
     >
       <div
@@ -47,7 +47,6 @@ export function LinkButtonAnimatedWithIcon({ Path, Text, Query }: ButtonProps) {
 export function LinkButtonAnimated({ Path, Text }: ButtonProps) {
   const t = useTranslations('dictionary');
 
-  // TODO: Consider changing from shadow to solid border for motion-safe
   return (
     <Link
       href={Path}
@@ -58,6 +57,7 @@ export function LinkButtonAnimated({ Path, Text }: ButtonProps) {
         rounded-full sm:w-fit text-kv-black bg-jobloop-primary-green
         motion-safe:scale-100 motion-safe:lg:hover:scale-105 shadow-lg
         shadow-kv-black/30 hover:shadow-jobloop-primary-orange/20
+        motion-reduce:hover:bg-jobloop-primary-orange
       '
     >
       <div

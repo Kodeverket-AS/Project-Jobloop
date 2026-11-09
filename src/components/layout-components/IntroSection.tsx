@@ -18,6 +18,7 @@ interface IntroSection {
   direction?: 'normal' | 'reverse';
   ifImageLink?: boolean;
   imageLinkPath?: string;
+  imageAdjustmentClass?: string;
 }
 
 export function IntroSection({
@@ -33,6 +34,7 @@ export function IntroSection({
   direction = 'normal',
   ifImageLink = false,
   imageLinkPath = '',
+  imageAdjustmentClass = '',
 }: IntroSection) {
   const t = useTranslations('dictionary');
   const t1 = useTranslations('landing');
@@ -86,11 +88,12 @@ export function IntroSection({
               src={image}
               width={1500}
               height={700}
-              className='
+              className={`
                 max-w-full h-112 object-cover shadow-lg shadow-gray-300/50
                 hover:shadow-xl hover:shadow-gray-400/50 transition-all
                 motion-safe:duration-500 motion-safe:hover:scale-[1.02]
-              '
+                ${imageAdjustmentClass}
+              `}
             />
             <figcaption className='
               absolute z-10 p-4 transition-all rounded-b-2xl bottom-0
@@ -113,6 +116,7 @@ export function IntroSection({
             saturate-100 shadow-lg shadow-gray-300/50 transition-all
             motion-safe:duration-500 hover:saturate-150 hover:shadow-xl
             hover:shadow-gray-400/50 motion-safe:hover:scale-[1.02]
+            ${imageAdjustmentClass}
             ${direction === 'normal' ? 'order-first' : ''}
           `}
         />

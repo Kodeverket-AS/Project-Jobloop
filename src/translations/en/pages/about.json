@@ -48,7 +48,17 @@
       "cta": "Contact us"
     },
     "locations": {
-      "title": "Our locations"
+      "title": "Our locations",
+      "labels": {
+        "motionDisabled": "Autoplay disabled due to reduced motion preference",
+        "carouselPlay": "Play carousel",
+        "carouselPause": "Pause carousel",
+        "firstSlide": "This is the first slide",
+        "lastSlide": "This is the last slide",
+        "nextSlide": "Next slide",
+        "prevSlide": "Previous slide",
+        "paginationBullet": "Go to slide"
+      }
     }
   }
 }

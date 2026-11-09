@@ -3,8 +3,7 @@
 import { Tiltak } from '@/types/sanity/sanity.types';
 import Image from 'next/image';
 
-// TODO: Is this even used? (Seemingly not)
-
+// NOTE: Currently not used anywhere.
 export default function Places({ cities }: Pick<Tiltak, 'cities'>) {
   return (
     <div className='w-full   2xl:max-w-[1600px]'>

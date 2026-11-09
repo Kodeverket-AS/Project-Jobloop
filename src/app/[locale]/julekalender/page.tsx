@@ -4,6 +4,8 @@ export async function generateStaticParams() {
   return [{ locale: 'nb' }, { locale: 'sv' }, { locale: 'en' }];
 }
 
+// TODO: Prepare for 2026 version?
+// BUG: Firefox will not open this page: "To protect your security, digitaljul.dk will not allow Firefox to display the page is another site has embedded it. To see this page, you need to open it in a new window."
 export async function generateMetadata(): Promise<Metadata> {
   const title = 'JobLoops digitale julekalender 2025 – Jul hos Jobloop';
   const description =

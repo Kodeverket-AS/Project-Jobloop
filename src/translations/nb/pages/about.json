@@ -48,7 +48,17 @@
       "cta": "Kontakt Oss"
     },
     "locations": {
-      "title": "Våre lokasjoner"
+      "title": "Våre lokasjoner",
+      "labels": {
+        "motionDisabled": "Automatisk avspilling deaktivert på grunn av innstilling for redusert bevegelse",
+        "carouselPlay": "Spill karusellen",
+        "carouselPause": "Pause karusellen",
+        "firstSlide": "Dette er det første lysbildet",
+        "lastSlide": "Dette er det siste lysbildet",
+        "nextSlide": "Neste lysbilde",
+        "prevSlide": "Forrige lysbilde",
+        "paginationBullet": "Gå til lysbilde"
+      }
     }
   }
 }

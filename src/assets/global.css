@@ -214,7 +214,6 @@ h6 {
   .team-photo,
   .slide-left,
   .slide-right,
-  .slide-bottom,
   .card-slide-in,
   .animate-shimmer::before,
   .animate-on-scroll,
@@ -226,6 +225,19 @@ h6 {
     transition: none !important;
     transform: none !important;
     opacity: 1 !important;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .slide-bottom {
+    animation: none !important;
+    transition: none !important;
+    opacity: 1 !important;
+    transform: translateX(40px) translateY(80px) !important;
+  }
+}
+@media (prefers-reduced-motion: reduce) and (min-width: 768px) {
+  .slide-bottom {
+    transform: translateX(0) translateY(80px) !important;
   }
 }
 

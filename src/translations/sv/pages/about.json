@@ -48,7 +48,17 @@
       "cta": "Kontakta oss"
     },
     "locations": {
-      "title": "Våra lokaler"
+      "title": "Våra lokaler",
+      "labels": {
+        "motionDisabled": "Automatisk uppspelning inaktiverad på grund av inställning för minskade rörelser",
+        "carouselPlay": "Spela karusellen",
+        "carouselPause": "Pausa karusellen",
+        "firstSlide": "Detta är den första bilden",
+        "lastSlide": "Detta är den sista bilden",
+        "nextSlide": "Nästa bild",
+        "prevSlide": "Föregående bild",
+        "paginationBullet": "Gå till bild"
+      }
     }
   }
 }
