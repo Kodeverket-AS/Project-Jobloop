@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import { Link as LocaleLink } from '@/i18n/navigation';
 import Image from 'next/image';
 import { getTranslations } from 'next-intl/server';
 import { FaFacebook, FaInstagram, FaLinkedinIn } from 'react-icons/fa';
@@ -47,7 +48,26 @@ export default async function Footer() {
                 />
               </a>
             </div>
+            <p className='text-jobloop-primary-green font-semibold'>
+              {t('footer.branding.award')}
+            </p>
             <p className='text-gray-300 text-left leading-relaxed'>{t('footer.branding.text')}</p>
+            <div className='flex gap-4'>
+              <Image
+                alt={t('footer.badges.gaselle2024Alt')}
+                src='/images/gaselle/gaselle-2024.png'
+                width={90}
+                height={90}
+                className='rounded-lg'
+              />
+              <Image
+                alt={t('footer.badges.gaselle2025Alt')}
+                src='/images/gaselle/gaselle-2025.png'
+                width={90}
+                height={90}
+                className='rounded-lg'
+              />
+            </div>
           </div>
           <div className='flex flex-row gap-8 lg:gap-12'>
             <div className='flex flex-col gap-6 w-2/3'>
@@ -149,18 +169,20 @@ export default async function Footer() {
               &copy; {new Date().getFullYear()} {t('footer.copyright')}
             </p>
             <div className='flex gap-6 text-sm'>
-              <Link
-                href='/om-oss'
+              <LocaleLink
+                href='/personvern'
                 className='text-gray-400 hover:text-jobloop-primary-green transition-colors duration-300'
+                aria-label={t('footer.links.privacy.aria')}
               >
                 {t('footer.links.privacy.label')}
-              </Link>
-              <Link
-                href='/kontakt'
+              </LocaleLink>
+              <LocaleLink
+                href='/vilkar'
                 className='text-gray-400 hover:text-jobloop-primary-green transition-colors duration-300'
+                aria-label={t('footer.links.tos.aria')}
               >
                 {t('footer.links.tos.label')}
-              </Link>
+              </LocaleLink>
             </div>
           </div>
         </div>

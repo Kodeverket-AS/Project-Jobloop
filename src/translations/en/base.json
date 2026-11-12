@@ -26,7 +26,12 @@
   },
   "footer": {
     "branding": {
+      "award": "JobLoop | Social Entrepreneur of the Year 2024",
       "text": "We help you find your dream job through innovative courses and personalized guidance."
+    },
+    "badges": {
+      "gaselle2024Alt": "DN Gaselle 2024 - Dagens Næringsliv's award for the country's most successful growth companies",
+      "gaselle2025Alt": "DN Gaselle 2025 - Dagens Næringsliv's award for the country's most successful growth companies"
     },
     "links": {
       "title": "Pages",
