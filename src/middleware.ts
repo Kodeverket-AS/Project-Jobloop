@@ -37,7 +37,7 @@ export default function middleware(request: NextRequest) {
 
 export const config = {
   matcher: [
-    '/((?!api|trpc|_next|_vercel|learnwell-stavanger|.*\\..*).*)',
+    '/((?!api|trpc|_next|_vercel|.*\\..*).*)',
     '/gjensidige-pilot/:path*',
     '/(nb|sv|en)/gjensidige-pilot/:path*',
   ],
