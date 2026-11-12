@@ -6,6 +6,18 @@ const nextConfig: NextConfig = {
   images: {
     remotePatterns: [{ protocol: 'https', hostname: 'cdn.sanity.io' }],
   },
+  async rewrites() {
+    return [
+      {
+        source: '/learnwell-stavanger',
+        destination: 'https://endrejordal.github.io/learnwell-stavanger/',
+      },
+      {
+        source: '/learnwell-stavanger/:path*',
+        destination: 'https://endrejordal.github.io/learnwell-stavanger/:path*',
+      },
+    ];
+  },
 };
 
 // Next-intl settings
