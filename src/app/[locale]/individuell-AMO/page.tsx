@@ -24,3 +24,5 @@ export default function IndividuellAMO() {
     </main>
   );
 }
+
+//ny og oppdatert side om iamo
