@@ -70,7 +70,6 @@ export default async function OmOss() {
    // TODO: Break down large text blocks into smaller sections for better readability.
    // TODO: Consider highlighting key points for easier reading (reference guides for writing in an accessible way for those with conditions such as dyslexia or ADHD).
    */
-  // TODO: Clean divs and restructure!
   return (
     <main
       id='main'
@@ -134,9 +133,9 @@ export default async function OmOss() {
             lg:w-2/5 lg:float-left lg:mt-0 lg:mr-8 lg:mb-4
           '
         >
-          <p
-            className='text-base text-center text-pretty md:leading-loose lg:text-xl'
-          >
+          <p className='
+            text-base text-center text-pretty md:leading-loose lg:text-xl
+          '>
             {t('about.paragraph-3')}
           </p>
           <IoInformationCircle
@@ -156,27 +155,29 @@ export default async function OmOss() {
         </p>
       </section>
 
-      <section
+      <aside
         className='
-          mx-auto px-4 container relative flex flex-col justify-center
-          items-center gap-4 md:gap-6 p-3 sm:p-4 md:p-6 lg:w-[90vw]
+          container relative flex flex-col justify-center items-center gap-4
+          md:gap-6 lg:w-[90vw] max-w-[90vw] mx-auto py-4 p-3 sm:p-4 md:p-6 px-4
           bg-jobloop-primary-green/5 border border-jobloop-primary-green
-          rounded-xl md:rounded-xl shadow-lg shadow-jobloop-secondary-green/15
+          rounded-xl shadow-lg shadow-jobloop-secondary-green/15
         '
-        // TODO: Add aria-labelledby and add a subheading to this section, or change to div.
+        // TODO: Consider adding a heading for this aside to improve accessibility, instead of relying solely on aria-label.
+        aria-label={t('about.cta-1.aria-title')}
       >
-
-        <p className='text-lg md:text-xl xl:text-2xl md:leading-loose text-center'>
+        <p className='text-lg md:text-xl xl:text-2xl md:leading-loose text-center mb-6 mx-2'>
           {t('about.cta-1.text')}
         </p>
-        <div className='mt-6'>
-          <LinkButtonAnimatedWithIcon Path={'/kontakt'} Text={t('about.cta-1.label')} />
-        </div>
+        <LinkButtonAnimatedWithIcon
+          // TODO: Improve sizing on small screens.
+          Path={'/kontakt'}
+          Text={t('about.cta-1.label')}
+        />
         <IoInformationCircle
           className='absolute bottom-0 right-0 text-5xl text-jobloop-primary-green/15'
           aria-hidden={true}
         />
-      </section>
+      </aside>
 
       <section
         className='flex flex-col gap-8 team-section w-full'

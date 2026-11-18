@@ -142,7 +142,10 @@ export default function ContactContainer({
         onSubmit={(e) => e.preventDefault()}
       >
         <div className='grid grid-cols-1 sm:grid-cols-3 gap-4 mb-6'>
-          <div className='relative'>
+          <div
+            className='relative'
+            // TODO: Consider using a fieldset for better accessibility (if so, it might need a legend to not cause WCAG issues)
+          >
             <label
               htmlFor='name'
               className='sr-only'
@@ -154,6 +157,7 @@ export default function ContactContainer({
               ref={nameInput}
               onChange={doFilter}
               type='text'
+              title={t('search.input.placeholder')}
               placeholder={t('search.input.placeholder') + "…"}
               className='
                 w-full rounded-xl border-2 border-gray-200 bg-white px-4
@@ -186,7 +190,10 @@ export default function ContactContainer({
             </div>
           </div>
 
-          <div className='relative'>
+          <div
+            className='relative'
+            // TODO: Consider using a fieldset for better accessibility (if so, it might need a legend to not cause WCAG issues)
+          >
             <label
               htmlFor='department'
               className='sr-only'
@@ -266,6 +273,7 @@ export default function ContactContainer({
                 text-jobloop-primary-green rounded-full text-sm font-medium
               '
               role='status'
+              aria-live='polite'
             >
               {t('search.filter', {
                 filtered: filtered.length,
@@ -278,6 +286,7 @@ export default function ContactContainer({
 
       <ul
         className='space-y-16'
+        role='list'
         // aria-label={t('search.results')}
         // TODO: Set aria-label to state if the list is filtered
       >
@@ -295,11 +304,11 @@ export default function ContactContainer({
           <li // TODO: Find out if using a list item is correct for the accessibility of a "no results" message.
             className='text-center py-12'
           >
-            <p // TODO: Would it be better if this is a h2?
+            <h2 // TODO: Would it be better if this is a h2?
               className='text-lg text-slate-600 mb-4'
             >
               {t('search.empty.text')}
-            </p>
+            </h2>
             <button
               onClick={() => {
                 if (nameInput.current) nameInput.current.value = '';
@@ -307,6 +316,7 @@ export default function ContactContainer({
                 setIsFiltered(false);
                 setFiltered(data);
               }}
+              // TODO: Fix text contrast for better accessibility.
               className='
                 text-jobloop-primary-green hover:underline font-medium
                 cursor-pointer
