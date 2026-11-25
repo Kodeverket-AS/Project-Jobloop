@@ -37,7 +37,6 @@ export default function LocaleMenuMobile() {
   // Variable to avoid expected ts error in the Link element
   const hrefPath = {pathname, params};
 
-  // TODO: Add hover/touch styles for visual touch feedback for mobile.
   return (
     <li
       ref={container}

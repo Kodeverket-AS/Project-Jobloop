@@ -116,7 +116,7 @@ export function Header() {
           className='hidden h-auto p-0 md:flex'
           aria-label={t('navigation.menu.desktop')}
         >
-          <ul className='p-4 md:flex'>
+          <ul className='p-4 pt-5 md:flex'>
             {links.map(({ href, label, aria }) => (
               <li key={label}>
                 <Link
